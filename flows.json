@@ -371,7 +371,7 @@
         "x": 34,
         "y": 159,
         "w": 1372,
-        "h": 542
+        "h": 962
     },
     {
         "id": "07ec0a4c55b9e373",
@@ -395,6 +395,136 @@
         "y": 39,
         "w": 912,
         "h": 142
+    },
+    {
+        "id": "22db91f9036a3e88",
+        "type": "group",
+        "z": "68702ca580581086",
+        "name": "create",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b70ad4489eb22ac2",
+            "65be1f1e18a5e98d",
+            "a2d6c302b66e1f23",
+            "9bfc4e6309d7db75",
+            "02f60d3d1fef25bf",
+            "7ec1a0bbc051638b",
+            "8842a1345cce393c",
+            "c5671c9ce23322ba",
+            "a1b68271e2bbf968",
+            "f6d318f1423a878c",
+            "83b10398d9e93731",
+            "957ac6483eb01ec8",
+            "d326171670e8bc0e",
+            "e65be0270eb78ab4",
+            "6da383b328748996",
+            "80c716828b563f22",
+            "3dd1fc6332c933ed",
+            "e3e99798b9b0145a",
+            "48e6de829967d252",
+            "18db8f39096ae5f7",
+            "a0ca81d956292eb4",
+            "d0c2bcf50bfae1d3",
+            "03a383fef321a47f",
+            "e12940247f11693f",
+            "4593d33aa678da8d",
+            "875494a7d6bcbb24",
+            "b883a719777b1ab0",
+            "0006a383147e6708",
+            "7a62d55a9228b7f0",
+            "a4985de447961744",
+            "9b7e5f1e26377e7a",
+            "e575b40ebff62f6a",
+            "4f268fc6c7f57c6a",
+            "4e28b612e1c5ae9d",
+            "dcf851174eb2085e",
+            "d8d84890f3b847a5",
+            "1c77188f5e2bcf27",
+            "a244b1d0f48b73c3",
+            "bb4c25de25770465",
+            "293c5bc12f98f83f"
+        ],
+        "x": 34,
+        "y": 19,
+        "w": 752,
+        "h": 622
+    },
+    {
+        "id": "1de86cfb436a40e5",
+        "type": "group",
+        "z": "68702ca580581086",
+        "name": "select",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a405fc6cc0103b09",
+            "e6b71cd3db17baab",
+            "26b230cd675e480a",
+            "5ff14e235b1e1c91",
+            "a1ae7fb3f49f49a8",
+            "7ffb0c152ecde7e6",
+            "2a0acaaa4ade7886",
+            "7e4ee2d9d231c91c",
+            "410fecc18a2c2b8e",
+            "97478c5941bf826f",
+            "ded578b410eefa58",
+            "64f97a8a026bf3bc",
+            "61d6a5ae534d68ba",
+            "0c08a4f4f9c8e444",
+            "d9e86204570d78b9",
+            "45f9824b91950c0b",
+            "7f960c25d3be25a9",
+            "78242c748c94a6a3",
+            "837e4c86fe27aab6",
+            "b737730525b26fe3",
+            "498917e75e6c8335",
+            "b5c178e969b63c16",
+            "6dd27566961d0ca3",
+            "b9444a697b132ffa",
+            "aaa03a23758f217b",
+            "1e032cddbf43afe0",
+            "c047a35828a58765",
+            "b85e616bc8af95ec",
+            "86509401a72ddfcc",
+            "b81449432e42967b",
+            "634736e8ce341b3b",
+            "4eec3929c2d662b0",
+            "70c0a12bacc9d169",
+            "3ebb0625590b2d6c",
+            "31e398184e0bc4dc",
+            "0c3a16e41f2f8805",
+            "a674077f71685984",
+            "090949dc7e32b97f",
+            "2207ccf0f19e6378",
+            "89b01a922b16d6d7",
+            "f886d8809ea5258c",
+            "eceb26c85c0ebadc",
+            "fd6e55d947d9fa33",
+            "cb4ce7bf4bd0eada",
+            "27894e0e4c974de2",
+            "e23c638225ecaf88",
+            "1df6fe930d1c9474",
+            "f8dd68abb83ec47c",
+            "e9b51ba68df6b173",
+            "8f500a4695ba3a49",
+            "df4728b2dfc58514",
+            "04c1e2714c920f4c",
+            "80c8fdbe5c852898",
+            "6364167767fa9bb8",
+            "f7e1f0ceb6448dc9",
+            "fd0aedecef5641d8",
+            "f2d9e087cfcb207b",
+            "1a0a848fcffef89e",
+            "b0add348777b4630",
+            "3149d297fdc5b22f"
+        ],
+        "x": 32,
+        "y": 679,
+        "w": 1394,
+        "h": 642
     },
     {
         "id": "d8ef0639fb5dddc2",
@@ -487,110 +617,90 @@
         "h": 182
     },
     {
-        "id": "22db91f9036a3e88",
+        "id": "425ce9b0350ab4ed",
         "type": "group",
         "z": "68702ca580581086",
-        "name": "CREATE",
+        "name": "harsh delete",
         "style": {
             "label": true
         },
         "nodes": [
-            "b70ad4489eb22ac2",
-            "65be1f1e18a5e98d",
-            "a2d6c302b66e1f23",
-            "9bfc4e6309d7db75",
-            "02f60d3d1fef25bf",
-            "7ec1a0bbc051638b",
-            "8842a1345cce393c",
-            "c5671c9ce23322ba",
-            "a1b68271e2bbf968",
-            "f6d318f1423a878c",
-            "83b10398d9e93731",
-            "957ac6483eb01ec8",
-            "d326171670e8bc0e",
-            "e65be0270eb78ab4",
-            "6da383b328748996",
-            "80c716828b563f22",
-            "3dd1fc6332c933ed",
-            "e3e99798b9b0145a",
-            "48e6de829967d252",
-            "18db8f39096ae5f7",
-            "a0ca81d956292eb4",
-            "d0c2bcf50bfae1d3",
-            "03a383fef321a47f",
-            "e12940247f11693f",
-            "4593d33aa678da8d",
-            "875494a7d6bcbb24",
-            "b883a719777b1ab0",
-            "0006a383147e6708",
-            "7a62d55a9228b7f0",
-            "a4985de447961744",
-            "9b7e5f1e26377e7a",
-            "e575b40ebff62f6a",
-            "4f268fc6c7f57c6a",
-            "4e28b612e1c5ae9d",
-            "dcf851174eb2085e",
-            "d8d84890f3b847a5",
-            "1c77188f5e2bcf27",
-            "a244b1d0f48b73c3",
-            "bb4c25de25770465",
-            "293c5bc12f98f83f"
+            "c6b346e61d7367e2",
+            "4644ff4239a736a0",
+            "bcecdb4ecfd5dcd1",
+            "42e08f8f9a9cf958"
         ],
         "x": 34,
-        "y": 19,
-        "w": 752,
-        "h": 622
+        "y": 1359,
+        "w": 652,
+        "h": 82
     },
     {
-        "id": "1de86cfb436a40e5",
+        "id": "d539432d5f363e74",
         "type": "group",
         "z": "68702ca580581086",
-        "name": "SELECT",
+        "name": "insert",
         "style": {
             "label": true
         },
         "nodes": [
-            "a405fc6cc0103b09",
-            "e6b71cd3db17baab",
-            "26b230cd675e480a",
-            "5ff14e235b1e1c91",
-            "a1ae7fb3f49f49a8",
-            "7ffb0c152ecde7e6",
-            "2a0acaaa4ade7886",
-            "7e4ee2d9d231c91c",
-            "410fecc18a2c2b8e",
-            "97478c5941bf826f",
-            "ded578b410eefa58",
-            "64f97a8a026bf3bc",
-            "61d6a5ae534d68ba",
-            "0c08a4f4f9c8e444",
-            "d9e86204570d78b9",
-            "45f9824b91950c0b",
-            "7f960c25d3be25a9",
-            "78242c748c94a6a3",
-            "837e4c86fe27aab6",
-            "b737730525b26fe3",
-            "498917e75e6c8335",
-            "b5c178e969b63c16",
-            "6dd27566961d0ca3",
-            "b9444a697b132ffa",
-            "aaa03a23758f217b",
-            "1e032cddbf43afe0",
-            "c047a35828a58765",
-            "b85e616bc8af95ec",
-            "86509401a72ddfcc",
-            "b81449432e42967b",
-            "634736e8ce341b3b",
-            "4eec3929c2d662b0",
-            "70c0a12bacc9d169",
-            "3ebb0625590b2d6c",
-            "31e398184e0bc4dc",
-            "0c3a16e41f2f8805"
+            "a79326bb1cb35b24",
+            "aace209f81bc142b",
+            "843fc8c814eaf67a",
+            "02421e1a1f687624",
+            "24989589b58d7585",
+            "cd3858368498fe8e",
+            "529c22129f4838a1",
+            "6fc89e9674550c99",
+            "22fecddf3f9def37",
+            "05e99d5d7921f0c6",
+            "ac09713c872dc907",
+            "9ef4000180c7d5db",
+            "5f1df24e035dffac",
+            "45d7b1224e360347",
+            "0df888426092673e",
+            "9452707185f27823",
+            "db9f8920418ea454",
+            "ed16c5f49e9b5839",
+            "d20a94ee61d2c48c",
+            "271c7b712d7a33be",
+            "de0d4e3c69a1ac5e",
+            "a8218fddc093c126",
+            "280403936b4ce16e",
+            "ee252ecac569926e",
+            "4037400c44b16664",
+            "33adddea56ace933",
+            "2e12591665cf4544",
+            "2151e8803fc886d5",
+            "dcca974f185ac7dc",
+            "a5f22e659ab03a0b",
+            "41d3fc9ef758ce49",
+            "5925df3d3b611f42",
+            "042d083a3dfe936c",
+            "3cea5f112ea36c8f",
+            "59f59f68110e850f",
+            "0716e37d8d15eae3",
+            "d783ade26a8814e2",
+            "ec5708b0da0760d9",
+            "8b5226ae7d904dd2",
+            "08b123216098118d",
+            "4dacd1ae316cae2d",
+            "d866efdd056ecd50",
+            "ce7cee0f6cead3c2",
+            "cfeb9ec8a7783d87",
+            "4c6c821d6f1afd0c",
+            "f8c06c36ba3c663f",
+            "28a2375eec9446e2",
+            "e0e0df167bd7685f",
+            "3a48b16e73468e17",
+            "aaa5580f6634b6b1",
+            "b843fbfd3cdc9e64",
+            "ee34e3a042148923"
         ],
-        "x": 32,
-        "y": 679,
-        "w": 754,
-        "h": 522
+        "x": 34,
+        "y": 1479,
+        "w": 772,
+        "h": 682
     },
     {
         "id": "cbabc9b4106719b0",
@@ -4835,7 +4945,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 150,
-        "y": 440,
+        "y": 1020,
         "wires": [
             [
                 "969ea03e3f116418",
@@ -4858,7 +4968,7 @@
         "finalize": "",
         "libs": [],
         "x": 350,
-        "y": 440,
+        "y": 1020,
         "wires": [
             [
                 "e7447de12715b4b7"
@@ -4882,7 +4992,7 @@
         "finalize": "",
         "libs": [],
         "x": 530,
-        "y": 460,
+        "y": 1040,
         "wires": [
             [
                 "link_call_db_create_order"
@@ -4901,7 +5011,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 700,
-        "y": 460,
+        "y": 1040,
         "wires": [
             [
                 "6e8eb4fc8003bcc8",
@@ -4923,7 +5033,7 @@
         "finalize": "",
         "libs": [],
         "x": 1140,
-        "y": 480,
+        "y": 1060,
         "wires": [
             [
                 "e7447de12715b4b7"
@@ -5150,7 +5260,7 @@
         "statusCode": "",
         "headers": {},
         "x": 1330,
-        "y": 440,
+        "y": 1020,
         "wires": []
     },
     {
@@ -5261,7 +5371,7 @@
         "statusCode": "400",
         "headers": {},
         "x": 340,
-        "y": 400,
+        "y": 980,
         "wires": []
     },
     {
@@ -5279,7 +5389,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 140,
-        "y": 480,
+        "y": 1060,
         "wires": []
     },
     {
@@ -5380,7 +5490,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 840,
-        "y": 500,
+        "y": 1080,
         "wires": []
     },
     {
@@ -5406,7 +5516,7 @@
         "payload": "{\"orderSource\":\"site\",\"shopId\":1,\"customerName\":\"juan\",\"customerEmail\":\"a.h@gmail.com\",\"customerPhone\":\"633248971\",\"pickupDate\":\"2026-01-17\",\"pickupTime\":\"morning\",\"items\":[{\"productId\":2,\"productVariantId\":4,\"quantity\":1,\"unitPrice\":13,\"isGlutenFree\":false,\"isLactoseFree\":true,\"isSugarFree\":false},{\"productId\":3,\"productVariantId\":6,\"quantity\":3,\"unitPrice\":13,\"isGlutenFree\":true,\"isLactoseFree\":false,\"isSugarFree\":false},{\"productId\":3,\"productVariantId\":5,\"quantity\":4,\"unitPrice\":6.5,\"isGlutenFree\":false,\"isLactoseFree\":false,\"isSugarFree\":false},{\"productId\":2,\"productVariantId\":3,\"quantity\":1,\"unitPrice\":6.5,\"isGlutenFree\":false,\"isLactoseFree\":false,\"isSugarFree\":false}],\"totalPrice\":84.5}",
         "payloadType": "json",
         "x": 230,
-        "y": 500,
+        "y": 1080,
         "wires": [
             [
                 "function_validate_order_data"
@@ -5475,7 +5585,7 @@
         "finalize": "",
         "libs": [],
         "x": 860,
-        "y": 460,
+        "y": 1040,
         "wires": [
             [
                 "e7447de12715b4b7"
@@ -5500,8 +5610,116 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 980,
-        "y": 500,
+        "y": 1080,
         "wires": []
+    },
+    {
+        "id": "3d0da0f4eb0d3489",
+        "type": "inject",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 1180,
+        "wires": [
+            [
+                "b700827b1fcde0c7"
+            ]
+        ]
+    },
+    {
+        "id": "b700827b1fcde0c7",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "function 3",
+        "func": "const SECRET_KEY = env.get(\"STRIPE_SECRET_KEY\") || '';\n\nmsg.url = \"https://api.stripe.com/v1/checkout/sessions\";\nmsg.method = \"POST\";\n\nmsg.headers = {\n    'Authorization': `Bearer ${SECRET_KEY}`,\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\n\nconst orderId = '1';\nconst customerEmail = \"a.miklukha05@gmail.com\";\n\nconst lineItems = [{\n        [`line_items[0][price_data][currency]`]: 'eur',\n        [`line_items[0][price_data][product_data][name]`]: 'product1',\n        [`line_items[0][price_data][unit_amount]`]: 50,\n        [`line_items[0][quantity]`]: 1\n}];\n\nlet formData = {\n    'success_url': 'http://localhost:5173/checkout/success?session_id={CHECKOUT_SESSION_ID}',\n    'cancel_url': 'http://localhost:5173/checkout/cancel?order_id=' + orderId,\n    'mode': 'payment',\n    'customer_email': customerEmail,\n    'metadata[order_id]': orderId\n};\n\nlineItems.forEach(item => {\n    Object.assign(formData, item);\n});\n\nconst body = Object.entries(formData)\n    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)\n    .join('&');\n\nmsg.payload = body;\n\nreturn msg;\n\n\n// const session = await stripe.checkout.sessions.create({\n//     success_url: 'https://ascremosas.com/checkout/success?session_id={CHECKOUT_SESSION_ID}',\n//     cancel_url: 'https://ascremosas.com/checkout/cancel',\n//     mode: 'payment',\n//     customer_email: 'cliente@email.com',\n\n//     line_items: [\n//         {\n//             price_data: {\n//                 currency: 'eur',\n//                 product_data: {\n//                     name: 'Tarta de Queso Original',\n//                     images: ['https://ascremosas.com/images/tarta.jpg']\n//                 },\n//                 unit_amount: 2500  // 25.00€ в центах!\n//             },\n//             quantity: 2\n//         },\n//         {\n//             price_data: {\n//                 currency: 'eur',\n//                 product_data: {\n//                     name: 'Tarta de Chocolate'\n//                 },\n//                 unit_amount: 2800  // 28.00€\n//             },\n//             quantity: 1\n//         }\n//     ],\n\n//     metadata: {\n//         order_id: 'ABC123'  // Твій ID замовлення для webhook\n//     }\n// });\n\n// const session = await stripe.checkout.sessions.create({\n//     success_url: 'https://example.com/success',\n//     line_items: [\n//         {\n//             price: 'price_1MotwRLkdIwHu7ixYcPLm5uZ',\n//             quantity: 2,\n//         },\n//     ],\n//     mode: 'payment',\n// });\n\n\n\n\n\n// import Stripe from 'stripe';\n\n// const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {\n//     apiVersion: '2024-12-18.acacia'\n// });\n\n// export const stripeService = {\n//     async createCheckoutSession(order: {\n//         orderId: string;\n//         items: Array<{\n//             name: string;\n//             quantity: number;\n//             unitPrice: number;\n//             image?: string;\n//         }>;\n//         customerEmail: string;\n//         totalPrice: number;\n//     }) {\n//         const session = await stripe.checkout.sessions.create({\n//             payment_method_types: ['card'],\n//             mode: 'payment',\n//             customer_email: order.customerEmail,\n//             client_reference_id: order.orderId,\n\n//             line_items: order.items.map(item => ({\n//                 price_data: {\n//                     currency: 'eur',\n//                     product_data: {\n//                         name: item.name,\n//                         images: item.image ? [item.image] : []\n//                     },\n//                     unit_amount: Math.round(item.unitPrice * 100) // Stripe працює в центах\n//                 },\n//                 quantity: item.quantity\n//             })),\n\n//             success_url: `${process.env.FRONTEND_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,\n//             cancel_url: `${process.env.FRONTEND_URL}/checkout/cancel?order_id=${order.orderId}`,\n\n//             metadata: {\n//                 order_id: order.orderId\n//             },\n\n//             expires_at: Math.floor(Date.now() / 1000) + 30 * 60 // 30 хвилин\n//         });\n\n//         return session;\n//     },\n\n//     async retrieveSession(sessionId: string) {\n//         return stripe.checkout.sessions.retrieve(sessionId);\n//     },\n\n//     constructWebhookEvent(payload: Buffer, signature: string) {\n//         return stripe.webhooks.constructEvent(\n//             payload,\n//             signature,\n//             process.env.STRIPE_WEBHOOK_SECRET!\n//         );\n//     }\n// };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1180,
+        "wires": [
+            [
+                "46c4dc8895240660"
+            ]
+        ]
+    },
+    {
+        "id": "46c4dc8895240660",
+        "type": "http request",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 1180,
+        "wires": [
+            [
+                "73a88285fdf71dad"
+            ]
+        ]
+    },
+    {
+        "id": "73a88285fdf71dad",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "14f8ec4be427e0b5",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "session id",
+        "func": "const session_id = \"cs_test_a1snRSULg8nvd0vwfcgaj82WuLNttvLwMu4jjTShMwr0xIEOWHAQ2pbgXm\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 1260,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "4e28b612e1c5ae9d",
@@ -5539,7 +5757,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "shops",
-        "func": "msg.payload = `\nCREATE TABLE IF NOT EXISTS shops (\n  id SERIAL PRIMARY KEY,\n  name TEXT NOT NULL,\n  address TEXT NOT NULL,\n  google_maps_url TEXT,\n  phone TEXT,\n  opening_hours TEXT,\n  abbreviation VARCHAR(3)\n);`\n\nreturn msg;",
+        "func": "msg.payload = `\nCREATE TABLE IF NOT EXISTS shops (\n  id SERIAL PRIMARY KEY,\n  name TEXT NOT NULL,\n  address TEXT NOT NULL,\n  google_maps_url TEXT,\n  phone TEXT,\n  opening_hours JSONB,\n  abbreviation VARCHAR(3)\n);`\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5653,7 +5871,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 400,
+        "x": 500,
         "y": 720,
         "wires": [
             [
@@ -5675,7 +5893,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 530,
+        "x": 630,
         "y": 720,
         "wires": []
     },
@@ -5829,7 +6047,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 420,
+        "x": 500,
         "y": 780,
         "wires": [
             [
@@ -5851,92 +6069,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
+        "x": 640,
         "y": 780,
-        "wires": []
-    },
-    {
-        "id": "d33218838893e6e7",
-        "type": "inject",
-        "z": "68702ca580581086",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 960,
-        "y": 660,
-        "wires": [
-            [
-                "8efb3ff93b197b99"
-            ]
-        ]
-    },
-    {
-        "id": "8efb3ff93b197b99",
-        "type": "function",
-        "z": "68702ca580581086",
-        "name": "categories",
-        "func": "msg.payload = `\nCREATE TABLE IF NOT EXISTS categories (\n  id SERIAL PRIMARY KEY,\n  name TEXT NOT NULL UNIQUE,\n  slug TEXT NOT NULL UNIQUE,\n  description TEXT\n);\n`\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1110,
-        "y": 660,
-        "wires": [
-            [
-                "bc250de2711cda79"
-            ]
-        ]
-    },
-    {
-        "id": "bc250de2711cda79",
-        "type": "link call",
-        "z": "68702ca580581086",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1260,
-        "y": 660,
-        "wires": [
-            [
-                "8c23acf0056e1a9d"
-            ]
-        ]
-    },
-    {
-        "id": "8c23acf0056e1a9d",
-        "type": "debug",
-        "z": "68702ca580581086",
-        "name": "categories",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1410,
-        "y": 660,
         "wires": []
     },
     {
@@ -6001,7 +6135,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 440,
+        "x": 500,
         "y": 840,
         "wires": [
             [
@@ -6023,7 +6157,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 590,
+        "x": 650,
         "y": 840,
         "wires": []
     },
@@ -6089,7 +6223,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 480,
+        "x": 500,
         "y": 900,
         "wires": [
             [
@@ -6111,92 +6245,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
+        "x": 640,
         "y": 900,
-        "wires": []
-    },
-    {
-        "id": "f1214d2dbed911cb",
-        "type": "inject",
-        "z": "68702ca580581086",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 960,
-        "y": 760,
-        "wires": [
-            [
-                "8c9197deefc95e5d"
-            ]
-        ]
-    },
-    {
-        "id": "8c9197deefc95e5d",
-        "type": "function",
-        "z": "68702ca580581086",
-        "name": "product_variants",
-        "func": "msg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  name TEXT NOT NULL,           -- 'mini', 'medio', 'grande'\n  measures TEXT NOT NULL,       -- '10x15 cm', '15x20 cm', '20x30 cm'\n  weight_grams INTEGER,         --  800, 1200, 2000\n  price NUMERIC(10,2) NOT NULL\n);\n`\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1130,
-        "y": 760,
-        "wires": [
-            [
-                "f78c32e28b586945"
-            ]
-        ]
-    },
-    {
-        "id": "f78c32e28b586945",
-        "type": "link call",
-        "z": "68702ca580581086",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1300,
-        "y": 760,
-        "wires": [
-            [
-                "bc00065b46901dc4"
-            ]
-        ]
-    },
-    {
-        "id": "bc00065b46901dc4",
-        "type": "debug",
-        "z": "68702ca580581086",
-        "name": "product_variants",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1470,
-        "y": 760,
         "wires": []
     },
     {
@@ -6261,7 +6311,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 480,
+        "x": 500,
         "y": 940,
         "wires": [
             [
@@ -6283,7 +6333,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 650,
+        "x": 670,
         "y": 940,
         "wires": []
     },
@@ -6437,7 +6487,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 480,
+        "x": 500,
         "y": 1000,
         "wires": [
             [
@@ -6459,7 +6509,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 610,
+        "x": 630,
         "y": 1000,
         "wires": []
     },
@@ -6525,7 +6575,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 480,
+        "x": 500,
         "y": 1100,
         "wires": [
             [
@@ -6547,7 +6597,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 630,
+        "x": 650,
         "y": 1100,
         "wires": []
     },
@@ -6789,7 +6839,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 478,
+        "x": 500,
         "y": 1160,
         "wires": [
             [
@@ -6811,7 +6861,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 628,
+        "x": 640,
         "y": 1160,
         "wires": []
     },
@@ -6965,7 +7015,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 480,
+        "x": 500,
         "y": 1040,
         "wires": [
             [
@@ -6987,7 +7037,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 630,
+        "x": 650,
         "y": 1040,
         "wires": []
     },
@@ -7256,90 +7306,6 @@
         "wires": []
     },
     {
-        "id": "e862c8946a4a9fbd",
-        "type": "inject",
-        "z": "68702ca580581086",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 960,
-        "y": 720,
-        "wires": [
-            [
-                "9229db61bacc3c57"
-            ]
-        ]
-    },
-    {
-        "id": "9229db61bacc3c57",
-        "type": "function",
-        "z": "68702ca580581086",
-        "name": "products",
-        "func": "msg.payload = `\nCREATE TABLE IF NOT EXISTS products (\n  id SERIAL PRIMARY KEY,\n  name TEXT NOT NULL UNIQUE,\n  slug TEXT NOT NULL UNIQUE,\n  description TEXT,\n  price NUMERIC(10,2),\n  images TEXT[],\n  allergens TEXT[],\n  available BOOLEAN DEFAULT TRUE,\n  category_id INTEGER REFERENCES categories(id),\n  is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n  is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n  is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n  is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n  deleted BOOLEAN DEFAULT FALSE,  \n  deleted_at TIMESTAMP WITH TIME ZONE \n);\n`\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1100,
-        "y": 720,
-        "wires": [
-            [
-                "a6bb375e2a326fee"
-            ]
-        ]
-    },
-    {
-        "id": "a6bb375e2a326fee",
-        "type": "link call",
-        "z": "68702ca580581086",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1260,
-        "y": 720,
-        "wires": [
-            [
-                "c4cf64b2fac0af7b"
-            ]
-        ]
-    },
-    {
-        "id": "c4cf64b2fac0af7b",
-        "type": "debug",
-        "z": "68702ca580581086",
-        "name": "products",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1400,
-        "y": 720,
-        "wires": []
-    },
-    {
         "id": "7a62d55a9228b7f0",
         "type": "inject",
         "z": "68702ca580581086",
@@ -7431,6 +7397,7 @@
         "id": "090949dc7e32b97f",
         "type": "inject",
         "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
         "name": "",
         "props": [
             {
@@ -7448,8 +7415,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 800,
-        "y": 820,
+        "x": 140,
+        "y": 1240,
         "wires": [
             [
                 "a674077f71685984"
@@ -7460,6 +7427,7 @@
         "id": "a674077f71685984",
         "type": "function",
         "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
         "name": "categories",
         "func": "msg.payload = `SELECT * FROM categories;`\n\nreturn msg;",
         "outputs": 1,
@@ -7468,8 +7436,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 950,
-        "y": 820,
+        "x": 290,
+        "y": 1240,
         "wires": [
             [
                 "2207ccf0f19e6378"
@@ -7480,14 +7448,15 @@
         "id": "2207ccf0f19e6378",
         "type": "link call",
         "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
         "name": "",
         "links": [
             "7d0d97bd91fee1c8"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 1100,
-        "y": 820,
+        "x": 500,
+        "y": 1240,
         "wires": [
             [
                 "89b01a922b16d6d7"
@@ -7498,6 +7467,7 @@
         "id": "89b01a922b16d6d7",
         "type": "debug",
         "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
         "name": "categories",
         "active": true,
         "tosidebar": true,
@@ -7507,14 +7477,15 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1310,
-        "y": 820,
+        "x": 650,
+        "y": 1240,
         "wires": []
     },
     {
         "id": "eceb26c85c0ebadc",
         "type": "inject",
         "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
         "name": "",
         "props": [
             {
@@ -7532,8 +7503,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 800,
-        "y": 860,
+        "x": 140,
+        "y": 1280,
         "wires": [
             [
                 "f886d8809ea5258c"
@@ -7544,6 +7515,7 @@
         "id": "f886d8809ea5258c",
         "type": "function",
         "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
         "name": "category_translations",
         "func": "msg.payload = `SELECT * FROM category_translations;`\n\nreturn msg;",
         "outputs": 1,
@@ -7552,8 +7524,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
-        "y": 860,
+        "x": 320,
+        "y": 1280,
         "wires": [
             [
                 "fd6e55d947d9fa33"
@@ -7564,14 +7536,15 @@
         "id": "fd6e55d947d9fa33",
         "type": "link call",
         "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
         "name": "",
         "links": [
             "7d0d97bd91fee1c8"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 1160,
-        "y": 860,
+        "x": 500,
+        "y": 1280,
         "wires": [
             [
                 "cb4ce7bf4bd0eada"
@@ -7582,6 +7555,7 @@
         "id": "cb4ce7bf4bd0eada",
         "type": "debug",
         "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
         "name": "category_translations",
         "active": true,
         "tosidebar": true,
@@ -7591,14 +7565,15 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1340,
-        "y": 860,
+        "x": 680,
+        "y": 1280,
         "wires": []
     },
     {
         "id": "a79326bb1cb35b24",
         "type": "function",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "category_translations",
         "func": "const category_id = 1;\nconst language_code = 'en';\nconst name = 'Creamies';\n\nmsg.queryParameters = [category_id, language_code, name];\nmsg.payload = `\n    INSERT INTO category_translations (category_id, language_code, name)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;",
         "outputs": 1,
@@ -7607,8 +7582,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 1480,
+        "x": 300,
+        "y": 1620,
         "wires": [
             [
                 "843fc8c814eaf67a"
@@ -7619,71 +7594,8 @@
         "id": "aace209f81bc142b",
         "type": "inject",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "insert",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 110,
-        "y": 1480,
-        "wires": [
-            [
-                "a79326bb1cb35b24"
-            ]
-        ]
-    },
-    {
-        "id": "843fc8c814eaf67a",
-        "type": "link call",
-        "z": "68702ca580581086",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 460,
-        "y": 1480,
-        "wires": [
-            [
-                "02421e1a1f687624"
-            ]
-        ]
-    },
-    {
-        "id": "02421e1a1f687624",
-        "type": "debug",
-        "z": "68702ca580581086",
-        "name": "category_translations",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 1480,
-        "wires": []
-    },
-    {
-        "id": "c6b346e61d7367e2",
-        "type": "inject",
-        "z": "68702ca580581086",
-        "name": "harsh delete",
         "props": [
             {
                 "p": "payload"
@@ -7701,7 +7613,74 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 1420,
+        "y": 1620,
+        "wires": [
+            [
+                "a79326bb1cb35b24"
+            ]
+        ]
+    },
+    {
+        "id": "843fc8c814eaf67a",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 1620,
+        "wires": [
+            [
+                "02421e1a1f687624"
+            ]
+        ]
+    },
+    {
+        "id": "02421e1a1f687624",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "category_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "c6b346e61d7367e2",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "425ce9b0350ab4ed",
+        "name": "harsh delete",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 1400,
         "wires": [
             [
                 "4644ff4239a736a0"
@@ -7712,6 +7691,7 @@
         "id": "4644ff4239a736a0",
         "type": "function",
         "z": "68702ca580581086",
+        "g": "425ce9b0350ab4ed",
         "name": "products",
         "func": "msg.payload = `\nTRUNCATE TABLE products RESTART IDENTITY CASCADE;\n`\n\nreturn msg;",
         "outputs": 1,
@@ -7720,8 +7700,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 1420,
+        "x": 300,
+        "y": 1400,
         "wires": [
             [
                 "bcecdb4ecfd5dcd1"
@@ -7732,14 +7712,15 @@
         "id": "bcecdb4ecfd5dcd1",
         "type": "link call",
         "z": "68702ca580581086",
+        "g": "425ce9b0350ab4ed",
         "name": "",
         "links": [
             "7d0d97bd91fee1c8"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 420,
-        "y": 1420,
+        "x": 440,
+        "y": 1400,
         "wires": [
             [
                 "42e08f8f9a9cf958"
@@ -7750,6 +7731,7 @@
         "id": "42e08f8f9a9cf958",
         "type": "debug",
         "z": "68702ca580581086",
+        "g": "425ce9b0350ab4ed",
         "name": "products",
         "active": true,
         "tosidebar": true,
@@ -7759,24 +7741,25 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
-        "y": 1420,
+        "x": 580,
+        "y": 1400,
         "wires": []
     },
     {
         "id": "db9f8920418ea454",
         "type": "function",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "products",
-        "func": "const category_id = 1;\nconst images = ['https://res.cloudinary.com/ddz81wl4h/image/upload/v1765269613/tarta_pistach_zaiexu.png'];\nconst slug = 'pistacho';\n\nmsg.queryParameters = [slug, images, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, images, category_id, is_posible_sugar_free)\n    VALUES ($1, $2, $3, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "func": "const category_id = 1;\nconst images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765270355/tarta_clasica_xpfpbp.webp\", \"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765558660/caja_arriba_calle_np7sol.jpg\"]\nconst slug = 'clasica';\n\nmsg.queryParameters = [slug, images, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, images, category_id, is_posible_sugar_free)\n    VALUES ($1, $2, $3, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 240,
-        "y": 1540,
+        "x": 260,
+        "y": 1740,
         "wires": [
             [
                 "d20a94ee61d2c48c"
@@ -7787,6 +7770,7 @@
         "id": "ed16c5f49e9b5839",
         "type": "inject",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "insert",
         "props": [
             {
@@ -7804,8 +7788,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 1540,
+        "x": 130,
+        "y": 1740,
         "wires": [
             [
                 "db9f8920418ea454"
@@ -7816,14 +7800,15 @@
         "id": "d20a94ee61d2c48c",
         "type": "link call",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "",
         "links": [
             "7d0d97bd91fee1c8"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 460,
-        "y": 1540,
+        "x": 480,
+        "y": 1740,
         "wires": [
             [
                 "271c7b712d7a33be"
@@ -7834,6 +7819,7 @@
         "id": "271c7b712d7a33be",
         "type": "debug",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "products",
         "active": true,
         "tosidebar": true,
@@ -7843,14 +7829,15 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 1540,
+        "x": 620,
+        "y": 1740,
         "wires": []
     },
     {
         "id": "a5f22e659ab03a0b",
         "type": "function",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "product_translations",
         "func": "const product_id = 3;\nconst language_code = 'en';\nconst name = 'Creamy pistachio cheesecake';\nconst description = 'Our creamy pistachio cheesecake brings together smooth texture and a beautifully balanced flavor. Made with premium pistachios, it offers a natural aroma and an elegant, refined finish. A sophisticated treat for those who love something uniquely delightful.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
         "outputs": 1,
@@ -7859,8 +7846,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 1580,
+        "x": 300,
+        "y": 1880,
         "wires": [
             [
                 "41d3fc9ef758ce49"
@@ -7871,6 +7858,7 @@
         "id": "dcca974f185ac7dc",
         "type": "inject",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "insert",
         "props": [
             {
@@ -7888,8 +7876,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 1580,
+        "x": 130,
+        "y": 1880,
         "wires": [
             [
                 "a5f22e659ab03a0b"
@@ -7900,14 +7888,15 @@
         "id": "41d3fc9ef758ce49",
         "type": "link call",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "",
         "links": [
             "7d0d97bd91fee1c8"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 460,
-        "y": 1580,
+        "x": 480,
+        "y": 1880,
         "wires": [
             [
                 "5925df3d3b611f42"
@@ -7918,6 +7907,7 @@
         "id": "5925df3d3b611f42",
         "type": "debug",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "product_translations",
         "active": true,
         "tosidebar": true,
@@ -7927,14 +7917,15 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 1580,
+        "x": 660,
+        "y": 1880,
         "wires": []
     },
     {
         "id": "042d083a3dfe936c",
         "type": "function",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "product_translations",
         "func": "const product_id = 3;\nconst language_code = 'es';\nconst name = 'Cremosa de pistacho';\nconst description = 'Nuestra cremosa de pistacho destaca por su textura suave y un sabor delicadamente equilibrado. Elaborada con auténtico pistacho premium, ofrece un aroma natural y un toque elegante en cada bocado. Un placer refinado para quienes buscan algo verdaderamente especial.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
         "outputs": 1,
@@ -7943,8 +7934,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 1620,
+        "x": 300,
+        "y": 1920,
         "wires": [
             [
                 "59f59f68110e850f"
@@ -7955,6 +7946,7 @@
         "id": "3cea5f112ea36c8f",
         "type": "inject",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "insert",
         "props": [
             {
@@ -7972,8 +7964,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 1620,
+        "x": 130,
+        "y": 1920,
         "wires": [
             [
                 "042d083a3dfe936c"
@@ -7984,14 +7976,15 @@
         "id": "59f59f68110e850f",
         "type": "link call",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "",
         "links": [
             "7d0d97bd91fee1c8"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 460,
-        "y": 1620,
+        "x": 480,
+        "y": 1920,
         "wires": [
             [
                 "0716e37d8d15eae3"
@@ -8002,6 +7995,7 @@
         "id": "0716e37d8d15eae3",
         "type": "debug",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "product_translations",
         "active": true,
         "tosidebar": true,
@@ -8011,14 +8005,15 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 1620,
+        "x": 660,
+        "y": 1920,
         "wires": []
     },
     {
         "id": "d783ade26a8814e2",
         "type": "function",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "product_translations",
         "func": "const product_id = 3;\nconst language_code = 'gl';\nconst name = 'Cremosa de pistacho';\nconst description = 'A nosa cremosa de pistacho destaca pola súa textura suave e un sabor equilibrado e delicado. Elaborada con pistacho premium auténtico, desprende un aroma natural e un toque elegante en cada bocado. Un doce refinado para quen busca algo verdadeiramente especial.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
         "outputs": 1,
@@ -8027,8 +8022,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 1660,
+        "x": 300,
+        "y": 1960,
         "wires": [
             [
                 "8b5226ae7d904dd2"
@@ -8039,6 +8034,7 @@
         "id": "ec5708b0da0760d9",
         "type": "inject",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "insert",
         "props": [
             {
@@ -8056,8 +8052,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 1660,
+        "x": 130,
+        "y": 1960,
         "wires": [
             [
                 "d783ade26a8814e2"
@@ -8068,14 +8064,15 @@
         "id": "8b5226ae7d904dd2",
         "type": "link call",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "",
         "links": [
             "7d0d97bd91fee1c8"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 460,
-        "y": 1660,
+        "x": 480,
+        "y": 1960,
         "wires": [
             [
                 "08b123216098118d"
@@ -8084,6 +8081,1064 @@
     },
     {
         "id": "08b123216098118d",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "d866efdd056ecd50",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "product_variants",
+        "func": "const product_id = 1;\nconst sort_order = 1;\nconst price = 5; // 5 trad 6, 11 tran 12 sab\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 2020,
+        "wires": [
+            [
+                "ce7cee0f6cead3c2"
+            ]
+        ]
+    },
+    {
+        "id": "4dacd1ae316cae2d",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 2020,
+        "wires": [
+            [
+                "d866efdd056ecd50"
+            ]
+        ]
+    },
+    {
+        "id": "ce7cee0f6cead3c2",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 2020,
+        "wires": [
+            [
+                "cfeb9ec8a7783d87"
+            ]
+        ]
+    },
+    {
+        "id": "cfeb9ec8a7783d87",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "4c6c821d6f1afd0c",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "product_variants",
+        "func": "const product_id = 1;\nconst sort_order = 2;\nconst price = 11; // 5 trad 6, 11 tran 12 sab\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 2060,
+        "wires": [
+            [
+                "28a2375eec9446e2"
+            ]
+        ]
+    },
+    {
+        "id": "f8c06c36ba3c663f",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 2060,
+        "wires": [
+            [
+                "4c6c821d6f1afd0c"
+            ]
+        ]
+    },
+    {
+        "id": "28a2375eec9446e2",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 2060,
+        "wires": [
+            [
+                "e0e0df167bd7685f"
+            ]
+        ]
+    },
+    {
+        "id": "e0e0df167bd7685f",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "27894e0e4c974de2",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 900,
+        "y": 900,
+        "wires": [
+            [
+                "e23c638225ecaf88"
+            ]
+        ]
+    },
+    {
+        "id": "e23c638225ecaf88",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "products",
+        "func": "msg.payload = `\nSELECT *\nFROM products`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 900,
+        "wires": [
+            [
+                "1df6fe930d1c9474"
+            ]
+        ]
+    },
+    {
+        "id": "1df6fe930d1c9474",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1180,
+        "y": 900,
+        "wires": [
+            [
+                "f8dd68abb83ec47c"
+            ]
+        ]
+    },
+    {
+        "id": "f8dd68abb83ec47c",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "e9b51ba68df6b173",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 900,
+        "y": 940,
+        "wires": [
+            [
+                "8f500a4695ba3a49"
+            ]
+        ]
+    },
+    {
+        "id": "8f500a4695ba3a49",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "products",
+        "func": "msg.payload = `\nSELECT *\nFROM product_translations`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 940,
+        "wires": [
+            [
+                "df4728b2dfc58514"
+            ]
+        ]
+    },
+    {
+        "id": "df4728b2dfc58514",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1180,
+        "y": 940,
+        "wires": [
+            [
+                "04c1e2714c920f4c"
+            ]
+        ]
+    },
+    {
+        "id": "04c1e2714c920f4c",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "80c8fdbe5c852898",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 900,
+        "y": 980,
+        "wires": [
+            [
+                "6364167767fa9bb8"
+            ]
+        ]
+    },
+    {
+        "id": "6364167767fa9bb8",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "products",
+        "func": "msg.payload = `\nSELECT *\nFROM product_variants`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 980,
+        "wires": [
+            [
+                "f7e1f0ceb6448dc9"
+            ]
+        ]
+    },
+    {
+        "id": "f7e1f0ceb6448dc9",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1180,
+        "y": 980,
+        "wires": [
+            [
+                "fd0aedecef5641d8"
+            ]
+        ]
+    },
+    {
+        "id": "fd0aedecef5641d8",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "f2d9e087cfcb207b",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 900,
+        "y": 1020,
+        "wires": [
+            [
+                "1a0a848fcffef89e"
+            ]
+        ]
+    },
+    {
+        "id": "1a0a848fcffef89e",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "products",
+        "func": "msg.payload = `\nSELECT *\nFROM product_variant_translations`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1020,
+        "wires": [
+            [
+                "b0add348777b4630"
+            ]
+        ]
+    },
+    {
+        "id": "b0add348777b4630",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1180,
+        "y": 1020,
+        "wires": [
+            [
+                "3149d297fdc5b22f"
+            ]
+        ]
+    },
+    {
+        "id": "3149d297fdc5b22f",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "1de86cfb436a40e5",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "24989589b58d7585",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1520,
+        "wires": [
+            [
+                "cd3858368498fe8e"
+            ]
+        ]
+    },
+    {
+        "id": "cd3858368498fe8e",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "admins",
+        "func": "const hash_password_anya = bcrypt.hashSync('1234567890', 10);\nconst hash_password_santi = bcrypt.hashSync('1234567890', 10);\nconst hash_password_jandro = bcrypt.hashSync('1234567890', 10);\n\nmsg.payload = `\nINSERT INTO admins (name, email, password_hash, role) VALUES\n('anya', 'anya@mail.com', '${hash_password_anya}', 'owner'),\n('santi', 'santi@mail.com', '${hash_password_santi}', 'owner'),\n('alejandro', 'alejandro@mail.com', '${hash_password_jandro}', 'admin');`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "bcrypt",
+                "module": "bcrypt"
+            }
+        ],
+        "x": 260,
+        "y": 1520,
+        "wires": [
+            [
+                "529c22129f4838a1"
+            ]
+        ]
+    },
+    {
+        "id": "529c22129f4838a1",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 1520,
+        "wires": [
+            [
+                "6fc89e9674550c99"
+            ]
+        ]
+    },
+    {
+        "id": "6fc89e9674550c99",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "admins",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "22fecddf3f9def37",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1580,
+        "wires": [
+            [
+                "05e99d5d7921f0c6"
+            ]
+        ]
+    },
+    {
+        "id": "05e99d5d7921f0c6",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "category",
+        "func": "msg.queryParameters = ['cremosas'];\nmsg.payload = `\n    INSERT INTO categories (slug)\n    VALUES ($1)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 1580,
+        "wires": [
+            [
+                "ac09713c872dc907"
+            ]
+        ]
+    },
+    {
+        "id": "ac09713c872dc907",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 1580,
+        "wires": [
+            [
+                "9ef4000180c7d5db"
+            ]
+        ]
+    },
+    {
+        "id": "9ef4000180c7d5db",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "category_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "5f1df24e035dffac",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1680,
+        "wires": [
+            [
+                "45d7b1224e360347"
+            ]
+        ]
+    },
+    {
+        "id": "45d7b1224e360347",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "shops",
+        "func": "const opening_hours = {\n    monday: '11:00 - 14:00 <br/> 16:30 - 20:30',\n    tuesday: '11:00 - 14:00 <br/> 16:30 - 20:30',\n    wednesday: '11:00 - 14:00 <br/> 16:30 - 20:30',\n    thursday: '11:00 - 14:00 <br/> 16:30 - 20:30',\n    friday: '11:00 - 14:00 <br/> 16:30 - 20:30',\n    saturday: '11:00 - 14:00 <br/> 17:00 - 21:00',\n    sunday: 'closed',\n}\n\nmsg.payload = `\nINSERT INTO shops (name, address, google_maps_url, phone, opening_hours, abbreviation) VALUES\n('AS Cremosas Coruña', 'Calle San Nicolás 5 <br /> 15001 A Coruña, España', 'https://maps.app.goo.gl/ho7LCFCHNHPRKyrq8', '881068091', '${JSON.stringify(opening_hours)}', 'LCG');`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 1680,
+        "wires": [
+            [
+                "0df888426092673e"
+            ]
+        ]
+    },
+    {
+        "id": "0df888426092673e",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 1680,
+        "wires": [
+            [
+                "9452707185f27823"
+            ]
+        ]
+    },
+    {
+        "id": "9452707185f27823",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "admins",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "de0d4e3c69a1ac5e",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "func": "const category_id = 1;\nconst images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765269613/tarta_chocolate_cmqgwc.png\",\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765558660/caja_arriba_calle_np7sol.jpg\"]\nconst slug = 'nutella';\n\nmsg.queryParameters = [slug, images, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, images, category_id, is_posible_sugar_free)\n    VALUES ($1, $2, $3, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 1780,
+        "wires": [
+            [
+                "280403936b4ce16e"
+            ]
+        ]
+    },
+    {
+        "id": "a8218fddc093c126",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1780,
+        "wires": [
+            [
+                "de0d4e3c69a1ac5e"
+            ]
+        ]
+    },
+    {
+        "id": "280403936b4ce16e",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 1780,
+        "wires": [
+            [
+                "ee252ecac569926e"
+            ]
+        ]
+    },
+    {
+        "id": "ee252ecac569926e",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "4037400c44b16664",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "func": "const category_id = 1;\nconst images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765269613/tarta_pistach_zaiexu.png\",\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765558660/caja_arriba_calle_np7sol.jpg\"]\nconst slug = 'pistacho';\n\nmsg.queryParameters = [slug, images, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, images, category_id, is_posible_sugar_free)\n    VALUES ($1, $2, $3, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 1820,
+        "wires": [
+            [
+                "2e12591665cf4544"
+            ]
+        ]
+    },
+    {
+        "id": "33adddea56ace933",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1820,
+        "wires": [
+            [
+                "4037400c44b16664"
+            ]
+        ]
+    },
+    {
+        "id": "2e12591665cf4544",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 1820,
+        "wires": [
+            [
+                "2151e8803fc886d5"
+            ]
+        ]
+    },
+    {
+        "id": "2151e8803fc886d5",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "77b444ea494ee108",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 2;\nconst language_code = 'en';\nconst name = 'Creamy nutella cheesecake';\nconst description = 'Our creamy nutella cheesecake offers a perfect balance of indulgence and smooth elegance. Made with rich nutella, it features a velvety texture and an intense hazelnut-chocolate flavor that melts in your mouth. An irresistible delight for true nutella lovers.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 1880,
+        "wires": [
+            [
+                "050ec7a1567038db"
+            ]
+        ]
+    },
+    {
+        "id": "dbd78ccf1b24f79c",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 910,
+        "y": 1880,
+        "wires": [
+            [
+                "77b444ea494ee108"
+            ]
+        ]
+    },
+    {
+        "id": "050ec7a1567038db",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1260,
+        "y": 1880,
+        "wires": [
+            [
+                "0127bd868586b293"
+            ]
+        ]
+    },
+    {
+        "id": "0127bd868586b293",
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
@@ -8095,32 +9150,452 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 1660,
+        "x": 1440,
+        "y": 1880,
         "wires": []
     },
     {
-        "id": "d866efdd056ecd50",
+        "id": "f2e068474d6f555e",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 2;\nconst language_code = 'es';\nconst name = 'Cremosa de nutella';\nconst description = 'Nuestra cremosa de nutella ofrece un equilibrio perfecto entre indulgencia y elegancia. Elaborado con nutella, destaca por su textura suave y su intenso sabor a chocolate y avellanas que se funde en el paladar. Un placer irresistible para los auténticos amantes de la nutella.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 1920,
+        "wires": [
+            [
+                "e6362313208d4cdb"
+            ]
+        ]
+    },
+    {
+        "id": "b4baaf4c5c2b2aee",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 910,
+        "y": 1920,
+        "wires": [
+            [
+                "f2e068474d6f555e"
+            ]
+        ]
+    },
+    {
+        "id": "e6362313208d4cdb",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1260,
+        "y": 1920,
+        "wires": [
+            [
+                "b25ca01ecd4bcd20"
+            ]
+        ]
+    },
+    {
+        "id": "b25ca01ecd4bcd20",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "98439986cc356d13",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 2;\nconst language_code = 'gl';\nconst name = 'Cremosa de nutella';\nconst description = 'A nosa cremosa de nutella ofrece unha combinación perfecta de intensidade e elegancia. Elaborado con nutella, destaca pola súa textura sedosa e polo seu profundo sabor a chocolate e abelás que se desfai na boca. Unha auténtica tentación para os verdadeiros amantes da nutella.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 1960,
+        "wires": [
+            [
+                "3ab022ecc042bbb3"
+            ]
+        ]
+    },
+    {
+        "id": "1c7513e745b30271",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 910,
+        "y": 1960,
+        "wires": [
+            [
+                "98439986cc356d13"
+            ]
+        ]
+    },
+    {
+        "id": "3ab022ecc042bbb3",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1260,
+        "y": 1960,
+        "wires": [
+            [
+                "68d66023f5e78236"
+            ]
+        ]
+    },
+    {
+        "id": "68d66023f5e78236",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "dc4c7139e1db1315",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 1;\nconst language_code = 'en';\nconst name = 'Creamy classic cheesecake';\nconst description = 'Our creamy classic cheesecake offers a smooth, creamy texture that melts effortlessly with every bite. Its delicate, balanced flavor is crafted with high-quality ingredients, bringing timeless simplicity to perfection. A dessert made for true cheesecake lovers.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1840,
+        "y": 1880,
+        "wires": [
+            [
+                "28f8a24c8a09864a"
+            ]
+        ]
+    },
+    {
+        "id": "098b72fafaffcb29",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1670,
+        "y": 1880,
+        "wires": [
+            [
+                "dc4c7139e1db1315"
+            ]
+        ]
+    },
+    {
+        "id": "28f8a24c8a09864a",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2020,
+        "y": 1880,
+        "wires": [
+            [
+                "ed84de9f5d2268d1"
+            ]
+        ]
+    },
+    {
+        "id": "ed84de9f5d2268d1",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2200,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "37b4b9deb078cce1",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 1;\nconst language_code = 'es';\nconst name = 'Cremosa clásica';\nconst description = 'Tarta de queso clásica, elaborada con una textura suave y cremosa que se derrite en la boca. Un sabor equilibrado, delicado y auténtico, creado con ingredientes de alta calidad. El postre perfecto para quienes aprecian la elegancia de lo tradicional.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1840,
+        "y": 1920,
+        "wires": [
+            [
+                "61998687f93b7482"
+            ]
+        ]
+    },
+    {
+        "id": "61f35a3ada8cce63",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1670,
+        "y": 1920,
+        "wires": [
+            [
+                "37b4b9deb078cce1"
+            ]
+        ]
+    },
+    {
+        "id": "61998687f93b7482",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2020,
+        "y": 1920,
+        "wires": [
+            [
+                "96902cd84749eb2f"
+            ]
+        ]
+    },
+    {
+        "id": "96902cd84749eb2f",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2200,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "90f7ce64d8818a1c",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 1;\nconst language_code = 'gl';\nconst name = 'Cremosa clásica';\nconst description = 'A nosa torta de queixo clásica destaca pola súa textura suave e cremosa que se desfai na boca. Cun sabor equilibrado e auténtico, elaborada con ingredientes de alta calidade. Un doce perfecto para quen valora a elegancia do tradicional.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1840,
+        "y": 1960,
+        "wires": [
+            [
+                "c063bced87382ece"
+            ]
+        ]
+    },
+    {
+        "id": "207d415c6247643e",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1670,
+        "y": 1960,
+        "wires": [
+            [
+                "90f7ce64d8818a1c"
+            ]
+        ]
+    },
+    {
+        "id": "c063bced87382ece",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2020,
+        "y": 1960,
+        "wires": [
+            [
+                "edbf5ee381a2ca8a"
+            ]
+        ]
+    },
+    {
+        "id": "edbf5ee381a2ca8a",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2200,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "ef79f2cbeed274ea",
         "type": "function",
         "z": "68702ca580581086",
         "name": "product_variants",
-        "func": "const product_id = 1;\nconst sort_order = 1;\nconst price = 6; // 5 trad 6, 11 tran 12 sab\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "func": "const product_id = 2;\nconst sort_order = 1;\nconst price = 6; // 5 trad 6, 11 tran 12 sab\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 1740,
+        "x": 1070,
+        "y": 2020,
         "wires": [
             [
-                "ce7cee0f6cead3c2"
+                "782b944c729e3414"
             ]
         ]
     },
     {
-        "id": "4dacd1ae316cae2d",
+        "id": "0a18845cfd6e2774",
         "type": "inject",
         "z": "68702ca580581086",
         "name": "insert",
@@ -8140,16 +9615,16 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 1740,
+        "x": 910,
+        "y": 2020,
         "wires": [
             [
-                "d866efdd056ecd50"
+                "ef79f2cbeed274ea"
             ]
         ]
     },
     {
-        "id": "ce7cee0f6cead3c2",
+        "id": "782b944c729e3414",
         "type": "link call",
         "z": "68702ca580581086",
         "name": "",
@@ -8158,16 +9633,16 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 460,
-        "y": 1740,
+        "x": 1260,
+        "y": 2020,
         "wires": [
             [
-                "cfeb9ec8a7783d87"
+                "f2d7cddbedacf5d8"
             ]
         ]
     },
     {
-        "id": "cfeb9ec8a7783d87",
+        "id": "f2d7cddbedacf5d8",
         "type": "debug",
         "z": "68702ca580581086",
         "name": "products",
@@ -8179,32 +9654,32 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 1740,
+        "x": 1400,
+        "y": 2020,
         "wires": []
     },
     {
-        "id": "4c6c821d6f1afd0c",
+        "id": "98466dcb6942c885",
         "type": "function",
         "z": "68702ca580581086",
         "name": "product_variants",
-        "func": "const product_id = 1;\nconst sort_order = 2;\nconst price = 11; // 5 trad 6, 11 tran 12 sab\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "func": "const product_id = 2;\nconst sort_order = 2;\nconst price = 12; // 5 trad 6, 11 tran 12 sab\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 1780,
+        "x": 1070,
+        "y": 2060,
         "wires": [
             [
-                "28a2375eec9446e2"
+                "9ada52dc4c7955d2"
             ]
         ]
     },
     {
-        "id": "f8c06c36ba3c663f",
+        "id": "4eeb698bd5f8b699",
         "type": "inject",
         "z": "68702ca580581086",
         "name": "insert",
@@ -8224,16 +9699,16 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 1780,
+        "x": 910,
+        "y": 2060,
         "wires": [
             [
-                "4c6c821d6f1afd0c"
+                "98466dcb6942c885"
             ]
         ]
     },
     {
-        "id": "28a2375eec9446e2",
+        "id": "9ada52dc4c7955d2",
         "type": "link call",
         "z": "68702ca580581086",
         "name": "",
@@ -8242,16 +9717,16 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 460,
-        "y": 1780,
+        "x": 1260,
+        "y": 2060,
         "wires": [
             [
-                "e0e0df167bd7685f"
+                "47084ed3cfa94bc0"
             ]
         ]
     },
     {
-        "id": "e0e0df167bd7685f",
+        "id": "47084ed3cfa94bc0",
         "type": "debug",
         "z": "68702ca580581086",
         "name": "products",
@@ -8263,81 +9738,253 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 1780,
+        "x": 1400,
+        "y": 2060,
         "wires": []
     },
     {
-        "id": "e99f904f0ab47e1e",
+        "id": "5bb0bdc2264487e7",
         "type": "function",
         "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 3;\nconst sort_order = 1;\nconst price = 6; // 5 trad 6, 11 tran 12 sab\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1830,
+        "y": 2020,
+        "wires": [
+            [
+                "81cb0433b033f693"
+            ]
+        ]
+    },
+    {
+        "id": "761f292997d9d7cc",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1670,
+        "y": 2020,
+        "wires": [
+            [
+                "5bb0bdc2264487e7"
+            ]
+        ]
+    },
+    {
+        "id": "81cb0433b033f693",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2020,
+        "y": 2020,
+        "wires": [
+            [
+                "879f2dbfc9a5eb6b"
+            ]
+        ]
+    },
+    {
+        "id": "879f2dbfc9a5eb6b",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2160,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "c40502ec6c7ba3f9",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 3;\nconst sort_order = 2;\nconst price = 12; // 5 trad 6, 11 tran 12 sab\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1830,
+        "y": 2060,
+        "wires": [
+            [
+                "7db9c172f3dcb86b"
+            ]
+        ]
+    },
+    {
+        "id": "d4d0a23b567713d7",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1670,
+        "y": 2060,
+        "wires": [
+            [
+                "c40502ec6c7ba3f9"
+            ]
+        ]
+    },
+    {
+        "id": "7db9c172f3dcb86b",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2020,
+        "y": 2060,
+        "wires": [
+            [
+                "62a655b51b1f446b"
+            ]
+        ]
+    },
+    {
+        "id": "62a655b51b1f446b",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2160,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "aaa5580f6634b6b1",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 2120,
+        "wires": [
+            [
+                "3a48b16e73468e17"
+            ]
+        ]
+    },
+    {
+        "id": "3a48b16e73468e17",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "product_variant_translations",
-        "func": "const variant_id = 1;\nconst language_code = 'es';\nconst name = 'Pequeña (1 persona)'; \n\nmsg.queryParameters = [variant_id, language_code, name];\nmsg.payload = `\n    INSERT INTO product_variant_translations (variant_id, language_code, name)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n",
+        "func": "msg.payload = `\nINSERT INTO product_variant_translations (variant_id, language_code, name) VALUES\n(1, 'es', 'Pequeña (1 persona)'),\n(2, 'es', 'Mediana (2 personas)'),\n(3, 'es', 'Pequeña (1 persona)'),\n(4, 'es', 'Mediana (2 personas)'),\n(5, 'es', 'Pequeña (1 persona)'),\n(6, 'es', 'Mediana (2 personas)'),\n\n(1, 'gl', 'Pequena (1 persoa)'),\n(2, 'gl', 'Mediana (2 persoas)'),\n(3, 'gl', 'Pequena (1 persoa)'),\n(4, 'gl', 'Mediana (2 persoas)'),\n(5, 'gl', 'Pequena (1 persoa)'),\n(6, 'gl', 'Mediana (2 persoas)'),\n\n(1, 'en', 'Small (1 person)'),\n(2, 'en', 'Medium (2 people)'),\n(3, 'en', 'Small (1 person)'),\n(4, 'en', 'Medium (2 people)'),\n(5, 'en', 'Small (1 person)'),\n(6, 'en', 'Medium (2 people)')\n;`\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 1820,
+        "x": 340,
+        "y": 2120,
         "wires": [
             [
-                "f51b2498ba88879b"
+                "b843fbfd3cdc9e64"
             ]
         ]
     },
     {
-        "id": "f79f5d9b43c3e290",
-        "type": "inject",
-        "z": "68702ca580581086",
-        "name": "insert",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 110,
-        "y": 1820,
-        "wires": [
-            [
-                "e99f904f0ab47e1e"
-            ]
-        ]
-    },
-    {
-        "id": "f51b2498ba88879b",
+        "id": "b843fbfd3cdc9e64",
         "type": "link call",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "",
         "links": [
             "7d0d97bd91fee1c8"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 500,
-        "y": 1820,
+        "x": 540,
+        "y": 2120,
         "wires": [
             [
-                "25b9c6c865f434af"
+                "ee34e3a042148923"
             ]
         ]
     },
     {
-        "id": "25b9c6c865f434af",
+        "id": "ee34e3a042148923",
         "type": "debug",
         "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
         "name": "products",
         "active": true,
         "tosidebar": true,
@@ -8347,596 +9994,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 1820,
-        "wires": []
-    },
-    {
-        "id": "dd386ac67070a2c8",
-        "type": "function",
-        "z": "68702ca580581086",
-        "name": "product_variant_translations",
-        "func": "const variant_id = 2;\nconst language_code = 'es';\nconst name = 'Mediana (2 personas)'; \n\nmsg.queryParameters = [variant_id, language_code, name];\nmsg.payload = `\n    INSERT INTO product_variant_translations (variant_id, language_code, name)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 1860,
-        "wires": [
-            [
-                "6f72f3b3c8ba05cb"
-            ]
-        ]
-    },
-    {
-        "id": "78ca5d454e3ed026",
-        "type": "inject",
-        "z": "68702ca580581086",
-        "name": "insert",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 110,
-        "y": 1860,
-        "wires": [
-            [
-                "dd386ac67070a2c8"
-            ]
-        ]
-    },
-    {
-        "id": "6f72f3b3c8ba05cb",
-        "type": "link call",
-        "z": "68702ca580581086",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 500,
-        "y": 1860,
-        "wires": [
-            [
-                "6d4572ee8e92b7cb"
-            ]
-        ]
-    },
-    {
-        "id": "6d4572ee8e92b7cb",
-        "type": "debug",
-        "z": "68702ca580581086",
-        "name": "products",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 1860,
-        "wires": []
-    },
-    {
-        "id": "27894e0e4c974de2",
-        "type": "inject",
-        "z": "68702ca580581086",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 860,
-        "y": 1060,
-        "wires": [
-            [
-                "e23c638225ecaf88"
-            ]
-        ]
-    },
-    {
-        "id": "e23c638225ecaf88",
-        "type": "function",
-        "z": "68702ca580581086",
-        "name": "products",
-        "func": "msg.payload = `\nSELECT *\nFROM products`\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 1060,
-        "wires": [
-            [
-                "1df6fe930d1c9474"
-            ]
-        ]
-    },
-    {
-        "id": "1df6fe930d1c9474",
-        "type": "link call",
-        "z": "68702ca580581086",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1140,
-        "y": 1060,
-        "wires": [
-            [
-                "f8dd68abb83ec47c"
-            ]
-        ]
-    },
-    {
-        "id": "f8dd68abb83ec47c",
-        "type": "debug",
-        "z": "68702ca580581086",
-        "name": "products",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1280,
-        "y": 1060,
-        "wires": []
-    },
-    {
-        "id": "e9b51ba68df6b173",
-        "type": "inject",
-        "z": "68702ca580581086",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 860,
-        "y": 1100,
-        "wires": [
-            [
-                "8f500a4695ba3a49"
-            ]
-        ]
-    },
-    {
-        "id": "8f500a4695ba3a49",
-        "type": "function",
-        "z": "68702ca580581086",
-        "name": "products",
-        "func": "msg.payload = `\nSELECT *\nFROM product_translations`\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 1100,
-        "wires": [
-            [
-                "df4728b2dfc58514"
-            ]
-        ]
-    },
-    {
-        "id": "df4728b2dfc58514",
-        "type": "link call",
-        "z": "68702ca580581086",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1140,
-        "y": 1100,
-        "wires": [
-            [
-                "04c1e2714c920f4c"
-            ]
-        ]
-    },
-    {
-        "id": "04c1e2714c920f4c",
-        "type": "debug",
-        "z": "68702ca580581086",
-        "name": "products",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1280,
-        "y": 1100,
-        "wires": []
-    },
-    {
-        "id": "80c8fdbe5c852898",
-        "type": "inject",
-        "z": "68702ca580581086",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 860,
-        "y": 1140,
-        "wires": [
-            [
-                "6364167767fa9bb8"
-            ]
-        ]
-    },
-    {
-        "id": "6364167767fa9bb8",
-        "type": "function",
-        "z": "68702ca580581086",
-        "name": "products",
-        "func": "msg.payload = `\nSELECT *\nFROM product_variants`\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 1140,
-        "wires": [
-            [
-                "f7e1f0ceb6448dc9"
-            ]
-        ]
-    },
-    {
-        "id": "f7e1f0ceb6448dc9",
-        "type": "link call",
-        "z": "68702ca580581086",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1140,
-        "y": 1140,
-        "wires": [
-            [
-                "fd0aedecef5641d8"
-            ]
-        ]
-    },
-    {
-        "id": "fd0aedecef5641d8",
-        "type": "debug",
-        "z": "68702ca580581086",
-        "name": "products",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1280,
-        "y": 1140,
-        "wires": []
-    },
-    {
-        "id": "f2d9e087cfcb207b",
-        "type": "inject",
-        "z": "68702ca580581086",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 860,
-        "y": 1180,
-        "wires": [
-            [
-                "1a0a848fcffef89e"
-            ]
-        ]
-    },
-    {
-        "id": "1a0a848fcffef89e",
-        "type": "function",
-        "z": "68702ca580581086",
-        "name": "products",
-        "func": "msg.payload = `\nSELECT *\nFROM product_variant_translations`\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 1180,
-        "wires": [
-            [
-                "b0add348777b4630"
-            ]
-        ]
-    },
-    {
-        "id": "b0add348777b4630",
-        "type": "link call",
-        "z": "68702ca580581086",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1140,
-        "y": 1180,
-        "wires": [
-            [
-                "3149d297fdc5b22f"
-            ]
-        ]
-    },
-    {
-        "id": "3149d297fdc5b22f",
-        "type": "debug",
-        "z": "68702ca580581086",
-        "name": "products",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1280,
-        "y": 1180,
-        "wires": []
-    },
-    {
-        "id": "ac06a9861c4e1be7",
-        "type": "inject",
-        "z": "68702ca580581086",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 860,
-        "y": 940,
-        "wires": [
-            [
-                "11fa104af97b6ec1"
-            ]
-        ]
-    },
-    {
-        "id": "11fa104af97b6ec1",
-        "type": "function",
-        "z": "68702ca580581086",
-        "name": "products",
-        "func": "msg.payload = `\nINSERT INTO product_variant_translations (variant_id, language_code, name) VALUES\n(1, 'gl', 'Pequena (1 persoa)'),\n(2, 'gl', 'Mediana (2 persoas)'),\n(5, 'gl', 'Pequena (1 persoa)'),\n(6, 'gl', 'Mediana (2 persoas)');`\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 940,
-        "wires": [
-            [
-                "fbe309b6e7b5d0b2"
-            ]
-        ]
-    },
-    {
-        "id": "fbe309b6e7b5d0b2",
-        "type": "link call",
-        "z": "68702ca580581086",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1140,
-        "y": 940,
-        "wires": [
-            [
-                "ced46a6e8ae8b66b"
-            ]
-        ]
-    },
-    {
-        "id": "ced46a6e8ae8b66b",
-        "type": "debug",
-        "z": "68702ca580581086",
-        "name": "products",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1280,
-        "y": 940,
-        "wires": []
-    },
-    {
-        "id": "4c3466e4c5d30b3d",
-        "type": "inject",
-        "z": "68702ca580581086",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 860,
-        "y": 980,
-        "wires": [
-            [
-                "8dfbe5a31c5135fc"
-            ]
-        ]
-    },
-    {
-        "id": "8dfbe5a31c5135fc",
-        "type": "function",
-        "z": "68702ca580581086",
-        "name": "products",
-        "func": "msg.payload = `\nINSERT INTO product_variant_translations (variant_id, language_code, name) VALUES\n(1, 'en', 'Small (1 person)'),\n(2, 'en', 'Medium (2 people)'),\n(3, 'en', 'Small (1 person)'),\n(4, 'en', 'Medium (2 people)');`\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 980,
-        "wires": [
-            [
-                "2b7e6c5f70b3ab41"
-            ]
-        ]
-    },
-    {
-        "id": "2b7e6c5f70b3ab41",
-        "type": "link call",
-        "z": "68702ca580581086",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1140,
-        "y": 980,
-        "wires": [
-            [
-                "1022613238323114"
-            ]
-        ]
-    },
-    {
-        "id": "1022613238323114",
-        "type": "debug",
-        "z": "68702ca580581086",
-        "name": "products",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1280,
-        "y": 980,
+        "x": 680,
+        "y": 2120,
         "wires": []
     }
 ]
