@@ -196,8 +196,7 @@
             "http_delete_product",
             "9d21090659e67713",
             "link_call_db_delete_product",
-            "function_format_delete_product_response",
-            "9e25dfbc29517a6b"
+            "function_format_delete_product_response"
         ],
         "x": 28,
         "y": 39,
@@ -527,6 +526,92 @@
         "h": 642
     },
     {
+        "id": "425ce9b0350ab4ed",
+        "type": "group",
+        "z": "68702ca580581086",
+        "name": "harsh delete",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c6b346e61d7367e2",
+            "4644ff4239a736a0",
+            "bcecdb4ecfd5dcd1",
+            "42e08f8f9a9cf958"
+        ],
+        "x": 34,
+        "y": 1359,
+        "w": 652,
+        "h": 82
+    },
+    {
+        "id": "d539432d5f363e74",
+        "type": "group",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a79326bb1cb35b24",
+            "aace209f81bc142b",
+            "843fc8c814eaf67a",
+            "02421e1a1f687624",
+            "24989589b58d7585",
+            "cd3858368498fe8e",
+            "529c22129f4838a1",
+            "6fc89e9674550c99",
+            "22fecddf3f9def37",
+            "05e99d5d7921f0c6",
+            "ac09713c872dc907",
+            "9ef4000180c7d5db",
+            "5f1df24e035dffac",
+            "45d7b1224e360347",
+            "0df888426092673e",
+            "9452707185f27823",
+            "db9f8920418ea454",
+            "ed16c5f49e9b5839",
+            "d20a94ee61d2c48c",
+            "271c7b712d7a33be",
+            "de0d4e3c69a1ac5e",
+            "a8218fddc093c126",
+            "280403936b4ce16e",
+            "ee252ecac569926e",
+            "4037400c44b16664",
+            "33adddea56ace933",
+            "2e12591665cf4544",
+            "2151e8803fc886d5",
+            "dcca974f185ac7dc",
+            "a5f22e659ab03a0b",
+            "41d3fc9ef758ce49",
+            "5925df3d3b611f42",
+            "042d083a3dfe936c",
+            "3cea5f112ea36c8f",
+            "59f59f68110e850f",
+            "0716e37d8d15eae3",
+            "d783ade26a8814e2",
+            "ec5708b0da0760d9",
+            "8b5226ae7d904dd2",
+            "08b123216098118d",
+            "4dacd1ae316cae2d",
+            "d866efdd056ecd50",
+            "ce7cee0f6cead3c2",
+            "cfeb9ec8a7783d87",
+            "4c6c821d6f1afd0c",
+            "f8c06c36ba3c663f",
+            "28a2375eec9446e2",
+            "e0e0df167bd7685f",
+            "3a48b16e73468e17",
+            "aaa5580f6634b6b1",
+            "b843fbfd3cdc9e64",
+            "ee34e3a042148923"
+        ],
+        "x": 34,
+        "y": 1479,
+        "w": 772,
+        "h": 682
+    },
+    {
         "id": "d8ef0639fb5dddc2",
         "type": "group",
         "z": "554b53c71ea14722",
@@ -615,92 +700,6 @@
         "y": 419,
         "w": 872,
         "h": 182
-    },
-    {
-        "id": "425ce9b0350ab4ed",
-        "type": "group",
-        "z": "68702ca580581086",
-        "name": "harsh delete",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "c6b346e61d7367e2",
-            "4644ff4239a736a0",
-            "bcecdb4ecfd5dcd1",
-            "42e08f8f9a9cf958"
-        ],
-        "x": 34,
-        "y": 1359,
-        "w": 652,
-        "h": 82
-    },
-    {
-        "id": "d539432d5f363e74",
-        "type": "group",
-        "z": "68702ca580581086",
-        "name": "insert",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "a79326bb1cb35b24",
-            "aace209f81bc142b",
-            "843fc8c814eaf67a",
-            "02421e1a1f687624",
-            "24989589b58d7585",
-            "cd3858368498fe8e",
-            "529c22129f4838a1",
-            "6fc89e9674550c99",
-            "22fecddf3f9def37",
-            "05e99d5d7921f0c6",
-            "ac09713c872dc907",
-            "9ef4000180c7d5db",
-            "5f1df24e035dffac",
-            "45d7b1224e360347",
-            "0df888426092673e",
-            "9452707185f27823",
-            "db9f8920418ea454",
-            "ed16c5f49e9b5839",
-            "d20a94ee61d2c48c",
-            "271c7b712d7a33be",
-            "de0d4e3c69a1ac5e",
-            "a8218fddc093c126",
-            "280403936b4ce16e",
-            "ee252ecac569926e",
-            "4037400c44b16664",
-            "33adddea56ace933",
-            "2e12591665cf4544",
-            "2151e8803fc886d5",
-            "dcca974f185ac7dc",
-            "a5f22e659ab03a0b",
-            "41d3fc9ef758ce49",
-            "5925df3d3b611f42",
-            "042d083a3dfe936c",
-            "3cea5f112ea36c8f",
-            "59f59f68110e850f",
-            "0716e37d8d15eae3",
-            "d783ade26a8814e2",
-            "ec5708b0da0760d9",
-            "8b5226ae7d904dd2",
-            "08b123216098118d",
-            "4dacd1ae316cae2d",
-            "d866efdd056ecd50",
-            "ce7cee0f6cead3c2",
-            "cfeb9ec8a7783d87",
-            "4c6c821d6f1afd0c",
-            "f8c06c36ba3c663f",
-            "28a2375eec9446e2",
-            "e0e0df167bd7685f",
-            "3a48b16e73468e17",
-            "aaa5580f6634b6b1",
-            "b843fbfd3cdc9e64",
-            "ee34e3a042148923"
-        ],
-        "x": 34,
-        "y": 1479,
-        "w": 772,
-        "h": 682
     },
     {
         "id": "cbabc9b4106719b0",
@@ -1315,7 +1314,7 @@
         "upload": false,
         "skipBodyParsing": false,
         "swaggerDoc": "",
-        "x": 180,
+        "x": 140,
         "y": 1080,
         "wires": [
             [
@@ -1331,7 +1330,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 350,
+        "x": 390,
         "y": 1080,
         "wires": []
     },
@@ -1350,6 +1349,224 @@
         "statusType": "auto",
         "x": 350,
         "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "84c461e8da5c8b1a",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "intent",
+        "func": "msg = { \"_msgid\": \"66b389d5b9dca11e\", \"payload\": { \"id\": \"evt_3Ss5AtHSKyk17Q2D1DNFIvCs\", \"object\": \"event\", \"api_version\": \"2025-12-15.clover\", \"created\": 1769016396, \"data\": { \"object\": { \"id\": \"pi_3Ss5AtHSKyk17Q2D136qtqDJ\", \"object\": \"payment_intent\", \"amount\": 8100, \"amount_capturable\": 0, \"amount_details\": { \"shipping\": { \"amount\": 0, \"from_postal_code\": null, \"to_postal_code\": null }, \"tax\": { \"total_tax_amount\": 0 }, \"tip\": {} }, \"amount_received\": 8100, \"application\": null, \"application_fee_amount\": null, \"automatic_payment_methods\": null, \"canceled_at\": null, \"cancellation_reason\": null, \"capture_method\": \"automatic_async\", \"client_secret\": \"pi_3Ss5AtHSKyk17Q2D136qtqDJ_secret_9W33xf1delCMLFvmDU3jAmwJn\", \"confirmation_method\": \"automatic\", \"created\": 1769016395, \"currency\": \"eur\", \"customer\": null, \"customer_account\": null, \"description\": null, \"excluded_payment_method_types\": null, \"last_payment_error\": null, \"latest_charge\": \"ch_3Ss5AtHSKyk17Q2D1cbqfvs2\", \"livemode\": false, \"metadata\": {}, \"next_action\": null, \"on_behalf_of\": null, \"payment_details\": { \"customer_reference\": null, \"order_reference\": \"prod_Tpkd9Z07zNFebr\" }, \"payment_method\": \"pm_1Ss5AtHSKyk17Q2DvE2UkWXS\", \"payment_method_configuration_details\": null, \"payment_method_options\": { \"card\": { \"installments\": null, \"mandate_options\": null, \"network\": null, \"request_three_d_secure\": \"automatic\" } }, \"payment_method_types\": [\"card\"], \"processing\": null, \"receipt_email\": null, \"review\": null, \"setup_future_usage\": null, \"shipping\": null, \"source\": null, \"statement_descriptor\": null, \"statement_descriptor_suffix\": null, \"status\": \"succeeded\", \"transfer_data\": null, \"transfer_group\": null } }, \"livemode\": false, \"pending_webhooks\": 1, \"request\": { \"id\": null, \"idempotency_key\": \"8d2df602-bae4-4697-9bd2-5acf41763253\" }, \"type\": \"payment_intent.succeeded\" }, \"req\": { \"_events\": {}, \"_readableState\": { \"highWaterMark\": 65536, \"buffer\": [], \"bufferIndex\": 0, \"length\": 0, \"pipes\": [], \"awaitDrainWriters\": null }, \"socket\": \"[internal]\", \"httpVersionMajor\": 1, \"httpVersionMinor\": 1, \"httpVersion\": \"1.1\", \"complete\": true, \"rawHeaders\": [\"Host\", \"ascremosas.com\", \"X-Real-IP\", \"3.130.192.231\", \"Connection\", \"close\", \"Content-Length\", \"2277\", \"Content-Type\", \"application/json; charset=utf-8\", \"Cache-Control\", \"no-cache\", \"User-Agent\", \"Stripe/1.0 (+https://stripe.com/docs/webhooks)\", \"Accept\", \"*/*; q=0.5, application/json\", \"Stripe-Signature\", \"t=1769016396,v1=68442e39312ae003adb66ef89d1c3a3a3aa6a680aa6871cb8f33e041b95c8df6,v0=265ff5309bd7fde5ff1068dd5d7eb1cc4a2b4d09874fb53dc6a2ad5042e1d408\"], \"rawTrailers\": [], \"joinDuplicateHeaders\": null, \"aborted\": false, \"upgrade\": false, \"url\": \"/webhook/stripe\", \"method\": \"POST\", \"statusCode\": null, \"statusMessage\": null, \"client\": \"[internal]\", \"_consuming\": true, \"_dumped\": false, \"baseUrl\": \"\", \"originalUrl\": \"/webhook/stripe\", \"_parsedUrl\": { \"protocol\": null, \"slashes\": null, \"auth\": null, \"host\": null, \"port\": null, \"hostname\": null, \"hash\": null, \"search\": null, \"query\": null, \"pathname\": \"/webhook/stripe\", \"path\": \"/webhook/stripe\", \"href\": \"/webhook/stripe\", \"_raw\": \"/webhook/stripe\" }, \"params\": {}, \"query\": {}, \"res\": \"[internal]\", \"body\": { \"id\": \"evt_3Ss5AtHSKyk17Q2D1DNFIvCs\", \"object\": \"event\", \"api_version\": \"2025-12-15.clover\", \"created\": 1769016396, \"data\": { \"object\": { \"id\": \"pi_3Ss5AtHSKyk17Q2D136qtqDJ\", \"object\": \"payment_intent\", \"amount\": 8100, \"amount_capturable\": 0, \"amount_details\": { \"shipping\": { \"amount\": 0, \"from_postal_code\": null, \"to_postal_code\": null }, \"tax\": { \"total_tax_amount\": 0 }, \"tip\": {} }, \"amount_received\": 8100, \"application\": null, \"application_fee_amount\": null, \"automatic_payment_methods\": null, \"canceled_at\": null, \"cancellation_reason\": null, \"capture_method\": \"automatic_async\", \"client_secret\": \"pi_3Ss5AtHSKyk17Q2D136qtqDJ_secret_9W33xf1delCMLFvmDU3jAmwJn\", \"confirmation_method\": \"automatic\", \"created\": 1769016395, \"currency\": \"eur\", \"customer\": null, \"customer_account\": null, \"description\": null, \"excluded_payment_method_types\": null, \"last_payment_error\": null, \"latest_charge\": \"ch_3Ss5AtHSKyk17Q2D1cbqfvs2\", \"livemode\": false, \"metadata\": {}, \"next_action\": null, \"on_behalf_of\": null, \"payment_details\": { \"customer_reference\": null, \"order_reference\": \"prod_Tpkd9Z07zNFebr\" }, \"payment_method\": \"pm_1Ss5AtHSKyk17Q2DvE2UkWXS\", \"payment_method_configuration_details\": null, \"payment_method_options\": { \"card\": { \"installments\": null, \"mandate_options\": null, \"network\": null, \"request_three_d_secure\": \"automatic\" } }, \"payment_method_types\": [\"card\"], \"processing\": null, \"receipt_email\": null, \"review\": null, \"setup_future_usage\": null, \"shipping\": null, \"source\": null, \"statement_descriptor\": null, \"statement_descriptor_suffix\": null, \"status\": \"succeeded\", \"transfer_data\": null, \"transfer_group\": null } }, \"livemode\": false, \"pending_webhooks\": 1, \"request\": { \"id\": null, \"idempotency_key\": \"8d2df602-bae4-4697-9bd2-5acf41763253\" }, \"type\": \"payment_intent.succeeded\" }, \"_body\": true, \"_eventsCount\": 0, \"_sessionManager\": { \"_key\": \"passport\" }, \"_passport\": { \"instance\": { \"_key\": \"passport\", \"_strategies\": { \"session\": { \"name\": \"session\", \"_key\": \"passport\" }, \"bearer\": { \"name\": \"bearer\", \"_realm\": \"Users\" }, \"oauth2-client-password\": { \"name\": \"oauth2-client-password\" }, \"anon\": { \"name\": \"anon\" }, \"tokens\": { \"name\": \"tokens\" } }, \"_serializers\": [], \"_deserializers\": [], \"_infoTransformers\": [], \"_framework\": {}, \"_sm\": { \"_key\": \"passport\" }, \"strategies\": {}, \"_userProperty\": \"user\" } }, \"route\": { \"path\": \"/webhook/stripe\", \"stack\": [{ \"name\": \"cookieParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"httpMiddleware\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"corsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"metricsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"jsonParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"urlencodedParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"multipartParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"rawBodyParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }], \"methods\": { \"post\": true } }, \"cookies\": {}, \"signedCookies\": {}, \"headers\": { \"host\": \"ascremosas.com\", \"x-real-ip\": \"3.130.192.231\", \"connection\": \"close\", \"content-length\": \"2277\", \"content-type\": \"application/json; charset=utf-8\", \"cache-control\": \"no-cache\", \"user-agent\": \"Stripe/1.0 (+https://stripe.com/docs/webhooks)\", \"accept\": \"*/*; q=0.5, application/json\", \"stripe-signature\": \"t=1769016396,v1=68442e39312ae003adb66ef89d1c3a3a3aa6a680aa6871cb8f33e041b95c8df6,v0=265ff5309bd7fde5ff1068dd5d7eb1cc4a2b4d09874fb53dc6a2ad5042e1d408\" } }, \"res\": {} }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 1200,
+        "wires": [
+            [
+                "174d8d3b67a5a4e3"
+            ]
+        ]
+    },
+    {
+        "id": "e3b36657ec02d6bc",
+        "type": "inject",
+        "z": "511654ac3eb34f3c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1200,
+        "wires": [
+            [
+                "84c461e8da5c8b1a"
+            ]
+        ]
+    },
+    {
+        "id": "174d8d3b67a5a4e3",
+        "type": "debug",
+        "z": "511654ac3eb34f3c",
+        "name": "stripe",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "765e727245e3063a",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "success",
+        "func": "msg = { \"_msgid\": \"6400c68ad54dcd2f\", \"payload\": { \"id\": \"evt_1Ss5AuHSKyk17Q2DayCD3Zp0\", \"object\": \"event\", \"api_version\": \"2025-12-15.clover\", \"created\": 1769016396, \"data\": { \"object\": { \"id\": \"cs_test_a18b8XVZkPdpl9GlmRx9wFdbUDWilMOn3vgfjfubZDLeRimVLRKFuofk42\", \"object\": \"checkout.session\", \"adaptive_pricing\": { \"enabled\": true }, \"after_expiration\": null, \"allow_promotion_codes\": null, \"amount_subtotal\": 8100, \"amount_total\": 8100, \"automatic_tax\": { \"enabled\": false, \"liability\": null, \"provider\": null, \"status\": null }, \"billing_address_collection\": null, \"branding_settings\": { \"background_color\": \"#ffffff\", \"border_style\": \"rounded\", \"button_color\": \"#0074d4\", \"display_name\": \"AS cremosas sandbox\", \"font_family\": \"default\", \"icon\": null, \"logo\": null }, \"cancel_url\": \"http://localhost:5173/checkout/cancel?order_id=LCG-20260121-H3ZSPR\", \"client_reference_id\": null, \"client_secret\": null, \"collected_information\": { \"business_name\": null, \"individual_name\": null, \"shipping_details\": null }, \"consent\": null, \"consent_collection\": null, \"created\": 1769016251, \"currency\": \"eur\", \"currency_conversion\": null, \"custom_fields\": [], \"custom_text\": { \"after_submit\": null, \"shipping_address\": null, \"submit\": null, \"terms_of_service_acceptance\": null }, \"customer\": null, \"customer_account\": null, \"customer_creation\": \"if_required\", \"customer_details\": { \"address\": { \"city\": null, \"country\": \"ES\", \"line1\": null, \"line2\": null, \"postal_code\": null, \"state\": null }, \"business_name\": null, \"email\": \"ascremosas.co@gmail.com\", \"individual_name\": null, \"name\": \"as cremosas\", \"phone\": null, \"tax_exempt\": \"none\", \"tax_ids\": [] }, \"customer_email\": \"ascremosas.co@gmail.com\", \"discounts\": [], \"expires_at\": 1769102651, \"invoice\": null, \"invoice_creation\": { \"enabled\": false, \"invoice_data\": { \"account_tax_ids\": null, \"custom_fields\": null, \"description\": null, \"footer\": null, \"issuer\": null, \"metadata\": {}, \"rendering_options\": null } }, \"livemode\": false, \"locale\": \"auto\", \"metadata\": { \"order_id\": \"LCG-20260121-H3ZSPR\" }, \"mode\": \"payment\", \"origin_context\": null, \"payment_intent\": \"pi_3Ss5AtHSKyk17Q2D136qtqDJ\", \"payment_link\": null, \"payment_method_collection\": \"if_required\", \"payment_method_configuration_details\": { \"id\": \"pmc_1SpVCCHSKyk17Q2DyqBZl7qo\", \"parent\": null }, \"payment_method_options\": { \"card\": { \"request_three_d_secure\": \"automatic\" } }, \"payment_method_types\": [\"card\", \"bancontact\", \"eps\", \"klarna\", \"link\", \"amazon_pay\"], \"payment_status\": \"paid\", \"permissions\": null, \"phone_number_collection\": { \"enabled\": false }, \"recovered_from\": null, \"saved_payment_method_options\": null, \"setup_intent\": null, \"shipping_address_collection\": null, \"shipping_cost\": null, \"shipping_options\": [], \"status\": \"complete\", \"submit_type\": null, \"subscription\": null, \"success_url\": \"http://localhost:5173/checkout/success?session_id={CHECKOUT_SESSION_ID}\", \"total_details\": { \"amount_discount\": 0, \"amount_shipping\": 0, \"amount_tax\": 0 }, \"ui_mode\": \"hosted\", \"url\": null, \"wallet_options\": null } }, \"livemode\": false, \"pending_webhooks\": 1, \"request\": { \"id\": null, \"idempotency_key\": null }, \"type\": \"checkout.session.completed\" }, \"req\": { \"_events\": {}, \"_readableState\": { \"highWaterMark\": 65536, \"buffer\": [], \"bufferIndex\": 0, \"length\": 0, \"pipes\": [], \"awaitDrainWriters\": null }, \"socket\": \"[internal]\", \"httpVersionMajor\": 1, \"httpVersionMinor\": 1, \"httpVersion\": \"1.1\", \"complete\": true, \"rawHeaders\": [\"Host\", \"ascremosas.com\", \"X-Real-IP\", \"52.15.183.38\", \"Connection\", \"close\", \"Content-Length\", \"4085\", \"Content-Type\", \"application/json; charset=utf-8\", \"Cache-Control\", \"no-cache\", \"User-Agent\", \"Stripe/1.0 (+https://stripe.com/docs/webhooks)\", \"Accept\", \"*/*; q=0.5, application/json\", \"Stripe-Signature\", \"t=1769016396,v1=ea8139b68fe07cf65db0b85b607eabb676b691577e0479567d629d7b22a5da2b,v0=8cbbec97ae7cf612247c2a0ef7979ed83005e6a3101534ab973d5fa9a8b0ae79\"], \"rawTrailers\": [], \"joinDuplicateHeaders\": null, \"aborted\": false, \"upgrade\": false, \"url\": \"/webhook/stripe\", \"method\": \"POST\", \"statusCode\": null, \"statusMessage\": null, \"client\": \"[internal]\", \"_consuming\": true, \"_dumped\": false, \"baseUrl\": \"\", \"originalUrl\": \"/webhook/stripe\", \"_parsedUrl\": { \"protocol\": null, \"slashes\": null, \"auth\": null, \"host\": null, \"port\": null, \"hostname\": null, \"hash\": null, \"search\": null, \"query\": null, \"pathname\": \"/webhook/stripe\", \"path\": \"/webhook/stripe\", \"href\": \"/webhook/stripe\", \"_raw\": \"/webhook/stripe\" }, \"params\": {}, \"query\": {}, \"res\": \"[internal]\", \"body\": { \"id\": \"evt_1Ss5AuHSKyk17Q2DayCD3Zp0\", \"object\": \"event\", \"api_version\": \"2025-12-15.clover\", \"created\": 1769016396, \"data\": { \"object\": { \"id\": \"cs_test_a18b8XVZkPdpl9GlmRx9wFdbUDWilMOn3vgfjfubZDLeRimVLRKFuofk42\", \"object\": \"checkout.session\", \"adaptive_pricing\": { \"enabled\": true }, \"after_expiration\": null, \"allow_promotion_codes\": null, \"amount_subtotal\": 8100, \"amount_total\": 8100, \"automatic_tax\": { \"enabled\": false, \"liability\": null, \"provider\": null, \"status\": null }, \"billing_address_collection\": null, \"branding_settings\": { \"background_color\": \"#ffffff\", \"border_style\": \"rounded\", \"button_color\": \"#0074d4\", \"display_name\": \"AS cremosas sandbox\", \"font_family\": \"default\", \"icon\": null, \"logo\": null }, \"cancel_url\": \"http://localhost:5173/checkout/cancel?order_id=LCG-20260121-H3ZSPR\", \"client_reference_id\": null, \"client_secret\": null, \"collected_information\": { \"business_name\": null, \"individual_name\": null, \"shipping_details\": null }, \"consent\": null, \"consent_collection\": null, \"created\": 1769016251, \"currency\": \"eur\", \"currency_conversion\": null, \"custom_fields\": [], \"custom_text\": { \"after_submit\": null, \"shipping_address\": null, \"submit\": null, \"terms_of_service_acceptance\": null }, \"customer\": null, \"customer_account\": null, \"customer_creation\": \"if_required\", \"customer_details\": { \"address\": { \"city\": null, \"country\": \"ES\", \"line1\": null, \"line2\": null, \"postal_code\": null, \"state\": null }, \"business_name\": null, \"email\": \"ascremosas.co@gmail.com\", \"individual_name\": null, \"name\": \"as cremosas\", \"phone\": null, \"tax_exempt\": \"none\", \"tax_ids\": [] }, \"customer_email\": \"ascremosas.co@gmail.com\", \"discounts\": [], \"expires_at\": 1769102651, \"invoice\": null, \"invoice_creation\": { \"enabled\": false, \"invoice_data\": { \"account_tax_ids\": null, \"custom_fields\": null, \"description\": null, \"footer\": null, \"issuer\": null, \"metadata\": {}, \"rendering_options\": null } }, \"livemode\": false, \"locale\": \"auto\", \"metadata\": { \"order_id\": \"LCG-20260121-H3ZSPR\" }, \"mode\": \"payment\", \"origin_context\": null, \"payment_intent\": \"pi_3Ss5AtHSKyk17Q2D136qtqDJ\", \"payment_link\": null, \"payment_method_collection\": \"if_required\", \"payment_method_configuration_details\": { \"id\": \"pmc_1SpVCCHSKyk17Q2DyqBZl7qo\", \"parent\": null }, \"payment_method_options\": { \"card\": { \"request_three_d_secure\": \"automatic\" } }, \"payment_method_types\": [\"card\", \"bancontact\", \"eps\", \"klarna\", \"link\", \"amazon_pay\"], \"payment_status\": \"paid\", \"permissions\": null, \"phone_number_collection\": { \"enabled\": false }, \"recovered_from\": null, \"saved_payment_method_options\": null, \"setup_intent\": null, \"shipping_address_collection\": null, \"shipping_cost\": null, \"shipping_options\": [], \"status\": \"complete\", \"submit_type\": null, \"subscription\": null, \"success_url\": \"http://localhost:5173/checkout/success?session_id={CHECKOUT_SESSION_ID}\", \"total_details\": { \"amount_discount\": 0, \"amount_shipping\": 0, \"amount_tax\": 0 }, \"ui_mode\": \"hosted\", \"url\": null, \"wallet_options\": null } }, \"livemode\": false, \"pending_webhooks\": 1, \"request\": { \"id\": null, \"idempotency_key\": null }, \"type\": \"checkout.session.completed\" }, \"_body\": true, \"_eventsCount\": 0, \"_sessionManager\": { \"_key\": \"passport\" }, \"_passport\": { \"instance\": { \"_key\": \"passport\", \"_strategies\": { \"session\": { \"name\": \"session\", \"_key\": \"passport\" }, \"bearer\": { \"name\": \"bearer\", \"_realm\": \"Users\" }, \"oauth2-client-password\": { \"name\": \"oauth2-client-password\" }, \"anon\": { \"name\": \"anon\" }, \"tokens\": { \"name\": \"tokens\" } }, \"_serializers\": [], \"_deserializers\": [], \"_infoTransformers\": [], \"_framework\": {}, \"_sm\": { \"_key\": \"passport\" }, \"strategies\": {}, \"_userProperty\": \"user\" } }, \"route\": { \"path\": \"/webhook/stripe\", \"stack\": [{ \"name\": \"cookieParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"httpMiddleware\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"corsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"metricsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"jsonParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"urlencodedParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"multipartParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"rawBodyParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }], \"methods\": { \"post\": true } }, \"cookies\": {}, \"signedCookies\": {}, \"headers\": { \"host\": \"ascremosas.com\", \"x-real-ip\": \"52.15.183.38\", \"connection\": \"close\", \"content-length\": \"4085\", \"content-type\": \"application/json; charset=utf-8\", \"cache-control\": \"no-cache\", \"user-agent\": \"Stripe/1.0 (+https://stripe.com/docs/webhooks)\", \"accept\": \"*/*; q=0.5, application/json\", \"stripe-signature\": \"t=1769016396,v1=ea8139b68fe07cf65db0b85b607eabb676b691577e0479567d629d7b22a5da2b,v0=8cbbec97ae7cf612247c2a0ef7979ed83005e6a3101534ab973d5fa9a8b0ae79\" } }, \"res\": {} }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 1260,
+        "wires": [
+            [
+                "3c51893601610a45"
+            ]
+        ]
+    },
+    {
+        "id": "732cdd2ecdb3ebf6",
+        "type": "inject",
+        "z": "511654ac3eb34f3c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1260,
+        "wires": [
+            [
+                "765e727245e3063a"
+            ]
+        ]
+    },
+    {
+        "id": "3c51893601610a45",
+        "type": "debug",
+        "z": "511654ac3eb34f3c",
+        "name": "stripe",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "de5a09c1a7b90852",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "failed",
+        "func": "msg = { \"_msgid\": \"1bc5b744606d3cdb\", \"payload\": { \"id\": \"evt_3Ss7lJHSKyk17Q2D0L1RNo06\", \"object\": \"event\", \"api_version\": \"2025-12-15.clover\", \"created\": 1769026342, \"data\": { \"object\": { \"id\": \"pi_3Ss7lJHSKyk17Q2D0J0NIGmE\", \"object\": \"payment_intent\", \"amount\": 1100, \"amount_capturable\": 0, \"amount_details\": { \"shipping\": { \"amount\": 0, \"from_postal_code\": null, \"to_postal_code\": null }, \"tax\": { \"total_tax_amount\": 0 }, \"tip\": {} }, \"amount_received\": 0, \"application\": null, \"application_fee_amount\": null, \"automatic_payment_methods\": null, \"canceled_at\": null, \"cancellation_reason\": null, \"capture_method\": \"automatic_async\", \"client_secret\": \"pi_3Ss7lJHSKyk17Q2D0J0NIGmE_secret_JnCFe0HKiCN4Y7ldcrDBwgPJl\", \"confirmation_method\": \"automatic\", \"created\": 1769026341, \"currency\": \"eur\", \"customer\": null, \"customer_account\": null, \"description\": null, \"excluded_payment_method_types\": null, \"last_payment_error\": { \"advice_code\": \"try_again_later\", \"charge\": \"ch_3Ss7lJHSKyk17Q2D0wjgh3Sg\", \"code\": \"card_declined\", \"decline_code\": \"insufficient_funds\", \"doc_url\": \"https://stripe.com/docs/error-codes/card-declined\", \"message\": \"Your card has insufficient funds.\", \"network_advice_code\": \"02\", \"network_decline_code\": \"51\", \"payment_method\": { \"id\": \"pm_1Ss7lJHSKyk17Q2DYOZ7nmWS\", \"object\": \"payment_method\", \"allow_redisplay\": \"limited\", \"billing_details\": { \"address\": { \"city\": null, \"country\": \"ES\", \"line1\": null, \"line2\": null, \"postal_code\": null, \"state\": null }, \"email\": \"ascremosas.co@gmail.com\", \"name\": \"as cremosas\", \"phone\": null, \"tax_id\": null }, \"card\": { \"brand\": \"visa\", \"checks\": { \"address_line1_check\": null, \"address_postal_code_check\": null, \"cvc_check\": \"pass\" }, \"country\": \"US\", \"display_brand\": \"visa\", \"exp_month\": 2, \"exp_year\": 2031, \"fingerprint\": \"OhmOUvGtXItJ3LE5\", \"funding\": \"credit\", \"generated_from\": null, \"last4\": \"9995\", \"networks\": { \"available\": [\"visa\"], \"preferred\": null }, \"regulated_status\": \"unregulated\", \"three_d_secure_usage\": { \"supported\": true }, \"wallet\": null }, \"created\": 1769026341, \"customer\": null, \"customer_account\": null, \"livemode\": false, \"metadata\": {}, \"type\": \"card\" }, \"type\": \"card_error\" }, \"latest_charge\": \"ch_3Ss7lJHSKyk17Q2D0wjgh3Sg\", \"livemode\": false, \"metadata\": {}, \"next_action\": null, \"on_behalf_of\": null, \"payment_details\": { \"customer_reference\": null, \"order_reference\": \"prod_TpnL4NdWIjfjy9\" }, \"payment_method\": null, \"payment_method_configuration_details\": null, \"payment_method_options\": { \"card\": { \"installments\": null, \"mandate_options\": null, \"network\": null, \"request_three_d_secure\": \"automatic\" } }, \"payment_method_types\": [\"card\"], \"processing\": null, \"receipt_email\": null, \"review\": null, \"setup_future_usage\": null, \"shipping\": null, \"source\": null, \"statement_descriptor\": null, \"statement_descriptor_suffix\": null, \"status\": \"requires_payment_method\", \"transfer_data\": null, \"transfer_group\": null } }, \"livemode\": false, \"pending_webhooks\": 1, \"request\": { \"id\": null, \"idempotency_key\": \"617f6672-ffc6-4862-9da9-e6b0a459cdb9\" }, \"type\": \"payment_intent.payment_failed\" }, \"req\": { \"_events\": {}, \"_readableState\": { \"highWaterMark\": 65536, \"buffer\": [], \"bufferIndex\": 0, \"length\": 0, \"pipes\": [], \"awaitDrainWriters\": null }, \"socket\": \"[internal]\", \"httpVersionMajor\": 1, \"httpVersionMinor\": 1, \"httpVersion\": \"1.1\", \"complete\": true, \"rawHeaders\": [\"Host\", \"ascremosas.com\", \"X-Real-IP\", \"3.130.192.231\", \"Connection\", \"close\", \"Content-Length\", \"4214\", \"Content-Type\", \"application/json; charset=utf-8\", \"Cache-Control\", \"no-cache\", \"User-Agent\", \"Stripe/1.0 (+https://stripe.com/docs/webhooks)\", \"Accept\", \"*/*; q=0.5, application/json\", \"Stripe-Signature\", \"t=1769026342,v1=26748b4b94508798003a4460506431e42e49e0b939a1e88b6eb4163866f4ca50,v0=e13c3b9abc6d485cf34e226320a692c371e4dd7c401c9e0e2906a16e3523ed75\"], \"rawTrailers\": [], \"joinDuplicateHeaders\": null, \"aborted\": false, \"upgrade\": false, \"url\": \"/webhook/stripe\", \"method\": \"POST\", \"statusCode\": null, \"statusMessage\": null, \"client\": \"[internal]\", \"_consuming\": true, \"_dumped\": false, \"baseUrl\": \"\", \"originalUrl\": \"/webhook/stripe\", \"_parsedUrl\": { \"protocol\": null, \"slashes\": null, \"auth\": null, \"host\": null, \"port\": null, \"hostname\": null, \"hash\": null, \"search\": null, \"query\": null, \"pathname\": \"/webhook/stripe\", \"path\": \"/webhook/stripe\", \"href\": \"/webhook/stripe\", \"_raw\": \"/webhook/stripe\" }, \"params\": {}, \"query\": {}, \"res\": \"[internal]\", \"body\": { \"id\": \"evt_3Ss7lJHSKyk17Q2D0L1RNo06\", \"object\": \"event\", \"api_version\": \"2025-12-15.clover\", \"created\": 1769026342, \"data\": { \"object\": { \"id\": \"pi_3Ss7lJHSKyk17Q2D0J0NIGmE\", \"object\": \"payment_intent\", \"amount\": 1100, \"amount_capturable\": 0, \"amount_details\": { \"shipping\": { \"amount\": 0, \"from_postal_code\": null, \"to_postal_code\": null }, \"tax\": { \"total_tax_amount\": 0 }, \"tip\": {} }, \"amount_received\": 0, \"application\": null, \"application_fee_amount\": null, \"automatic_payment_methods\": null, \"canceled_at\": null, \"cancellation_reason\": null, \"capture_method\": \"automatic_async\", \"client_secret\": \"pi_3Ss7lJHSKyk17Q2D0J0NIGmE_secret_JnCFe0HKiCN4Y7ldcrDBwgPJl\", \"confirmation_method\": \"automatic\", \"created\": 1769026341, \"currency\": \"eur\", \"customer\": null, \"customer_account\": null, \"description\": null, \"excluded_payment_method_types\": null, \"last_payment_error\": { \"advice_code\": \"try_again_later\", \"charge\": \"ch_3Ss7lJHSKyk17Q2D0wjgh3Sg\", \"code\": \"card_declined\", \"decline_code\": \"insufficient_funds\", \"doc_url\": \"https://stripe.com/docs/error-codes/card-declined\", \"message\": \"Your card has insufficient funds.\", \"network_advice_code\": \"02\", \"network_decline_code\": \"51\", \"payment_method\": { \"id\": \"pm_1Ss7lJHSKyk17Q2DYOZ7nmWS\", \"object\": \"payment_method\", \"allow_redisplay\": \"limited\", \"billing_details\": { \"address\": { \"city\": null, \"country\": \"ES\", \"line1\": null, \"line2\": null, \"postal_code\": null, \"state\": null }, \"email\": \"ascremosas.co@gmail.com\", \"name\": \"as cremosas\", \"phone\": null, \"tax_id\": null }, \"card\": { \"brand\": \"visa\", \"checks\": { \"address_line1_check\": null, \"address_postal_code_check\": null, \"cvc_check\": \"pass\" }, \"country\": \"US\", \"display_brand\": \"visa\", \"exp_month\": 2, \"exp_year\": 2031, \"fingerprint\": \"OhmOUvGtXItJ3LE5\", \"funding\": \"credit\", \"generated_from\": null, \"last4\": \"9995\", \"networks\": { \"available\": [\"visa\"], \"preferred\": null }, \"regulated_status\": \"unregulated\", \"three_d_secure_usage\": { \"supported\": true }, \"wallet\": null }, \"created\": 1769026341, \"customer\": null, \"customer_account\": null, \"livemode\": false, \"metadata\": {}, \"type\": \"card\" }, \"type\": \"card_error\" }, \"latest_charge\": \"ch_3Ss7lJHSKyk17Q2D0wjgh3Sg\", \"livemode\": false, \"metadata\": {}, \"next_action\": null, \"on_behalf_of\": null, \"payment_details\": { \"customer_reference\": null, \"order_reference\": \"prod_TpnL4NdWIjfjy9\" }, \"payment_method\": null, \"payment_method_configuration_details\": null, \"payment_method_options\": { \"card\": { \"installments\": null, \"mandate_options\": null, \"network\": null, \"request_three_d_secure\": \"automatic\" } }, \"payment_method_types\": [\"card\"], \"processing\": null, \"receipt_email\": null, \"review\": null, \"setup_future_usage\": null, \"shipping\": null, \"source\": null, \"statement_descriptor\": null, \"statement_descriptor_suffix\": null, \"status\": \"requires_payment_method\", \"transfer_data\": null, \"transfer_group\": null } }, \"livemode\": false, \"pending_webhooks\": 1, \"request\": { \"id\": null, \"idempotency_key\": \"617f6672-ffc6-4862-9da9-e6b0a459cdb9\" }, \"type\": \"payment_intent.payment_failed\" }, \"_body\": true, \"_eventsCount\": 0, \"_sessionManager\": { \"_key\": \"passport\" }, \"_passport\": { \"instance\": { \"_key\": \"passport\", \"_strategies\": { \"session\": { \"name\": \"session\", \"_key\": \"passport\" }, \"bearer\": { \"name\": \"bearer\", \"_realm\": \"Users\" }, \"oauth2-client-password\": { \"name\": \"oauth2-client-password\" }, \"anon\": { \"name\": \"anon\" }, \"tokens\": { \"name\": \"tokens\" } }, \"_serializers\": [], \"_deserializers\": [], \"_infoTransformers\": [], \"_framework\": {}, \"_sm\": { \"_key\": \"passport\" }, \"strategies\": {}, \"_userProperty\": \"user\" } }, \"route\": { \"path\": \"/webhook/stripe\", \"stack\": [{ \"name\": \"cookieParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"httpMiddleware\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"corsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"metricsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"jsonParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"urlencodedParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"multipartParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"rawBodyParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }], \"methods\": { \"post\": true } }, \"cookies\": {}, \"signedCookies\": {}, \"headers\": { \"host\": \"ascremosas.com\", \"x-real-ip\": \"3.130.192.231\", \"connection\": \"close\", \"content-length\": \"4214\", \"content-type\": \"application/json; charset=utf-8\", \"cache-control\": \"no-cache\", \"user-agent\": \"Stripe/1.0 (+https://stripe.com/docs/webhooks)\", \"accept\": \"*/*; q=0.5, application/json\", \"stripe-signature\": \"t=1769026342,v1=26748b4b94508798003a4460506431e42e49e0b939a1e88b6eb4163866f4ca50,v0=e13c3b9abc6d485cf34e226320a692c371e4dd7c401c9e0e2906a16e3523ed75\" } }, \"res\": {} }\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 1320,
+        "wires": [
+            [
+                "7a4fbb1852e7a254"
+            ]
+        ]
+    },
+    {
+        "id": "3d4a3ebea2b090e9",
+        "type": "inject",
+        "z": "511654ac3eb34f3c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1320,
+        "wires": [
+            [
+                "de5a09c1a7b90852"
+            ]
+        ]
+    },
+    {
+        "id": "7a4fbb1852e7a254",
+        "type": "debug",
+        "z": "511654ac3eb34f3c",
+        "name": "stripe",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "da3377c649285748",
+        "type": "comment",
+        "z": "511654ac3eb34f3c",
+        "name": "change paid and paid at",
+        "info": "",
+        "x": 430,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "98482146cc1bb625",
+        "type": "comment",
+        "z": "511654ac3eb34f3c",
+        "name": "status unpaid",
+        "info": "",
+        "x": 330,
+        "y": 1360,
         "wires": []
     },
     {
@@ -1719,8 +1936,7 @@
         "y": 180,
         "wires": [
             [
-                "a8e99c07f5d12075",
-                "9e25dfbc29517a6b"
+                "a8e99c07f5d12075"
             ]
         ]
     },
@@ -2525,24 +2741,6 @@
         "statusType": "auto",
         "x": 240,
         "y": 960,
-        "wires": []
-    },
-    {
-        "id": "9e25dfbc29517a6b",
-        "type": "debug",
-        "z": "554b53c71ea14722",
-        "g": "4e79e7e4e982c657",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 900,
-        "y": 200,
         "wires": []
     },
     {
@@ -4948,9 +5146,8 @@
         "y": 1020,
         "wires": [
             [
-                "969ea03e3f116418",
                 "527938a14a84fccd",
-                "function_validate_order_data"
+                "5060f163f92222d3"
             ]
         ]
     },
@@ -5380,7 +5577,7 @@
         "z": "f3eb2de3da3352db",
         "g": "o1r2d3e4r5s6f7l8",
         "name": "debug 2",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5513,14 +5710,12 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"orderSource\":\"site\",\"shopId\":1,\"customerName\":\"juan\",\"customerEmail\":\"a.h@gmail.com\",\"customerPhone\":\"633248971\",\"pickupDate\":\"2026-01-17\",\"pickupTime\":\"morning\",\"items\":[{\"productId\":2,\"productVariantId\":4,\"quantity\":1,\"unitPrice\":13,\"isGlutenFree\":false,\"isLactoseFree\":true,\"isSugarFree\":false},{\"productId\":3,\"productVariantId\":6,\"quantity\":3,\"unitPrice\":13,\"isGlutenFree\":true,\"isLactoseFree\":false,\"isSugarFree\":false},{\"productId\":3,\"productVariantId\":5,\"quantity\":4,\"unitPrice\":6.5,\"isGlutenFree\":false,\"isLactoseFree\":false,\"isSugarFree\":false},{\"productId\":2,\"productVariantId\":3,\"quantity\":1,\"unitPrice\":6.5,\"isGlutenFree\":false,\"isLactoseFree\":false,\"isSugarFree\":false}],\"totalPrice\":84.5}",
+        "payload": "{\"orderSource\":\"site\",\"shopId\":1,\"customerName\":\"Santiago Otero Rodríguez\",\"customerEmail\":\"ascremosas.co@gmail.com\",\"customerPhone\":\"+34622362304\",\"pickupDate\":\"2026-01-23\",\"pickupTime\":\"morning\",\"items\":[{\"productId\":2,\"productVariantId\":3,\"quantity\":1,\"unitPrice\":6,\"isGlutenFree\":false,\"isLactoseFree\":false,\"isSugarFree\":false},{\"productId\":2,\"productVariantId\":4,\"quantity\":1,\"unitPrice\":13,\"isGlutenFree\":true,\"isLactoseFree\":false,\"isSugarFree\":false},{\"productId\":2,\"productVariantId\":4,\"quantity\":2,\"unitPrice\":12,\"isGlutenFree\":false,\"isLactoseFree\":false,\"isSugarFree\":false},{\"productId\":3,\"productVariantId\":6,\"quantity\":2,\"unitPrice\":13,\"isGlutenFree\":false,\"isLactoseFree\":true,\"isSugarFree\":false},{\"productId\":3,\"productVariantId\":6,\"quantity\":1,\"unitPrice\":12,\"isGlutenFree\":false,\"isLactoseFree\":false,\"isSugarFree\":false}],\"totalPrice\":81}",
         "payloadType": "json",
         "x": 230,
         "y": 1080,
         "wires": [
-            [
-                "function_validate_order_data"
-            ]
+            []
         ]
     },
     {
@@ -5658,7 +5853,7 @@
         "y": 1180,
         "wires": [
             [
-                "46c4dc8895240660"
+                "73a88285fdf71dad"
             ]
         ]
     },
@@ -5679,7 +5874,7 @@
         "senderr": false,
         "headers": [],
         "x": 450,
-        "y": 1180,
+        "y": 1220,
         "wires": [
             [
                 "73a88285fdf71dad"
@@ -5716,10 +5911,774 @@
         "finalize": "",
         "libs": [],
         "x": 200,
-        "y": 1260,
+        "y": 1140,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "5060f163f92222d3",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "validate data",
+        "func": "const data = msg.req?.body || msg?.payload || {};\nconst {\n    orderSource = null,\n    shopId = null,\n    customerName = null,\n    customerEmail = null,\n    customerPhone = null,\n    pickupDate = null,\n    pickupTime = null,\n    totalPrice = null,\n    notes = null,\n    items = [],\n    lang\n} = data;\n\nconst errors = [];\n\nif (orderSource) {\n    const validSources = ['site', 'shop', 'phone', 'instagram', 'in person'];\n    if (!validSources.includes(orderSource)) {\n        errors.push({ path: 'orderSource', message: 'Order source must be one of: site, shop, phone, instagram, in person' });\n    }\n}\n\nif (shopId !== null && (typeof shopId !== 'number' || shopId <= 0)) {\n    errors.push({ path: 'shopId', message: 'Shop id must be a positive number' });\n}\n\nif (!customerName || typeof customerName !== 'string' || customerName.length < 2) {\n    errors.push({ path: 'customerName', message: 'Customer name must be at least 2 characters' });\n}\n\nif (customerEmail && typeof customerEmail !== 'string') {\n    errors.push({ path: 'customerEmail', message: 'Customer email must be a string' });\n}\n\nif (!customerPhone || typeof customerPhone !== 'string' || customerPhone.length < 5) {\n    errors.push({ path: 'customerPhone', message: 'Customer phone must be at least 5 characters' });\n}\n\nconst dateRegex = /^\\d{4}-\\d{2}-\\d{2}$/;\nif (!pickupDate || !dateRegex.test(pickupDate)) {\n    errors.push({ path: 'pickupDate', message: 'Valid pickup date is required (YYYY-MM-DD)' });\n}\n\nconst validPickupTimes = ['morning', 'evening', 'pending'];\nif (!validPickupTimes.includes(pickupTime)) {\n    errors.push({ path: 'pickupTime', message: 'Pickup time must be one of: morning, evening, pending' });\n}\n\nif (totalPrice === null || typeof totalPrice !== 'number' || totalPrice < 0) {\n    errors.push({ path: 'totalPrice', message: 'Total price must be a non-negative number' });\n}\n\nif (notes !== null && typeof notes !== 'string') {\n    errors.push({ path: 'notes', message: 'Notes must be a string' });\n}\n\nif (!Array.isArray(items)) {\n    errors.push({ path: 'items', message: 'Items must be an array' });\n} else {\n    items.forEach((item, index) => {\n        if (!item.productId || typeof item.productId !== 'number' || item.productId <= 0) {\n            errors.push({ path: `items[${index}].productId`, message: 'Product ID must be a positive number' });\n        }\n        if (item.productVariantId !== null && item.productVariantId !== undefined && (typeof item.productVariantId !== 'number' || item.productVariantId <= 0)) {\n            errors.push({ path: `items[${index}].productVariantId`, message: 'Product variant ID must be a positive number or null' });\n        }\n        if (!item.quantity || typeof item.quantity !== 'number' || item.quantity < 1) {\n            errors.push({ path: `items[${index}].quantity`, message: 'Quantity must be at least 1' });\n        }\n        if (item.unitPrice === null || item.unitPrice === undefined || typeof item.unitPrice !== 'number' || item.unitPrice < 0) {\n            errors.push({ path: `items[${index}].unitPrice`, message: 'Unit price must be a non-negative number' });\n        }\n        if (item.isGlutenFree !== undefined && typeof item.isGlutenFree !== 'boolean') {\n            errors.push({ path: `items[${index}].isGlutenFree`, message: 'isGlutenFree must be a boolean' });\n        }\n        if (item.isLactoseFree !== undefined && typeof item.isLactoseFree !== 'boolean') {\n            errors.push({ path: `items[${index}].isLactoseFree`, message: 'isLactoseFree must be a boolean' });\n        }\n        if (item.isSugarFree !== undefined && typeof item.isSugarFree !== 'boolean') {\n            errors.push({ path: `items[${index}].isSugarFree`, message: 'isSugarFree must be a boolean' });\n        }\n    });\n}\n\nif (!['es', 'en', 'gl'].includes(lang)) {\n    errors.push({ path: 'lang', message: \"Inlavid lang parameter\" });\n};\n\nif (errors.length > 0) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: 'error',\n        message: `Validation error: ${errors.map(err => err.message).join(', ')}`,\n        data: null\n    };\n\n    return [msg, null];\n}\n\nmsg.orderData = {\n    orderSource,\n    shopId,\n    customerName,\n    customerEmail,\n    customerPhone,\n    pickupDate,\n    pickupTime,\n    totalPrice,\n    notes,\n    items,\n    lang\n};\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 1540,
+        "wires": [
+            [
+                "6e43123e959b2480",
+                "bf1fe5748a8e1e29"
+            ],
+            [
+                "36643554ac4b46fb",
+                "e324e4949b5b5434"
+            ]
+        ]
+    },
+    {
+        "id": "e51812c91f8e45ee",
+        "type": "inject",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"orderSource\":\"site\",\"shopId\":1,\"customerName\":\"Santiago Otero Rodríguez\",\"customerEmail\":\"ascremosas.co@gmail.com\",\"customerPhone\":\"+34622362304\",\"pickupDate\":\"2026-01-23\",\"pickupTime\":\"morning\",\"items\":[{\"productId\":2,\"productVariantId\":3,\"quantity\":1,\"unitPrice\":6,\"isGlutenFree\":false,\"isLactoseFree\":false,\"isSugarFree\":false},{\"productId\":2,\"productVariantId\":4,\"quantity\":1,\"unitPrice\":13,\"isGlutenFree\":true,\"isLactoseFree\":false,\"isSugarFree\":false},{\"productId\":2,\"productVariantId\":4,\"quantity\":2,\"unitPrice\":12,\"isGlutenFree\":false,\"isLactoseFree\":false,\"isSugarFree\":false},{\"productId\":3,\"productVariantId\":6,\"quantity\":2,\"unitPrice\":13,\"isGlutenFree\":false,\"isLactoseFree\":true,\"isSugarFree\":false},{\"productId\":3,\"productVariantId\":6,\"quantity\":1,\"unitPrice\":12,\"isGlutenFree\":false,\"isLactoseFree\":false,\"isSugarFree\":false}],\"totalPrice\":81,\"lang\":\"en\"}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 1540,
+        "wires": [
+            [
+                "5060f163f92222d3"
+            ]
+        ]
+    },
+    {
+        "id": "6e43123e959b2480",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "name": "not",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "36643554ac4b46fb",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "name": "yes",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 290,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "6f66e1b76518e501",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "insert order + items",
+        "func": "const shopMapping = flow.get('shop_mapping') || {};\nconst {\n    orderSource,\n    shopId,\n    customerName,\n    customerEmail,\n    customerPhone,\n    pickupDate,\n    pickupTime,\n    totalPrice,\n    notes,\n    items\n} = msg.orderData;\n\nconst generateOrderId = (shopId) => {\n    const abbreviation = shopMapping?.[shopId] || 'DEF';\n    const date = new Date().toISOString().slice(0, 10).replace(/-/g, '');\n    const rand = Math.random().toString(36).substring(2, 8).toUpperCase();\n\n    return `${abbreviation}-${date}-${rand}`;\n};\n\nconst orderId = generateOrderId(shopId);\n\nlet itemsInsertSQL = '';\nif (items.length > 0) {\n    const itemsValues = items.map((item, idx) => {\n        const productVariantId = item.productVariantId || 'NULL';\n        const isGlutenFree = item.isGlutenFree || false;\n        const isLactoseFree = item.isLactoseFree || false;\n        const isSugarFree = item.isSugarFree || false;\n\n        return `((SELECT id FROM inserted_order), ${item.productId}, ${productVariantId}, ${item.quantity}, ${item.unitPrice}, ${isGlutenFree}, ${isLactoseFree}, ${isSugarFree})`;\n    }).join(', ');\n\n    itemsInsertSQL = `\n        , inserted_items AS (\n            INSERT INTO order_items (order_id, product_id, product_variant_id, quantity, unit_price, is_gluten_free, is_lactose_free, is_sugar_free)\n            VALUES ${itemsValues}\n            RETURNING *\n        )\n    `;\n}\n\nmsg.queryParameters = [\n    orderId,\n    'pending',\n    orderSource,\n    shopId,\n    customerName,\n    customerEmail,\n    customerPhone,\n    pickupDate,\n    pickupTime,\n    totalPrice,\n    notes\n];\n\nmsg.payload = `\n    WITH inserted_order AS (\n        INSERT INTO orders (\n            order_id, status, order_source, shop_id,\n            customer_name, customer_email, customer_phone,\n            pickup_date, pickup_time, total_price,\n            notes\n        )\n        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)\n        RETURNING id\n    )\n    ${itemsInsertSQL}\n    SELECT id FROM inserted_order\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e324e4949b5b5434",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "generate orderId",
+        "func": "const shopMapping = flow.get('shop_mapping') || {};\nconst {\n    shopId\n} = msg.orderData;\n\nconst generateOrderId = (shopId) => {\n    const abbreviation = shopMapping?.[shopId] || 'DEF';\n    const date = new Date().toISOString().slice(0, 10).replace(/-/g, '');\n    const rand = Math.random().toString(36).substring(2, 8).toUpperCase();\n\n    return `${abbreviation}-${date}-${rand}`;\n};\n\nmsg.orderId = generateOrderId(shopId);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 1560,
+        "wires": [
+            [
+                "492e6e5f939ad4d2"
+            ]
+        ]
+    },
+    {
+        "id": "bb7b33621307724d",
+        "type": "inject",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 1300,
+        "wires": [
+            [
+                "ade0845de1805c5e"
+            ]
+        ]
+    },
+    {
+        "id": "ade0845de1805c5e",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "function 5",
+        "func": "const SECRET_KEY = env.get(\"STRIPE_SECRET_KEY\") || '';\n\nmsg.url = \"https://api.stripe.com/v1/checkout/sessions\";\nmsg.method = \"POST\";\n\nmsg.headers = {\n    'Authorization': `Bearer ${SECRET_KEY}`,\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nconst orderId = '1';\nconst customerEmail = \"a.miklukha05@gmail.com\";\n\n// Продукти в зрозумілому форматі\nconst products = [\n    {\n        name: 'product1',\n        currency: 'eur',\n        unitAmount: 50,  // в центах\n        quantity: 1\n    },\n    // Легко додати ще:\n    {\n        name: 'product2',\n        currency: 'eur',\n        unitAmount: 100,\n        quantity: 2\n    }\n];\n\n// Конвертація продуктів у Stripe формат\nfunction buildLineItems(products) {\n    const result = {};\n    \n    products.forEach((product, index) => {\n        const prefix = `line_items[${index}]`;\n        result[`${prefix}[price_data][currency]`] = product.currency;\n        result[`${prefix}[price_data][product_data][name]`] = product.name;\n        result[`${prefix}[price_data][unit_amount]`] = product.unitAmount;\n        result[`${prefix}[quantity]`] = product.quantity;\n    });\n    \n    return result;\n}\n\nconst formData = {\n    'success_url': `http://localhost:5173/checkout/success?session_id={CHECKOUT_SESSION_ID}`,\n    'cancel_url': `http://localhost:5173/checkout/cancel?order_id=${orderId}`,\n    'mode': 'payment',\n    'customer_email': customerEmail,\n    'metadata[order_id]': orderId,\n    'locale': 'auto',\n    ...buildLineItems(products)\n};\n\nconst body = Object.entries(formData)\n    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)\n    .join('&');\n\nmsg.payload = body;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1300,
+        "wires": [
+            [
+                "5029090a5ce32a19"
+            ]
+        ]
+    },
+    {
+        "id": "5029090a5ce32a19",
+        "type": "http request",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 1300,
+        "wires": [
+            [
+                "54f6d62d248b58d8"
+            ]
+        ]
+    },
+    {
+        "id": "54f6d62d248b58d8",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "492e6e5f939ad4d2",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "create url",
+        "func": "const SECRET_KEY = env.get(\"STRIPE_SECRET_KEY\") || '';\nconst {\n    customerEmail,\n    totalPrice,\n    lang\n} = msg.orderData;\n\nconst orderMap = {\n    es: 'Pedido',\n    gl: 'Pedido',\n    en: 'Order'\n};\n\nconst formData = {\n    'success_url': `http://localhost:5173/checkout/success?session_id={CHECKOUT_SESSION_ID}`,\n    'cancel_url': `http://localhost:5173/checkout/cancel?order_id=${msg.orderId}`,\n    'mode': 'payment',\n    'customer_email': customerEmail,\n    'metadata[order_id]': msg.orderId,\n    'locale': 'auto',\n    'line_items[0][price_data][currency]': 'eur',\n    'line_items[0][price_data][product_data][name]': `${orderMap[lang]} #${msg.orderId}`,\n    'line_items[0][price_data][unit_amount]': totalPrice * 100,\n    'line_items[0][quantity]': 1\n};\n\nconst body = Object.entries(formData)\n    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)\n    .join('&');\n\nmsg.payload = body;\n\nmsg.url = \"https://api.stripe.com/v1/checkout/sessions\";\nmsg.method = \"POST\";\nmsg.headers = {\n    'Authorization': `Bearer ${SECRET_KEY}`,\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 1560,
+        "wires": [
+            [
+                "c62f62399357ee40"
+            ]
+        ]
+    },
+    {
+        "id": "b747213fb91b44c4",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "name": "yes",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "c62f62399357ee40",
+        "type": "http request",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 790,
+        "y": 1560,
+        "wires": [
+            [
+                "b747213fb91b44c4",
+                "265d042a10cdcebe"
+            ]
+        ]
+    },
+    {
+        "id": "ce240f92800704eb",
+        "type": "inject",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 360,
+        "y": 1640,
+        "wires": [
+            [
+                "125f7be490315bf5"
+            ]
+        ]
+    },
+    {
+        "id": "125f7be490315bf5",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "function 4",
+        "func": "const lang = 'en';\nmsg.orderId = \"f\";\n\nconst orderMap = {\n    es: 'Pedido',\n    gl: 'Pedido',\n    en: 'Order'\n}\n\nconst a = `${orderMap[lang]} #${msg.orderId}`\nnode.warn(a);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 1640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "265d042a10cdcebe",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "check answer",
+        "func": "const { id = null, url = null } = msg.payload || {};\n\nif (msg.statusCode !== 200 || !id || !url) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: `Problem with payment`,\n        data: null\n    };\n\n    return [msg, null];\n};\n\nmsg.stripe = {\n    id, \n    url\n};\n\nreturn [null, msg];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 1560,
+        "wires": [
+            [
+                "fc0b3b7481063fdc",
+                "bf1fe5748a8e1e29"
+            ],
+            [
+                "f03c8d22cdbc5749",
+                "3272c763d8ab4c2a"
+            ]
+        ]
+    },
+    {
+        "id": "31db6f765a9e0346",
+        "type": "comment",
+        "z": "f3eb2de3da3352db",
+        "name": "замінити посилання на фронт!!!",
+        "info": "",
+        "x": 670,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "f03c8d22cdbc5749",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "name": "yes",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "3272c763d8ab4c2a",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "insert order + items",
+        "func": "const {\n    orderSource,\n    shopId,\n    customerName,\n    customerEmail,\n    customerPhone,\n    pickupDate,\n    pickupTime,\n    totalPrice,\n    notes,\n    items\n} = msg.orderData;\n\n\nlet itemsInsertSQL = '';\nif (items.length > 0) {\n    const itemsValues = items.map((item) => {\n        const productVariantId = item?.productVariantId || 'NULL';\n        const isGlutenFree = item?.isGlutenFree || false;\n        const isLactoseFree = item?.isLactoseFree || false;\n        const isSugarFree = item?.isSugarFree || false;\n\n        return `((SELECT id FROM inserted_order), ${item?.productId}, ${productVariantId}, ${item?.quantity}, ${item?.unitPrice}, ${isGlutenFree}, ${isLactoseFree}, ${isSugarFree})`;\n    }).join(', ');\n\n    itemsInsertSQL = `\n        , inserted_items AS (\n            INSERT INTO order_items (order_id, product_id, product_variant_id, quantity, unit_price, is_gluten_free, is_lactose_free, is_sugar_free)\n            VALUES ${itemsValues}\n            RETURNING *\n        )\n    `;\n}\n\nmsg.queryParameters = [\n    msg.orderId,\n    'pending',\n    orderSource,\n    shopId,\n    customerName,\n    customerEmail,\n    customerPhone,\n    pickupDate,\n    pickupTime,\n    totalPrice,\n    notes,\n    msg?.stripe?.id\n];\n\nmsg.payload = `\n    WITH inserted_order AS (\n        INSERT INTO orders (\n            order_id, status, order_source, shop_id,\n            customer_name, customer_email, customer_phone,\n            pickup_date, pickup_time, total_price,\n            notes, stripe_session_id\n        )\n        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)\n        RETURNING id\n    )\n    ${itemsInsertSQL}\n    SELECT id FROM inserted_order\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 1580,
+        "wires": [
+            [
+                "4ba0b565025ef2c0"
+            ]
+        ]
+    },
+    {
+        "id": "4ba0b565025ef2c0",
+        "type": "link call",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1320,
+        "y": 1580,
+        "wires": [
+            [
+                "cfaeb2262d9d1454",
+                "5d7e68b7fe481ce8"
+            ]
+        ]
+    },
+    {
+        "id": "5d7e68b7fe481ce8",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "format response",
+        "func": "if (msg?.error) {\n    const { code, constraint } = msg.error || {};\n\n    if (code === '23505') {\n        msg.statusCode = 409;\n        msg.payload = {\n            status: 'error',\n            message: `Order with this order ID already exists. Code - ${code}.`,\n            data: null\n        };\n\n        return msg;\n    }\n\n    if (code === '23503') {\n        let message = 'Referenced record not found';\n\n        if (constraint) {\n            if (constraint.includes('shop')) {\n                message = 'Shop not found';\n            } else if (constraint.includes('product_variant')) {\n                message = 'Product variant not found';\n            } else if (constraint.includes('product')) {\n                message = 'Product not found';\n            }\n        }\n\n        msg.statusCode = 400;\n        msg.payload = {\n            status: 'error',\n            message: `${message}. Code - ${code}.`,\n            data: null\n        };\n\n        return msg;\n    }\n\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: msg.error?.message || 'Database error occurred',\n        data: null\n    };\n\n    return msg;\n}\n\nif (!msg.payload || msg.payload?.length === 0) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: 'Failed to create order - no data returned',\n        data: null\n    };\n\n    return msg;\n};\n\nmsg.statusCode = 201;\nmsg.payload = {\n    status: 'success',\n    message: 'Order created successfully',\n    data: { \n        checkoutUrl: msg?.stripe?.url\n    }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1480,
+        "y": 1580,
+        "wires": [
+            [
+                "7fcb6176b41b2fd1",
+                "bf1fe5748a8e1e29"
+            ]
+        ]
+    },
+    {
+        "id": "fc0b3b7481063fdc",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "name": "yes",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "cfaeb2262d9d1454",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "name": "yes",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1470,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "7fcb6176b41b2fd1",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "name": "yes",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1630,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "bf1fe5748a8e1e29",
+        "type": "http response",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1290,
+        "y": 1512,
+        "wires": []
+    },
+    {
+        "id": "3e1adb5f0c040aef",
+        "type": "http in",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "url": "/api/v1/orders/verify/session",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 1760,
+        "wires": [
+            [
+                "e005e0ebb8a33fea"
+            ]
+        ]
+    },
+    {
+        "id": "e005e0ebb8a33fea",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "validate data",
+        "func": "const data = msg.req?.body || msg?.payload || {};\nconst {\n    sessionId\n} = data;\n\nconst errors = [];\n\nif (!sessionId || typeof sessionId !== 'string') {\n    errors.push({ path: 'sessionId', message: 'sessionId must be' });\n}\n\nif (errors.length > 0) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: 'error',\n        message: `Validation error: ${errors.map(err => err.message).join(', ')}`,\n        data: null\n    };\n\n    return [msg, null];\n}\n\nmsg.queryParameters = [sessionId];\nmsg.payload = `\n    SELECT \n        order_id AS \"orderId\",\n        customer_email AS \"email\",\n        pickup_date AS \"pickupDate\",\n        pickup_time AS \"pickupTime\",\n        total_price AS \"totalPrice\"\n    FROM orders\n    WHERE stripe_session_id = $1\n`;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1760,
+        "wires": [
+            [
+                "f27160b282a5a3d5"
+            ],
+            [
+                "926209902433c381"
+            ]
+        ]
+    },
+    {
+        "id": "f27160b282a5a3d5",
+        "type": "http response",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 850,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "926209902433c381",
+        "type": "link call",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 540,
+        "y": 1780,
+        "wires": [
+            [
+                "a5afe70fe19fe628",
+                "90a850f6889b22a8"
+            ]
+        ]
+    },
+    {
+        "id": "a5afe70fe19fe628",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "name": "yes",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "90a850f6889b22a8",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "format response",
+        "func": "if (!!msg?.error) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: msg.error?.message || 'Database error occurred',\n        data: null\n    };\n\n    return msg;\n}\n\nif (!msg.payload || msg.payload?.length === 0) {\n    msg.statusCode = 404;\n    msg.payload = {\n        status: 'error',\n        message: 'Order not found',\n        data: null\n    };\n\n    return msg;\n}\n\nmsg.statusCode = 200;\nmsg.payload = {\n    status: 'success',\n    message: 'Order details gets successfully',\n    data: msg.payload[0] || {}\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1780,
+        "wires": [
+            [
+                "f27160b282a5a3d5",
+                "a5afe70fe19fe628"
+            ]
+        ]
+    },
+    {
+        "id": "376ada8b7a0b609a",
+        "type": "inject",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"sessionId\":\"cs_test_a18b8XVZkPdpl9GlmRx9wFdbUDWilMOn3vgfjfubZDLeRimVLRKFuofk42\"}",
+        "payloadType": "json",
+        "x": 270,
+        "y": 1800,
+        "wires": [
+            [
+                "e005e0ebb8a33fea"
+            ]
+        ]
+    },
+    {
+        "id": "a81258ebff089977",
+        "type": "http in",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "url": "/api/v1/orders/cancel",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 1940,
+        "wires": [
+            [
+                "1808fb9c1a973c05",
+                "1c50a46501f1f8e0"
+            ]
+        ]
+    },
+    {
+        "id": "516f662b114f5336",
+        "type": "http response",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 830,
+        "y": 1940,
+        "wires": []
+    },
+    {
+        "id": "1808fb9c1a973c05",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "name": "yes",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 2000,
+        "wires": []
+    },
+    {
+        "id": "1c50a46501f1f8e0",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "validate data",
+        "func": "const data = msg.req?.body || msg?.payload || {};\nconst {\n    orderId\n} = data;\n\nconst errors = [];\n\nif (!orderId || typeof orderId !== 'string') {\n    errors.push({ path: 'orderId', message: 'orderId must be' });\n}\n\nif (errors.length > 0) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: 'error',\n        message: `Validation error: ${errors.map(err => err.message).join(', ')}`,\n        data: null\n    };\n\n    return [msg, null];\n}\n\nmsg.queryParameters = [orderId, 'canceled'];\nmsg.payload = `\n    UPDATE orders\n    SET status = $2\n    WHERE order_id = $1\n    RETURNING id;\n`;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 1940,
+        "wires": [
+            [
+                "516f662b114f5336"
+            ],
+            [
+                "1eb519aaca366811"
+            ]
+        ]
+    },
+    {
+        "id": "1eb519aaca366811",
+        "type": "link call",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 520,
+        "y": 1960,
+        "wires": [
+            [
+                "685c56295d5f6da1",
+                "39d7e2b2295a9917"
+            ]
+        ]
+    },
+    {
+        "id": "685c56295d5f6da1",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "format response",
+        "func": "if (!!msg?.error || !msg.payload || msg.payload?.length === 0) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: msg.error?.message || 'Database error occurred',\n        data: null\n    };\n\n    return msg;\n}\n\nmsg.statusCode = 200;\nmsg.payload = {\n    status: 'success',\n    message: 'Order status updated successfully',\n    data: {}\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 1960,
+        "wires": [
+            [
+                "516f662b114f5336",
+                "39d7e2b2295a9917"
+            ]
+        ]
+    },
+    {
+        "id": "39d7e2b2295a9917",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "name": "yes",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 1980,
+        "wires": []
     },
     {
         "id": "4e28b612e1c5ae9d",
