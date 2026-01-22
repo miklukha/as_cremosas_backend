@@ -1312,27 +1312,17 @@
         "url": "/webhook/stripe",
         "method": "post",
         "upload": false,
-        "skipBodyParsing": false,
+        "skipBodyParsing": true,
         "swaggerDoc": "",
         "x": 140,
         "y": 1080,
         "wires": [
             [
-                "ee10190a0268ec6f",
-                "d8680760b8bf0ccd"
+                "c86fa4f220d84bfb",
+                "7dba41cef305919e",
+                "db728fba8af35ae3"
             ]
         ]
-    },
-    {
-        "id": "ee10190a0268ec6f",
-        "type": "http response",
-        "z": "511654ac3eb34f3c",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 390,
-        "y": 1080,
-        "wires": []
     },
     {
         "id": "d8680760b8bf0ccd",
@@ -1347,8 +1337,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 350,
-        "y": 1120,
+        "x": 610,
+        "y": 1740,
         "wires": []
     },
     {
@@ -1364,10 +1354,11 @@
         "finalize": "",
         "libs": [],
         "x": 250,
-        "y": 1200,
+        "y": 1740,
         "wires": [
             [
-                "174d8d3b67a5a4e3"
+                "174d8d3b67a5a4e3",
+                "3ecb6015a1101135"
             ]
         ]
     },
@@ -1393,7 +1384,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 1200,
+        "y": 1740,
         "wires": [
             [
                 "84c461e8da5c8b1a"
@@ -1413,8 +1404,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 370,
-        "y": 1200,
+        "x": 270,
+        "y": 1700,
         "wires": []
     },
     {
@@ -1430,10 +1421,11 @@
         "finalize": "",
         "libs": [],
         "x": 260,
-        "y": 1260,
+        "y": 1800,
         "wires": [
             [
-                "3c51893601610a45"
+                "3c51893601610a45",
+                "284d85fe2e2ed8b6"
             ]
         ]
     },
@@ -1459,7 +1451,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 1260,
+        "y": 1800,
         "wires": [
             [
                 "765e727245e3063a"
@@ -1480,7 +1472,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 390,
-        "y": 1260,
+        "y": 1800,
         "wires": []
     },
     {
@@ -1496,10 +1488,11 @@
         "finalize": "",
         "libs": [],
         "x": 250,
-        "y": 1320,
+        "y": 1860,
         "wires": [
             [
-                "7a4fbb1852e7a254"
+                "7a4fbb1852e7a254",
+                "284d85fe2e2ed8b6"
             ]
         ]
     },
@@ -1525,7 +1518,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 1320,
+        "y": 1860,
         "wires": [
             [
                 "de5a09c1a7b90852"
@@ -1546,7 +1539,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 390,
-        "y": 1320,
+        "y": 1860,
         "wires": []
     },
     {
@@ -1555,7 +1548,7 @@
         "z": "511654ac3eb34f3c",
         "name": "change paid and paid at",
         "info": "",
-        "x": 430,
+        "x": 150,
         "y": 1040,
         "wires": []
     },
@@ -1565,9 +1558,472 @@
         "z": "511654ac3eb34f3c",
         "name": "status unpaid",
         "info": "",
-        "x": 330,
-        "y": 1360,
+        "x": 110,
+        "y": 1000,
         "wires": []
+    },
+    {
+        "id": "8c67f7c7164cf5ad",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "function 6",
+        "func": "// // ВАЖЛИВО: Webhook має отримувати raw body\n// router.post(\n//     '/webhook/stripe',\n//     express.raw({ type: 'application/json' }),\n//     async (req, res) => {\n//         const signature = req.headers['stripe-signature'] as string;\n\n//         try {\n//             const event = stripeService.constructWebhookEvent(\n//                 req.body,\n//                 signature\n//             );\n\n//             switch (event.type) {\n//                 case 'checkout.session.completed': {\n//                     const session = event.data.object;\n//                     const orderId = session.metadata?.order_id;\n\n//                     if (orderId && session.payment_intent) {\n//                         await orderService.updatePaymentStatus(\n//                             orderId,\n//                             session.payment_intent as string\n//                         );\n//                         console.log(`✅ Order ${orderId} paid successfully`);\n//                     }\n//                     break;\n//                 }\n\n//                 case 'checkout.session.expired': {\n//                     const session = event.data.object;\n//                     const orderId = session.metadata?.order_id;\n\n//                     if (orderId) {\n//                         await orderService.cancelOrder(orderId);\n//                         console.log(`❌ Order ${orderId} expired`);\n//                     }\n//                     break;\n//                 }\n//             }\n\n//             res.json({ received: true });\n//         } catch (error) {\n//             console.error('Webhook error:', error);\n//             res.status(400).json({ error: 'Webhook error' });\n//         }\n//     }\n// );\n// return msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c86fa4f220d84bfb",
+        "type": "http response",
+        "z": "511654ac3eb34f3c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 350,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "fdc040dbd81bb52e",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "function 7",
+        "func": "const STRIPE_WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\n\nconst crypto = require('crypto');\n\n\n// Отримуємо signature з headers\nconst signature = msg.req.headers['stripe-signature'];\n\nif (!signature) {\n    msg.statusCode = 400;\n    msg.payload = { error: 'Missing signature' };\n    return msg;\n}\n\n// Парсимо signature header\n// Формат: t=timestamp,v1=signature\nconst elements = signature.split(',');\nconst signatureObj = {};\nelements.forEach(el => {\n    const [key, value] = el.split('=');\n    signatureObj[key] = value;\n});\n\nconst timestamp = signatureObj['t'];\nconst expectedSignature = signatureObj['v1'];\n\n// Отримуємо raw body\n// В Node-RED msg.payload вже є parsed JSON, потрібен raw\nconst rawBody = msg.req.body; // або JSON.stringify(msg.payload) якщо немає raw\n\n// Створюємо signed payload\nconst signedPayload = `${timestamp}.${typeof rawBody === 'string' ? rawBody : JSON.stringify(msg.payload)}`;\n\n// Обчислюємо signature\nconst computedSignature = crypto\n    .createHmac('sha256', STRIPE_WEBHOOK_SECRET)\n    .update(signedPayload)\n    .digest('hex');\n\n// Перевіряємо\nif (computedSignature !== expectedSignature) {\n    node.warn('Signature mismatch!');\n    // В dev режимі можна пропустити перевірку\n    // msg.statusCode = 400;\n    // msg.payload = { error: 'Invalid signature' };\n    // return msg;\n}\n\n// Обробляємо event\nconst event = msg.payload;\n\nswitch (event.type) {\n    case 'checkout.session.completed':\n        const session = event.data.object;\n        msg.orderId = session.metadata?.order_id;\n        msg.paymentIntentId = session.payment_intent;\n        msg.eventType = 'payment_success';\n        node.warn(`✅ Order ${msg.orderId} paid!`);\n        break;\n\n    case 'checkout.session.expired':\n        const expiredSession = event.data.object;\n        msg.orderId = expiredSession.metadata?.order_id;\n        msg.eventType = 'payment_expired';\n        node.warn(`❌ Order ${msg.orderId} expired`);\n        break;\n\n    default:\n        msg.eventType = 'unknown';\n        node.warn(`Unhandled event: ${event.type}`);\n}\n\nmsg.payload = { received: true };\nmsg.statusCode = 200;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 1580,
+        "wires": [
+            [
+                "d8680760b8bf0ccd"
+            ]
+        ]
+    },
+    {
+        "id": "c02b80acb82afdb1",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "intent",
+        "func": "msg = { \"_msgid\": \"66b389d5b9dca11e\", \"payload\": { \"id\": \"evt_3Ss5AtHSKyk17Q2D1DNFIvCs\", \"object\": \"event\", \"api_version\": \"2025-12-15.clover\", \"created\": 1769016396, \"data\": { \"object\": { \"id\": \"pi_3Ss5AtHSKyk17Q2D136qtqDJ\", \"object\": \"payment_intent\", \"amount\": 8100, \"amount_capturable\": 0, \"amount_details\": { \"shipping\": { \"amount\": 0, \"from_postal_code\": null, \"to_postal_code\": null }, \"tax\": { \"total_tax_amount\": 0 }, \"tip\": {} }, \"amount_received\": 8100, \"application\": null, \"application_fee_amount\": null, \"automatic_payment_methods\": null, \"canceled_at\": null, \"cancellation_reason\": null, \"capture_method\": \"automatic_async\", \"client_secret\": \"\", \"confirmation_method\": \"automatic\", \"created\": 1769016395, \"currency\": \"eur\", \"customer\": null, \"customer_account\": null, \"description\": null, \"excluded_payment_method_types\": null, \"last_payment_error\": null, \"latest_charge\": \"ch_3Ss5AtHSKyk17Q2D1cbqfvs2\", \"livemode\": false, \"metadata\": {}, \"next_action\": null, \"on_behalf_of\": null, \"payment_details\": { \"customer_reference\": null, \"order_reference\": \"prod_Tpkd9Z07zNFebr\" }, \"payment_method\": \"pm_1Ss5AtHSKyk17Q2DvE2UkWXS\", \"payment_method_configuration_details\": null, \"payment_method_options\": { \"card\": { \"installments\": null, \"mandate_options\": null, \"network\": null, \"request_three_d_secure\": \"automatic\" } }, \"payment_method_types\": [\"card\"], \"processing\": null, \"receipt_email\": null, \"review\": null, \"setup_future_usage\": null, \"shipping\": null, \"source\": null, \"statement_descriptor\": null, \"statement_descriptor_suffix\": null, \"status\": \"succeeded\", \"transfer_data\": null, \"transfer_group\": null } }, \"livemode\": false, \"pending_webhooks\": 1, \"request\": { \"id\": null, \"idempotency_key\": \"8d2df602-bae4-4697-9bd2-5acf41763253\" }, \"type\": \"payment_intent.succeeded\" }, \"req\": { \"_events\": {}, \"_readableState\": { \"highWaterMark\": 65536, \"buffer\": [], \"bufferIndex\": 0, \"length\": 0, \"pipes\": [], \"awaitDrainWriters\": null }, \"socket\": \"[internal]\", \"httpVersionMajor\": 1, \"httpVersionMinor\": 1, \"httpVersion\": \"1.1\", \"complete\": true, \"rawHeaders\": [\"Host\", \"ascremosas.com\", \"X-Real-IP\", \"3.130.192.231\", \"Connection\", \"close\", \"Content-Length\", \"2277\", \"Content-Type\", \"application/json; charset=utf-8\", \"Cache-Control\", \"no-cache\", \"User-Agent\", \"Stripe/1.0 (+https://stripe.com/docs/webhooks)\", \"Accept\", \"*/*; q=0.5, application/json\", \"Stripe-Signature\", \"t=1769016396,v1=68442e39312ae003adb66ef89d1c3a3a3aa6a680aa6871cb8f33e041b95c8df6,v0=265ff5309bd7fde5ff1068dd5d7eb1cc4a2b4d09874fb53dc6a2ad5042e1d408\"], \"rawTrailers\": [], \"joinDuplicateHeaders\": null, \"aborted\": false, \"upgrade\": false, \"url\": \"/webhook/stripe\", \"method\": \"POST\", \"statusCode\": null, \"statusMessage\": null, \"client\": \"[internal]\", \"_consuming\": true, \"_dumped\": false, \"baseUrl\": \"\", \"originalUrl\": \"/webhook/stripe\", \"_parsedUrl\": { \"protocol\": null, \"slashes\": null, \"auth\": null, \"host\": null, \"port\": null, \"hostname\": null, \"hash\": null, \"search\": null, \"query\": null, \"pathname\": \"/webhook/stripe\", \"path\": \"/webhook/stripe\", \"href\": \"/webhook/stripe\", \"_raw\": \"/webhook/stripe\" }, \"params\": {}, \"query\": {}, \"res\": \"[internal]\", \"body\": { \"id\": \"evt_3Ss5AtHSKyk17Q2D1DNFIvCs\", \"object\": \"event\", \"api_version\": \"2025-12-15.clover\", \"created\": 1769016396, \"data\": { \"object\": { \"id\": \"pi_3Ss5AtHSKyk17Q2D136qtqDJ\", \"object\": \"payment_intent\", \"amount\": 8100, \"amount_capturable\": 0, \"amount_details\": { \"shipping\": { \"amount\": 0, \"from_postal_code\": null, \"to_postal_code\": null }, \"tax\": { \"total_tax_amount\": 0 }, \"tip\": {} }, \"amount_received\": 8100, \"application\": null, \"application_fee_amount\": null, \"automatic_payment_methods\": null, \"canceled_at\": null, \"cancellation_reason\": null, \"capture_method\": \"automatic_async\", \"client_secret\": \"\", \"confirmation_method\": \"automatic\", \"created\": 1769016395, \"currency\": \"eur\", \"customer\": null, \"customer_account\": null, \"description\": null, \"excluded_payment_method_types\": null, \"last_payment_error\": null, \"latest_charge\": \"ch_3Ss5AtHSKyk17Q2D1cbqfvs2\", \"livemode\": false, \"metadata\": {}, \"next_action\": null, \"on_behalf_of\": null, \"payment_details\": { \"customer_reference\": null, \"order_reference\": \"prod_Tpkd9Z07zNFebr\" }, \"payment_method\": \"pm_1Ss5AtHSKyk17Q2DvE2UkWXS\", \"payment_method_configuration_details\": null, \"payment_method_options\": { \"card\": { \"installments\": null, \"mandate_options\": null, \"network\": null, \"request_three_d_secure\": \"automatic\" } }, \"payment_method_types\": [\"card\"], \"processing\": null, \"receipt_email\": null, \"review\": null, \"setup_future_usage\": null, \"shipping\": null, \"source\": null, \"statement_descriptor\": null, \"statement_descriptor_suffix\": null, \"status\": \"succeeded\", \"transfer_data\": null, \"transfer_group\": null } }, \"livemode\": false, \"pending_webhooks\": 1, \"request\": { \"id\": null, \"idempotency_key\": \"8d2df602-bae4-4697-9bd2-5acf41763253\" }, \"type\": \"payment_intent.succeeded\" }, \"_body\": true, \"_eventsCount\": 0, \"_sessionManager\": { \"_key\": \"passport\" }, \"_passport\": { \"instance\": { \"_key\": \"passport\", \"_strategies\": { \"session\": { \"name\": \"session\", \"_key\": \"passport\" }, \"bearer\": { \"name\": \"bearer\", \"_realm\": \"Users\" }, \"oauth2-client-password\": { \"name\": \"oauth2-client-password\" }, \"anon\": { \"name\": \"anon\" }, \"tokens\": { \"name\": \"tokens\" } }, \"_serializers\": [], \"_deserializers\": [], \"_infoTransformers\": [], \"_framework\": {}, \"_sm\": { \"_key\": \"passport\" }, \"strategies\": {}, \"_userProperty\": \"user\" } }, \"route\": { \"path\": \"/webhook/stripe\", \"stack\": [{ \"name\": \"cookieParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"httpMiddleware\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"corsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"metricsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"jsonParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"urlencodedParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"multipartParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"rawBodyParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }], \"methods\": { \"post\": true } }, \"cookies\": {}, \"signedCookies\": {}, \"headers\": { \"host\": \"ascremosas.com\", \"x-real-ip\": \"3.130.192.231\", \"connection\": \"close\", \"content-length\": \"2277\", \"content-type\": \"application/json; charset=utf-8\", \"cache-control\": \"no-cache\", \"user-agent\": \"Stripe/1.0 (+https://stripe.com/docs/webhooks)\", \"accept\": \"*/*; q=0.5, application/json\", \"stripe-signature\": \"t=1769016396,v1=68442e39312ae003adb66ef89d1c3a3a3aa6a680aa6871cb8f33e041b95c8df6,v0=265ff5309bd7fde5ff1068dd5d7eb1cc4a2b4d09874fb53dc6a2ad5042e1d408\" } }, \"res\": {} }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 1940,
+        "wires": [
+            [
+                "3da8fb1b51d966d9",
+                "284d85fe2e2ed8b6"
+            ]
+        ]
+    },
+    {
+        "id": "28e669d92c3c77e0",
+        "type": "inject",
+        "z": "511654ac3eb34f3c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1940,
+        "wires": [
+            [
+                "c02b80acb82afdb1"
+            ]
+        ]
+    },
+    {
+        "id": "3da8fb1b51d966d9",
+        "type": "debug",
+        "z": "511654ac3eb34f3c",
+        "name": "stripe",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "284d85fe2e2ed8b6",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "function 8",
+        "func": "const STRIPE_WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\nconst signature = msg.req?.headers?.['stripe-signature'] || null;\n\n// suspicious, paid, canceled, unpaid\n\nif (!signature) {\n    throw new Error(\"Missing stripe signature\");\n};\n\n// format: t=timestamp,v1=signature\nconst elements = signature.split(',');\nconst signatureObj = {};\nelements.forEach(el => {\n    const [key, value] = el.split('=');\n    signatureObj[key] = value;\n});\n\nconst timestamp = signatureObj['t'];\nconst expectedSignature = signatureObj['v1'];\n\nconst rawBody = msg.req?.body || msg.payload || {}; \nconst signedPayload = `${timestamp}.${typeof rawBody === 'string' ? rawBody : JSON.stringify(msg.payload)}`;\n\nconst computedSignature = crypto\n    .createHmac('sha256', STRIPE_WEBHOOK_SECRET)\n    .update(signedPayload)\n    .digest('hex');\n\nnode.warn(computedSignature);\nnode.warn(expectedSignature);\n\n\nif (computedSignature !== expectedSignature) {\n    node.warn('Signature mismatch!');\n}\n\n// Обробляємо event\n// const event = msg.payload;\n\n// switch (event.type) {\n//     case 'checkout.session.completed':\n//         const session = event.data.object;\n//         msg.orderId = session.metadata?.order_id;\n//         msg.paymentIntentId = session.payment_intent;\n//         msg.eventType = 'payment_success';\n//         node.warn(`✅ Order ${msg.orderId} paid!`);\n//         break;\n\n//     case 'checkout.session.expired':\n//         const expiredSession = event.data.object;\n//         msg.orderId = expiredSession.metadata?.order_id;\n//         msg.eventType = 'payment_expired';\n//         node.warn(`❌ Order ${msg.orderId} expired`);\n//         break;\n\n//     default:\n//         msg.eventType = 'unknown';\n//         node.warn(`Unhandled event: ${event.type}`);\n// }\n\n// msg.payload = { received: true };\n// msg.statusCode = 200;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 380,
+        "y": 1940,
+        "wires": [
+            [
+                "1e20bddabd985e09"
+            ]
+        ]
+    },
+    {
+        "id": "1e20bddabd985e09",
+        "type": "debug",
+        "z": "511654ac3eb34f3c",
+        "name": "stripe",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 1940,
+        "wires": []
+    },
+    {
+        "id": "3ecb6015a1101135",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "function 9",
+        "func": "const STRIPE_SECRET_KEY = env.get('STRIPE_SECRET_KEY');\nconst WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\nconst stripe = new Stripe(STRIPE_SECRET_KEY);\n\nconst signature = msg.req.headers['stripe-signature'];\nconst rawBody = JSON.stringify(msg.req?.body); \n\ntry {\n    const event = stripe.webhooks.constructEvent(msg.req.body, signature, WEBHOOK_SECRET);\n\n    // if (event.type === 'checkout.session.completed') {\n    //     msg.orderId = event.data.object.metadata?.order_id;\n    //     node.warn(`✅ Order ${msg.orderId} paid!`);\n    // }\n\n    msg.payload = { received: true };\n} catch (err) {\n    node.error('Webhook signature verification failed: ' + err.message);\n    msg.statusCode = 400;\n    msg.payload = { error: 'Invalid signature' };\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "Stripe",
+                "module": "stripe"
+            }
+        ],
+        "x": 400,
+        "y": 1740,
+        "wires": [
+            [
+                "d8680760b8bf0ccd"
+            ]
+        ]
+    },
+    {
+        "id": "db728fba8af35ae3",
+        "type": "debug",
+        "z": "511654ac3eb34f3c",
+        "name": "stripe",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "833db30a8cb93f9c",
+        "type": "http in",
+        "z": "511654ac3eb34f3c",
+        "name": "",
+        "url": "/foo",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": true,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 1620,
+        "wires": [
+            [
+                "b5b8bd5293bfca50",
+                "eb9c6aa6a1f2a001"
+            ]
+        ]
+    },
+    {
+        "id": "f0a3fead9252c48a",
+        "type": "http response",
+        "z": "511654ac3eb34f3c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 450,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "b5b8bd5293bfca50",
+        "type": "debug",
+        "z": "511654ac3eb34f3c",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 240,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "581bae50891863b9",
+        "type": "debug",
+        "z": "511654ac3eb34f3c",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "eb9c6aa6a1f2a001",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "function 10",
+        "func": "const a = msg.payload.toString();\nnode.warn(a);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1620,
+        "wires": [
+            [
+                "f0a3fead9252c48a"
+            ]
+        ]
+    },
+    {
+        "id": "568a95330f433784",
+        "type": "inject",
+        "z": "511654ac3eb34f3c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1340,
+        "wires": [
+            [
+                "b4ede0da719d32cc"
+            ]
+        ]
+    },
+    {
+        "id": "b4ede0da719d32cc",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "success",
+        "func": "msg = {\"_msgid\":\"baeb5b381b4f70a0\",\"payload\":[123,10,32,32,34,105,100,34,58,32,34,101,118,116,95,49,83,115,74,109,97,72,83,75,121,107,49,55,81,50,68,112,85,65,75,48,87,73,57,34,44,10,32,32,34,111,98,106,101,99,116,34,58,32,34,101,118,101,110,116,34,44,10,32,32,34,97,112,105,95,118,101,114,115,105,111,110,34,58,32,34,50,48,50,53,45,49,50,45,49,53,46,99,108,111,118,101,114,34,44,10,32,32,34,99,114,101,97,116,101,100,34,58,32,49,55,54,57,48,55,50,53,52,56,44,10,32,32,34,100,97,116,97,34,58,32,123,10,32,32,32,32,34,111,98,106,101,99,116,34,58,32,123,10,32,32,32,32,32,32,34,105,100,34,58,32,34,99,115,95,116,101,115,116,95,97,49,81,53,117,115,87,118,78,119,68,86,115,81,79,90,86,108,57,103,87,114,81,120,103,83,122,49,89,54,84,67,112,86,104,111,105,102,121,71,51,111,53,83,50,87,57,109,102,72,114,121,115,51,86,80,121,97,34,44,10,32,32,32,32,32,32,34,111,98,106,101,99,116,34,58,32,34,99,104,101,99,107,111,117,116,46,115,101,115,115,105,111,110,34,44,10,32,32,32,32,32,32,34,97,100,97,112,116,105,118,101,95,112,114,105,99,105,110,103,34,58,32,123,10,32,32,32,32,32,32,32,32,34,101,110,97,98,108,101,100,34,58,32,116,114,117,101,10,32,32,32,32,32,32,125,44,10,32,32,32,32,32,32,34,97,102,116,101,114,95,101,120,112,105,114,97,116,105,111,110,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,34,97,108,108,111,119,95,112,114,111,109,111,116,105,111,110,95,99,111,100,101,115,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,34,97,109,111,117,110,116,95,115,117,98,116,111,116,97,108,34,58,32,54,48,48,44,10,32,32,32,32,32,32,34,97,109,111,117,110,116,95,116,111,116,97,108,34,58,32,54,48,48,44,10,32,32,32,32,32,32,34,97,117,116,111,109,97,116,105,99,95,116,97,120,34,58,32,123,10,32,32,32,32,32,32,32,32,34,101,110,97,98,108,101,100,34,58,32,102,97,108,115,101,44,10,32,32,32,32,32,32,32,32,34,108,105,97,98,105,108,105,116,121,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,32,32,34,112,114,111,118,105,100,101,114,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,32,32,34,115,116,97,116,117,115,34,58,32,110,117,108,108,10,32,32,32,32,32,32,125,44,10,32,32,32,32,32,32,34,98,105,108,108,105,110,103,95,97,100,100,114,101,115,115,95,99,111,108,108,101,99,116,105,111,110,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,34,98,114,97,110,100,105,110,103,95,115,101,116,116,105,110,103,115,34,58,32,123,10,32,32,32,32,32,32,32,32,34,98,97,99,107,103,114,111,117,110,100,95,99,111,108,111,114,34,58,32,34,35,102,102,102,102,102,102,34,44,10,32,32,32,32,32,32,32,32,34,98,111,114,100,101,114,95,115,116,121,108,101,34,58,32,34,114,111,117,110,100,101,100,34,44,10,32,32,32,32,32,32,32,32,34,98,117,116,116,111,110,95,99,111,108,111,114,34,58,32,34,35,48,48,55,52,100,52,34,44,10,32,32,32,32,32,32,32,32,34,100,105,115,112,108,97,121,95,110,97,109,101,34,58,32,34,65,83,32,99,114,101,109,111,115,97,115,32,115,97,110,100,98,111,120,34,44,10,32,32,32,32,32,32,32,32,34,102,111,110,116,95,102,97,109,105,108,121,34,58,32,34,100,101,102,97,117,108,116,34,44,10,32,32,32,32,32,32,32,32,34,105,99,111,110,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,32,32,34,108,111,103,111,34,58,32,110,117,108,108,10,32,32,32,32,32,32,125,44,10,32,32,32,32,32,32,34,99,97,110,99,101,108,95,117,114,108,34,58,32,34,104,116,116,112,58,47,47,108,111,99,97,108,104,111,115,116,58,53,49,55,51,47,99,104,101,99,107,111,117,116,47,99,97,110,99,101,108,63,111,114,100,101,114,95,105,100,61,76,67,71,45,50,48,50,54,48,49,50,50,45,79,72,71,57,86,57,34,44,10,32,32],\"req\":{\"_events\":{},\"_readableState\":{\"highWaterMark\":65536,\"buffer\":[],\"bufferIndex\":0,\"length\":0,\"pipes\":[],\"awaitDrainWriters\":null},\"socket\":\"[internal]\",\"httpVersionMajor\":1,\"httpVersionMinor\":1,\"httpVersion\":\"1.1\",\"complete\":true,\"rawHeaders\":[\"Host\",\"ascremosas.com\",\"X-Real-IP\",\"3.130.192.231\",\"Connection\",\"close\",\"Content-Length\",\"4083\",\"Content-Type\",\"application/json; charset=utf-8\",\"Cache-Control\",\"no-cache\",\"User-Agent\",\"Stripe/1.0 (+https://stripe.com/docs/webhooks)\",\"Accept\",\"*/*; q=0.5, application/json\",\"Stripe-Signature\",\"t=1769072548,v1=01c20763682048d0a79fd11c962d817a79a9ff3d126e82c5d760c60e7664173d,v0=580f8367b5213ab6d35974ddc8931d9810dd9230c1c2092b127b44aa6372e75f\"],\"rawTrailers\":[],\"joinDuplicateHeaders\":null,\"aborted\":false,\"upgrade\":false,\"url\":\"/webhook/stripe\",\"method\":\"POST\",\"statusCode\":null,\"statusMessage\":null,\"client\":\"[internal]\",\"_consuming\":true,\"_dumped\":false,\"baseUrl\":\"\",\"originalUrl\":\"/webhook/stripe\",\"_parsedUrl\":{\"protocol\":null,\"slashes\":null,\"auth\":null,\"host\":null,\"port\":null,\"hostname\":null,\"hash\":null,\"search\":null,\"query\":null,\"pathname\":\"/webhook/stripe\",\"path\":\"/webhook/stripe\",\"href\":\"/webhook/stripe\",\"_raw\":\"/webhook/stripe\"},\"params\":{},\"_eventsCount\":0,\"body\":[123,10,32,32,34,105,100,34,58,32,34,101,118,116,95,49,83,115,74,109,97,72,83,75,121,107,49,55,81,50,68,112,85,65,75,48,87,73,57,34,44,10,32,32,34,111,98,106,101,99,116,34,58,32,34,101,118,101,110,116,34,44,10,32,32,34,97,112,105,95,118,101,114,115,105,111,110,34,58,32,34,50,48,50,53,45,49,50,45,49,53,46,99,108,111,118,101,114,34,44,10,32,32,34,99,114,101,97,116,101,100,34,58,32,49,55,54,57,48,55,50,53,52,56,44,10,32,32,34,100,97,116,97,34,58,32,123,10,32,32,32,32,34,111,98,106,101,99,116,34,58,32,123,10,32,32,32,32,32,32,34,105,100,34,58,32,34,99,115,95,116,101,115,116,95,97,49,81,53,117,115,87,118,78,119,68,86,115,81,79,90,86,108,57,103,87,114,81,120,103,83,122,49,89,54,84,67,112,86,104,111,105,102,121,71,51,111,53,83,50,87,57,109,102,72,114,121,115,51,86,80,121,97,34,44,10,32,32,32,32,32,32,34,111,98,106,101,99,116,34,58,32,34,99,104,101,99,107,111,117,116,46,115,101,115,115,105,111,110,34,44,10,32,32,32,32,32,32,34,97,100,97,112,116,105,118,101,95,112,114,105,99,105,110,103,34,58,32,123,10,32,32,32,32,32,32,32,32,34,101,110,97,98,108,101,100,34,58,32,116,114,117,101,10,32,32,32,32,32,32,125,44,10,32,32,32,32,32,32,34,97,102,116,101,114,95,101,120,112,105,114,97,116,105,111,110,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,34,97,108,108,111,119,95,112,114,111,109,111,116,105,111,110,95,99,111,100,101,115,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,34,97,109,111,117,110,116,95,115,117,98,116,111,116,97,108,34,58,32,54,48,48,44,10,32,32,32,32,32,32,34,97,109,111,117,110,116,95,116,111,116,97,108,34,58,32,54,48,48,44,10,32,32,32,32,32,32,34,97,117,116,111,109,97,116,105,99,95,116,97,120,34,58,32,123,10,32,32,32,32,32,32,32,32,34,101,110,97,98,108,101,100,34,58,32,102,97,108,115,101,44,10,32,32,32,32,32,32,32,32,34,108,105,97,98,105,108,105,116,121,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,32,32,34,112,114,111,118,105,100,101,114,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,32,32,34,115,116,97,116,117,115,34,58,32,110,117,108,108,10,32,32,32,32,32,32,125,44,10,32,32,32,32,32,32,34,98,105,108,108,105,110,103,95,97,100,100,114,101,115,115,95,99,111,108,108,101,99,116,105,111,110,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,34,98,114,97,110,100,105,110,103,95,115,101,116,116,105,110,103,115,34,58,32,123,10,32,32,32,32,32,32,32,32,34,98,97,99,107,103,114,111,117,110,100,95,99,111,108,111,114,34,58,32,34,35,102,102,102,102,102,102,34,44,10,32,32,32,32,32,32,32,32,34,98,111,114,100,101,114,95,115,116,121,108,101,34,58,32,34,114,111,117,110,100,101,100,34,44,10,32,32,32,32,32,32,32,32,34,98,117,116,116,111,110,95,99,111,108,111,114,34,58,32,34,35,48,48,55,52,100,52,34,44,10,32,32,32,32,32,32,32,32,34,100,105,115,112,108,97,121,95,110,97,109,101,34,58,32,34,65,83,32,99,114,101,109,111,115,97,115,32,115,97,110,100,98,111,120,34,44,10,32,32,32,32,32,32,32,32,34,102,111,110,116,95,102,97,109,105,108,121,34,58,32,34,100,101,102,97,117,108,116,34,44,10,32,32,32,32,32,32,32,32,34,105,99,111,110,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,32,32,34,108,111,103,111,34,58,32,110,117,108,108,10,32,32,32,32,32,32,125,44,10,32,32,32,32,32,32,34,99,97,110,99,101,108,95,117,114,108,34,58,32,34,104,116,116,112,58,47,47,108,111,99,97,108,104,111,115,116,58,53,49,55,51,47,99,104,101,99,107,111,117,116,47,99,97,110,99,101,108,63,111,114,100,101,114,95,105,100,61,76,67,71,45,50,48,50,54,48,49,50,50,45,79,72,71,57,86,57,34,44,10,32,32],\"skipRawBodyParser\":true,\"_body\":true,\"query\":{},\"res\":\"[internal]\",\"_sessionManager\":{\"_key\":\"passport\"},\"_passport\":{\"instance\":{\"_key\":\"passport\",\"_strategies\":{\"session\":{\"name\":\"session\",\"_key\":\"passport\"},\"bearer\":{\"name\":\"bearer\",\"_realm\":\"Users\"},\"oauth2-client-password\":{\"name\":\"oauth2-client-password\"},\"anon\":{\"name\":\"anon\"},\"tokens\":{\"name\":\"tokens\"}},\"_serializers\":[],\"_deserializers\":[],\"_infoTransformers\":[],\"_framework\":{},\"_sm\":{\"_key\":\"passport\"},\"strategies\":{},\"_userProperty\":\"user\"}},\"route\":{\"path\":\"/webhook/stripe\",\"stack\":[{\"name\":\"cookieParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"httpMiddleware\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"corsHandler\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"metricsHandler\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"jsonParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"urlencodedParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"multipartParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"rawBodyParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"<anonymous>\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"<anonymous>\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"}],\"methods\":{\"post\":true}},\"cookies\":{},\"signedCookies\":{},\"headers\":{\"host\":\"ascremosas.com\",\"x-real-ip\":\"3.130.192.231\",\"connection\":\"close\",\"content-length\":\"4083\",\"content-type\":\"application/json; charset=utf-8\",\"cache-control\":\"no-cache\",\"user-agent\":\"Stripe/1.0 (+https://stripe.com/docs/webhooks)\",\"accept\":\"*/*; q=0.5, application/json\",\"stripe-signature\":\"t=1769072548,v1=01c20763682048d0a79fd11c962d817a79a9ff3d126e82c5d760c60e7664173d,v0=580f8367b5213ab6d35974ddc8931d9810dd9230c1c2092b127b44aa6372e75f\"}},\"res\":{}}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 1340,
+        "wires": [
+            [
+                "e99711595c64e1f6",
+                "a727e51214361e2a"
+            ]
+        ]
+    },
+    {
+        "id": "e99711595c64e1f6",
+        "type": "debug",
+        "z": "511654ac3eb34f3c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "3da5f26de5a237c7",
+        "type": "debug",
+        "z": "511654ac3eb34f3c",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "a727e51214361e2a",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "function 12",
+        "func": "const STRIPE_SECRET_KEY = env.get('STRIPE_SECRET_KEY');\nconst WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\n// Покажи перші та останні символи секрету\nnode.warn('Secret starts with: ' + WEBHOOK_SECRET?.substring(0, 10));\nnode.warn('Secret ends with: ' + WEBHOOK_SECRET?.substring(WEBHOOK_SECRET.length - 5));\nnode.warn('Secret length: ' + WEBHOOK_SECRET?.length);\n\n// Перевір чи немає зайвих пробілів/символів\nnode.warn('Secret has whitespace: ' + (WEBHOOK_SECRET !== WEBHOOK_SECRET?.trim()));\n\nconst stripe = new Stripe(STRIPE_SECRET_KEY);\nconst signature = msg.req?.headers?.['stripe-signature'];\n\n// Спробуємо отримати raw body різними способами\nlet rawBody;\n\n// Варіант 1: якщо є req.body як Buffer\nif (msg.req?.body && Buffer.isBuffer(msg.req.body)) {\n    rawBody = msg.req.body;\n    node.warn('Used: msg.req.body (Buffer)');\n}\n// Варіант 2: якщо є req.rawBody\nelse if (msg.req?.rawBody) {\n    rawBody = msg.req.rawBody;\n    node.warn('Used: msg.req.rawBody');\n}\n// Варіант 3: payload як масив байтів\nelse if (Array.isArray(msg.payload)) {\n    rawBody = Buffer.from(msg.payload);\n    node.warn('Used: Buffer.from(array)');\n}\n// Варіант 4: payload як Buffer\nelse if (Buffer.isBuffer(msg.payload)) {\n    rawBody = msg.payload;\n    node.warn('Used: msg.payload (Buffer)');\n}\n\nconst hmac = crypto.createHmac('sha256', WEBHOOK_SECRET.replace('whsec_', ''));\nhmac.update(rawBody);\nnode.warn('Our HMAC: ' + hmac.digest('hex'));\n\n// Витягни timestamp з signature\nconst parts = signature.split(',');\nconst timestamp = parts.find(p => p.startsWith('t='))?.split('=')[1];\nnode.warn('Timestamp: ' + timestamp);\n\n// Правильний підпис Stripe: HMAC(timestamp + \".\" + payload)\nconst signedPayload = timestamp + '.' + rawBody.toString('utf8');\nconst hmac2 = crypto.createHmac('sha256', WEBHOOK_SECRET.replace('whsec_', ''));\nhmac2.update(signedPayload);\nnode.warn('Expected HMAC (t.payload): ' + hmac2.digest('hex'));\n\n// Витягни v1 з signature\nconst v1 = parts.find(p => p.startsWith('v1='))?.split('=')[1];\nnode.warn('Stripe v1: ' + v1);\n\ntry {\n    const event = stripe.webhooks.constructEvent(rawBody, signature, WEBHOOK_SECRET);\n    msg.payload = event; \n} catch (err) {\n    node.error('Webhook error: ' + err.message);\n    msg.statusCode = 400;\n    msg.payload = { error: 'Invalid signature' };\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "Stripe",
+                "module": "stripe"
+            },
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 410,
+        "y": 1340,
+        "wires": [
+            [
+                "3da5f26de5a237c7"
+            ]
+        ]
+    },
+    {
+        "id": "937ad418b300c74e",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "function 11",
+        "func": "// const STRIPE_SECRET_KEY = env.get('STRIPE_SECRET_KEY');\n// const WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\n// const stripe = new Stripe(STRIPE_SECRET_KEY);\n\n// const signature = msg.req?.headers?.['stripe-signature'];\n// const rawBody = Buffer.from(msg.payload);\n\n// msg.string = rawBody;\n\n// try {\n//     const event = stripe.webhooks.constructEvent(rawBody, signature, WEBHOOK_SECRET);\n\n//     // if (event.type === 'checkout.session.completed') {\n//     //     msg.orderId = event.data.object.metadata?.order_id;\n//     //     node.warn(`✅ Order ${msg.orderId} paid!`);\n//     // }\n\n//     msg.stripeEvent = event;\n//     msg.payload = event; \n\n// } catch (err) {\n//     node.error('Webhook signature verification failed: ' + err.message);\n//     msg.statusCode = 400;\n//     msg.payload = { error: 'Invalid signature' };\n// }\n\n// return msg;\n\nconst STRIPE_SECRET_KEY = env.get('STRIPE_SECRET_KEY');\nconst WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\nconst stripe = new Stripe(STRIPE_SECRET_KEY);\nconst signature = msg.req?.headers?.['stripe-signature'];\n\n// Якщо payload - масив чисел (байтів), конвертуємо в Buffer\nlet rawBody;\nif (Array.isArray(msg.payload)) {\n    rawBody = Buffer.from(msg.payload);\n} else if (Buffer.isBuffer(msg.payload)) {\n    rawBody = msg.payload;\n} else if (typeof msg.payload === 'string') {\n    rawBody = Buffer.from(msg.payload, 'utf8');\n} else {\n    // Якщо це вже об'єкт - це погано, треба raw\n    node.error('Payload is already parsed as object!');\n    msg.statusCode = 500;\n    msg.payload = { error: 'Cannot verify signature - body was parsed' };\n    return msg;\n}\n\n// Для дебагу - подивись що там\nnode.warn('Raw body length: ' + rawBody.length);\nnode.warn('First 100 chars: ' + rawBody.toString('utf8').substring(0, 100));\nnode.warn('Signature: ' + signature);\n\ntry {\n    const event = stripe.webhooks.constructEvent(rawBody, signature, WEBHOOK_SECRET);\n    msg.stripeEvent = event;\n    msg.payload = event; \n} catch (err) {\n    node.error('Webhook signature verification failed: ' + err.message);\n    msg.statusCode = 400;\n    msg.payload = { error: 'Invalid signature' };\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "Stripe",
+                "module": "stripe"
+            }
+        ],
+        "x": 570,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7dba41cef305919e",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "function 13",
+        "func": "// const STRIPE_SECRET_KEY = env.get('STRIPE_SECRET_KEY');\n// const WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\n// const stripe = new Stripe(STRIPE_SECRET_KEY);\n\n// const signature = msg.req?.headers?.['stripe-signature'];\n// const rawBody = Buffer.from(msg.payload);\n\n// msg.string = rawBody;\n\n// try {\n//     const event = stripe.webhooks.constructEvent(rawBody, signature, WEBHOOK_SECRET);\n\n//     // if (event.type === 'checkout.session.completed') {\n//     //     msg.orderId = event.data.object.metadata?.order_id;\n//     //     node.warn(`✅ Order ${msg.orderId} paid!`);\n//     // }\n\n//     msg.stripeEvent = event;\n//     msg.payload = event; \n\n// } catch (err) {\n//     node.error('Webhook signature verification failed: ' + err.message);\n//     msg.statusCode = 400;\n//     msg.payload = { error: 'Invalid signature' };\n// }\n\n// return msg;\n\nconst STRIPE_SECRET_KEY = env.get('STRIPE_SECRET_KEY');\nconst WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\nconst stripe = new Stripe(STRIPE_SECRET_KEY);\nconst signature = msg.req?.headers?.['stripe-signature'];\n\n// Якщо payload - масив чисел (байтів), конвертуємо в Buffer\nlet rawBody;\nif (Array.isArray(msg.payload)) {\n    rawBody = Buffer.from(msg.payload);\n} else if (Buffer.isBuffer(msg.payload)) {\n    rawBody = msg.payload;\n} else if (typeof msg.payload === 'string') {\n    rawBody = Buffer.from(msg.payload, 'utf8');\n} else {\n    // Якщо це вже об'єкт - це погано, треба raw\n    node.error('Payload is already parsed as object!');\n    msg.statusCode = 500;\n    msg.payload = { error: 'Cannot verify signature - body was parsed' };\n    return msg;\n}\n\n// Для дебагу - подивись що там\nnode.warn('Raw body length: ' + rawBody.length);\nnode.warn('First 100 chars: ' + rawBody.toString('utf8').substring(0, 100));\nnode.warn('Signature: ' + signature);\n\ntry {\n    const event = stripe.webhooks.constructEvent(rawBody, signature, WEBHOOK_SECRET);\n    msg.stripeEvent = event;\n    msg.payload = event; \n} catch (err) {\n    node.error('Webhook signature verification failed: ' + err.message);\n    msg.statusCode = 400;\n    msg.payload = { error: 'Invalid signature' };\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "Stripe",
+                "module": "stripe"
+            }
+        ],
+        "x": 330,
+        "y": 1080,
+        "wires": [
+            [
+                "db728fba8af35ae3"
+            ]
+        ]
+    },
+    {
+        "id": "b8b4849c9a234a5f",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "name": "set msg",
+        "func": "msg = {\"_msgid\":\"6c03c05f232de8c5\",\"payload\":{\"id\":\"evt_1SsKFwHSKyk17Q2DhRissj3r\",\"object\":\"event\",\"api_version\":\"2025-12-15.clover\",\"created\":1769074368,\"data\":{\"object\":{\"id\":\"cs_test_a1EMiDledzRLxdFqhLIz9pkF9JzDhmJpVGtzO2ycXgM6m639ouyBpNOkNA\",\"object\":\"checkout.session\",\"adaptive_pricing\":{\"enabled\":true},\"after_expiration\":null,\"allow_promotion_codes\":null,\"amount_subtotal\":500,\"amount_total\":500,\"automatic_tax\":{\"enabled\":false,\"liability\":null,\"provider\":null,\"status\":null},\"billing_address_collection\":null,\"branding_settings\":{\"background_color\":\"#ffffff\",\"border_style\":\"rounded\",\"button_color\":\"#0074d4\",\"display_name\":\"AS cremosas sandbox\",\"font_family\":\"default\",\"icon\":null,\"logo\":null},\"cancel_url\":\"http://localhost:5173/checkout/cancel?order_id=LCG-20260122-KO4RV0\",\"client_reference_id\":null,\"client_secret\":null,\"collected_information\":{\"business_name\":null,\"individual_name\":null,\"shipping_details\":null},\"consent\":null,\"consent_collection\":null,\"created\":1769074355,\"currency\":\"eur\",\"currency_conversion\":null,\"custom_fields\":[],\"custom_text\":{\"after_submit\":null,\"shipping_address\":null,\"submit\":null,\"terms_of_service_acceptance\":null},\"customer\":null,\"customer_account\":null,\"customer_creation\":\"if_required\",\"customer_details\":{\"address\":{\"city\":null,\"country\":\"ES\",\"line1\":null,\"line2\":null,\"postal_code\":null,\"state\":null},\"business_name\":null,\"email\":\"ascremosas.co@gmail.com\",\"individual_name\":null,\"name\":\"3\",\"phone\":null,\"tax_exempt\":\"none\",\"tax_ids\":[]},\"customer_email\":\"ascremosas.co@gmail.com\",\"discounts\":[],\"expires_at\":1769160755,\"invoice\":null,\"invoice_creation\":{\"enabled\":false,\"invoice_data\":{\"account_tax_ids\":null,\"custom_fields\":null,\"description\":null,\"footer\":null,\"issuer\":null,\"metadata\":{},\"rendering_options\":null}},\"livemode\":false,\"locale\":\"auto\",\"metadata\":{\"order_id\":\"LCG-20260122-KO4RV0\"},\"mode\":\"payment\",\"origin_context\":null,\"payment_intent\":\"pi_3SsKFvHSKyk17Q2D0dgfaNMk\",\"payment_link\":null,\"payment_method_collection\":\"if_required\",\"payment_method_configuration_details\":{\"id\":\"pmc_1SpVCCHSKyk17Q2DyqBZl7qo\",\"parent\":null},\"payment_method_options\":{\"card\":{\"request_three_d_secure\":\"automatic\"}},\"payment_method_types\":[\"card\",\"bancontact\",\"eps\",\"klarna\",\"link\",\"amazon_pay\"],\"payment_status\":\"paid\",\"permissions\":null,\"phone_number_collection\":{\"enabled\":false},\"recovered_from\":null,\"saved_payment_method_options\":null,\"setup_intent\":null,\"shipping_address_collection\":null,\"shipping_cost\":null,\"shipping_options\":[],\"status\":\"complete\",\"submit_type\":null,\"subscription\":null,\"success_url\":\"http://localhost:5173/checkout/success?session_id={CHECKOUT_SESSION_ID}\",\"total_details\":{\"amount_discount\":0,\"amount_shipping\":0,\"amount_tax\":0},\"ui_mode\":\"hosted\",\"url\":null,\"wallet_options\":null}},\"livemode\":false,\"pending_webhooks\":1,\"request\":{\"id\":null,\"idempotency_key\":null},\"type\":\"checkout.session.completed\"},\"req\":{\"_events\":{},\"_readableState\":{\"highWaterMark\":65536,\"buffer\":[],\"bufferIndex\":0,\"length\":0,\"pipes\":[],\"awaitDrainWriters\":null},\"socket\":\"[internal]\",\"httpVersionMajor\":1,\"httpVersionMinor\":1,\"httpVersion\":\"1.1\",\"complete\":true,\"rawHeaders\":[\"Host\",\"ascremosas.com\",\"X-Real-IP\",\"3.18.12.63\",\"Connection\",\"close\",\"Content-Length\",\"4073\",\"Content-Type\",\"application/json; charset=utf-8\",\"Cache-Control\",\"no-cache\",\"User-Agent\",\"Stripe/1.0 (+https://stripe.com/docs/webhooks)\",\"Accept\",\"*/*; q=0.5, application/json\",\"Stripe-Signature\",\"t=1769074368,v1=9efafb21d9503d8adb7d5bff78336e4472e8f7047c89ec24596b9a41d40ac27f,v0=45ad3bd9bdb9441c795260ff2c94a9a837306530628a05ff7a3edc92ff01949c\"],\"rawTrailers\":[],\"joinDuplicateHeaders\":null,\"aborted\":false,\"upgrade\":false,\"url\":\"/webhook/stripe\",\"method\":\"POST\",\"statusCode\":null,\"statusMessage\":null,\"client\":\"[internal]\",\"_consuming\":true,\"_dumped\":false,\"baseUrl\":\"\",\"originalUrl\":\"/webhook/stripe\",\"_parsedUrl\":{\"protocol\":null,\"slashes\":null,\"auth\":null,\"host\":null,\"port\":null,\"hostname\":null,\"hash\":null,\"search\":null,\"query\":null,\"pathname\":\"/webhook/stripe\",\"path\":\"/webhook/stripe\",\"href\":\"/webhook/stripe\",\"_raw\":\"/webhook/stripe\"},\"params\":{},\"_eventsCount\":0,\"body\":[123,10,32,32,34,105,100,34,58,32,34,101,118,116,95,49,83,115,75,70,119,72,83,75,121,107,49,55,81,50,68,104,82,105,115,115,106,51,114,34,44,10,32,32,34,111,98,106,101,99,116,34,58,32,34,101,118,101,110,116,34,44,10,32,32,34,97,112,105,95,118,101,114,115,105,111,110,34,58,32,34,50,48,50,53,45,49,50,45,49,53,46,99,108,111,118,101,114,34,44,10,32,32,34,99,114,101,97,116,101,100,34,58,32,49,55,54,57,48,55,52,51,54,56,44,10,32,32,34,100,97,116,97,34,58,32,123,10,32,32,32,32,34,111,98,106,101,99,116,34,58,32,123,10,32,32,32,32,32,32,34,105,100,34,58,32,34,99,115,95,116,101,115,116,95,97,49,69,77,105,68,108,101,100,122,82,76,120,100,70,113,104,76,73,122,57,112,107,70,57,74,122,68,104,109,74,112,86,71,116,122,79,50,121,99,88,103,77,54,109,54,51,57,111,117,121,66,112,78,79,107,78,65,34,44,10,32,32,32,32,32,32,34,111,98,106,101,99,116,34,58,32,34,99,104,101,99,107,111,117,116,46,115,101,115,115,105,111,110,34,44,10,32,32,32,32,32,32,34,97,100,97,112,116,105,118,101,95,112,114,105,99,105,110,103,34,58,32,123,10,32,32,32,32,32,32,32,32,34,101,110,97,98,108,101,100,34,58,32,116,114,117,101,10,32,32,32,32,32,32,125,44,10,32,32,32,32,32,32,34,97,102,116,101,114,95,101,120,112,105,114,97,116,105,111,110,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,34,97,108,108,111,119,95,112,114,111,109,111,116,105,111,110,95,99,111,100,101,115,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,34,97,109,111,117,110,116,95,115,117,98,116,111,116,97,108,34,58,32,53,48,48,44,10,32,32,32,32,32,32,34,97,109,111,117,110,116,95,116,111,116,97,108,34,58,32,53,48,48,44,10,32,32,32,32,32,32,34,97,117,116,111,109,97,116,105,99,95,116,97,120,34,58,32,123,10,32,32,32,32,32,32,32,32,34,101,110,97,98,108,101,100,34,58,32,102,97,108,115,101,44,10,32,32,32,32,32,32,32,32,34,108,105,97,98,105,108,105,116,121,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,32,32,34,112,114,111,118,105,100,101,114,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,32,32,34,115,116,97,116,117,115,34,58,32,110,117,108,108,10,32,32,32,32,32,32,125,44,10,32,32,32,32,32,32,34,98,105,108,108,105,110,103,95,97,100,100,114,101,115,115,95,99,111,108,108,101,99,116,105,111,110,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,34,98,114,97,110,100,105,110,103,95,115,101,116,116,105,110,103,115,34,58,32,123,10,32,32,32,32,32,32,32,32,34,98,97,99,107,103,114,111,117,110,100,95,99,111,108,111,114,34,58,32,34,35,102,102,102,102,102,102,34,44,10,32,32,32,32,32,32,32,32,34,98,111,114,100,101,114,95,115,116,121,108,101,34,58,32,34,114,111,117,110,100,101,100,34,44,10,32,32,32,32,32,32,32,32,34,98,117,116,116,111,110,95,99,111,108,111,114,34,58,32,34,35,48,48,55,52,100,52,34,44,10,32,32,32,32,32,32,32,32,34,100,105,115,112,108,97,121,95,110,97,109,101,34,58,32,34,65,83,32,99,114,101,109,111,115,97,115,32,115,97,110,100,98,111,120,34,44,10,32,32,32,32,32,32,32,32,34,102,111,110,116,95,102,97,109,105,108,121,34,58,32,34,100,101,102,97,117,108,116,34,44,10,32,32,32,32,32,32,32,32,34,105,99,111,110,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,32,32,34,108,111,103,111,34,58,32,110,117,108,108,10,32,32,32,32,32,32,125,44,10,32,32,32,32,32,32,34,99,97,110,99,101,108,95,117,114,108,34,58,32,34,104,116,116,112,58,47,47,108,111,99,97,108,104,111,115,116,58,53,49,55,51,47,99,104,101,99,107,111,117,116,47,99,97,110,99,101,108,63,111,114,100,101,114,95,105,100,61,76,67,71,45,50,48,50,54,48,49,50,50,45,75,79,52,82,86,48,34,44,10,32,32],\"skipRawBodyParser\":true,\"_body\":true,\"query\":{},\"res\":\"[internal]\",\"_sessionManager\":{\"_key\":\"passport\"},\"_passport\":{\"instance\":{\"_key\":\"passport\",\"_strategies\":{\"session\":{\"name\":\"session\",\"_key\":\"passport\"},\"bearer\":{\"name\":\"bearer\",\"_realm\":\"Users\"},\"oauth2-client-password\":{\"name\":\"oauth2-client-password\"},\"anon\":{\"name\":\"anon\"},\"tokens\":{\"name\":\"tokens\"}},\"_serializers\":[],\"_deserializers\":[],\"_infoTransformers\":[],\"_framework\":{},\"_sm\":{\"_key\":\"passport\"},\"strategies\":{},\"_userProperty\":\"user\"}},\"route\":{\"path\":\"/webhook/stripe\",\"stack\":[{\"name\":\"cookieParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"httpMiddleware\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"corsHandler\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"metricsHandler\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"jsonParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"urlencodedParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"multipartParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"rawBodyParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"<anonymous>\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"<anonymous>\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"}],\"methods\":{\"post\":true}},\"cookies\":{},\"signedCookies\":{},\"headers\":{\"host\":\"ascremosas.com\",\"x-real-ip\":\"3.18.12.63\",\"connection\":\"close\",\"content-length\":\"4073\",\"content-type\":\"application/json; charset=utf-8\",\"cache-control\":\"no-cache\",\"user-agent\":\"Stripe/1.0 (+https://stripe.com/docs/webhooks)\",\"accept\":\"*/*; q=0.5, application/json\",\"stripe-signature\":\"t=1769074368,v1=9efafb21d9503d8adb7d5bff78336e4472e8f7047c89ec24596b9a41d40ac27f,v0=45ad3bd9bdb9441c795260ff2c94a9a837306530628a05ff7a3edc92ff01949c\"}},\"res\":{},\"stripeEvent\":{\"id\":\"evt_1SsKFwHSKyk17Q2DhRissj3r\",\"object\":\"event\",\"api_version\":\"2025-12-15.clover\",\"created\":1769074368,\"data\":{\"object\":{\"id\":\"cs_test_a1EMiDledzRLxdFqhLIz9pkF9JzDhmJpVGtzO2ycXgM6m639ouyBpNOkNA\",\"object\":\"checkout.session\",\"adaptive_pricing\":{\"enabled\":true},\"after_expiration\":null,\"allow_promotion_codes\":null,\"amount_subtotal\":500,\"amount_total\":500,\"automatic_tax\":{\"enabled\":false,\"liability\":null,\"provider\":null,\"status\":null},\"billing_address_collection\":null,\"branding_settings\":{\"background_color\":\"#ffffff\",\"border_style\":\"rounded\",\"button_color\":\"#0074d4\",\"display_name\":\"AS cremosas sandbox\",\"font_family\":\"default\",\"icon\":null,\"logo\":null},\"cancel_url\":\"http://localhost:5173/checkout/cancel?order_id=LCG-20260122-KO4RV0\",\"client_reference_id\":null,\"client_secret\":null,\"collected_information\":{\"business_name\":null,\"individual_name\":null,\"shipping_details\":null},\"consent\":null,\"consent_collection\":null,\"created\":1769074355,\"currency\":\"eur\",\"currency_conversion\":null,\"custom_fields\":[],\"custom_text\":{\"after_submit\":null,\"shipping_address\":null,\"submit\":null,\"terms_of_service_acceptance\":null},\"customer\":null,\"customer_account\":null,\"customer_creation\":\"if_required\",\"customer_details\":{\"address\":{\"city\":null,\"country\":\"ES\",\"line1\":null,\"line2\":null,\"postal_code\":null,\"state\":null},\"business_name\":null,\"email\":\"ascremosas.co@gmail.com\",\"individual_name\":null,\"name\":\"3\",\"phone\":null,\"tax_exempt\":\"none\",\"tax_ids\":[]},\"customer_email\":\"ascremosas.co@gmail.com\",\"discounts\":[],\"expires_at\":1769160755,\"invoice\":null,\"invoice_creation\":{\"enabled\":false,\"invoice_data\":{\"account_tax_ids\":null,\"custom_fields\":null,\"description\":null,\"footer\":null,\"issuer\":null,\"metadata\":{},\"rendering_options\":null}},\"livemode\":false,\"locale\":\"auto\",\"metadata\":{\"order_id\":\"LCG-20260122-KO4RV0\"},\"mode\":\"payment\",\"origin_context\":null,\"payment_intent\":\"pi_3SsKFvHSKyk17Q2D0dgfaNMk\",\"payment_link\":null,\"payment_method_collection\":\"if_required\",\"payment_method_configuration_details\":{\"id\":\"pmc_1SpVCCHSKyk17Q2DyqBZl7qo\",\"parent\":null},\"payment_method_options\":{\"card\":{\"request_three_d_secure\":\"automatic\"}},\"payment_method_types\":[\"card\",\"bancontact\",\"eps\",\"klarna\",\"link\",\"amazon_pay\"],\"payment_status\":\"paid\",\"permissions\":null,\"phone_number_collection\":{\"enabled\":false},\"recovered_from\":null,\"saved_payment_method_options\":null,\"setup_intent\":null,\"shipping_address_collection\":null,\"shipping_cost\":null,\"shipping_options\":[],\"status\":\"complete\",\"submit_type\":null,\"subscription\":null,\"success_url\":\"http://localhost:5173/checkout/success?session_id={CHECKOUT_SESSION_ID}\",\"total_details\":{\"amount_discount\":0,\"amount_shipping\":0,\"amount_tax\":0},\"ui_mode\":\"hosted\",\"url\":null,\"wallet_options\":null}},\"livemode\":false,\"pending_webhooks\":1,\"request\":{\"id\":null,\"idempotency_key\":null},\"type\":\"checkout.session.completed\"}}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 1160,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "3faee7869eb851bf",
@@ -6137,7 +6593,7 @@
         "type": "function",
         "z": "f3eb2de3da3352db",
         "name": "create url",
-        "func": "const SECRET_KEY = env.get(\"STRIPE_SECRET_KEY\") || '';\nconst {\n    customerEmail,\n    totalPrice,\n    lang\n} = msg.orderData;\n\nconst orderMap = {\n    es: 'Pedido',\n    gl: 'Pedido',\n    en: 'Order'\n};\n\nconst formData = {\n    'success_url': `http://localhost:5173/checkout/success?session_id={CHECKOUT_SESSION_ID}`,\n    'cancel_url': `http://localhost:5173/checkout/cancel?order_id=${msg.orderId}`,\n    'mode': 'payment',\n    'customer_email': customerEmail,\n    'metadata[order_id]': msg.orderId,\n    'locale': 'auto',\n    'line_items[0][price_data][currency]': 'eur',\n    'line_items[0][price_data][product_data][name]': `${orderMap[lang]} #${msg.orderId}`,\n    'line_items[0][price_data][unit_amount]': totalPrice * 100,\n    'line_items[0][quantity]': 1\n};\n\nconst body = Object.entries(formData)\n    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)\n    .join('&');\n\nmsg.payload = body;\n\nmsg.url = \"https://api.stripe.com/v1/checkout/sessions\";\nmsg.method = \"POST\";\nmsg.headers = {\n    'Authorization': `Bearer ${SECRET_KEY}`,\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nreturn msg;",
+        "func": "const SECRET_KEY = env.get(\"STRIPE_SECRET_KEY\") || '';\nconst FRONTEND_URL = env.get(\"FRONTEND_URL\") || '';\n\nconst {\n    customerEmail,\n    totalPrice,\n    lang\n} = msg.orderData;\n\nconst orderMap = {\n    es: 'Pedido',\n    gl: 'Pedido',\n    en: 'Order'\n};\n\nconst formData = {\n    'success_url': `${FRONTEND_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,\n    'cancel_url': `${FRONTEND_URL}/checkout/cancel?order_id=${msg.orderId}`,\n    'mode': 'payment',\n    'customer_email': customerEmail,\n    'metadata[order_id]': msg.orderId,\n    'locale': 'auto',\n    'line_items[0][price_data][currency]': 'eur',\n    'line_items[0][price_data][product_data][name]': `${orderMap[lang]} #${msg.orderId}`,\n    'line_items[0][price_data][unit_amount]': totalPrice * 100,\n    'line_items[0][quantity]': 1\n};\n\nconst body = Object.entries(formData)\n    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)\n    .join('&');\n\nmsg.payload = body;\n\nmsg.url = \"https://api.stripe.com/v1/checkout/sessions\";\nmsg.method = \"POST\";\nmsg.headers = {\n    'Authorization': `Bearer ${SECRET_KEY}`,\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -7332,7 +7788,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "orders",
-        "func": "msg.payload = `\nCREATE TABLE IF NOT EXISTS orders (\n  id SERIAL PRIMARY KEY,\n  order_id TEXT UNIQUE NOT NULL,\n  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'paid', 'unpaid', 'completed', 'canceled', 'prepared')),\n  order_source TEXT CHECK (order_source IN ('site', 'shop', 'phone', 'instagram', 'in person')),\n  shop_id INTEGER REFERENCES shops(id),\n\n  customer_name TEXT NOT NULL,\n  customer_email TEXT,\n  customer_phone TEXT NOT NULL,\n\n  pickup_date DATE NOT NULL,\n  pickup_time TEXT NOT NULL DEFAULT 'pending' CHECK (pickup_time IN ('morning', 'evening')),\n\n  total_price NUMERIC(10,2) NOT NULL,\n\n  notes TEXT,\n  \n  stripe_payment_id TEXT,\n  stripe_session_id TEXT,\n  stripe_payment_intent_id TEXT,\n\n  created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(),\n  paid_at TIMESTAMP WITHOUT TIME ZONE,\n  completed_at TIMESTAMP WITHOUT TIME ZONE\n);\n`\n\nreturn msg;",
+        "func": "msg.payload = `\nCREATE TABLE IF NOT EXISTS orders (\n  id SERIAL PRIMARY KEY,\n  order_id TEXT UNIQUE NOT NULL,\n  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'paid', 'unpaid', 'completed', 'canceled', 'prepared', 'suspicious')),\n  order_source TEXT CHECK (order_source IN ('site', 'shop', 'phone', 'instagram', 'in person')),\n  shop_id INTEGER REFERENCES shops(id),\n\n  customer_name TEXT NOT NULL,\n  customer_email TEXT,\n  customer_phone TEXT NOT NULL,\n\n  pickup_date DATE NOT NULL,\n  pickup_time TEXT NOT NULL DEFAULT 'pending' CHECK (pickup_time IN ('morning', 'evening')),\n\n  total_price NUMERIC(10,2) NOT NULL,\n\n  notes TEXT,\n  \n  stripe_payment_id TEXT,\n  stripe_session_id TEXT,\n\n  created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(),\n  paid_at TIMESTAMP WITHOUT TIME ZONE,\n  completed_at TIMESTAMP WITHOUT TIME ZONE\n);\n`\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
