@@ -2,7 +2,15 @@
     {
         "id": "511654ac3eb34f3c",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "SETTING",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b73d17450c17803c",
+        "type": "tab",
+        "label": "WEBHOOKS",
         "disabled": false,
         "info": "",
         "env": []
@@ -86,12 +94,16 @@
             "7bc2f757f9fb8736",
             "ee8fa8cfac8a96a8",
             "5353a71dc97ee204",
-            "97625ddc54aab6d1"
+            "97625ddc54aab6d1",
+            "33386d0ee392d097",
+            "826fa9aa9468d3c9",
+            "3750b081988565cc",
+            "43a27d581aec15d9"
         ],
         "x": 14,
         "y": 19,
-        "w": 592,
-        "h": 122
+        "w": 832,
+        "h": 162
     },
     {
         "id": "3d009a5e045148c0",
@@ -115,7 +127,7 @@
             "9fd7022df8bd4a33"
         ],
         "x": 14,
-        "y": 239,
+        "y": 259,
         "w": 512,
         "h": 182
     },
@@ -604,11 +616,23 @@
             "3a48b16e73468e17",
             "aaa5580f6634b6b1",
             "b843fbfd3cdc9e64",
-            "ee34e3a042148923"
+            "ee34e3a042148923",
+            "b9643529227392d4",
+            "252004e18d04ed04",
+            "4da23aee8a10955d",
+            "5589ed68c062b6b9",
+            "2a97ebb237b9788e",
+            "434ebde4a685b294",
+            "fd5c7073bd72cfe6",
+            "f6e5a309e3c9bf4b",
+            "d909c4eea934bd56",
+            "d002c4fbf80aa5d0",
+            "92dc020174f80be0",
+            "ab4e4ffb567b7068"
         ],
         "x": 34,
         "y": 1479,
-        "w": 772,
+        "w": 1532,
         "h": 682
     },
     {
@@ -702,50 +726,121 @@
         "h": 182
     },
     {
-        "id": "cbabc9b4106719b0",
-        "type": "inject",
-        "z": "511654ac3eb34f3c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
+        "id": "b380f68b15913b37",
+        "type": "group",
+        "z": "b73d17450c17803c",
+        "name": "TELEGRAM",
+        "style": {
+            "stroke": "#0070c0",
+            "label": true
+        },
+        "nodes": [
+            "2aaba55c8037bb23",
+            "c0ff7932e8463806",
+            "e2c1cdc179657206",
+            "1f0a3fa474a9c546",
+            "17ea5faca8ea229b",
+            "1f0ff5db697f62c3",
+            "5960d2039e879617",
+            "ae792085a1a26b3e",
+            "bef990f69302ada3",
+            "f5cec7e6bcc9641b",
+            "f4cd77bfb9232f12",
+            "f4b198cbc39cb937"
         ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 920,
-        "y": 560,
+        "x": 34,
+        "y": 759,
+        "w": 892,
+        "h": 162
+    },
+    {
+        "id": "8ff7a8afe02f6f9b",
+        "type": "group",
+        "z": "b73d17450c17803c",
+        "name": "stripe",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "7dba41cef305919e",
+            "396bbf186c75fe0c",
+            "db728fba8af35ae3",
+            "dd64cf0487f16c8b",
+            "c86fa4f220d84bfb",
+            "57ae0baa9395d3bd",
+            "6e1a6abd115867f5",
+            "5cc8bed20812207b",
+            "62585ac5cd2e87df",
+            "5b012253d929f45a",
+            "fa7eefe629c35c3e",
+            "134c1c118160eea1"
+        ],
+        "x": 34,
+        "y": 19,
+        "w": 912,
+        "h": 167
+    },
+    {
+        "id": "134c1c118160eea1",
+        "type": "junction",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
+        "x": 860,
+        "y": 160,
         "wires": [
             [
-                "d716beeca0f50535"
+                "4fcf090ae14be681"
             ]
         ]
     },
     {
-        "id": "d716beeca0f50535",
-        "type": "function",
-        "z": "511654ac3eb34f3c",
-        "name": "function 1",
-        "func": "const TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nnode.warn(TELEGRAM_BASE_URL);\nnode.warn(TELEGRAM_BOT_TOKEN);\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1080,
+        "id": "87a26bfb149a784a",
+        "type": "junction",
+        "z": "b73d17450c17803c",
+        "x": 360,
         "y": 560,
         "wires": [
-            []
+            [
+                "eaf81c8a8727b828"
+            ]
+        ]
+    },
+    {
+        "id": "eaf81c8a8727b828",
+        "type": "junction",
+        "z": "b73d17450c17803c",
+        "x": 500,
+        "y": 560,
+        "wires": [
+            [
+                "5fab523e1e7cad66"
+            ]
+        ]
+    },
+    {
+        "id": "80243f4705fa9aec",
+        "type": "global-config",
+        "env": [
+            {
+                "name": "PROJECT_NAME",
+                "value": "OSCHAD_DOCUMENT_ANALYSIS",
+                "type": "str"
+            },
+            {
+                "name": "HOST",
+                "value": "https://document-analysis-672dd98a7101f61100000059.ubos-8rlh2.ubos.tech",
+                "type": "str"
+            },
+            {
+                "name": "ENVIRONMENT",
+                "value": "prod",
+                "type": "str"
+            },
+            {
+                "name": "ESCALATION_URL",
+                "value": "https://modules-67ceee644886a91100000075.ubos.tech",
+                "type": "str"
+            }
         ]
     },
     {
@@ -899,7 +994,7 @@
         "name": "postgres",
         "links": [],
         "x": 100,
-        "y": 280,
+        "y": 300,
         "wires": [
             [
                 "db2a6f35fe31cdb1"
@@ -918,7 +1013,7 @@
         "mode": "return",
         "links": [],
         "x": 375,
-        "y": 280,
+        "y": 300,
         "wires": []
     },
     {
@@ -935,7 +1030,7 @@
         "finalize": "",
         "libs": [],
         "x": 260,
-        "y": 280,
+        "y": 300,
         "wires": [
             [
                 "5cc1c97b5393ef47"
@@ -943,106 +1038,12 @@
         ]
     },
     {
-        "id": "5da6575293c1e195",
-        "type": "link call",
-        "z": "511654ac3eb34f3c",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1200,
-        "y": 500,
-        "wires": [
-            [
-                "ea85fca17455bfaa"
-            ]
-        ]
-    },
-    {
-        "id": "7554769a7e1b85c2",
-        "type": "inject",
-        "z": "511654ac3eb34f3c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 920,
-        "y": 500,
-        "wires": [
-            [
-                "5149f214753988dd"
-            ]
-        ]
-    },
-    {
-        "id": "5149f214753988dd",
-        "type": "function",
-        "z": "511654ac3eb34f3c",
-        "name": "function 2",
-        "func": "msg.payload = `SELECT * FROM products`\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1060,
-        "y": 500,
-        "wires": [
-            [
-                "5da6575293c1e195"
-            ]
-        ]
-    },
-    {
-        "id": "ea85fca17455bfaa",
-        "type": "debug",
-        "z": "511654ac3eb34f3c",
-        "name": "insert log",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1360,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "0956b66319b27f4d",
-        "type": "comment",
-        "z": "511654ac3eb34f3c",
-        "name": "CORS",
-        "info": "",
-        "x": 110,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "fe5f65f3907ebf38",
         "type": "comment",
         "z": "511654ac3eb34f3c",
         "name": "Rate Limiting",
         "info": "",
-        "x": 130,
+        "x": 90,
         "y": 480,
         "wires": []
     },
@@ -1052,8 +1053,8 @@
         "z": "511654ac3eb34f3c",
         "name": "проблема, щоб два клієнти одночасно не забрали останній торт",
         "info": "",
-        "x": 300,
-        "y": 560,
+        "x": 420,
+        "y": 480,
         "wires": []
     },
     {
@@ -1062,88 +1063,8 @@
         "z": "511654ac3eb34f3c",
         "name": "платіжні операції повинні бути ідемпотентними",
         "info": "",
-        "x": 240,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "4ca8b132515d084f",
-        "type": "comment",
-        "z": "511654ac3eb34f3c",
-        "name": "всі дати зберігаються в UTC, конвертація на клієнті",
-        "info": "",
-        "x": 260,
-        "y": 640,
-        "wires": []
-    },
-    {
-        "id": "f3c8d12c3fb95227",
-        "type": "comment",
-        "z": "511654ac3eb34f3c",
-        "name": "Клієнт закрив браузер після оплати:  Проблема: success_url не відкрився, але оплата пройшла Рішення: Webhook є джерелом правди, а не success callback",
-        "info": "",
-        "x": 600,
-        "y": 680,
-        "wires": []
-    },
-    {
-        "id": "607b8fea4124880e",
-        "type": "comment",
-        "z": "511654ac3eb34f3c",
-        "name": " Дублікація замовлень:  Проблема: Клієнт двічі натиснув \"Оплатити\" Рішення: idempotency_key на рівні БД (UNIQUE) + перевірка на backend",
-        "info": "",
-        "x": 550,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "d35658e758cd17cf",
-        "type": "comment",
-        "z": "511654ac3eb34f3c",
-        "name": "stripe",
-        "info": "ЗАВЖДИ відповідати 200 OK якнайшвидше\n\nStripe очікує відповідь за 5 секунд\nЯкщо timeout → Stripe робить retry (до 3 днів)\nРішення: Асинхронна обробка в фоні + негайна відповідь 200\n\n🔴 Ідемпотентність обов'язкова\n\nStripe може надіслати одну подію кілька разів\nРішення: Unique constraint на event_id + перевірка processed = TRUE",
-        "x": 110,
-        "y": 760,
-        "wires": []
-    },
-    {
-        "id": "c8a9e195b1a06b6d",
-        "type": "comment",
-        "z": "511654ac3eb34f3c",
-        "name": "телеграм",
-        "info": "чи просто бот \nчи бот що пише в групу замовлень",
-        "x": 240,
-        "y": 760,
-        "wires": []
-    },
-    {
-        "id": "f7a319a2b3417701",
-        "type": "comment",
-        "z": "511654ac3eb34f3c",
-        "name": "stripe",
-        "info": "### ⚠️ **ПРОБЛЕМА 3: Webhook Retry Storms**\n\n**Проблема:**  \nStripe надсилає webhook, backend падає → Stripe робить retry → черга webhook'ів.\n\n**Рішення:**\n```\n1. АСИНХРОННА обробка webhook'ів\n2. НЕГАЙНА відповідь 200 OK (< 1 секунди)\n3. ІДЕМПОТЕНТНІСТЬ через event_id unique constraint\n4. RETRY LOGIC в обробці:\n   - Спроба 1: негайно\n   - Спроба 2: +30 секунд\n   - Спроба 3: +5 хвилин\n5. DEAD LETTER QUEUE для неуспішних подій (manual review)\n\n### ⚠️ **ПРОБЛЕМА 4: Stripe Checkout Session Expiration**\n\n**Проблема:**  \nКлієнт відкрив checkout, але не оплатив → резервування заблоковане.\n\n**Рішення:**\n```\n1. Stripe session expires_at = 30 хвилин\n2. Background job кожні 5 хвилин:\n   - SELECT orders WHERE status = 'pending' AND created_at < NOW() - INTERVAL '35 minutes'\n   - UPDATE status = 'canceled', canceled_reason = 'checkout_expired'\n   - Звільнити резервування\n3. Опціонально: Stripe webhook `checkout.session.expired`\n```",
-        "x": 110,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "9401072fd1abddcb",
-        "type": "comment",
-        "z": "511654ac3eb34f3c",
-        "name": "auth middleware",
-        "info": "",
-        "x": 140,
-        "y": 840,
-        "wires": []
-    },
-    {
-        "id": "6f8fad23e4583e35",
-        "type": "comment",
-        "z": "511654ac3eb34f3c",
-        "name": "ratelimiter",
-        "info": "import rateLimit from 'express-rate-limit';\n\nexport const rateLimiter = rateLimit({\n  windowMs: 15 * 60 * 1000, // 15 minutes\n  limit: 100, // 100 request for 15 minutes\n  message: {\n    success: false,\n    error: 'Too many requests, please try again later.'\n  },\n  standardHeaders: true,\n  legacyHeaders: false\n});\n",
-        "x": 120,
-        "y": 880,
+        "x": 200,
+        "y": 520,
         "wires": []
     },
     {
@@ -1155,7 +1076,7 @@
         "scope": "group",
         "uncaught": false,
         "x": 110,
-        "y": 340,
+        "y": 360,
         "wires": [
             [
                 "c31c2910d9e53835"
@@ -1177,7 +1098,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 270,
-        "y": 340,
+        "y": 360,
         "wires": []
     },
     {
@@ -1188,7 +1109,7 @@
         "name": "not send to telegram duplicate code 23505",
         "info": "",
         "x": 340,
-        "y": 380,
+        "y": 400,
         "wires": []
     },
     {
@@ -1199,7 +1120,7 @@
         "scope": null,
         "uncaught": true,
         "x": 100,
-        "y": 200,
+        "y": 220,
         "wires": [
             [
                 "f28aceab80e2fd19"
@@ -1220,49 +1141,91 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 260,
-        "y": 200,
+        "y": 220,
         "wires": []
     },
     {
-        "id": "d0b7d939c216061e",
-        "type": "comment",
-        "z": "511654ac3eb34f3c",
-        "name": "Ha ocurrido un error, por favor intente más tarde!",
-        "info": "",
-        "x": 400,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "27c5a75cc3506397",
+        "id": "33386d0ee392d097",
         "type": "function",
         "z": "511654ac3eb34f3c",
-        "name": "create pool",
-        "func": "const { Pool } = pg;\n\n// const connectionString = env.get(\"DATABASE_URL\");\nconst connectionString = \"postgresql://anna:3gs0wgN64Jj2@localhost:5432/cheesecake_db\"\n\nif (!connectionString) {\n    node.error(\"Missing DATABASE_URL in ENV\");\n    return null;\n}\n\nlet pool = flow.get('pg_pool');\n\nif (!pool) {\n    try {\n        pool = new Pool({\n            connectionString,\n            max: 20,\n            connectionTimeoutMillis: 5000,\n            idleTimeoutMillis: 30000\n        });\n\n        pool.on('error', (err) => {\n            node.error(\"Unexpected DB pool error\", err);\n            return null;\n        });\n\n        pool.on('connect', () => {\n            // node.warn(\"DB connected\");\n        });\n\n        await pool.query(\"SELECT NOW()\");\n\n        flow.set('pg_pool', pool);\n        node.warn(\"PostgreSQL pool created successfully\");\n    } catch (err) {\n        node.error(\"Failed to create PostgreSQL pool\", err);\n        return null;\n    }\n};\n\nmsg.payload = { status: \"DB connected\" };\nreturn msg;",
+        "g": "49bf3ff7a63e80f4",
+        "name": "set telegram webhook",
+        "func": "const NODE_RED_URL = env.get('NODE_RED_URL') || null;\nconst TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nif (!NODE_RED_URL || !TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL) {\n    node.error(\"Missed data in ENV\", msg);\n};\n\nconst webhookUrl = `${NODE_RED_URL}/api/v1/webhook/telegram`;\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/setWebhook?url=${webhookUrl}`;\nmsg.method = 'GET';\n\nreturn msg;",
         "outputs": 1,
-        "timeout": 0,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "libs": [
-            {
-                "var": "pg",
-                "module": "pg"
-            }
-        ],
-        "x": 290,
-        "y": 960,
+        "libs": [],
+        "x": 320,
+        "y": 140,
         "wires": [
             [
-                "675bc55c04f95c14"
+                "3750b081988565cc"
             ]
         ]
     },
     {
-        "id": "675bc55c04f95c14",
+        "id": "826fa9aa9468d3c9",
+        "type": "inject",
+        "z": "511654ac3eb34f3c",
+        "g": "49bf3ff7a63e80f4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "33386d0ee392d097"
+            ]
+        ]
+    },
+    {
+        "id": "3750b081988565cc",
+        "type": "http request",
+        "z": "511654ac3eb34f3c",
+        "g": "49bf3ff7a63e80f4",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 510,
+        "y": 140,
+        "wires": [
+            [
+                "43a27d581aec15d9"
+            ]
+        ]
+    },
+    {
+        "id": "43a27d581aec15d9",
         "type": "debug",
         "z": "511654ac3eb34f3c",
-        "name": "pool",
+        "g": "49bf3ff7a63e80f4",
+        "name": "set telegram webhook",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -1271,14 +1234,270 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 430,
-        "y": 960,
+        "x": 700,
+        "y": 140,
         "wires": []
     },
     {
-        "id": "c06df73ac8af07ef",
+        "id": "1722e06d1888e5bb",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "send msg",
+        "func": "const TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nif (!TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL) {\n  msg.error = 'Missed ENV';\n\n  const data = {\n    log_type: 'system_error',\n    status: 'failed',\n    action: 'send telegram message',\n    user_id: msg?.userId || null,\n    chat_id: msg?.chatId,\n    log_level: 'critical',\n    table_name: null,\n    context: null,\n    error_code: 'ERR_MISSED_ENV',\n    error_msg: 'Missed data in ENV'\n  };\n\n  // await insertLog(data);\n  node.error(\"Missed data in ENV\", msg);\n  return [msg, null];\n};\n\nconst { message = '', markupType = null, buttons = null } = msg.payload || {};\n\nconst baseReplyMarkup = {\n  resize_keyboard: true,\n  one_time_keyboard: false\n};\n\nconst replyMarkup =\n  markupType === 'inline' ? { inline_keyboard: buttons, ...baseReplyMarkup } :\n    markupType === 'keyboard' ? { keyboard: buttons, ...baseReplyMarkup } :\n      null;\n\nconst body = JSON.stringify({\n  chat_id: msg?.chatId,\n  text: message,\n  parse_mode: 'Markdown',\n  ...(replyMarkup && { reply_markup: replyMarkup })\n});\n\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;\nmsg.method = 'POST';\nmsg.headers = {\n  'Content-Type': 'application/json',\n  'Content-Length': Buffer.byteLength(body)\n};\n\nmsg.payload = body;\nmsg.body = body;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 580,
+        "wires": [
+            [
+                "87a26bfb149a784a"
+            ],
+            [
+                "0588b46f5089845f"
+            ]
+        ]
+    },
+    {
+        "id": "eab371a8f8f3b621",
+        "type": "link in",
+        "z": "b73d17450c17803c",
+        "name": "send message",
+        "links": [],
+        "x": 120,
+        "y": 580,
+        "wires": [
+            [
+                "1722e06d1888e5bb"
+            ]
+        ],
+        "icon": "font-awesome/fa-send",
+        "l": true,
+        "info": "msg.payload = {\n    message: '', // message to send\n    markupType: '', // inline || keyboard (optional)\n    buttons: [] // [[{ text: 'Button 1', callback_data: 'btn1' }]]; || [['Button 1'], ['Button 2']]; (optional),\n    method: '' (optinal)\n    message_id: '' (optinal)\n}"
+    },
+    {
+        "id": "5fab523e1e7cad66",
+        "type": "link out",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 545,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "0588b46f5089845f",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 600,
+        "wires": [
+            [
+                "fc71ac1fd89abe18",
+                "5fab523e1e7cad66"
+            ]
+        ]
+    },
+    {
+        "id": "fc71ac1fd89abe18",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "send telegram",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "e457ffc15e6ded46",
+        "type": "http in",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "url": "/api/v1/webhook/telegram",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 460,
+        "wires": [
+            [
+                "178ef043d024ce87",
+                "f4e336f1fc89df65"
+            ]
+        ]
+    },
+    {
+        "id": "178ef043d024ce87",
+        "type": "http response",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 380,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "f4e336f1fc89df65",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "telegram",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "2aaba55c8037bb23",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "b380f68b15913b37",
+        "name": "set telegram webhook",
+        "func": "const NODE_RED_URL = env.get('NODE_RED_URL') || null;\nconst TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nif (!NODE_RED_URL || !TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL) {\n    node.error(\"Missed data in ENV\", msg);\n};\n\nconst webhookUrl = `${NODE_RED_URL}/api/v1/webhook/telegram`;\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/setWebhook?url=${webhookUrl}`;\nmsg.method = 'GET';\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 800,
+        "wires": [
+            [
+                "e2c1cdc179657206"
+            ]
+        ]
+    },
+    {
+        "id": "c0ff7932e8463806",
         "type": "inject",
-        "z": "511654ac3eb34f3c",
+        "z": "b73d17450c17803c",
+        "g": "b380f68b15913b37",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 800,
+        "wires": [
+            [
+                "2aaba55c8037bb23"
+            ]
+        ]
+    },
+    {
+        "id": "e2c1cdc179657206",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "g": "b380f68b15913b37",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 530,
+        "y": 800,
+        "wires": [
+            [
+                "1f0a3fa474a9c546"
+            ]
+        ]
+    },
+    {
+        "id": "1f0a3fa474a9c546",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "g": "b380f68b15913b37",
+        "name": "set telegram webhook",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "17ea5faca8ea229b",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "b380f68b15913b37",
+        "name": "delete telegram webhook",
+        "func": "const TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nif (!TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL) {\n    node.error(\"Missed data in ENV\", msg);\n};\n\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/deleteWebhook`;\nmsg.method = 'POST';\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 840,
+        "wires": [
+            [
+                "5960d2039e879617"
+            ]
+        ]
+    },
+    {
+        "id": "1f0ff5db697f62c3",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "g": "b380f68b15913b37",
         "name": "",
         "props": [
             {
@@ -1297,48 +1516,44 @@
         "payload": "",
         "payloadType": "date",
         "x": 140,
-        "y": 960,
+        "y": 840,
         "wires": [
             [
-                "27c5a75cc3506397"
+                "17ea5faca8ea229b"
             ]
         ]
     },
     {
-        "id": "396bbf186c75fe0c",
-        "type": "http in",
-        "z": "511654ac3eb34f3c",
+        "id": "5960d2039e879617",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "g": "b380f68b15913b37",
         "name": "",
-        "url": "/webhook/stripe",
-        "method": "post",
-        "upload": false,
-        "skipBodyParsing": true,
-        "swaggerDoc": "",
-        "x": 140,
-        "y": 1080,
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 530,
+        "y": 840,
         "wires": [
             [
-                "c86fa4f220d84bfb",
-                "7dba41cef305919e"
+                "ae792085a1a26b3e"
             ]
         ]
     },
     {
-        "id": "c86fa4f220d84bfb",
-        "type": "http response",
-        "z": "511654ac3eb34f3c",
-        "name": "",
-        "statusCode": "200",
-        "headers": {},
-        "x": 340,
-        "y": 1040,
-        "wires": []
-    },
-    {
-        "id": "db728fba8af35ae3",
+        "id": "ae792085a1a26b3e",
         "type": "debug",
-        "z": "511654ac3eb34f3c",
-        "name": "stripe",
+        "z": "b73d17450c17803c",
+        "g": "b380f68b15913b37",
+        "name": "delete telegram webhook",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -1347,14 +1562,109 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 490,
-        "y": 1040,
+        "x": 730,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "bef990f69302ada3",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "b380f68b15913b37",
+        "name": "get info telegram webhook",
+        "func": "const TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nif (!TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL) {\n    node.error(\"Missed data in ENV\", msg);\n};\n\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/getWebhookInfo`;\nmsg.method = 'GET';\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 880,
+        "wires": [
+            [
+                "f4cd77bfb9232f12"
+            ]
+        ]
+    },
+    {
+        "id": "f5cec7e6bcc9641b",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "g": "b380f68b15913b37",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 880,
+        "wires": [
+            [
+                "bef990f69302ada3"
+            ]
+        ]
+    },
+    {
+        "id": "f4cd77bfb9232f12",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "g": "b380f68b15913b37",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 550,
+        "y": 880,
+        "wires": [
+            [
+                "f4b198cbc39cb937"
+            ]
+        ]
+    },
+    {
+        "id": "f4b198cbc39cb937",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "g": "b380f68b15913b37",
+        "name": "get info telegram webhook",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 880,
         "wires": []
     },
     {
         "id": "7dba41cef305919e",
         "type": "function",
-        "z": "511654ac3eb34f3c",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
         "name": "check signature",
         "func": "const STRIPE_SECRET_KEY = env.get('STRIPE_SECRET_KEY');\nconst WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\nconst stripe = new Stripe(STRIPE_SECRET_KEY);\nconst signature = msg.req?.headers?.['stripe-signature'];\nconst rawBody = Buffer.from(msg.payload);\n\nif (!signature) {\n    return null;\n};\n\ntry {\n    const { type = '', data = {} } = stripe.webhooks.constructEvent(rawBody, signature, WEBHOOK_SECRET);\n    const session = data?.object || {};\n\n    msg.toDB = {\n        orderId: session?.metadata?.order_id || null,\n        paymentIntentId: session?.payment_intent || null,\n        status: \"unpaid\"\n    };\n\n    if (type === 'checkout.session.completed') {\n        msg.toDB.status = \"paid\";\n\n        return msg;\n    };\n\n    return msg;\n} catch (err) {\n    throw new Error('Webhook signature verification failed: ');\n}",
         "outputs": 1,
@@ -1368,29 +1678,68 @@
                 "module": "stripe"
             }
         ],
-        "x": 340,
-        "y": 1080,
+        "x": 360,
+        "y": 120,
         "wires": [
             [
                 "db728fba8af35ae3",
-                "dd64cf0487f16c8b"
+                "5cc8bed20812207b"
             ]
         ]
     },
     {
+        "id": "396bbf186c75fe0c",
+        "type": "http in",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
+        "name": "",
+        "url": "/webhook/stripe",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": true,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "c86fa4f220d84bfb",
+                "7dba41cef305919e"
+            ]
+        ]
+    },
+    {
+        "id": "db728fba8af35ae3",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
+        "name": "stripe",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 80,
+        "wires": []
+    },
+    {
         "id": "dd64cf0487f16c8b",
         "type": "function",
-        "z": "511654ac3eb34f3c",
-        "name": "update",
-        "func": "const { orderId = null, paymentIntentId = null, status = 'unpaid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nconst paidAt = status === \"paid\" ? new Date() : null;\n\nmsg.queryParameters = [orderId, status, paymentIntentId, paidAt];\nmsg.payload = `\n    UPDATE orders\n        SET status = $2,\n            stripe_payment_id = $3,\n            paid_at = $4\n    WHERE order_id = $1\n    RETURNING id;\n`;\n\nreturn msg;",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
+        "name": "paid",
+        "func": "const { orderId = null, paymentIntentId = null, status = 'paid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nmsg.queryParameters = [orderId, status, paymentIntentId, new Date()];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2, \n        stripe_payment_id = $3, \n        paid_at = $4 \n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free\n            )\n            FROM order_items oi\n            LEFT JOIN product_translations pt \n                ON oi.product_id = pt.product_id \n                AND pt.language_code = 'es'\n            LEFT JOIN product_variant_translations pvt \n                ON oi.product_variant_id = pvt.variant_id \n                AND pvt.language_code = 'es'\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
-        "y": 1080,
+        "x": 630,
+        "y": 100,
         "wires": [
             [
                 "57ae0baa9395d3bd"
@@ -1398,27 +1747,42 @@
         ]
     },
     {
+        "id": "c86fa4f220d84bfb",
+        "type": "http response",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 360,
+        "y": 80,
+        "wires": []
+    },
+    {
         "id": "57ae0baa9395d3bd",
         "type": "link call",
-        "z": "511654ac3eb34f3c",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
         "name": "orders",
         "links": [
             "7d0d97bd91fee1c8"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 630,
-        "y": 1080,
+        "x": 750,
+        "y": 100,
         "wires": [
             [
-                "6e1a6abd115867f5"
+                "6e1a6abd115867f5",
+                "fa7eefe629c35c3e"
             ]
         ]
     },
     {
         "id": "6e1a6abd115867f5",
         "type": "debug",
-        "z": "511654ac3eb34f3c",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
         "name": "stripe",
         "active": true,
         "tosidebar": true,
@@ -1429,29 +1793,201 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 750,
-        "y": 1080,
+        "y": 60,
         "wires": []
     },
     {
-        "id": "a98b5c5780fe2f29",
-        "type": "catch",
-        "z": "511654ac3eb34f3c",
+        "id": "d83502af55980ca8",
+        "type": "inject",
+        "z": "b73d17450c17803c",
         "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 100,
-        "y": 1160,
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 400,
         "wires": [
             [
-                "65cfbb0a5ccede9c"
+                "6928b2127dcc6f76"
             ]
         ]
     },
     {
-        "id": "65cfbb0a5ccede9c",
+        "id": "6928b2127dcc6f76",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "set msg",
+        "func": "msg = {\"_msgid\":\"b443848e9a6d5c89\",\"payload\":[{\"id\":28}],\"toDB\":{\"orderId\":\"LCG-20260125-4UV77Q\",\"paymentIntentId\":\"pi_3StWyOHSKyk17Q2D1dNcaqnv\",\"status\":\"paid\"},\"queryParameters\":[\"LCG-20260125-4UV77Q\",\"paid\",\"pi_3StWyOHSKyk17Q2D1dNcaqnv\",\"2026-01-25T17:19:42.041Z\"],\"req\":{\"_events\":{},\"_readableState\":{\"highWaterMark\":65536,\"buffer\":[],\"bufferIndex\":0,\"length\":0,\"pipes\":[],\"awaitDrainWriters\":null},\"socket\":\"[internal]\",\"httpVersionMajor\":1,\"httpVersionMinor\":1,\"httpVersion\":\"1.1\",\"complete\":true,\"rawHeaders\":[\"Host\",\"ascremosas.com\",\"X-Real-IP\",\"3.18.12.63\",\"Connection\",\"close\",\"Content-Length\",\"4102\",\"Content-Type\",\"application/json; charset=utf-8\",\"Cache-Control\",\"no-cache\",\"User-Agent\",\"Stripe/1.0 (+https://stripe.com/docs/webhooks)\",\"Accept\",\"*/*; q=0.5, application/json\",\"Stripe-Signature\",\"t=1769361581,v1=0b1bc78d96e6661005477445b491862102e439a7676313ffbff6775c7d9b8f0d,v0=c46646344004d5b2b9cd518b1d31d28a938530f27034ccbf5c0b43e9a179bd98\"],\"rawTrailers\":[],\"joinDuplicateHeaders\":null,\"aborted\":false,\"upgrade\":false,\"url\":\"/webhook/stripe\",\"method\":\"POST\",\"statusCode\":null,\"statusMessage\":null,\"client\":\"[internal]\",\"_consuming\":true,\"_dumped\":false,\"baseUrl\":\"\",\"originalUrl\":\"/webhook/stripe\",\"_parsedUrl\":{\"protocol\":null,\"slashes\":null,\"auth\":null,\"host\":null,\"port\":null,\"hostname\":null,\"hash\":null,\"search\":null,\"query\":null,\"pathname\":\"/webhook/stripe\",\"path\":\"/webhook/stripe\",\"href\":\"/webhook/stripe\",\"_raw\":\"/webhook/stripe\"},\"params\":{},\"_eventsCount\":0,\"body\":[123,10,32,32,34,105,100,34,58,32,34,101,118,116,95,49,83,116,87,121,80,72,83,75,121,107,49,55,81,50,68,106,109,70,83,90,66,108,76,34,44,10,32,32,34,111,98,106,101,99,116,34,58,32,34,101,118,101,110,116,34,44,10,32,32,34,97,112,105,95,118,101,114,115,105,111,110,34,58,32,34,50,48,50,53,45,49,50,45,49,53,46,99,108,111,118,101,114,34,44,10,32,32,34,99,114,101,97,116,101,100,34,58,32,49,55,54,57,51,54,49,53,56,49,44,10,32,32,34,100,97,116,97,34,58,32,123,10,32,32,32,32,34,111,98,106,101,99,116,34,58,32,123,10,32,32,32,32,32,32,34,105,100,34,58,32,34,99,115,95,116,101,115,116,95,97,49,115,84,90,108,88,68,122,104,88,75,118,105,122,111,84,120,108,117,115,53,120,116,110,106,69,79,111,90,65,111,89,57,87,53,86,104,82,113,82,109,108,66,50,109,117,111,121,74,101,51,55,102,54,66,81,51,34,44,10,32,32,32,32,32,32,34,111,98,106,101,99,116,34,58,32,34,99,104,101,99,107,111,117,116,46,115,101,115,115,105,111,110,34,44,10,32,32,32,32,32,32,34,97,100,97,112,116,105,118,101,95,112,114,105,99,105,110,103,34,58,32,123,10,32,32,32,32,32,32,32,32,34,101,110,97,98,108,101,100,34,58,32,116,114,117,101,10,32,32,32,32,32,32,125,44,10,32,32,32,32,32,32,34,97,102,116,101,114,95,101,120,112,105,114,97,116,105,111,110,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,34,97,108,108,111,119,95,112,114,111,109,111,116,105,111,110,95,99,111,100,101,115,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,34,97,109,111,117,110,116,95,115,117,98,116,111,116,97,108,34,58,32,49,49,48,48,44,10,32,32,32,32,32,32,34,97,109,111,117,110,116,95,116,111,116,97,108,34,58,32,49,49,48,48,44,10,32,32,32,32,32,32,34,97,117,116,111,109,97,116,105,99,95,116,97,120,34,58,32,123,10,32,32,32,32,32,32,32,32,34,101,110,97,98,108,101,100,34,58,32,102,97,108,115,101,44,10,32,32,32,32,32,32,32,32,34,108,105,97,98,105,108,105,116,121,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,32,32,34,112,114,111,118,105,100,101,114,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,32,32,34,115,116,97,116,117,115,34,58,32,110,117,108,108,10,32,32,32,32,32,32,125,44,10,32,32,32,32,32,32,34,98,105,108,108,105,110,103,95,97,100,100,114,101,115,115,95,99,111,108,108,101,99,116,105,111,110,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,34,98,114,97,110,100,105,110,103,95,115,101,116,116,105,110,103,115,34,58,32,123,10,32,32,32,32,32,32,32,32,34,98,97,99,107,103,114,111,117,110,100,95,99,111,108,111,114,34,58,32,34,35,102,102,102,102,102,102,34,44,10,32,32,32,32,32,32,32,32,34,98,111,114,100,101,114,95,115,116,121,108,101,34,58,32,34,114,111,117,110,100,101,100,34,44,10,32,32,32,32,32,32,32,32,34,98,117,116,116,111,110,95,99,111,108,111,114,34,58,32,34,35,48,48,55,52,100,52,34,44,10,32,32,32,32,32,32,32,32,34,100,105,115,112,108,97,121,95,110,97,109,101,34,58,32,34,65,83,32,99,114,101,109,111,115,97,115,32,115,97,110,100,98,111,120,34,44,10,32,32,32,32,32,32,32,32,34,102,111,110,116,95,102,97,109,105,108,121,34,58,32,34,100,101,102,97,117,108,116,34,44,10,32,32,32,32,32,32,32,32,34,105,99,111,110,34,58,32,110,117,108,108,44,10,32,32,32,32,32,32,32,32,34,108,111,103,111,34,58,32,110,117,108,108,10,32,32,32,32,32,32,125,44,10,32,32,32,32,32,32,34,99,97,110,99,101,108,95,117,114,108,34,58,32,34,104,116,116,112,58,47,47,108,111,99,97,108,104,111,115,116,58,53,49,55,51,47,99,104,101,99,107,111,117,116,47,99,97,110,99,101,108,63,111,114,100,101,114,95,105,100,61,76,67,71,45,50,48,50,54,48,49,50,53,45,52,85,86,55,55,81,34,44,10],\"skipRawBodyParser\":true,\"_body\":true,\"query\":{},\"res\":\"[internal]\",\"_sessionManager\":{\"_key\":\"passport\"},\"_passport\":{\"instance\":{\"_key\":\"passport\",\"_strategies\":{\"session\":{\"name\":\"session\",\"_key\":\"passport\"},\"bearer\":{\"name\":\"bearer\",\"_realm\":\"Users\"},\"oauth2-client-password\":{\"name\":\"oauth2-client-password\"},\"anon\":{\"name\":\"anon\"},\"tokens\":{\"name\":\"tokens\"}},\"_serializers\":[],\"_deserializers\":[],\"_infoTransformers\":[],\"_framework\":{},\"_sm\":{\"_key\":\"passport\"},\"strategies\":{},\"_userProperty\":\"user\"}},\"route\":{\"path\":\"/webhook/stripe\",\"stack\":[{\"name\":\"cookieParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"httpMiddleware\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"corsHandler\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"metricsHandler\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"jsonParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"urlencodedParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"multipartParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"rawBodyParser\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"<anonymous>\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"},{\"name\":\"<anonymous>\",\"keys\":[],\"regexp\":{\"__enc__\":true,\"type\":\"regexp\",\"data\":\"/^\\\\/?$/i\"},\"method\":\"post\"}],\"methods\":{\"post\":true}},\"cookies\":{},\"signedCookies\":{},\"headers\":{\"host\":\"ascremosas.com\",\"x-real-ip\":\"3.18.12.63\",\"connection\":\"close\",\"content-length\":\"4102\",\"content-type\":\"application/json; charset=utf-8\",\"cache-control\":\"no-cache\",\"user-agent\":\"Stripe/1.0 (+https://stripe.com/docs/webhooks)\",\"accept\":\"*/*; q=0.5, application/json\",\"stripe-signature\":\"t=1769361581,v1=0b1bc78d96e6661005477445b491862102e439a7676313ffbff6775c7d9b8f0d,v0=c46646344004d5b2b9cd518b1d31d28a938530f27034ccbf5c0b43e9a179bd98\"}},\"res\":{},\"_event\":\"node:5cc1c97b5393ef47\"}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 400,
+        "wires": [
+            [
+                "015e3ffd39745eab"
+            ]
+        ]
+    },
+    {
+        "id": "5cc8bed20812207b",
+        "type": "switch",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
+        "name": "",
+        "property": "toDB.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "paid",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 510,
+        "y": 120,
+        "wires": [
+            [
+                "dd64cf0487f16c8b"
+            ],
+            [
+                "62585ac5cd2e87df"
+            ]
+        ]
+    },
+    {
+        "id": "62585ac5cd2e87df",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
+        "name": "unpaid",
+        "func": "const { orderId = null, paymentIntentId = null, status = 'unpaid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nmsg.queryParameters = [orderId, status, paymentIntentId, null];\nmsg.payload = `\n    UPDATE orders\n        SET status = $2,\n            stripe_payment_id = $3,\n            paid_at = $4\n    WHERE order_id = $1\n    RETURNING id;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 140,
+        "wires": [
+            [
+                "5b012253d929f45a"
+            ]
+        ]
+    },
+    {
+        "id": "5b012253d929f45a",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
+        "name": "orders",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 750,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f07a733f18b5a7f3",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 360,
+        "wires": [
+            [
+                "7228bae1943a4e69"
+            ]
+        ]
+    },
+    {
+        "id": "7228bae1943a4e69",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "function 1",
+        "func": "msg.queryParameters = ['LCG-20260125-4UV77Q', 'paid', 'pi_3StWyOHSKyk17Q2D1dNcaqnv', new Date()];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2, \n        stripe_payment_id = $3, \n        paid_at = $4 \n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free\n            )\n            FROM order_items oi\n            LEFT JOIN product_translations pt \n                ON oi.product_id = pt.product_id \n                AND pt.language_code = 'es'\n            LEFT JOIN product_variant_translations pvt \n                ON oi.product_variant_id = pvt.variant_id \n                AND pvt.language_code = 'es'\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 360,
+        "wires": [
+            [
+                "2fa8b4a69d0f794c"
+            ]
+        ]
+    },
+    {
+        "id": "2fa8b4a69d0f794c",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "name": "orders",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 390,
+        "y": 360,
+        "wires": [
+            [
+                "062fbc7e48a15645",
+                "7db480cc75a13ddd"
+            ]
+        ]
+    },
+    {
+        "id": "062fbc7e48a15645",
         "type": "debug",
-        "z": "511654ac3eb34f3c",
-        "name": "debug 1",
+        "z": "b73d17450c17803c",
+        "name": "stripe",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -1460,9 +1996,95 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 260,
-        "y": 1160,
+        "x": 750,
+        "y": 360,
         "wires": []
+    },
+    {
+        "id": "015e3ffd39745eab",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "stripe",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "4fcf090ae14be681",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "form message",
+        "func": "const { order_id, customer_name, customer_phone, pickup_date, pickup_time,\n    total_price, notes, items, paid_at } = msg?.order || {};\n\nconst date = new Date(pickup_date);\nconst formattedDate = date.toLocaleDateString('es-ES', {\n  weekday: 'long',\n  day: 'numeric',\n  month: 'long'\n});\n\nconst paidDate = new Date(paid_at);\n// const formattedPaidDate = paidDate.toLocaleDateString('es-ES', {\n//   day: '2-digit',\n//   month: '2-digit',\n//   year: 'numeric'\n// });\n// const formattedPaidTime = paidDate.toLocaleTimeString('es-ES', {\n//   hour: '2-digit',\n//   minute: '2-digit'\n// });\n\nconst formattedPaidDateTime = paidDate.toLocaleString('es-ES', {\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n}).replace(',', '');\n\nconst timeText = pickup_time === 'evening' ? 'por la tarde' : 'por la mañana';\n\nconst itemsList = items.map(item => {\n  const dietary = [];\n\n  if (item?.is_gluten_free) dietary.push('sin gluten');\n  if (item?.is_lactose_free) dietary.push('sin lactosa');\n  const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n\n  return `  • ${item.quantity} ${item.product_name} - ${item.variant_name}${dietaryText}`;\n}).join('\\n');\n\nmsg.message = `\n🎂 *NUEVO PEDIDO* 🎂\n\n📋 *Pedido:* ${order_id}\n👤 *Cliente:* ${customer_name}\n📱 *Teléfono:* ${customer_phone}\n\n📅 *Recogida:* ${formattedDate}\n🕐 *Horario:* ${timeText}\n\n🛍️ *Productos:*\n${itemsList}\n\n💰 *Total:* ${total_price}€\n\n✅ *PAGADO:* ${formattedPaidDateTime}\n\n${notes ? `📝 *Notas:* ${notes}` : ''}\n  `.trim();\n\n// const { message = '', markupType = null, buttons = null } = msg.payload || {};\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa7eefe629c35c3e",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
+        "name": "check ",
+        "func": "delete msg.toDB;\ndelete msg.queryParameters;\ndelete msg.req;\ndelete msg.res;\n\nif (msg.payload?.length === 0) {\n    throw new Error(\"Something wrong with db. Didn't found order\");\n}\n\nmsg.order = msg.payload?.[0] || {};\nmsg.payload = {};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 100,
+        "wires": [
+            [
+                "134c1c118160eea1"
+            ]
+        ]
+    },
+    {
+        "id": "e84e91741c05533b",
+        "type": "comment",
+        "z": "b73d17450c17803c",
+        "name": "todo",
+        "info": "",
+        "x": 270,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "7db480cc75a13ddd",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "form message",
+        "func": "msg.order = msg.payload?.[0] || {};\n\nconst { order_id, customer_name, customer_phone, pickup_date, pickup_time,\n    total_price, notes, items = [], paid_at } = msg?.order || {};\n\nconst date = new Date(pickup_date);\nconst formattedDate = date.toLocaleDateString('es-ES', {\n  weekday: 'long',\n  day: 'numeric',\n  month: 'long'\n});\n\nconst paidDate = new Date(paid_at);\n// const formattedPaidDate = paidDate.toLocaleDateString('es-ES', {\n//   day: '2-digit',\n//   month: '2-digit',\n//   year: 'numeric'\n// });\n// const formattedPaidTime = paidDate.toLocaleTimeString('es-ES', {\n//   hour: '2-digit',\n//   minute: '2-digit'\n// });\n\nconst formattedPaidDateTime = paidDate.toLocaleString('de-DE', {\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n}).replace(',', '');\n\nconst timeText = pickup_time === 'evening' ? 'por la tarde' : 'por la mañana';\n\nconst itemsList = items?.map(item => {\n  const dietary = [];\n\n  if (item?.is_gluten_free) dietary.push('sin gluten');\n  if (item?.is_lactose_free) dietary.push('sin lactosa');\n  const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n\n  return `  • ${item.quantity} ${item.product_name} - ${item.variant_name}${dietaryText}`;\n}).join('\\n');\n\nmsg.message = `\n🎂 *NUEVO PEDIDO* 🎂\n\n📋 *Pedido:* ${order_id}\n👤 *Cliente:* ${customer_name}\n📱 *Teléfono:* ${customer_phone}\n\n📅 *Recogida:* ${formattedDate}\n🕐 *Horario:* ${timeText}\n\n🛍️ *Productos:*\n${itemsList}\n\n💰 *Total:* ${total_price}€\n\n✅ *PAGADO:* ${formattedPaidDateTime}\n\n${notes ? `📝 *Notas:* ${notes}` : ''}\n  `.trim();\n\n// const { message = '', markupType = null, buttons = null } = msg.payload || {};\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 320,
+        "wires": [
+            [
+                "062fbc7e48a15645"
+            ]
+        ]
     },
     {
         "id": "3faee7869eb851bf",
@@ -1708,6 +2330,72 @@
                 "400938d5807880f8"
             ]
         ]
+    },
+    {
+        "id": "8bd14fa0a7e68db4",
+        "type": "function",
+        "z": "deae6838e7a58a75",
+        "name": "set msg",
+        "func": "msg = { \"_msgid\": \"6fbced7ae45c18d8\", \"payload\": { \"companyName\": \"As cee\", \"contactPerson\": \"Aba\", \"email\": \"santyoterorodriguez@gmail.com\", \"phone\": \"+34622362304\", \"message\": \"\", \"lang\": \"es\" }, \"req\": { \"_events\": {}, \"_readableState\": { \"highWaterMark\": 65536, \"buffer\": [], \"bufferIndex\": 0, \"length\": 0, \"pipes\": [], \"awaitDrainWriters\": null }, \"socket\": \"[internal]\", \"httpVersionMajor\": 1, \"httpVersionMinor\": 1, \"httpVersion\": \"1.1\", \"complete\": true, \"rawHeaders\": [\"Connection\", \"upgrade\", \"Host\", \"ascremosas.com\", \"X-Real-IP\", \"81.39.237.158\", \"Content-Length\", \"134\", \"sec-ch-ua-platform\", \"\\\"Android\\\"\", \"User-Agent\", \"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Mobile Safari/537.36\", \"Accept\", \"application/json\", \"sec-ch-ua\", \"\\\"Not(A:Brand\\\";v=\\\"8\\\", \\\"Chromium\\\";v=\\\"144\\\", \\\"Google Chrome\\\";v=\\\"144\\\"\", \"Content-Type\", \"application/json\", \"sec-ch-ua-mobile\", \"?1\", \"Origin\", \"http://192.168.1.34:5173\", \"Sec-Fetch-Site\", \"cross-site\", \"Sec-Fetch-Mode\", \"cors\", \"Sec-Fetch-Dest\", \"empty\", \"Referer\", \"http://192.168.1.34:5173/\", \"Accept-Encoding\", \"gzip, deflate, br, zstd\", \"Accept-Language\", \"es-ES,es;q=0.9\"], \"rawTrailers\": [], \"joinDuplicateHeaders\": null, \"aborted\": false, \"upgrade\": false, \"url\": \"/api/v1/b2b\", \"method\": \"POST\", \"statusCode\": null, \"statusMessage\": null, \"client\": \"[internal]\", \"_consuming\": true, \"_dumped\": false, \"baseUrl\": \"\", \"originalUrl\": \"/api/v1/b2b\", \"_parsedUrl\": { \"protocol\": null, \"slashes\": null, \"auth\": null, \"host\": null, \"port\": null, \"hostname\": null, \"hash\": null, \"search\": null, \"query\": null, \"pathname\": \"/api/v1/b2b\", \"path\": \"/api/v1/b2b\", \"href\": \"/api/v1/b2b\", \"_raw\": \"/api/v1/b2b\" }, \"params\": {}, \"query\": {}, \"res\": \"[internal]\", \"body\": { \"companyName\": \"As cee\", \"contactPerson\": \"Aba\", \"email\": \"santyoterorodriguez@gmail.com\", \"phone\": \"+34622362304\", \"message\": \"\", \"lang\": \"es\" }, \"_body\": true, \"_eventsCount\": 0, \"_sessionManager\": { \"_key\": \"passport\" }, \"_passport\": { \"instance\": { \"_key\": \"passport\", \"_strategies\": { \"session\": { \"name\": \"session\", \"_key\": \"passport\" }, \"bearer\": { \"name\": \"bearer\", \"_realm\": \"Users\" }, \"oauth2-client-password\": { \"name\": \"oauth2-client-password\" }, \"anon\": { \"name\": \"anon\" }, \"tokens\": { \"name\": \"tokens\" } }, \"_serializers\": [], \"_deserializers\": [], \"_infoTransformers\": [], \"_framework\": {}, \"_sm\": { \"_key\": \"passport\" }, \"strategies\": {}, \"_userProperty\": \"user\" } }, \"route\": { \"path\": \"/api/v1/b2b\", \"stack\": [{ \"name\": \"cookieParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"httpMiddleware\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"corsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"metricsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"jsonParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"urlencodedParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"multipartParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"rawBodyParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }], \"methods\": { \"post\": true } }, \"cookies\": {}, \"signedCookies\": {}, \"headers\": { \"connection\": \"upgrade\", \"host\": \"ascremosas.com\", \"x-real-ip\": \"81.39.237.158\", \"content-length\": \"134\", \"sec-ch-ua-platform\": \"\\\"Android\\\"\", \"user-agent\": \"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Mobile Safari/537.36\", \"accept\": \"application/json\", \"sec-ch-ua\": \"\\\"Not(A:Brand\\\";v=\\\"8\\\", \\\"Chromium\\\";v=\\\"144\\\", \\\"Google Chrome\\\";v=\\\"144\\\"\", \"content-type\": \"application/json\", \"sec-ch-ua-mobile\": \"?1\", \"origin\": \"http://192.168.1.34:5173\", \"sec-fetch-site\": \"cross-site\", \"sec-fetch-mode\": \"cors\", \"sec-fetch-dest\": \"empty\", \"referer\": \"http://192.168.1.34:5173/\", \"accept-encoding\": \"gzip, deflate, br, zstd\", \"accept-language\": \"es-ES,es;q=0.9\" } }, \"res\": {} }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 400,
+        "wires": [
+            [
+                "c5cae2d86b7633f9"
+            ]
+        ]
+    },
+    {
+        "id": "7dfa2ad463069ebc",
+        "type": "inject",
+        "z": "deae6838e7a58a75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 400,
+        "wires": [
+            [
+                "8bd14fa0a7e68db4"
+            ]
+        ]
+    },
+    {
+        "id": "c5cae2d86b7633f9",
+        "type": "debug",
+        "z": "deae6838e7a58a75",
+        "name": "msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 400,
+        "wires": []
     },
     {
         "id": "function_validate_products_query",
@@ -6032,7 +6720,7 @@
         "type": "function",
         "z": "f3eb2de3da3352db",
         "name": "create url",
-        "func": "const SECRET_KEY = env.get(\"STRIPE_SECRET_KEY\") || '';\nconst FRONTEND_URL = env.get(\"FRONTEND_URL\") || '';\n\nconst {\n    customerEmail,\n    totalPrice,\n    lang\n} = msg.orderData;\n\nconst orderMap = {\n    es: 'Pedido',\n    gl: 'Pedido',\n    en: 'Order'\n};\n\nconst formData = {\n    'success_url': `${FRONTEND_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,\n    'cancel_url': `${FRONTEND_URL}/checkout/cancel?order_id=${msg.orderId}`,\n    'mode': 'payment',\n    'customer_email': customerEmail,\n    'metadata[order_id]': msg.orderId,\n    'client_reference_id': msg.orderId,\n    'payment_intent_data[metadata][order_id]': msg.orderId,\n    'locale': 'auto',\n    'line_items[0][price_data][currency]': 'eur',\n    'line_items[0][price_data][product_data][name]': `${orderMap[lang]} #${msg.orderId}`,\n    'line_items[0][price_data][unit_amount]': totalPrice * 100,\n    'line_items[0][quantity]': 1\n};\n\nconst body = Object.entries(formData)\n    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)\n    .join('&');\n\nmsg.payload = body;\n\nmsg.url = \"https://api.stripe.com/v1/checkout/sessions\";\nmsg.method = \"POST\";\nmsg.headers = {\n    'Authorization': `Bearer ${SECRET_KEY}`,\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nreturn msg;",
+        "func": "const SECRET_KEY = env.get(\"STRIPE_SECRET_KEY\") || '';\nconst FRONTEND_URL = env.get(\"FRONTEND_URL\") || '';\n\nconst {\n    customerEmail,\n    totalPrice,\n    lang\n} = msg.orderData;\n\nconst orderMap = {\n    es: 'Pedido',\n    gl: 'Pedido',\n    en: 'Order'\n};\n\nconst formData = {\n    'success_url': `${FRONTEND_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,\n    'cancel_url': `${FRONTEND_URL}/checkout/cancel?order_id=${msg.orderId}`,\n    'mode': 'payment',\n    'customer_email': customerEmail,\n    'metadata[order_id]': msg.orderId,\n    'client_reference_id': msg.orderId,\n    'payment_intent_data[metadata][order_id]': msg.orderId,\n    'locale': 'auto',\n    'line_items[0][price_data][currency]': 'eur',\n    'line_items[0][price_data][product_data][name]': `${orderMap[lang]} #${msg.orderId}`,\n    'line_items[0][price_data][unit_amount]': totalPrice * 100,\n    'line_items[0][quantity]': 1\n};\n\nconst body = Object.entries(formData)\n    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)\n    .join('&');\n\nmsg.payload = body;\n\nmsg.url = \"https://api.stripe.com/v1/checkout/sessions\";\nmsg.method = \"POST\";\nmsg.headers = {\n    'Authorization': `Bearer ${SECRET_KEY}`,\n    'Content-Type': 'application/x-www-form-urlencoded',\n    'Idempotency-Key': `checkout_${msg.orderId}`\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -8605,7 +9293,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "products",
-        "func": "const category_id = 1;\nconst images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765270355/tarta_clasica_xpfpbp.webp\", \"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765558660/caja_arriba_calle_np7sol.jpg\"]\nconst slug = 'clasica';\n\nmsg.queryParameters = [slug, images, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, images, category_id, is_posible_sugar_free)\n    VALUES ($1, $2, $3, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "func": "const category_id = 1;\nconst images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765270355/tarta_clasica_xpfpbp.webp\", \"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765558660/caja_arriba_calle_np7sol.jpg\"]\nconst slug = 'tradicional';\n\nmsg.queryParameters = [slug, images, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, images, category_id, is_posible_sugar_free)\n    VALUES ($1, $2, $3, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -10849,6 +11537,1110 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 680,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "b9643529227392d4",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "func": "const category_id = 1;\nconst images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1769275500/tarta_lotus_mj2u4u.png\"]\nconst slug = 'lotus';\n\nmsg.queryParameters = [slug, images, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, images, category_id, is_posible_sugar_free)\n    VALUES ($1, $2, $3, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1740,
+        "wires": [
+            [
+                "4da23aee8a10955d"
+            ]
+        ]
+    },
+    {
+        "id": "252004e18d04ed04",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 810,
+        "y": 1740,
+        "wires": [
+            [
+                "b9643529227392d4"
+            ]
+        ]
+    },
+    {
+        "id": "4da23aee8a10955d",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1160,
+        "y": 1740,
+        "wires": [
+            [
+                "5589ed68c062b6b9"
+            ]
+        ]
+    },
+    {
+        "id": "5589ed68c062b6b9",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "2a97ebb237b9788e",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "func": "const category_id = 1;\nconst images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1769275501/tarta_oreo_ozqt13.png\"]\nconst slug = 'oreo';\n\nmsg.queryParameters = [slug, images, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, images, category_id, is_posible_sugar_free)\n    VALUES ($1, $2, $3, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1780,
+        "wires": [
+            [
+                "fd5c7073bd72cfe6"
+            ]
+        ]
+    },
+    {
+        "id": "434ebde4a685b294",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 810,
+        "y": 1780,
+        "wires": [
+            [
+                "2a97ebb237b9788e"
+            ]
+        ]
+    },
+    {
+        "id": "fd5c7073bd72cfe6",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1160,
+        "y": 1780,
+        "wires": [
+            [
+                "f6e5a309e3c9bf4b"
+            ]
+        ]
+    },
+    {
+        "id": "f6e5a309e3c9bf4b",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "d1853e01de5f8d5c",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 4;\nconst language_code = 'en';\nconst name = 'Creamy lotus cheesecake';\nconst description = 'Our creamy lotus cheesecake offers a perfect harmony between smoothness and warmth. Made with Lotus Biscoff spread, it features a velvety texture and a rich caramelized biscuit flavor that gently melts in your mouth.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2600,
+        "y": 1880,
+        "wires": [
+            [
+                "331656264e20de7f"
+            ]
+        ]
+    },
+    {
+        "id": "8f27170a821680f8",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2430,
+        "y": 1880,
+        "wires": [
+            [
+                "d1853e01de5f8d5c"
+            ]
+        ]
+    },
+    {
+        "id": "331656264e20de7f",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2780,
+        "y": 1880,
+        "wires": [
+            [
+                "7b5a1f54a87c441c"
+            ]
+        ]
+    },
+    {
+        "id": "7b5a1f54a87c441c",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2960,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "9d01375b59cef24f",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 4;\nconst language_code = 'es';\nconst name = 'Cremosa de lotus';\nconst description = 'Nuestra cremosa tarta de lotus ofrece una armonía perfecta entre suavidad y calidez. Elaborada con crema de Lotus Biscoff, destaca por su textura sedosa y su intenso sabor a galleta caramelizada que se funde delicadamente en el paladar.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2600,
+        "y": 1920,
+        "wires": [
+            [
+                "0bf6688305abf70c"
+            ]
+        ]
+    },
+    {
+        "id": "7cb46a9837cbaab2",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2430,
+        "y": 1920,
+        "wires": [
+            [
+                "9d01375b59cef24f"
+            ]
+        ]
+    },
+    {
+        "id": "0bf6688305abf70c",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2780,
+        "y": 1920,
+        "wires": [
+            [
+                "3610a0d42f2a14aa"
+            ]
+        ]
+    },
+    {
+        "id": "3610a0d42f2a14aa",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2960,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "3fbbd8d478e2d8d1",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 4;\nconst language_code = 'gl';\nconst name = 'Cremosa de lotus';\nconst description = 'A nosa cremosa tarta de lotus ofrece unha harmonía perfecta entre suavidade e intensidade. Elaborada con crema de Lotus Biscoff, destaca pola súa textura sedosa e polo seu profundo sabor a galleta caramelizada que se desfai delicadamente na boca.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2600,
+        "y": 1960,
+        "wires": [
+            [
+                "3b26f1ecac9e6316"
+            ]
+        ]
+    },
+    {
+        "id": "781c594bc8880c98",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2430,
+        "y": 1960,
+        "wires": [
+            [
+                "3fbbd8d478e2d8d1"
+            ]
+        ]
+    },
+    {
+        "id": "3b26f1ecac9e6316",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2780,
+        "y": 1960,
+        "wires": [
+            [
+                "6be9c632c87a68e1"
+            ]
+        ]
+    },
+    {
+        "id": "6be9c632c87a68e1",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2960,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "b9d274d2e6517ade",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 5;\nconst language_code = 'en';\nconst name = 'Creamy oreo cheesecake';\nconst description = 'Our creamy oreo cheesecake delivers the perfect balance of smoothness and crunch. Made with Oreo cookies, it combines a silky texture with an intense cocoa flavor and delicate biscuit pieces that melt in your mouth.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3380,
+        "y": 1880,
+        "wires": [
+            [
+                "55ea2f52a0fd5d2e"
+            ]
+        ]
+    },
+    {
+        "id": "74b7adfd75e915b3",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3210,
+        "y": 1880,
+        "wires": [
+            [
+                "b9d274d2e6517ade"
+            ]
+        ]
+    },
+    {
+        "id": "55ea2f52a0fd5d2e",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 3560,
+        "y": 1880,
+        "wires": [
+            [
+                "d66f2e6f13abaa05"
+            ]
+        ]
+    },
+    {
+        "id": "d66f2e6f13abaa05",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3740,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "6ab35d04111d9c06",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 5;\nconst language_code = 'es';\nconst name = 'Cremosa de oreo';\nconst description = 'Nuestra cremosa tarta de oreo ofrece un equilibrio perfecto entre suavidad y contraste. Elaborada con galletas Oreo, combina una textura sedosa con un intenso sabor a cacao y delicados trozos de galleta que se funden en el paladar.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3380,
+        "y": 1920,
+        "wires": [
+            [
+                "6f2845d629f5c12c"
+            ]
+        ]
+    },
+    {
+        "id": "e5a14db1907026fa",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3210,
+        "y": 1920,
+        "wires": [
+            [
+                "6ab35d04111d9c06"
+            ]
+        ]
+    },
+    {
+        "id": "6f2845d629f5c12c",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 3560,
+        "y": 1920,
+        "wires": [
+            [
+                "5b9ca73bdbd31610"
+            ]
+        ]
+    },
+    {
+        "id": "5b9ca73bdbd31610",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3740,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "5b38dbef332b74fe",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 5;\nconst language_code = 'gl';\nconst name = 'Cremosa de oreo';\nconst description = 'A nosa cremosa tarta de oreo ofrece un equilibrio perfecto entre suavidade e contraste. Elaborada con galletas Oreo, combina unha textura sedosa cun intenso sabor a cacao e delicados anacos de galleta que se desfán na boca.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3380,
+        "y": 1960,
+        "wires": [
+            [
+                "ae00abb0246a6666"
+            ]
+        ]
+    },
+    {
+        "id": "95e35f0eee5a22c2",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3210,
+        "y": 1960,
+        "wires": [
+            [
+                "5b38dbef332b74fe"
+            ]
+        ]
+    },
+    {
+        "id": "ae00abb0246a6666",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 3560,
+        "y": 1960,
+        "wires": [
+            [
+                "506588779d36052f"
+            ]
+        ]
+    },
+    {
+        "id": "506588779d36052f",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3740,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "6d0ebfb802cc6a78",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 4;\nconst sort_order = 1;\nconst price = 5.50; \n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2590,
+        "y": 2020,
+        "wires": [
+            [
+                "67bd70ded0030d96"
+            ]
+        ]
+    },
+    {
+        "id": "d0124266688aa589",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2430,
+        "y": 2020,
+        "wires": [
+            [
+                "6d0ebfb802cc6a78"
+            ]
+        ]
+    },
+    {
+        "id": "67bd70ded0030d96",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2780,
+        "y": 2020,
+        "wires": [
+            [
+                "e4d9e0728d3ce3f4"
+            ]
+        ]
+    },
+    {
+        "id": "e4d9e0728d3ce3f4",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2920,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "66f8f87ed3dc63e0",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 4;\nconst sort_order = 2;\nconst price = 13;\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2590,
+        "y": 2060,
+        "wires": [
+            [
+                "7bb6850ccbcdd3f1"
+            ]
+        ]
+    },
+    {
+        "id": "55de8d1636a33df9",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2430,
+        "y": 2060,
+        "wires": [
+            [
+                "66f8f87ed3dc63e0"
+            ]
+        ]
+    },
+    {
+        "id": "7bb6850ccbcdd3f1",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2780,
+        "y": 2060,
+        "wires": [
+            [
+                "3c06883d5134b339"
+            ]
+        ]
+    },
+    {
+        "id": "3c06883d5134b339",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2920,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "6443c71898964c2c",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 5;\nconst sort_order = 1;\nconst price = 5.50;\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3370,
+        "y": 2020,
+        "wires": [
+            [
+                "25b3fc0e20f1de0f"
+            ]
+        ]
+    },
+    {
+        "id": "a5171810b026f613",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3210,
+        "y": 2020,
+        "wires": [
+            [
+                "6443c71898964c2c"
+            ]
+        ]
+    },
+    {
+        "id": "25b3fc0e20f1de0f",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 3560,
+        "y": 2020,
+        "wires": [
+            [
+                "a53165a1f00a71b4"
+            ]
+        ]
+    },
+    {
+        "id": "a53165a1f00a71b4",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3700,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "fe3c11f647376fc3",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 5;\nconst sort_order = 2;\nconst price = 13; \n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3370,
+        "y": 2060,
+        "wires": [
+            [
+                "86b0f9ec9fce9cf3"
+            ]
+        ]
+    },
+    {
+        "id": "ef34f125d62d688e",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3210,
+        "y": 2060,
+        "wires": [
+            [
+                "fe3c11f647376fc3"
+            ]
+        ]
+    },
+    {
+        "id": "86b0f9ec9fce9cf3",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 3560,
+        "y": 2060,
+        "wires": [
+            [
+                "d72c9c540999f23f"
+            ]
+        ]
+    },
+    {
+        "id": "d72c9c540999f23f",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3700,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "d909c4eea934bd56",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 920,
+        "y": 2120,
+        "wires": [
+            [
+                "d002c4fbf80aa5d0"
+            ]
+        ]
+    },
+    {
+        "id": "d002c4fbf80aa5d0",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "product_variant_translations",
+        "func": "msg.payload = `\nINSERT INTO product_variant_translations (variant_id, language_code, name) VALUES\n(7, 'es', 'Pequeña (1 persona)'),\n(8, 'es', 'Mediana (2 personas)'),\n(9, 'es', 'Pequeña (1 persona)'),\n(10, 'es', 'Mediana (2 personas)'),\n\n(7, 'gl', 'Pequena (1 persoa)'),\n(8, 'gl', 'Mediana (2 persoas)'),\n(9, 'gl', 'Pequena (1 persoa)'),\n(10, 'gl', 'Mediana (2 persoas)'),\n\n(7, 'en', 'Small (1 person)'),\n(8, 'en', 'Medium (2 people)'),\n(9, 'en', 'Small (1 person)'),\n(10, 'en', 'Medium (2 people)')\n;`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 2120,
+        "wires": [
+            [
+                "92dc020174f80be0"
+            ]
+        ]
+    },
+    {
+        "id": "92dc020174f80be0",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1320,
+        "y": 2120,
+        "wires": [
+            [
+                "ab4e4ffb567b7068"
+            ]
+        ]
+    },
+    {
+        "id": "ab4e4ffb567b7068",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1460,
         "y": 2120,
         "wires": []
     }
