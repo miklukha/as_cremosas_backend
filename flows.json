@@ -124,12 +124,19 @@
             "db2a6f35fe31cdb1",
             "f89b7f99afeb16c4",
             "c31c2910d9e53835",
-            "9fd7022df8bd4a33"
+            "9fd7022df8bd4a33",
+            "b36ef72856ea16f6",
+            "2717e8e40e0e66c5",
+            "a4d520b2dbd56b75",
+            "d4dcbe162b98b5d1",
+            "edb74d19deb503fa",
+            "8a48dc3399b8e3d9",
+            "8719af235663d033"
         ],
         "x": 14,
         "y": 259,
-        "w": 512,
-        "h": 182
+        "w": 712,
+        "h": 242
     },
     {
         "id": "r1e2p3o4r5t6s7d8",
@@ -636,6 +643,61 @@
         "h": 682
     },
     {
+        "id": "b380f68b15913b37",
+        "type": "group",
+        "z": "b73d17450c17803c",
+        "name": "TELEGRAM",
+        "style": {
+            "stroke": "#0070c0",
+            "label": true
+        },
+        "nodes": [
+            "2aaba55c8037bb23",
+            "c0ff7932e8463806",
+            "e2c1cdc179657206",
+            "1f0a3fa474a9c546",
+            "17ea5faca8ea229b",
+            "1f0ff5db697f62c3",
+            "5960d2039e879617",
+            "ae792085a1a26b3e",
+            "bef990f69302ada3",
+            "f5cec7e6bcc9641b",
+            "f4cd77bfb9232f12",
+            "f4b198cbc39cb937"
+        ],
+        "x": 34,
+        "y": 759,
+        "w": 892,
+        "h": 162
+    },
+    {
+        "id": "8ff7a8afe02f6f9b",
+        "type": "group",
+        "z": "b73d17450c17803c",
+        "name": "stripe",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "7dba41cef305919e",
+            "396bbf186c75fe0c",
+            "db728fba8af35ae3",
+            "dd64cf0487f16c8b",
+            "c86fa4f220d84bfb",
+            "57ae0baa9395d3bd",
+            "6e1a6abd115867f5",
+            "5cc8bed20812207b",
+            "62585ac5cd2e87df",
+            "5b012253d929f45a",
+            "fa7eefe629c35c3e",
+            "134c1c118160eea1"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 932,
+        "h": 162
+    },
+    {
         "id": "d8ef0639fb5dddc2",
         "type": "group",
         "z": "554b53c71ea14722",
@@ -726,94 +788,62 @@
         "h": 182
     },
     {
-        "id": "b380f68b15913b37",
+        "id": "34e680e7054de3d0",
         "type": "group",
         "z": "b73d17450c17803c",
-        "name": "TELEGRAM",
+        "name": "telegram",
         "style": {
             "stroke": "#0070c0",
-            "label": true
+            "label": true,
+            "fill": "#bfdbef"
         },
         "nodes": [
-            "2aaba55c8037bb23",
-            "c0ff7932e8463806",
-            "e2c1cdc179657206",
-            "1f0a3fa474a9c546",
-            "17ea5faca8ea229b",
-            "1f0ff5db697f62c3",
-            "5960d2039e879617",
-            "ae792085a1a26b3e",
-            "bef990f69302ada3",
-            "f5cec7e6bcc9641b",
-            "f4cd77bfb9232f12",
-            "f4b198cbc39cb937"
+            "062d10d7692edd95",
+            "0fdb989c2dc85e8d",
+            "b779df4ed3bc8845",
+            "f0deea2958d1b962"
         ],
         "x": 34,
-        "y": 759,
-        "w": 892,
-        "h": 162
-    },
-    {
-        "id": "8ff7a8afe02f6f9b",
-        "type": "group",
-        "z": "b73d17450c17803c",
-        "name": "stripe",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "7dba41cef305919e",
-            "396bbf186c75fe0c",
-            "db728fba8af35ae3",
-            "dd64cf0487f16c8b",
-            "c86fa4f220d84bfb",
-            "57ae0baa9395d3bd",
-            "6e1a6abd115867f5",
-            "5cc8bed20812207b",
-            "62585ac5cd2e87df",
-            "5b012253d929f45a",
-            "fa7eefe629c35c3e",
-            "134c1c118160eea1"
-        ],
-        "x": 34,
-        "y": 19,
-        "w": 912,
-        "h": 167
+        "y": 219,
+        "w": 672,
+        "h": 82
     },
     {
         "id": "134c1c118160eea1",
         "type": "junction",
         "z": "b73d17450c17803c",
         "g": "8ff7a8afe02f6f9b",
-        "x": 860,
+        "x": 840,
         "y": 160,
         "wires": [
             [
-                "4fcf090ae14be681"
+                "062d10d7692edd95"
             ]
         ]
     },
     {
-        "id": "87a26bfb149a784a",
+        "id": "a4d520b2dbd56b75",
         "type": "junction",
-        "z": "b73d17450c17803c",
+        "z": "511654ac3eb34f3c",
+        "g": "3d009a5e045148c0",
         "x": 360,
-        "y": 560,
+        "y": 340,
         "wires": [
             [
-                "eaf81c8a8727b828"
+                "edb74d19deb503fa"
             ]
         ]
     },
     {
-        "id": "eaf81c8a8727b828",
+        "id": "edb74d19deb503fa",
         "type": "junction",
-        "z": "b73d17450c17803c",
+        "z": "511654ac3eb34f3c",
+        "g": "3d009a5e045148c0",
         "x": 500,
-        "y": 560,
+        "y": 340,
         "wires": [
             [
-                "5fab523e1e7cad66"
+                "8719af235663d033"
             ]
         ]
     },
@@ -1044,7 +1074,7 @@
         "name": "Rate Limiting",
         "info": "",
         "x": 90,
-        "y": 480,
+        "y": 560,
         "wires": []
     },
     {
@@ -1054,7 +1084,7 @@
         "name": "проблема, щоб два клієнти одночасно не забрали останній торт",
         "info": "",
         "x": 420,
-        "y": 480,
+        "y": 560,
         "wires": []
     },
     {
@@ -1064,7 +1094,7 @@
         "name": "платіжні операції повинні бути ідемпотентними",
         "info": "",
         "x": 200,
-        "y": 520,
+        "y": 600,
         "wires": []
     },
     {
@@ -1076,7 +1106,7 @@
         "scope": "group",
         "uncaught": false,
         "x": 110,
-        "y": 360,
+        "y": 460,
         "wires": [
             [
                 "c31c2910d9e53835"
@@ -1098,7 +1128,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 270,
-        "y": 360,
+        "y": 460,
         "wires": []
     },
     {
@@ -1108,8 +1138,8 @@
         "g": "3d009a5e045148c0",
         "name": "not send to telegram duplicate code 23505",
         "info": "",
-        "x": 340,
-        "y": 400,
+        "x": 200,
+        "y": 420,
         "wires": []
     },
     {
@@ -1239,11 +1269,12 @@
         "wires": []
     },
     {
-        "id": "1722e06d1888e5bb",
+        "id": "b36ef72856ea16f6",
         "type": "function",
-        "z": "b73d17450c17803c",
+        "z": "511654ac3eb34f3c",
+        "g": "3d009a5e045148c0",
         "name": "send msg",
-        "func": "const TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nif (!TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL) {\n  msg.error = 'Missed ENV';\n\n  const data = {\n    log_type: 'system_error',\n    status: 'failed',\n    action: 'send telegram message',\n    user_id: msg?.userId || null,\n    chat_id: msg?.chatId,\n    log_level: 'critical',\n    table_name: null,\n    context: null,\n    error_code: 'ERR_MISSED_ENV',\n    error_msg: 'Missed data in ENV'\n  };\n\n  // await insertLog(data);\n  node.error(\"Missed data in ENV\", msg);\n  return [msg, null];\n};\n\nconst { message = '', markupType = null, buttons = null } = msg.payload || {};\n\nconst baseReplyMarkup = {\n  resize_keyboard: true,\n  one_time_keyboard: false\n};\n\nconst replyMarkup =\n  markupType === 'inline' ? { inline_keyboard: buttons, ...baseReplyMarkup } :\n    markupType === 'keyboard' ? { keyboard: buttons, ...baseReplyMarkup } :\n      null;\n\nconst body = JSON.stringify({\n  chat_id: msg?.chatId,\n  text: message,\n  parse_mode: 'Markdown',\n  ...(replyMarkup && { reply_markup: replyMarkup })\n});\n\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;\nmsg.method = 'POST';\nmsg.headers = {\n  'Content-Type': 'application/json',\n  'Content-Length': Buffer.byteLength(body)\n};\n\nmsg.payload = body;\nmsg.body = body;\n\nreturn [null, msg];",
+        "func": "const insertErrorLog = flow.get(\"insertErrorLog\");\n\nconst TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nconst { message = '', markupType = null, buttons = null, chatId = null } = msg.payload || {};\n\nif (!TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL || !chatId || !message) {\n  msg.error = {\n    message: \"Missed ENV or necessary data\"\n  };\n\n  await insertErrorLog({\n    code: 'ERR_MISSED_DATA',\n    message: msg.error?.message,\n    context: {\n      TELEGRAM_BOT_TOKEN,\n      TELEGRAM_BASE_URL,\n      ...msg.payload\n    }\n  });\n\n  node.error(msg.error, msg);\n  return [msg, null];\n};\n\nconst baseReplyMarkup = {\n  resize_keyboard: true,\n  one_time_keyboard: false\n};\n\nconst replyMarkup =\n  markupType === 'inline' ? { inline_keyboard: buttons, ...baseReplyMarkup } :\n    markupType === 'keyboard' ? { keyboard: buttons, ...baseReplyMarkup } :\n      null;\n\nconst body = JSON.stringify({\n  chat_id: chatId,\n  text: message,\n  parse_mode: 'Markdown',\n  ...(replyMarkup && { reply_markup: replyMarkup })\n});\n\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;\nmsg.method = 'POST';\nmsg.headers = {\n  'Content-Type': 'application/json',\n  'Content-Length': Buffer.byteLength(body)\n};\n\nmsg.payload = body;\nmsg.body = body;\n\nreturn [null, msg];",
         "outputs": 2,
         "timeout": "",
         "noerr": 0,
@@ -1251,27 +1282,28 @@
         "finalize": "",
         "libs": [],
         "x": 280,
-        "y": 580,
+        "y": 360,
         "wires": [
             [
-                "87a26bfb149a784a"
+                "a4d520b2dbd56b75"
             ],
             [
-                "0588b46f5089845f"
+                "d4dcbe162b98b5d1"
             ]
         ]
     },
     {
-        "id": "eab371a8f8f3b621",
+        "id": "2717e8e40e0e66c5",
         "type": "link in",
-        "z": "b73d17450c17803c",
+        "z": "511654ac3eb34f3c",
+        "g": "3d009a5e045148c0",
         "name": "send message",
         "links": [],
         "x": 120,
-        "y": 580,
+        "y": 360,
         "wires": [
             [
-                "1722e06d1888e5bb"
+                "b36ef72856ea16f6"
             ]
         ],
         "icon": "font-awesome/fa-send",
@@ -1279,20 +1311,10 @@
         "info": "msg.payload = {\n    message: '', // message to send\n    markupType: '', // inline || keyboard (optional)\n    buttons: [] // [[{ text: 'Button 1', callback_data: 'btn1' }]]; || [['Button 1'], ['Button 2']]; (optional),\n    method: '' (optinal)\n    message_id: '' (optinal)\n}"
     },
     {
-        "id": "5fab523e1e7cad66",
-        "type": "link out",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "mode": "return",
-        "links": [],
-        "x": 545,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "0588b46f5089845f",
+        "id": "d4dcbe162b98b5d1",
         "type": "http request",
-        "z": "b73d17450c17803c",
+        "z": "511654ac3eb34f3c",
+        "g": "3d009a5e045148c0",
         "name": "",
         "method": "use",
         "ret": "obj",
@@ -1306,18 +1328,19 @@
         "senderr": false,
         "headers": [],
         "x": 430,
-        "y": 600,
+        "y": 380,
         "wires": [
             [
-                "fc71ac1fd89abe18",
-                "5fab523e1e7cad66"
+                "8a48dc3399b8e3d9",
+                "8719af235663d033"
             ]
         ]
     },
     {
-        "id": "fc71ac1fd89abe18",
+        "id": "8a48dc3399b8e3d9",
         "type": "debug",
-        "z": "b73d17450c17803c",
+        "z": "511654ac3eb34f3c",
+        "g": "3d009a5e045148c0",
         "name": "send telegram",
         "active": true,
         "tosidebar": true,
@@ -1328,7 +1351,19 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 600,
-        "y": 620,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "8719af235663d033",
+        "type": "link out",
+        "z": "511654ac3eb34f3c",
+        "g": "3d009a5e045148c0",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 545,
+        "y": 360,
         "wires": []
     },
     {
@@ -1342,7 +1377,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 170,
-        "y": 460,
+        "y": 680,
         "wires": [
             [
                 "178ef043d024ce87",
@@ -1358,7 +1393,7 @@
         "statusCode": "200",
         "headers": {},
         "x": 380,
-        "y": 440,
+        "y": 660,
         "wires": []
     },
     {
@@ -1375,7 +1410,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 380,
-        "y": 480,
+        "y": 700,
         "wires": []
     },
     {
@@ -1679,7 +1714,7 @@
             }
         ],
         "x": 360,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "db728fba8af35ae3",
@@ -1699,7 +1734,7 @@
         "skipBodyParsing": true,
         "swaggerDoc": "",
         "x": 160,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "c86fa4f220d84bfb",
@@ -1722,7 +1757,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 510,
-        "y": 80,
+        "y": 100,
         "wires": []
     },
     {
@@ -1739,7 +1774,7 @@
         "finalize": "",
         "libs": [],
         "x": 630,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "57ae0baa9395d3bd"
@@ -1755,7 +1790,7 @@
         "statusCode": "200",
         "headers": {},
         "x": 360,
-        "y": 80,
+        "y": 100,
         "wires": []
     },
     {
@@ -1770,7 +1805,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 750,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "6e1a6abd115867f5",
@@ -1793,7 +1828,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 750,
-        "y": 60,
+        "y": 80,
         "wires": []
     },
     {
@@ -1818,7 +1853,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 400,
+        "y": 560,
         "wires": [
             [
                 "6928b2127dcc6f76"
@@ -1838,7 +1873,7 @@
         "finalize": "",
         "libs": [],
         "x": 260,
-        "y": 400,
+        "y": 560,
         "wires": [
             [
                 "015e3ffd39745eab"
@@ -1867,7 +1902,7 @@
         "repair": false,
         "outputs": 2,
         "x": 510,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "dd64cf0487f16c8b"
@@ -1891,7 +1926,7 @@
         "finalize": "",
         "libs": [],
         "x": 630,
-        "y": 140,
+        "y": 160,
         "wires": [
             [
                 "5b012253d929f45a"
@@ -1910,7 +1945,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 750,
-        "y": 140,
+        "y": 160,
         "wires": [
             []
         ]
@@ -1937,7 +1972,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 360,
+        "y": 480,
         "wires": [
             [
                 "7228bae1943a4e69"
@@ -1949,7 +1984,7 @@
         "type": "function",
         "z": "b73d17450c17803c",
         "name": "function 1",
-        "func": "msg.queryParameters = ['LCG-20260125-4UV77Q', 'paid', 'pi_3StWyOHSKyk17Q2D1dNcaqnv', new Date()];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2, \n        stripe_payment_id = $3, \n        paid_at = $4 \n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free\n            )\n            FROM order_items oi\n            LEFT JOIN product_translations pt \n                ON oi.product_id = pt.product_id \n                AND pt.language_code = 'es'\n            LEFT JOIN product_variant_translations pvt \n                ON oi.product_variant_id = pvt.variant_id \n                AND pvt.language_code = 'es'\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
+        "func": "msg.queryParameters = ['LCG-20260126-HAP0EQ', 'paid'];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2\n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free\n            )\n            FROM order_items oi\n            LEFT JOIN product_translations pt \n                ON oi.product_id = pt.product_id \n                AND pt.language_code = 'es'\n            LEFT JOIN product_variant_translations pvt \n                ON oi.product_variant_id = pvt.variant_id \n                AND pvt.language_code = 'es'\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1957,7 +1992,7 @@
         "finalize": "",
         "libs": [],
         "x": 260,
-        "y": 360,
+        "y": 480,
         "wires": [
             [
                 "2fa8b4a69d0f794c"
@@ -1975,7 +2010,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 390,
-        "y": 360,
+        "y": 480,
         "wires": [
             [
                 "062fbc7e48a15645",
@@ -1996,8 +2031,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 750,
-        "y": 360,
+        "x": 990,
+        "y": 560,
         "wires": []
     },
     {
@@ -2014,33 +2049,15 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 390,
-        "y": 400,
+        "y": 560,
         "wires": []
-    },
-    {
-        "id": "4fcf090ae14be681",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "form message",
-        "func": "const { order_id, customer_name, customer_phone, pickup_date, pickup_time,\n    total_price, notes, items, paid_at } = msg?.order || {};\n\nconst date = new Date(pickup_date);\nconst formattedDate = date.toLocaleDateString('es-ES', {\n  weekday: 'long',\n  day: 'numeric',\n  month: 'long'\n});\n\nconst paidDate = new Date(paid_at);\n// const formattedPaidDate = paidDate.toLocaleDateString('es-ES', {\n//   day: '2-digit',\n//   month: '2-digit',\n//   year: 'numeric'\n// });\n// const formattedPaidTime = paidDate.toLocaleTimeString('es-ES', {\n//   hour: '2-digit',\n//   minute: '2-digit'\n// });\n\nconst formattedPaidDateTime = paidDate.toLocaleString('es-ES', {\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n}).replace(',', '');\n\nconst timeText = pickup_time === 'evening' ? 'por la tarde' : 'por la mañana';\n\nconst itemsList = items.map(item => {\n  const dietary = [];\n\n  if (item?.is_gluten_free) dietary.push('sin gluten');\n  if (item?.is_lactose_free) dietary.push('sin lactosa');\n  const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n\n  return `  • ${item.quantity} ${item.product_name} - ${item.variant_name}${dietaryText}`;\n}).join('\\n');\n\nmsg.message = `\n🎂 *NUEVO PEDIDO* 🎂\n\n📋 *Pedido:* ${order_id}\n👤 *Cliente:* ${customer_name}\n📱 *Teléfono:* ${customer_phone}\n\n📅 *Recogida:* ${formattedDate}\n🕐 *Horario:* ${timeText}\n\n🛍️ *Productos:*\n${itemsList}\n\n💰 *Total:* ${total_price}€\n\n✅ *PAGADO:* ${formattedPaidDateTime}\n\n${notes ? `📝 *Notas:* ${notes}` : ''}\n  `.trim();\n\n// const { message = '', markupType = null, buttons = null } = msg.payload || {};\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 140,
-        "y": 240,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "fa7eefe629c35c3e",
         "type": "function",
         "z": "b73d17450c17803c",
         "g": "8ff7a8afe02f6f9b",
-        "name": "check ",
+        "name": "check db",
         "func": "delete msg.toDB;\ndelete msg.queryParameters;\ndelete msg.req;\ndelete msg.res;\n\nif (msg.payload?.length === 0) {\n    throw new Error(\"Something wrong with db. Didn't found order\");\n}\n\nmsg.order = msg.payload?.[0] || {};\nmsg.payload = {};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -2048,8 +2065,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
-        "y": 100,
+        "x": 880,
+        "y": 120,
         "wires": [
             [
                 "134c1c118160eea1"
@@ -2057,21 +2074,11 @@
         ]
     },
     {
-        "id": "e84e91741c05533b",
-        "type": "comment",
-        "z": "b73d17450c17803c",
-        "name": "todo",
-        "info": "",
-        "x": 270,
-        "y": 540,
-        "wires": []
-    },
-    {
         "id": "7db480cc75a13ddd",
         "type": "function",
         "z": "b73d17450c17803c",
         "name": "form message",
-        "func": "msg.order = msg.payload?.[0] || {};\n\nconst { order_id, customer_name, customer_phone, pickup_date, pickup_time,\n    total_price, notes, items = [], paid_at } = msg?.order || {};\n\nconst date = new Date(pickup_date);\nconst formattedDate = date.toLocaleDateString('es-ES', {\n  weekday: 'long',\n  day: 'numeric',\n  month: 'long'\n});\n\nconst paidDate = new Date(paid_at);\n// const formattedPaidDate = paidDate.toLocaleDateString('es-ES', {\n//   day: '2-digit',\n//   month: '2-digit',\n//   year: 'numeric'\n// });\n// const formattedPaidTime = paidDate.toLocaleTimeString('es-ES', {\n//   hour: '2-digit',\n//   minute: '2-digit'\n// });\n\nconst formattedPaidDateTime = paidDate.toLocaleString('de-DE', {\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n}).replace(',', '');\n\nconst timeText = pickup_time === 'evening' ? 'por la tarde' : 'por la mañana';\n\nconst itemsList = items?.map(item => {\n  const dietary = [];\n\n  if (item?.is_gluten_free) dietary.push('sin gluten');\n  if (item?.is_lactose_free) dietary.push('sin lactosa');\n  const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n\n  return `  • ${item.quantity} ${item.product_name} - ${item.variant_name}${dietaryText}`;\n}).join('\\n');\n\nmsg.message = `\n🎂 *NUEVO PEDIDO* 🎂\n\n📋 *Pedido:* ${order_id}\n👤 *Cliente:* ${customer_name}\n📱 *Teléfono:* ${customer_phone}\n\n📅 *Recogida:* ${formattedDate}\n🕐 *Horario:* ${timeText}\n\n🛍️ *Productos:*\n${itemsList}\n\n💰 *Total:* ${total_price}€\n\n✅ *PAGADO:* ${formattedPaidDateTime}\n\n${notes ? `📝 *Notas:* ${notes}` : ''}\n  `.trim();\n\n// const { message = '', markupType = null, buttons = null } = msg.payload || {};\n\n\nreturn msg;",
+        "func": "msg.order = msg.payload?.[0] || {};\n\nconst { order_id, customer_name, customer_phone, pickup_date, pickup_time,\n  total_price, notes, items = [], paid_at } = msg?.order || {};\n\nconst date = new Date(pickup_date);\nconst formattedDate = date.toLocaleDateString('es-ES', {\n  weekday: 'long',\n  day: 'numeric',\n  month: 'long'\n});\n\nconst paidDate = new Date(paid_at);\nconst formattedPaidDateTime = paidDate.toLocaleString('es-ES', {\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit',\n  timeZone: 'Europe/Madrid'\n}).replace(',', '');\n\nconst timeText = pickup_time === 'evening' ? 'por la tarde' : 'por la mañana';\n\nconst itemsList = items?.map(item => {\n  const dietary = [];\n\n  if (item?.is_gluten_free) dietary.push('sin gluten');\n  if (item?.is_lactose_free) dietary.push('sin lactosa');\n  const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n\n  return `  • ${item.quantity} ${item.product_name} - ${item.variant_name}${dietaryText}`;\n}).join('\\n');\n\nconst message = `\n🎂 *NUEVO PEDIDO* 🎂\n\n📋 *Pedido:* ${order_id}\n👤 *Cliente:* ${customer_name}\n📱 *Teléfono:* ${customer_phone}\n\n📅 *Recogida:* ${formattedDate}\n🕐 *Horario:* ${timeText}\n\n🛍️ *Productos:*\n${itemsList}\n\n💰 *Total:* ${total_price}€\n\n✅ *PAGADO:* ${formattedPaidDateTime}\n\n${notes ? `📝 *Notas:* ${notes}` : ''}\n  `.trim();\n\nmsg.payload = {\n  message,\n  // chatId: 842951901\n  chatId: 1152510549\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2079,12 +2086,150 @@
         "finalize": "",
         "libs": [],
         "x": 560,
-        "y": 320,
+        "y": 460,
+        "wires": [
+            [
+                "e84f45962ac373b3"
+            ]
+        ]
+    },
+    {
+        "id": "e84f45962ac373b3",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 740,
+        "y": 460,
+        "wires": [
+            [
+                "206935ff469654dd",
+                "062fbc7e48a15645"
+            ]
+        ]
+    },
+    {
+        "id": "206935ff469654dd",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "is error",
+        "func": "if (!!msg?.error) {\n    return null;\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 460,
         "wires": [
             [
                 "062fbc7e48a15645"
             ]
         ]
+    },
+    {
+        "id": "062d10d7692edd95",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "34e680e7054de3d0",
+        "name": "form message",
+        "func": "const { order_id, customer_name, customer_phone, pickup_date, pickup_time,\n  total_price, notes, items = [], paid_at } = msg?.order || {};\n\nconst date = new Date(pickup_date);\nconst formattedDate = date.toLocaleDateString('es-ES', {\n  weekday: 'long',\n  day: 'numeric',\n  month: 'long'\n});\n\nconst paidDate = new Date(paid_at);\nconst formattedPaidDateTime = paidDate.toLocaleString('es-ES', {\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit',\n  timeZone: 'Europe/Madrid'\n}).replace(',', '');\n\nconst timeText = pickup_time === 'evening' ? 'por la tarde' : 'por la mañana';\n\nconst itemsList = items?.map(item => {\n  const dietary = [];\n\n  if (item?.is_gluten_free) dietary.push('sin gluten');\n  if (item?.is_lactose_free) dietary.push('sin lactosa');\n  const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n\n  return `  • ${item.quantity} ${item.product_name} - ${item.variant_name}${dietaryText}`;\n}).join('\\n');\n\nconst message = `\n🎂 *NUEVO PEDIDO* 🎂\n\n📋 *Pedido:* ${order_id}\n👤 *Cliente:* ${customer_name}\n📱 *Teléfono:* ${customer_phone}\n\n📅 *Recogida:* ${formattedDate}\n🕐 *Horario:* ${timeText}\n\n🛍️ *Productos:*\n${itemsList}\n\n💰 *Total:* ${total_price}€\n\n✅ *PAGADO:* ${formattedPaidDateTime}\n\n${notes ? `📝 *Notas:* ${notes}` : ''}\n  `.trim();\n\nmsg.payload = {\n  message,\n  chatId: 842951901\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "0fdb989c2dc85e8d"
+            ]
+        ]
+    },
+    {
+        "id": "0fdb989c2dc85e8d",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "g": "34e680e7054de3d0",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "b779df4ed3bc8845"
+            ]
+        ]
+    },
+    {
+        "id": "b779df4ed3bc8845",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "34e680e7054de3d0",
+        "name": "is error",
+        "func": "if (!!msg?.error) {\n    return null;\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "f0deea2958d1b962"
+            ]
+        ]
+    },
+    {
+        "id": "f0deea2958d1b962",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "g": "34e680e7054de3d0",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "767e05fc7b7a160a",
+        "type": "comment",
+        "z": "b73d17450c17803c",
+        "name": "ids",
+        "info": "santi - 1152510549\nanya - 842951901\njandro - ",
+        "x": 190,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "0b9d4f1056654114",
+        "type": "comment",
+        "z": "b73d17450c17803c",
+        "name": "00:00",
+        "info": "dia siguente\nsanti cantidad\njandro - dia de hoy con detalles",
+        "x": 130,
+        "y": 360,
+        "wires": []
     },
     {
         "id": "3faee7869eb851bf",
