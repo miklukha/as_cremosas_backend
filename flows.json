@@ -929,6 +929,52 @@
         "h": 147
     },
     {
+        "id": "04d6ca379c9c81d0",
+        "type": "group",
+        "z": "b73d17450c17803c",
+        "name": "worker for jandro",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3e18abe1e5573a92",
+            "8b0cc77773268755",
+            "1dddc496f69d50b9",
+            "3a2cbc2e9c0eb2f4",
+            "05b9dafc458ac843",
+            "040befe79eed286b",
+            "6d6523925f6e6a40",
+            "9b8489bc4b6367e0"
+        ],
+        "x": 34,
+        "y": 499,
+        "w": 1092,
+        "h": 82
+    },
+    {
+        "id": "2ffdb4c723e8e6a0",
+        "type": "group",
+        "z": "b73d17450c17803c",
+        "name": "worker for santi",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3ec3f7341979b1f6",
+            "c093de95f0e6815a",
+            "b7e1e8774682fe33",
+            "d0d0c98e3e5380d1",
+            "ec0a2cda522b2f98",
+            "54e64e0b3987df5f",
+            "f73f4f5be7e9d15b",
+            "5a9be941da473f9e"
+        ],
+        "x": 34,
+        "y": 619,
+        "w": 1092,
+        "h": 82
+    },
+    {
         "id": "134c1c118160eea1",
         "type": "junction",
         "z": "b73d17450c17803c",
@@ -2000,19 +2046,10 @@
         "wires": []
     },
     {
-        "id": "0b9d4f1056654114",
-        "type": "comment",
-        "z": "b73d17450c17803c",
-        "name": "00:00",
-        "info": "dia siguente\nsanti cantidad\njandro - dia de hoy con detalles",
-        "x": 90,
-        "y": 420,
-        "wires": []
-    },
-    {
         "id": "8b0cc77773268755",
         "type": "inject",
         "z": "b73d17450c17803c",
+        "g": "04d6ca379c9c81d0",
         "name": "jandro",
         "props": [],
         "repeat": "",
@@ -2020,8 +2057,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 120,
-        "y": 500,
+        "x": 140,
+        "y": 540,
         "wires": [
             [
                 "3e18abe1e5573a92"
@@ -2032,6 +2069,7 @@
         "id": "3e18abe1e5573a92",
         "type": "function",
         "z": "b73d17450c17803c",
+        "g": "04d6ca379c9c81d0",
         "name": "orders",
         "func": "msg.payload = `\nSELECT\n    o.order_id,\n    o.customer_name,\n    o.customer_email,\n    o.customer_phone,\n    TO_CHAR(o.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    o.pickup_time,\n    o.total_price,\n    o.notes,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free\n            )\n            FROM order_items oi\n            LEFT JOIN product_translations pt\n                ON oi.product_id = pt.product_id\n                AND pt.language_code = 'es'\n            LEFT JOIN product_variant_translations pvt\n                ON oi.product_variant_id = pvt.variant_id\n                AND pvt.language_code = 'es'\n            WHERE oi.order_id = o.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM orders o\nWHERE o.pickup_date = CURRENT_DATE AND o.status = 'paid'\n`;\n\nreturn msg;",
         "outputs": 1,
@@ -2040,8 +2078,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 250,
-        "y": 500,
+        "x": 270,
+        "y": 540,
         "wires": [
             [
                 "1dddc496f69d50b9"
@@ -2052,14 +2090,15 @@
         "id": "1dddc496f69d50b9",
         "type": "link call",
         "z": "b73d17450c17803c",
+        "g": "04d6ca379c9c81d0",
         "name": "",
         "links": [
             "7d0d97bd91fee1c8"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 380,
-        "y": 500,
+        "x": 400,
+        "y": 540,
         "wires": [
             [
                 "3a2cbc2e9c0eb2f4"
@@ -2070,16 +2109,17 @@
         "id": "3a2cbc2e9c0eb2f4",
         "type": "function",
         "z": "b73d17450c17803c",
+        "g": "04d6ca379c9c81d0",
         "name": "form msg",
-        "func": "const orders = msg.payload || [];\nconst MAX_LENGTH = 4000; \n\nconst today = new Date();\nconst formattedDate = today.toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: '2-digit',\n    month: 'long'\n}).replace('/', '.');\n\nif (orders.length === 0) {\n    msg.payload = [{\n        message: `<i>${formattedDate}</i>\\n😫 NO hay pedidos para hoy`,\n        topic: 'vender'\n    }];\n    return msg;\n}\n\nconst formatOrder = (order, i) => {\n    const { order_id, customer_name, customer_phone, total_price, notes, items = [] } = order;\n\n    const itemsList = items.map(item => {\n        const productName = item.product_name?.replace(/^Cremosa(?:\\s+de)?\\s*/i, '').trim();\n        const variantName = item.variant_name?.split('(')[0].trim().toLowerCase();\n        \n        const dietary = [];\n        if (item.is_gluten_free) dietary.push('sin gluten');\n        if (item.is_lactose_free) dietary.push('sin lactosa');\n        const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n\n        return `      • ${item.quantity} ${productName} ${variantName}${dietaryText}`;\n    }).join('\\n');\n\n    return `\\n<b>${i + 1}.</b> ${order_id} <i>${total_price}€</i>\\n<b>${customer_name}</b>\\n${customer_phone}\\n${itemsList}${notes ? `\\nNota: <i>${notes}</i>` : ''}`;\n};\n\nconst splitIntoChunks = (text, limit) => {\n    if (text.length <= limit) return [text];\n    \n    const chunks = [];\n    let currentChunk = \"\";\n    const lines = text.split('\\n');\n\n    for (const line of lines) {\n        if ((currentChunk + line).length > limit) {\n            chunks.push(currentChunk.trim());\n            currentChunk = line + \"\\n\";\n        } else {\n            currentChunk += line + \"\\n\";\n        }\n    }\n    if (currentChunk) chunks.push(currentChunk.trim());\n    return chunks;\n};\n\nconst finalMessages = [];\nconst header = `\\n<i>${formattedDate} (${orders.length})</i>\\n`;\n\nconst processShift = (shiftOrders, title) => {\n    if (shiftOrders?.length === 0) return;\n\n    let shiftText = `<b><i>${title} (${shiftOrders.length})</i></b>\\n`;\n    shiftText += shiftOrders.map((o, i) => formatOrder(o, i)).join('\\n');\n\n    const chunks = splitIntoChunks(shiftText, MAX_LENGTH - header.length);\n    \n    chunks.forEach((chunk, index) => {\n        const prefix = index === 0 ? header : `<i>(Continuación ${title})</i>\\n`;\n        finalMessages.push({\n            message: prefix + chunk,\n            topic: 'vender'\n        });\n    });\n};\n\nconst morningOrders = orders.filter(o => o?.pickup_time === 'morning');\nconst eveningOrders = orders.filter(o => o?.pickup_time === 'evening');\n\nprocessShift(morningOrders, \"por la mañana\");\nprocessShift(eveningOrders, \"por la tarde\");\n\nmsg.payload = finalMessages;\n\nreturn msg;",
+        "func": "const orders = msg.payload || [];\nconst MAX_LENGTH = 4000; \n\nconst today = new Date();\nconst formattedDate = today.toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: '2-digit',\n    month: 'long'\n}).replace('/', '.');\n\nif (orders.length === 0) {\n    msg.payload = [{\n        message: `<i>${formattedDate}</i>\\n😫 NO hay pedidos para hoy`,\n        topic: 'vender'\n    }];\n    return msg;\n}\n\nconst formatOrder = (order, i) => {\n    const { order_id, customer_name, customer_phone, total_price, notes, items = [] } = order;\n\n    const itemsList = items.map(item => {\n        const productName = item.product_name?.replace(/^Cremosa(?:\\s+de)?\\s*/i, '').trim();\n        const variantName = item.variant_name?.split('(')[0].trim().toLowerCase();\n        \n        const dietary = [];\n        if (item.is_gluten_free) dietary.push('sin gluten');\n        if (item.is_lactose_free) dietary.push('sin lactosa');\n        const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n\n        return `      • ${item.quantity} ${productName} ${variantName}${dietaryText}`;\n    }).join('\\n');\n\n    return `\\n<b>${i + 1}.</b> ${order_id} <i>${total_price}€</i>\\n<b>${customer_name}</b>\\n${customer_phone}\\n${itemsList}${notes ? `\\nNota: <i>${notes}</i>` : ''}`;\n};\n\nconst splitIntoChunks = (text, limit) => {\n    if (text.length <= limit) return [text];\n    \n    const chunks = [];\n    let currentChunk = \"\";\n    const lines = text.split('\\n');\n\n    for (const line of lines) {\n        if ((currentChunk + line).length > limit) {\n            chunks.push(currentChunk.trim());\n            currentChunk = line + \"\\n\";\n        } else {\n            currentChunk += line + \"\\n\";\n        }\n    }\n    if (currentChunk) chunks.push(currentChunk.trim());\n    return chunks;\n};\n\nconst finalMessages = [];\nconst header = `<i>${formattedDate} (${orders.length})</i>\\n`;\n\nconst processShift = (shiftOrders, title) => {\n    if (shiftOrders?.length === 0) return;\n\n    let shiftText = `<b><i>${title} (${shiftOrders.length})</i></b>\\n`;\n    shiftText += shiftOrders.map((o, i) => formatOrder(o, i)).join('\\n');\n\n    const chunks = splitIntoChunks(shiftText, MAX_LENGTH - header.length);\n    \n    chunks.forEach((chunk, index) => {\n        const prefix = index === 0 ? header : `<i>(Continuación ${title})</i>\\n`;\n        finalMessages.push({\n            message: prefix + chunk,\n            topic: 'vender'\n        });\n    });\n};\n\nconst morningOrders = orders.filter(o => o?.pickup_time === 'morning');\nconst eveningOrders = orders.filter(o => o?.pickup_time === 'evening');\n\nprocessShift(morningOrders, \"por la mañana\");\nprocessShift(eveningOrders, \"por la tarde\");\n\nmsg.payload = finalMessages;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 520,
-        "y": 500,
+        "x": 540,
+        "y": 540,
         "wires": [
             [
                 "05b9dafc458ac843"
@@ -2090,6 +2130,7 @@
         "id": "05b9dafc458ac843",
         "type": "split",
         "z": "b73d17450c17803c",
+        "g": "04d6ca379c9c81d0",
         "name": "",
         "splt": "\\n",
         "spltType": "str",
@@ -2098,8 +2139,8 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 650,
-        "y": 500,
+        "x": 670,
+        "y": 540,
         "wires": [
             [
                 "040befe79eed286b"
@@ -2110,14 +2151,15 @@
         "id": "6d6523925f6e6a40",
         "type": "link call",
         "z": "b73d17450c17803c",
+        "g": "04d6ca379c9c81d0",
         "name": "",
         "links": [
             "2717e8e40e0e66c5"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 860,
-        "y": 500,
+        "x": 880,
+        "y": 540,
         "wires": [
             [
                 "9b8489bc4b6367e0"
@@ -2128,6 +2170,7 @@
         "id": "9b8489bc4b6367e0",
         "type": "debug",
         "z": "b73d17450c17803c",
+        "g": "04d6ca379c9c81d0",
         "name": "jandro",
         "active": true,
         "tosidebar": true,
@@ -2137,14 +2180,15 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1010,
-        "y": 500,
+        "x": 1030,
+        "y": 540,
         "wires": []
     },
     {
         "id": "040befe79eed286b",
         "type": "delay",
         "z": "b73d17450c17803c",
+        "g": "04d6ca379c9c81d0",
         "name": "",
         "pauseType": "rate",
         "timeout": "5",
@@ -2158,14 +2202,190 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 735,
-        "y": 500,
+        "x": 755,
+        "y": 540,
         "wires": [
             [
                 "6d6523925f6e6a40"
             ]
         ],
         "l": false
+    },
+    {
+        "id": "7999704e0b5a0b5e",
+        "type": "comment",
+        "z": "b73d17450c17803c",
+        "name": "error msg",
+        "info": "",
+        "x": 400,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "3ec3f7341979b1f6",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "orders",
+        "func": "msg.payload = `\nSELECT\n    pt.name AS product_name,\n    pvt.name AS variant_name,\n    SUM(CASE WHEN NOT oi.is_gluten_free AND NOT oi.is_lactose_free THEN oi.quantity ELSE 0 END) AS normal_count,\n    SUM(CASE WHEN oi.is_gluten_free THEN oi.quantity ELSE 0 END) AS gluten_free_count,\n    SUM(CASE WHEN oi.is_lactose_free THEN oi.quantity ELSE 0 END) AS lactose_free_count,\n    SUM(oi.quantity) AS total_quantity\nFROM orders o\nINNER JOIN order_items oi ON o.id = oi.order_id\nINNER JOIN products p ON oi.product_id = p.id\nLEFT JOIN product_translations pt\n    ON oi.product_id = pt.product_id\n    AND pt.language_code = 'es'\nLEFT JOIN product_variant_translations pvt\n    ON oi.product_variant_id = pvt.variant_id\n    AND pvt.language_code = 'es'\nWHERE o.pickup_date = CURRENT_DATE + INTERVAL '1 day'\n    AND o.status = 'paid'\nGROUP BY pt.name, pvt.name\nORDER BY pt.name, pvt.name;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 660,
+        "wires": [
+            [
+                "b7e1e8774682fe33"
+            ]
+        ]
+    },
+    {
+        "id": "c093de95f0e6815a",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "santi",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 06 * * 1,2,3,4,5,6",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 660,
+        "wires": [
+            [
+                "3ec3f7341979b1f6"
+            ]
+        ]
+    },
+    {
+        "id": "b7e1e8774682fe33",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 400,
+        "y": 660,
+        "wires": [
+            [
+                "d0d0c98e3e5380d1"
+            ]
+        ]
+    },
+    {
+        "id": "d0d0c98e3e5380d1",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "form msg",
+        "func": "const items = msg.payload || [];\nconst MAX_LENGTH = 4000;\nconst general = items?.reduce((acc, e) => {\n    return acc += parseInt(e?.total_quantity)\n}, 0)\n\nconst date = new Date();\ndate.setDate(date.getDate() + 1); \n\nconst formattedDate = date.toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: '2-digit',\n    month: 'long'\n}).replace('/', '.');\n\nif (items.length === 0) {\n    msg.payload = [{\n        message: `<i>${formattedDate}</i>\\n😫 NO hay productos para fabricar`,\n        topic: 'fabricar'\n    }];\n    return msg;\n}\n\nconst formatProductionLine = (item) => {\n    const productName = item.product_name?.replace(/^Cremosa(?:\\s+de)?\\s*/i, '').trim();\n    const variantName = item.variant_name?.split('(')?.[0]?.trim()?.toLowerCase();\n    \n    const details = [];\n    \n    if (parseInt(item.normal_count) > 0) {\n        details.push(`${item?.normal_count} estándar`);\n    }\n    if (parseInt(item.gluten_free_count) > 0) {\n        details.push(`${item?.gluten_free_count} sin gluten`);\n    }\n    if (parseInt(item.lactose_free_count) > 0) {\n        details.push(`${item?.lactose_free_count} sin lactosa`);\n    }\n\n    const detailsText = details.length > 0 ? `\\n    ${details.join('\\n    ')}` : '';\n\n    return `<b>${item.total_quantity}x ${productName}</b> (${variantName})${detailsText}`;\n};\n\nconst splitIntoChunks = (text, limit) => {\n    if (text.length <= limit) return [text];\n    const chunks = [];\n    let currentChunk = \"\";\n    const lines = text.split('\\n');\n    for (const line of lines) {\n        if ((currentChunk + line).length > limit) {\n            chunks.push(currentChunk.trim());\n            currentChunk = line + \"\\n\";\n        } else {\n            currentChunk += line + \"\\n\";\n        }\n    }\n    if (currentChunk) chunks.push(currentChunk.trim());\n    return chunks;\n};\n\nconst header = `<i>${formattedDate} (${general})</i>\\n\\n`;\nconst body = items.map(formatProductionLine).join('\\n\\n');\n\nconst chunks = splitIntoChunks(body, MAX_LENGTH - header.length);\nconst finalMessages = chunks.map((chunk, index) => {\n    return {\n        message: (index === 0 ? header : `<i>(Continuación fabricación)</i>\\n\\n`) + chunk,\n        topic: 'fabricar'\n    };\n});\n\nmsg.payload = finalMessages;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 660,
+        "wires": [
+            [
+                "ec0a2cda522b2f98"
+            ]
+        ]
+    },
+    {
+        "id": "ec0a2cda522b2f98",
+        "type": "split",
+        "z": "b73d17450c17803c",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 670,
+        "y": 660,
+        "wires": [
+            [
+                "54e64e0b3987df5f"
+            ]
+        ]
+    },
+    {
+        "id": "54e64e0b3987df5f",
+        "type": "delay",
+        "z": "b73d17450c17803c",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 755,
+        "y": 660,
+        "wires": [
+            [
+                "f73f4f5be7e9d15b"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "f73f4f5be7e9d15b",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 880,
+        "y": 660,
+        "wires": [
+            [
+                "5a9be941da473f9e"
+            ]
+        ]
+    },
+    {
+        "id": "5a9be941da473f9e",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "santi",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 660,
+        "wires": []
     },
     {
         "id": "3faee7869eb851bf",
