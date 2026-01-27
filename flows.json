@@ -132,12 +132,14 @@
             "db2a6f35fe31cdb1",
             "f89b7f99afeb16c4",
             "c31c2910d9e53835",
-            "9fd7022df8bd4a33"
+            "9fd7022df8bd4a33",
+            "fb377cfe4631cb6a",
+            "0cdb1421d48b7639"
         ],
         "x": 14,
-        "y": 339,
-        "w": 402,
-        "h": 182
+        "y": 379,
+        "w": 512,
+        "h": 222
     },
     {
         "id": "r1e2p3o4r5t6s7d8",
@@ -247,14 +249,12 @@
             "link_call_db_delete_category",
             "function_format_delete_category_response",
             "4ee0eadd7bb211c3",
-            "f3332b567095dce3",
-            "e3d02c52d634b5d1",
-            "10abd097007191ad"
+            "f3332b567095dce3"
         ],
         "x": 28,
         "y": 39,
         "w": 924,
-        "h": 542
+        "h": 448
     },
     {
         "id": "x1y2z3a4b5c6d7e8",
@@ -626,8 +626,7 @@
         "name": "telegram",
         "style": {
             "stroke": "#0070c0",
-            "label": true,
-            "fill": "#bfdbef"
+            "label": true
         },
         "nodes": [
             "062d10d7692edd95",
@@ -752,7 +751,7 @@
             "b9323d308faa62f0"
         ],
         "x": 34,
-        "y": 819,
+        "y": 859,
         "w": 1072,
         "h": 422
     },
@@ -775,12 +774,14 @@
             "a4d520b2dbd56b75",
             "d4dcbe162b98b5d1",
             "edb74d19deb503fa",
-            "8719af235663d033"
+            "8719af235663d033",
+            "cca3630901572311",
+            "e1b46bbaa1e722ab"
         ],
         "x": 14,
         "y": 214,
         "w": 572,
-        "h": 107
+        "h": 147
     },
     {
         "id": "b380f68b15913b37",
@@ -807,7 +808,7 @@
         ],
         "x": 14,
         "y": 39,
-        "w": 952,
+        "w": 892,
         "h": 162
     },
     {
@@ -947,7 +948,7 @@
             "9b8489bc4b6367e0"
         ],
         "x": 34,
-        "y": 499,
+        "y": 479,
         "w": 1092,
         "h": 82
     },
@@ -965,12 +966,12 @@
             "b7e1e8774682fe33",
             "d0d0c98e3e5380d1",
             "ec0a2cda522b2f98",
-            "54e64e0b3987df5f",
             "f73f4f5be7e9d15b",
-            "5a9be941da473f9e"
+            "5a9be941da473f9e",
+            "54e64e0b3987df5f"
         ],
         "x": 34,
-        "y": 619,
+        "y": 599,
         "w": 1092,
         "h": 82
     },
@@ -1333,7 +1334,7 @@
         "name": "postgres",
         "links": [],
         "x": 100,
-        "y": 380,
+        "y": 420,
         "wires": [
             [
                 "db2a6f35fe31cdb1"
@@ -1352,7 +1353,7 @@
         "mode": "return",
         "links": [],
         "x": 375,
-        "y": 380,
+        "y": 420,
         "wires": []
     },
     {
@@ -1369,7 +1370,7 @@
         "finalize": "",
         "libs": [],
         "x": 260,
-        "y": 380,
+        "y": 420,
         "wires": [
             [
                 "5cc1c97b5393ef47"
@@ -1383,17 +1384,7 @@
         "name": "Rate Limiting",
         "info": "",
         "x": 90,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "c8d8be38d3f56cd0",
-        "type": "comment",
-        "z": "511654ac3eb34f3c",
-        "name": "проблема, щоб два клієнти одночасно не забрали останній торт",
-        "info": "",
-        "x": 420,
-        "y": 620,
+        "y": 740,
         "wires": []
     },
     {
@@ -1402,8 +1393,8 @@
         "z": "511654ac3eb34f3c",
         "name": "платіжні операції повинні бути ідемпотентними",
         "info": "",
-        "x": 200,
-        "y": 660,
+        "x": 360,
+        "y": 740,
         "wires": []
     },
     {
@@ -1415,10 +1406,11 @@
         "scope": "group",
         "uncaught": false,
         "x": 110,
-        "y": 480,
+        "y": 520,
         "wires": [
             [
-                "c31c2910d9e53835"
+                "c31c2910d9e53835",
+                "fb377cfe4631cb6a"
             ]
         ]
     },
@@ -1437,7 +1429,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 270,
-        "y": 480,
+        "y": 560,
         "wires": []
     },
     {
@@ -1448,7 +1440,7 @@
         "name": "not send to telegram duplicate code 23505",
         "info": "",
         "x": 200,
-        "y": 440,
+        "y": 480,
         "wires": []
     },
     {
@@ -1459,10 +1451,11 @@
         "scope": null,
         "uncaught": true,
         "x": 100,
-        "y": 560,
+        "y": 640,
         "wires": [
             [
-                "f28aceab80e2fd19"
+                "f28aceab80e2fd19",
+                "b89dfc37711ae4db"
             ]
         ]
     },
@@ -1480,7 +1473,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 260,
-        "y": 560,
+        "y": 680,
         "wires": []
     },
     {
@@ -1594,8 +1587,7 @@
         "y": 260,
         "wires": [
             [
-                "a4d520b2dbd56b75",
-                "27eb832876d24cb6"
+                "a4d520b2dbd56b75"
             ],
             [
                 "d4dcbe162b98b5d1"
@@ -1641,8 +1633,7 @@
         "y": 280,
         "wires": [
             [
-                "8719af235663d033",
-                "7c3c69221299529f"
+                "8719af235663d033"
             ]
         ]
     },
@@ -1659,10 +1650,65 @@
         "wires": []
     },
     {
-        "id": "7c3c69221299529f",
+        "id": "fb377cfe4631cb6a",
+        "type": "function",
+        "z": "511654ac3eb34f3c",
+        "g": "3d009a5e045148c0",
+        "name": "form msg",
+        "func": "const error = msg.error || {};\nconst source = error.source || {};\n\n// Форматуємо дату та час\nconst timestamp = new Date().toLocaleString('es-ES', {\n    day: '2-digit',\n    month: '2-digit',\n    year: 'numeric',\n    hour: '2-digit',\n    minute: '2-digit',\n    second: '2-digit',\n    timeZone: 'Europe/Madrid'\n}).replaceAll('/', '.');\n\nlet payloadSnippet = \"No payload data\";\nif (msg.payload !== undefined) {\n    try {\n        const jsonString = JSON.stringify(msg.payload, null, 2) || \"\";\n        payloadSnippet = jsonString\n            .replace(/&/g, '&amp;')\n            .replace(/</g, '&lt;')\n            .replace(/>/g, '&gt;');\n\n        if (payloadSnippet.length > 1500) {\n            payloadSnippet = payloadSnippet.substring(0, 1500) + \"\\n... (truncated)\";\n        }\n    } catch (e) {\n        payloadSnippet = \"Error stringifying payload\";\n    }\n};\n\nconst errorMessage = `🚨 <b>ERROR</b> 🚨\n\n<b>Time:</b> <code>${timestamp}</code>\n<b>Message:</b> <u>${error?.message || 'Unknown error'}</u>\n\n<b>Details:</b>\n• <b>Node:</b> <code>${source?.name || 'n/a'}</code>\n• <b>Type:</b> <code>${source?.type || 'n/a'}</code>\n• <b>ID:</b> <code>${source?.id || 'n/a'}</code>\n• <b>Attempt:</b> ${source?.count || 1}\n\n<b>Payload Data:</b>\n<pre><code>${payloadSnippet}</code></pre>`;\n\nmsg.payload = {\n    message: errorMessage,\n    topic: 'errors'\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 520,
+        "wires": [
+            [
+                "0cdb1421d48b7639"
+            ]
+        ]
+    },
+    {
+        "id": "0cdb1421d48b7639",
+        "type": "link call",
+        "z": "511654ac3eb34f3c",
+        "g": "3d009a5e045148c0",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 420,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cca3630901572311",
+        "type": "catch",
+        "z": "511654ac3eb34f3c",
+        "g": "4c38c06caa282caf",
+        "name": "",
+        "scope": "group",
+        "uncaught": false,
+        "x": 110,
+        "y": 320,
+        "wires": [
+            [
+                "e1b46bbaa1e722ab"
+            ]
+        ]
+    },
+    {
+        "id": "e1b46bbaa1e722ab",
         "type": "debug",
         "z": "511654ac3eb34f3c",
-        "name": "debug 5",
+        "g": "4c38c06caa282caf",
+        "name": "TELEGRAM ERROR",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -1671,26 +1717,45 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 580,
-        "y": 300,
+        "x": 300,
+        "y": 320,
         "wires": []
     },
     {
-        "id": "27eb832876d24cb6",
-        "type": "debug",
+        "id": "b89dfc37711ae4db",
+        "type": "function",
         "z": "511654ac3eb34f3c",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 360,
-        "y": 220,
-        "wires": []
+        "name": "form msg",
+        "func": "const error = msg.error || {};\nconst source = error.source || {};\n\n// Форматуємо дату та час\nconst timestamp = new Date().toLocaleString('es-ES', {\n    day: '2-digit',\n    month: '2-digit',\n    year: 'numeric',\n    hour: '2-digit',\n    minute: '2-digit',\n    second: '2-digit',\n    timeZone: 'Europe/Madrid'\n}).replaceAll('/', '.');\n\nlet payloadSnippet = \"No payload data\";\nif (msg.payload !== undefined) {\n    try {\n        const jsonString = JSON.stringify(msg.payload, null, 2) || \"\";\n        payloadSnippet = jsonString\n            .replace(/&/g, '&amp;')\n            .replace(/</g, '&lt;')\n            .replace(/>/g, '&gt;');\n\n        if (payloadSnippet.length > 1500) {\n            payloadSnippet = payloadSnippet.substring(0, 1500) + \"\\n... (truncated)\";\n        }\n    } catch (e) {\n        payloadSnippet = \"Error stringifying payload\";\n    }\n};\n\nconst errorMessage = `🚨 <b>ERROR</b> 🚨\n\n<b>Time:</b> <code>${timestamp}</code>\n<b>Message:</b> <u>${error?.message || 'Unknown error'}</u>\n\n<b>Details:</b>\n• <b>Node:</b> <code>${source?.name || 'n/a'}</code>\n• <b>Type:</b> <code>${source?.type || 'n/a'}</code>\n• <b>ID:</b> <code>${source?.id || 'n/a'}</code>\n• <b>Attempt:</b> ${source?.count || 1}\n\n<b>Payload Data:</b>\n<pre><code>${payloadSnippet}</code></pre>`;\n\nmsg.payload = {\n    message: errorMessage,\n    topic: 'errors'\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 640,
+        "wires": [
+            [
+                "ba69715f7be72ab9"
+            ]
+        ]
+    },
+    {
+        "id": "ba69715f7be72ab9",
+        "type": "link call",
+        "z": "511654ac3eb34f3c",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 420,
+        "y": 640,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "e457ffc15e6ded46",
@@ -2058,7 +2123,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 140,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "3e18abe1e5573a92"
@@ -2079,7 +2144,7 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "1dddc496f69d50b9"
@@ -2098,7 +2163,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 400,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "3a2cbc2e9c0eb2f4"
@@ -2119,7 +2184,7 @@
         "finalize": "",
         "libs": [],
         "x": 540,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "05b9dafc458ac843"
@@ -2140,7 +2205,7 @@
         "addname": "",
         "property": "payload",
         "x": 670,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "040befe79eed286b"
@@ -2159,7 +2224,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 880,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "9b8489bc4b6367e0"
@@ -2181,7 +2246,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1030,
-        "y": 540,
+        "y": 520,
         "wires": []
     },
     {
@@ -2203,7 +2268,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 755,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "6d6523925f6e6a40"
@@ -2235,7 +2300,7 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 660,
+        "y": 640,
         "wires": [
             [
                 "b7e1e8774682fe33"
@@ -2255,7 +2320,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 130,
-        "y": 660,
+        "y": 640,
         "wires": [
             [
                 "3ec3f7341979b1f6"
@@ -2274,7 +2339,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 400,
-        "y": 660,
+        "y": 640,
         "wires": [
             [
                 "d0d0c98e3e5380d1"
@@ -2295,7 +2360,7 @@
         "finalize": "",
         "libs": [],
         "x": 540,
-        "y": 660,
+        "y": 640,
         "wires": [
             [
                 "ec0a2cda522b2f98"
@@ -2316,39 +2381,12 @@
         "addname": "",
         "property": "payload",
         "x": 670,
-        "y": 660,
+        "y": 640,
         "wires": [
             [
                 "54e64e0b3987df5f"
             ]
         ]
-    },
-    {
-        "id": "54e64e0b3987df5f",
-        "type": "delay",
-        "z": "b73d17450c17803c",
-        "g": "2ffdb4c723e8e6a0",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 755,
-        "y": 660,
-        "wires": [
-            [
-                "f73f4f5be7e9d15b"
-            ]
-        ],
-        "l": false
     },
     {
         "id": "f73f4f5be7e9d15b",
@@ -2362,7 +2400,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 880,
-        "y": 660,
+        "y": 640,
         "wires": [
             [
                 "5a9be941da473f9e"
@@ -2384,8 +2422,104 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1030,
-        "y": 660,
+        "y": 640,
         "wires": []
+    },
+    {
+        "id": "faedde3a5038eb09",
+        "type": "catch",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 740,
+        "wires": [
+            [
+                "948dde2391c8db61",
+                "1ae06fd8c192fe85"
+            ]
+        ]
+    },
+    {
+        "id": "948dde2391c8db61",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "ERROR",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 240,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "1ae06fd8c192fe85",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "form msg",
+        "func": "const error = msg.error || {};\nconst source = error.source || {};\n\n// Форматуємо дату та час\nconst timestamp = new Date().toLocaleString('es-ES', {\n    day: '2-digit',\n    month: '2-digit',\n    year: 'numeric',\n    hour: '2-digit',\n    minute: '2-digit',\n    second: '2-digit',\n    timeZone: 'Europe/Madrid'\n}).replaceAll('/', '.');\n\nlet payloadSnippet = \"No payload data\";\nif (msg.payload !== undefined) {\n    try {\n        const jsonString = JSON.stringify(msg.payload, null, 2) || \"\";\n        payloadSnippet = jsonString\n            .replace(/&/g, '&amp;')\n            .replace(/</g, '&lt;')\n            .replace(/>/g, '&gt;');\n\n        if (payloadSnippet.length > 1500) {\n            payloadSnippet = payloadSnippet.substring(0, 1500) + \"\\n... (truncated)\";\n        }\n    } catch (e) {\n        payloadSnippet = \"Error stringifying payload\";\n    }\n};\n\nconst errorMessage = `🚨 <b>ERROR</b> 🚨\n\n<b>Time:</b> <code>${timestamp}</code>\n<b>Message:</b> <u>${error?.message || 'Unknown error'}</u>\n\n<b>Details:</b>\n• <b>Node:</b> <code>${source?.name || 'n/a'}</code>\n• <b>Type:</b> <code>${source?.type || 'n/a'}</code>\n• <b>ID:</b> <code>${source?.id || 'n/a'}</code>\n• <b>Attempt:</b> ${source?.count || 1}\n\n<b>Payload Data:</b>\n<pre><code>${payloadSnippet}</code></pre>`;\n\nmsg.payload = {\n    message: errorMessage,\n    topic: 'errors'\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 740,
+        "wires": [
+            [
+                "bd5f284266d703ff"
+            ]
+        ]
+    },
+    {
+        "id": "bd5f284266d703ff",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 400,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54e64e0b3987df5f",
+        "type": "delay",
+        "z": "b73d17450c17803c",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 755,
+        "y": 640,
+        "wires": [
+            [
+                "f73f4f5be7e9d15b"
+            ]
+        ],
+        "l": false
     },
     {
         "id": "3faee7869eb851bf",
@@ -2573,10 +2707,11 @@
         "scope": null,
         "uncaught": false,
         "x": 100,
-        "y": 360,
+        "y": 440,
         "wires": [
             [
-                "7771656bf96e2c2e"
+                "7771656bf96e2c2e",
+                "65c488857ab710a5"
             ]
         ]
     },
@@ -2594,8 +2729,44 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 240,
-        "y": 360,
+        "y": 480,
         "wires": []
+    },
+    {
+        "id": "65c488857ab710a5",
+        "type": "function",
+        "z": "deae6838e7a58a75",
+        "name": "form msg",
+        "func": "const error = msg.error || {};\nconst source = error.source || {};\n\n// Форматуємо дату та час\nconst timestamp = new Date().toLocaleString('es-ES', {\n    day: '2-digit',\n    month: '2-digit',\n    year: 'numeric',\n    hour: '2-digit',\n    minute: '2-digit',\n    second: '2-digit',\n    timeZone: 'Europe/Madrid'\n}).replaceAll('/', '.');\n\nlet payloadSnippet = \"No payload data\";\nif (msg.payload !== undefined) {\n    try {\n        const jsonString = JSON.stringify(msg.payload, null, 2) || \"\";\n        payloadSnippet = jsonString\n            .replace(/&/g, '&amp;')\n            .replace(/</g, '&lt;')\n            .replace(/>/g, '&gt;');\n\n        if (payloadSnippet.length > 1500) {\n            payloadSnippet = payloadSnippet.substring(0, 1500) + \"\\n... (truncated)\";\n        }\n    } catch (e) {\n        payloadSnippet = \"Error stringifying payload\";\n    }\n};\n\nconst errorMessage = `🚨 <b>ERROR</b> 🚨\n\n<b>Time:</b> <code>${timestamp}</code>\n<b>Message:</b> <u>${error?.message || 'Unknown error'}</u>\n\n<b>Details:</b>\n• <b>Node:</b> <code>${source?.name || 'n/a'}</code>\n• <b>Type:</b> <code>${source?.type || 'n/a'}</code>\n• <b>ID:</b> <code>${source?.id || 'n/a'}</code>\n• <b>Attempt:</b> ${source?.count || 1}\n\n<b>Payload Data:</b>\n<pre><code>${payloadSnippet}</code></pre>`;\n\nmsg.payload = {\n    message: errorMessage,\n    topic: 'errors'\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 440,
+        "wires": [
+            [
+                "20297053677fecaf"
+            ]
+        ]
+    },
+    {
+        "id": "20297053677fecaf",
+        "type": "link call",
+        "z": "deae6838e7a58a75",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 400,
+        "y": 440,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "58297001323457f1",
@@ -2608,7 +2779,8 @@
         "y": 720,
         "wires": [
             [
-                "28a51bea48b7e52f"
+                "28a51bea48b7e52f",
+                "f649d13a4a5ccfeb"
             ]
         ]
     },
@@ -2626,7 +2798,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 240,
-        "y": 720,
+        "y": 760,
         "wires": []
     },
     {
@@ -3111,7 +3283,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 150,
-        "y": 860,
+        "y": 900,
         "wires": [
             [
                 "function_get_orders"
@@ -3132,7 +3304,7 @@
         "finalize": "",
         "libs": [],
         "x": 330,
-        "y": 860,
+        "y": 900,
         "wires": [
             [
                 "9a71381b8019d5cf"
@@ -3154,7 +3326,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 480,
-        "y": 880,
+        "y": 920,
         "wires": [
             [
                 "function_format_orders_response"
@@ -3175,7 +3347,7 @@
         "finalize": "",
         "libs": [],
         "x": 640,
-        "y": 880,
+        "y": 920,
         "wires": [
             [
                 "9a71381b8019d5cf"
@@ -3194,7 +3366,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 160,
-        "y": 940,
+        "y": 980,
         "wires": [
             [
                 "function_validate_order_id"
@@ -3215,7 +3387,7 @@
         "finalize": "",
         "libs": [],
         "x": 350,
-        "y": 940,
+        "y": 980,
         "wires": [
             [
                 "f82c61c4bf350dc6"
@@ -3237,7 +3409,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 500,
-        "y": 960,
+        "y": 1000,
         "wires": [
             [
                 "function_format_order_response",
@@ -3259,7 +3431,7 @@
         "finalize": "",
         "libs": [],
         "x": 660,
-        "y": 960,
+        "y": 1000,
         "wires": [
             [
                 "f82c61c4bf350dc6",
@@ -3279,7 +3451,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 190,
-        "y": 1020,
+        "y": 1060,
         "wires": [
             [
                 "function_validate_order_order_id"
@@ -3300,7 +3472,7 @@
         "finalize": "",
         "libs": [],
         "x": 430,
-        "y": 1020,
+        "y": 1060,
         "wires": [
             [
                 "469ac819413062e9"
@@ -3322,7 +3494,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 600,
-        "y": 1040,
+        "y": 1080,
         "wires": [
             [
                 "7379941ec815975a"
@@ -3341,7 +3513,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 160,
-        "y": 1100,
+        "y": 1140,
         "wires": [
             [
                 "function_validate_update_order"
@@ -3362,7 +3534,7 @@
         "finalize": "",
         "libs": [],
         "x": 350,
-        "y": 1100,
+        "y": 1140,
         "wires": [
             [
                 "433e8f09fbf10638"
@@ -3386,7 +3558,7 @@
         "finalize": "",
         "libs": [],
         "x": 540,
-        "y": 1120,
+        "y": 1160,
         "wires": [
             [
                 "link_call_db_update_order"
@@ -3405,7 +3577,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 720,
-        "y": 1120,
+        "y": 1160,
         "wires": [
             [
                 "function_format_update_order_response"
@@ -3426,7 +3598,7 @@
         "finalize": "",
         "libs": [],
         "x": 880,
-        "y": 1120,
+        "y": 1160,
         "wires": [
             [
                 "433e8f09fbf10638"
@@ -3445,7 +3617,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 170,
-        "y": 1180,
+        "y": 1220,
         "wires": [
             [
                 "function_validate_delete_order"
@@ -3466,7 +3638,7 @@
         "finalize": "",
         "libs": [],
         "x": 370,
-        "y": 1180,
+        "y": 1220,
         "wires": [
             [
                 "2ba38f65d66557e2"
@@ -3488,7 +3660,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 520,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             [
                 "function_format_delete_order_response"
@@ -3509,7 +3681,7 @@
         "finalize": "",
         "libs": [],
         "x": 680,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             [
                 "2ba38f65d66557e2"
@@ -3525,7 +3697,7 @@
         "statusCode": "",
         "headers": {},
         "x": 790,
-        "y": 860,
+        "y": 900,
         "wires": []
     },
     {
@@ -3537,7 +3709,7 @@
         "statusCode": "",
         "headers": {},
         "x": 810,
-        "y": 940,
+        "y": 980,
         "wires": []
     },
     {
@@ -3549,7 +3721,7 @@
         "statusCode": "",
         "headers": {},
         "x": 1030,
-        "y": 1100,
+        "y": 1140,
         "wires": []
     },
     {
@@ -3561,7 +3733,7 @@
         "statusCode": "",
         "headers": {},
         "x": 830,
-        "y": 1180,
+        "y": 1220,
         "wires": []
     },
     {
@@ -3573,7 +3745,7 @@
         "statusCode": "",
         "headers": {},
         "x": 910,
-        "y": 1020,
+        "y": 1060,
         "wires": []
     },
     {
@@ -3590,7 +3762,7 @@
         "finalize": "",
         "libs": [],
         "x": 760,
-        "y": 1040,
+        "y": 1080,
         "wires": [
             [
                 "469ac819413062e9"
@@ -3620,7 +3792,7 @@
         "payload": "{\"id\":1}",
         "payloadType": "json",
         "x": 190,
-        "y": 980,
+        "y": 1020,
         "wires": [
             [
                 "function_validate_order_id"
@@ -3642,7 +3814,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 820,
-        "y": 980,
+        "y": 1020,
         "wires": []
     },
     {
@@ -3822,6 +3994,42 @@
         "x": 800,
         "y": 640,
         "wires": []
+    },
+    {
+        "id": "f649d13a4a5ccfeb",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "name": "form msg",
+        "func": "const error = msg.error || {};\nconst source = error.source || {};\n\n// Форматуємо дату та час\nconst timestamp = new Date().toLocaleString('es-ES', {\n    day: '2-digit',\n    month: '2-digit',\n    year: 'numeric',\n    hour: '2-digit',\n    minute: '2-digit',\n    second: '2-digit',\n    timeZone: 'Europe/Madrid'\n}).replaceAll('/', '.');\n\nlet payloadSnippet = \"No payload data\";\nif (msg.payload !== undefined) {\n    try {\n        const jsonString = JSON.stringify(msg.payload, null, 2) || \"\";\n        payloadSnippet = jsonString\n            .replace(/&/g, '&amp;')\n            .replace(/</g, '&lt;')\n            .replace(/>/g, '&gt;');\n\n        if (payloadSnippet.length > 1500) {\n            payloadSnippet = payloadSnippet.substring(0, 1500) + \"\\n... (truncated)\";\n        }\n    } catch (e) {\n        payloadSnippet = \"Error stringifying payload\";\n    }\n};\n\nconst errorMessage = `🚨 <b>ERROR</b> 🚨\n\n<b>Time:</b> <code>${timestamp}</code>\n<b>Message:</b> <u>${error?.message || 'Unknown error'}</u>\n\n<b>Details:</b>\n• <b>Node:</b> <code>${source?.name || 'n/a'}</code>\n• <b>Type:</b> <code>${source?.type || 'n/a'}</code>\n• <b>ID:</b> <code>${source?.id || 'n/a'}</code>\n• <b>Attempt:</b> ${source?.count || 1}\n\n<b>Payload Data:</b>\n<pre><code>${payloadSnippet}</code></pre>`;\n\nmsg.payload = {\n    message: errorMessage,\n    topic: 'errors'\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 720,
+        "wires": [
+            [
+                "e1650906f913a7cf"
+            ]
+        ]
+    },
+    {
+        "id": "e1650906f913a7cf",
+        "type": "link call",
+        "z": "f3eb2de3da3352db",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 400,
+        "y": 720,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "function_validate_products_query",
@@ -4721,22 +4929,23 @@
         "wires": []
     },
     {
-        "id": "974b3f94f3ccadea",
+        "id": "21481c9cefdcfca9",
         "type": "catch",
         "z": "554b53c71ea14722",
         "name": "",
         "scope": null,
         "uncaught": false,
         "x": 80,
-        "y": 960,
+        "y": 980,
         "wires": [
             [
-                "2d267903a0a0d967"
+                "0388a64a9b6f90e1",
+                "775486d63e6a1a1b"
             ]
         ]
     },
     {
-        "id": "2d267903a0a0d967",
+        "id": "0388a64a9b6f90e1",
         "type": "debug",
         "z": "554b53c71ea14722",
         "name": "ERROR",
@@ -4748,9 +4957,45 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 240,
-        "y": 960,
+        "x": 220,
+        "y": 1020,
         "wires": []
+    },
+    {
+        "id": "775486d63e6a1a1b",
+        "type": "function",
+        "z": "554b53c71ea14722",
+        "name": "form msg",
+        "func": "const error = msg.error || {};\nconst source = error.source || {};\n\n// Форматуємо дату та час\nconst timestamp = new Date().toLocaleString('es-ES', {\n    day: '2-digit',\n    month: '2-digit',\n    year: 'numeric',\n    hour: '2-digit',\n    minute: '2-digit',\n    second: '2-digit',\n    timeZone: 'Europe/Madrid'\n}).replaceAll('/', '.');\n\nlet payloadSnippet = \"No payload data\";\nif (msg.payload !== undefined) {\n    try {\n        const jsonString = JSON.stringify(msg.payload, null, 2) || \"\";\n        payloadSnippet = jsonString\n            .replace(/&/g, '&amp;')\n            .replace(/</g, '&lt;')\n            .replace(/>/g, '&gt;');\n\n        if (payloadSnippet.length > 1500) {\n            payloadSnippet = payloadSnippet.substring(0, 1500) + \"\\n... (truncated)\";\n        }\n    } catch (e) {\n        payloadSnippet = \"Error stringifying payload\";\n    }\n};\n\nconst errorMessage = `🚨 <b>ERROR</b> 🚨\n\n<b>Time:</b> <code>${timestamp}</code>\n<b>Message:</b> <u>${error?.message || 'Unknown error'}</u>\n\n<b>Details:</b>\n• <b>Node:</b> <code>${source?.name || 'n/a'}</code>\n• <b>Type:</b> <code>${source?.type || 'n/a'}</code>\n• <b>ID:</b> <code>${source?.id || 'n/a'}</code>\n• <b>Attempt:</b> ${source?.count || 1}\n\n<b>Payload Data:</b>\n<pre><code>${payloadSnippet}</code></pre>`;\n\nmsg.payload = {\n    message: errorMessage,\n    topic: 'errors'\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 980,
+        "wires": [
+            [
+                "c2a059e02763a784"
+            ]
+        ]
+    },
+    {
+        "id": "c2a059e02763a784",
+        "type": "link call",
+        "z": "554b53c71ea14722",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 380,
+        "y": 980,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "4e28b612e1c5ae9d",
@@ -10697,26 +10942,25 @@
         "wires": []
     },
     {
-        "id": "10abd097007191ad",
+        "id": "230c3878723da37c",
         "type": "catch",
         "z": "90446d3495bddb11",
-        "g": "61f89699cc21cd28",
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 120,
+        "x": 80,
         "y": 540,
         "wires": [
             [
-                "e3d02c52d634b5d1"
+                "cedebc1ec62ea879",
+                "23bc44cd383d0a9e"
             ]
         ]
     },
     {
-        "id": "e3d02c52d634b5d1",
+        "id": "cedebc1ec62ea879",
         "type": "debug",
         "z": "90446d3495bddb11",
-        "g": "61f89699cc21cd28",
         "name": "ERROR",
         "active": true,
         "tosidebar": true,
@@ -10726,9 +10970,45 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 280,
-        "y": 540,
+        "x": 220,
+        "y": 580,
         "wires": []
+    },
+    {
+        "id": "23bc44cd383d0a9e",
+        "type": "function",
+        "z": "90446d3495bddb11",
+        "name": "form msg",
+        "func": "const error = msg.error || {};\nconst source = error.source || {};\n\n// Форматуємо дату та час\nconst timestamp = new Date().toLocaleString('es-ES', {\n    day: '2-digit',\n    month: '2-digit',\n    year: 'numeric',\n    hour: '2-digit',\n    minute: '2-digit',\n    second: '2-digit',\n    timeZone: 'Europe/Madrid'\n}).replaceAll('/', '.');\n\nlet payloadSnippet = \"No payload data\";\nif (msg.payload !== undefined) {\n    try {\n        const jsonString = JSON.stringify(msg.payload, null, 2) || \"\";\n        payloadSnippet = jsonString\n            .replace(/&/g, '&amp;')\n            .replace(/</g, '&lt;')\n            .replace(/>/g, '&gt;');\n\n        if (payloadSnippet.length > 1500) {\n            payloadSnippet = payloadSnippet.substring(0, 1500) + \"\\n... (truncated)\";\n        }\n    } catch (e) {\n        payloadSnippet = \"Error stringifying payload\";\n    }\n};\n\nconst errorMessage = `🚨 <b>ERROR</b> 🚨\n\n<b>Time:</b> <code>${timestamp}</code>\n<b>Message:</b> <u>${error?.message || 'Unknown error'}</u>\n\n<b>Details:</b>\n• <b>Node:</b> <code>${source?.name || 'n/a'}</code>\n• <b>Type:</b> <code>${source?.type || 'n/a'}</code>\n• <b>ID:</b> <code>${source?.id || 'n/a'}</code>\n• <b>Attempt:</b> ${source?.count || 1}\n\n<b>Payload Data:</b>\n<pre><code>${payloadSnippet}</code></pre>`;\n\nmsg.payload = {\n    message: errorMessage,\n    topic: 'errors'\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 540,
+        "wires": [
+            [
+                "d956b106dcb5bd26"
+            ]
+        ]
+    },
+    {
+        "id": "d956b106dcb5bd26",
+        "type": "link call",
+        "z": "90446d3495bddb11",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 380,
+        "y": 540,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "http_get_admins",
@@ -11214,38 +11494,6 @@
         "wires": []
     },
     {
-        "id": "665901202bf0844c",
-        "type": "catch",
-        "z": "2fd597c1e6169f39",
-        "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 100,
-        "y": 460,
-        "wires": [
-            [
-                "3df2dc05a06f76ba"
-            ]
-        ]
-    },
-    {
-        "id": "3df2dc05a06f76ba",
-        "type": "debug",
-        "z": "2fd597c1e6169f39",
-        "name": "ERROR",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 260,
-        "y": 460,
-        "wires": []
-    },
-    {
         "id": "4f4a200e51c53102",
         "type": "debug",
         "z": "2fd597c1e6169f39",
@@ -11262,6 +11510,75 @@
         "x": 480,
         "y": 100,
         "wires": []
+    },
+    {
+        "id": "54d9e944b9aa4a61",
+        "type": "catch",
+        "z": "2fd597c1e6169f39",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 460,
+        "wires": [
+            [
+                "de78c8f487c3c393",
+                "62d208b595f7522c"
+            ]
+        ]
+    },
+    {
+        "id": "de78c8f487c3c393",
+        "type": "debug",
+        "z": "2fd597c1e6169f39",
+        "name": "ERROR",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 240,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "62d208b595f7522c",
+        "type": "function",
+        "z": "2fd597c1e6169f39",
+        "name": "form msg",
+        "func": "const error = msg.error || {};\nconst source = error.source || {};\n\n// Форматуємо дату та час\nconst timestamp = new Date().toLocaleString('es-ES', {\n    day: '2-digit',\n    month: '2-digit',\n    year: 'numeric',\n    hour: '2-digit',\n    minute: '2-digit',\n    second: '2-digit',\n    timeZone: 'Europe/Madrid'\n}).replaceAll('/', '.');\n\nlet payloadSnippet = \"No payload data\";\nif (msg.payload !== undefined) {\n    try {\n        const jsonString = JSON.stringify(msg.payload, null, 2) || \"\";\n        payloadSnippet = jsonString\n            .replace(/&/g, '&amp;')\n            .replace(/</g, '&lt;')\n            .replace(/>/g, '&gt;');\n\n        if (payloadSnippet.length > 1500) {\n            payloadSnippet = payloadSnippet.substring(0, 1500) + \"\\n... (truncated)\";\n        }\n    } catch (e) {\n        payloadSnippet = \"Error stringifying payload\";\n    }\n};\n\nconst errorMessage = `🚨 <b>ERROR</b> 🚨\n\n<b>Time:</b> <code>${timestamp}</code>\n<b>Message:</b> <u>${error?.message || 'Unknown error'}</u>\n\n<b>Details:</b>\n• <b>Node:</b> <code>${source?.name || 'n/a'}</code>\n• <b>Type:</b> <code>${source?.type || 'n/a'}</code>\n• <b>ID:</b> <code>${source?.id || 'n/a'}</code>\n• <b>Attempt:</b> ${source?.count || 1}\n\n<b>Payload Data:</b>\n<pre><code>${payloadSnippet}</code></pre>`;\n\nmsg.payload = {\n    message: errorMessage,\n    topic: 'errors'\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 460,
+        "wires": [
+            [
+                "c3a7e20af3828812"
+            ]
+        ]
+    },
+    {
+        "id": "c3a7e20af3828812",
+        "type": "link call",
+        "z": "2fd597c1e6169f39",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 400,
+        "y": 460,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "http_get_shops",
@@ -11736,7 +12053,7 @@
         "wires": []
     },
     {
-        "id": "92a102315680dc9c",
+        "id": "284a97d75a580627",
         "type": "catch",
         "z": "7959046d97858bf8",
         "name": "",
@@ -11746,12 +12063,13 @@
         "y": 500,
         "wires": [
             [
-                "1cdd379238eee891"
+                "3bd8d7ebbffe671a",
+                "69f3d1a97de61aeb"
             ]
         ]
     },
     {
-        "id": "1cdd379238eee891",
+        "id": "3bd8d7ebbffe671a",
         "type": "debug",
         "z": "7959046d97858bf8",
         "name": "ERROR",
@@ -11763,9 +12081,45 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 260,
-        "y": 500,
+        "x": 240,
+        "y": 540,
         "wires": []
+    },
+    {
+        "id": "69f3d1a97de61aeb",
+        "type": "function",
+        "z": "7959046d97858bf8",
+        "name": "form msg",
+        "func": "const error = msg.error || {};\nconst source = error.source || {};\n\n// Форматуємо дату та час\nconst timestamp = new Date().toLocaleString('es-ES', {\n    day: '2-digit',\n    month: '2-digit',\n    year: 'numeric',\n    hour: '2-digit',\n    minute: '2-digit',\n    second: '2-digit',\n    timeZone: 'Europe/Madrid'\n}).replaceAll('/', '.');\n\nlet payloadSnippet = \"No payload data\";\nif (msg.payload !== undefined) {\n    try {\n        const jsonString = JSON.stringify(msg.payload, null, 2) || \"\";\n        payloadSnippet = jsonString\n            .replace(/&/g, '&amp;')\n            .replace(/</g, '&lt;')\n            .replace(/>/g, '&gt;');\n\n        if (payloadSnippet.length > 1500) {\n            payloadSnippet = payloadSnippet.substring(0, 1500) + \"\\n... (truncated)\";\n        }\n    } catch (e) {\n        payloadSnippet = \"Error stringifying payload\";\n    }\n};\n\nconst errorMessage = `🚨 <b>ERROR</b> 🚨\n\n<b>Time:</b> <code>${timestamp}</code>\n<b>Message:</b> <u>${error?.message || 'Unknown error'}</u>\n\n<b>Details:</b>\n• <b>Node:</b> <code>${source?.name || 'n/a'}</code>\n• <b>Type:</b> <code>${source?.type || 'n/a'}</code>\n• <b>ID:</b> <code>${source?.id || 'n/a'}</code>\n• <b>Attempt:</b> ${source?.count || 1}\n\n<b>Payload Data:</b>\n<pre><code>${payloadSnippet}</code></pre>`;\n\nmsg.payload = {\n    message: errorMessage,\n    topic: 'errors'\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 500,
+        "wires": [
+            [
+                "62655f05f87b69cb"
+            ]
+        ]
+    },
+    {
+        "id": "62655f05f87b69cb",
+        "type": "link call",
+        "z": "7959046d97858bf8",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 400,
+        "y": 500,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "http_get_reports",
@@ -12348,22 +12702,23 @@
         "wires": []
     },
     {
-        "id": "catch_all_errors",
+        "id": "e8d89f321aa33694",
         "type": "catch",
         "z": "739b5a4b69900440",
         "name": "",
         "scope": null,
         "uncaught": false,
         "x": 100,
-        "y": 620,
+        "y": 640,
         "wires": [
             [
-                "f409014741a851cd"
+                "326e753ecfbdf814",
+                "f51e04357dbb8829"
             ]
         ]
     },
     {
-        "id": "f409014741a851cd",
+        "id": "326e753ecfbdf814",
         "type": "debug",
         "z": "739b5a4b69900440",
         "name": "ERROR",
@@ -12376,8 +12731,44 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 240,
-        "y": 620,
+        "y": 680,
         "wires": []
+    },
+    {
+        "id": "f51e04357dbb8829",
+        "type": "function",
+        "z": "739b5a4b69900440",
+        "name": "form msg",
+        "func": "const error = msg.error || {};\nconst source = error.source || {};\n\n// Форматуємо дату та час\nconst timestamp = new Date().toLocaleString('es-ES', {\n    day: '2-digit',\n    month: '2-digit',\n    year: 'numeric',\n    hour: '2-digit',\n    minute: '2-digit',\n    second: '2-digit',\n    timeZone: 'Europe/Madrid'\n}).replaceAll('/', '.');\n\nlet payloadSnippet = \"No payload data\";\nif (msg.payload !== undefined) {\n    try {\n        const jsonString = JSON.stringify(msg.payload, null, 2) || \"\";\n        payloadSnippet = jsonString\n            .replace(/&/g, '&amp;')\n            .replace(/</g, '&lt;')\n            .replace(/>/g, '&gt;');\n\n        if (payloadSnippet.length > 1500) {\n            payloadSnippet = payloadSnippet.substring(0, 1500) + \"\\n... (truncated)\";\n        }\n    } catch (e) {\n        payloadSnippet = \"Error stringifying payload\";\n    }\n};\n\nconst errorMessage = `🚨 <b>ERROR</b> 🚨\n\n<b>Time:</b> <code>${timestamp}</code>\n<b>Message:</b> <u>${error?.message || 'Unknown error'}</u>\n\n<b>Details:</b>\n• <b>Node:</b> <code>${source?.name || 'n/a'}</code>\n• <b>Type:</b> <code>${source?.type || 'n/a'}</code>\n• <b>ID:</b> <code>${source?.id || 'n/a'}</code>\n• <b>Attempt:</b> ${source?.count || 1}\n\n<b>Payload Data:</b>\n<pre><code>${payloadSnippet}</code></pre>`;\n\nmsg.payload = {\n    message: errorMessage,\n    topic: 'errors'\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 640,
+        "wires": [
+            [
+                "20a8e72e2a05cd76"
+            ]
+        ]
+    },
+    {
+        "id": "20a8e72e2a05cd76",
+        "type": "link call",
+        "z": "739b5a4b69900440",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 400,
+        "y": 640,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "2aaba55c8037bb23",
