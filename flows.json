@@ -812,96 +812,6 @@
         "h": 162
     },
     {
-        "id": "d8ef0639fb5dddc2",
-        "type": "group",
-        "z": "554b53c71ea14722",
-        "g": "4e79e7e4e982c657",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "http_response_products",
-            "http_post_variant",
-            "function_validate_variant_data",
-            "link_call_db_create_variant",
-            "function_format_create_variant_response",
-            "http_put_variant",
-            "function_validate_update_variant",
-            "link_call_db_update_variant",
-            "function_format_update_variant_response",
-            "http_delete_variant",
-            "function_validate_delete_variant",
-            "link_call_db_delete_variant",
-            "function_format_delete_variant_response",
-            "e823edd40e8fa5fb",
-            "4848fd5bbff00ef3"
-        ],
-        "x": 54,
-        "y": 639,
-        "w": 932,
-        "h": 262
-    },
-    {
-        "id": "f3332b567095dce3",
-        "type": "group",
-        "z": "90446d3495bddb11",
-        "g": "61f89699cc21cd28",
-        "name": "change",
-        "style": {
-            "stroke": "#ff0000",
-            "label": true
-        },
-        "nodes": [
-            "ca4fb2bb9e39155f",
-            "34468b85c601fe47",
-            "b6847ac740089462",
-            "f6c012982eaf5525",
-            "1fdd72ad06321cd0",
-            "function_validate_update_category",
-            "http_put_category",
-            "3a345e696dc8ade6",
-            "link_call_db_update_category",
-            "function_format_update_category_response"
-        ],
-        "x": 54,
-        "y": 299,
-        "w": 872,
-        "h": 162
-    },
-    {
-        "id": "79ac7d2c6759d325",
-        "type": "group",
-        "z": "554b53c71ea14722",
-        "g": "4e79e7e4e982c657",
-        "name": "change",
-        "style": {
-            "stroke": "#ff0000",
-            "label": true
-        },
-        "nodes": [
-            "http_post_product",
-            "function_validate_product_data",
-            "link_call_db_create_product",
-            "function_format_create_product_response",
-            "2b159c66dfaecd0d",
-            "http_put_product",
-            "function_validate_update_product",
-            "link_call_db_update_product",
-            "function_format_update_product_response",
-            "fbd4d677a6e08f26"
-        ],
-        "x": 54,
-        "y": 419,
-        "w": 872,
-        "h": 182
-    },
-    {
         "id": "6dfcde191de2c8e8",
         "type": "group",
         "z": "f3eb2de3da3352db",
@@ -991,6 +901,96 @@
         "y": 219,
         "w": 312,
         "h": 82
+    },
+    {
+        "id": "d8ef0639fb5dddc2",
+        "type": "group",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "http_response_products",
+            "http_post_variant",
+            "function_validate_variant_data",
+            "link_call_db_create_variant",
+            "function_format_create_variant_response",
+            "http_put_variant",
+            "function_validate_update_variant",
+            "link_call_db_update_variant",
+            "function_format_update_variant_response",
+            "http_delete_variant",
+            "function_validate_delete_variant",
+            "link_call_db_delete_variant",
+            "function_format_delete_variant_response",
+            "e823edd40e8fa5fb",
+            "4848fd5bbff00ef3"
+        ],
+        "x": 54,
+        "y": 639,
+        "w": 932,
+        "h": 262
+    },
+    {
+        "id": "f3332b567095dce3",
+        "type": "group",
+        "z": "90446d3495bddb11",
+        "g": "61f89699cc21cd28",
+        "name": "change",
+        "style": {
+            "stroke": "#ff0000",
+            "label": true
+        },
+        "nodes": [
+            "ca4fb2bb9e39155f",
+            "34468b85c601fe47",
+            "b6847ac740089462",
+            "f6c012982eaf5525",
+            "1fdd72ad06321cd0",
+            "function_validate_update_category",
+            "http_put_category",
+            "3a345e696dc8ade6",
+            "link_call_db_update_category",
+            "function_format_update_category_response"
+        ],
+        "x": 54,
+        "y": 299,
+        "w": 872,
+        "h": 162
+    },
+    {
+        "id": "79ac7d2c6759d325",
+        "type": "group",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "name": "change",
+        "style": {
+            "stroke": "#ff0000",
+            "label": true
+        },
+        "nodes": [
+            "http_post_product",
+            "function_validate_product_data",
+            "link_call_db_create_product",
+            "function_format_create_product_response",
+            "2b159c66dfaecd0d",
+            "http_put_product",
+            "function_validate_update_product",
+            "link_call_db_update_product",
+            "function_format_update_product_response",
+            "fbd4d677a6e08f26"
+        ],
+        "x": 54,
+        "y": 419,
+        "w": 872,
+        "h": 182
     },
     {
         "id": "134c1c118160eea1",
@@ -1827,7 +1827,7 @@
         "z": "b73d17450c17803c",
         "g": "8ff7a8afe02f6f9b",
         "name": "check signature",
-        "func": "const STRIPE_SECRET_KEY = env.get('STRIPE_SECRET_KEY');\nconst WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\nconst stripe = new Stripe(STRIPE_SECRET_KEY);\nconst signature = msg.req?.headers?.['stripe-signature'];\nconst rawBody = Buffer.from(msg.payload);\n\nif (!signature) {\n    return null;\n};\n\ntry {\n    const { type = '', data = {} } = stripe.webhooks.constructEvent(rawBody, signature, WEBHOOK_SECRET);\n    const session = data?.object || {};\n\n    msg.toDB = {\n        orderId: session?.metadata?.order_id || null,\n        paymentIntentId: session?.payment_intent || null,\n        status: \"unpaid\"\n    };\n\n    if (type === 'checkout.session.completed') {\n        msg.toDB.status = \"paid\";\n\n        return msg;\n    };\n\n    return msg;\n} catch (err) {\n    throw new Error('Webhook signature verification failed: ');\n}",
+        "func": "const STRIPE_SECRET_KEY = env.get('STRIPE_SECRET_KEY');\nconst WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\nconst stripe = new Stripe(STRIPE_SECRET_KEY);\nconst signature = msg.req?.headers?.['stripe-signature'];\nconst rawBody = Buffer.from(msg.payload);\n\nif (!signature) {\n    return null;\n};\n\ntry {\n    const { type = '', data = {} } = stripe.webhooks.constructEvent(rawBody, signature, WEBHOOK_SECRET);\n    const session = data?.object || {};\n\n    msg.toDB = {\n        orderId: session?.metadata?.order_id || null,\n        paymentIntentId: session?.payment_intent || null,\n        status: \"unpaid\"\n    };\n    msg.lang = session?.metadata?.lang || null;\n\n    if (type === 'checkout.session.completed') {\n        msg.toDB.status = \"paid\";\n\n        return msg;\n    };\n\n    return msg;\n} catch (err) {\n    throw new Error('Webhook signature verification failed: ');\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1892,7 +1892,7 @@
         "z": "b73d17450c17803c",
         "g": "8ff7a8afe02f6f9b",
         "name": "paid",
-        "func": "const { orderId = null, paymentIntentId = null, status = 'paid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nmsg.queryParameters = [orderId, status, paymentIntentId, new Date()];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2, \n        stripe_payment_id = $3, \n        paid_at = $4 \n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'unit_price', oi.unit_price,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free\n            )\n            FROM order_items oi\n            LEFT JOIN product_translations pt \n                ON oi.product_id = pt.product_id \n                AND pt.language_code = 'es'\n            LEFT JOIN product_variant_translations pvt \n                ON oi.product_variant_id = pvt.variant_id \n                AND pvt.language_code = 'es'\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
+        "func": "const { orderId = null, paymentIntentId = null, status = 'paid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nmsg.queryParameters = [orderId, status, paymentIntentId, new Date(), msg.lang];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2, \n        stripe_payment_id = $3, \n        paid_at = $4 \n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'unit_price', oi.unit_price,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free\n            )\n            FROM order_items oi\n            LEFT JOIN product_translations pt \n                ON oi.product_id = pt.product_id \n                AND pt.language_code = $5\n            LEFT JOIN product_variant_translations pvt \n                ON oi.product_variant_id = pvt.variant_id \n                AND pvt.language_code = $5\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2054,7 +2054,7 @@
         "z": "b73d17450c17803c",
         "g": "34e680e7054de3d0",
         "name": "form message",
-        "func": "const { order_id, customer_name, customer_phone, pickup_date, pickup_time,\n  total_price, notes, items = [], paid_at } = msg?.order || {};\n\nconst date = new Date(pickup_date);\nconst formattedDate = date.toLocaleDateString('es-ES', {\n  weekday: 'long',\n  day: '2-digit',\n  month: 'long'\n}).replace('/', '.');\n\nconst paidDate = new Date(paid_at);\nconst formattedPaidDateTime = paidDate.toLocaleString('es-ES', {\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit',\n  timeZone: 'Europe/Madrid'\n}).replace(',', '');\n\nconst timeText = pickup_time === 'evening' ? 'por la tarde' : 'por la mañana';\n\nconst itemsList = items?.map(item => {\n  const productNameClean = item.product_name?.replace(/^Cremosa(?:\\s+de)?\\s*/i, '')?.trim();\n  const variantNameClean = item?.variant_name?.split('(')[0].trim()?.toLowerCase();\n  const dietary = [];\n\n  if (item?.is_gluten_free) dietary.push('sin gluten');\n  if (item?.is_lactose_free) dietary.push('sin lactosa');\n  const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n  \n  return `    • ${item?.quantity} ${productNameClean} ${variantNameClean}${dietaryText}`;\n}).join('\\n');\n\nconst message = `\n🎂 <b>NUEVO PEDIDO</b> 🎂\n<i>${formattedDate} (${timeText})</i>\n\n<b>Pedido:</b> ${order_id}\n<b>Cliente:</b> ${customer_name}\n<b>Teléfono:</b> ${customer_phone}\n\n<b>Productos:</b>\n${itemsList}\n\n<b>Total:</b> ${total_price}€\n${notes ? `\\n<b>Notas:</b> ${notes}\\n` : ''}\n✅ <b>PAGADO:</b> ${formattedPaidDateTime}\n`.trim();\n\nmsg.payload = {\n  message,\n  topic: 'pedidos'\n};\n\nreturn msg;",
+        "func": "const { order_id, customer_name, customer_phone, pickup_date, pickup_time,\n  total_price, notes, items = [], paid_at } = msg?.order || {};\n\nconst date = new Date(pickup_date);\nconst formattedDate = date.toLocaleDateString('es-ES', {\n  weekday: 'long',\n  day: '2-digit',\n  month: 'long'\n}).replace('/', '.');\n\nconst paidDate = new Date(paid_at);\nconst formattedPaidDateTime = paidDate.toLocaleString('es-ES', {\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit',\n  timeZone: 'Europe/Madrid'\n}).replace(',', '');\n\nconst timeText = pickup_time === 'evening' ? 'por la tarde' : 'por la mañana';\n\nconst itemsList = items?.map(item => {\n  const productNameClean = item.product_name?.toLowerCase()\n    .replace(/^(cremosa(?:\\s+de)?|creamy)\\s*/i, '')\n    .replace(/\\bcheesecake\\b/gi, '')\n    .replace(/\\s{2,}/g, ' ')\n    .trim();\n  const variantNameClean = item?.variant_name?.split('(')[0].trim()?.toLowerCase();\n  const dietary = [];\n\n  if (item?.is_gluten_free) dietary.push('sin gluten');\n  if (item?.is_lactose_free) dietary.push('sin lactosa');\n  const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n\n  return `    • ${item?.quantity} ${productNameClean} ${variantNameClean}${dietaryText}`;\n}).join('\\n');\n\nconst message = `\n🎂 <b>NUEVO PEDIDO</b> 🎂\n<i>${formattedDate} (${timeText})</i>\n\n<b>Pedido:</b> ${order_id}\n<b>Cliente:</b> ${customer_name}\n<b>Teléfono:</b> ${customer_phone}\n\n<b>Productos:</b>\n${itemsList}\n\n<b>Total:</b> ${total_price}€\n${notes ? `\\n<b>Notas:</b> ${notes}\\n` : ''}\n✅ <b>PAGADO:</b> ${formattedPaidDateTime}\n`.trim();\n\nmsg.payload = {\n  message,\n  topic: 'pedidos'\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2094,7 +2094,7 @@
         "z": "b73d17450c17803c",
         "g": "34e680e7054de3d0",
         "name": "is error",
-        "func": "if (!!msg?.error) {\n    return null;\n};\n\nmsg = {\n    order: msg.order\n}\n\nreturn msg;",
+        "func": "if (!!msg?.error) {\n    return null;\n};\n\nmsg = {\n    order: msg.order,\n    lang: msg.lang\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2635,6 +2635,7 @@
         "y": 500,
         "wires": [
             [
+                "a159f73fd322271f",
                 "2742d831d8385cdf"
             ]
         ]
@@ -2657,7 +2658,7 @@
             }
         ],
         "x": 650,
-        "y": 500,
+        "y": 480,
         "wires": [
             [
                 "a159f73fd322271f"
@@ -2686,15 +2687,15 @@
         "type": "function",
         "z": "b73d17450c17803c",
         "name": "form email",
-        "func": "const order = msg.order;\n\nconst colorChocolate = \"#4A250D\";\nconst colorBeige = \"#FFF8EB\";\n\nconst pickupDate = new Date(order.pickup_date).toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: 'numeric',\n    month: 'long'\n}).replace('/', '.');\nconst shift = order?.pickup_time === 'morning' ? 'por la mañana' : 'por la tarde';\n\nconst itemsHtml = order.items.map(item => {\n    const dietary = [];\n    if (item?.is_gluten_free) {\n        dietary.push('sin gluten')\n    };\n\n    if (item?.is_lactose_free) {\n        dietary.push('sin lactosa')\n    };\n    const dietaryText = dietary.length > 0 \n        ? `<br><span style=\"font-size: 12px; color: #856404;\">(${dietary.join(', ')})</span>` \n        : '';\n\n    return `\n        <tr>\n            <td style=\"padding: 12px 15px; border-bottom: 1px solid #E5DED0; color: ${colorChocolate}; font-family: 'Montserrat', serif; text-align: left;\">\n                <span style=\"font-weight: bold;\">${item.quantity}x</span> ${item?.product_name}\n                <div style=\"font-size: 13px; color: #6e5a4e;\">${item?.variant_name}${dietaryText}</div>\n            </td>\n            <td style=\"padding: 12px 15px; border-bottom: 1px solid #E5DED0; text-align: right; color: ${colorChocolate}; font-weight: bold; white-space: nowrap;\">\n                ${parseFloat(item.unit_price).toFixed(2)}€\n            </td>\n        </tr>`;\n}).join('');\n\nconst emailHtml = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n</head>\n<body style=\"margin: 0; padding: 0; background-color: ${colorBeige};\">\n    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"background-color: ${colorBeige}; padding: 10px;\">\n        <tr>\n            <td align=\"center\">\n                <table width=\"600\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); max-width: 100%;\">\n                    <tr>\n                        <td style=\"padding: 20px; text-align: center;\">\n                            <h1 style=\"color: ${colorChocolate}; font-family: 'Montserrat', serif; font-size: 24px; margin: 0;\">¡Gracias por tu pedido!</h1>\n                            <p style=\"color: #6e5a4e; font-family: 'Montserrat', serif; font-size: 16px; line-height: 1.5; margin: 15px 0;\">\n                                Hola <strong>${order?.customer_name}</strong>, hemos recibido tu pedido correctamente. Aquí tienes los detalles:\n                            </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"padding: 0 20px 20px 20px;\">\n                            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"10\" style=\"background-color: ${colorBeige}; border-radius: 5px; font-family: 'Montserrat', serif; font-size: 14px; color: ${colorChocolate};\">\n                                <tr>\n                                    <td style=\"text-align: center;\"><strong>Número de pedido:</strong><br>${order?.order_id}</td>\n                                    <td style=\"text-align: center;\"><strong>Recogida:</strong><br>${pickupDate}<br>(${shift})</td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"padding: 0 20px 20px 20px;\">\n                            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"max-width: 100%;\">\n                                ${itemsHtml}\n                                <tr>\n                                    <td style=\"padding: 20px 15px; font-family: 'Montserrat', serif; font-size: 18px; color: ${colorChocolate}; font-weight: bold; text-align: left;\">TOTAL</td>\n                                    <td style=\"padding: 20px 15px; text-align: right; font-family: 'Montserrat', serif; font-size: 22px; color: ${colorChocolate}; font-weight: bold; white-space: nowrap;\">${order.total_price}€</td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td align=\"center\" style=\"padding: 30px 20px; background-color: ${colorChocolate}; color: ${colorBeige}; font-family: 'Montserrat', serif; font-size: 12px; text-align: center;\">\n                            <img src=\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765558484/logo-light_wpy1ol.png\" alt=\"AS Cremosas\" width=\"250\" style=\"display: block; border: 0; margin: 0 auto; max-width: 100%;\">\n                            <p style=\"margin: 15px 0 0 0;\">Si tienes alguna duda, escríbenos a <br> ascremosas.co@gmail.com o llámanos al <a href=\"tel:+34881068091\" style=\"color: ${colorBeige}; text-decoration: none;\">+34 881 068 091</a></p>\n                            <div style=\"margin-top: 20px; border-top: 1px solid rgba(255,248,235,0.2); padding-top: 20px;\">\n                                <p style=\"opacity: 0.8; margin: 0;\">Este es un mensaje automático, por favor no respondas directamente a este correo.</p>\n                            </div>\n                        </td>\n                    </tr>\n\n                </table>\n            </td>\n        </tr>\n    </table>\n</body>\n</html>\n`;\n\nmsg.to = order?.customer_email;\nmsg.subject = `Confirmación de pedido #${order?.order_id} - AS Cremosas`;\nmsg.payload = emailHtml;\n\nreturn msg;",
+        "func": "const order = msg.order;\nconst lang = msg?.lang || 'es'; \n\nconst translations = {\n    es: {\n        subject: `Confirmación de pedido #${order?.order_id} - AS Cremosas`,\n        thanks: \"¡Gracias por tu pedido!\",\n        hello: \"Hola\",\n        received: \"hemos recibido tu pedido correctamente. Aquí tienes los detalles:\",\n        orderNum: \"Número de pedido\",\n        pickup: \"Recogida\",\n        morning: \"por la mañana\",\n        afternoon: \"por la tarde\",\n        total: \"TOTAL\",\n        contact: \"Si tienes alguna duda, escríbenos a\",\n        callUs: \"o llámanos al\",\n        autoMessage: \"Este es un mensaje automático, por favor no respondas directamente a este correo.\",\n        noGluten: \"sin gluten\",\n        noLactose: \"sin lactosa\",\n        locale: 'es-ES'\n    },\n    en: {\n        subject: `Order Confirmation #${order?.order_id} - AS Cremosas`,\n        thanks: \"Thank you for your order!\",\n        hello: \"Hello\",\n        received: \"we have received your order correctly. Here are the details:\",\n        orderNum: \"Order number\",\n        pickup: \"Pickup\",\n        morning: \"in the morning\",\n        afternoon: \"in the afternoon\",\n        total: \"TOTAL\",\n        contact: \"If you have any questions, write to us at\",\n        callUs: \"or call us at\",\n        autoMessage: \"This is an automated message, please do not reply directly to this email.\",\n        noGluten: \"gluten-free\",\n        noLactose: \"lactose-free\",\n        locale: 'en-GB'\n    },\n    gl: {\n        subject: `Confirmación do pedido #${order?.order_id} - AS Cremosas`,\n        thanks: \"Grazas polo teu pedido!\",\n        hello: \"Ola\",\n        received: \"recibimos o teu pedido correctamente. Aquí tes os detalles:\",\n        orderNum: \"Número de pedido\",\n        pickup: \"Recollida\",\n        morning: \"pola mañá\",\n        afternoon: \"pola tarde\",\n        total: \"TOTAL\",\n        contact: \"Se tes algunha dúbida, escríbenos a\",\n        callUs: \"ou chámanos ao\",\n        autoMessage: \"Este é un mensaxe automático, por favor non respondas directamente a este correo.\",\n        noGluten: \"sen glute\",\n        noLactose: \"sen lactosa\",\n        locale: 'gl-ES'\n    }\n};\n\nconst t = translations[lang] || translations['es'];\n\nconst colorChocolate = \"#4A250D\";\nconst colorBeige = \"#FFF8EB\";\n\nconst pickupDate = new Date(order.pickup_date).toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: 'numeric',\n    month: 'long'\n}).replace('/', '.');\n\nconst shift = order?.pickup_time === 'morning' ? t.morning : t.afternoon;\n\nconst itemsHtml = order.items.map(item => {\n    const dietary = [];\n    if (item?.is_gluten_free) dietary.push(t.noGluten);\n    if (item?.is_lactose_free) dietary.push(t.noLactose);\n    \n    const dietaryText = dietary.length > 0 \n        ? `<br><span style=\"font-size: 12px; color: #856404;\">(${dietary.join(', ')})</span>` \n        : '';\n\n    return `\n        <tr>\n            <td style=\"padding: 12px 15px; border-bottom: 1px solid #E5DED0; color: ${colorChocolate}; font-family: 'Montserrat', serif; text-align: left;\">\n                <span style=\"font-weight: bold;\">${item.quantity}x</span> ${item?.product_name}\n                <div style=\"font-size: 13px; color: #6e5a4e;\">${item?.variant_name}${dietaryText}</div>\n            </td>\n            <td style=\"padding: 12px 15px; border-bottom: 1px solid #E5DED0; text-align: right; color: ${colorChocolate}; font-weight: bold; white-space: nowrap;\">\n                ${parseFloat(item.unit_price).toFixed(2)}€\n            </td>\n        </tr>`;\n}).join('');\n\nconst emailHtml = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n</head>\n<body style=\"margin: 0; padding: 0; background-color: ${colorBeige};\">\n    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"background-color: ${colorBeige}; padding: 10px;\">\n        <tr>\n            <td align=\"center\">\n                <table width=\"600\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); max-width: 100%;\">\n                    <tr>\n                        <td style=\"padding: 20px; text-align: center;\">\n                            <h1 style=\"color: ${colorChocolate}; font-family: 'Montserrat', serif; font-size: 24px; margin: 0;\">${t.thanks}</h1>\n                            <p style=\"color: #6e5a4e; font-family: 'Montserrat', serif; font-size: 16px; line-height: 1.5; margin: 15px 0;\">\n                                ${t.hello} <strong>${order?.customer_name}</strong>, ${t.received}\n                            </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"padding: 0 20px 20px 20px;\">\n                            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"10\" style=\"background-color: ${colorBeige}; border-radius: 5px; font-family: 'Montserrat', serif; font-size: 14px; color: ${colorChocolate};\">\n                                <tr>\n                                    <td style=\"text-align: center;\"><strong>${t.orderNum}:</strong><br>${order?.order_id}</td>\n                                    <td style=\"text-align: center;\"><strong>${t.pickup}:</strong><br>${pickupDate}<br>(${shift})</td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"padding: 0 20px 20px 20px;\">\n                            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"max-width: 100%;\">\n                                ${itemsHtml}\n                                <tr>\n                                    <td style=\"padding: 20px 15px; font-family: 'Montserrat', serif; font-size: 18px; color: ${colorChocolate}; font-weight: bold; text-align: left;\">${t.total}</td>\n                                    <td style=\"padding: 20px 15px; text-align: right; font-family: 'Montserrat', serif; font-size: 22px; color: ${colorChocolate}; font-weight: bold; white-space: nowrap;\">${order.total_price}€</td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td align=\"center\" style=\"padding: 30px 20px; background-color: ${colorChocolate}; color: ${colorBeige}; font-family: 'Montserrat', serif; font-size: 12px; text-align: center;\">\n                            <img src=\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765558484/logo-light_wpy1ol.png\" alt=\"AS Cremosas\" width=\"250\" style=\"display: block; border: 0; margin: 0 auto; max-width: 100%;\">\n                            <p style=\"margin: 15px 0 0 0;\">${t.contact} <br> ascremosas.co@gmail.com ${t.callUs} <a href=\"tel:+34881068091\" style=\"color: ${colorBeige}; text-decoration: none;\">+34 881 068 091</a></p>\n                            <div style=\"margin-top: 20px; border-top: 1px solid rgba(255,248,235,0.2); padding-top: 20px;\">\n                                <p style=\"opacity: 0.8; margin: 0;\">${t.autoMessage}</p>\n                            </div>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</body>\n</html>\n`;\n\nmsg.to = order?.customer_email;\nmsg.subject = t.subject;\nmsg.payload = emailHtml;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 500,
+        "x": 490,
+        "y": 480,
         "wires": [
             [
                 "d9e1ba5675396e42"
@@ -2733,7 +2734,7 @@
         "z": "b73d17450c17803c",
         "g": "33341c9e456ac5e4",
         "name": "form email",
-        "func": "const order = msg.order;\n\nconst colorChocolate = \"#4A250D\";\nconst colorBeige = \"#FFF8EB\";\n\nconst pickupDate = new Date(order.pickup_date).toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: 'numeric',\n    month: 'long'\n}).replace('/', '.');\nconst shift = order?.pickup_time === 'morning' ? 'por la mañana' : 'por la tarde';\n\nconst itemsHtml = order.items.map(item => {\n    const dietary = [];\n    if (item?.is_gluten_free) {\n        dietary.push('sin gluten')\n    };\n\n    if (item?.is_lactose_free) {\n        dietary.push('sin lactosa')\n    };\n    const dietaryText = dietary.length > 0 \n        ? `<br><span style=\"font-size: 12px; color: #856404;\">(${dietary.join(', ')})</span>` \n        : '';\n\n    return `\n        <tr>\n            <td style=\"padding: 12px 15px; border-bottom: 1px solid #E5DED0; color: ${colorChocolate}; font-family: 'Montserrat', serif; text-align: left;\">\n                <span style=\"font-weight: bold;\">${item.quantity}x</span> ${item?.product_name}\n                <div style=\"font-size: 13px; color: #6e5a4e;\">${item?.variant_name}${dietaryText}</div>\n            </td>\n            <td style=\"padding: 12px 15px; border-bottom: 1px solid #E5DED0; text-align: right; color: ${colorChocolate}; font-weight: bold; white-space: nowrap;\">\n                ${parseFloat(item.unit_price).toFixed(2)}€\n            </td>\n        </tr>`;\n}).join('');\n\nconst emailHtml = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n</head>\n<body style=\"margin: 0; padding: 0; background-color: ${colorBeige};\">\n    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"background-color: ${colorBeige}; padding: 10px;\">\n        <tr>\n            <td align=\"center\">\n                <table width=\"600\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); max-width: 100%;\">\n                    <tr>\n                        <td style=\"padding: 20px; text-align: center;\">\n                            <h1 style=\"color: ${colorChocolate}; font-family: 'Montserrat', serif; font-size: 24px; margin: 0;\">¡Gracias por tu pedido!</h1>\n                            <p style=\"color: #6e5a4e; font-family: 'Montserrat', serif; font-size: 16px; line-height: 1.5; margin: 15px 0;\">\n                                Hola <strong>${order?.customer_name}</strong>, hemos recibido tu pedido correctamente. Aquí tienes los detalles:\n                            </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"padding: 0 20px 20px 20px;\">\n                            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"10\" style=\"background-color: ${colorBeige}; border-radius: 5px; font-family: 'Montserrat', serif; font-size: 14px; color: ${colorChocolate};\">\n                                <tr>\n                                    <td style=\"text-align: center;\"><strong>Número de pedido:</strong><br>${order?.order_id}</td>\n                                    <td style=\"text-align: center;\"><strong>Recogida:</strong><br>${pickupDate}<br>(${shift})</td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"padding: 0 20px 20px 20px;\">\n                            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"max-width: 100%;\">\n                                ${itemsHtml}\n                                <tr>\n                                    <td style=\"padding: 20px 15px; font-family: 'Montserrat', serif; font-size: 18px; color: ${colorChocolate}; font-weight: bold; text-align: left;\">TOTAL</td>\n                                    <td style=\"padding: 20px 15px; text-align: right; font-family: 'Montserrat', serif; font-size: 22px; color: ${colorChocolate}; font-weight: bold; white-space: nowrap;\">${order.total_price}€</td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td align=\"center\" style=\"padding: 30px 20px; background-color: ${colorChocolate}; color: ${colorBeige}; font-family: 'Montserrat', serif; font-size: 12px; text-align: center;\">\n                            <img src=\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765558484/logo-light_wpy1ol.png\" alt=\"AS Cremosas\" width=\"250\" style=\"display: block; border: 0; margin: 0 auto; max-width: 100%;\">\n                            <p style=\"margin: 15px 0 0 0;\">Si tienes alguna duda, escríbenos a <br> ascremosas.co@gmail.com o llámanos al <a href=\"tel:+34881068091\" style=\"color: ${colorBeige}; text-decoration: none;\">+34 881 068 091</a></p>\n                            <div style=\"margin-top: 20px; border-top: 1px solid rgba(255,248,235,0.2); padding-top: 20px;\">\n                                <p style=\"opacity: 0.8; margin: 0;\">Este es un mensaje automático, por favor no respondas directamente a este correo.</p>\n                            </div>\n                        </td>\n                    </tr>\n\n                </table>\n            </td>\n        </tr>\n    </table>\n</body>\n</html>\n`;\n\nmsg.to = order?.customer_email;\nmsg.subject = `Confirmación de pedido #${order?.order_id} - AS Cremosas`;\nmsg.payload = emailHtml;\n\nreturn msg;",
+        "func": "const order = msg.order;\nconst lang = msg?.lang || 'es'; \n\nconst translations = {\n    es: {\n        subject: `Confirmación de pedido #${order?.order_id} - AS Cremosas`,\n        thanks: \"¡Gracias por tu pedido!\",\n        hello: \"Hola\",\n        received: \"hemos recibido tu pedido correctamente. Aquí tienes los detalles:\",\n        orderNum: \"Número de pedido\",\n        pickup: \"Recogida\",\n        morning: \"por la mañana\",\n        afternoon: \"por la tarde\",\n        total: \"TOTAL\",\n        contact: \"Si tienes alguna duda, escríbenos a\",\n        callUs: \"o llámanos al\",\n        autoMessage: \"Este es un mensaje automático, por favor no respondas directamente a este correo.\",\n        noGluten: \"sin gluten\",\n        noLactose: \"sin lactosa\",\n        locale: 'es-ES'\n    },\n    en: {\n        subject: `Order Confirmation #${order?.order_id} - AS Cremosas`,\n        thanks: \"Thank you for your order!\",\n        hello: \"Hello\",\n        received: \"we have received your order correctly. Here are the details:\",\n        orderNum: \"Order number\",\n        pickup: \"Pickup\",\n        morning: \"in the morning\",\n        afternoon: \"in the afternoon\",\n        total: \"TOTAL\",\n        contact: \"If you have any questions, write to us at\",\n        callUs: \"or call us at\",\n        autoMessage: \"This is an automated message, please do not reply directly to this email.\",\n        noGluten: \"gluten-free\",\n        noLactose: \"lactose-free\",\n        locale: 'en-GB'\n    },\n    gl: {\n        subject: `Confirmación do pedido #${order?.order_id} - AS Cremosas`,\n        thanks: \"Grazas polo teu pedido!\",\n        hello: \"Ola\",\n        received: \"recibimos o teu pedido correctamente. Aquí tes os detalles:\",\n        orderNum: \"Número de pedido\",\n        pickup: \"Recollida\",\n        morning: \"pola mañá\",\n        afternoon: \"pola tarde\",\n        total: \"TOTAL\",\n        contact: \"Se tes algunha dúbida, escríbenos a\",\n        callUs: \"ou chámanos ao\",\n        autoMessage: \"Este é un mensaxe automático, por favor non respondas directamente a este correo.\",\n        noGluten: \"sen glute\",\n        noLactose: \"sen lactosa\",\n        locale: 'gl-ES'\n    }\n};\n\nconst t = translations[lang] || translations['es'];\n\nconst colorChocolate = \"#4A250D\";\nconst colorBeige = \"#FFF8EB\";\n\nconst pickupDate = new Date(order.pickup_date).toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: 'numeric',\n    month: 'long'\n}).replace('/', '.');\n\nconst shift = order?.pickup_time === 'morning' ? t.morning : t.afternoon;\n\nconst itemsHtml = order.items.map(item => {\n    const dietary = [];\n    if (item?.is_gluten_free) dietary.push(t.noGluten);\n    if (item?.is_lactose_free) dietary.push(t.noLactose);\n    \n    const dietaryText = dietary.length > 0 \n        ? `<br><span style=\"font-size: 12px; color: #856404;\">(${dietary.join(', ')})</span>` \n        : '';\n\n    return `\n        <tr>\n            <td style=\"padding: 12px 15px; border-bottom: 1px solid #E5DED0; color: ${colorChocolate}; font-family: 'Montserrat', serif; text-align: left;\">\n                <span style=\"font-weight: bold;\">${item.quantity}x</span> ${item?.product_name}\n                <div style=\"font-size: 13px; color: #6e5a4e;\">${item?.variant_name}${dietaryText}</div>\n            </td>\n            <td style=\"padding: 12px 15px; border-bottom: 1px solid #E5DED0; text-align: right; color: ${colorChocolate}; font-weight: bold; white-space: nowrap;\">\n                ${parseFloat(item.unit_price).toFixed(2)}€\n            </td>\n        </tr>`;\n}).join('');\n\nconst emailHtml = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n</head>\n<body style=\"margin: 0; padding: 0; background-color: ${colorBeige};\">\n    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"background-color: ${colorBeige}; padding: 10px;\">\n        <tr>\n            <td align=\"center\">\n                <table width=\"600\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); max-width: 100%;\">\n                    <tr>\n                        <td style=\"padding: 20px; text-align: center;\">\n                            <h1 style=\"color: ${colorChocolate}; font-family: 'Montserrat', serif; font-size: 24px; margin: 0;\">${t.thanks}</h1>\n                            <p style=\"color: #6e5a4e; font-family: 'Montserrat', serif; font-size: 16px; line-height: 1.5; margin: 15px 0;\">\n                                ${t.hello} <strong>${order?.customer_name}</strong>, ${t.received}\n                            </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"padding: 0 20px 20px 20px;\">\n                            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"10\" style=\"background-color: ${colorBeige}; border-radius: 5px; font-family: 'Montserrat', serif; font-size: 14px; color: ${colorChocolate};\">\n                                <tr>\n                                    <td style=\"text-align: center;\"><strong>${t.orderNum}:</strong><br>${order?.order_id}</td>\n                                    <td style=\"text-align: center;\"><strong>${t.pickup}:</strong><br>${pickupDate}<br>(${shift})</td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"padding: 0 20px 20px 20px;\">\n                            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"max-width: 100%;\">\n                                ${itemsHtml}\n                                <tr>\n                                    <td style=\"padding: 20px 15px; font-family: 'Montserrat', serif; font-size: 18px; color: ${colorChocolate}; font-weight: bold; text-align: left;\">${t.total}</td>\n                                    <td style=\"padding: 20px 15px; text-align: right; font-family: 'Montserrat', serif; font-size: 22px; color: ${colorChocolate}; font-weight: bold; white-space: nowrap;\">${order.total_price}€</td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td align=\"center\" style=\"padding: 30px 20px; background-color: ${colorChocolate}; color: ${colorBeige}; font-family: 'Montserrat', serif; font-size: 12px; text-align: center;\">\n                            <img src=\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765558484/logo-light_wpy1ol.png\" alt=\"AS Cremosas\" width=\"250\" style=\"display: block; border: 0; margin: 0 auto; max-width: 100%;\">\n                            <p style=\"margin: 15px 0 0 0;\">${t.contact} <br> ascremosas.co@gmail.com ${t.callUs} <a href=\"tel:+34881068091\" style=\"color: ${colorBeige}; text-decoration: none;\">+34 881 068 091</a></p>\n                            <div style=\"margin-top: 20px; border-top: 1px solid rgba(255,248,235,0.2); padding-top: 20px;\">\n                                <p style=\"opacity: 0.8; margin: 0;\">${t.autoMessage}</p>\n                            </div>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</body>\n</html>\n`;\n\nmsg.to = order?.customer_email;\nmsg.subject = t.subject;\nmsg.payload = emailHtml;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3361,7 +3362,7 @@
         "z": "f3eb2de3da3352db",
         "g": "8ca3eb9a68741ec8",
         "name": "create url",
-        "func": "const SECRET_KEY = env.get(\"STRIPE_SECRET_KEY\") || '';\nconst FRONTEND_URL = env.get(\"FRONTEND_URL\") || '';\n\nconst {\n    customerEmail,\n    totalPrice,\n    lang\n} = msg.orderData;\n\nconst orderMap = {\n    es: 'Pedido',\n    gl: 'Pedido',\n    en: 'Order'\n};\n\nconst formData = {\n    'success_url': `${FRONTEND_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,\n    'cancel_url': `${FRONTEND_URL}/checkout/cancel?order_id=${msg.orderId}`,\n    'mode': 'payment',\n    'customer_email': customerEmail,\n    'metadata[order_id]': msg.orderId,\n    'client_reference_id': msg.orderId,\n    'payment_intent_data[metadata][order_id]': msg.orderId,\n    'locale': 'auto',\n    'line_items[0][price_data][currency]': 'eur',\n    'line_items[0][price_data][product_data][name]': `${orderMap[lang]} #${msg.orderId}`,\n    'line_items[0][price_data][unit_amount]': totalPrice * 100,\n    'line_items[0][quantity]': 1\n};\n\nconst body = Object.entries(formData)\n    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)\n    .join('&');\n\nmsg.payload = body;\n\nmsg.url = \"https://api.stripe.com/v1/checkout/sessions\";\nmsg.method = \"POST\";\nmsg.headers = {\n    'Authorization': `Bearer ${SECRET_KEY}`,\n    'Content-Type': 'application/x-www-form-urlencoded',\n    'Idempotency-Key': `checkout_${msg.orderId}`\n};\n\nreturn msg;",
+        "func": "const SECRET_KEY = env.get(\"STRIPE_SECRET_KEY\") || '';\nconst FRONTEND_URL = env.get(\"FRONTEND_URL\") || '';\n\nconst {\n    customerEmail,\n    totalPrice,\n    lang\n} = msg.orderData;\n\nconst orderMap = {\n    es: 'Pedido',\n    gl: 'Pedido',\n    en: 'Order'\n};\n\nconst formData = {\n    'success_url': `${FRONTEND_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}&lang=${lang}`,\n    'cancel_url': `${FRONTEND_URL}/checkout/cancel?order_id=${msg.orderId}&lang=${lang}`,\n    'mode': 'payment',\n    'customer_email': customerEmail,\n    'metadata[order_id]': msg.orderId,\n    'metadata[lang]': lang,\n    'client_reference_id': msg.orderId,\n    'payment_intent_data[metadata][order_id]': msg.orderId,\n    'locale': 'auto',\n    'line_items[0][price_data][currency]': 'eur',\n    'line_items[0][price_data][product_data][name]': `${orderMap[lang]} #${msg.orderId}`,\n    'line_items[0][price_data][unit_amount]': totalPrice * 100,\n    'line_items[0][quantity]': 1\n};\n\nconst body = Object.entries(formData)\n    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)\n    .join('&');\n\nmsg.payload = body;\n\nmsg.url = \"https://api.stripe.com/v1/checkout/sessions\";\nmsg.method = \"POST\";\nmsg.headers = {\n    'Authorization': `Bearer ${SECRET_KEY}`,\n    'Content-Type': 'application/x-www-form-urlencoded',\n    'Idempotency-Key': `checkout_${msg.orderId}`\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
