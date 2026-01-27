@@ -641,96 +641,6 @@
         "h": 82
     },
     {
-        "id": "d8ef0639fb5dddc2",
-        "type": "group",
-        "z": "554b53c71ea14722",
-        "g": "4e79e7e4e982c657",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "http_response_products",
-            "http_post_variant",
-            "function_validate_variant_data",
-            "link_call_db_create_variant",
-            "function_format_create_variant_response",
-            "http_put_variant",
-            "function_validate_update_variant",
-            "link_call_db_update_variant",
-            "function_format_update_variant_response",
-            "http_delete_variant",
-            "function_validate_delete_variant",
-            "link_call_db_delete_variant",
-            "function_format_delete_variant_response",
-            "e823edd40e8fa5fb",
-            "4848fd5bbff00ef3"
-        ],
-        "x": 54,
-        "y": 639,
-        "w": 932,
-        "h": 262
-    },
-    {
-        "id": "f3332b567095dce3",
-        "type": "group",
-        "z": "90446d3495bddb11",
-        "g": "61f89699cc21cd28",
-        "name": "change",
-        "style": {
-            "stroke": "#ff0000",
-            "label": true
-        },
-        "nodes": [
-            "ca4fb2bb9e39155f",
-            "34468b85c601fe47",
-            "b6847ac740089462",
-            "f6c012982eaf5525",
-            "1fdd72ad06321cd0",
-            "function_validate_update_category",
-            "http_put_category",
-            "3a345e696dc8ade6",
-            "link_call_db_update_category",
-            "function_format_update_category_response"
-        ],
-        "x": 54,
-        "y": 299,
-        "w": 872,
-        "h": 162
-    },
-    {
-        "id": "79ac7d2c6759d325",
-        "type": "group",
-        "z": "554b53c71ea14722",
-        "g": "4e79e7e4e982c657",
-        "name": "change",
-        "style": {
-            "stroke": "#ff0000",
-            "label": true
-        },
-        "nodes": [
-            "http_post_product",
-            "function_validate_product_data",
-            "link_call_db_create_product",
-            "function_format_create_product_response",
-            "2b159c66dfaecd0d",
-            "http_put_product",
-            "function_validate_update_product",
-            "link_call_db_update_product",
-            "function_format_update_product_response",
-            "fbd4d677a6e08f26"
-        ],
-        "x": 54,
-        "y": 419,
-        "w": 872,
-        "h": 182
-    },
-    {
         "id": "8ca3eb9a68741ec8",
         "type": "group",
         "z": "f3eb2de3da3352db",
@@ -873,33 +783,6 @@
         "h": 107
     },
     {
-        "id": "6dfcde191de2c8e8",
-        "type": "group",
-        "z": "deae6838e7a58a75",
-        "name": "b2b message",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "a50972a6104c9c83",
-            "22b8093b70924877",
-            "0c61b80ac9a3a822",
-            "9f44d7c3e084b6a7",
-            "86ba397398bf662f",
-            "36c88d73699b3fec",
-            "400938d5807880f8",
-            "febf71dbd536155e",
-            "d9b5f353490d8989",
-            "bbcd1c49821870a2",
-            "dfad3bb889e35239",
-            "6f984971e656c805"
-        ],
-        "x": 34,
-        "y": 194,
-        "w": 1432,
-        "h": 127
-    },
-    {
         "id": "b380f68b15913b37",
         "type": "group",
         "z": "15bda437fadfc244",
@@ -926,6 +809,124 @@
         "y": 39,
         "w": 952,
         "h": 162
+    },
+    {
+        "id": "d8ef0639fb5dddc2",
+        "type": "group",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "http_response_products",
+            "http_post_variant",
+            "function_validate_variant_data",
+            "link_call_db_create_variant",
+            "function_format_create_variant_response",
+            "http_put_variant",
+            "function_validate_update_variant",
+            "link_call_db_update_variant",
+            "function_format_update_variant_response",
+            "http_delete_variant",
+            "function_validate_delete_variant",
+            "link_call_db_delete_variant",
+            "function_format_delete_variant_response",
+            "e823edd40e8fa5fb",
+            "4848fd5bbff00ef3"
+        ],
+        "x": 54,
+        "y": 639,
+        "w": 932,
+        "h": 262
+    },
+    {
+        "id": "f3332b567095dce3",
+        "type": "group",
+        "z": "90446d3495bddb11",
+        "g": "61f89699cc21cd28",
+        "name": "change",
+        "style": {
+            "stroke": "#ff0000",
+            "label": true
+        },
+        "nodes": [
+            "ca4fb2bb9e39155f",
+            "34468b85c601fe47",
+            "b6847ac740089462",
+            "f6c012982eaf5525",
+            "1fdd72ad06321cd0",
+            "function_validate_update_category",
+            "http_put_category",
+            "3a345e696dc8ade6",
+            "link_call_db_update_category",
+            "function_format_update_category_response"
+        ],
+        "x": 54,
+        "y": 299,
+        "w": 872,
+        "h": 162
+    },
+    {
+        "id": "79ac7d2c6759d325",
+        "type": "group",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "name": "change",
+        "style": {
+            "stroke": "#ff0000",
+            "label": true
+        },
+        "nodes": [
+            "http_post_product",
+            "function_validate_product_data",
+            "link_call_db_create_product",
+            "function_format_create_product_response",
+            "2b159c66dfaecd0d",
+            "http_put_product",
+            "function_validate_update_product",
+            "link_call_db_update_product",
+            "function_format_update_product_response",
+            "fbd4d677a6e08f26"
+        ],
+        "x": 54,
+        "y": 419,
+        "w": 872,
+        "h": 182
+    },
+    {
+        "id": "6dfcde191de2c8e8",
+        "type": "group",
+        "z": "f3eb2de3da3352db",
+        "name": "b2b message",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a50972a6104c9c83",
+            "22b8093b70924877",
+            "0c61b80ac9a3a822",
+            "9f44d7c3e084b6a7",
+            "86ba397398bf662f",
+            "36c88d73699b3fec",
+            "400938d5807880f8",
+            "febf71dbd536155e",
+            "d9b5f353490d8989",
+            "bbcd1c49821870a2",
+            "dfad3bb889e35239",
+            "6f984971e656c805",
+            "3312b2270a5dde54"
+        ],
+        "x": 34,
+        "y": 534,
+        "w": 1392,
+        "h": 147
     },
     {
         "id": "134c1c118160eea1",
@@ -1032,58 +1033,6 @@
         ]
     },
     {
-        "id": "0c61b80ac9a3a822",
-        "type": "junction",
-        "z": "deae6838e7a58a75",
-        "g": "6dfcde191de2c8e8",
-        "x": 420,
-        "y": 220,
-        "wires": [
-            [
-                "86ba397398bf662f"
-            ]
-        ]
-    },
-    {
-        "id": "6f984971e656c805",
-        "type": "junction",
-        "z": "deae6838e7a58a75",
-        "g": "6dfcde191de2c8e8",
-        "x": 960,
-        "y": 240,
-        "wires": [
-            [
-                "bbcd1c49821870a2"
-            ]
-        ]
-    },
-    {
-        "id": "bbcd1c49821870a2",
-        "type": "junction",
-        "z": "deae6838e7a58a75",
-        "g": "6dfcde191de2c8e8",
-        "x": 1300,
-        "y": 240,
-        "wires": [
-            [
-                "400938d5807880f8"
-            ]
-        ]
-    },
-    {
-        "id": "86ba397398bf662f",
-        "type": "junction",
-        "z": "deae6838e7a58a75",
-        "g": "6dfcde191de2c8e8",
-        "x": 1300,
-        "y": 220,
-        "wires": [
-            [
-                "400938d5807880f8"
-            ]
-        ]
-    },
-    {
         "id": "a4d520b2dbd56b75",
         "type": "junction",
         "z": "511654ac3eb34f3c",
@@ -1106,6 +1055,58 @@
         "wires": [
             [
                 "8719af235663d033"
+            ]
+        ]
+    },
+    {
+        "id": "0c61b80ac9a3a822",
+        "type": "junction",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "x": 420,
+        "y": 560,
+        "wires": [
+            [
+                "86ba397398bf662f"
+            ]
+        ]
+    },
+    {
+        "id": "86ba397398bf662f",
+        "type": "junction",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "x": 1260,
+        "y": 560,
+        "wires": [
+            [
+                "400938d5807880f8"
+            ]
+        ]
+    },
+    {
+        "id": "bbcd1c49821870a2",
+        "type": "junction",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "x": 1260,
+        "y": 580,
+        "wires": [
+            [
+                "400938d5807880f8"
+            ]
+        ]
+    },
+    {
+        "id": "6f984971e656c805",
+        "type": "junction",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "x": 920,
+        "y": 580,
+        "wires": [
+            [
+                "bbcd1c49821870a2"
             ]
         ]
     },
@@ -1536,7 +1537,7 @@
         "z": "511654ac3eb34f3c",
         "g": "4c38c06caa282caf",
         "name": "send msg",
-        "func": "const insertErrorLog = flow.get(\"insertErrorLog\");\n\nconst TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nconst TOPICS = {\n    pedidos: 14,      \n    vender: 6,       \n    fabricar: 5,  \n    b2b: 7  \n};\nconst CHAT_ID = -1003204791846;\n\nconst { message = '', topic = ''  } = msg.payload || {};\n\nif (!TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL || !message || !['pedidos', 'fabricar', 'b2b', 'vender']?.includes(topic)) {\n  msg.error = {\n    message: \"Missed ENV or necessary data\"\n  };\n\n  await insertErrorLog({\n    code: 'ERR_MISSED_DATA',\n    message: msg.error?.message,\n    context: {\n      TELEGRAM_BOT_TOKEN,\n      TELEGRAM_BASE_URL,\n      ...msg.payload\n    }\n  });\n\n  node.error(msg.error, msg);\n  return [msg, null];\n};\n\nconst body = JSON.stringify({\n  chat_id: CHAT_ID,\n  text: message,\n  parse_mode: 'Markdown',\n  message_thread_id: TOPICS?.[topic] || null\n});\n\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;\nmsg.method = 'POST';\nmsg.headers = {\n  'Content-Type': 'application/json',\n  'Content-Length': Buffer.byteLength(body)\n};\n\nmsg.payload = body;\nmsg.body = body;\n\nreturn [null, msg];",
+        "func": "const insertErrorLog = flow.get(\"insertErrorLog\");\n\nconst TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nconst TOPICS = {\n    pedidos: 14,      \n    vender: 6,       \n    fabricar: 5,  \n    b2b: 7,\n    errors: 32  \n};\nconst CHAT_ID = -1003204791846;\n\nconst { message = '', topic = ''  } = msg.payload || {};\n\nif (!TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL || !message || !['pedidos', 'fabricar', 'b2b', 'vender', 'errors']?.includes(topic)) {\n  msg.error = {\n    message: \"Missed ENV or necessary data\"\n  };\n\n  await insertErrorLog({\n    code: 'ERR_MISSED_DATA',\n    message: msg.error?.message,\n    context: {\n      TELEGRAM_BOT_TOKEN,\n      TELEGRAM_BASE_URL,\n      ...msg.payload\n    }\n  });\n\n  node.error(msg.error, msg);\n  return [msg, null];\n};\n\nconst body = JSON.stringify({\n  chat_id: CHAT_ID,\n  text: message,\n  parse_mode: 'HTML',\n  message_thread_id: TOPICS?.[topic] || null\n});\n\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;\nmsg.method = 'POST';\nmsg.headers = {\n  'Content-Type': 'application/json',\n  'Content-Length': Buffer.byteLength(body)\n};\n\nmsg.payload = body;\nmsg.body = body;\n\nreturn [null, msg];",
         "outputs": 2,
         "timeout": "",
         "noerr": 0,
@@ -1547,7 +1548,8 @@
         "y": 260,
         "wires": [
             [
-                "a4d520b2dbd56b75"
+                "a4d520b2dbd56b75",
+                "27eb832876d24cb6"
             ],
             [
                 "d4dcbe162b98b5d1"
@@ -1593,7 +1595,8 @@
         "y": 280,
         "wires": [
             [
-                "8719af235663d033"
+                "8719af235663d033",
+                "7c3c69221299529f"
             ]
         ]
     },
@@ -1607,6 +1610,40 @@
         "links": [],
         "x": 545,
         "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7c3c69221299529f",
+        "type": "debug",
+        "z": "511654ac3eb34f3c",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "27eb832876d24cb6",
+        "type": "debug",
+        "z": "511654ac3eb34f3c",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 220,
         "wires": []
     },
     {
@@ -1889,7 +1926,7 @@
         "z": "b73d17450c17803c",
         "g": "34e680e7054de3d0",
         "name": "form message",
-        "func": "const { order_id, customer_name, customer_phone, pickup_date, pickup_time,\n  total_price, notes, items = [], paid_at } = msg?.order || {};\n\nconst date = new Date(pickup_date);\nconst formattedDate = date.toLocaleDateString('es-ES', {\n  weekday: 'long',\n  day: 'numeric',\n  month: 'long'\n});\n\nconst paidDate = new Date(paid_at);\nconst formattedPaidDateTime = paidDate.toLocaleString('es-ES', {\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit',\n  timeZone: 'Europe/Madrid'\n}).replace(',', '');\n\nconst timeText = pickup_time === 'evening' ? 'por la tarde' : 'por la mañana';\n\nconst itemsList = items?.map(item => {\n  const dietary = [];\n\n  if (item?.is_gluten_free) dietary.push('sin gluten');\n  if (item?.is_lactose_free) dietary.push('sin lactosa');\n  const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n\n  return `  • ${item.quantity} ${item.product_name} - ${item.variant_name}${dietaryText}`;\n}).join('\\n');\n\nconst message = `\n🎂 *NUEVO PEDIDO* 🎂\n\n📋 *Pedido:* ${order_id}\n👤 *Cliente:* ${customer_name}\n📱 *Teléfono:* ${customer_phone}\n\n📅 *Recogida:* ${formattedDate}\n🕐 *Horario:* ${timeText}\n\n🛍️ *Productos:*\n${itemsList}\n\n💰 *Total:* ${total_price}€\n\n✅ *PAGADO:* ${formattedPaidDateTime}\n\n${notes ? `📝 *Notas:* ${notes}` : ''}\n  `.trim();\n\nmsg.payload = {\n  message,\n  topic: 'pedidos'\n}\n\nreturn msg;",
+        "func": "const { order_id, customer_name, customer_phone, pickup_date, pickup_time,\n  total_price, notes, items = [], paid_at } = msg?.order || {};\n\nconst date = new Date(pickup_date);\nconst formattedDate = date.toLocaleDateString('es-ES', {\n  weekday: 'long',\n  day: '2-digit',\n  month: 'long'\n}).replace('/', '.');\n\nconst paidDate = new Date(paid_at);\nconst formattedPaidDateTime = paidDate.toLocaleString('es-ES', {\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit',\n  timeZone: 'Europe/Madrid'\n}).replace(',', '');\n\nconst timeText = pickup_time === 'evening' ? 'por la tarde' : 'por la mañana';\n\nconst itemsList = items?.map(item => {\n  const productNameClean = item.product_name?.replace(/^Cremosa(?:\\s+de)?\\s*/i, '').trim();\n  const variantNameClean = item?.variant_name?.split('(')[0].trim()?.toLowerCase();\n  const dietary = [];\n\n  if (item?.is_gluten_free) dietary.push('sin gluten');\n  if (item?.is_lactose_free) dietary.push('sin lactosa');\n  const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n  \n  return `    • ${item?.quantity} ${productNameClean} ${variantNameClean}${dietaryText}`;\n}).join('\\n');\n\nconst message = `\n🎂 <b>NUEVO PEDIDO</b> 🎂\n<i>${formattedDate} (${timeText})</i>\n\n<b>Pedido:</b> ${order_id}\n<b>Cliente:</b> ${customer_name}\n<b>Teléfono:</b> ${customer_phone}\n\n<b>Productos:</b>\n${itemsList}\n\n<b>Total:</b> ${total_price}€\n${notes ? `\\n<b>Notas:</b> ${notes}\\n` : ''}\n✅ <b>PAGADO:</b> ${formattedPaidDateTime}\n`.trim();\n\nmsg.payload = {\n  message,\n  topic: 'pedidos'\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1968,9 +2005,167 @@
         "z": "b73d17450c17803c",
         "name": "00:00",
         "info": "dia siguente\nsanti cantidad\njandro - dia de hoy con detalles",
-        "x": 110,
-        "y": 440,
+        "x": 90,
+        "y": 420,
         "wires": []
+    },
+    {
+        "id": "8b0cc77773268755",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "jandro",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 06 * * 1,2,3,4,5,6",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 120,
+        "y": 500,
+        "wires": [
+            [
+                "3e18abe1e5573a92"
+            ]
+        ]
+    },
+    {
+        "id": "3e18abe1e5573a92",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "orders",
+        "func": "msg.payload = `\nSELECT\n    o.order_id,\n    o.customer_name,\n    o.customer_email,\n    o.customer_phone,\n    TO_CHAR(o.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    o.pickup_time,\n    o.total_price,\n    o.notes,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free\n            )\n            FROM order_items oi\n            LEFT JOIN product_translations pt\n                ON oi.product_id = pt.product_id\n                AND pt.language_code = 'es'\n            LEFT JOIN product_variant_translations pvt\n                ON oi.product_variant_id = pvt.variant_id\n                AND pvt.language_code = 'es'\n            WHERE oi.order_id = o.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM orders o\nWHERE o.pickup_date = CURRENT_DATE AND o.status = 'paid'\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 500,
+        "wires": [
+            [
+                "1dddc496f69d50b9"
+            ]
+        ]
+    },
+    {
+        "id": "1dddc496f69d50b9",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 380,
+        "y": 500,
+        "wires": [
+            [
+                "3a2cbc2e9c0eb2f4"
+            ]
+        ]
+    },
+    {
+        "id": "3a2cbc2e9c0eb2f4",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "form msg",
+        "func": "const orders = msg.payload || [];\nconst MAX_LENGTH = 4000; \n\nconst today = new Date();\nconst formattedDate = today.toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: '2-digit',\n    month: 'long'\n}).replace('/', '.');\n\nif (orders.length === 0) {\n    msg.payload = [{\n        message: `<i>${formattedDate}</i>\\n😫 NO hay pedidos para hoy`,\n        topic: 'vender'\n    }];\n    return msg;\n}\n\nconst formatOrder = (order, i) => {\n    const { order_id, customer_name, customer_phone, total_price, notes, items = [] } = order;\n\n    const itemsList = items.map(item => {\n        const productName = item.product_name?.replace(/^Cremosa(?:\\s+de)?\\s*/i, '').trim();\n        const variantName = item.variant_name?.split('(')[0].trim().toLowerCase();\n        \n        const dietary = [];\n        if (item.is_gluten_free) dietary.push('sin gluten');\n        if (item.is_lactose_free) dietary.push('sin lactosa');\n        const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n\n        return `      • ${item.quantity} ${productName} ${variantName}${dietaryText}`;\n    }).join('\\n');\n\n    return `\\n<b>${i + 1}.</b> ${order_id} <i>${total_price}€</i>\\n<b>${customer_name}</b>\\n${customer_phone}\\n${itemsList}${notes ? `\\nNota: <i>${notes}</i>` : ''}`;\n};\n\nconst splitIntoChunks = (text, limit) => {\n    if (text.length <= limit) return [text];\n    \n    const chunks = [];\n    let currentChunk = \"\";\n    const lines = text.split('\\n');\n\n    for (const line of lines) {\n        if ((currentChunk + line).length > limit) {\n            chunks.push(currentChunk.trim());\n            currentChunk = line + \"\\n\";\n        } else {\n            currentChunk += line + \"\\n\";\n        }\n    }\n    if (currentChunk) chunks.push(currentChunk.trim());\n    return chunks;\n};\n\nconst finalMessages = [];\nconst header = `\\n<i>${formattedDate} (${orders.length})</i>\\n`;\n\nconst processShift = (shiftOrders, title) => {\n    if (shiftOrders?.length === 0) return;\n\n    let shiftText = `<b><i>${title} (${shiftOrders.length})</i></b>\\n`;\n    shiftText += shiftOrders.map((o, i) => formatOrder(o, i)).join('\\n');\n\n    const chunks = splitIntoChunks(shiftText, MAX_LENGTH - header.length);\n    \n    chunks.forEach((chunk, index) => {\n        const prefix = index === 0 ? header : `<i>(Continuación ${title})</i>\\n`;\n        finalMessages.push({\n            message: prefix + chunk,\n            topic: 'vender'\n        });\n    });\n};\n\nconst morningOrders = orders.filter(o => o?.pickup_time === 'morning');\nconst eveningOrders = orders.filter(o => o?.pickup_time === 'evening');\n\nprocessShift(morningOrders, \"por la mañana\");\nprocessShift(eveningOrders, \"por la tarde\");\n\nmsg.payload = finalMessages;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 500,
+        "wires": [
+            [
+                "05b9dafc458ac843"
+            ]
+        ]
+    },
+    {
+        "id": "05b9dafc458ac843",
+        "type": "split",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 650,
+        "y": 500,
+        "wires": [
+            [
+                "040befe79eed286b"
+            ]
+        ]
+    },
+    {
+        "id": "6d6523925f6e6a40",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 860,
+        "y": 500,
+        "wires": [
+            [
+                "9b8489bc4b6367e0"
+            ]
+        ]
+    },
+    {
+        "id": "9b8489bc4b6367e0",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "jandro",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "040befe79eed286b",
+        "type": "delay",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 735,
+        "y": 500,
+        "wires": [
+            [
+                "6d6523925f6e6a40"
+            ]
+        ],
+        "l": false
     },
     {
         "id": "3faee7869eb851bf",
@@ -2151,165 +2346,6 @@
         "l": false
     },
     {
-        "id": "22b8093b70924877",
-        "type": "http in",
-        "z": "deae6838e7a58a75",
-        "g": "6dfcde191de2c8e8",
-        "name": "",
-        "url": "/api/v1/b2b",
-        "method": "post",
-        "upload": false,
-        "skipBodyParsing": false,
-        "swaggerDoc": "",
-        "x": 150,
-        "y": 240,
-        "wires": [
-            [
-                "a50972a6104c9c83"
-            ]
-        ]
-    },
-    {
-        "id": "400938d5807880f8",
-        "type": "http response",
-        "z": "deae6838e7a58a75",
-        "g": "6dfcde191de2c8e8",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 1390,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "d9b5f353490d8989",
-        "type": "function",
-        "z": "deae6838e7a58a75",
-        "g": "6dfcde191de2c8e8",
-        "name": "format response",
-        "func": "if (!!msg?.error) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: 'Something wrong with telegram sending message',\n        data: {}\n    };\n\n    return msg;\n};\n\nmsg.statusCode = 201;\nmsg.payload = {\n    status: 'success',\n    message: 'B2B message created successfully',\n    data: {}\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1220,
-        "y": 280,
-        "wires": [
-            [
-                "400938d5807880f8"
-            ]
-        ]
-    },
-    {
-        "id": "a50972a6104c9c83",
-        "type": "function",
-        "z": "deae6838e7a58a75",
-        "g": "6dfcde191de2c8e8",
-        "name": "validate data",
-        "func": "const data = msg.req?.body || msg?.payload || {};\nconst {\n    companyName = null,\n    contactPerson = null,\n    email = null,\n    phone = null,\n    message = null\n} = data;\n\nconst errors = [];\n\nif (!companyName || typeof companyName !== 'string' || companyName.length < 2) {\n    errors.push({ path: 'customerName', message: 'companyName must be at least 2 characters' });\n}\n\nif (contactPerson && typeof contactPerson !== 'string' || contactPerson.length < 2) {\n    errors.push({ path: 'contactPerson', message: 'contactPerson must be a string' });\n}\n\nif (email && typeof email !== 'string') {\n    errors.push({ path: 'email', message: 'email must be a string' });\n}\n\nif (!phone || typeof phone !== 'string' || phone.length < 5) {\n    errors.push({ path: 'customerPhone', message: 'phone must be at least 5 characters' });\n}\n\nif (message !== null && typeof message !== 'string') {\n    errors.push({ path: 'message', message: 'message must be a string' });\n}\n\nif (errors.length > 0) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: 'error',\n        message: `Validation error: ${errors.map(err => err.message).join(', ')}`,\n        data: null\n    };\n\n    return [msg, null];\n}\n\nmsg.data = {\n    companyName,\n    contactPerson,\n    email,\n    phone,\n    message\n};\n\nreturn [null, msg];",
-        "outputs": 2,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 330,
-        "y": 240,
-        "wires": [
-            [
-                "0c61b80ac9a3a822"
-            ],
-            [
-                "9f44d7c3e084b6a7"
-            ]
-        ]
-    },
-    {
-        "id": "9f44d7c3e084b6a7",
-        "type": "function",
-        "z": "deae6838e7a58a75",
-        "g": "6dfcde191de2c8e8",
-        "name": "create b2b msg",
-        "func": "const { companyName, contactPerson, email, phone, message } = msg?.data || {};\n\nmsg.queryParameters = [companyName, contactPerson, email, phone, message];\nmsg.payload = `\n    INSERT INTO b2b_messages (company_name, contact_person, email, phone, message)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING id\n`;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 500,
-        "y": 260,
-        "wires": [
-            [
-                "36c88d73699b3fec"
-            ]
-        ]
-    },
-    {
-        "id": "febf71dbd536155e",
-        "type": "function",
-        "z": "deae6838e7a58a75",
-        "g": "6dfcde191de2c8e8",
-        "name": "check answer",
-        "func": "if (!msg.payload || msg.payload?.length === 0) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: 'Failed to create b2b msg - no data returned',\n        data: null\n    };\n\n    return [msg, null];\n};\n\nconst { companyName, contactPerson, email, phone, message: userMsg } = msg?.data || {};\n\nconst message = `\n🆕 *Nueva solicitud desde la web*\n\n👤 *Contacto:* ${contactPerson}\n🏢 *Empresa:* ${companyName}\n\n📧 *Email:* ${email}\n📱 *Teléfono:* ${phone}\n\n${userMsg ? `💬 *Mensaje:*\\n_${userMsg}_\\n` : ''}\n\n`.trim();\n\nmsg.payload = {\n  message,\n  topic: 'b2b'\n};\n\nreturn [null, msg];",
-        "outputs": 2,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 860,
-        "y": 260,
-        "wires": [
-            [
-                "6f984971e656c805"
-            ],
-            [
-                "dfad3bb889e35239"
-            ]
-        ]
-    },
-    {
-        "id": "dfad3bb889e35239",
-        "type": "link call",
-        "z": "deae6838e7a58a75",
-        "g": "6dfcde191de2c8e8",
-        "name": "",
-        "links": [
-            "2717e8e40e0e66c5"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1040,
-        "y": 280,
-        "wires": [
-            [
-                "d9b5f353490d8989"
-            ]
-        ]
-    },
-    {
-        "id": "36c88d73699b3fec",
-        "type": "link call",
-        "z": "deae6838e7a58a75",
-        "g": "6dfcde191de2c8e8",
-        "name": "b2b_messages",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 680,
-        "y": 260,
-        "wires": [
-            [
-                "febf71dbd536155e"
-            ]
-        ]
-    },
-    {
         "id": "9c3da4a056ba4ecb",
         "type": "catch",
         "z": "deae6838e7a58a75",
@@ -2349,7 +2385,7 @@
         "scope": null,
         "uncaught": false,
         "x": 100,
-        "y": 560,
+        "y": 720,
         "wires": [
             [
                 "28a51bea48b7e52f"
@@ -2370,7 +2406,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 240,
-        "y": 560,
+        "y": 720,
         "wires": []
     },
     {
@@ -3387,6 +3423,184 @@
         "statusType": "auto",
         "x": 820,
         "y": 980,
+        "wires": []
+    },
+    {
+        "id": "a50972a6104c9c83",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "name": "validate data",
+        "func": "const data = msg.req?.body || msg?.payload || {};\nconst {\n    companyName = null,\n    contactPerson = null,\n    email = null,\n    phone = null,\n    message = null\n} = data;\n\nconst errors = [];\n\nif (!companyName || typeof companyName !== 'string' || companyName.length < 2) {\n    errors.push({ path: 'customerName', message: 'companyName must be at least 2 characters' });\n}\n\nif (contactPerson && typeof contactPerson !== 'string' || contactPerson.length < 2) {\n    errors.push({ path: 'contactPerson', message: 'contactPerson must be a string' });\n}\n\nif (email && typeof email !== 'string') {\n    errors.push({ path: 'email', message: 'email must be a string' });\n}\n\nif (!phone || typeof phone !== 'string' || phone.length < 5) {\n    errors.push({ path: 'customerPhone', message: 'phone must be at least 5 characters' });\n}\n\nif (message !== null && typeof message !== 'string') {\n    errors.push({ path: 'message', message: 'message must be a string' });\n}\n\nif (errors.length > 0) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: 'error',\n        message: `Validation error: ${errors.map(err => err.message).join(', ')}`,\n        data: null\n    };\n\n    return [msg, null];\n}\n\nmsg.data = {\n    companyName,\n    contactPerson,\n    email,\n    phone,\n    message\n};\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 580,
+        "wires": [
+            [
+                "0c61b80ac9a3a822"
+            ],
+            [
+                "9f44d7c3e084b6a7"
+            ]
+        ]
+    },
+    {
+        "id": "22b8093b70924877",
+        "type": "http in",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "name": "",
+        "url": "/api/v1/b2b",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 580,
+        "wires": [
+            [
+                "a50972a6104c9c83"
+            ]
+        ]
+    },
+    {
+        "id": "9f44d7c3e084b6a7",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "name": "create b2b msg",
+        "func": "const { companyName, contactPerson, email, phone, message } = msg?.data || {};\n\nmsg.queryParameters = [companyName, contactPerson, email, phone, message];\nmsg.payload = `\n    INSERT INTO b2b_messages (company_name, contact_person, email, phone, message)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING id\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 600,
+        "wires": [
+            [
+                "36c88d73699b3fec"
+            ]
+        ]
+    },
+    {
+        "id": "36c88d73699b3fec",
+        "type": "link call",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 660,
+        "y": 600,
+        "wires": [
+            [
+                "febf71dbd536155e",
+                "3312b2270a5dde54"
+            ]
+        ]
+    },
+    {
+        "id": "400938d5807880f8",
+        "type": "http response",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1350,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "febf71dbd536155e",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "name": "check answer",
+        "func": "if (!msg.payload || msg.payload?.length === 0) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: 'Failed to create b2b msg - no data returned',\n        data: null\n    };\n\n    return [msg, null];\n};\n\nconst { companyName, contactPerson, email, phone, message: userMsg } = msg?.data || {};\n\nconst message = `\n🆕 <b>NUEVA SOLICITUD</b> 🆕\n\n${contactPerson} de <b>${companyName}</b>\n\n<b>Email:</b> ${email}\n<b>Teléfono:</b> ${phone}\n\n${userMsg ? `<i>${userMsg}</i>` : ''}\n\n`.trim();\n\nmsg.payload = {\n  message,\n  topic: 'b2b'\n};\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 600,
+        "wires": [
+            [
+                "6f984971e656c805"
+            ],
+            [
+                "dfad3bb889e35239"
+            ]
+        ]
+    },
+    {
+        "id": "d9b5f353490d8989",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "name": "format response",
+        "func": "if (!!msg?.error) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: 'Something wrong with telegram sending message',\n        data: {}\n    };\n\n    return msg;\n};\n\nmsg.statusCode = 201;\nmsg.payload = {\n    status: 'success',\n    message: 'B2B message created successfully',\n    data: {}\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 620,
+        "wires": [
+            [
+                "400938d5807880f8"
+            ]
+        ]
+    },
+    {
+        "id": "dfad3bb889e35239",
+        "type": "link call",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1000,
+        "y": 620,
+        "wires": [
+            [
+                "d9b5f353490d8989"
+            ]
+        ]
+    },
+    {
+        "id": "3312b2270a5dde54",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "g": "6dfcde191de2c8e8",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 640,
         "wires": []
     },
     {
