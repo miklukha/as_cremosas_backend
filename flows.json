@@ -859,14 +859,14 @@
         ],
         "x": 34,
         "y": 759,
-        "w": 1092,
+        "w": 1212,
         "h": 82
     },
     {
         "id": "2ffdb4c723e8e6a0",
         "type": "group",
         "z": "b73d17450c17803c",
-        "name": "worker for santi",
+        "name": "worker for bakers",
         "style": {
             "label": true
         },
@@ -882,7 +882,7 @@
         ],
         "x": 34,
         "y": 859,
-        "w": 1092,
+        "w": 1232,
         "h": 82
     },
     {
@@ -991,6 +991,30 @@
         "y": 419,
         "w": 872,
         "h": 182
+    },
+    {
+        "id": "a7fcb7e5f44830b9",
+        "type": "group",
+        "z": "b73d17450c17803c",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "5c5939bb8da67ea4",
+            "e85837c6ba75a455",
+            "35df9d119d91bf7b",
+            "4b8fa44909135ebc"
+        ],
+        "x": 34,
+        "y": 559,
+        "w": 632,
+        "h": 82
     },
     {
         "id": "134c1c118160eea1",
@@ -1892,7 +1916,7 @@
         "z": "b73d17450c17803c",
         "g": "8ff7a8afe02f6f9b",
         "name": "paid",
-        "func": "const { orderId = null, paymentIntentId = null, status = 'paid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nmsg.queryParameters = [orderId, status, paymentIntentId, new Date(), msg.lang];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2, \n        stripe_payment_id = $3, \n        paid_at = $4 \n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'unit_price', oi.unit_price,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free\n            )\n            FROM order_items oi\n            LEFT JOIN product_translations pt \n                ON oi.product_id = pt.product_id \n                AND pt.language_code = $5\n            LEFT JOIN product_variant_translations pvt \n                ON oi.product_variant_id = pvt.variant_id \n                AND pvt.language_code = $5\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
+        "func": "const { orderId = null, paymentIntentId = null, status = 'paid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nmsg.queryParameters = [orderId, status, paymentIntentId, new Date(), msg.lang];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2, \n        stripe_payment_id = $3, \n        paid_at = $4 \n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'unit_price', oi.unit_price,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free,\n                'dolibarr_id', pv.dolibarr_id,\n                'dolibarr_gluten_id', pv.dolibarr_gluten_id,\n                'dolibarr_lactose_id', pv.dolibarr_lactose_id,\n                'price_tax_free', pv.price_tax_free,\n                'price_tax_free_gluten', pv.price_tax_free_gluten,\n                'price_tax_free_lactose', pv.price_tax_free_lactose\n            )\n            FROM order_items oi\n            LEFT JOIN product_variants pv ON oi.product_variant_id = pv.id\n            LEFT JOIN product_translations pt ON oi.product_id = pt.product_id AND pt.language_code = $5\n            LEFT JOIN product_variant_translations pvt ON oi.product_variant_id = pvt.variant_id AND pvt.language_code = $5\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2044,7 +2068,8 @@
         "y": 120,
         "wires": [
             [
-                "134c1c118160eea1"
+                "134c1c118160eea1",
+                "6e1a6abd115867f5"
             ]
         ]
     },
@@ -2094,7 +2119,7 @@
         "z": "b73d17450c17803c",
         "g": "34e680e7054de3d0",
         "name": "is error",
-        "func": "if (!!msg?.error) {\n    return null;\n};\n\nmsg = {\n    order: msg.order,\n    lang: msg.lang\n}\n\nreturn msg;",
+        "func": "if (!!msg?.error) {\n    return null;\n};\n\nmsg = {\n    payload: {},\n    order: msg.order,\n    lang: msg.lang\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2133,14 +2158,14 @@
         "type": "inject",
         "z": "b73d17450c17803c",
         "g": "04d6ca379c9c81d0",
-        "name": "jandro",
+        "name": "09:00 (madrid) except sunday",
         "props": [],
         "repeat": "",
-        "crontab": "00 06 * * 1,2,3,4,5,6",
+        "crontab": "00 08 * * 1,2,3,4,5,6",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 140,
+        "x": 210,
         "y": 800,
         "wires": [
             [
@@ -2161,7 +2186,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
+        "x": 410,
         "y": 800,
         "wires": [
             [
@@ -2180,7 +2205,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 400,
+        "x": 540,
         "y": 800,
         "wires": [
             [
@@ -2201,7 +2226,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
+        "x": 680,
         "y": 800,
         "wires": [
             [
@@ -2222,7 +2247,7 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 670,
+        "x": 810,
         "y": 800,
         "wires": [
             [
@@ -2241,7 +2266,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 880,
+        "x": 1000,
         "y": 800,
         "wires": [
             [
@@ -2263,7 +2288,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1030,
+        "x": 1150,
         "y": 800,
         "wires": []
     },
@@ -2285,7 +2310,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 755,
+        "x": 885,
         "y": 800,
         "wires": [
             [
@@ -2300,14 +2325,14 @@
         "z": "b73d17450c17803c",
         "g": "2ffdb4c723e8e6a0",
         "name": "orders",
-        "func": "msg.payload = `\nSELECT\n    pt.name AS product_name,\n    pvt.name AS variant_name,\n    SUM(CASE WHEN NOT oi.is_gluten_free AND NOT oi.is_lactose_free THEN oi.quantity ELSE 0 END) AS normal_count,\n    SUM(CASE WHEN oi.is_gluten_free THEN oi.quantity ELSE 0 END) AS gluten_free_count,\n    SUM(CASE WHEN oi.is_lactose_free THEN oi.quantity ELSE 0 END) AS lactose_free_count,\n    SUM(oi.quantity) AS total_quantity\nFROM orders o\nINNER JOIN order_items oi ON o.id = oi.order_id\nINNER JOIN products p ON oi.product_id = p.id\nLEFT JOIN product_translations pt\n    ON oi.product_id = pt.product_id\n    AND pt.language_code = 'es'\nLEFT JOIN product_variant_translations pvt\n    ON oi.product_variant_id = pvt.variant_id\n    AND pvt.language_code = 'es'\nWHERE o.pickup_date = CURRENT_DATE + INTERVAL '1 day'\n    AND o.status = 'paid'\nGROUP BY pt.name, pvt.name\nORDER BY pt.name, pvt.name;\n`;\n\nreturn msg;",
+        "func": "msg.payload = `\nSELECT\n    pt.name AS product_name,\n    pvt.name AS variant_name,\n    SUM(CASE WHEN NOT oi.is_gluten_free AND NOT oi.is_lactose_free THEN oi.quantity ELSE 0 END) AS normal_count,\n    SUM(CASE WHEN oi.is_gluten_free THEN oi.quantity ELSE 0 END) AS gluten_free_count,\n    SUM(CASE WHEN oi.is_lactose_free THEN oi.quantity ELSE 0 END) AS lactose_free_count,\n    SUM(oi.quantity) AS total_quantity\nFROM orders o\nINNER JOIN order_items oi ON o.id = oi.order_id\nINNER JOIN products p ON oi.product_id = p.id\nLEFT JOIN product_translations pt\n    ON oi.product_id = pt.product_id\n    AND pt.language_code = 'es'\nLEFT JOIN product_variant_translations pvt\n    ON oi.product_variant_id = pvt.variant_id\n    AND pvt.language_code = 'es'\nWHERE o.pickup_date = (NOW() AT TIME ZONE 'Europe/Madrid')::DATE + INTERVAL '1 day'\n    AND o.status = 'paid'\nGROUP BY pt.name, pvt.name\nORDER BY pt.name, pvt.name;\n`;\n\n// WHERE o.pickup_date = CURRENT_DATE + INTERVAL '1 day'\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
+        "x": 410,
         "y": 900,
         "wires": [
             [
@@ -2320,14 +2345,14 @@
         "type": "inject",
         "z": "b73d17450c17803c",
         "g": "2ffdb4c723e8e6a0",
-        "name": "santi",
+        "name": "00:05 (madrid) except sunday",
         "props": [],
         "repeat": "",
-        "crontab": "00 06 * * 1,2,3,4,5,6",
+        "crontab": "05 00 * * 1,2,3,4,5,6",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 130,
+        "x": 210,
         "y": 900,
         "wires": [
             [
@@ -2346,7 +2371,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 400,
+        "x": 540,
         "y": 900,
         "wires": [
             [
@@ -2367,7 +2392,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
+        "x": 680,
         "y": 900,
         "wires": [
             [
@@ -2388,7 +2413,7 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 670,
+        "x": 810,
         "y": 900,
         "wires": [
             [
@@ -2407,7 +2432,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 880,
+        "x": 1020,
         "y": 900,
         "wires": [
             [
@@ -2420,7 +2445,7 @@
         "type": "debug",
         "z": "b73d17450c17803c",
         "g": "2ffdb4c723e8e6a0",
-        "name": "santi",
+        "name": "bakers",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -2429,7 +2454,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1030,
+        "x": 1170,
         "y": 900,
         "wires": []
     },
@@ -2520,7 +2545,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 755,
+        "x": 895,
         "y": 900,
         "wires": [
             [
@@ -2528,179 +2553,6 @@
             ]
         ],
         "l": false
-    },
-    {
-        "id": "cae3fde909bf15aa",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "function 1",
-        "func": "const APP_GOOGLE_PASSWORD = env.get('APP_GOOGLE_PASSWORD') || null;\n\nif (!APP_GOOGLE_PASSWORD) {\n    throw new Error(\"Missed APP_GOOGLE_PASSWORD\");\n};\n\nconst transporter = nodemailer.createTransport({\n    host: 'smtp.gmail.com',\n    port: 587,\n    secure: false, // true для 465, false для інших портів\n    auth: {\n        user: 'ascremosas.co@gmail.com',\n        pass: APP_GOOGLE_PASSWORD\n    }\n});\n\ntry {\n    const info = await transporter.sendMail({\n        from: `\"AS Cremosas\" <no-reply@accounts.google.com>`,\n        to: 'a.miklukha05@gmail.com', \n        subject: 'Підтвердження замовлення #123',\n        text: 'Дякуємо за замовлення!',\n        html: '<h1>Дякуємо за замовлення!</h1><p>Ваше замовлення №123 прийнято.</p>'\n    });\n\n    msg.payload = { success: true, messageId: info.messageId };\n    return msg;\n} catch (error) {\n    node.error('Email error:', { payload: error });\n    msg.payload = { success: false, error: error.message };\n    return msg;\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "nodemailer",
-                "module": "nodemailer"
-            }
-        ],
-        "x": 260,
-        "y": 580,
-        "wires": [
-            [
-                "3bbecc651c4c6358"
-            ]
-        ]
-    },
-    {
-        "id": "82d2c63d671c777f",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 580,
-        "wires": [
-            [
-                "cae3fde909bf15aa"
-            ]
-        ]
-    },
-    {
-        "id": "3bbecc651c4c6358",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 400,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "89991445e8e2631a",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 110,
-        "y": 500,
-        "wires": [
-            [
-                "588b3b49e63f544f"
-            ]
-        ]
-    },
-    {
-        "id": "588b3b49e63f544f",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "order",
-        "func": "msg.order = { \"order_id\": \"LCG-20260127-281608\", \"customer_name\": \"Anya\", \"customer_email\": \"a.miklukha05@gmail.com\", \"customer_phone\": \"+34622362304\", \"pickup_date\": \"2026-02-07\", \"pickup_time\": \"morning\", \"total_price\": \"18.50\", \"notes\": null, \"paid_at\": \"2026-01-27T13:24:58.688Z\", \"items\": [{ \"product_name\": \"Cremosa de pistacho\", \"variant_name\": \"Pequeña (1 persona)\", \"quantity\": 1, \"unit_price\": 5.5, \"is_gluten_free\": false, \"is_lactose_free\": false }, { \"product_name\": \"Cremosa tradicional\", \"variant_name\": \"Mediana (2 personas)\", \"quantity\": 1, \"unit_price\": 13, \"is_gluten_free\": false, \"is_lactose_free\": true }] }\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 230,
-        "y": 500,
-        "wires": [
-            [
-                "a159f73fd322271f",
-                "2742d831d8385cdf"
-            ]
-        ]
-    },
-    {
-        "id": "d9e1ba5675396e42",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "send",
-        "func": "const APP_GOOGLE_PASSWORD = env.get('APP_GOOGLE_PASSWORD') || null;\n\nif (!APP_GOOGLE_PASSWORD) {\n    throw new Error(\"Missed APP_GOOGLE_PASSWORD\");\n};\n\nconst transporter = nodemailer.createTransport({\n    host: 'smtp.gmail.com',\n    port: 587,\n    secure: false, // true для 465, false для інших портів\n    auth: {\n        user: 'ascremosas.co@gmail.com',\n        pass: APP_GOOGLE_PASSWORD\n    }\n});\n\ntry {\n    const info = await transporter.sendMail({\n        from: `\"AS Cremosas\" <no-reply@accounts.google.com>`,\n        to: msg?.to, \n        // to: 'a.miklukha05@gmail.com', \n        subject: msg.subject || 'Confirmación de pedido',\n        html: msg?.payload || ''\n    });\n\n    msg.payload = { success: true, messageId: info.messageId };\n    return msg;\n} catch (error) {\n    node.error('Email error:', { payload: error });\n    msg.payload = { success: false, error: error.message };\n    return msg;\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "nodemailer",
-                "module": "nodemailer"
-            }
-        ],
-        "x": 650,
-        "y": 480,
-        "wires": [
-            [
-                "a159f73fd322271f"
-            ]
-        ]
-    },
-    {
-        "id": "a159f73fd322271f",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "2742d831d8385cdf",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "form email",
-        "func": "const order = msg.order;\nconst lang = msg?.lang || 'es'; \n\nconst translations = {\n    es: {\n        subject: `Confirmación de pedido #${order?.order_id} - AS Cremosas`,\n        thanks: \"¡Gracias por tu pedido!\",\n        hello: \"Hola\",\n        received: \"hemos recibido tu pedido correctamente. Aquí tienes los detalles:\",\n        orderNum: \"Número de pedido\",\n        pickup: \"Recogida\",\n        morning: \"por la mañana\",\n        afternoon: \"por la tarde\",\n        total: \"TOTAL\",\n        contact: \"Si tienes alguna duda, escríbenos a\",\n        callUs: \"o llámanos al\",\n        autoMessage: \"Este es un mensaje automático, por favor no respondas directamente a este correo.\",\n        noGluten: \"sin gluten\",\n        noLactose: \"sin lactosa\",\n        locale: 'es-ES'\n    },\n    en: {\n        subject: `Order Confirmation #${order?.order_id} - AS Cremosas`,\n        thanks: \"Thank you for your order!\",\n        hello: \"Hello\",\n        received: \"we have received your order correctly. Here are the details:\",\n        orderNum: \"Order number\",\n        pickup: \"Pickup\",\n        morning: \"in the morning\",\n        afternoon: \"in the afternoon\",\n        total: \"TOTAL\",\n        contact: \"If you have any questions, write to us at\",\n        callUs: \"or call us at\",\n        autoMessage: \"This is an automated message, please do not reply directly to this email.\",\n        noGluten: \"gluten-free\",\n        noLactose: \"lactose-free\",\n        locale: 'en-GB'\n    },\n    gl: {\n        subject: `Confirmación do pedido #${order?.order_id} - AS Cremosas`,\n        thanks: \"Grazas polo teu pedido!\",\n        hello: \"Ola\",\n        received: \"recibimos o teu pedido correctamente. Aquí tes os detalles:\",\n        orderNum: \"Número de pedido\",\n        pickup: \"Recollida\",\n        morning: \"pola mañá\",\n        afternoon: \"pola tarde\",\n        total: \"TOTAL\",\n        contact: \"Se tes algunha dúbida, escríbenos a\",\n        callUs: \"ou chámanos ao\",\n        autoMessage: \"Este é un mensaxe automático, por favor non respondas directamente a este correo.\",\n        noGluten: \"sen glute\",\n        noLactose: \"sen lactosa\",\n        locale: 'gl-ES'\n    }\n};\n\nconst t = translations[lang] || translations['es'];\n\nconst colorChocolate = \"#4A250D\";\nconst colorBeige = \"#FFF8EB\";\n\nconst pickupDate = new Date(order.pickup_date).toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: 'numeric',\n    month: 'long'\n}).replace('/', '.');\n\nconst shift = order?.pickup_time === 'morning' ? t.morning : t.afternoon;\n\nconst itemsHtml = order.items.map(item => {\n    const dietary = [];\n    if (item?.is_gluten_free) dietary.push(t.noGluten);\n    if (item?.is_lactose_free) dietary.push(t.noLactose);\n    \n    const dietaryText = dietary.length > 0 \n        ? `<br><span style=\"font-size: 12px; color: #856404;\">(${dietary.join(', ')})</span>` \n        : '';\n\n    return `\n        <tr>\n            <td style=\"padding: 12px 15px; border-bottom: 1px solid #E5DED0; color: ${colorChocolate}; font-family: 'Montserrat', serif; text-align: left;\">\n                <span style=\"font-weight: bold;\">${item.quantity}x</span> ${item?.product_name}\n                <div style=\"font-size: 13px; color: #6e5a4e;\">${item?.variant_name}${dietaryText}</div>\n            </td>\n            <td style=\"padding: 12px 15px; border-bottom: 1px solid #E5DED0; text-align: right; color: ${colorChocolate}; font-weight: bold; white-space: nowrap;\">\n                ${parseFloat(item.unit_price).toFixed(2)}€\n            </td>\n        </tr>`;\n}).join('');\n\nconst emailHtml = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n</head>\n<body style=\"margin: 0; padding: 0; background-color: ${colorBeige};\">\n    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"background-color: ${colorBeige}; padding: 10px;\">\n        <tr>\n            <td align=\"center\">\n                <table width=\"600\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); max-width: 100%;\">\n                    <tr>\n                        <td style=\"padding: 20px; text-align: center;\">\n                            <h1 style=\"color: ${colorChocolate}; font-family: 'Montserrat', serif; font-size: 24px; margin: 0;\">${t.thanks}</h1>\n                            <p style=\"color: #6e5a4e; font-family: 'Montserrat', serif; font-size: 16px; line-height: 1.5; margin: 15px 0;\">\n                                ${t.hello} <strong>${order?.customer_name}</strong>, ${t.received}\n                            </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"padding: 0 20px 20px 20px;\">\n                            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"10\" style=\"background-color: ${colorBeige}; border-radius: 5px; font-family: 'Montserrat', serif; font-size: 14px; color: ${colorChocolate};\">\n                                <tr>\n                                    <td style=\"text-align: center;\"><strong>${t.orderNum}:</strong><br>${order?.order_id}</td>\n                                    <td style=\"text-align: center;\"><strong>${t.pickup}:</strong><br>${pickupDate}<br>(${shift})</td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"padding: 0 20px 20px 20px;\">\n                            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"max-width: 100%;\">\n                                ${itemsHtml}\n                                <tr>\n                                    <td style=\"padding: 20px 15px; font-family: 'Montserrat', serif; font-size: 18px; color: ${colorChocolate}; font-weight: bold; text-align: left;\">${t.total}</td>\n                                    <td style=\"padding: 20px 15px; text-align: right; font-family: 'Montserrat', serif; font-size: 22px; color: ${colorChocolate}; font-weight: bold; white-space: nowrap;\">${order.total_price}€</td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td align=\"center\" style=\"padding: 30px 20px; background-color: ${colorChocolate}; color: ${colorBeige}; font-family: 'Montserrat', serif; font-size: 12px; text-align: center;\">\n                            <img src=\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1765558484/logo-light_wpy1ol.png\" alt=\"AS Cremosas\" width=\"250\" style=\"display: block; border: 0; margin: 0 auto; max-width: 100%;\">\n                            <p style=\"margin: 15px 0 0 0;\">${t.contact} <br> ascremosas.co@gmail.com ${t.callUs} <a href=\"tel:+34881068091\" style=\"color: ${colorBeige}; text-decoration: none;\">+34 881 068 091</a></p>\n                            <div style=\"margin-top: 20px; border-top: 1px solid rgba(255,248,235,0.2); padding-top: 20px;\">\n                                <p style=\"opacity: 0.8; margin: 0;\">${t.autoMessage}</p>\n                            </div>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</body>\n</html>\n`;\n\nmsg.to = order?.customer_email;\nmsg.subject = t.subject;\nmsg.payload = emailHtml;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 490,
-        "y": 480,
-        "wires": [
-            [
-                "d9e1ba5675396e42"
-            ]
-        ]
     },
     {
         "id": "584213fb0ad159c3",
@@ -2748,6 +2600,1212 @@
                 "584213fb0ad159c3"
             ]
         ]
+    },
+    {
+        "id": "830c16eb376d4d95",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1260,
+        "wires": [
+            [
+                "33d73b1b82c72889"
+            ]
+        ]
+    },
+    {
+        "id": "33d73b1b82c72889",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "CURRENT_DATE",
+        "func": "msg.payload = `\nSELECT CURRENT_DATE;`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 1260,
+        "wires": [
+            [
+                "29d51e39ad2ea1e6"
+            ]
+        ]
+    },
+    {
+        "id": "29d51e39ad2ea1e6",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 460,
+        "y": 1260,
+        "wires": [
+            [
+                "cdc6ef1972bf00ef"
+            ]
+        ]
+    },
+    {
+        "id": "cdc6ef1972bf00ef",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "CURRENT_DATE",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "e347ba8a0a0cbe7b",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1300,
+        "wires": [
+            [
+                "6c7197acefc6ffb0"
+            ]
+        ]
+    },
+    {
+        "id": "6c7197acefc6ffb0",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "CURRENT_TIMESTAMP",
+        "func": "msg.payload = `\nSELECT CURRENT_TIMESTAMP;`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1300,
+        "wires": [
+            [
+                "aa3fb7d5d2c14c2a"
+            ]
+        ]
+    },
+    {
+        "id": "aa3fb7d5d2c14c2a",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 500,
+        "y": 1300,
+        "wires": [
+            [
+                "f51ee372c07831a4"
+            ]
+        ]
+    },
+    {
+        "id": "f51ee372c07831a4",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "CURRENT_TIMESTAMP",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "495cc74312454349",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1360,
+        "wires": [
+            [
+                "c6b6f4affda05c2e"
+            ]
+        ]
+    },
+    {
+        "id": "c6b6f4affda05c2e",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "CURRENT_TIMESTAMP",
+        "func": "msg.payload = `\nSELECT timezone('Europe/Madrid', CURRENT_TIMESTAMP);`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1360,
+        "wires": [
+            [
+                "c279713aa2760e86"
+            ]
+        ]
+    },
+    {
+        "id": "c279713aa2760e86",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 500,
+        "y": 1360,
+        "wires": [
+            [
+                "c6d37d2ad7c25633"
+            ]
+        ]
+    },
+    {
+        "id": "c6d37d2ad7c25633",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "CURRENT_TIMESTAMP",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "bf56d702c9a8ef98",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1500,
+        "wires": [
+            [
+                "acd757e2e8d2f3c1"
+            ]
+        ]
+    },
+    {
+        "id": "acd757e2e8d2f3c1",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "invoices get",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1500,
+        "wires": [
+            [
+                "d2b9bce9b78d2891"
+            ]
+        ]
+    },
+    {
+        "id": "d2b9bce9b78d2891",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 1500,
+        "wires": [
+            [
+                "bac922d848ab5f8d"
+            ]
+        ]
+    },
+    {
+        "id": "bac922d848ab5f8d",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "invoices get",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "c94c7045f044fefb",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1600,
+        "wires": [
+            [
+                "5d8025f0ce009110"
+            ]
+        ]
+    },
+    {
+        "id": "5d8025f0ce009110",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "thirdparties",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/thirdparties';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1600,
+        "wires": [
+            [
+                "21f12c9d7524351d"
+            ]
+        ]
+    },
+    {
+        "id": "21f12c9d7524351d",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 1600,
+        "wires": [
+            [
+                "8fbf0450fc1bdfd7"
+            ]
+        ]
+    },
+    {
+        "id": "8fbf0450fc1bdfd7",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "a0d3348c91a671ec",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1540,
+        "wires": [
+            [
+                "4d920463dd3742ed"
+            ]
+        ]
+    },
+    {
+        "id": "4d920463dd3742ed",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "invoices post",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nfunction calcNetPrice(priceWithTax, taxPercent) {\n    node.warn((priceWithTax / (1 + taxPercent / 100)) * 100);\n\n    return (priceWithTax / (1 + taxPercent / 100)) * 100;\n}\n\nmsg.payload = {\n    \"socid\": 4, \n    \"type\": 0,  \n    \"lines\": [\n        {\n            \"fk_product\": 2,\n            \"qty\": 1,\n            subprice: 4.53636,\n\n            // total_ttc: 4.99,\n            // multicurrency_total_ttc: 4.99\n            // \"subprice\": calcNetPrice(4.99, 10),\n            \"tva_tx\": 10.00, \n        }\n        \n    ]\n};\n\n\nmsg.method = 'POST';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\" \n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1540,
+        "wires": [
+            [
+                "b84d5e720b0dfa3e"
+            ]
+        ]
+    },
+    {
+        "id": "b84d5e720b0dfa3e",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 1540,
+        "wires": [
+            [
+                "c97213a2a8296cc8"
+            ]
+        ]
+    },
+    {
+        "id": "c97213a2a8296cc8",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "invoices post",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "95d1de9181532cb2",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1640,
+        "wires": [
+            [
+                "aec02b1cf9eefcbd"
+            ]
+        ]
+    },
+    {
+        "id": "aec02b1cf9eefcbd",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "thirdparties",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'POST';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/thirdparties';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nmsg.payload = {\n    \"name\": \"Ventas Web\",\n    \"client\": 1,\n    \"code_client\": \"auto\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1640,
+        "wires": [
+            [
+                "4e22e487df21d181"
+            ]
+        ]
+    },
+    {
+        "id": "4e22e487df21d181",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 1640,
+        "wires": [
+            [
+                "dac983cd48c46468"
+            ]
+        ]
+    },
+    {
+        "id": "dac983cd48c46468",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "c8f02235ebfe3a69",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1760,
+        "wires": [
+            [
+                "93898b59919af68b"
+            ]
+        ]
+    },
+    {
+        "id": "93898b59919af68b",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "products",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/products';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 1760,
+        "wires": [
+            [
+                "c457abd69013c9f2"
+            ]
+        ]
+    },
+    {
+        "id": "c457abd69013c9f2",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 410,
+        "y": 1760,
+        "wires": [
+            [
+                "2099c74f2cdfc330",
+                "346baae1ddff8a60"
+            ]
+        ]
+    },
+    {
+        "id": "2099c74f2cdfc330",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "346baae1ddff8a60",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "function 1",
+        "func": "msg.payload = msg.payload?.map(e => {\n    return {\n        id: e?.id, \n        label: e?.label\n    }\n})\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 1760,
+        "wires": [
+            [
+                "2099c74f2cdfc330"
+            ]
+        ]
+    },
+    {
+        "id": "957926780ec4a3fe",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "set msg",
+        "func": "msg = { \"_msgid\": \"63b3889e6d63af48\", \"payload\": {}, \"lang\": \"es\", \"_event\": \"node:5cc1c97b5393ef47\", \"order\": { \"order_id\": \"LCG-20260128-768589\", \"customer_name\": \"Anya\", \"customer_email\": \"a.miklukha05@gmail.com\", \"customer_phone\": \"+34622362304\", \"pickup_date\": \"2026-01-30\", \"pickup_time\": \"morning\", \"total_price\": \"32.50\", \"notes\": null, \"paid_at\": \"2026-01-28T10:23:11.405Z\", \"items\": [{ \"product_name\": \"Cremosa tradicional\", \"variant_name\": \"Mediana (2 personas)\", \"quantity\": 1, \"unit_price\": 13, \"is_gluten_free\": false, \"is_lactose_free\": true }, { \"product_name\": \"Cremosa de pistacho\", \"variant_name\": \"Pequeña (1 persona)\", \"quantity\": 1, \"unit_price\": 5.5, \"is_gluten_free\": false, \"is_lactose_free\": false }, { \"product_name\": \"Cremosa de oreo\", \"variant_name\": \"Mediana (2 personas)\", \"quantity\": 1, \"unit_price\": 14, \"is_gluten_free\": true, \"is_lactose_free\": false }] } }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 500,
+        "wires": [
+            [
+                "240c733325a2ed41"
+            ]
+        ]
+    },
+    {
+        "id": "4399d3450559d2b1",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 500,
+        "wires": [
+            [
+                "957926780ec4a3fe"
+            ]
+        ]
+    },
+    {
+        "id": "240c733325a2ed41",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 240,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "5c5939bb8da67ea4",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "a7fcb7e5f44830b9",
+        "name": "products",
+        "func": "msg.payload = `\nSELECT\n    p.id as product_id,\n    pt.id as product_transaltion_id,\n    pt.name as product_name,\n    pv.id as product_variant_id,\n    pvt.id as product_variant_translation_id,\n    pvt.name as variant_name\nFROM products p\nLEFT JOIN product_translations pt ON p.id = pt.product_id and pt.language_code = 'es'\nLEFT JOIN product_variants pv ON p.id = pv.product_id\nLEFT JOIN product_variant_translations pvt ON pv.id = pvt.variant_id and pvt.language_code = 'es'\norder by p.id asc\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 600,
+        "wires": [
+            [
+                "e85837c6ba75a455"
+            ]
+        ]
+    },
+    {
+        "id": "e85837c6ba75a455",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "g": "a7fcb7e5f44830b9",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 420,
+        "y": 600,
+        "wires": [
+            [
+                "4b8fa44909135ebc"
+            ]
+        ]
+    },
+    {
+        "id": "35df9d119d91bf7b",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "g": "a7fcb7e5f44830b9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 600,
+        "wires": [
+            [
+                "5c5939bb8da67ea4"
+            ]
+        ]
+    },
+    {
+        "id": "4b8fa44909135ebc",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "g": "a7fcb7e5f44830b9",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "c66ae7e3c1d5ee96",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "paid",
+        "func": "msg.queryParameters = ['LCG-20260128-768589', 'paid', 'es'];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2\n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'unit_price', oi.unit_price,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free,\n                'dolibarr_id', pv.dolibarr_id,\n                'dolibarr_gluten_id', pv.dolibarr_gluten_id,\n                'dolibarr_lactose_id', pv.dolibarr_lactose_id,\n                'price_tax_free', pv.price_tax_free,\n                'price_tax_free_gluten', pv.price_tax_free_gluten,\n                'price_tax_free_lactose', pv.price_tax_free_lactose\n            )\n            FROM order_items oi\n            LEFT JOIN product_variants pv ON oi.product_variant_id = pv.id\n            LEFT JOIN product_translations pt ON oi.product_id = pt.product_id  AND pt.language_code = $3\n            LEFT JOIN product_variant_translations pvt ON oi.product_variant_id = pvt.variant_id AND pvt.language_code = $3\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 680,
+        "wires": [
+            [
+                "693e5fcd2b56918c"
+            ]
+        ]
+    },
+    {
+        "id": "693e5fcd2b56918c",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "name": "orders",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 410,
+        "y": 680,
+        "wires": [
+            [
+                "7a4552e232106238"
+            ]
+        ]
+    },
+    {
+        "id": "7f1f65ff775becaa",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 680,
+        "wires": [
+            [
+                "c66ae7e3c1d5ee96"
+            ]
+        ]
+    },
+    {
+        "id": "3e2fdbb5e2d52084",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "7a4552e232106238",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "check db",
+        "func": "delete msg.toDB;\ndelete msg.queryParameters;\ndelete msg.req;\ndelete msg.res;\n\nif (msg.payload?.length === 0) {\n    throw new Error(\"Something wrong with db. Didn't found order\");\n}\n\nmsg.order = msg.payload?.[0] || {};\nmsg.payload = {};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 680,
+        "wires": [
+            [
+                "3e2fdbb5e2d52084",
+                "2eb4d8a8ab363f54"
+            ]
+        ]
+    },
+    {
+        "id": "66a5dc11c2852b7b",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1820,
+        "wires": [
+            [
+                "f4d3db222210c2ca"
+            ]
+        ]
+    },
+    {
+        "id": "f4d3db222210c2ca",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "products",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/products/2';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 1820,
+        "wires": [
+            [
+                "b4d449a23049e589"
+            ]
+        ]
+    },
+    {
+        "id": "b4d449a23049e589",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 410,
+        "y": 1820,
+        "wires": [
+            [
+                "2099c74f2cdfc330"
+            ]
+        ]
+    },
+    {
+        "id": "2eb4d8a8ab363f54",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "to dolibarr",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nconst VARIANT_RULES = [\n    { flag: 'is_gluten_free', idKey: 'dolibarr_gluten_id', priceKey: 'price_tax_free_gluten' },\n    { flag: 'is_lactose_free', idKey: 'dolibarr_lactose_id', priceKey: 'price_tax_free_lactose' }\n];\n\nconst selectValue = (item, rules, { id, price }) => {\n    const rule = rules?.find(r => item?.[r?.flag]);\n    return {\n        id: rule ? item?.[rule?.idKey] : item?.[id],\n        price: rule ? item?.[rule?.priceKey] : item?.[price],\n    };\n};\n\nconst items = msg.order?.items || [];\nconst lines = items?.map(e => {\n    const { id, price } = selectValue(e, VARIANT_RULES, {\n        id: 'dolibarr_id',\n        price: 'price_tax_free',\n    });\n\n    return {\n        \"fk_product\": id,\n        \"qty\": e?.quantity,\n        \"subprice\": price,\n        \"tva_tx\": 10.00,\n    };\n});\n\nmsg.payload = {\n    \"socid\": 4,\n    \"type\": 0,\n    \"lines\": lines\n};\n\nmsg.method = 'POST';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 680,
+        "wires": [
+            [
+                "5f92bfc12dcdb628"
+            ]
+        ]
+    },
+    {
+        "id": "5f92bfc12dcdb628",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 850,
+        "y": 680,
+        "wires": [
+            [
+                "d1e443c396037077"
+            ]
+        ]
+    },
+    {
+        "id": "d1e443c396037077",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "invoices post",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "635bae8bcef9c6a2",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1460,
+        "wires": [
+            [
+                "2df7f09b5389e39c"
+            ]
+        ]
+    },
+    {
+        "id": "2df7f09b5389e39c",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "invoices delete",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\n\nmsg.method = 'DELETE';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices/39';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\" \n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 1460,
+        "wires": [
+            [
+                "219783f4599da69d"
+            ]
+        ]
+    },
+    {
+        "id": "219783f4599da69d",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 1460,
+        "wires": [
+            [
+                "889ab16b43a7aea8"
+            ]
+        ]
+    },
+    {
+        "id": "889ab16b43a7aea8",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "invoices post",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 1460,
+        "wires": []
     },
     {
         "id": "3faee7869eb851bf",
@@ -6845,7 +7903,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "product_variants",
-        "func": "msg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`\n\nreturn msg;",
+        "func": "msg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL,\n  dolibarr_id INTEGER,\n  dolibarr_gluten_id INTEGER,\n  dolibarr_lactose_id INTEGER,\n  price_tax_free NUMERIC(10,8) NOT NULL,\n  price_tax_free_gluten NUMERIC(10,8),\n  price_tax_free_lactose NUMERIC(10,8)\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
