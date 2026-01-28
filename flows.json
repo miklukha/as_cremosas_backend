@@ -16,6 +16,14 @@
         "env": []
     },
     {
+        "id": "d6966d87889a164a",
+        "type": "tab",
+        "label": "WORKERS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "deae6838e7a58a75",
         "type": "tab",
         "label": "EXTERNAL SERVICES",
@@ -612,9 +620,9 @@
             "62585ac5cd2e87df",
             "5b012253d929f45a",
             "fa7eefe629c35c3e",
-            "134c1c118160eea1"
+            "0f4b804ff0a6cc27"
         ],
-        "x": 34,
+        "x": 14,
         "y": 39,
         "w": 932,
         "h": 162
@@ -634,10 +642,10 @@
             "b779df4ed3bc8845",
             "f0deea2958d1b962"
         ],
-        "x": 34,
-        "y": 219,
-        "w": 512,
-        "h": 122
+        "x": 114,
+        "y": 479,
+        "w": 672,
+        "h": 82
     },
     {
         "id": "8ca3eb9a68741ec8",
@@ -806,7 +814,7 @@
             "f4cd77bfb9232f12",
             "f4b198cbc39cb937"
         ],
-        "x": 14,
+        "x": 34,
         "y": 39,
         "w": 892,
         "h": 162
@@ -831,59 +839,12 @@
             "d9b5f353490d8989",
             "bbcd1c49821870a2",
             "dfad3bb889e35239",
-            "6f984971e656c805",
-            "3312b2270a5dde54"
+            "6f984971e656c805"
         ],
         "x": 34,
         "y": 534,
         "w": 1392,
-        "h": 147
-    },
-    {
-        "id": "04d6ca379c9c81d0",
-        "type": "group",
-        "z": "b73d17450c17803c",
-        "name": "worker for jandro",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "3e18abe1e5573a92",
-            "8b0cc77773268755",
-            "1dddc496f69d50b9",
-            "3a2cbc2e9c0eb2f4",
-            "05b9dafc458ac843",
-            "040befe79eed286b",
-            "6d6523925f6e6a40",
-            "9b8489bc4b6367e0"
-        ],
-        "x": 34,
-        "y": 759,
-        "w": 1212,
-        "h": 82
-    },
-    {
-        "id": "2ffdb4c723e8e6a0",
-        "type": "group",
-        "z": "b73d17450c17803c",
-        "name": "worker for bakers",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "3ec3f7341979b1f6",
-            "c093de95f0e6815a",
-            "b7e1e8774682fe33",
-            "d0d0c98e3e5380d1",
-            "ec0a2cda522b2f98",
-            "f73f4f5be7e9d15b",
-            "5a9be941da473f9e",
-            "54e64e0b3987df5f"
-        ],
-        "x": 34,
-        "y": 859,
-        "w": 1232,
-        "h": 82
+        "h": 127
     },
     {
         "id": "33341c9e456ac5e4",
@@ -891,14 +852,15 @@
         "z": "b73d17450c17803c",
         "name": "email",
         "style": {
-            "label": true
+            "label": true,
+            "stroke": "#92d04f"
         },
         "nodes": [
             "584213fb0ad159c3",
             "0165592a7b31aaa1"
         ],
-        "x": 554,
-        "y": 219,
+        "x": 114,
+        "y": 239,
         "w": 312,
         "h": 82
     },
@@ -993,17 +955,196 @@
         "h": 182
     },
     {
-        "id": "a7fcb7e5f44830b9",
+        "id": "66065f0648f839c2",
         "type": "group",
         "z": "b73d17450c17803c",
+        "name": "create dolibarr invoice",
         "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
+            "stroke": "#001f60",
+            "label": true
+        },
+        "nodes": [
+            "72aadbf5345518d7",
+            "6428fc240f43793f",
+            "046ae0a7b3bccb92",
+            "9320de9a4d1abe3d",
+            "6e6d0c2db7a880ac",
+            "e789b5ba9e5c284a",
+            "3a604d74806c1539",
+            "3b8322f6546aac2c",
+            "131be86f15cd2ced",
+            "b182aa6f457d3c64",
+            "57ad09d92ecdcded",
+            "b8228759b6e0935f",
+            "c1e087a4c92536cd",
+            "f7bcf7eea5eefe9f",
+            "820922ad795716dc",
+            "1a59d02809c498dc",
+            "db295c77f3899c40",
+            "6c423dc8bb2c6824"
+        ],
+        "x": 114,
+        "y": 339,
+        "w": 1952,
+        "h": 122
+    },
+    {
+        "id": "b8a99424e7a04f63",
+        "type": "group",
+        "z": "15bda437fadfc244",
+        "name": "postgresql",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "830c16eb376d4d95",
+            "33d73b1b82c72889",
+            "29d51e39ad2ea1e6",
+            "cdc6ef1972bf00ef",
+            "e347ba8a0a0cbe7b",
+            "6c7197acefc6ffb0",
+            "aa3fb7d5d2c14c2a",
+            "f51ee372c07831a4",
+            "495cc74312454349",
+            "c6b6f4affda05c2e",
+            "c279713aa2760e86",
+            "c6d37d2ad7c25633"
+        ],
+        "x": 34,
+        "y": 219,
+        "w": 832,
+        "h": 182
+    },
+    {
+        "id": "858072f020de63c3",
+        "type": "group",
+        "z": "15bda437fadfc244",
+        "name": "dolibarr",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "bf56d702c9a8ef98",
+            "acd757e2e8d2f3c1",
+            "d2b9bce9b78d2891",
+            "bac922d848ab5f8d",
+            "c94c7045f044fefb",
+            "5d8025f0ce009110",
+            "21f12c9d7524351d",
+            "8fbf0450fc1bdfd7",
+            "a0d3348c91a671ec",
+            "4d920463dd3742ed",
+            "b84d5e720b0dfa3e",
+            "c97213a2a8296cc8",
+            "95d1de9181532cb2",
+            "aec02b1cf9eefcbd",
+            "4e22e487df21d181",
+            "dac983cd48c46468",
+            "c8f02235ebfe3a69",
+            "93898b59919af68b",
+            "c457abd69013c9f2",
+            "2099c74f2cdfc330",
+            "346baae1ddff8a60",
+            "66a5dc11c2852b7b",
+            "f4d3db222210c2ca",
+            "b4d449a23049e589",
+            "635bae8bcef9c6a2",
+            "2df7f09b5389e39c",
+            "219783f4599da69d",
+            "889ab16b43a7aea8",
+            "738698b44cc986fe",
+            "18865a37c5eed157",
+            "0cb501da5ceea0e9",
+            "1b86fa2e53dbad93",
+            "d878f231ea16cb94",
+            "8275c8e3d1b81753",
+            "7d175d6c6b45c9d4",
+            "254a87eb850dee20",
+            "11f15400a3405d41",
+            "75f5f2995500c1ea",
+            "7fd518e4b093c311",
+            "5784cdd3ba8354c6",
+            "97be71428c9078cb",
+            "aade6d2e5ac12298",
+            "f48542c21e465d84",
+            "c96e025fcccaadaa",
+            "4976e5b86ef824aa",
+            "55fe18f5cc2f6650",
+            "8db44898253fdda4",
+            "9819f316a31d6a31",
+            "c84de9fdbb2708b1",
+            "be34ce273f5725cd",
+            "2f231ae7110e7919",
+            "a90b3f6f2f2a5554",
+            "74a74acfcd88fb5c",
+            "3181baa83c120502",
+            "94d2aaef02e00863",
+            "09e3dda067feb898",
+            "e2bc3dae6ca4857e",
+            "76ea5dbbcd84c18d",
+            "2b71050aa898029f",
+            "1f21bf8c74c439d7",
+            "340cc8da19d2aed7",
+            "6450fcb0367f6a3e"
+        ],
+        "x": 34,
+        "y": 459,
+        "w": 1052,
+        "h": 862
+    },
+    {
+        "id": "04d6ca379c9c81d0",
+        "type": "group",
+        "z": "d6966d87889a164a",
+        "name": "worker for jandro",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3e18abe1e5573a92",
+            "8b0cc77773268755",
+            "1dddc496f69d50b9",
+            "51e6a34f8405ccc1",
+            "0970e3d6e148a9b3",
+            "40d2c80b9a75b81a",
+            "44f71fd37e0b0927",
+            "28058af2366c8fe5"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 1232,
+        "h": 82
+    },
+    {
+        "id": "2ffdb4c723e8e6a0",
+        "type": "group",
+        "z": "d6966d87889a164a",
+        "name": "worker for bakers",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3ec3f7341979b1f6",
+            "c093de95f0e6815a",
+            "b7e1e8774682fe33",
+            "d0d0c98e3e5380d1",
+            "ec0a2cda522b2f98",
+            "f73f4f5be7e9d15b",
+            "5a9be941da473f9e",
+            "54e64e0b3987df5f"
+        ],
+        "x": 34,
+        "y": 139,
+        "w": 1232,
+        "h": 82
+    },
+    {
+        "id": "a7fcb7e5f44830b9",
+        "type": "group",
+        "z": "15bda437fadfc244",
+        "name": "get products & variant with name",
+        "style": {
+            "label": true
         },
         "nodes": [
             "5c5939bb8da67ea4",
@@ -1012,22 +1153,28 @@
             "4b8fa44909135ebc"
         ],
         "x": 34,
-        "y": 559,
+        "y": 1359,
         "w": 632,
         "h": 82
     },
     {
-        "id": "134c1c118160eea1",
-        "type": "junction",
+        "id": "01b2dfa9ef5c3fc3",
+        "type": "group",
         "z": "b73d17450c17803c",
-        "g": "8ff7a8afe02f6f9b",
-        "x": 840,
-        "y": 160,
-        "wires": [
-            [
-                "062d10d7692edd95"
-            ]
-        ]
+        "name": "",
+        "style": {
+            "stroke": "#ff0000",
+            "label": true
+        },
+        "nodes": [
+            "e457ffc15e6ded46",
+            "178ef043d024ce87",
+            "f4e336f1fc89df65"
+        ],
+        "x": 34,
+        "y": 659,
+        "w": 472,
+        "h": 122
     },
     {
         "id": "f0e0241e5242290c",
@@ -1195,6 +1342,45 @@
         "wires": [
             [
                 "bbcd1c49821870a2"
+            ]
+        ]
+    },
+    {
+        "id": "7b32395f62fe148e",
+        "type": "junction",
+        "z": "b73d17450c17803c",
+        "x": 40,
+        "y": 420,
+        "wires": [
+            [
+                "0165592a7b31aaa1",
+                "062d10d7692edd95",
+                "72aadbf5345518d7"
+            ]
+        ]
+    },
+    {
+        "id": "118c544fd9f54519",
+        "type": "junction",
+        "z": "b73d17450c17803c",
+        "x": 60,
+        "y": 260,
+        "wires": [
+            [
+                "7b32395f62fe148e"
+            ]
+        ]
+    },
+    {
+        "id": "0f4b804ff0a6cc27",
+        "type": "junction",
+        "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
+        "x": 900,
+        "y": 160,
+        "wires": [
+            [
+                "118c544fd9f54519"
             ]
         ]
     },
@@ -1802,14 +1988,15 @@
         "id": "e457ffc15e6ded46",
         "type": "http in",
         "z": "b73d17450c17803c",
+        "g": "01b2dfa9ef5c3fc3",
         "name": "",
         "url": "/api/v1/webhook/telegram",
         "method": "post",
         "upload": false,
         "skipBodyParsing": false,
         "swaggerDoc": "",
-        "x": 170,
-        "y": 380,
+        "x": 190,
+        "y": 720,
         "wires": [
             [
                 "178ef043d024ce87",
@@ -1821,17 +2008,19 @@
         "id": "178ef043d024ce87",
         "type": "http response",
         "z": "b73d17450c17803c",
+        "g": "01b2dfa9ef5c3fc3",
         "name": "",
         "statusCode": "200",
         "headers": {},
-        "x": 380,
-        "y": 360,
+        "x": 400,
+        "y": 700,
         "wires": []
     },
     {
         "id": "f4e336f1fc89df65",
         "type": "debug",
         "z": "b73d17450c17803c",
+        "g": "01b2dfa9ef5c3fc3",
         "name": "telegram",
         "active": false,
         "tosidebar": true,
@@ -1841,8 +2030,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 380,
-        "y": 400,
+        "x": 400,
+        "y": 740,
         "wires": []
     },
     {
@@ -1863,7 +2052,7 @@
                 "module": "stripe"
             }
         ],
-        "x": 360,
+        "x": 340,
         "y": 140,
         "wires": [
             [
@@ -1883,7 +2072,7 @@
         "upload": false,
         "skipBodyParsing": true,
         "swaggerDoc": "",
-        "x": 160,
+        "x": 140,
         "y": 140,
         "wires": [
             [
@@ -1906,7 +2095,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 510,
+        "x": 490,
         "y": 100,
         "wires": []
     },
@@ -1923,7 +2112,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 630,
+        "x": 610,
         "y": 120,
         "wires": [
             [
@@ -1939,7 +2128,7 @@
         "name": "",
         "statusCode": "200",
         "headers": {},
-        "x": 360,
+        "x": 340,
         "y": 100,
         "wires": []
     },
@@ -1954,7 +2143,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 750,
+        "x": 730,
         "y": 120,
         "wires": [
             [
@@ -1977,7 +2166,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 750,
+        "x": 730,
         "y": 80,
         "wires": []
     },
@@ -2002,7 +2191,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 510,
+        "x": 490,
         "y": 140,
         "wires": [
             [
@@ -2026,7 +2215,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 630,
+        "x": 610,
         "y": 160,
         "wires": [
             [
@@ -2045,7 +2234,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 750,
+        "x": 730,
         "y": 160,
         "wires": [
             []
@@ -2064,12 +2253,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 880,
+        "x": 860,
         "y": 120,
         "wires": [
             [
-                "134c1c118160eea1",
-                "6e1a6abd115867f5"
+                "6e1a6abd115867f5",
+                "0f4b804ff0a6cc27"
             ]
         ]
     },
@@ -2086,8 +2275,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 140,
-        "y": 260,
+        "x": 220,
+        "y": 520,
         "wires": [
             [
                 "0fdb989c2dc85e8d"
@@ -2105,8 +2294,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 320,
-        "y": 260,
+        "x": 400,
+        "y": 520,
         "wires": [
             [
                 "b779df4ed3bc8845"
@@ -2126,12 +2315,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 260,
+        "x": 550,
+        "y": 520,
         "wires": [
             [
-                "f0deea2958d1b962",
-                "0165592a7b31aaa1"
+                "f0deea2958d1b962"
             ]
         ]
     },
@@ -2141,7 +2329,7 @@
         "z": "b73d17450c17803c",
         "g": "34e680e7054de3d0",
         "name": "telegram",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2149,313 +2337,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 400,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "8b0cc77773268755",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "g": "04d6ca379c9c81d0",
-        "name": "09:00 (madrid) except sunday",
-        "props": [],
-        "repeat": "",
-        "crontab": "00 08 * * 1,2,3,4,5,6",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 210,
-        "y": 800,
-        "wires": [
-            [
-                "3e18abe1e5573a92"
-            ]
-        ]
-    },
-    {
-        "id": "3e18abe1e5573a92",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "g": "04d6ca379c9c81d0",
-        "name": "orders",
-        "func": "msg.payload = `\nSELECT\n    o.order_id,\n    o.customer_name,\n    o.customer_email,\n    o.customer_phone,\n    TO_CHAR(o.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    o.pickup_time,\n    o.total_price,\n    o.notes,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free\n            )\n            FROM order_items oi\n            LEFT JOIN product_translations pt\n                ON oi.product_id = pt.product_id\n                AND pt.language_code = 'es'\n            LEFT JOIN product_variant_translations pvt\n                ON oi.product_variant_id = pvt.variant_id\n                AND pvt.language_code = 'es'\n            WHERE oi.order_id = o.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM orders o\nWHERE o.pickup_date = CURRENT_DATE AND o.status = 'paid'\n`;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 410,
-        "y": 800,
-        "wires": [
-            [
-                "1dddc496f69d50b9"
-            ]
-        ]
-    },
-    {
-        "id": "1dddc496f69d50b9",
-        "type": "link call",
-        "z": "b73d17450c17803c",
-        "g": "04d6ca379c9c81d0",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 540,
-        "y": 800,
-        "wires": [
-            [
-                "3a2cbc2e9c0eb2f4"
-            ]
-        ]
-    },
-    {
-        "id": "3a2cbc2e9c0eb2f4",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "g": "04d6ca379c9c81d0",
-        "name": "form msg",
-        "func": "const orders = msg.payload || [];\nconst MAX_LENGTH = 4000; \n\nconst today = new Date();\nconst formattedDate = today.toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: '2-digit',\n    month: 'long'\n}).replace('/', '.');\n\nif (orders.length === 0) {\n    msg.payload = [{\n        message: `<i>${formattedDate}</i>\\n😫 NO hay pedidos para hoy`,\n        topic: 'vender'\n    }];\n    return msg;\n}\n\nconst formatOrder = (order, i) => {\n    const { order_id, customer_name, customer_phone, total_price, notes, items = [] } = order;\n\n    const itemsList = items.map(item => {\n        const productName = item.product_name?.replace(/^Cremosa(?:\\s+de)?\\s*/i, '').trim();\n        const variantName = item.variant_name?.split('(')[0].trim().toLowerCase();\n        \n        const dietary = [];\n        if (item.is_gluten_free) dietary.push('sin gluten');\n        if (item.is_lactose_free) dietary.push('sin lactosa');\n        const dietaryText = dietary.length > 0 ? ` (${dietary.join(', ')})` : '';\n\n        return `      • ${item.quantity} ${productName} ${variantName}${dietaryText}`;\n    }).join('\\n');\n\n    return `\\n<b>${i + 1}.</b> ${order_id} <i>${total_price}€</i>\\n<b>${customer_name}</b>\\n${customer_phone}\\n${itemsList}${notes ? `\\nNota: <i>${notes}</i>` : ''}`;\n};\n\nconst splitIntoChunks = (text, limit) => {\n    if (text.length <= limit) return [text];\n    \n    const chunks = [];\n    let currentChunk = \"\";\n    const lines = text.split('\\n');\n\n    for (const line of lines) {\n        if ((currentChunk + line).length > limit) {\n            chunks.push(currentChunk.trim());\n            currentChunk = line + \"\\n\";\n        } else {\n            currentChunk += line + \"\\n\";\n        }\n    }\n    if (currentChunk) chunks.push(currentChunk.trim());\n    return chunks;\n};\n\nconst finalMessages = [];\nconst header = `<i>${formattedDate} (${orders.length})</i>\\n`;\n\nconst processShift = (shiftOrders, title) => {\n    if (shiftOrders?.length === 0) return;\n\n    let shiftText = `<b><i>${title} (${shiftOrders.length})</i></b>\\n`;\n    shiftText += shiftOrders.map((o, i) => formatOrder(o, i)).join('\\n');\n\n    const chunks = splitIntoChunks(shiftText, MAX_LENGTH - header.length);\n    \n    chunks.forEach((chunk, index) => {\n        const prefix = index === 0 ? header : `<i>(Continuación ${title})</i>\\n`;\n        finalMessages.push({\n            message: prefix + chunk,\n            topic: 'vender'\n        });\n    });\n};\n\nconst morningOrders = orders.filter(o => o?.pickup_time === 'morning');\nconst eveningOrders = orders.filter(o => o?.pickup_time === 'evening');\n\nprocessShift(morningOrders, \"por la mañana\");\nprocessShift(eveningOrders, \"por la tarde\");\n\nmsg.payload = finalMessages;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
         "x": 680,
-        "y": 800,
-        "wires": [
-            [
-                "05b9dafc458ac843"
-            ]
-        ]
-    },
-    {
-        "id": "05b9dafc458ac843",
-        "type": "split",
-        "z": "b73d17450c17803c",
-        "g": "04d6ca379c9c81d0",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload",
-        "x": 810,
-        "y": 800,
-        "wires": [
-            [
-                "040befe79eed286b"
-            ]
-        ]
-    },
-    {
-        "id": "6d6523925f6e6a40",
-        "type": "link call",
-        "z": "b73d17450c17803c",
-        "g": "04d6ca379c9c81d0",
-        "name": "",
-        "links": [
-            "2717e8e40e0e66c5"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1000,
-        "y": 800,
-        "wires": [
-            [
-                "9b8489bc4b6367e0"
-            ]
-        ]
-    },
-    {
-        "id": "9b8489bc4b6367e0",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "g": "04d6ca379c9c81d0",
-        "name": "jandro",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1150,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "040befe79eed286b",
-        "type": "delay",
-        "z": "b73d17450c17803c",
-        "g": "04d6ca379c9c81d0",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 885,
-        "y": 800,
-        "wires": [
-            [
-                "6d6523925f6e6a40"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "3ec3f7341979b1f6",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "g": "2ffdb4c723e8e6a0",
-        "name": "orders",
-        "func": "msg.payload = `\nSELECT\n    pt.name AS product_name,\n    pvt.name AS variant_name,\n    SUM(CASE WHEN NOT oi.is_gluten_free AND NOT oi.is_lactose_free THEN oi.quantity ELSE 0 END) AS normal_count,\n    SUM(CASE WHEN oi.is_gluten_free THEN oi.quantity ELSE 0 END) AS gluten_free_count,\n    SUM(CASE WHEN oi.is_lactose_free THEN oi.quantity ELSE 0 END) AS lactose_free_count,\n    SUM(oi.quantity) AS total_quantity\nFROM orders o\nINNER JOIN order_items oi ON o.id = oi.order_id\nINNER JOIN products p ON oi.product_id = p.id\nLEFT JOIN product_translations pt\n    ON oi.product_id = pt.product_id\n    AND pt.language_code = 'es'\nLEFT JOIN product_variant_translations pvt\n    ON oi.product_variant_id = pvt.variant_id\n    AND pvt.language_code = 'es'\nWHERE o.pickup_date = (NOW() AT TIME ZONE 'Europe/Madrid')::DATE + INTERVAL '1 day'\n    AND o.status = 'paid'\nGROUP BY pt.name, pvt.name\nORDER BY pt.name, pvt.name;\n`;\n\n// WHERE o.pickup_date = CURRENT_DATE + INTERVAL '1 day'\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 410,
-        "y": 900,
-        "wires": [
-            [
-                "b7e1e8774682fe33"
-            ]
-        ]
-    },
-    {
-        "id": "c093de95f0e6815a",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "g": "2ffdb4c723e8e6a0",
-        "name": "00:05 (madrid) except sunday",
-        "props": [],
-        "repeat": "",
-        "crontab": "05 00 * * 1,2,3,4,5,6",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 210,
-        "y": 900,
-        "wires": [
-            [
-                "3ec3f7341979b1f6"
-            ]
-        ]
-    },
-    {
-        "id": "b7e1e8774682fe33",
-        "type": "link call",
-        "z": "b73d17450c17803c",
-        "g": "2ffdb4c723e8e6a0",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 540,
-        "y": 900,
-        "wires": [
-            [
-                "d0d0c98e3e5380d1"
-            ]
-        ]
-    },
-    {
-        "id": "d0d0c98e3e5380d1",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "g": "2ffdb4c723e8e6a0",
-        "name": "form msg",
-        "func": "const items = msg.payload || [];\nconst MAX_LENGTH = 4000;\nconst general = items?.reduce((acc, e) => {\n    return acc += parseInt(e?.total_quantity)\n}, 0)\n\nconst date = new Date();\ndate.setDate(date.getDate() + 1); \n\nconst formattedDate = date.toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: '2-digit',\n    month: 'long'\n}).replace('/', '.');\n\nif (items.length === 0) {\n    msg.payload = [{\n        message: `<i>${formattedDate}</i>\\n😫 NO hay productos para fabricar`,\n        topic: 'fabricar'\n    }];\n    return msg;\n}\n\nconst formatProductionLine = (item) => {\n    const productName = item.product_name?.replace(/^Cremosa(?:\\s+de)?\\s*/i, '').trim();\n    const variantName = item.variant_name?.split('(')?.[0]?.trim()?.toLowerCase();\n    \n    const details = [];\n    \n    if (parseInt(item.normal_count) > 0) {\n        details.push(`${item?.normal_count} estándar`);\n    }\n    if (parseInt(item.gluten_free_count) > 0) {\n        details.push(`${item?.gluten_free_count} sin gluten`);\n    }\n    if (parseInt(item.lactose_free_count) > 0) {\n        details.push(`${item?.lactose_free_count} sin lactosa`);\n    }\n\n    const detailsText = details.length > 0 ? `\\n    ${details.join('\\n    ')}` : '';\n\n    return `<b>${item.total_quantity}x ${productName}</b> (${variantName})${detailsText}`;\n};\n\nconst splitIntoChunks = (text, limit) => {\n    if (text.length <= limit) return [text];\n    const chunks = [];\n    let currentChunk = \"\";\n    const lines = text.split('\\n');\n    for (const line of lines) {\n        if ((currentChunk + line).length > limit) {\n            chunks.push(currentChunk.trim());\n            currentChunk = line + \"\\n\";\n        } else {\n            currentChunk += line + \"\\n\";\n        }\n    }\n    if (currentChunk) chunks.push(currentChunk.trim());\n    return chunks;\n};\n\nconst header = `<i>${formattedDate} (${general})</i>\\n\\n`;\nconst body = items.map(formatProductionLine).join('\\n\\n');\n\nconst chunks = splitIntoChunks(body, MAX_LENGTH - header.length);\nconst finalMessages = chunks.map((chunk, index) => {\n    return {\n        message: (index === 0 ? header : `<i>(Continuación fabricación)</i>\\n\\n`) + chunk,\n        topic: 'fabricar'\n    };\n});\n\nmsg.payload = finalMessages;\nreturn msg;\n\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 680,
-        "y": 900,
-        "wires": [
-            [
-                "ec0a2cda522b2f98"
-            ]
-        ]
-    },
-    {
-        "id": "ec0a2cda522b2f98",
-        "type": "split",
-        "z": "b73d17450c17803c",
-        "g": "2ffdb4c723e8e6a0",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload",
-        "x": 810,
-        "y": 900,
-        "wires": [
-            [
-                "54e64e0b3987df5f"
-            ]
-        ]
-    },
-    {
-        "id": "f73f4f5be7e9d15b",
-        "type": "link call",
-        "z": "b73d17450c17803c",
-        "g": "2ffdb4c723e8e6a0",
-        "name": "",
-        "links": [
-            "2717e8e40e0e66c5"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1020,
-        "y": 900,
-        "wires": [
-            [
-                "5a9be941da473f9e"
-            ]
-        ]
-    },
-    {
-        "id": "5a9be941da473f9e",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "g": "2ffdb4c723e8e6a0",
-        "name": "bakers",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1170,
-        "y": 900,
+        "y": 520,
         "wires": []
     },
     {
@@ -2466,7 +2349,7 @@
         "scope": null,
         "uncaught": false,
         "x": 100,
-        "y": 980,
+        "y": 840,
         "wires": [
             [
                 "948dde2391c8db61",
@@ -2488,7 +2371,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 240,
-        "y": 1020,
+        "y": 880,
         "wires": []
     },
     {
@@ -2504,7 +2387,7 @@
         "finalize": "",
         "libs": [],
         "x": 240,
-        "y": 980,
+        "y": 840,
         "wires": [
             [
                 "bd5f284266d703ff"
@@ -2522,37 +2405,10 @@
         "linkType": "static",
         "timeout": "30",
         "x": 400,
-        "y": 980,
+        "y": 840,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "54e64e0b3987df5f",
-        "type": "delay",
-        "z": "b73d17450c17803c",
-        "g": "2ffdb4c723e8e6a0",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 895,
-        "y": 900,
-        "wires": [
-            [
-                "f73f4f5be7e9d15b"
-            ]
-        ],
-        "l": false
     },
     {
         "id": "584213fb0ad159c3",
@@ -2572,11 +2428,11 @@
                 "module": "nodemailer"
             }
         ],
-        "x": 790,
-        "y": 260,
+        "x": 350,
+        "y": 280,
         "wires": [
             [
-                "f0deea2958d1b962"
+                "7c3ba67cdefd1a4d"
             ]
         ]
     },
@@ -2593,734 +2449,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
-        "y": 260,
+        "x": 210,
+        "y": 280,
         "wires": [
             [
                 "584213fb0ad159c3"
-            ]
-        ]
-    },
-    {
-        "id": "830c16eb376d4d95",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 1260,
-        "wires": [
-            [
-                "33d73b1b82c72889"
-            ]
-        ]
-    },
-    {
-        "id": "33d73b1b82c72889",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "CURRENT_DATE",
-        "func": "msg.payload = `\nSELECT CURRENT_DATE;`\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 290,
-        "y": 1260,
-        "wires": [
-            [
-                "29d51e39ad2ea1e6"
-            ]
-        ]
-    },
-    {
-        "id": "29d51e39ad2ea1e6",
-        "type": "link call",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 460,
-        "y": 1260,
-        "wires": [
-            [
-                "cdc6ef1972bf00ef"
-            ]
-        ]
-    },
-    {
-        "id": "cdc6ef1972bf00ef",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "CURRENT_DATE",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 630,
-        "y": 1260,
-        "wires": []
-    },
-    {
-        "id": "e347ba8a0a0cbe7b",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 1300,
-        "wires": [
-            [
-                "6c7197acefc6ffb0"
-            ]
-        ]
-    },
-    {
-        "id": "6c7197acefc6ffb0",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "CURRENT_TIMESTAMP",
-        "func": "msg.payload = `\nSELECT CURRENT_TIMESTAMP;`\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 310,
-        "y": 1300,
-        "wires": [
-            [
-                "aa3fb7d5d2c14c2a"
-            ]
-        ]
-    },
-    {
-        "id": "aa3fb7d5d2c14c2a",
-        "type": "link call",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 500,
-        "y": 1300,
-        "wires": [
-            [
-                "f51ee372c07831a4"
-            ]
-        ]
-    },
-    {
-        "id": "f51ee372c07831a4",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "CURRENT_TIMESTAMP",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 690,
-        "y": 1300,
-        "wires": []
-    },
-    {
-        "id": "495cc74312454349",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 1360,
-        "wires": [
-            [
-                "c6b6f4affda05c2e"
-            ]
-        ]
-    },
-    {
-        "id": "c6b6f4affda05c2e",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "CURRENT_TIMESTAMP",
-        "func": "msg.payload = `\nSELECT timezone('Europe/Madrid', CURRENT_TIMESTAMP);`\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 310,
-        "y": 1360,
-        "wires": [
-            [
-                "c279713aa2760e86"
-            ]
-        ]
-    },
-    {
-        "id": "c279713aa2760e86",
-        "type": "link call",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 500,
-        "y": 1360,
-        "wires": [
-            [
-                "c6d37d2ad7c25633"
-            ]
-        ]
-    },
-    {
-        "id": "c6d37d2ad7c25633",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "CURRENT_TIMESTAMP",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 690,
-        "y": 1360,
-        "wires": []
-    },
-    {
-        "id": "bf56d702c9a8ef98",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 1500,
-        "wires": [
-            [
-                "acd757e2e8d2f3c1"
-            ]
-        ]
-    },
-    {
-        "id": "acd757e2e8d2f3c1",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "invoices get",
-        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 270,
-        "y": 1500,
-        "wires": [
-            [
-                "d2b9bce9b78d2891"
-            ]
-        ]
-    },
-    {
-        "id": "d2b9bce9b78d2891",
-        "type": "http request",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "method": "use",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 430,
-        "y": 1500,
-        "wires": [
-            [
-                "bac922d848ab5f8d"
-            ]
-        ]
-    },
-    {
-        "id": "bac922d848ab5f8d",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "invoices get",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 590,
-        "y": 1500,
-        "wires": []
-    },
-    {
-        "id": "c94c7045f044fefb",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 1600,
-        "wires": [
-            [
-                "5d8025f0ce009110"
-            ]
-        ]
-    },
-    {
-        "id": "5d8025f0ce009110",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "thirdparties",
-        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/thirdparties';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 270,
-        "y": 1600,
-        "wires": [
-            [
-                "21f12c9d7524351d"
-            ]
-        ]
-    },
-    {
-        "id": "21f12c9d7524351d",
-        "type": "http request",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "method": "use",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 430,
-        "y": 1600,
-        "wires": [
-            [
-                "8fbf0450fc1bdfd7"
-            ]
-        ]
-    },
-    {
-        "id": "8fbf0450fc1bdfd7",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 580,
-        "y": 1600,
-        "wires": []
-    },
-    {
-        "id": "a0d3348c91a671ec",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 1540,
-        "wires": [
-            [
-                "4d920463dd3742ed"
-            ]
-        ]
-    },
-    {
-        "id": "4d920463dd3742ed",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "invoices post",
-        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nfunction calcNetPrice(priceWithTax, taxPercent) {\n    node.warn((priceWithTax / (1 + taxPercent / 100)) * 100);\n\n    return (priceWithTax / (1 + taxPercent / 100)) * 100;\n}\n\nmsg.payload = {\n    \"socid\": 4, \n    \"type\": 0,  \n    \"lines\": [\n        {\n            \"fk_product\": 2,\n            \"qty\": 1,\n            subprice: 4.53636,\n\n            // total_ttc: 4.99,\n            // multicurrency_total_ttc: 4.99\n            // \"subprice\": calcNetPrice(4.99, 10),\n            \"tva_tx\": 10.00, \n        }\n        \n    ]\n};\n\n\nmsg.method = 'POST';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\" \n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 270,
-        "y": 1540,
-        "wires": [
-            [
-                "b84d5e720b0dfa3e"
-            ]
-        ]
-    },
-    {
-        "id": "b84d5e720b0dfa3e",
-        "type": "http request",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "method": "use",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 430,
-        "y": 1540,
-        "wires": [
-            [
-                "c97213a2a8296cc8"
-            ]
-        ]
-    },
-    {
-        "id": "c97213a2a8296cc8",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "invoices post",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 590,
-        "y": 1540,
-        "wires": []
-    },
-    {
-        "id": "95d1de9181532cb2",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 1640,
-        "wires": [
-            [
-                "aec02b1cf9eefcbd"
-            ]
-        ]
-    },
-    {
-        "id": "aec02b1cf9eefcbd",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "thirdparties",
-        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'POST';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/thirdparties';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nmsg.payload = {\n    \"name\": \"Ventas Web\",\n    \"client\": 1,\n    \"code_client\": \"auto\"\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 270,
-        "y": 1640,
-        "wires": [
-            [
-                "4e22e487df21d181"
-            ]
-        ]
-    },
-    {
-        "id": "4e22e487df21d181",
-        "type": "http request",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "method": "use",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 430,
-        "y": 1640,
-        "wires": [
-            [
-                "dac983cd48c46468"
-            ]
-        ]
-    },
-    {
-        "id": "dac983cd48c46468",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 580,
-        "y": 1640,
-        "wires": []
-    },
-    {
-        "id": "c8f02235ebfe3a69",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 1760,
-        "wires": [
-            [
-                "93898b59919af68b"
-            ]
-        ]
-    },
-    {
-        "id": "93898b59919af68b",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "products",
-        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/products';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 260,
-        "y": 1760,
-        "wires": [
-            [
-                "c457abd69013c9f2"
-            ]
-        ]
-    },
-    {
-        "id": "c457abd69013c9f2",
-        "type": "http request",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "method": "use",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 410,
-        "y": 1760,
-        "wires": [
-            [
-                "2099c74f2cdfc330",
-                "346baae1ddff8a60"
-            ]
-        ]
-    },
-    {
-        "id": "2099c74f2cdfc330",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 1680,
-        "wires": []
-    },
-    {
-        "id": "346baae1ddff8a60",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "function 1",
-        "func": "msg.payload = msg.payload?.map(e => {\n    return {\n        id: e?.id, \n        label: e?.label\n    }\n})\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 560,
-        "y": 1760,
-        "wires": [
-            [
-                "2099c74f2cdfc330"
             ]
         ]
     },
@@ -3337,7 +2470,7 @@
         "finalize": "",
         "libs": [],
         "x": 260,
-        "y": 500,
+        "y": 620,
         "wires": [
             [
                 "240c733325a2ed41"
@@ -3366,7 +2499,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 500,
+        "y": 620,
         "wires": [
             [
                 "957926780ec4a3fe"
@@ -3377,7 +2510,905 @@
         "id": "240c733325a2ed41",
         "type": "debug",
         "z": "b73d17450c17803c",
-        "name": "debug 5",
+        "name": "msg with order",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "72aadbf5345518d7",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "to dolibarr",
+        "func": "msg.DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!msg.DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nconst VARIANT_RULES = [\n    { flag: 'is_gluten_free', idKey: 'dolibarr_gluten_id', priceKey: 'price_tax_free_gluten' },\n    { flag: 'is_lactose_free', idKey: 'dolibarr_lactose_id', priceKey: 'price_tax_free_lactose' }\n];\n\nconst selectValue = (item, rules, { id, price }) => {\n    const rule = rules?.find(r => item?.[r?.flag]);\n    return {\n        id: rule ? item?.[rule?.idKey] : item?.[id],\n        price: rule ? item?.[rule?.priceKey] : item?.[price],\n    };\n};\n\nconst items = msg.order?.items || [];\nconst lines = items?.map(e => {\n    const { id, price } = selectValue(e, VARIANT_RULES, {\n        id: 'dolibarr_id',\n        price: 'price_tax_free',\n    });\n\n    return {\n        \"fk_product\": id,\n        \"qty\": e?.quantity,\n        \"subprice\": price,\n        \"tva_tx\": 10.00,\n    };\n});\n\nmsg.payload = {\n    \"socid\": 4,\n    \"type\": 0,\n    \"lines\": lines\n};\n\nmsg.method = 'POST';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices';\n\nmsg.headers = {\n    \"DOLAPIKEY\": msg.DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 210,
+        "y": 420,
+        "wires": [
+            [
+                "6428fc240f43793f"
+            ]
+        ]
+    },
+    {
+        "id": "6428fc240f43793f",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 370,
+        "y": 420,
+        "wires": [
+            [
+                "046ae0a7b3bccb92"
+            ]
+        ]
+    },
+    {
+        "id": "7c3ba67cdefd1a4d",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "email",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "252065a6ac1f8d8e",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1380,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f64274a774fe0315",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1340,
+        "y": 780,
+        "wires": [
+            [
+                "19815e09f6b7d351"
+            ]
+        ]
+    },
+    {
+        "id": "19815e09f6b7d351",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "invoices get",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.invoiceId = 51;\n\nmsg.method = 'GET';\nmsg.url = `https://pos.ascremosas.com/api/index.php/invoices/${msg.invoiceId}`;\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1490,
+        "y": 780,
+        "wires": [
+            [
+                "62d13a7e4aac9213"
+            ]
+        ]
+    },
+    {
+        "id": "62d13a7e4aac9213",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1650,
+        "y": 780,
+        "wires": [
+            [
+                "efa2a1d9eb930392"
+            ]
+        ]
+    },
+    {
+        "id": "efa2a1d9eb930392",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "invoices get",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1810,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "6c423dc8bb2c6824",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "dolibarr",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "046ae0a7b3bccb92",
+        "type": "delay",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 475,
+        "y": 420,
+        "wires": [
+            [
+                "6c423dc8bb2c6824",
+                "9320de9a4d1abe3d"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "6e6d0c2db7a880ac",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 770,
+        "y": 420,
+        "wires": [
+            [
+                "e789b5ba9e5c284a",
+                "3a604d74806c1539"
+            ]
+        ]
+    },
+    {
+        "id": "9320de9a4d1abe3d",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "validate invoice",
+        "func": "if (msg.statusCode !== 200) {\n    node.error(\"Error to create invoice in dolibarr\", msg);\n\n    return null;\n};\n\nmsg.invoiceId = msg?.payload || '';\nmsg.payload = {};\n\nmsg.method = 'POST';\nmsg.url = `https://pos.ascremosas.com/api/index.php/invoices/${msg?.invoiceId}/validate`;\n\nmsg.headers = {\n    \"DOLAPIKEY\": msg.DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\" \n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 420,
+        "wires": [
+            [
+                "6e6d0c2db7a880ac"
+            ]
+        ]
+    },
+    {
+        "id": "e789b5ba9e5c284a",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "invoices post",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "3a604d74806c1539",
+        "type": "delay",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 865,
+        "y": 420,
+        "wires": [
+            [
+                "3b8322f6546aac2c"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "3b8322f6546aac2c",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "invoices post",
+        "func": "if (msg.statusCode !== 200) {\n    node.error(\"Error to validate invoice in dolibarr\", msg);\n\n    return null;\n};\n\nmsg.method = 'POST';\nmsg.url = `https://pos.ascremosas.com/api/index.php/invoices/${msg.invoiceId}/payments`;\nmsg.headers = {\n    \"DOLAPIKEY\": msg.DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nmsg.payload = {\n    \"datepaye\": Math.floor(Date.now() / 1000), \n    \"paymentid\": 6,\n    \"closepaidinvoices\": \"yes\",\n    \"accountid\": 2,\n    \"num_payment\": msg.order?.order_id\n};\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 420,
+        "wires": [
+            [
+                "131be86f15cd2ced"
+            ]
+        ]
+    },
+    {
+        "id": "131be86f15cd2ced",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1130,
+        "y": 420,
+        "wires": [
+            [
+                "b182aa6f457d3c64",
+                "57ad09d92ecdcded"
+            ]
+        ]
+    },
+    {
+        "id": "b182aa6f457d3c64",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "invoices post",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1330,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "57ad09d92ecdcded",
+        "type": "delay",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1235,
+        "y": 420,
+        "wires": [
+            [
+                "b8228759b6e0935f"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "b8228759b6e0935f",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "get invoice",
+        "func": "if (msg.statusCode !== 200) {\n    node.error(\"Error to pay invoice in dolibarr\", msg);\n\n    return null;\n};\n\nmsg.method = 'GET';\nmsg.url = `https://pos.ascremosas.com/api/index.php/invoices/${msg.invoiceId}`;\n\nmsg.headers = {\n    \"DOLAPIKEY\": msg.DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 420,
+        "wires": [
+            [
+                "c1e087a4c92536cd"
+            ]
+        ]
+    },
+    {
+        "id": "c1e087a4c92536cd",
+        "type": "http request",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1510,
+        "y": 420,
+        "wires": [
+            [
+                "f7bcf7eea5eefe9f",
+                "820922ad795716dc"
+            ]
+        ]
+    },
+    {
+        "id": "f7bcf7eea5eefe9f",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "get invoice ref",
+        "func": "if (msg.statusCode !== 200) {\n    node.error(\"Error to get invoice in dolibarr\", msg);\n\n    return null;\n};\n\nconst invoiceRef = msg?.payload?.ref || '';\n\nmsg.queryParameters = [msg.order?.order_id, invoiceRef];\n\nmsg.payload = `\nUPDATE orders\nSET dolibarr_ref = $2\nWHERE order_id = $1\nRETURNING id`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1680,
+        "y": 420,
+        "wires": [
+            [
+                "1a59d02809c498dc"
+            ]
+        ]
+    },
+    {
+        "id": "820922ad795716dc",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "invoices post",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1730,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "1a59d02809c498dc",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1840,
+        "y": 420,
+        "wires": [
+            [
+                "820922ad795716dc",
+                "db295c77f3899c40"
+            ]
+        ]
+    },
+    {
+        "id": "db295c77f3899c40",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "g": "66065f0648f839c2",
+        "name": "check err",
+        "func": "if (msg.payload?.length === 0) {\n    node.error(\"Problem with added data to DB (dolibarr_ref to orders)\", msg);\n    return null;\n}",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1980,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "3e18abe1e5573a92",
+        "type": "function",
+        "z": "d6966d87889a164a",
+        "g": "04d6ca379c9c81d0",
+        "name": "orders",
+        "func": "msg.payload = `\nSELECT\n    o.order_id,\n    o.customer_name,\n    o.customer_email,\n    o.customer_phone,\n    TO_CHAR(o.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    o.pickup_time,\n    o.total_price,\n    o.notes,\n    o.dolibarr_ref,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free\n            )\n            FROM order_items oi\n            LEFT JOIN product_translations pt\n                ON oi.product_id = pt.product_id\n                AND pt.language_code = 'es'\n            LEFT JOIN product_variant_translations pvt\n                ON oi.product_variant_id = pvt.variant_id\n                AND pvt.language_code = 'es'\n            WHERE oi.order_id = o.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM orders o\nWHERE o.pickup_date = CURRENT_DATE AND o.status = 'paid'\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 80,
+        "wires": [
+            [
+                "1dddc496f69d50b9"
+            ]
+        ]
+    },
+    {
+        "id": "8b0cc77773268755",
+        "type": "inject",
+        "z": "d6966d87889a164a",
+        "g": "04d6ca379c9c81d0",
+        "name": "09:00 (madrid) except sunday",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 08 * * 1,2,3,4,5,6",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 80,
+        "wires": [
+            [
+                "3e18abe1e5573a92"
+            ]
+        ]
+    },
+    {
+        "id": "1dddc496f69d50b9",
+        "type": "link call",
+        "z": "d6966d87889a164a",
+        "g": "04d6ca379c9c81d0",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 540,
+        "y": 80,
+        "wires": [
+            [
+                "51e6a34f8405ccc1"
+            ]
+        ]
+    },
+    {
+        "id": "51e6a34f8405ccc1",
+        "type": "function",
+        "z": "d6966d87889a164a",
+        "g": "04d6ca379c9c81d0",
+        "name": "form msg",
+        "func": "const orders = msg.payload || [];\nconst MAX_LENGTH = 4000; \n\nconst today = new Date();\nconst formattedDate = today.toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: '2-digit',\n    month: 'long'\n}).replace('/', '.');\n\nif (orders.length === 0) {\n    msg.payload = [{\n        message: `<i>${formattedDate}</i>\\n😫 NO hay pedidos para hoy`,\n        topic: 'vender'\n    }];\n    return msg;\n}\n\nconst formatOrder = (order, i) => {\n    const {\n        order_id,\n        dolibarr_ref,\n        customer_name,\n        customer_phone,\n        total_price,\n        notes,\n        items = []\n    } = order;\n\n    const itemsList = items.map(item => {\n        const productName = item.product_name\n            ?.replace(/^Cremosa(?:\\s+de)?\\s*/i, '')\n            .trim();\n\n        const variantName = item.variant_name\n            ?.split('(')[0]\n            .trim()\n            .toLowerCase();\n\n        const dietary = [];\n        if (item.is_gluten_free) dietary.push('sin gluten');\n        if (item.is_lactose_free) dietary.push('sin lactosa');\n        const dietaryText = dietary.length ? ` (${dietary.join(', ')})` : '';\n\n        return `    • ${item.quantity}× ${productName} ${variantName}${dietaryText}`;\n    }).join('\\n');\n\n    return (\n        `\\n${i + 1}. 🧾 ${order_id}` +\n        `${dolibarr_ref ? `\\n[${dolibarr_ref}]` : ''} ` +\n        `\\n<i>${total_price}€</i>\\n` +\n        `👤 <b>${customer_name}</b>\\n` +\n        `📞 ${customer_phone}\\n` +\n        `${itemsList}` +\n        `${notes ? `\\n📝 <i>${notes}</i>` : ''}`\n    );\n};\n\n\nconst splitIntoChunks = (text, limit) => {\n    if (text.length <= limit) return [text];\n    \n    const chunks = [];\n    let currentChunk = \"\";\n    const lines = text.split('\\n');\n\n    for (const line of lines) {\n        if ((currentChunk + line).length > limit) {\n            chunks.push(currentChunk.trim());\n            currentChunk = line + \"\\n\";\n        } else {\n            currentChunk += line + \"\\n\";\n        }\n    }\n    if (currentChunk) chunks.push(currentChunk.trim());\n    return chunks;\n};\n\nconst finalMessages = [];\nconst header = `<i>${formattedDate} · ${orders.length} pedidos</i>\\n`;\n\nconst processShift = (shiftOrders, title) => {\n    if (!shiftOrders?.length) return;\n\n    let shiftText = `<b><i>${title} (${shiftOrders.length})</i></b>\\n`;\n    shiftText += shiftOrders.map((o, i) => formatOrder(o, i)).join('\\n');\n\n    const chunks = splitIntoChunks(shiftText, MAX_LENGTH - header.length);\n\n    chunks.forEach((chunk, index) => {\n        const prefix =\n            index === 0\n                ? header\n                : `<i>↪ Continuación ${title}</i>\\n`;\n\n        finalMessages.push({\n            message: prefix + chunk,\n            topic: 'vender'\n        });\n    });\n};\n\nconst morningOrders = orders.filter(o => o?.pickup_time === 'morning');\nconst eveningOrders = orders.filter(o => o?.pickup_time === 'evening');\n\nprocessShift(morningOrders, \"por la mañana\");\nprocessShift(eveningOrders, \"por la tarde\");\n\nmsg.payload = finalMessages;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 80,
+        "wires": [
+            [
+                "0970e3d6e148a9b3"
+            ]
+        ]
+    },
+    {
+        "id": "0970e3d6e148a9b3",
+        "type": "split",
+        "z": "d6966d87889a164a",
+        "g": "04d6ca379c9c81d0",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 810,
+        "y": 80,
+        "wires": [
+            [
+                "40d2c80b9a75b81a"
+            ]
+        ]
+    },
+    {
+        "id": "40d2c80b9a75b81a",
+        "type": "delay",
+        "z": "d6966d87889a164a",
+        "g": "04d6ca379c9c81d0",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 895,
+        "y": 80,
+        "wires": [
+            [
+                "44f71fd37e0b0927"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "44f71fd37e0b0927",
+        "type": "link call",
+        "z": "d6966d87889a164a",
+        "g": "04d6ca379c9c81d0",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1020,
+        "y": 80,
+        "wires": [
+            [
+                "28058af2366c8fe5"
+            ]
+        ]
+    },
+    {
+        "id": "28058af2366c8fe5",
+        "type": "debug",
+        "z": "d6966d87889a164a",
+        "g": "04d6ca379c9c81d0",
+        "name": "jandro",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3ec3f7341979b1f6",
+        "type": "function",
+        "z": "d6966d87889a164a",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "orders",
+        "func": "msg.payload = `\nSELECT\n    pt.name AS product_name,\n    pvt.name AS variant_name,\n    SUM(CASE WHEN NOT oi.is_gluten_free AND NOT oi.is_lactose_free THEN oi.quantity ELSE 0 END) AS normal_count,\n    SUM(CASE WHEN oi.is_gluten_free THEN oi.quantity ELSE 0 END) AS gluten_free_count,\n    SUM(CASE WHEN oi.is_lactose_free THEN oi.quantity ELSE 0 END) AS lactose_free_count,\n    SUM(oi.quantity) AS total_quantity\nFROM orders o\nINNER JOIN order_items oi ON o.id = oi.order_id\nINNER JOIN products p ON oi.product_id = p.id\nLEFT JOIN product_translations pt\n    ON oi.product_id = pt.product_id\n    AND pt.language_code = 'es'\nLEFT JOIN product_variant_translations pvt\n    ON oi.product_variant_id = pvt.variant_id\n    AND pvt.language_code = 'es'\nWHERE o.pickup_date = (NOW() AT TIME ZONE 'Europe/Madrid')::DATE + INTERVAL '1 day'\n    AND o.status = 'paid'\nGROUP BY pt.name, pvt.name\nORDER BY pt.name, pvt.name;\n`;\n\n// WHERE o.pickup_date = CURRENT_DATE + INTERVAL '1 day'\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 180,
+        "wires": [
+            [
+                "b7e1e8774682fe33"
+            ]
+        ]
+    },
+    {
+        "id": "c093de95f0e6815a",
+        "type": "inject",
+        "z": "d6966d87889a164a",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "00:05 (madrid) except sunday",
+        "props": [],
+        "repeat": "",
+        "crontab": "05 00 * * 1,2,3,4,5,6",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 180,
+        "wires": [
+            [
+                "3ec3f7341979b1f6"
+            ]
+        ]
+    },
+    {
+        "id": "b7e1e8774682fe33",
+        "type": "link call",
+        "z": "d6966d87889a164a",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 540,
+        "y": 180,
+        "wires": [
+            [
+                "d0d0c98e3e5380d1"
+            ]
+        ]
+    },
+    {
+        "id": "d0d0c98e3e5380d1",
+        "type": "function",
+        "z": "d6966d87889a164a",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "form msg",
+        "func": "const items = msg.payload || [];\nconst MAX_LENGTH = 4000;\nconst general = items?.reduce((acc, e) => {\n    return acc += parseInt(e?.total_quantity)\n}, 0)\n\nconst date = new Date();\ndate.setDate(date.getDate() + 1); \n\nconst formattedDate = date.toLocaleDateString('es-ES', {\n    weekday: 'long',\n    day: '2-digit',\n    month: 'long'\n}).replace('/', '.');\n\nif (items.length === 0) {\n    msg.payload = [{\n        message: `<i>${formattedDate}</i>\\n😫 NO hay productos para fabricar`,\n        topic: 'fabricar'\n    }];\n    return msg;\n}\n\nconst formatProductionLine = (item) => {\n    const productName = item.product_name?.replace(/^Cremosa(?:\\s+de)?\\s*/i, '').trim();\n    const variantName = item.variant_name?.split('(')?.[0]?.trim()?.toLowerCase();\n    \n    const details = [];\n    \n    if (parseInt(item.normal_count) > 0) {\n        details.push(`${item?.normal_count} estándar`);\n    }\n    if (parseInt(item.gluten_free_count) > 0) {\n        details.push(`${item?.gluten_free_count} sin gluten`);\n    }\n    if (parseInt(item.lactose_free_count) > 0) {\n        details.push(`${item?.lactose_free_count} sin lactosa`);\n    }\n\n    const detailsText = details.length > 0 ? `\\n    ${details.join('\\n    ')}` : '';\n\n    return `<b>${item.total_quantity}x ${productName}</b> (${variantName})${detailsText}`;\n};\n\nconst splitIntoChunks = (text, limit) => {\n    if (text.length <= limit) return [text];\n    const chunks = [];\n    let currentChunk = \"\";\n    const lines = text.split('\\n');\n    for (const line of lines) {\n        if ((currentChunk + line).length > limit) {\n            chunks.push(currentChunk.trim());\n            currentChunk = line + \"\\n\";\n        } else {\n            currentChunk += line + \"\\n\";\n        }\n    }\n    if (currentChunk) chunks.push(currentChunk.trim());\n    return chunks;\n};\n\nconst header = `<i>${formattedDate} · ${general} pedidos</i>\\n\\n`;\n\nconst body = items.map(formatProductionLine).join('\\n\\n');\n\nconst chunks = splitIntoChunks(body, MAX_LENGTH - header.length);\nconst finalMessages = chunks.map((chunk, index) => {\n    return {\n        message: (index === 0 ? header : `<i>(Continuación fabricación)</i>\\n\\n`) + chunk,\n        topic: 'fabricar'\n    };\n});\n\nmsg.payload = finalMessages;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 180,
+        "wires": [
+            [
+                "ec0a2cda522b2f98"
+            ]
+        ]
+    },
+    {
+        "id": "ec0a2cda522b2f98",
+        "type": "split",
+        "z": "d6966d87889a164a",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 810,
+        "y": 180,
+        "wires": [
+            [
+                "54e64e0b3987df5f"
+            ]
+        ]
+    },
+    {
+        "id": "f73f4f5be7e9d15b",
+        "type": "link call",
+        "z": "d6966d87889a164a",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "",
+        "links": [
+            "2717e8e40e0e66c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1020,
+        "y": 180,
+        "wires": [
+            [
+                "5a9be941da473f9e"
+            ]
+        ]
+    },
+    {
+        "id": "5a9be941da473f9e",
+        "type": "debug",
+        "z": "d6966d87889a164a",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "bakers",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "54e64e0b3987df5f",
+        "type": "delay",
+        "z": "d6966d87889a164a",
+        "g": "2ffdb4c723e8e6a0",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 895,
+        "y": 180,
+        "wires": [
+            [
+                "f73f4f5be7e9d15b"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "36651bf48a1fc013",
+        "type": "catch",
+        "z": "d6966d87889a164a",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "c0c07c1bac5ccdf6",
+                "3ca6d6d48d0eba31"
+            ]
+        ]
+    },
+    {
+        "id": "c0c07c1bac5ccdf6",
+        "type": "debug",
+        "z": "d6966d87889a164a",
+        "name": "ERROR",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -3387,425 +3418,44 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 240,
-        "y": 540,
+        "y": 320,
         "wires": []
     },
     {
-        "id": "5c5939bb8da67ea4",
+        "id": "3ca6d6d48d0eba31",
         "type": "function",
-        "z": "b73d17450c17803c",
-        "g": "a7fcb7e5f44830b9",
-        "name": "products",
-        "func": "msg.payload = `\nSELECT\n    p.id as product_id,\n    pt.id as product_transaltion_id,\n    pt.name as product_name,\n    pv.id as product_variant_id,\n    pvt.id as product_variant_translation_id,\n    pvt.name as variant_name\nFROM products p\nLEFT JOIN product_translations pt ON p.id = pt.product_id and pt.language_code = 'es'\nLEFT JOIN product_variants pv ON p.id = pv.product_id\nLEFT JOIN product_variant_translations pvt ON pv.id = pvt.variant_id and pvt.language_code = 'es'\norder by p.id asc\n`;\n\nreturn msg;",
+        "z": "d6966d87889a164a",
+        "name": "form msg",
+        "func": "const error = msg.error || {};\nconst source = error.source || {};\n\n// Форматуємо дату та час\nconst timestamp = new Date().toLocaleString('es-ES', {\n    day: '2-digit',\n    month: '2-digit',\n    year: 'numeric',\n    hour: '2-digit',\n    minute: '2-digit',\n    second: '2-digit',\n    timeZone: 'Europe/Madrid'\n}).replaceAll('/', '.');\n\nlet payloadSnippet = \"No payload data\";\nif (msg.payload !== undefined) {\n    try {\n        const jsonString = JSON.stringify(msg.payload, null, 2) || \"\";\n        payloadSnippet = jsonString\n            .replace(/&/g, '&amp;')\n            .replace(/</g, '&lt;')\n            .replace(/>/g, '&gt;');\n\n        if (payloadSnippet.length > 1500) {\n            payloadSnippet = payloadSnippet.substring(0, 1500) + \"\\n... (truncated)\";\n        }\n    } catch (e) {\n        payloadSnippet = \"Error stringifying payload\";\n    }\n};\n\nconst errorMessage = `🚨 <b>ERROR</b> 🚨\n\n<b>Time:</b> <code>${timestamp}</code>\n<b>Message:</b> <u>${error?.message || 'Unknown error'}</u>\n\n<b>Details:</b>\n• <b>Node:</b> <code>${source?.name || 'n/a'}</code>\n• <b>Type:</b> <code>${source?.type || 'n/a'}</code>\n• <b>ID:</b> <code>${source?.id || 'n/a'}</code>\n• <b>Attempt:</b> ${source?.count || 1}\n\n<b>Payload Data:</b>\n<pre><code>${payloadSnippet}</code></pre>`;\n\nmsg.payload = {\n    message: errorMessage,\n    topic: 'errors'\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 600,
+        "x": 240,
+        "y": 280,
         "wires": [
             [
-                "e85837c6ba75a455"
+                "1574097743a4d208"
             ]
         ]
     },
     {
-        "id": "e85837c6ba75a455",
+        "id": "1574097743a4d208",
         "type": "link call",
-        "z": "b73d17450c17803c",
-        "g": "a7fcb7e5f44830b9",
+        "z": "d6966d87889a164a",
         "name": "",
         "links": [
-            "7d0d97bd91fee1c8"
+            "2717e8e40e0e66c5"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 420,
-        "y": 600,
+        "x": 400,
+        "y": 280,
         "wires": [
-            [
-                "4b8fa44909135ebc"
-            ]
+            []
         ]
-    },
-    {
-        "id": "35df9d119d91bf7b",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "g": "a7fcb7e5f44830b9",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 600,
-        "wires": [
-            [
-                "5c5939bb8da67ea4"
-            ]
-        ]
-    },
-    {
-        "id": "4b8fa44909135ebc",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "g": "a7fcb7e5f44830b9",
-        "name": "products",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 560,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "c66ae7e3c1d5ee96",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "paid",
-        "func": "msg.queryParameters = ['LCG-20260128-768589', 'paid', 'es'];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2\n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'unit_price', oi.unit_price,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free,\n                'dolibarr_id', pv.dolibarr_id,\n                'dolibarr_gluten_id', pv.dolibarr_gluten_id,\n                'dolibarr_lactose_id', pv.dolibarr_lactose_id,\n                'price_tax_free', pv.price_tax_free,\n                'price_tax_free_gluten', pv.price_tax_free_gluten,\n                'price_tax_free_lactose', pv.price_tax_free_lactose\n            )\n            FROM order_items oi\n            LEFT JOIN product_variants pv ON oi.product_variant_id = pv.id\n            LEFT JOIN product_translations pt ON oi.product_id = pt.product_id  AND pt.language_code = $3\n            LEFT JOIN product_variant_translations pvt ON oi.product_variant_id = pvt.variant_id AND pvt.language_code = $3\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 290,
-        "y": 680,
-        "wires": [
-            [
-                "693e5fcd2b56918c"
-            ]
-        ]
-    },
-    {
-        "id": "693e5fcd2b56918c",
-        "type": "link call",
-        "z": "b73d17450c17803c",
-        "name": "orders",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 410,
-        "y": 680,
-        "wires": [
-            [
-                "7a4552e232106238"
-            ]
-        ]
-    },
-    {
-        "id": "7f1f65ff775becaa",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 160,
-        "y": 680,
-        "wires": [
-            [
-                "c66ae7e3c1d5ee96"
-            ]
-        ]
-    },
-    {
-        "id": "3e2fdbb5e2d52084",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "7a4552e232106238",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "check db",
-        "func": "delete msg.toDB;\ndelete msg.queryParameters;\ndelete msg.req;\ndelete msg.res;\n\nif (msg.payload?.length === 0) {\n    throw new Error(\"Something wrong with db. Didn't found order\");\n}\n\nmsg.order = msg.payload?.[0] || {};\nmsg.payload = {};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 540,
-        "y": 680,
-        "wires": [
-            [
-                "3e2fdbb5e2d52084",
-                "2eb4d8a8ab363f54"
-            ]
-        ]
-    },
-    {
-        "id": "66a5dc11c2852b7b",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 1820,
-        "wires": [
-            [
-                "f4d3db222210c2ca"
-            ]
-        ]
-    },
-    {
-        "id": "f4d3db222210c2ca",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "products",
-        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/products/2';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 260,
-        "y": 1820,
-        "wires": [
-            [
-                "b4d449a23049e589"
-            ]
-        ]
-    },
-    {
-        "id": "b4d449a23049e589",
-        "type": "http request",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "method": "use",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 410,
-        "y": 1820,
-        "wires": [
-            [
-                "2099c74f2cdfc330"
-            ]
-        ]
-    },
-    {
-        "id": "2eb4d8a8ab363f54",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "to dolibarr",
-        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nconst VARIANT_RULES = [\n    { flag: 'is_gluten_free', idKey: 'dolibarr_gluten_id', priceKey: 'price_tax_free_gluten' },\n    { flag: 'is_lactose_free', idKey: 'dolibarr_lactose_id', priceKey: 'price_tax_free_lactose' }\n];\n\nconst selectValue = (item, rules, { id, price }) => {\n    const rule = rules?.find(r => item?.[r?.flag]);\n    return {\n        id: rule ? item?.[rule?.idKey] : item?.[id],\n        price: rule ? item?.[rule?.priceKey] : item?.[price],\n    };\n};\n\nconst items = msg.order?.items || [];\nconst lines = items?.map(e => {\n    const { id, price } = selectValue(e, VARIANT_RULES, {\n        id: 'dolibarr_id',\n        price: 'price_tax_free',\n    });\n\n    return {\n        \"fk_product\": id,\n        \"qty\": e?.quantity,\n        \"subprice\": price,\n        \"tva_tx\": 10.00,\n    };\n});\n\nmsg.payload = {\n    \"socid\": 4,\n    \"type\": 0,\n    \"lines\": lines\n};\n\nmsg.method = 'POST';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\"\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 690,
-        "y": 680,
-        "wires": [
-            [
-                "5f92bfc12dcdb628"
-            ]
-        ]
-    },
-    {
-        "id": "5f92bfc12dcdb628",
-        "type": "http request",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "method": "use",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 850,
-        "y": 680,
-        "wires": [
-            [
-                "d1e443c396037077"
-            ]
-        ]
-    },
-    {
-        "id": "d1e443c396037077",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "invoices post",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1010,
-        "y": 680,
-        "wires": []
-    },
-    {
-        "id": "635bae8bcef9c6a2",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 1460,
-        "wires": [
-            [
-                "2df7f09b5389e39c"
-            ]
-        ]
-    },
-    {
-        "id": "2df7f09b5389e39c",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "invoices delete",
-        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\n\nmsg.method = 'DELETE';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices/39';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\" \n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 280,
-        "y": 1460,
-        "wires": [
-            [
-                "219783f4599da69d"
-            ]
-        ]
-    },
-    {
-        "id": "219783f4599da69d",
-        "type": "http request",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "method": "use",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 450,
-        "y": 1460,
-        "wires": [
-            [
-                "889ab16b43a7aea8"
-            ]
-        ]
-    },
-    {
-        "id": "889ab16b43a7aea8",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "invoices post",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 610,
-        "y": 1460,
-        "wires": []
     },
     {
         "id": "3faee7869eb851bf",
@@ -3993,7 +3643,7 @@
         "scope": null,
         "uncaught": false,
         "x": 100,
-        "y": 440,
+        "y": 200,
         "wires": [
             [
                 "7771656bf96e2c2e",
@@ -4015,7 +3665,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 240,
-        "y": 480,
+        "y": 240,
         "wires": []
     },
     {
@@ -4031,7 +3681,7 @@
         "finalize": "",
         "libs": [],
         "x": 240,
-        "y": 440,
+        "y": 200,
         "wires": [
             [
                 "20297053677fecaf"
@@ -4049,7 +3699,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 400,
-        "y": 440,
+        "y": 200,
         "wires": [
             []
         ]
@@ -5182,8 +4832,7 @@
         "y": 600,
         "wires": [
             [
-                "febf71dbd536155e",
-                "3312b2270a5dde54"
+                "febf71dbd536155e"
             ]
         ]
     },
@@ -5262,24 +4911,6 @@
                 "d9b5f353490d8989"
             ]
         ]
-    },
-    {
-        "id": "3312b2270a5dde54",
-        "type": "debug",
-        "z": "f3eb2de3da3352db",
-        "g": "6dfcde191de2c8e8",
-        "name": "debug 9",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 640,
-        "wires": []
     },
     {
         "id": "f649d13a4a5ccfeb",
@@ -6935,7 +6566,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "orders",
-        "func": "msg.payload = `\nCREATE TABLE IF NOT EXISTS orders (\n  id SERIAL PRIMARY KEY,\n  order_id TEXT NOT NULL,\n  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'paid', 'unpaid', 'completed', 'canceled', 'prepared', 'suspicious')),\n  order_source TEXT CHECK (order_source IN ('site', 'shop', 'phone', 'instagram', 'in person')),\n  shop_id INTEGER REFERENCES shops(id),\n\n  customer_name TEXT NOT NULL,\n  customer_email TEXT,\n  customer_phone TEXT NOT NULL,\n\n  pickup_date DATE NOT NULL,\n  pickup_time TEXT NOT NULL DEFAULT 'pending' CHECK (pickup_time IN ('morning', 'evening')),\n\n  total_price NUMERIC(10,2) NOT NULL,\n\n  notes TEXT,\n  \n  stripe_payment_id TEXT,\n  stripe_session_id TEXT,\n\n  created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(),\n  paid_at TIMESTAMP WITHOUT TIME ZONE,\n  completed_at TIMESTAMP WITHOUT TIME ZONE\n);\n`\n\nreturn msg;",
+        "func": "msg.payload = `\nCREATE TABLE IF NOT EXISTS orders (\n  id SERIAL PRIMARY KEY,\n  order_id TEXT NOT NULL,\n  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'paid', 'unpaid', 'completed', 'canceled', 'prepared', 'suspicious')),\n  order_source TEXT CHECK (order_source IN ('site', 'shop', 'phone', 'instagram', 'in person')),\n  shop_id INTEGER REFERENCES shops(id),\n\n  customer_name TEXT NOT NULL,\n  customer_email TEXT,\n  customer_phone TEXT NOT NULL,\n\n  pickup_date DATE NOT NULL,\n  pickup_time TEXT NOT NULL DEFAULT 'pending' CHECK (pickup_time IN ('morning', 'evening')),\n\n  total_price NUMERIC(10,2) NOT NULL,\n\n  notes TEXT,\n  \n  stripe_payment_id TEXT,\n  stripe_session_id TEXT,\n\n  dolibarr_ref VARCHAR(20),\n\n  created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(),\n  paid_at TIMESTAMP WITHOUT TIME ZONE,\n  completed_at TIMESTAMP WITHOUT TIME ZONE\n);\n`\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -14069,7 +13700,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
+        "x": 340,
         "y": 80,
         "wires": [
             [
@@ -14099,7 +13730,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
+        "x": 140,
         "y": 80,
         "wires": [
             [
@@ -14124,7 +13755,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 510,
+        "x": 530,
         "y": 80,
         "wires": [
             [
@@ -14146,7 +13777,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 700,
+        "x": 720,
         "y": 80,
         "wires": []
     },
@@ -14163,7 +13794,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
+        "x": 330,
         "y": 120,
         "wires": [
             [
@@ -14193,7 +13824,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
+        "x": 140,
         "y": 120,
         "wires": [
             [
@@ -14218,7 +13849,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 510,
+        "x": 530,
         "y": 120,
         "wires": [
             [
@@ -14240,7 +13871,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 710,
+        "x": 730,
         "y": 120,
         "wires": []
     },
@@ -14257,7 +13888,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
+        "x": 340,
         "y": 160,
         "wires": [
             [
@@ -14287,7 +13918,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
+        "x": 140,
         "y": 160,
         "wires": [
             [
@@ -14312,7 +13943,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 530,
+        "x": 550,
         "y": 160,
         "wires": [
             [
@@ -14334,8 +13965,1797 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
+        "x": 760,
         "y": 160,
+        "wires": []
+    },
+    {
+        "id": "830c16eb376d4d95",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "b8a99424e7a04f63",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "33d73b1b82c72889"
+            ]
+        ]
+    },
+    {
+        "id": "33d73b1b82c72889",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "b8a99424e7a04f63",
+        "name": "CURRENT_DATE",
+        "func": "msg.payload = `\nSELECT CURRENT_DATE;`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 260,
+        "wires": [
+            [
+                "29d51e39ad2ea1e6"
+            ]
+        ]
+    },
+    {
+        "id": "29d51e39ad2ea1e6",
+        "type": "link call",
+        "z": "15bda437fadfc244",
+        "g": "b8a99424e7a04f63",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 260,
+        "wires": [
+            [
+                "cdc6ef1972bf00ef"
+            ]
+        ]
+    },
+    {
+        "id": "cdc6ef1972bf00ef",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "b8a99424e7a04f63",
+        "name": "CURRENT_DATE",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e347ba8a0a0cbe7b",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "b8a99424e7a04f63",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 300,
+        "wires": [
+            [
+                "6c7197acefc6ffb0"
+            ]
+        ]
+    },
+    {
+        "id": "6c7197acefc6ffb0",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "b8a99424e7a04f63",
+        "name": "CURRENT_TIMESTAMP",
+        "func": "msg.payload = `\nSELECT CURRENT_TIMESTAMP;`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 300,
+        "wires": [
+            [
+                "aa3fb7d5d2c14c2a"
+            ]
+        ]
+    },
+    {
+        "id": "aa3fb7d5d2c14c2a",
+        "type": "link call",
+        "z": "15bda437fadfc244",
+        "g": "b8a99424e7a04f63",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "f51ee372c07831a4"
+            ]
+        ]
+    },
+    {
+        "id": "f51ee372c07831a4",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "b8a99424e7a04f63",
+        "name": "CURRENT_TIMESTAMP",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "495cc74312454349",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "b8a99424e7a04f63",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "c6b6f4affda05c2e"
+            ]
+        ]
+    },
+    {
+        "id": "c6b6f4affda05c2e",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "b8a99424e7a04f63",
+        "name": "CURRENT_TIMESTAMP",
+        "func": "msg.payload = `\nSELECT timezone('Europe/Madrid', CURRENT_TIMESTAMP);`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 360,
+        "wires": [
+            [
+                "c279713aa2760e86"
+            ]
+        ]
+    },
+    {
+        "id": "c279713aa2760e86",
+        "type": "link call",
+        "z": "15bda437fadfc244",
+        "g": "b8a99424e7a04f63",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 520,
+        "y": 360,
+        "wires": [
+            [
+                "c6d37d2ad7c25633"
+            ]
+        ]
+    },
+    {
+        "id": "c6d37d2ad7c25633",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "b8a99424e7a04f63",
+        "name": "CURRENT_TIMESTAMP",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "bf56d702c9a8ef98",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 700,
+        "wires": [
+            [
+                "acd757e2e8d2f3c1"
+            ]
+        ]
+    },
+    {
+        "id": "acd757e2e8d2f3c1",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices get",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 700,
+        "wires": [
+            [
+                "d2b9bce9b78d2891"
+            ]
+        ]
+    },
+    {
+        "id": "d2b9bce9b78d2891",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 700,
+        "wires": [
+            [
+                "bac922d848ab5f8d"
+            ]
+        ]
+    },
+    {
+        "id": "bac922d848ab5f8d",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices get",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "c94c7045f044fefb",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 800,
+        "wires": [
+            [
+                "5d8025f0ce009110"
+            ]
+        ]
+    },
+    {
+        "id": "5d8025f0ce009110",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "thirdparties",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/thirdparties';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 800,
+        "wires": [
+            [
+                "21f12c9d7524351d"
+            ]
+        ]
+    },
+    {
+        "id": "21f12c9d7524351d",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 800,
+        "wires": [
+            [
+                "8fbf0450fc1bdfd7"
+            ]
+        ]
+    },
+    {
+        "id": "8fbf0450fc1bdfd7",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "a0d3348c91a671ec",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 740,
+        "wires": [
+            [
+                "4d920463dd3742ed"
+            ]
+        ]
+    },
+    {
+        "id": "4d920463dd3742ed",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices post",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nfunction calcNetPrice(priceWithTax, taxPercent) {\n    node.warn((priceWithTax / (1 + taxPercent / 100)) * 100);\n\n    return (priceWithTax / (1 + taxPercent / 100)) * 100;\n}\n\nmsg.payload = {\n    \"socid\": 4, \n    \"type\": 0,  \n    \"lines\": [\n        {\n            \"fk_product\": 2,\n            \"qty\": 1,\n            subprice: 4.53636,\n\n            // total_ttc: 4.99,\n            // multicurrency_total_ttc: 4.99\n            // \"subprice\": calcNetPrice(4.99, 10),\n            \"tva_tx\": 10.00, \n        }\n        \n    ]\n};\n\n\nmsg.method = 'POST';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\" \n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 740,
+        "wires": [
+            [
+                "b84d5e720b0dfa3e"
+            ]
+        ]
+    },
+    {
+        "id": "b84d5e720b0dfa3e",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 740,
+        "wires": [
+            [
+                "c97213a2a8296cc8"
+            ]
+        ]
+    },
+    {
+        "id": "c97213a2a8296cc8",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices post",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "95d1de9181532cb2",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 840,
+        "wires": [
+            [
+                "aec02b1cf9eefcbd"
+            ]
+        ]
+    },
+    {
+        "id": "aec02b1cf9eefcbd",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "thirdparties",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'POST';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/thirdparties';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nmsg.payload = {\n    \"name\": \"Ventas Web\",\n    \"client\": 1,\n    \"code_client\": \"auto\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 840,
+        "wires": [
+            [
+                "4e22e487df21d181"
+            ]
+        ]
+    },
+    {
+        "id": "4e22e487df21d181",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 840,
+        "wires": [
+            [
+                "dac983cd48c46468"
+            ]
+        ]
+    },
+    {
+        "id": "dac983cd48c46468",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "c8f02235ebfe3a69",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 900,
+        "wires": [
+            [
+                "93898b59919af68b"
+            ]
+        ]
+    },
+    {
+        "id": "93898b59919af68b",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "products",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/products';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 900,
+        "wires": [
+            [
+                "c457abd69013c9f2"
+            ]
+        ]
+    },
+    {
+        "id": "c457abd69013c9f2",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 900,
+        "wires": [
+            [
+                "2099c74f2cdfc330",
+                "346baae1ddff8a60"
+            ]
+        ]
+    },
+    {
+        "id": "2099c74f2cdfc330",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "346baae1ddff8a60",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "payload",
+        "func": "msg.payload = msg.payload?.map(e => {\n    return {\n        id: e?.id, \n        label: e?.label\n    }\n})\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 900,
+        "wires": [
+            [
+                "2099c74f2cdfc330"
+            ]
+        ]
+    },
+    {
+        "id": "66a5dc11c2852b7b",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 960,
+        "wires": [
+            [
+                "f4d3db222210c2ca"
+            ]
+        ]
+    },
+    {
+        "id": "f4d3db222210c2ca",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "products",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/products/2';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 960,
+        "wires": [
+            [
+                "b4d449a23049e589"
+            ]
+        ]
+    },
+    {
+        "id": "b4d449a23049e589",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 960,
+        "wires": [
+            [
+                "2099c74f2cdfc330"
+            ]
+        ]
+    },
+    {
+        "id": "635bae8bcef9c6a2",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 660,
+        "wires": [
+            [
+                "2df7f09b5389e39c"
+            ]
+        ]
+    },
+    {
+        "id": "2df7f09b5389e39c",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices delete",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\n\nmsg.method = 'DELETE';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices/45';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\" \n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 660,
+        "wires": [
+            [
+                "219783f4599da69d"
+            ]
+        ]
+    },
+    {
+        "id": "219783f4599da69d",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 470,
+        "y": 660,
+        "wires": [
+            [
+                "889ab16b43a7aea8"
+            ]
+        ]
+    },
+    {
+        "id": "889ab16b43a7aea8",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices post",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "738698b44cc986fe",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1020,
+        "wires": [
+            [
+                "18865a37c5eed157"
+            ]
+        ]
+    },
+    {
+        "id": "18865a37c5eed157",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices get",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/bankaccounts';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 1020,
+        "wires": [
+            [
+                "0cb501da5ceea0e9"
+            ]
+        ]
+    },
+    {
+        "id": "0cb501da5ceea0e9",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 1020,
+        "wires": [
+            [
+                "1b86fa2e53dbad93"
+            ]
+        ]
+    },
+    {
+        "id": "1b86fa2e53dbad93",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices get",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "d878f231ea16cb94",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "accountid",
+        "func": "// banco\nconst accountid = 2;\nconst paymentid = 6;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8275c8e3d1b81753",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1120,
+        "wires": [
+            [
+                "7d175d6c6b45c9d4"
+            ]
+        ]
+    },
+    {
+        "id": "7d175d6c6b45c9d4",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices get",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/setup/dictionary/payment_types';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 1120,
+        "wires": [
+            [
+                "254a87eb850dee20"
+            ]
+        ]
+    },
+    {
+        "id": "254a87eb850dee20",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 1120,
+        "wires": [
+            [
+                "11f15400a3405d41"
+            ]
+        ]
+    },
+    {
+        "id": "11f15400a3405d41",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices get",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "75f5f2995500c1ea",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 620,
+        "wires": [
+            [
+                "7fd518e4b093c311"
+            ]
+        ]
+    },
+    {
+        "id": "7fd518e4b093c311",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "validate",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.payload = {};\n\n\nmsg.method = 'POST';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/invoices/45/validate';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\" \n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 620,
+        "wires": [
+            [
+                "5784cdd3ba8354c6"
+            ]
+        ]
+    },
+    {
+        "id": "5784cdd3ba8354c6",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 620,
+        "wires": [
+            [
+                "97be71428c9078cb"
+            ]
+        ]
+    },
+    {
+        "id": "97be71428c9078cb",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices post",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "aade6d2e5ac12298",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices post",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nconst invoiceId = 45;\n\nmsg.method = 'POST';\nmsg.url = `https://pos.ascremosas.com/api/index.php/invoices/${invoiceId}/payments`;\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nmsg.payload = {\n    \"datepaye\": Math.floor(Date.now() / 1000), \n    \"paymentid\": 6,\n    \"closepaidinvoices\": \"yes\",\n    \"accountid\": 2\n};\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 540,
+        "wires": [
+            [
+                "c96e025fcccaadaa"
+            ]
+        ]
+    },
+    {
+        "id": "f48542c21e465d84",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 540,
+        "wires": [
+            [
+                "aade6d2e5ac12298"
+            ]
+        ]
+    },
+    {
+        "id": "c96e025fcccaadaa",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 540,
+        "wires": [
+            [
+                "4976e5b86ef824aa"
+            ]
+        ]
+    },
+    {
+        "id": "4976e5b86ef824aa",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices post",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "55fe18f5cc2f6650",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "8db44898253fdda4"
+            ]
+        ]
+    },
+    {
+        "id": "8db44898253fdda4",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices get",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/orders';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 500,
+        "wires": [
+            [
+                "9819f316a31d6a31"
+            ]
+        ]
+    },
+    {
+        "id": "9819f316a31d6a31",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 500,
+        "wires": [
+            [
+                "c84de9fdbb2708b1"
+            ]
+        ]
+    },
+    {
+        "id": "c84de9fdbb2708b1",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices get",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "be34ce273f5725cd",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "paid",
+        "func": "msg.queryParameters = ['LCG-20260128-768589', 'paid', 'es'];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2\n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'unit_price', oi.unit_price,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free,\n                'dolibarr_id', pv.dolibarr_id,\n                'dolibarr_gluten_id', pv.dolibarr_gluten_id,\n                'dolibarr_lactose_id', pv.dolibarr_lactose_id,\n                'price_tax_free', pv.price_tax_free,\n                'price_tax_free_gluten', pv.price_tax_free_gluten,\n                'price_tax_free_lactose', pv.price_tax_free_lactose\n            )\n            FROM order_items oi\n            LEFT JOIN product_variants pv ON oi.product_variant_id = pv.id\n            LEFT JOIN product_translations pt ON oi.product_id = pt.product_id  AND pt.language_code = $3\n            LEFT JOIN product_variant_translations pvt ON oi.product_variant_id = pvt.variant_id AND pvt.language_code = $3\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1240,
+        "wires": [
+            [
+                "a90b3f6f2f2a5554"
+            ]
+        ]
+    },
+    {
+        "id": "2f231ae7110e7919",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1240,
+        "wires": [
+            [
+                "be34ce273f5725cd"
+            ]
+        ]
+    },
+    {
+        "id": "a90b3f6f2f2a5554",
+        "type": "link call",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "orders",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 390,
+        "y": 1240,
+        "wires": [
+            [
+                "74a74acfcd88fb5c"
+            ]
+        ]
+    },
+    {
+        "id": "74a74acfcd88fb5c",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "check db",
+        "func": "delete msg.toDB;\ndelete msg.queryParameters;\ndelete msg.req;\ndelete msg.res;\n\nif (msg.payload?.length === 0) {\n    throw new Error(\"Something wrong with db. Didn't found order\");\n}\n\nmsg.order = msg.payload?.[0] || {};\nmsg.payload = {};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1240,
+        "wires": [
+            [
+                "3181baa83c120502",
+                "94d2aaef02e00863"
+            ]
+        ]
+    },
+    {
+        "id": "3181baa83c120502",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "94d2aaef02e00863",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "to dolibarr",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nconst VARIANT_RULES = [\n    { flag: 'is_gluten_free', idKey: 'dolibarr_gluten_id', priceKey: 'price_tax_free_gluten' },\n    { flag: 'is_lactose_free', idKey: 'dolibarr_lactose_id', priceKey: 'price_tax_free_lactose' }\n];\n\nconst selectValue = (item, rules, { id, price }) => {\n    const rule = rules?.find(r => item?.[r?.flag]);\n    return {\n        id: rule ? item?.[rule?.idKey] : item?.[id],\n        price: rule ? item?.[rule?.priceKey] : item?.[price],\n    };\n};\n\nconst { order_id, items = [], customer_name = '', \n    customer_email = '', customer_phone = '', pickup_date = '' } = msg.order || {};\n\nconst lines = items?.map(e => {\n    const { id, price } = selectValue(e, VARIANT_RULES, {\n        id: 'dolibarr_id',\n        price: 'price_tax_free',\n    });\n\n    return {\n        \"fk_product\": id,\n        \"qty\": e?.quantity,\n        \"subprice\": price,\n        \"tva_tx\": 10.00,\n    };\n});\n\nmsg.payload = {\n    \"date\": Math.floor(Date.now() / 1000), \n    \"socid\": 4,\n    \"ref_client\": order_id,\n    \"ref_ext\": order_id,\n    \"note_private\": `Nombre: ${customer_name}\\nEmail: ${customer_email}\\nTel: ${customer_phone}`,\n    \"lines\": lines\n};\n\nmsg.method = 'POST';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/orders';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 1240,
+        "wires": [
+            [
+                "09e3dda067feb898"
+            ]
+        ]
+    },
+    {
+        "id": "09e3dda067feb898",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 830,
+        "y": 1240,
+        "wires": [
+            [
+                "e2bc3dae6ca4857e",
+                "76ea5dbbcd84c18d"
+            ]
+        ]
+    },
+    {
+        "id": "e2bc3dae6ca4857e",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices post",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "76ea5dbbcd84c18d",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "check error ",
+        "func": "if (msg.statusCode !== 200) {\n    node.error(\"Error to create invoice in dolibarr\", msg);\n};",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "2b71050aa898029f",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1180,
+        "wires": [
+            [
+                "1f21bf8c74c439d7"
+            ]
+        ]
+    },
+    {
+        "id": "1f21bf8c74c439d7",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices get",
+        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.method = 'GET';\nmsg.url = 'https://pos.ascremosas.com/api/index.php/setup/dictionary/lead_sources';\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 1180,
+        "wires": [
+            [
+                "340cc8da19d2aed7"
+            ]
+        ]
+    },
+    {
+        "id": "340cc8da19d2aed7",
+        "type": "http request",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 1180,
+        "wires": [
+            [
+                "6450fcb0367f6a3e"
+            ]
+        ]
+    },
+    {
+        "id": "6450fcb0367f6a3e",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "858072f020de63c3",
+        "name": "invoices get",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "5c5939bb8da67ea4",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "a7fcb7e5f44830b9",
+        "name": "products",
+        "func": "msg.payload = `\nSELECT\n    p.id as product_id,\n    pt.id as product_transaltion_id,\n    pt.name as product_name,\n    pv.id as product_variant_id,\n    pvt.id as product_variant_translation_id,\n    pvt.name as variant_name\nFROM products p\nLEFT JOIN product_translations pt ON p.id = pt.product_id and pt.language_code = 'es'\nLEFT JOIN product_variants pv ON p.id = pv.product_id\nLEFT JOIN product_variant_translations pvt ON pv.id = pvt.variant_id and pvt.language_code = 'es'\norder by p.id asc\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 1400,
+        "wires": [
+            [
+                "e85837c6ba75a455"
+            ]
+        ]
+    },
+    {
+        "id": "e85837c6ba75a455",
+        "type": "link call",
+        "z": "15bda437fadfc244",
+        "g": "a7fcb7e5f44830b9",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 420,
+        "y": 1400,
+        "wires": [
+            [
+                "4b8fa44909135ebc"
+            ]
+        ]
+    },
+    {
+        "id": "35df9d119d91bf7b",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "a7fcb7e5f44830b9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1400,
+        "wires": [
+            [
+                "5c5939bb8da67ea4"
+            ]
+        ]
+    },
+    {
+        "id": "4b8fa44909135ebc",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "a7fcb7e5f44830b9",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 1400,
         "wires": []
     }
 ]
