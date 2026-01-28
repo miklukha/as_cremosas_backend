@@ -1177,6 +1177,25 @@
         "h": 122
     },
     {
+        "id": "20538e9bf49cd27b",
+        "type": "group",
+        "z": "68702ca580581086",
+        "name": "harsh delete",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6ef9908ade18f195",
+            "ba073bbdee229eb1",
+            "f2c637f51f6f8ce2",
+            "4a8ab29dbc4e1f21"
+        ],
+        "x": 34,
+        "y": 2319,
+        "w": 652,
+        "h": 82
+    },
+    {
         "id": "f0e0241e5242290c",
         "type": "junction",
         "z": "f3eb2de3da3352db",
@@ -2040,7 +2059,7 @@
         "z": "b73d17450c17803c",
         "g": "8ff7a8afe02f6f9b",
         "name": "check signature",
-        "func": "const STRIPE_SECRET_KEY = env.get('STRIPE_SECRET_KEY');\nconst WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\nconst stripe = new Stripe(STRIPE_SECRET_KEY);\nconst signature = msg.req?.headers?.['stripe-signature'];\nconst rawBody = Buffer.from(msg.payload);\n\nif (!signature) {\n    return null;\n};\n\ntry {\n    const { type = '', data = {} } = stripe.webhooks.constructEvent(rawBody, signature, WEBHOOK_SECRET);\n    const session = data?.object || {};\n\n    msg.toDB = {\n        orderId: session?.metadata?.order_id || null,\n        paymentIntentId: session?.payment_intent || null,\n        status: \"unpaid\"\n    };\n    msg.lang = session?.metadata?.lang || null;\n\n    if (type === 'checkout.session.completed') {\n        msg.toDB.status = \"paid\";\n\n        return msg;\n    };\n\n    return msg;\n} catch (err) {\n    throw new Error('Webhook signature verification failed: ');\n}",
+        "func": "const STRIPE_SECRET_KEY = env.get('STRIPE_SECRET_KEY');\nconst WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\nconst stripe = new Stripe(STRIPE_SECRET_KEY);\nconst signature = msg.req?.headers?.['stripe-signature'];\nconst rawBody = Buffer.from(msg.payload);\n\nif (!signature) {\n    return null;\n};\n\ntry {\n    const { type = '', data = {} } = stripe.webhooks.constructEvent(rawBody, signature, WEBHOOK_SECRET);\n    const session = data?.object || {};\n\n    msg.toDB = {\n        orderId: session?.metadata?.order_id || null,\n        paymentIntentId: session?.payment_intent || null,\n        status: \"unpaid\"\n    };\n    msg.lang = session?.metadata?.lang || null;\n\n    if (type === 'checkout.session.completed' || type === 'checkout.session.async_payment_succeeded') {\n        msg.toDB.status = \"paid\";\n\n        return msg;\n    };\n\n    return msg;\n} catch (err) {\n    throw new Error('Webhook signature verification failed: ');\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3745,7 +3764,7 @@
         "props": [],
         "repeat": "",
         "crontab": "00 03 * * *",
-        "once": true,
+        "once": false,
         "onceDelay": "0.5",
         "topic": "",
         "x": 140,
@@ -11381,6 +11400,94 @@
         "statusType": "auto",
         "x": 640,
         "y": 660,
+        "wires": []
+    },
+    {
+        "id": "6ef9908ade18f195",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "20538e9bf49cd27b",
+        "name": "harsh delete",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 2360,
+        "wires": [
+            [
+                "ba073bbdee229eb1"
+            ]
+        ]
+    },
+    {
+        "id": "ba073bbdee229eb1",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "20538e9bf49cd27b",
+        "name": "products",
+        "func": "msg.payload = `\nTRUNCATE TABLE orders RESTART IDENTITY CASCADE;\n`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 2360,
+        "wires": [
+            [
+                "f2c637f51f6f8ce2"
+            ]
+        ]
+    },
+    {
+        "id": "f2c637f51f6f8ce2",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "20538e9bf49cd27b",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 440,
+        "y": 2360,
+        "wires": [
+            [
+                "4a8ab29dbc4e1f21"
+            ]
+        ]
+    },
+    {
+        "id": "4a8ab29dbc4e1f21",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "20538e9bf49cd27b",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 2360,
         "wires": []
     },
     {
