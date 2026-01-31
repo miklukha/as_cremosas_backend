@@ -297,8 +297,7 @@
             "e83e207d161e2a3e",
             "ead73bcf487cefaf",
             "08efa33e281e85ff",
-            "e145b8b4a1cc18af",
-            "4f4a200e51c53102"
+            "e145b8b4a1cc18af"
         ],
         "x": 34,
         "y": 39,
@@ -622,8 +621,8 @@
             "fa7eefe629c35c3e",
             "0f4b804ff0a6cc27"
         ],
-        "x": 14,
-        "y": 39,
+        "x": 34,
+        "y": 879,
         "w": 932,
         "h": 162
     },
@@ -642,8 +641,8 @@
             "b779df4ed3bc8845",
             "f0deea2958d1b962"
         ],
-        "x": 114,
-        "y": 479,
+        "x": 134,
+        "y": 1399,
         "w": 672,
         "h": 82
     },
@@ -661,19 +660,19 @@
             "b48086dc96e213d9",
             "e324e4949b5b5434",
             "f795efa943df9b6b",
-            "492e6e5f939ad4d2",
             "bf1fe5748a8e1e29",
-            "c62f62399357ee40",
             "5d7e68b7fe481ce8",
-            "d01b1f651fe94526",
-            "265d042a10cdcebe",
             "4ba0b565025ef2c0",
-            "3272c763d8ab4c2a"
+            "3272c763d8ab4c2a",
+            "3eea93fbec4d81e9",
+            "7e4cabcc2e35a03d",
+            "e0780f570eeb2aa7",
+            "60368e441f11783f"
         ],
         "x": 34,
         "y": 94,
-        "w": 1732,
-        "h": 127
+        "w": 1412,
+        "h": 167
     },
     {
         "id": "b501b4efa7d1e651",
@@ -693,7 +692,7 @@
             "f27160b282a5a3d5"
         ],
         "x": 34,
-        "y": 254,
+        "y": 294,
         "w": 932,
         "h": 107
     },
@@ -712,12 +711,13 @@
             "855aa1bf1cab1262",
             "685c56295d5f6da1",
             "54d1a8d48d16a684",
-            "516f662b114f5336"
+            "516f662b114f5336",
+            "a480517c898222cf"
         ],
         "x": 34,
-        "y": 394,
+        "y": 434,
         "w": 892,
-        "h": 107
+        "h": 127
     },
     {
         "id": "o1r2d3e4r5s6f7l8",
@@ -755,8 +755,7 @@
             "2ba38f65d66557e2",
             "469ac819413062e9",
             "7379941ec815975a",
-            "f34d86aa9a6d753f",
-            "b9323d308faa62f0"
+            "f34d86aa9a6d753f"
         ],
         "x": 34,
         "y": 859,
@@ -842,7 +841,7 @@
             "6f984971e656c805"
         ],
         "x": 34,
-        "y": 534,
+        "y": 574,
         "w": 1392,
         "h": 127
     },
@@ -859,9 +858,249 @@
             "584213fb0ad159c3",
             "0165592a7b31aaa1"
         ],
-        "x": 114,
-        "y": 239,
+        "x": 134,
+        "y": 1139,
         "w": 312,
+        "h": 82
+    },
+    {
+        "id": "66065f0648f839c2",
+        "type": "group",
+        "z": "b73d17450c17803c",
+        "name": "create dolibarr invoice",
+        "style": {
+            "stroke": "#001f60",
+            "label": true
+        },
+        "nodes": [
+            "72aadbf5345518d7",
+            "6428fc240f43793f",
+            "046ae0a7b3bccb92",
+            "9320de9a4d1abe3d",
+            "6e6d0c2db7a880ac",
+            "e789b5ba9e5c284a",
+            "3a604d74806c1539",
+            "3b8322f6546aac2c",
+            "131be86f15cd2ced",
+            "b182aa6f457d3c64",
+            "57ad09d92ecdcded",
+            "b8228759b6e0935f",
+            "c1e087a4c92536cd",
+            "f7bcf7eea5eefe9f",
+            "820922ad795716dc",
+            "1a59d02809c498dc",
+            "db295c77f3899c40",
+            "6c423dc8bb2c6824"
+        ],
+        "x": 134,
+        "y": 1239,
+        "w": 1952,
+        "h": 122
+    },
+    {
+        "id": "b8a99424e7a04f63",
+        "type": "group",
+        "z": "15bda437fadfc244",
+        "name": "postgresql",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "830c16eb376d4d95",
+            "33d73b1b82c72889",
+            "29d51e39ad2ea1e6",
+            "cdc6ef1972bf00ef",
+            "e347ba8a0a0cbe7b",
+            "6c7197acefc6ffb0",
+            "aa3fb7d5d2c14c2a",
+            "f51ee372c07831a4",
+            "495cc74312454349",
+            "c6b6f4affda05c2e",
+            "c279713aa2760e86",
+            "c6d37d2ad7c25633"
+        ],
+        "x": 34,
+        "y": 219,
+        "w": 832,
+        "h": 182
+    },
+    {
+        "id": "858072f020de63c3",
+        "type": "group",
+        "z": "15bda437fadfc244",
+        "name": "dolibarr",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "bf56d702c9a8ef98",
+            "acd757e2e8d2f3c1",
+            "d2b9bce9b78d2891",
+            "bac922d848ab5f8d",
+            "c94c7045f044fefb",
+            "5d8025f0ce009110",
+            "21f12c9d7524351d",
+            "8fbf0450fc1bdfd7",
+            "a0d3348c91a671ec",
+            "4d920463dd3742ed",
+            "b84d5e720b0dfa3e",
+            "c97213a2a8296cc8",
+            "95d1de9181532cb2",
+            "aec02b1cf9eefcbd",
+            "4e22e487df21d181",
+            "dac983cd48c46468",
+            "c8f02235ebfe3a69",
+            "93898b59919af68b",
+            "c457abd69013c9f2",
+            "2099c74f2cdfc330",
+            "346baae1ddff8a60",
+            "66a5dc11c2852b7b",
+            "f4d3db222210c2ca",
+            "b4d449a23049e589",
+            "635bae8bcef9c6a2",
+            "2df7f09b5389e39c",
+            "219783f4599da69d",
+            "889ab16b43a7aea8",
+            "738698b44cc986fe",
+            "18865a37c5eed157",
+            "0cb501da5ceea0e9",
+            "1b86fa2e53dbad93",
+            "d878f231ea16cb94",
+            "8275c8e3d1b81753",
+            "7d175d6c6b45c9d4",
+            "254a87eb850dee20",
+            "11f15400a3405d41",
+            "75f5f2995500c1ea",
+            "7fd518e4b093c311",
+            "5784cdd3ba8354c6",
+            "97be71428c9078cb",
+            "aade6d2e5ac12298",
+            "f48542c21e465d84",
+            "c96e025fcccaadaa",
+            "4976e5b86ef824aa",
+            "55fe18f5cc2f6650",
+            "8db44898253fdda4",
+            "9819f316a31d6a31",
+            "c84de9fdbb2708b1",
+            "be34ce273f5725cd",
+            "2f231ae7110e7919",
+            "a90b3f6f2f2a5554",
+            "74a74acfcd88fb5c",
+            "94d2aaef02e00863",
+            "09e3dda067feb898",
+            "e2bc3dae6ca4857e",
+            "76ea5dbbcd84c18d",
+            "2b71050aa898029f",
+            "1f21bf8c74c439d7",
+            "340cc8da19d2aed7",
+            "6450fcb0367f6a3e"
+        ],
+        "x": 34,
+        "y": 459,
+        "w": 1052,
+        "h": 822
+    },
+    {
+        "id": "04d6ca379c9c81d0",
+        "type": "group",
+        "z": "d6966d87889a164a",
+        "name": "worker for jandro",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3e18abe1e5573a92",
+            "8b0cc77773268755",
+            "1dddc496f69d50b9",
+            "51e6a34f8405ccc1",
+            "0970e3d6e148a9b3",
+            "40d2c80b9a75b81a",
+            "44f71fd37e0b0927",
+            "28058af2366c8fe5"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 1232,
+        "h": 82
+    },
+    {
+        "id": "2ffdb4c723e8e6a0",
+        "type": "group",
+        "z": "d6966d87889a164a",
+        "name": "worker for bakers",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3ec3f7341979b1f6",
+            "c093de95f0e6815a",
+            "b7e1e8774682fe33",
+            "d0d0c98e3e5380d1",
+            "ec0a2cda522b2f98",
+            "f73f4f5be7e9d15b",
+            "5a9be941da473f9e",
+            "54e64e0b3987df5f"
+        ],
+        "x": 34,
+        "y": 139,
+        "w": 1232,
+        "h": 82
+    },
+    {
+        "id": "a7fcb7e5f44830b9",
+        "type": "group",
+        "z": "15bda437fadfc244",
+        "name": "get products & variant with name",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5c5939bb8da67ea4",
+            "e85837c6ba75a455",
+            "35df9d119d91bf7b",
+            "4b8fa44909135ebc"
+        ],
+        "x": 34,
+        "y": 1359,
+        "w": 632,
+        "h": 82
+    },
+    {
+        "id": "01b2dfa9ef5c3fc3",
+        "type": "group",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "style": {
+            "stroke": "#ff0000",
+            "label": true
+        },
+        "nodes": [
+            "e457ffc15e6ded46",
+            "178ef043d024ce87",
+            "f4e336f1fc89df65"
+        ],
+        "x": 34,
+        "y": 1559,
+        "w": 472,
+        "h": 122
+    },
+    {
+        "id": "20538e9bf49cd27b",
+        "type": "group",
+        "z": "68702ca580581086",
+        "name": "harsh delete",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6ef9908ade18f195",
+            "ba073bbdee229eb1",
+            "f2c637f51f6f8ce2",
+            "4a8ab29dbc4e1f21"
+        ],
+        "x": 34,
+        "y": 2319,
+        "w": 652,
         "h": 82
     },
     {
@@ -955,253 +1194,12 @@
         "h": 182
     },
     {
-        "id": "66065f0648f839c2",
-        "type": "group",
-        "z": "b73d17450c17803c",
-        "name": "create dolibarr invoice",
-        "style": {
-            "stroke": "#001f60",
-            "label": true
-        },
-        "nodes": [
-            "72aadbf5345518d7",
-            "6428fc240f43793f",
-            "046ae0a7b3bccb92",
-            "9320de9a4d1abe3d",
-            "6e6d0c2db7a880ac",
-            "e789b5ba9e5c284a",
-            "3a604d74806c1539",
-            "3b8322f6546aac2c",
-            "131be86f15cd2ced",
-            "b182aa6f457d3c64",
-            "57ad09d92ecdcded",
-            "b8228759b6e0935f",
-            "c1e087a4c92536cd",
-            "f7bcf7eea5eefe9f",
-            "820922ad795716dc",
-            "1a59d02809c498dc",
-            "db295c77f3899c40",
-            "6c423dc8bb2c6824"
-        ],
-        "x": 114,
-        "y": 339,
-        "w": 1952,
-        "h": 122
-    },
-    {
-        "id": "b8a99424e7a04f63",
-        "type": "group",
-        "z": "15bda437fadfc244",
-        "name": "postgresql",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "830c16eb376d4d95",
-            "33d73b1b82c72889",
-            "29d51e39ad2ea1e6",
-            "cdc6ef1972bf00ef",
-            "e347ba8a0a0cbe7b",
-            "6c7197acefc6ffb0",
-            "aa3fb7d5d2c14c2a",
-            "f51ee372c07831a4",
-            "495cc74312454349",
-            "c6b6f4affda05c2e",
-            "c279713aa2760e86",
-            "c6d37d2ad7c25633"
-        ],
-        "x": 34,
-        "y": 219,
-        "w": 832,
-        "h": 182
-    },
-    {
-        "id": "858072f020de63c3",
-        "type": "group",
-        "z": "15bda437fadfc244",
-        "name": "dolibarr",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "bf56d702c9a8ef98",
-            "acd757e2e8d2f3c1",
-            "d2b9bce9b78d2891",
-            "bac922d848ab5f8d",
-            "c94c7045f044fefb",
-            "5d8025f0ce009110",
-            "21f12c9d7524351d",
-            "8fbf0450fc1bdfd7",
-            "a0d3348c91a671ec",
-            "4d920463dd3742ed",
-            "b84d5e720b0dfa3e",
-            "c97213a2a8296cc8",
-            "95d1de9181532cb2",
-            "aec02b1cf9eefcbd",
-            "4e22e487df21d181",
-            "dac983cd48c46468",
-            "c8f02235ebfe3a69",
-            "93898b59919af68b",
-            "c457abd69013c9f2",
-            "2099c74f2cdfc330",
-            "346baae1ddff8a60",
-            "66a5dc11c2852b7b",
-            "f4d3db222210c2ca",
-            "b4d449a23049e589",
-            "635bae8bcef9c6a2",
-            "2df7f09b5389e39c",
-            "219783f4599da69d",
-            "889ab16b43a7aea8",
-            "738698b44cc986fe",
-            "18865a37c5eed157",
-            "0cb501da5ceea0e9",
-            "1b86fa2e53dbad93",
-            "d878f231ea16cb94",
-            "8275c8e3d1b81753",
-            "7d175d6c6b45c9d4",
-            "254a87eb850dee20",
-            "11f15400a3405d41",
-            "75f5f2995500c1ea",
-            "7fd518e4b093c311",
-            "5784cdd3ba8354c6",
-            "97be71428c9078cb",
-            "aade6d2e5ac12298",
-            "f48542c21e465d84",
-            "c96e025fcccaadaa",
-            "4976e5b86ef824aa",
-            "55fe18f5cc2f6650",
-            "8db44898253fdda4",
-            "9819f316a31d6a31",
-            "c84de9fdbb2708b1",
-            "be34ce273f5725cd",
-            "2f231ae7110e7919",
-            "a90b3f6f2f2a5554",
-            "74a74acfcd88fb5c",
-            "3181baa83c120502",
-            "94d2aaef02e00863",
-            "09e3dda067feb898",
-            "e2bc3dae6ca4857e",
-            "76ea5dbbcd84c18d",
-            "2b71050aa898029f",
-            "1f21bf8c74c439d7",
-            "340cc8da19d2aed7",
-            "6450fcb0367f6a3e"
-        ],
-        "x": 34,
-        "y": 459,
-        "w": 1052,
-        "h": 862
-    },
-    {
-        "id": "04d6ca379c9c81d0",
-        "type": "group",
-        "z": "d6966d87889a164a",
-        "name": "worker for jandro",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "3e18abe1e5573a92",
-            "8b0cc77773268755",
-            "1dddc496f69d50b9",
-            "51e6a34f8405ccc1",
-            "0970e3d6e148a9b3",
-            "40d2c80b9a75b81a",
-            "44f71fd37e0b0927",
-            "28058af2366c8fe5"
-        ],
-        "x": 34,
-        "y": 39,
-        "w": 1232,
-        "h": 82
-    },
-    {
-        "id": "2ffdb4c723e8e6a0",
-        "type": "group",
-        "z": "d6966d87889a164a",
-        "name": "worker for bakers",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "3ec3f7341979b1f6",
-            "c093de95f0e6815a",
-            "b7e1e8774682fe33",
-            "d0d0c98e3e5380d1",
-            "ec0a2cda522b2f98",
-            "f73f4f5be7e9d15b",
-            "5a9be941da473f9e",
-            "54e64e0b3987df5f"
-        ],
-        "x": 34,
-        "y": 139,
-        "w": 1232,
-        "h": 82
-    },
-    {
-        "id": "a7fcb7e5f44830b9",
-        "type": "group",
-        "z": "15bda437fadfc244",
-        "name": "get products & variant with name",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "5c5939bb8da67ea4",
-            "e85837c6ba75a455",
-            "35df9d119d91bf7b",
-            "4b8fa44909135ebc"
-        ],
-        "x": 34,
-        "y": 1359,
-        "w": 632,
-        "h": 82
-    },
-    {
-        "id": "01b2dfa9ef5c3fc3",
-        "type": "group",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "style": {
-            "stroke": "#ff0000",
-            "label": true
-        },
-        "nodes": [
-            "e457ffc15e6ded46",
-            "178ef043d024ce87",
-            "f4e336f1fc89df65"
-        ],
-        "x": 34,
-        "y": 659,
-        "w": 472,
-        "h": 122
-    },
-    {
-        "id": "20538e9bf49cd27b",
-        "type": "group",
-        "z": "68702ca580581086",
-        "name": "harsh delete",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "6ef9908ade18f195",
-            "ba073bbdee229eb1",
-            "f2c637f51f6f8ce2",
-            "4a8ab29dbc4e1f21"
-        ],
-        "x": 34,
-        "y": 2319,
-        "w": 652,
-        "h": 82
-    },
-    {
         "id": "f0e0241e5242290c",
         "type": "junction",
         "z": "f3eb2de3da3352db",
         "g": "b501b4efa7d1e651",
         "x": 820,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
                 "f27160b282a5a3d5"
@@ -1214,7 +1212,7 @@
         "z": "f3eb2de3da3352db",
         "g": "b501b4efa7d1e651",
         "x": 520,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
                 "f0e0241e5242290c"
@@ -1227,7 +1225,7 @@
         "z": "f3eb2de3da3352db",
         "g": "2089615d4f29b5e8",
         "x": 780,
-        "y": 420,
+        "y": 460,
         "wires": [
             [
                 "516f662b114f5336"
@@ -1240,7 +1238,7 @@
         "z": "f3eb2de3da3352db",
         "g": "2089615d4f29b5e8",
         "x": 480,
-        "y": 420,
+        "y": 460,
         "wires": [
             [
                 "54d1a8d48d16a684"
@@ -1265,21 +1263,8 @@
         "type": "junction",
         "z": "f3eb2de3da3352db",
         "g": "8ca3eb9a68741ec8",
-        "x": 1600,
+        "x": 1260,
         "y": 120,
-        "wires": [
-            [
-                "bf1fe5748a8e1e29"
-            ]
-        ]
-    },
-    {
-        "id": "d01b1f651fe94526",
-        "type": "junction",
-        "z": "f3eb2de3da3352db",
-        "g": "8ca3eb9a68741ec8",
-        "x": 1100,
-        "y": 140,
         "wires": [
             [
                 "bf1fe5748a8e1e29"
@@ -1318,7 +1303,7 @@
         "z": "f3eb2de3da3352db",
         "g": "6dfcde191de2c8e8",
         "x": 420,
-        "y": 560,
+        "y": 600,
         "wires": [
             [
                 "86ba397398bf662f"
@@ -1331,7 +1316,7 @@
         "z": "f3eb2de3da3352db",
         "g": "6dfcde191de2c8e8",
         "x": 1260,
-        "y": 560,
+        "y": 600,
         "wires": [
             [
                 "400938d5807880f8"
@@ -1344,7 +1329,7 @@
         "z": "f3eb2de3da3352db",
         "g": "6dfcde191de2c8e8",
         "x": 1260,
-        "y": 580,
+        "y": 620,
         "wires": [
             [
                 "400938d5807880f8"
@@ -1357,7 +1342,7 @@
         "z": "f3eb2de3da3352db",
         "g": "6dfcde191de2c8e8",
         "x": 920,
-        "y": 580,
+        "y": 620,
         "wires": [
             [
                 "bbcd1c49821870a2"
@@ -1368,8 +1353,8 @@
         "id": "7b32395f62fe148e",
         "type": "junction",
         "z": "b73d17450c17803c",
-        "x": 40,
-        "y": 420,
+        "x": 60,
+        "y": 1080,
         "wires": [
             [
                 "0165592a7b31aaa1",
@@ -1383,7 +1368,7 @@
         "type": "junction",
         "z": "b73d17450c17803c",
         "x": 60,
-        "y": 260,
+        "y": 1120,
         "wires": [
             [
                 "7b32395f62fe148e"
@@ -1395,8 +1380,8 @@
         "type": "junction",
         "z": "b73d17450c17803c",
         "g": "8ff7a8afe02f6f9b",
-        "x": 900,
-        "y": 160,
+        "x": 920,
+        "y": 1000,
         "wires": [
             [
                 "118c544fd9f54519"
@@ -1491,7 +1476,7 @@
         "z": "511654ac3eb34f3c",
         "g": "49bf3ff7a63e80f4",
         "name": "pool",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1560,7 +1545,7 @@
         "z": "511654ac3eb34f3c",
         "g": "49bf3ff7a63e80f4",
         "name": "insert error log",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1666,7 +1651,7 @@
         "z": "511654ac3eb34f3c",
         "g": "3d009a5e045148c0",
         "name": "DB ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1710,7 +1695,7 @@
         "type": "debug",
         "z": "511654ac3eb34f3c",
         "name": "ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1804,7 +1789,7 @@
         "z": "511654ac3eb34f3c",
         "g": "49bf3ff7a63e80f4",
         "name": "set telegram webhook",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1955,7 +1940,7 @@
         "z": "511654ac3eb34f3c",
         "g": "4c38c06caa282caf",
         "name": "TELEGRAM ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2015,7 +2000,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 190,
-        "y": 720,
+        "y": 1620,
         "wires": [
             [
                 "178ef043d024ce87",
@@ -2032,7 +2017,7 @@
         "statusCode": "200",
         "headers": {},
         "x": 400,
-        "y": 700,
+        "y": 1600,
         "wires": []
     },
     {
@@ -2050,7 +2035,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 400,
-        "y": 740,
+        "y": 1640,
         "wires": []
     },
     {
@@ -2071,8 +2056,8 @@
                 "module": "stripe"
             }
         ],
-        "x": 340,
-        "y": 140,
+        "x": 360,
+        "y": 980,
         "wires": [
             [
                 "db728fba8af35ae3",
@@ -2084,6 +2069,7 @@
         "id": "396bbf186c75fe0c",
         "type": "http in",
         "z": "b73d17450c17803c",
+        "d": true,
         "g": "8ff7a8afe02f6f9b",
         "name": "",
         "url": "/webhook/stripe",
@@ -2091,8 +2077,8 @@
         "upload": false,
         "skipBodyParsing": true,
         "swaggerDoc": "",
-        "x": 140,
-        "y": 140,
+        "x": 160,
+        "y": 980,
         "wires": [
             [
                 "c86fa4f220d84bfb",
@@ -2106,7 +2092,7 @@
         "z": "b73d17450c17803c",
         "g": "8ff7a8afe02f6f9b",
         "name": "stripe",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2114,8 +2100,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 490,
-        "y": 100,
+        "x": 510,
+        "y": 940,
         "wires": []
     },
     {
@@ -2131,8 +2117,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 610,
-        "y": 120,
+        "x": 630,
+        "y": 960,
         "wires": [
             [
                 "57ae0baa9395d3bd"
@@ -2147,8 +2133,8 @@
         "name": "",
         "statusCode": "200",
         "headers": {},
-        "x": 340,
-        "y": 100,
+        "x": 360,
+        "y": 940,
         "wires": []
     },
     {
@@ -2162,8 +2148,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 730,
-        "y": 120,
+        "x": 750,
+        "y": 960,
         "wires": [
             [
                 "6e1a6abd115867f5",
@@ -2177,7 +2163,7 @@
         "z": "b73d17450c17803c",
         "g": "8ff7a8afe02f6f9b",
         "name": "stripe",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2185,8 +2171,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 80,
+        "x": 750,
+        "y": 920,
         "wires": []
     },
     {
@@ -2210,8 +2196,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 490,
-        "y": 140,
+        "x": 510,
+        "y": 980,
         "wires": [
             [
                 "dd64cf0487f16c8b"
@@ -2234,8 +2220,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 610,
-        "y": 160,
+        "x": 630,
+        "y": 1000,
         "wires": [
             [
                 "5b012253d929f45a"
@@ -2253,8 +2239,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 730,
-        "y": 160,
+        "x": 750,
+        "y": 1000,
         "wires": [
             []
         ]
@@ -2272,8 +2258,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 860,
-        "y": 120,
+        "x": 880,
+        "y": 960,
         "wires": [
             [
                 "6e1a6abd115867f5",
@@ -2294,8 +2280,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 220,
-        "y": 520,
+        "x": 240,
+        "y": 1440,
         "wires": [
             [
                 "0fdb989c2dc85e8d"
@@ -2313,8 +2299,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 400,
-        "y": 520,
+        "x": 420,
+        "y": 1440,
         "wires": [
             [
                 "b779df4ed3bc8845"
@@ -2334,8 +2320,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 550,
-        "y": 520,
+        "x": 570,
+        "y": 1440,
         "wires": [
             [
                 "f0deea2958d1b962"
@@ -2356,8 +2342,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 680,
-        "y": 520,
+        "x": 700,
+        "y": 1440,
         "wires": []
     },
     {
@@ -2368,7 +2354,7 @@
         "scope": null,
         "uncaught": false,
         "x": 100,
-        "y": 840,
+        "y": 1720,
         "wires": [
             [
                 "948dde2391c8db61",
@@ -2381,7 +2367,7 @@
         "type": "debug",
         "z": "b73d17450c17803c",
         "name": "ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2390,7 +2376,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 240,
-        "y": 880,
+        "y": 1760,
         "wires": []
     },
     {
@@ -2406,7 +2392,7 @@
         "finalize": "",
         "libs": [],
         "x": 240,
-        "y": 840,
+        "y": 1720,
         "wires": [
             [
                 "bd5f284266d703ff"
@@ -2424,7 +2410,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 400,
-        "y": 840,
+        "y": 1720,
         "wires": [
             []
         ]
@@ -2447,8 +2433,8 @@
                 "module": "nodemailer"
             }
         ],
-        "x": 350,
-        "y": 280,
+        "x": 370,
+        "y": 1180,
         "wires": [
             [
                 "7c3ba67cdefd1a4d"
@@ -2468,8 +2454,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 210,
-        "y": 280,
+        "x": 230,
+        "y": 1180,
         "wires": [
             [
                 "584213fb0ad159c3"
@@ -2489,7 +2475,7 @@
         "finalize": "",
         "libs": [],
         "x": 260,
-        "y": 620,
+        "y": 1520,
         "wires": [
             [
                 "240c733325a2ed41"
@@ -2518,7 +2504,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 620,
+        "y": 1520,
         "wires": [
             [
                 "957926780ec4a3fe"
@@ -2539,7 +2525,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 420,
-        "y": 620,
+        "y": 1520,
         "wires": []
     },
     {
@@ -2555,8 +2541,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 210,
-        "y": 420,
+        "x": 230,
+        "y": 1320,
         "wires": [
             [
                 "6428fc240f43793f"
@@ -2580,8 +2566,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 370,
-        "y": 420,
+        "x": 390,
+        "y": 1320,
         "wires": [
             [
                 "046ae0a7b3bccb92"
@@ -2601,125 +2587,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 470,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "252065a6ac1f8d8e",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1380,
-        "y": 900,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f64274a774fe0315",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1340,
-        "y": 780,
-        "wires": [
-            [
-                "19815e09f6b7d351"
-            ]
-        ]
-    },
-    {
-        "id": "19815e09f6b7d351",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "invoices get",
-        "func": "const DOLIBARR_API_KEY = env.get('DOLIBARR_API_KEY') || null;\n\nif (!DOLIBARR_API_KEY) {\n    throw new Error(\"Missed DOLIBARR_API_KEY\");\n};\n\nmsg.invoiceId = 51;\n\nmsg.method = 'GET';\nmsg.url = `https://pos.ascremosas.com/api/index.php/invoices/${msg.invoiceId}`;\n\nmsg.headers = {\n    \"DOLAPIKEY\": DOLIBARR_API_KEY,\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1490,
-        "y": 780,
-        "wires": [
-            [
-                "62d13a7e4aac9213"
-            ]
-        ]
-    },
-    {
-        "id": "62d13a7e4aac9213",
-        "type": "http request",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "method": "use",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 1650,
-        "y": 780,
-        "wires": [
-            [
-                "efa2a1d9eb930392"
-            ]
-        ]
-    },
-    {
-        "id": "efa2a1d9eb930392",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "invoices get",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1810,
-        "y": 780,
+        "x": 510,
+        "y": 1180,
         "wires": []
     },
     {
@@ -2736,8 +2605,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 580,
-        "y": 380,
+        "x": 600,
+        "y": 1280,
         "wires": []
     },
     {
@@ -2758,8 +2627,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 475,
-        "y": 420,
+        "x": 495,
+        "y": 1320,
         "wires": [
             [
                 "6c423dc8bb2c6824",
@@ -2785,8 +2654,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 770,
-        "y": 420,
+        "x": 790,
+        "y": 1320,
         "wires": [
             [
                 "e789b5ba9e5c284a",
@@ -2807,8 +2676,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 420,
+        "x": 620,
+        "y": 1320,
         "wires": [
             [
                 "6e6d0c2db7a880ac"
@@ -2829,8 +2698,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 970,
-        "y": 380,
+        "x": 990,
+        "y": 1280,
         "wires": []
     },
     {
@@ -2851,8 +2720,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 865,
-        "y": 420,
+        "x": 885,
+        "y": 1320,
         "wires": [
             [
                 "3b8322f6546aac2c"
@@ -2873,8 +2742,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
-        "y": 420,
+        "x": 990,
+        "y": 1320,
         "wires": [
             [
                 "131be86f15cd2ced"
@@ -2898,8 +2767,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1130,
-        "y": 420,
+        "x": 1150,
+        "y": 1320,
         "wires": [
             [
                 "b182aa6f457d3c64",
@@ -2921,8 +2790,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1330,
-        "y": 380,
+        "x": 1350,
+        "y": 1280,
         "wires": []
     },
     {
@@ -2943,8 +2812,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1235,
-        "y": 420,
+        "x": 1255,
+        "y": 1320,
         "wires": [
             [
                 "b8228759b6e0935f"
@@ -2965,8 +2834,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1350,
-        "y": 420,
+        "x": 1370,
+        "y": 1320,
         "wires": [
             [
                 "c1e087a4c92536cd"
@@ -2990,8 +2859,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1510,
-        "y": 420,
+        "x": 1530,
+        "y": 1320,
         "wires": [
             [
                 "f7bcf7eea5eefe9f",
@@ -3012,8 +2881,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1680,
-        "y": 420,
+        "x": 1700,
+        "y": 1320,
         "wires": [
             [
                 "1a59d02809c498dc"
@@ -3034,8 +2903,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1730,
-        "y": 380,
+        "x": 1750,
+        "y": 1280,
         "wires": []
     },
     {
@@ -3049,8 +2918,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 1840,
-        "y": 420,
+        "x": 1860,
+        "y": 1320,
         "wires": [
             [
                 "820922ad795716dc",
@@ -3071,8 +2940,419 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1980,
+        "x": 2000,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "3736286b45437c13",
+        "type": "comment",
+        "z": "b73d17450c17803c",
+        "name": "кроки інтеграції",
+        "info": "Коли клієнт натискає \"оплатити\", тобі треба:\n\n - Взяти дані замовлення (сума, номер замовлення тощо)\n - Використати секретний ключ шифрування (clave de cifrado), який тобі надасть банк\n - Згенерувати криптографічний підпис\n - Відправити цей підпис разом з даними до Cecabank\n\nЦе схоже на те, як Stripe підписує запити, тільки тут ти робиш це вручну.\nПункт 5 — Сторінки оплати:\nГарна новина — тобі не треба робити кастомний дизайн сторінки введення картки. Банк надає свою готову сторінку (як Stripe Checkout). Клієнта перекидає туди, він вводить картку, і повертається назад.\nПункт 6 — Webhook (comunicación on-line):\nЦе як Stripe webhooks — банк надсилатиме тобі підтвердження про оплату на твій сервер. Треба буде:\n\nСтворити endpoint, який приймає ці повідомлення\nНалаштувати URL цього endpoint в адмінці банку\n\nПідсумок простою мовою:\nПроцес майже як у Stripe:\n\nКлієнт натискає \"оплатити\" → ти формуєш підписаний запит → редірект на сторінку банку\nКлієнт вводить картку на сторінці банку\nБанк надсилає тобі webhook з результатом\nТи оновлюєш статус замовлення",
+        "x": 120,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "5d845f0181ec5fc3",
+        "type": "comment",
+        "z": "b73d17450c17803c",
+        "name": "creds",
+        "info": "MerchantID - 250407277\nAcquirerBIN - 0000554026\nTerminalID - 00000003\nClave de cifrado - 94GFY5BALYJK1B1TUIZ9I7S1AEEOUM4U",
+        "x": 90,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4a2348f12c8d6be1",
+        "type": "comment",
+        "z": "b73d17450c17803c",
+        "name": "як працює",
+        "info": "Клієнт натискає \"Оплатити\"\n        ↓\nТвій бекенд генерує підпис + дані\n        ↓\nФорма автоматично відправляє POST на Cecabank\n        ↓\nКлієнт вводить картку на сторінці банку\n        ↓\nБанк надсилає webhook на твій сервер (підтвердження)\n        ↓\nКлієнт повертається на URL_OK або URL_NOK",
+        "x": 280,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "fc9c7c0c763a4a44",
+        "type": "http in",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "url": "/webhook/tpv",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "4b3a8b0f745ea710",
+                "af6101dcb8ab5b5c"
+            ]
+        ]
+    },
+    {
+        "id": "4b3a8b0f745ea710",
+        "type": "http response",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 330,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "af6101dcb8ab5b5c",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "webhook",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "064bee43bd5dd715",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "4eb920821f400cf9"
+            ]
+        ]
+    },
+    {
+        "id": "4eb920821f400cf9",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "set msg",
+        "func": "msg = {}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 280,
+        "wires": [
+            [
+                "df82a4b45a03a28d"
+            ]
+        ]
+    },
+    {
+        "id": "df82a4b45a03a28d",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "webhook",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 260,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "04ad285da543e2ab",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "check webhook",
+        "func": "const CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION');\n\nif (!CLAVE_ENCRIPTACION) {\n    throw new Error(\"Missed CLAVE_ENCRIPTACION\");\n}\nconst data = msg.req?.body || msg?.payload || {};\n\nconst {\n    MerchantID = '', AcquirerBIN = '', TerminalID = '', Num_operacion = '', \n    Importe = '', TipoMoneda = '', Exponente = '', Referencia = '', Idioma = '',\n    Firma = '', Num_aut = '', Tipo_operacion = '', Pais = '', Descripcion = ''\n} = data;\n\nmsg.toDB = {\n    orderId: Num_operacion,\n    referencia: Referencia,\n    numAut: Num_aut,\n    status: \"unpaid\"\n};\n\nif (!Num_operacion || !Firma || !Referencia) {\n    node.error('Missing required fields in TPV webhook', msg);\n    msg.payload = \"ERROR\";\n    msg.statusCode = 400;\n\n    return msg;\n};\n\n// Formula for comunicación online:\n// SHA256(Clave + MerchantID + AcquirerBIN + TerminalID + Num_operacion + Importe + TipoMoneda + Exponente + Referencia)\nconst cadenaFirma = \n    CLAVE_ENCRIPTACION +\n    MerchantID +\n    AcquirerBIN +\n    TerminalID +\n    Num_operacion +\n    Importe +\n    TipoMoneda +\n    Exponente +\n    Referencia;\n\nconst firmaCalculada = crypto\n    .createHash('sha256')\n    .update(cadenaFirma)\n    .digest('hex');\n\nif (firmaCalculada.toLowerCase() !== Firma.toLowerCase()) {\n    node.error(`Invalid signature! Expected: ${firmaCalculada}, Got: ${Firma}`, msg);\n    msg.payload = \"ERROR\";\n    msg.statusCode = 400;\n    return msg;\n};\n\nconst idiomaMap = { \"1\": \"es\", \"6\": \"en\", \"4\": \"gl\" };\nmsg.lang = idiomaMap?.[Idioma] || \"es\";\n\nmsg.payload = \"$*$OKY$*$\";\nmsg.statusCode = 200;\nmsg.headers =  { \"Content-Type\": \"text/html; charset=utf-8\" };\nmsg.toDB.status = \"paid\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 420,
+        "y": 400,
+        "wires": [
+            [
+                "936f78f7fc7d2a39",
+                "a99b84e003d86d8b",
+                "5c70e8e31b3adc9a"
+            ]
+        ]
+    },
+    {
+        "id": "194e11744160887f",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 400,
+        "wires": [
+            [
+                "da5cd4ab2a6d321d"
+            ]
+        ]
+    },
+    {
+        "id": "da5cd4ab2a6d321d",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "test data",
+        "func": "const CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION') ;\n\nconst testData = {\n    MerchantID: \"250407277\",\n    AcquirerBIN: \"0000554026\",\n    TerminalID: \"00000003\",\n    Num_operacion: \"LCG-20260131-147728\",\n    Importe: \"000000000550\",\n    TipoMoneda: \"978\",\n    Exponente: \"2\",\n    Referencia: \"240131123456789012\",\n    Num_aut: \"ABC123\",\n    BIN: \"454881\",\n    FinalPAN: \"1234\",\n    Pais: \"724\",\n    Tipo_tarjeta: \"CRE\",\n    Tipo_operacion: \"C\",\n    Idioma: \"1\",\n    Descripcion: \"Pedido LCG-20260131-147728\"\n};\n\nconst cadenaFirma = \n    CLAVE_ENCRIPTACION +\n    testData.MerchantID +\n    testData.AcquirerBIN +\n    testData.TerminalID +\n    testData.Num_operacion +\n    testData.Importe +\n    testData.TipoMoneda +\n    testData.Exponente +\n    testData.Referencia;\n\ntestData.Firma = crypto\n    .createHash('sha256')\n    .update(cadenaFirma)\n    .digest('hex');\n\nmsg.req = {\n    body: testData\n};\n\nmsg.payload = testData;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 260,
+        "y": 400,
+        "wires": [
+            [
+                "768d9a78f7a095df",
+                "04ad285da543e2ab"
+            ]
+        ]
+    },
+    {
+        "id": "768d9a78f7a095df",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "test data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "936f78f7fc7d2a39",
+        "type": "http response",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 470,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "a99b84e003d86d8b",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "check",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1d8f3931d06ed088",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "paid",
+        "func": "const { orderId = null, referencia = null, numAut = null, status = 'paid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nmsg.queryParameters = [orderId, status, referencia, numAut, new Date(), msg.lang];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2,\n        tpv_referencia = $3,\n        tpv_num_aut = $4,\n        paid_at = $5 \n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'unit_price', oi.unit_price,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free,\n                'dolibarr_id', pv.dolibarr_id,\n                'dolibarr_gluten_id', pv.dolibarr_gluten_id,\n                'dolibarr_lactose_id', pv.dolibarr_lactose_id,\n                'price_tax_free', pv.price_tax_free,\n                'price_tax_free_gluten', pv.price_tax_free_gluten,\n                'price_tax_free_lactose', pv.price_tax_free_lactose\n            )\n            FROM order_items oi\n            LEFT JOIN product_variants pv ON oi.product_variant_id = pv.id\n            LEFT JOIN product_translations pt ON oi.product_id = pt.product_id AND pt.language_code = $6\n            LEFT JOIN product_variant_translations pvt ON oi.product_variant_id = pvt.variant_id AND pvt.language_code = $6\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 380,
+        "wires": [
+            [
+                "06ad6d7562dbfdf9"
+            ]
+        ]
+    },
+    {
+        "id": "06ad6d7562dbfdf9",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "name": "orders",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 810,
+        "y": 380,
+        "wires": [
+            [
+                "85a00b809ee076b7"
+            ]
+        ]
+    },
+    {
+        "id": "5c70e8e31b3adc9a",
+        "type": "switch",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "property": "toDB.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "paid",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 400,
+        "wires": [
+            [
+                "1d8f3931d06ed088"
+            ],
+            [
+                "195880216a99284d"
+            ]
+        ]
+    },
+    {
+        "id": "195880216a99284d",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "unpaid",
+        "func": "const { orderId = null, referencia = null, numAut = null, status = 'unpaid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nmsg.queryParameters = [orderId, status, referencia, numAut];\nmsg.payload = `\n    UPDATE orders\n        SET status = $2,\n            tpv_referencia = $3,\n            tpv_num_aut = $4\n    WHERE order_id = $1\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
         "y": 420,
+        "wires": [
+            [
+                "28a8fe9bc38e35f9"
+            ]
+        ]
+    },
+    {
+        "id": "28a8fe9bc38e35f9",
+        "type": "link call",
+        "z": "b73d17450c17803c",
+        "name": "orders",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 810,
+        "y": 420,
+        "wires": [
+            [
+                "e317f2753e175cb3"
+            ]
+        ]
+    },
+    {
+        "id": "85a00b809ee076b7",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "check",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "e317f2753e175cb3",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "check",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 440,
         "wires": []
     },
     {
@@ -3104,11 +3384,11 @@
         "name": "09:00 (madrid) except sunday",
         "props": [],
         "repeat": "",
-        "crontab": "00 08 * * 1,2,3,4,5,6",
+        "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 210,
+        "x": 200,
         "y": 80,
         "wires": [
             [
@@ -3229,7 +3509,7 @@
         "z": "d6966d87889a164a",
         "g": "04d6ca379c9c81d0",
         "name": "jandro",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3270,11 +3550,11 @@
         "name": "00:05 (madrid) except sunday",
         "props": [],
         "repeat": "",
-        "crontab": "05 00 * * 1,2,3,4,5,6",
+        "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 210,
+        "x": 200,
         "y": 180,
         "wires": [
             [
@@ -3368,7 +3648,7 @@
         "z": "d6966d87889a164a",
         "g": "2ffdb4c723e8e6a0",
         "name": "bakers",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3428,7 +3708,7 @@
         "type": "debug",
         "z": "d6966d87889a164a",
         "name": "ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3611,7 +3891,7 @@
         "z": "deae6838e7a58a75",
         "g": "07ec0a4c55b9e373",
         "name": "format response",
-        "func": "const response = msg.payload || {};\n\nif (msg.statusCode !== 200 || response?.status?.toLowerCase() !== \"ok\") {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: 'Server error: Problem with Google Maps api',\n        data: null\n    };\n\n    return msg;\n};\n\nmsg.statusCode = 200;\nmsg.payload = {\n    status: 'success',\n    message: null,\n    data: response?.result || {}\n};\n\nreturn msg;",
+        "func": "const response = msg.payload || {};\n\nif (msg.statusCode !== 200 || response?.status?.toLowerCase() !== \"ok\") {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: 'Server error: Problem with Google Maps api',\n        data: null\n    };\n\n    return msg;\n};\n\nconst reviewsWithText = response?.result?.reviews?.filter(e => e.text) || [];\n\nmsg.statusCode = 200;\nmsg.payload = {\n    status: 'success',\n    message: null,\n    data: {\n        ...response?.result,\n        reviews: reviewsWithText\n    }\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3662,7 +3942,7 @@
         "scope": null,
         "uncaught": false,
         "x": 100,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "7771656bf96e2c2e",
@@ -3675,7 +3955,7 @@
         "type": "debug",
         "z": "deae6838e7a58a75",
         "name": "ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3684,7 +3964,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 240,
-        "y": 240,
+        "y": 280,
         "wires": []
     },
     {
@@ -3700,7 +3980,7 @@
         "finalize": "",
         "libs": [],
         "x": 240,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "20297053677fecaf"
@@ -3718,7 +3998,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 400,
-        "y": 200,
+        "y": 240,
         "wires": [
             []
         ]
@@ -3731,7 +4011,7 @@
         "scope": null,
         "uncaught": false,
         "x": 100,
-        "y": 720,
+        "y": 740,
         "wires": [
             [
                 "28a51bea48b7e52f",
@@ -3744,7 +4024,7 @@
         "type": "debug",
         "z": "f3eb2de3da3352db",
         "name": "ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3753,7 +4033,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 240,
-        "y": 760,
+        "y": 780,
         "wires": []
     },
     {
@@ -3764,8 +4044,8 @@
         "props": [],
         "repeat": "",
         "crontab": "00 03 * * *",
-        "once": false,
-        "onceDelay": "0.5",
+        "once": true,
+        "onceDelay": "1",
         "topic": "",
         "x": 140,
         "y": 40,
@@ -3841,7 +4121,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 200,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
                 "e005e0ebb8a33fea"
@@ -3862,7 +4142,7 @@
         "finalize": "",
         "libs": [],
         "x": 430,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
                 "0f8db7db2ce00b07"
@@ -3881,7 +4161,7 @@
         "statusCode": "",
         "headers": {},
         "x": 890,
-        "y": 300,
+        "y": 340,
         "wires": []
     },
     {
@@ -3896,7 +4176,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 580,
-        "y": 320,
+        "y": 360,
         "wires": [
             [
                 "90a850f6889b22a8"
@@ -3917,7 +4197,7 @@
         "finalize": "",
         "libs": [],
         "x": 740,
-        "y": 320,
+        "y": 360,
         "wires": [
             [
                 "f27160b282a5a3d5"
@@ -3936,10 +4216,11 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 180,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
-                "1c50a46501f1f8e0"
+                "1c50a46501f1f8e0",
+                "a480517c898222cf"
             ]
         ]
     },
@@ -3952,7 +4233,7 @@
         "statusCode": "",
         "headers": {},
         "x": 850,
-        "y": 440,
+        "y": 480,
         "wires": []
     },
     {
@@ -3969,7 +4250,7 @@
         "finalize": "",
         "libs": [],
         "x": 390,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "855aa1bf1cab1262"
@@ -3991,7 +4272,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 540,
-        "y": 460,
+        "y": 500,
         "wires": [
             [
                 "685c56295d5f6da1"
@@ -4012,7 +4293,7 @@
         "finalize": "",
         "libs": [],
         "x": 700,
-        "y": 460,
+        "y": 500,
         "wires": [
             [
                 "516f662b114f5336"
@@ -4079,53 +4360,7 @@
         "y": 160,
         "wires": [
             [
-                "492e6e5f939ad4d2"
-            ]
-        ]
-    },
-    {
-        "id": "492e6e5f939ad4d2",
-        "type": "function",
-        "z": "f3eb2de3da3352db",
-        "g": "8ca3eb9a68741ec8",
-        "name": "create url",
-        "func": "const SECRET_KEY = env.get(\"STRIPE_SECRET_KEY\") || '';\nconst FRONTEND_URL = env.get(\"FRONTEND_URL\") || '';\n\nconst {\n    customerEmail,\n    totalPrice,\n    lang\n} = msg.orderData;\n\nconst orderMap = {\n    es: 'Pedido',\n    gl: 'Pedido',\n    en: 'Order'\n};\n\nconst formData = {\n    'success_url': `${FRONTEND_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}&lang=${lang}`,\n    'cancel_url': `${FRONTEND_URL}/checkout/cancel?order_id=${msg.orderId}&lang=${lang}`,\n    'mode': 'payment',\n    'customer_email': customerEmail,\n    'metadata[order_id]': msg.orderId,\n    'metadata[lang]': lang,\n    'client_reference_id': msg.orderId,\n    'payment_intent_data[metadata][order_id]': msg.orderId,\n    'locale': 'auto',\n    'line_items[0][price_data][currency]': 'eur',\n    'line_items[0][price_data][product_data][name]': `${orderMap[lang]} #${msg.orderId}`,\n    'line_items[0][price_data][unit_amount]': totalPrice * 100,\n    'line_items[0][quantity]': 1\n};\n\nconst body = Object.entries(formData)\n    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)\n    .join('&');\n\nmsg.payload = body;\n\nmsg.url = \"https://api.stripe.com/v1/checkout/sessions\";\nmsg.method = \"POST\";\nmsg.headers = {\n    'Authorization': `Bearer ${SECRET_KEY}`,\n    'Content-Type': 'application/x-www-form-urlencoded',\n    'Idempotency-Key': `checkout_${msg.orderId}`\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 680,
-        "y": 160,
-        "wires": [
-            [
-                "c62f62399357ee40"
-            ]
-        ]
-    },
-    {
-        "id": "c62f62399357ee40",
-        "type": "http request",
-        "z": "f3eb2de3da3352db",
-        "g": "8ca3eb9a68741ec8",
-        "name": "",
-        "method": "use",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 830,
-        "y": 160,
-        "wires": [
-            [
-                "265d042a10cdcebe"
+                "3eea93fbec4d81e9"
             ]
         ]
     },
@@ -4137,33 +4372,9 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1690,
+        "x": 1330,
         "y": 140,
         "wires": []
-    },
-    {
-        "id": "265d042a10cdcebe",
-        "type": "function",
-        "z": "f3eb2de3da3352db",
-        "g": "8ca3eb9a68741ec8",
-        "name": "check answer",
-        "func": "const { id = null, url = null } = msg.payload || {};\n\nif (msg.statusCode !== 200 || !id || !url) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: `Problem with payment`,\n        data: null\n    };\n\n    return [msg, null];\n};\n\nmsg.stripe = {\n    id, \n    url\n};\n\nreturn [null, msg];\n",
-        "outputs": 2,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 160,
-        "wires": [
-            [
-                "d01b1f651fe94526"
-            ],
-            [
-                "3272c763d8ab4c2a"
-            ]
-        ]
     },
     {
         "id": "5d7e68b7fe481ce8",
@@ -4171,18 +4382,19 @@
         "z": "f3eb2de3da3352db",
         "g": "8ca3eb9a68741ec8",
         "name": "format response",
-        "func": "if (msg?.error) {\n    const { code, constraint } = msg.error || {};\n\n    if (code === '23505') {\n        msg.statusCode = 409;\n        msg.payload = {\n            status: 'error',\n            message: `Order with this order ID already exists. Code - ${code}.`,\n            data: null\n        };\n\n        return msg;\n    }\n\n    if (code === '23503') {\n        let message = 'Referenced record not found';\n\n        if (constraint) {\n            if (constraint.includes('shop')) {\n                message = 'Shop not found';\n            } else if (constraint.includes('product_variant')) {\n                message = 'Product variant not found';\n            } else if (constraint.includes('product')) {\n                message = 'Product not found';\n            }\n        }\n\n        msg.statusCode = 400;\n        msg.payload = {\n            status: 'error',\n            message: `${message}. Code - ${code}.`,\n            data: null\n        };\n\n        return msg;\n    }\n\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: msg.error?.message || 'Database error occurred',\n        data: null\n    };\n\n    return msg;\n}\n\nif (!msg.payload || msg.payload?.length === 0) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: 'Failed to create order - no data returned',\n        data: null\n    };\n\n    return msg;\n};\n\nmsg.statusCode = 201;\nmsg.payload = {\n    status: 'success',\n    message: 'Order created successfully',\n    data: { \n        checkoutUrl: msg?.stripe?.url\n    }\n};\n\nreturn msg;",
+        "func": "if (msg?.error) {\n    const { code, constraint } = msg.error || {};\n\n    if (code === '23505') {\n        msg.statusCode = 409;\n        msg.payload = {\n            status: 'error',\n            message: `Order with this order ID already exists. Code - ${code}.`,\n            data: null\n        };\n\n        return msg;\n    }\n\n    if (code === '23503') {\n        let message = 'Referenced record not found';\n\n        if (constraint) {\n            if (constraint.includes('shop')) {\n                message = 'Shop not found';\n            } else if (constraint.includes('product_variant')) {\n                message = 'Product variant not found';\n            } else if (constraint.includes('product')) {\n                message = 'Product not found';\n            }\n        }\n\n        msg.statusCode = 400;\n        msg.payload = {\n            status: 'error',\n            message: `${message}. Code - ${code}.`,\n            data: null\n        };\n\n        return msg;\n    }\n\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: msg.error?.message || 'Database error occurred',\n        data: null\n    };\n\n    return msg;\n}\n\nif (!msg.payload || msg.payload?.length === 0) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: 'Failed to create order - no data returned',\n        data: null\n    };\n\n    return msg;\n};\n\nmsg.statusCode = 201;\nmsg.payload = {\n    status: 'success',\n    message: 'Order created successfully',\n    data: {\n        orderId: msg.orderId,\n        tpv: msg.tpv \n    }\n};\n\nreturn msg;\n\n// msg.statusCode = 201;\n// msg.payload = {\n//     status: 'success',\n//     message: 'Order created successfully',\n//     data: { \n//         checkoutUrl: msg?.stripe?.url\n//     }\n// };\n\n// return msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1520,
-        "y": 180,
+        "x": 1180,
+        "y": 160,
         "wires": [
             [
-                "bf1fe5748a8e1e29"
+                "bf1fe5748a8e1e29",
+                "60368e441f11783f"
             ]
         ]
     },
@@ -4192,15 +4404,15 @@
         "z": "f3eb2de3da3352db",
         "g": "8ca3eb9a68741ec8",
         "name": "insert order + items",
-        "func": "const {\n    orderSource,\n    shopId,\n    customerName,\n    customerEmail,\n    customerPhone,\n    pickupDate,\n    pickupTime,\n    totalPrice,\n    notes,\n    items\n} = msg.orderData;\n\n\nlet itemsInsertSQL = '';\nif (items.length > 0) {\n    const itemsValues = items.map((item) => {\n        const productVariantId = item?.productVariantId || 'NULL';\n        const isGlutenFree = item?.isGlutenFree || false;\n        const isLactoseFree = item?.isLactoseFree || false;\n        const isSugarFree = item?.isSugarFree || false;\n\n        return `((SELECT id FROM inserted_order), ${item?.productId}, ${productVariantId}, ${item?.quantity}, ${item?.unitPrice}, ${isGlutenFree}, ${isLactoseFree}, ${isSugarFree})`;\n    }).join(', ');\n\n    itemsInsertSQL = `\n        , inserted_items AS (\n            INSERT INTO order_items (order_id, product_id, product_variant_id, quantity, unit_price, is_gluten_free, is_lactose_free, is_sugar_free)\n            VALUES ${itemsValues}\n            RETURNING *\n        )\n    `;\n}\n\nmsg.queryParameters = [\n    msg.orderId,\n    'pending',\n    orderSource,\n    shopId,\n    customerName,\n    customerEmail,\n    customerPhone,\n    pickupDate,\n    pickupTime,\n    totalPrice,\n    notes,\n    msg?.stripe?.id\n];\n\nmsg.payload = `\n    WITH inserted_order AS (\n        INSERT INTO orders (\n            order_id, status, order_source, shop_id,\n            customer_name, customer_email, customer_phone,\n            pickup_date, pickup_time, total_price,\n            notes, stripe_session_id\n        )\n        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)\n        RETURNING id\n    )\n    ${itemsInsertSQL}\n    SELECT id FROM inserted_order\n`;\n\nreturn msg;",
+        "func": "const {\n    orderSource,\n    shopId,\n    customerName,\n    customerEmail,\n    customerPhone,\n    pickupDate,\n    pickupTime,\n    totalPrice,\n    notes,\n    items\n} = msg.orderData;\n\nlet itemsInsertSQL = '';\nif (items.length > 0) {\n    const itemsValues = items.map((item) => {\n        const productVariantId = item?.productVariantId || 'NULL';\n        const isGlutenFree = item?.isGlutenFree || false;\n        const isLactoseFree = item?.isLactoseFree || false;\n        const isSugarFree = item?.isSugarFree || false;\n\n        return `((SELECT id FROM inserted_order), ${item?.productId}, ${productVariantId}, ${item?.quantity}, ${item?.unitPrice}, ${isGlutenFree}, ${isLactoseFree}, ${isSugarFree})`;\n    }).join(', ');\n\n    itemsInsertSQL = `\n        , inserted_items AS (\n            INSERT INTO order_items (order_id, product_id, product_variant_id, quantity, unit_price, is_gluten_free, is_lactose_free, is_sugar_free)\n            VALUES ${itemsValues}\n            RETURNING *\n        )\n    `;\n}\n\nmsg.queryParameters = [\n    msg.orderId,\n    'pending',\n    orderSource,\n    shopId,\n    customerName,\n    customerEmail,\n    customerPhone,\n    pickupDate,\n    pickupTime,\n    totalPrice,\n    notes\n];\n\nmsg.payload = `\n    WITH inserted_order AS (\n        INSERT INTO orders (\n            order_id, status, order_source, shop_id,\n            customer_name, customer_email, customer_phone,\n            pickup_date, pickup_time, total_price,\n            notes\n        )\n        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)\n        RETURNING id\n    )\n    ${itemsInsertSQL}\n    SELECT id FROM inserted_order\n`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1190,
-        "y": 180,
+        "x": 850,
+        "y": 160,
         "wires": [
             [
                 "4ba0b565025ef2c0"
@@ -4218,11 +4430,12 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 1360,
-        "y": 180,
+        "x": 1020,
+        "y": 160,
         "wires": [
             [
-                "5d7e68b7fe481ce8"
+                "5d7e68b7fe481ce8",
+                "e0780f570eeb2aa7"
             ]
         ]
     },
@@ -4367,8 +4580,7 @@
         "y": 1000,
         "wires": [
             [
-                "function_format_order_response",
-                "b9323d308faa62f0"
+                "function_format_order_response"
             ]
         ]
     },
@@ -4389,8 +4601,7 @@
         "y": 1000,
         "wires": [
             [
-                "f82c61c4bf350dc6",
-                "b9323d308faa62f0"
+                "f82c61c4bf350dc6"
             ]
         ]
     },
@@ -4755,24 +4966,6 @@
         ]
     },
     {
-        "id": "b9323d308faa62f0",
-        "type": "debug",
-        "z": "f3eb2de3da3352db",
-        "g": "o1r2d3e4r5s6f7l8",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 820,
-        "y": 1020,
-        "wires": []
-    },
-    {
         "id": "a50972a6104c9c83",
         "type": "function",
         "z": "f3eb2de3da3352db",
@@ -4786,7 +4979,7 @@
         "finalize": "",
         "libs": [],
         "x": 330,
-        "y": 580,
+        "y": 620,
         "wires": [
             [
                 "0c61b80ac9a3a822"
@@ -4808,7 +5001,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 150,
-        "y": 580,
+        "y": 620,
         "wires": [
             [
                 "a50972a6104c9c83"
@@ -4829,7 +5022,7 @@
         "finalize": "",
         "libs": [],
         "x": 500,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "36c88d73699b3fec"
@@ -4848,7 +5041,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 660,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "febf71dbd536155e"
@@ -4864,7 +5057,7 @@
         "statusCode": "",
         "headers": {},
         "x": 1350,
-        "y": 580,
+        "y": 620,
         "wires": []
     },
     {
@@ -4881,7 +5074,7 @@
         "finalize": "",
         "libs": [],
         "x": 820,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "6f984971e656c805"
@@ -4905,7 +5098,7 @@
         "finalize": "",
         "libs": [],
         "x": 1180,
-        "y": 620,
+        "y": 660,
         "wires": [
             [
                 "400938d5807880f8"
@@ -4924,7 +5117,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1000,
-        "y": 620,
+        "y": 660,
         "wires": [
             [
                 "d9b5f353490d8989"
@@ -4944,7 +5137,7 @@
         "finalize": "",
         "libs": [],
         "x": 240,
-        "y": 720,
+        "y": 740,
         "wires": [
             [
                 "e1650906f913a7cf"
@@ -4962,10 +5155,109 @@
         "linkType": "static",
         "timeout": "30",
         "x": 400,
-        "y": 720,
+        "y": 740,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "3eea93fbec4d81e9",
+        "type": "function",
+        "z": "f3eb2de3da3352db",
+        "g": "8ca3eb9a68741ec8",
+        "name": "TPV data",
+        "func": "const ACQUIRER_BIN = env.get('ACQUIRER_BIN') || null;\nconst MERCHANT_ID = env.get('MERCHANT_ID') || null;\nconst TERMINAL_ID = env.get('TERMINAL_ID') || null;\nconst CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION') || null;\nconst FRONTEND_URL = env.get('FRONTEND_URL') || null;\n\nif (!ACQUIRER_BIN || !MERCHANT_ID || !TERMINAL_ID || !CLAVE_ENCRIPTACION) {\n    throw new Error(\"Missed data for tpv virtual\");\n};\n\nconst TPV_CONFIG = {\n    merchantID: MERCHANT_ID,     \n    acquirerBIN: ACQUIRER_BIN,   \n    terminalID: TERMINAL_ID,  \n    claveEncriptacion: CLAVE_ENCRIPTACION,\n    \n    baseURL: FRONTEND_URL || \"https://ascremosas.com\",\n\n    isProduction: true\n};\n\nconst tpvURL = TPV_CONFIG.isProduction\n    ? \"https://pgw.ceca.es/tpvweb/tpv/compra.action\"\n    : \"https://tpv.ceca.es/tpvweb/tpv/compra.action\";\n\nconst { customerEmail, totalPrice, lang } = msg?.orderData || {};\nconst orderId = msg?.orderId;\n\n// to cents\nconst importe = Math.round(totalPrice * 100).toString();\n\nconst tipoMoneda = \"978\"; // EUR\nconst exponente = \"2\";\nconst cifrado = \"SHA2\";\nconst pagoSoportado = \"SSL\";\n\nconst idiomaMap = { es: \"1\", en: \"6\", gl: \"4\" };\nconst idioma = idiomaMap?.[lang] || \"1\";\n\nconst urlOK = `${TPV_CONFIG?.baseURL}/checkout/success?order_id=${orderId}&lang=${lang}`;\nconst urlNOK = `${TPV_CONFIG?.baseURL}/checkout/cancel?order_id=${orderId}&lang=${lang}`;\n\nconst descripcion = `Pedido ${orderId}`;\n\nconst cadenaFirma =\n    TPV_CONFIG.claveEncriptacion +\n    TPV_CONFIG.merchantID +\n    TPV_CONFIG.acquirerBIN +\n    TPV_CONFIG.terminalID +\n    orderId +\n    importe +\n    tipoMoneda +\n    exponente +\n    cifrado +\n    urlOK +\n    urlNOK;\n\nconst firma = crypto\n    .createHash('sha256')\n    .update(cadenaFirma)\n    .digest('hex');\n\nmsg.tpv = {\n    actionURL: tpvURL,\n    fields: {\n        MerchantID: TPV_CONFIG.merchantID,\n        AcquirerBIN: TPV_CONFIG.acquirerBIN,\n        TerminalID: TPV_CONFIG.terminalID,\n        Num_operacion: orderId,\n        Importe: importe,\n        TipoMoneda: tipoMoneda,\n        Exponente: exponente,\n        Cifrado: cifrado,\n        Pago_soportado: pagoSoportado,\n        Idioma: idioma,\n        URL_OK: urlOK,\n        URL_NOK: urlNOK,\n        Firma: firma,\n        Descripcion: descripcion\n    }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 680,
+        "y": 160,
+        "wires": [
+            [
+                "7e4cabcc2e35a03d",
+                "3272c763d8ab4c2a"
+            ]
+        ]
+    },
+    {
+        "id": "7e4cabcc2e35a03d",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "g": "8ca3eb9a68741ec8",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "e0780f570eeb2aa7",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "g": "8ca3eb9a68741ec8",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "60368e441f11783f",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "g": "8ca3eb9a68741ec8",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a480517c898222cf",
+        "type": "debug",
+        "z": "f3eb2de3da3352db",
+        "g": "2089615d4f29b5e8",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 520,
+        "wires": []
     },
     {
         "id": "function_validate_products_query",
@@ -5885,7 +6177,7 @@
         "type": "debug",
         "z": "554b53c71ea14722",
         "name": "ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6009,7 +6301,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "shops",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6097,7 +6389,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "shops",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6185,7 +6477,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "admins",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6273,7 +6565,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "admins",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6361,7 +6653,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "categories",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6449,7 +6741,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6537,7 +6829,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "product_variants",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6625,7 +6917,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "orders",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6713,7 +7005,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "orders",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6801,7 +7093,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "daily_reports",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6889,7 +7181,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "daily_reports",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6977,7 +7269,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "error_logs",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7065,7 +7357,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "error_logs",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7153,7 +7445,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "order_items",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7241,7 +7533,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "order_items",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7329,7 +7621,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "languages",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7417,7 +7709,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "categories",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7505,7 +7797,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7593,7 +7885,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "product_variants",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7681,7 +7973,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "categories",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7769,7 +8061,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "category_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7857,7 +8149,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "category_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7945,7 +8237,7 @@
         "z": "68702ca580581086",
         "g": "425ce9b0350ab4ed",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8033,7 +8325,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8121,7 +8413,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8209,7 +8501,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8297,7 +8589,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8385,7 +8677,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8473,7 +8765,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8561,7 +8853,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8649,7 +8941,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8737,7 +9029,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8825,7 +9117,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8918,7 +9210,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "admins",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9006,7 +9298,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "category_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9094,7 +9386,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "admins",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9182,7 +9474,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9270,7 +9562,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9354,7 +9646,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9438,7 +9730,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9522,7 +9814,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9606,7 +9898,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9690,7 +9982,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9774,7 +10066,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9858,7 +10150,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9942,7 +10234,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10026,7 +10318,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10110,7 +10402,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10198,7 +10490,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10286,7 +10578,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10374,7 +10666,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10458,7 +10750,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10542,7 +10834,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10626,7 +10918,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10710,7 +11002,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10794,7 +11086,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10878,7 +11170,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "product_translations",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10962,7 +11254,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11046,7 +11338,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11130,7 +11422,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11214,7 +11506,7 @@
         "type": "debug",
         "z": "68702ca580581086",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11302,7 +11594,7 @@
         "z": "68702ca580581086",
         "g": "d539432d5f363e74",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11390,7 +11682,7 @@
         "z": "68702ca580581086",
         "g": "22db91f9036a3e88",
         "name": "b2b_messages",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11478,7 +11770,7 @@
         "z": "68702ca580581086",
         "g": "20538e9bf49cd27b",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11986,7 +12278,7 @@
         "type": "debug",
         "z": "90446d3495bddb11",
         "name": "ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -12049,8 +12341,7 @@
         "y": 80,
         "wires": [
             [
-                "function_get_admins",
-                "4f4a200e51c53102"
+                "function_get_admins"
             ]
         ]
     },
@@ -12518,24 +12809,6 @@
         "wires": []
     },
     {
-        "id": "4f4a200e51c53102",
-        "type": "debug",
-        "z": "2fd597c1e6169f39",
-        "g": "x1y2z3a4b5c6d7e8",
-        "name": "debug 6",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 480,
-        "y": 100,
-        "wires": []
-    },
-    {
         "id": "54d9e944b9aa4a61",
         "type": "catch",
         "z": "2fd597c1e6169f39",
@@ -12556,7 +12829,7 @@
         "type": "debug",
         "z": "2fd597c1e6169f39",
         "name": "ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -13097,7 +13370,7 @@
         "type": "debug",
         "z": "7959046d97858bf8",
         "name": "ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -13746,7 +14019,7 @@
         "type": "debug",
         "z": "739b5a4b69900440",
         "name": "ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -13876,7 +14149,7 @@
         "z": "15bda437fadfc244",
         "g": "b380f68b15913b37",
         "name": "set telegram webhook",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -13970,7 +14243,7 @@
         "z": "15bda437fadfc244",
         "g": "b380f68b15913b37",
         "name": "delete telegram webhook",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -14064,7 +14337,7 @@
         "z": "15bda437fadfc244",
         "g": "b380f68b15913b37",
         "name": "get info telegram webhook",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -14152,7 +14425,7 @@
         "z": "15bda437fadfc244",
         "g": "b8a99424e7a04f63",
         "name": "CURRENT_DATE",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -14240,7 +14513,7 @@
         "z": "15bda437fadfc244",
         "g": "b8a99424e7a04f63",
         "name": "CURRENT_TIMESTAMP",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -14328,7 +14601,7 @@
         "z": "15bda437fadfc244",
         "g": "b8a99424e7a04f63",
         "name": "CURRENT_TIMESTAMP",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -14422,7 +14695,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "invoices get",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -14516,7 +14789,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "debug 2",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -14610,7 +14883,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "invoices post",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -14704,7 +14977,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "debug 1",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -14799,7 +15072,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -14990,7 +15263,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "invoices post",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -15084,7 +15357,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "invoices get",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -15197,7 +15470,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "invoices get",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -15291,7 +15564,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "invoices post",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -15385,7 +15658,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "invoices post",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -15479,7 +15752,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "invoices get",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -15578,28 +15851,9 @@
         "y": 1240,
         "wires": [
             [
-                "3181baa83c120502",
                 "94d2aaef02e00863"
             ]
         ]
-    },
-    {
-        "id": "3181baa83c120502",
-        "type": "debug",
-        "z": "15bda437fadfc244",
-        "g": "858072f020de63c3",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 360,
-        "y": 1280,
-        "wires": []
     },
     {
         "id": "94d2aaef02e00863",
@@ -15654,7 +15908,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "invoices post",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -15765,7 +16019,7 @@
         "z": "15bda437fadfc244",
         "g": "858072f020de63c3",
         "name": "invoices get",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -15853,7 +16107,7 @@
         "z": "15bda437fadfc244",
         "g": "a7fcb7e5f44830b9",
         "name": "products",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
