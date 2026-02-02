@@ -622,7 +622,7 @@
             "0f4b804ff0a6cc27"
         ],
         "x": 34,
-        "y": 879,
+        "y": 259,
         "w": 932,
         "h": 162
     },
@@ -642,7 +642,7 @@
             "f0deea2958d1b962"
         ],
         "x": 134,
-        "y": 1399,
+        "y": 779,
         "w": 672,
         "h": 82
     },
@@ -650,7 +650,7 @@
         "id": "8ca3eb9a68741ec8",
         "type": "group",
         "z": "f3eb2de3da3352db",
-        "name": "create order + stripe url",
+        "name": "create order + tpv data",
         "style": {
             "label": true
         },
@@ -667,18 +667,19 @@
             "3eea93fbec4d81e9",
             "7e4cabcc2e35a03d",
             "e0780f570eeb2aa7",
-            "60368e441f11783f"
+            "60368e441f11783f",
+            "1282666c22049094"
         ],
         "x": 34,
-        "y": 94,
+        "y": 79,
         "w": 1412,
-        "h": 167
+        "h": 162
     },
     {
         "id": "b501b4efa7d1e651",
         "type": "group",
         "z": "f3eb2de3da3352db",
-        "name": "verify stripe session",
+        "name": "find order",
         "style": {
             "label": true
         },
@@ -711,13 +712,12 @@
             "855aa1bf1cab1262",
             "685c56295d5f6da1",
             "54d1a8d48d16a684",
-            "516f662b114f5336",
-            "a480517c898222cf"
+            "516f662b114f5336"
         ],
         "x": 34,
         "y": 434,
         "w": 892,
-        "h": 127
+        "h": 107
     },
     {
         "id": "o1r2d3e4r5s6f7l8",
@@ -758,7 +758,7 @@
             "f34d86aa9a6d753f"
         ],
         "x": 34,
-        "y": 859,
+        "y": 839,
         "w": 1072,
         "h": 422
     },
@@ -859,7 +859,7 @@
             "0165592a7b31aaa1"
         ],
         "x": 134,
-        "y": 1139,
+        "y": 519,
         "w": 312,
         "h": 82
     },
@@ -893,7 +893,7 @@
             "6c423dc8bb2c6824"
         ],
         "x": 134,
-        "y": 1239,
+        "y": 619,
         "w": 1952,
         "h": 122
     },
@@ -1354,12 +1354,11 @@
         "type": "junction",
         "z": "b73d17450c17803c",
         "x": 60,
-        "y": 1080,
+        "y": 700,
         "wires": [
             [
                 "0165592a7b31aaa1",
-                "062d10d7692edd95",
-                "72aadbf5345518d7"
+                "062d10d7692edd95"
             ]
         ]
     },
@@ -1368,7 +1367,7 @@
         "type": "junction",
         "z": "b73d17450c17803c",
         "x": 60,
-        "y": 1120,
+        "y": 500,
         "wires": [
             [
                 "7b32395f62fe148e"
@@ -1381,7 +1380,7 @@
         "z": "b73d17450c17803c",
         "g": "8ff7a8afe02f6f9b",
         "x": 920,
-        "y": 1000,
+        "y": 380,
         "wires": [
             [
                 "118c544fd9f54519"
@@ -2057,7 +2056,7 @@
             }
         ],
         "x": 360,
-        "y": 980,
+        "y": 360,
         "wires": [
             [
                 "db728fba8af35ae3",
@@ -2078,7 +2077,7 @@
         "skipBodyParsing": true,
         "swaggerDoc": "",
         "x": 160,
-        "y": 980,
+        "y": 360,
         "wires": [
             [
                 "c86fa4f220d84bfb",
@@ -2101,7 +2100,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 510,
-        "y": 940,
+        "y": 320,
         "wires": []
     },
     {
@@ -2118,7 +2117,7 @@
         "finalize": "",
         "libs": [],
         "x": 630,
-        "y": 960,
+        "y": 340,
         "wires": [
             [
                 "57ae0baa9395d3bd"
@@ -2134,7 +2133,7 @@
         "statusCode": "200",
         "headers": {},
         "x": 360,
-        "y": 940,
+        "y": 320,
         "wires": []
     },
     {
@@ -2149,7 +2148,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 750,
-        "y": 960,
+        "y": 340,
         "wires": [
             [
                 "6e1a6abd115867f5",
@@ -2172,7 +2171,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 750,
-        "y": 920,
+        "y": 300,
         "wires": []
     },
     {
@@ -2197,7 +2196,7 @@
         "repair": false,
         "outputs": 2,
         "x": 510,
-        "y": 980,
+        "y": 360,
         "wires": [
             [
                 "dd64cf0487f16c8b"
@@ -2221,7 +2220,7 @@
         "finalize": "",
         "libs": [],
         "x": 630,
-        "y": 1000,
+        "y": 380,
         "wires": [
             [
                 "5b012253d929f45a"
@@ -2240,7 +2239,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 750,
-        "y": 1000,
+        "y": 380,
         "wires": [
             []
         ]
@@ -2259,7 +2258,7 @@
         "finalize": "",
         "libs": [],
         "x": 880,
-        "y": 960,
+        "y": 340,
         "wires": [
             [
                 "6e1a6abd115867f5",
@@ -2281,7 +2280,7 @@
         "finalize": "",
         "libs": [],
         "x": 240,
-        "y": 1440,
+        "y": 820,
         "wires": [
             [
                 "0fdb989c2dc85e8d"
@@ -2300,7 +2299,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 420,
-        "y": 1440,
+        "y": 820,
         "wires": [
             [
                 "b779df4ed3bc8845"
@@ -2321,7 +2320,7 @@
         "finalize": "",
         "libs": [],
         "x": 570,
-        "y": 1440,
+        "y": 820,
         "wires": [
             [
                 "f0deea2958d1b962"
@@ -2343,7 +2342,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 700,
-        "y": 1440,
+        "y": 820,
         "wires": []
     },
     {
@@ -2357,8 +2356,7 @@
         "y": 1720,
         "wires": [
             [
-                "948dde2391c8db61",
-                "1ae06fd8c192fe85"
+                "948dde2391c8db61"
             ]
         ]
     },
@@ -2367,7 +2365,7 @@
         "type": "debug",
         "z": "b73d17450c17803c",
         "name": "ERROR",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2391,7 +2389,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 240,
+        "x": 280,
         "y": 1720,
         "wires": [
             [
@@ -2434,7 +2432,7 @@
             }
         ],
         "x": 370,
-        "y": 1180,
+        "y": 560,
         "wires": [
             [
                 "7c3ba67cdefd1a4d"
@@ -2455,7 +2453,7 @@
         "finalize": "",
         "libs": [],
         "x": 230,
-        "y": 1180,
+        "y": 560,
         "wires": [
             [
                 "584213fb0ad159c3"
@@ -2542,7 +2540,7 @@
         "finalize": "",
         "libs": [],
         "x": 230,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "6428fc240f43793f"
@@ -2567,7 +2565,7 @@
         "senderr": false,
         "headers": [],
         "x": 390,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "046ae0a7b3bccb92"
@@ -2579,7 +2577,7 @@
         "type": "debug",
         "z": "b73d17450c17803c",
         "name": "email",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2588,7 +2586,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 510,
-        "y": 1180,
+        "y": 560,
         "wires": []
     },
     {
@@ -2606,7 +2604,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 600,
-        "y": 1280,
+        "y": 660,
         "wires": []
     },
     {
@@ -2628,7 +2626,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 495,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "6c423dc8bb2c6824",
@@ -2655,7 +2653,7 @@
         "senderr": false,
         "headers": [],
         "x": 790,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "e789b5ba9e5c284a",
@@ -2677,7 +2675,7 @@
         "finalize": "",
         "libs": [],
         "x": 620,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "6e6d0c2db7a880ac"
@@ -2699,7 +2697,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 990,
-        "y": 1280,
+        "y": 660,
         "wires": []
     },
     {
@@ -2721,7 +2719,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 885,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "3b8322f6546aac2c"
@@ -2743,7 +2741,7 @@
         "finalize": "",
         "libs": [],
         "x": 990,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "131be86f15cd2ced"
@@ -2768,7 +2766,7 @@
         "senderr": false,
         "headers": [],
         "x": 1150,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "b182aa6f457d3c64",
@@ -2791,7 +2789,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1350,
-        "y": 1280,
+        "y": 660,
         "wires": []
     },
     {
@@ -2813,7 +2811,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 1255,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "b8228759b6e0935f"
@@ -2835,7 +2833,7 @@
         "finalize": "",
         "libs": [],
         "x": 1370,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "c1e087a4c92536cd"
@@ -2860,7 +2858,7 @@
         "senderr": false,
         "headers": [],
         "x": 1530,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "f7bcf7eea5eefe9f",
@@ -2882,7 +2880,7 @@
         "finalize": "",
         "libs": [],
         "x": 1700,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "1a59d02809c498dc"
@@ -2904,7 +2902,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1750,
-        "y": 1280,
+        "y": 660,
         "wires": []
     },
     {
@@ -2919,7 +2917,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1860,
-        "y": 1320,
+        "y": 700,
         "wires": [
             [
                 "820922ad795716dc",
@@ -2941,37 +2939,7 @@
         "finalize": "",
         "libs": [],
         "x": 2000,
-        "y": 1320,
-        "wires": []
-    },
-    {
-        "id": "3736286b45437c13",
-        "type": "comment",
-        "z": "b73d17450c17803c",
-        "name": "кроки інтеграції",
-        "info": "Коли клієнт натискає \"оплатити\", тобі треба:\n\n - Взяти дані замовлення (сума, номер замовлення тощо)\n - Використати секретний ключ шифрування (clave de cifrado), який тобі надасть банк\n - Згенерувати криптографічний підпис\n - Відправити цей підпис разом з даними до Cecabank\n\nЦе схоже на те, як Stripe підписує запити, тільки тут ти робиш це вручну.\nПункт 5 — Сторінки оплати:\nГарна новина — тобі не треба робити кастомний дизайн сторінки введення картки. Банк надає свою готову сторінку (як Stripe Checkout). Клієнта перекидає туди, він вводить картку, і повертається назад.\nПункт 6 — Webhook (comunicación on-line):\nЦе як Stripe webhooks — банк надсилатиме тобі підтвердження про оплату на твій сервер. Треба буде:\n\nСтворити endpoint, який приймає ці повідомлення\nНалаштувати URL цього endpoint в адмінці банку\n\nПідсумок простою мовою:\nПроцес майже як у Stripe:\n\nКлієнт натискає \"оплатити\" → ти формуєш підписаний запит → редірект на сторінку банку\nКлієнт вводить картку на сторінці банку\nБанк надсилає тобі webhook з результатом\nТи оновлюєш статус замовлення",
-        "x": 120,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "5d845f0181ec5fc3",
-        "type": "comment",
-        "z": "b73d17450c17803c",
-        "name": "creds",
-        "info": "MerchantID - 250407277\nAcquirerBIN - 0000554026\nTerminalID - 00000003\nClave de cifrado - 94GFY5BALYJK1B1TUIZ9I7S1AEEOUM4U",
-        "x": 90,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "4a2348f12c8d6be1",
-        "type": "comment",
-        "z": "b73d17450c17803c",
-        "name": "як працює",
-        "info": "Клієнт натискає \"Оплатити\"\n        ↓\nТвій бекенд генерує підпис + дані\n        ↓\nФорма автоматично відправляє POST на Cecabank\n        ↓\nКлієнт вводить картку на сторінці банку\n        ↓\nБанк надсилає webhook на твій сервер (підтвердження)\n        ↓\nКлієнт повертається на URL_OK або URL_NOK",
-        "x": 280,
-        "y": 60,
+        "y": 700,
         "wires": []
     },
     {
@@ -2988,21 +2956,10 @@
         "y": 180,
         "wires": [
             [
-                "4b3a8b0f745ea710",
-                "af6101dcb8ab5b5c"
+                "af6101dcb8ab5b5c",
+                "04ad285da543e2ab"
             ]
         ]
-    },
-    {
-        "id": "4b3a8b0f745ea710",
-        "type": "http response",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 330,
-        "y": 180,
-        "wires": []
     },
     {
         "id": "af6101dcb8ab5b5c",
@@ -3017,74 +2974,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 320,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "064bee43bd5dd715",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
         "x": 120,
-        "y": 280,
-        "wires": [
-            [
-                "4eb920821f400cf9"
-            ]
-        ]
-    },
-    {
-        "id": "4eb920821f400cf9",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "set msg",
-        "func": "msg = {}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 260,
-        "y": 280,
-        "wires": [
-            [
-                "df82a4b45a03a28d"
-            ]
-        ]
-    },
-    {
-        "id": "df82a4b45a03a28d",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "webhook",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 260,
-        "y": 320,
+        "y": 140,
         "wires": []
     },
     {
@@ -3092,7 +2983,7 @@
         "type": "function",
         "z": "b73d17450c17803c",
         "name": "check webhook",
-        "func": "const CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION');\n\nif (!CLAVE_ENCRIPTACION) {\n    throw new Error(\"Missed CLAVE_ENCRIPTACION\");\n}\nconst data = msg.req?.body || msg?.payload || {};\n\nconst {\n    MerchantID = '', AcquirerBIN = '', TerminalID = '', Num_operacion = '', \n    Importe = '', TipoMoneda = '', Exponente = '', Referencia = '', Idioma = '',\n    Firma = '', Num_aut = '', Tipo_operacion = '', Pais = '', Descripcion = ''\n} = data;\n\nmsg.toDB = {\n    orderId: Num_operacion,\n    referencia: Referencia,\n    numAut: Num_aut,\n    status: \"unpaid\"\n};\n\nif (!Num_operacion || !Firma || !Referencia) {\n    node.error('Missing required fields in TPV webhook', msg);\n    msg.payload = \"ERROR\";\n    msg.statusCode = 400;\n\n    return msg;\n};\n\n// Formula for comunicación online:\n// SHA256(Clave + MerchantID + AcquirerBIN + TerminalID + Num_operacion + Importe + TipoMoneda + Exponente + Referencia)\nconst cadenaFirma = \n    CLAVE_ENCRIPTACION +\n    MerchantID +\n    AcquirerBIN +\n    TerminalID +\n    Num_operacion +\n    Importe +\n    TipoMoneda +\n    Exponente +\n    Referencia;\n\nconst firmaCalculada = crypto\n    .createHash('sha256')\n    .update(cadenaFirma)\n    .digest('hex');\n\nif (firmaCalculada.toLowerCase() !== Firma.toLowerCase()) {\n    node.error(`Invalid signature! Expected: ${firmaCalculada}, Got: ${Firma}`, msg);\n    msg.payload = \"ERROR\";\n    msg.statusCode = 400;\n    return msg;\n};\n\nconst idiomaMap = { \"1\": \"es\", \"6\": \"en\", \"4\": \"gl\" };\nmsg.lang = idiomaMap?.[Idioma] || \"es\";\n\nmsg.payload = \"$*$OKY$*$\";\nmsg.statusCode = 200;\nmsg.headers =  { \"Content-Type\": \"text/html; charset=utf-8\" };\nmsg.toDB.status = \"paid\";\n\nreturn msg;\n\n",
+        "func": "const CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION_TEST');\n\nif (!CLAVE_ENCRIPTACION) {\n    throw new Error(\"Missed CLAVE_ENCRIPTACION\");\n}\nconst data = msg.req?.body || msg?.payload || {};\n\nconst {\n    MerchantID = '', AcquirerBIN = '', TerminalID = '', Num_operacion = '', Importe = '', \n    TipoMoneda = '', Exponente = '', Referencia = '', Idioma = '', Firma = '', Num_aut = ''\n} = data;\n\nmsg.toDB = {\n    orderId: Num_operacion,\n    referencia: Referencia,\n    numAut: Num_aut,\n    status: \"unpaid\"\n};\n\nif (!Num_operacion || !Firma || !Referencia) {\n    node.error('Missing required fields in TPV webhook', msg);\n    msg.payload = \"ERROR\";\n    msg.statusCode = 400;\n\n    return msg;\n};\n\n// Formula for comunicación online:\n// SHA256(Clave + MerchantID + AcquirerBIN + TerminalID + Num_operacion + Importe + TipoMoneda + Exponente + Referencia)\nconst cadenaFirma = \n    CLAVE_ENCRIPTACION +\n    MerchantID +\n    AcquirerBIN +\n    TerminalID +\n    Num_operacion +\n    Importe +\n    TipoMoneda +\n    Exponente +\n    Referencia;\n\nconst firmaCalculada = crypto\n    .createHash('sha256')\n    .update(cadenaFirma)\n    .digest('hex');\n\nif (firmaCalculada.toLowerCase() !== Firma.toLowerCase()) {\n    node.error(`Invalid signature! Expected: ${firmaCalculada}, Got: ${Firma}`, msg);\n    msg.payload = \"ERROR\";\n    msg.statusCode = 400;\n    return msg;\n};\n\nconst idiomaMap = { \"1\": \"es\", \"6\": \"en\", \"4\": \"gl\" };\nmsg.lang = idiomaMap?.[Idioma] || \"es\";\n\nmsg.payload = \"$*$OKY$*$\";\nmsg.statusCode = 200;\nmsg.headers =  { \"Content-Type\": \"text/html; charset=utf-8\" };\nmsg.toDB.status = \"paid\";\n\nreturn msg;\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3104,8 +2995,8 @@
                 "module": "crypto"
             }
         ],
-        "x": 420,
-        "y": 400,
+        "x": 320,
+        "y": 180,
         "wires": [
             [
                 "936f78f7fc7d2a39",
@@ -3115,78 +3006,6 @@
         ]
     },
     {
-        "id": "194e11744160887f",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 400,
-        "wires": [
-            [
-                "da5cd4ab2a6d321d"
-            ]
-        ]
-    },
-    {
-        "id": "da5cd4ab2a6d321d",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "test data",
-        "func": "const CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION') ;\n\nconst testData = {\n    MerchantID: \"250407277\",\n    AcquirerBIN: \"0000554026\",\n    TerminalID: \"00000003\",\n    Num_operacion: \"LCG-20260131-147728\",\n    Importe: \"000000000550\",\n    TipoMoneda: \"978\",\n    Exponente: \"2\",\n    Referencia: \"240131123456789012\",\n    Num_aut: \"ABC123\",\n    BIN: \"454881\",\n    FinalPAN: \"1234\",\n    Pais: \"724\",\n    Tipo_tarjeta: \"CRE\",\n    Tipo_operacion: \"C\",\n    Idioma: \"1\",\n    Descripcion: \"Pedido LCG-20260131-147728\"\n};\n\nconst cadenaFirma = \n    CLAVE_ENCRIPTACION +\n    testData.MerchantID +\n    testData.AcquirerBIN +\n    testData.TerminalID +\n    testData.Num_operacion +\n    testData.Importe +\n    testData.TipoMoneda +\n    testData.Exponente +\n    testData.Referencia;\n\ntestData.Firma = crypto\n    .createHash('sha256')\n    .update(cadenaFirma)\n    .digest('hex');\n\nmsg.req = {\n    body: testData\n};\n\nmsg.payload = testData;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "crypto",
-                "module": "crypto"
-            }
-        ],
-        "x": 260,
-        "y": 400,
-        "wires": [
-            [
-                "768d9a78f7a095df",
-                "04ad285da543e2ab"
-            ]
-        ]
-    },
-    {
-        "id": "768d9a78f7a095df",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "test data",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 320,
-        "y": 460,
-        "wires": []
-    },
-    {
         "id": "936f78f7fc7d2a39",
         "type": "http response",
         "z": "b73d17450c17803c",
@@ -3194,7 +3013,7 @@
         "statusCode": "",
         "headers": {},
         "x": 470,
-        "y": 360,
+        "y": 220,
         "wires": []
     },
     {
@@ -3210,8 +3029,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 590,
-        "y": 320,
+        "x": 490,
+        "y": 140,
         "wires": []
     },
     {
@@ -3226,8 +3045,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 380,
+        "x": 590,
+        "y": 160,
         "wires": [
             [
                 "06ad6d7562dbfdf9"
@@ -3244,11 +3063,12 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 810,
-        "y": 380,
+        "x": 710,
+        "y": 160,
         "wires": [
             [
-                "85a00b809ee076b7"
+                "85a00b809ee076b7",
+                "fa7eefe629c35c3e"
             ]
         ]
     },
@@ -3272,8 +3092,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 570,
-        "y": 400,
+        "x": 470,
+        "y": 180,
         "wires": [
             [
                 "1d8f3931d06ed088"
@@ -3295,8 +3115,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 420,
+        "x": 590,
+        "y": 200,
         "wires": [
             [
                 "28a8fe9bc38e35f9"
@@ -3313,8 +3133,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 810,
-        "y": 420,
+        "x": 710,
+        "y": 200,
         "wires": [
             [
                 "e317f2753e175cb3"
@@ -3334,8 +3154,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 890,
-        "y": 320,
+        "x": 830,
+        "y": 160,
         "wires": []
     },
     {
@@ -3351,8 +3171,94 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 930,
-        "y": 440,
+        "x": 830,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b9fc3826770d1ccb",
+        "type": "comment",
+        "z": "b73d17450c17803c",
+        "name": "CLAVE !!!!",
+        "info": "",
+        "x": 340,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "0e7e833527c1bb1a",
+        "type": "comment",
+        "z": "b73d17450c17803c",
+        "name": "!!!!!!!",
+        "info": "",
+        "x": 230,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "064bee43bd5dd715",
+        "type": "inject",
+        "z": "b73d17450c17803c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 40,
+        "wires": [
+            [
+                "4eb920821f400cf9"
+            ]
+        ]
+    },
+    {
+        "id": "4eb920821f400cf9",
+        "type": "function",
+        "z": "b73d17450c17803c",
+        "name": "set msg",
+        "func": "msg = { \"_msgid\": \"9a2f9d50c6d12567\", \"payload\": { \"MerchantID\": \"250407277\", \"AcquirerBIN\": \"0000554026\", \"TerminalID\": \"00000003\", \"Num_operacion\": \"LCG-20260202-232237\", \"Importe\": \"000000000550\", \"TipoMoneda\": \"978\", \"Exponente\": \"2\", \"Firma\": \"52843efa3a2681700d694ae6a7b800925364c596543eec3cdb87ae56b29d3cd9\", \"Referencia\": \"12006025182602021738566007000\", \"Num_aut\": \"101000\", \"BIN\": \"554050\", \"BIN8\": \"55405000\", \"FinalPAN\": \"0004\", \"Tipo_operacion\": \"C\", \"Cambio_moneda\": \"1\", \"Idioma\": \"1\", \"Descripcion\": \"Pedido LCG-20260202-232237\", \"Pais\": \"724\", \"Tipo_tarjeta\": \"C\", \"Caducidad\": \"202612\", \"Idusuario\": \"\" }, \"req\": { \"_events\": {}, \"_readableState\": { \"highWaterMark\": 65536, \"buffer\": [], \"bufferIndex\": 0, \"length\": 0, \"pipes\": [], \"awaitDrainWriters\": null }, \"socket\": \"[internal]\", \"httpVersionMajor\": 1, \"httpVersionMinor\": 1, \"httpVersion\": \"1.1\", \"complete\": true, \"rawHeaders\": [\"Host\", \"ascremosas.com\", \"X-Real-IP\", \"80.68.128.247\", \"Connection\", \"close\", \"Content-Length\", \"443\", \"Content-Type\", \"application/x-www-form-urlencoded\", \"User-Agent\", \"Apache-HttpClient/4.5.10 (Java/1.8.0_462)\", \"Accept-Encoding\", \"gzip,deflate\"], \"rawTrailers\": [], \"joinDuplicateHeaders\": null, \"aborted\": false, \"upgrade\": false, \"url\": \"/webhook/tpv\", \"method\": \"POST\", \"statusCode\": null, \"statusMessage\": null, \"client\": \"[internal]\", \"_consuming\": true, \"_dumped\": false, \"baseUrl\": \"\", \"originalUrl\": \"/webhook/tpv\", \"_parsedUrl\": { \"protocol\": null, \"slashes\": null, \"auth\": null, \"host\": null, \"port\": null, \"hostname\": null, \"hash\": null, \"search\": null, \"query\": null, \"pathname\": \"/webhook/tpv\", \"path\": \"/webhook/tpv\", \"href\": \"/webhook/tpv\", \"_raw\": \"/webhook/tpv\" }, \"params\": {}, \"query\": {}, \"res\": \"[internal]\", \"body\": { \"MerchantID\": \"250407277\", \"AcquirerBIN\": \"0000554026\", \"TerminalID\": \"00000003\", \"Num_operacion\": \"LCG-20260202-232237\", \"Importe\": \"000000000550\", \"TipoMoneda\": \"978\", \"Exponente\": \"2\", \"Firma\": \"52843efa3a2681700d694ae6a7b800925364c596543eec3cdb87ae56b29d3cd9\", \"Referencia\": \"12006025182602021738566007000\", \"Num_aut\": \"101000\", \"BIN\": \"554050\", \"BIN8\": \"55405000\", \"FinalPAN\": \"0004\", \"Tipo_operacion\": \"C\", \"Cambio_moneda\": \"1\", \"Idioma\": \"1\", \"Descripcion\": \"Pedido LCG-20260202-232237\", \"Pais\": \"724\", \"Tipo_tarjeta\": \"C\", \"Caducidad\": \"202612\", \"Idusuario\": \"\" }, \"_body\": true, \"_eventsCount\": 0, \"_sessionManager\": { \"_key\": \"passport\" }, \"_passport\": { \"instance\": { \"_key\": \"passport\", \"_strategies\": { \"session\": { \"name\": \"session\", \"_key\": \"passport\" }, \"bearer\": { \"name\": \"bearer\", \"_realm\": \"Users\" }, \"oauth2-client-password\": { \"name\": \"oauth2-client-password\" }, \"anon\": { \"name\": \"anon\" }, \"tokens\": { \"name\": \"tokens\" } }, \"_serializers\": [], \"_deserializers\": [], \"_infoTransformers\": [], \"_framework\": {}, \"_sm\": { \"_key\": \"passport\" }, \"strategies\": {}, \"_userProperty\": \"user\" } }, \"route\": { \"path\": \"/webhook/tpv\", \"stack\": [{ \"name\": \"cookieParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"httpMiddleware\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"corsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"metricsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"jsonParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"urlencodedParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"multipartParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"rawBodyParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }], \"methods\": { \"post\": true } }, \"cookies\": {}, \"signedCookies\": {}, \"headers\": { \"host\": \"ascremosas.com\", \"x-real-ip\": \"80.68.128.247\", \"connection\": \"close\", \"content-length\": \"443\", \"content-type\": \"application/x-www-form-urlencoded\", \"user-agent\": \"Apache-HttpClient/4.5.10 (Java/1.8.0_462)\", \"accept-encoding\": \"gzip,deflate\" } }, \"res\": {} }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 40,
+        "wires": [
+            [
+                "df82a4b45a03a28d"
+            ]
+        ]
+    },
+    {
+        "id": "df82a4b45a03a28d",
+        "type": "debug",
+        "z": "b73d17450c17803c",
+        "name": "webhook",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 80,
         "wires": []
     },
     {
@@ -4115,12 +4021,12 @@
         "z": "f3eb2de3da3352db",
         "g": "b501b4efa7d1e651",
         "name": "",
-        "url": "/api/v1/orders/verify/session",
-        "method": "post",
+        "url": "/api/v1/orders/find/:orderId",
+        "method": "get",
         "upload": false,
         "skipBodyParsing": false,
         "swaggerDoc": "",
-        "x": 200,
+        "x": 190,
         "y": 340,
         "wires": [
             [
@@ -4134,7 +4040,7 @@
         "z": "f3eb2de3da3352db",
         "g": "b501b4efa7d1e651",
         "name": "validate data",
-        "func": "const data = msg.req?.body || msg?.payload || {};\nconst {\n    sessionId\n} = data;\n\nconst errors = [];\n\nif (!sessionId || typeof sessionId !== 'string') {\n    errors.push({ path: 'sessionId', message: 'sessionId must be' });\n}\n\nif (errors.length > 0) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: 'error',\n        message: `Validation error: ${errors.map(err => err.message).join(', ')}`,\n        data: null\n    };\n\n    return [msg, null];\n}\n\nmsg.queryParameters = [sessionId];\nmsg.payload = `\n    SELECT \n        order_id AS \"orderId\",\n        customer_email AS \"email\",\n        pickup_date AS \"pickupDate\",\n        pickup_time AS \"pickupTime\",\n        total_price AS \"totalPrice\"\n    FROM orders\n    WHERE stripe_session_id = $1\n`;\n\nreturn [null, msg];",
+        "func": "const data = msg.req?.params || {};\nconst {\n    orderId\n} = data;\n\nconst errors = [];\n\nif (!orderId || typeof orderId !== 'string') {\n    errors.push({ path: 'orderId', message: 'orderId must be' });\n}\n\nif (errors.length > 0) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: 'error',\n        message: `Validation error: ${errors.map(err => err.message).join(', ')}`,\n        data: null\n    };\n\n    return [msg, null];\n}\n\nmsg.queryParameters = [orderId];\nmsg.payload = `\n    SELECT \n        order_id AS \"orderId\",\n        status,\n        customer_email AS \"email\",\n        pickup_date AS \"pickupDate\",\n        pickup_time AS \"pickupTime\",\n        total_price AS \"totalPrice\"\n    FROM orders\n    WHERE order_id = $1\n`;\n\nreturn [null, msg];",
         "outputs": 2,
         "timeout": "",
         "noerr": 0,
@@ -4219,8 +4125,7 @@
         "y": 480,
         "wires": [
             [
-                "1c50a46501f1f8e0",
-                "a480517c898222cf"
+                "1c50a46501f1f8e0"
             ]
         ]
     },
@@ -4451,7 +4356,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 150,
-        "y": 900,
+        "y": 880,
         "wires": [
             [
                 "function_get_orders"
@@ -4472,7 +4377,7 @@
         "finalize": "",
         "libs": [],
         "x": 330,
-        "y": 900,
+        "y": 880,
         "wires": [
             [
                 "9a71381b8019d5cf"
@@ -4494,7 +4399,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 480,
-        "y": 920,
+        "y": 900,
         "wires": [
             [
                 "function_format_orders_response"
@@ -4515,7 +4420,7 @@
         "finalize": "",
         "libs": [],
         "x": 640,
-        "y": 920,
+        "y": 900,
         "wires": [
             [
                 "9a71381b8019d5cf"
@@ -4534,7 +4439,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 160,
-        "y": 980,
+        "y": 960,
         "wires": [
             [
                 "function_validate_order_id"
@@ -4555,7 +4460,7 @@
         "finalize": "",
         "libs": [],
         "x": 350,
-        "y": 980,
+        "y": 960,
         "wires": [
             [
                 "f82c61c4bf350dc6"
@@ -4577,7 +4482,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 500,
-        "y": 1000,
+        "y": 980,
         "wires": [
             [
                 "function_format_order_response"
@@ -4598,7 +4503,7 @@
         "finalize": "",
         "libs": [],
         "x": 660,
-        "y": 1000,
+        "y": 980,
         "wires": [
             [
                 "f82c61c4bf350dc6"
@@ -4617,7 +4522,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 190,
-        "y": 1060,
+        "y": 1040,
         "wires": [
             [
                 "function_validate_order_order_id"
@@ -4638,7 +4543,7 @@
         "finalize": "",
         "libs": [],
         "x": 430,
-        "y": 1060,
+        "y": 1040,
         "wires": [
             [
                 "469ac819413062e9"
@@ -4660,7 +4565,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 600,
-        "y": 1080,
+        "y": 1060,
         "wires": [
             [
                 "7379941ec815975a"
@@ -4679,7 +4584,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 160,
-        "y": 1140,
+        "y": 1120,
         "wires": [
             [
                 "function_validate_update_order"
@@ -4700,7 +4605,7 @@
         "finalize": "",
         "libs": [],
         "x": 350,
-        "y": 1140,
+        "y": 1120,
         "wires": [
             [
                 "433e8f09fbf10638"
@@ -4724,7 +4629,7 @@
         "finalize": "",
         "libs": [],
         "x": 540,
-        "y": 1160,
+        "y": 1140,
         "wires": [
             [
                 "link_call_db_update_order"
@@ -4743,7 +4648,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 720,
-        "y": 1160,
+        "y": 1140,
         "wires": [
             [
                 "function_format_update_order_response"
@@ -4764,7 +4669,7 @@
         "finalize": "",
         "libs": [],
         "x": 880,
-        "y": 1160,
+        "y": 1140,
         "wires": [
             [
                 "433e8f09fbf10638"
@@ -4783,7 +4688,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 170,
-        "y": 1220,
+        "y": 1200,
         "wires": [
             [
                 "function_validate_delete_order"
@@ -4804,7 +4709,7 @@
         "finalize": "",
         "libs": [],
         "x": 370,
-        "y": 1220,
+        "y": 1200,
         "wires": [
             [
                 "2ba38f65d66557e2"
@@ -4826,7 +4731,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 520,
-        "y": 1240,
+        "y": 1220,
         "wires": [
             [
                 "function_format_delete_order_response"
@@ -4847,7 +4752,7 @@
         "finalize": "",
         "libs": [],
         "x": 680,
-        "y": 1240,
+        "y": 1220,
         "wires": [
             [
                 "2ba38f65d66557e2"
@@ -4863,7 +4768,7 @@
         "statusCode": "",
         "headers": {},
         "x": 790,
-        "y": 900,
+        "y": 880,
         "wires": []
     },
     {
@@ -4875,7 +4780,7 @@
         "statusCode": "",
         "headers": {},
         "x": 810,
-        "y": 980,
+        "y": 960,
         "wires": []
     },
     {
@@ -4887,7 +4792,7 @@
         "statusCode": "",
         "headers": {},
         "x": 1030,
-        "y": 1140,
+        "y": 1120,
         "wires": []
     },
     {
@@ -4899,7 +4804,7 @@
         "statusCode": "",
         "headers": {},
         "x": 830,
-        "y": 1220,
+        "y": 1200,
         "wires": []
     },
     {
@@ -4911,7 +4816,7 @@
         "statusCode": "",
         "headers": {},
         "x": 910,
-        "y": 1060,
+        "y": 1040,
         "wires": []
     },
     {
@@ -4928,7 +4833,7 @@
         "finalize": "",
         "libs": [],
         "x": 760,
-        "y": 1080,
+        "y": 1060,
         "wires": [
             [
                 "469ac819413062e9"
@@ -4958,7 +4863,7 @@
         "payload": "{\"id\":1}",
         "payloadType": "json",
         "x": 190,
-        "y": 1020,
+        "y": 1000,
         "wires": [
             [
                 "function_validate_order_id"
@@ -5166,7 +5071,7 @@
         "z": "f3eb2de3da3352db",
         "g": "8ca3eb9a68741ec8",
         "name": "TPV data",
-        "func": "const ACQUIRER_BIN = env.get('ACQUIRER_BIN') || null;\nconst MERCHANT_ID = env.get('MERCHANT_ID') || null;\nconst TERMINAL_ID = env.get('TERMINAL_ID') || null;\nconst CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION') || null;\nconst FRONTEND_URL = env.get('FRONTEND_URL') || null;\n\nif (!ACQUIRER_BIN || !MERCHANT_ID || !TERMINAL_ID || !CLAVE_ENCRIPTACION) {\n    throw new Error(\"Missed data for tpv virtual\");\n};\n\nconst TPV_CONFIG = {\n    merchantID: MERCHANT_ID,     \n    acquirerBIN: ACQUIRER_BIN,   \n    terminalID: TERMINAL_ID,  \n    claveEncriptacion: CLAVE_ENCRIPTACION,\n    \n    baseURL: FRONTEND_URL || \"https://ascremosas.com\",\n\n    isProduction: true\n};\n\nconst tpvURL = TPV_CONFIG.isProduction\n    ? \"https://pgw.ceca.es/tpvweb/tpv/compra.action\"\n    : \"https://tpv.ceca.es/tpvweb/tpv/compra.action\";\n\nconst { customerEmail, totalPrice, lang } = msg?.orderData || {};\nconst orderId = msg?.orderId;\n\n// to cents\nconst importe = Math.round(totalPrice * 100).toString();\n\nconst tipoMoneda = \"978\"; // EUR\nconst exponente = \"2\";\nconst cifrado = \"SHA2\";\nconst pagoSoportado = \"SSL\";\n\nconst idiomaMap = { es: \"1\", en: \"6\", gl: \"4\" };\nconst idioma = idiomaMap?.[lang] || \"1\";\n\nconst urlOK = `${TPV_CONFIG?.baseURL}/checkout/success?order_id=${orderId}&lang=${lang}`;\nconst urlNOK = `${TPV_CONFIG?.baseURL}/checkout/cancel?order_id=${orderId}&lang=${lang}`;\n\nconst descripcion = `Pedido ${orderId}`;\n\nconst cadenaFirma =\n    TPV_CONFIG.claveEncriptacion +\n    TPV_CONFIG.merchantID +\n    TPV_CONFIG.acquirerBIN +\n    TPV_CONFIG.terminalID +\n    orderId +\n    importe +\n    tipoMoneda +\n    exponente +\n    cifrado +\n    urlOK +\n    urlNOK;\n\nconst firma = crypto\n    .createHash('sha256')\n    .update(cadenaFirma)\n    .digest('hex');\n\nmsg.tpv = {\n    actionURL: tpvURL,\n    fields: {\n        MerchantID: TPV_CONFIG.merchantID,\n        AcquirerBIN: TPV_CONFIG.acquirerBIN,\n        TerminalID: TPV_CONFIG.terminalID,\n        Num_operacion: orderId,\n        Importe: importe,\n        TipoMoneda: tipoMoneda,\n        Exponente: exponente,\n        Cifrado: cifrado,\n        Pago_soportado: pagoSoportado,\n        Idioma: idioma,\n        URL_OK: urlOK,\n        URL_NOK: urlNOK,\n        Firma: firma,\n        Descripcion: descripcion\n    }\n};\n\nreturn msg;",
+        "func": "const ACQUIRER_BIN = env.get('ACQUIRER_BIN') || null;\nconst MERCHANT_ID = env.get('MERCHANT_ID') || null;\nconst TERMINAL_ID = env.get('TERMINAL_ID') || null;\n// const CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION') || null;\nconst CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION_TEST') || null;\nconst FRONTEND_URL = env.get('FRONTEND_URL') || null;\n\nif (!ACQUIRER_BIN || !MERCHANT_ID || !TERMINAL_ID || !CLAVE_ENCRIPTACION) {\n    throw new Error(\"Missed data for tpv virtual\");\n};\n\nconst TPV_CONFIG = {\n    merchantID: MERCHANT_ID,     \n    acquirerBIN: ACQUIRER_BIN,   \n    terminalID: TERMINAL_ID,  \n    claveEncriptacion: CLAVE_ENCRIPTACION,\n    \n    baseURL: FRONTEND_URL || \"https://ascremosas.com\",\n\n    isProduction: false\n};\n\nconst tpvURL = TPV_CONFIG.isProduction\n    ? \"https://pgw.ceca.es/tpvweb/tpv/compra.action\"\n    : \"https://tpv.ceca.es/tpvweb/tpv/compra.action\";\n\nconst { customerEmail, totalPrice, lang } = msg?.orderData || {};\nconst orderId = msg?.orderId;\n\n// to cents\nconst importe = Math.round(totalPrice * 100).toString();\n\nconst tipoMoneda = \"978\"; // EUR\nconst exponente = \"2\";\nconst cifrado = \"SHA2\";\nconst pagoSoportado = \"SSL\";\n\nconst idiomaMap = { es: \"1\", en: \"6\", gl: \"4\" };\nconst idioma = idiomaMap?.[lang] || \"1\";\n\nconst testUrl = 'http://localhost:5173';\n\nconst urlOK = `${testUrl}/checkout/success?order_id=${orderId}&lang=${lang}`;\nconst urlNOK = `${testUrl}/checkout/cancel?order_id=${orderId}&lang=${lang}`;\n\n// const urlOK = `${TPV_CONFIG?.baseURL}/checkout/success?order_id=${orderId}&lang=${lang}`;\n// const urlNOK = `${TPV_CONFIG?.baseURL}/checkout/cancel?order_id=${orderId}&lang=${lang}`;\n\nconst descripcion = `Pedido ${orderId}`;\n\nconst cadenaFirma =\n    TPV_CONFIG.claveEncriptacion +\n    TPV_CONFIG.merchantID +\n    TPV_CONFIG.acquirerBIN +\n    TPV_CONFIG.terminalID +\n    orderId +\n    importe +\n    tipoMoneda +\n    exponente +\n    cifrado +\n    urlOK +\n    urlNOK;\n\nconst firma = crypto\n    .createHash('sha256')\n    .update(cadenaFirma)\n    .digest('hex');\n\nmsg.tpv = {\n    actionURL: tpvURL,\n    fields: {\n        MerchantID: TPV_CONFIG.merchantID,\n        AcquirerBIN: TPV_CONFIG.acquirerBIN,\n        TerminalID: TPV_CONFIG.terminalID,\n        Num_operacion: orderId,\n        Importe: importe,\n        TipoMoneda: tipoMoneda,\n        Exponente: exponente,\n        Cifrado: cifrado,\n        Pago_soportado: pagoSoportado,\n        Idioma: idioma,\n        URL_OK: urlOK,\n        URL_NOK: urlNOK,\n        Firma: firma,\n        Descripcion: descripcion\n    }\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5201,8 +5106,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 220,
+        "x": 820,
+        "y": 200,
         "wires": []
     },
     {
@@ -5242,21 +5147,14 @@
         "wires": []
     },
     {
-        "id": "a480517c898222cf",
-        "type": "debug",
+        "id": "1282666c22049094",
+        "type": "comment",
         "z": "f3eb2de3da3352db",
-        "g": "2089615d4f29b5e8",
-        "name": "debug 6",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 520,
+        "g": "8ca3eb9a68741ec8",
+        "name": "!!!!!!!!!!!",
+        "info": "",
+        "x": 670,
+        "y": 120,
         "wires": []
     },
     {
