@@ -603,28 +603,30 @@
         "id": "8ff7a8afe02f6f9b",
         "type": "group",
         "z": "b73d17450c17803c",
-        "name": "stripe",
+        "name": "tpv virtual",
         "style": {
             "label": true
         },
         "nodes": [
-            "7dba41cef305919e",
-            "396bbf186c75fe0c",
-            "db728fba8af35ae3",
-            "dd64cf0487f16c8b",
-            "c86fa4f220d84bfb",
-            "57ae0baa9395d3bd",
             "6e1a6abd115867f5",
-            "5cc8bed20812207b",
-            "62585ac5cd2e87df",
-            "5b012253d929f45a",
             "fa7eefe629c35c3e",
-            "0f4b804ff0a6cc27"
+            "0f4b804ff0a6cc27",
+            "fc9c7c0c763a4a44",
+            "04ad285da543e2ab",
+            "936f78f7fc7d2a39",
+            "a99b84e003d86d8b",
+            "1d8f3931d06ed088",
+            "06ad6d7562dbfdf9",
+            "5c70e8e31b3adc9a",
+            "195880216a99284d",
+            "28a8fe9bc38e35f9",
+            "e317f2753e175cb3",
+            "85a00b809ee076b7"
         ],
         "x": 34,
-        "y": 259,
-        "w": 932,
-        "h": 162
+        "y": 39,
+        "w": 1072,
+        "h": 202
     },
     {
         "id": "34e680e7054de3d0",
@@ -642,7 +644,7 @@
             "f0deea2958d1b962"
         ],
         "x": 134,
-        "y": 779,
+        "y": 599,
         "w": 672,
         "h": 82
     },
@@ -667,13 +669,12 @@
             "3eea93fbec4d81e9",
             "7e4cabcc2e35a03d",
             "e0780f570eeb2aa7",
-            "60368e441f11783f",
-            "1282666c22049094"
+            "60368e441f11783f"
         ],
         "x": 34,
-        "y": 79,
-        "w": 1412,
-        "h": 162
+        "y": 94,
+        "w": 1392,
+        "h": 147
     },
     {
         "id": "b501b4efa7d1e651",
@@ -859,7 +860,7 @@
             "0165592a7b31aaa1"
         ],
         "x": 134,
-        "y": 519,
+        "y": 339,
         "w": 312,
         "h": 82
     },
@@ -893,7 +894,7 @@
             "6c423dc8bb2c6824"
         ],
         "x": 134,
-        "y": 619,
+        "y": 439,
         "w": 1952,
         "h": 122
     },
@@ -1080,7 +1081,7 @@
             "f4e336f1fc89df65"
         ],
         "x": 34,
-        "y": 1559,
+        "y": 739,
         "w": 472,
         "h": 122
     },
@@ -1192,6 +1193,42 @@
         "y": 419,
         "w": 872,
         "h": 182
+    },
+    {
+        "id": "ac13f52fe34b4c9e",
+        "type": "group",
+        "z": "15bda437fadfc244",
+        "name": "tpv virtual",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "064bee43bd5dd715",
+            "4eb920821f400cf9",
+            "df82a4b45a03a28d"
+        ],
+        "x": 34,
+        "y": 1479,
+        "w": 492,
+        "h": 82
+    },
+    {
+        "id": "dad97708f46aaad8",
+        "type": "group",
+        "z": "15bda437fadfc244",
+        "name": "for test webhook tpv",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "957926780ec4a3fe",
+            "4399d3450559d2b1",
+            "240c733325a2ed41"
+        ],
+        "x": 34,
+        "y": 1599,
+        "w": 532,
+        "h": 82
     },
     {
         "id": "f0e0241e5242290c",
@@ -1354,11 +1391,12 @@
         "type": "junction",
         "z": "b73d17450c17803c",
         "x": 60,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "0165592a7b31aaa1",
-                "062d10d7692edd95"
+                "062d10d7692edd95",
+                "72aadbf5345518d7"
             ]
         ]
     },
@@ -1367,7 +1405,7 @@
         "type": "junction",
         "z": "b73d17450c17803c",
         "x": 60,
-        "y": 500,
+        "y": 320,
         "wires": [
             [
                 "7b32395f62fe148e"
@@ -1380,7 +1418,7 @@
         "z": "b73d17450c17803c",
         "g": "8ff7a8afe02f6f9b",
         "x": 920,
-        "y": 380,
+        "y": 200,
         "wires": [
             [
                 "118c544fd9f54519"
@@ -1999,7 +2037,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 190,
-        "y": 1620,
+        "y": 800,
         "wires": [
             [
                 "178ef043d024ce87",
@@ -2016,7 +2054,7 @@
         "statusCode": "200",
         "headers": {},
         "x": 400,
-        "y": 1600,
+        "y": 780,
         "wires": []
     },
     {
@@ -2034,134 +2072,15 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 400,
-        "y": 1640,
+        "y": 820,
         "wires": []
-    },
-    {
-        "id": "7dba41cef305919e",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "g": "8ff7a8afe02f6f9b",
-        "name": "check signature",
-        "func": "const STRIPE_SECRET_KEY = env.get('STRIPE_SECRET_KEY');\nconst WEBHOOK_SECRET = env.get('STRIPE_WEBHOOK_SECRET');\n\nconst stripe = new Stripe(STRIPE_SECRET_KEY);\nconst signature = msg.req?.headers?.['stripe-signature'];\nconst rawBody = Buffer.from(msg.payload);\n\nif (!signature) {\n    return null;\n};\n\ntry {\n    const { type = '', data = {} } = stripe.webhooks.constructEvent(rawBody, signature, WEBHOOK_SECRET);\n    const session = data?.object || {};\n\n    msg.toDB = {\n        orderId: session?.metadata?.order_id || null,\n        paymentIntentId: session?.payment_intent || null,\n        status: \"unpaid\"\n    };\n    msg.lang = session?.metadata?.lang || null;\n\n    if (type === 'checkout.session.completed' || type === 'checkout.session.async_payment_succeeded') {\n        msg.toDB.status = \"paid\";\n\n        return msg;\n    };\n\n    return msg;\n} catch (err) {\n    throw new Error('Webhook signature verification failed: ');\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "Stripe",
-                "module": "stripe"
-            }
-        ],
-        "x": 360,
-        "y": 360,
-        "wires": [
-            [
-                "db728fba8af35ae3",
-                "5cc8bed20812207b"
-            ]
-        ]
-    },
-    {
-        "id": "396bbf186c75fe0c",
-        "type": "http in",
-        "z": "b73d17450c17803c",
-        "d": true,
-        "g": "8ff7a8afe02f6f9b",
-        "name": "",
-        "url": "/webhook/stripe",
-        "method": "post",
-        "upload": false,
-        "skipBodyParsing": true,
-        "swaggerDoc": "",
-        "x": 160,
-        "y": 360,
-        "wires": [
-            [
-                "c86fa4f220d84bfb",
-                "7dba41cef305919e"
-            ]
-        ]
-    },
-    {
-        "id": "db728fba8af35ae3",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "g": "8ff7a8afe02f6f9b",
-        "name": "stripe",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 510,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "dd64cf0487f16c8b",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "g": "8ff7a8afe02f6f9b",
-        "name": "paid",
-        "func": "const { orderId = null, paymentIntentId = null, status = 'paid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nmsg.queryParameters = [orderId, status, paymentIntentId, new Date(), msg.lang];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2, \n        stripe_payment_id = $3, \n        paid_at = $4 \n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'unit_price', oi.unit_price,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free,\n                'dolibarr_id', pv.dolibarr_id,\n                'dolibarr_gluten_id', pv.dolibarr_gluten_id,\n                'dolibarr_lactose_id', pv.dolibarr_lactose_id,\n                'price_tax_free', pv.price_tax_free,\n                'price_tax_free_gluten', pv.price_tax_free_gluten,\n                'price_tax_free_lactose', pv.price_tax_free_lactose\n            )\n            FROM order_items oi\n            LEFT JOIN product_variants pv ON oi.product_variant_id = pv.id\n            LEFT JOIN product_translations pt ON oi.product_id = pt.product_id AND pt.language_code = $5\n            LEFT JOIN product_variant_translations pvt ON oi.product_variant_id = pvt.variant_id AND pvt.language_code = $5\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 630,
-        "y": 340,
-        "wires": [
-            [
-                "57ae0baa9395d3bd"
-            ]
-        ]
-    },
-    {
-        "id": "c86fa4f220d84bfb",
-        "type": "http response",
-        "z": "b73d17450c17803c",
-        "g": "8ff7a8afe02f6f9b",
-        "name": "",
-        "statusCode": "200",
-        "headers": {},
-        "x": 360,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "57ae0baa9395d3bd",
-        "type": "link call",
-        "z": "b73d17450c17803c",
-        "g": "8ff7a8afe02f6f9b",
-        "name": "orders",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 750,
-        "y": 340,
-        "wires": [
-            [
-                "6e1a6abd115867f5",
-                "fa7eefe629c35c3e"
-            ]
-        ]
     },
     {
         "id": "6e1a6abd115867f5",
         "type": "debug",
         "z": "b73d17450c17803c",
         "g": "8ff7a8afe02f6f9b",
-        "name": "stripe",
+        "name": "check db",
         "active": false,
         "tosidebar": true,
         "console": false,
@@ -2170,79 +2089,9 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 750,
-        "y": 300,
+        "x": 1000,
+        "y": 120,
         "wires": []
-    },
-    {
-        "id": "5cc8bed20812207b",
-        "type": "switch",
-        "z": "b73d17450c17803c",
-        "g": "8ff7a8afe02f6f9b",
-        "name": "",
-        "property": "toDB.status",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "paid",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 510,
-        "y": 360,
-        "wires": [
-            [
-                "dd64cf0487f16c8b"
-            ],
-            [
-                "62585ac5cd2e87df"
-            ]
-        ]
-    },
-    {
-        "id": "62585ac5cd2e87df",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "g": "8ff7a8afe02f6f9b",
-        "name": "unpaid",
-        "func": "const { orderId = null, paymentIntentId = null, status = 'unpaid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nmsg.queryParameters = [orderId, status, paymentIntentId, null];\nmsg.payload = `\n    UPDATE orders\n        SET status = $2,\n            stripe_payment_id = $3,\n            paid_at = $4\n    WHERE order_id = $1\n    RETURNING id;\n`;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 630,
-        "y": 380,
-        "wires": [
-            [
-                "5b012253d929f45a"
-            ]
-        ]
-    },
-    {
-        "id": "5b012253d929f45a",
-        "type": "link call",
-        "z": "b73d17450c17803c",
-        "g": "8ff7a8afe02f6f9b",
-        "name": "orders",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 750,
-        "y": 380,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "fa7eefe629c35c3e",
@@ -2258,7 +2107,7 @@
         "finalize": "",
         "libs": [],
         "x": 880,
-        "y": 340,
+        "y": 160,
         "wires": [
             [
                 "6e1a6abd115867f5",
@@ -2280,7 +2129,7 @@
         "finalize": "",
         "libs": [],
         "x": 240,
-        "y": 820,
+        "y": 640,
         "wires": [
             [
                 "0fdb989c2dc85e8d"
@@ -2299,7 +2148,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 420,
-        "y": 820,
+        "y": 640,
         "wires": [
             [
                 "b779df4ed3bc8845"
@@ -2320,7 +2169,7 @@
         "finalize": "",
         "libs": [],
         "x": 570,
-        "y": 820,
+        "y": 640,
         "wires": [
             [
                 "f0deea2958d1b962"
@@ -2342,7 +2191,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 700,
-        "y": 820,
+        "y": 640,
         "wires": []
     },
     {
@@ -2353,10 +2202,11 @@
         "scope": null,
         "uncaught": false,
         "x": 100,
-        "y": 1720,
+        "y": 920,
         "wires": [
             [
-                "948dde2391c8db61"
+                "948dde2391c8db61",
+                "1ae06fd8c192fe85"
             ]
         ]
     },
@@ -2365,7 +2215,7 @@
         "type": "debug",
         "z": "b73d17450c17803c",
         "name": "ERROR",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2374,7 +2224,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 240,
-        "y": 1760,
+        "y": 960,
         "wires": []
     },
     {
@@ -2389,8 +2239,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 1720,
+        "x": 240,
+        "y": 920,
         "wires": [
             [
                 "bd5f284266d703ff"
@@ -2408,7 +2258,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 400,
-        "y": 1720,
+        "y": 920,
         "wires": [
             []
         ]
@@ -2432,7 +2282,7 @@
             }
         ],
         "x": 370,
-        "y": 560,
+        "y": 380,
         "wires": [
             [
                 "7c3ba67cdefd1a4d"
@@ -2453,78 +2303,12 @@
         "finalize": "",
         "libs": [],
         "x": 230,
-        "y": 560,
+        "y": 380,
         "wires": [
             [
                 "584213fb0ad159c3"
             ]
         ]
-    },
-    {
-        "id": "957926780ec4a3fe",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "set msg",
-        "func": "msg = { \"_msgid\": \"63b3889e6d63af48\", \"payload\": {}, \"lang\": \"es\", \"_event\": \"node:5cc1c97b5393ef47\", \"order\": { \"order_id\": \"LCG-20260128-768589\", \"customer_name\": \"Anya\", \"customer_email\": \"a.miklukha05@gmail.com\", \"customer_phone\": \"+34622362304\", \"pickup_date\": \"2026-01-30\", \"pickup_time\": \"morning\", \"total_price\": \"32.50\", \"notes\": null, \"paid_at\": \"2026-01-28T10:23:11.405Z\", \"items\": [{ \"product_name\": \"Cremosa tradicional\", \"variant_name\": \"Mediana (2 personas)\", \"quantity\": 1, \"unit_price\": 13, \"is_gluten_free\": false, \"is_lactose_free\": true }, { \"product_name\": \"Cremosa de pistacho\", \"variant_name\": \"Pequeña (1 persona)\", \"quantity\": 1, \"unit_price\": 5.5, \"is_gluten_free\": false, \"is_lactose_free\": false }, { \"product_name\": \"Cremosa de oreo\", \"variant_name\": \"Mediana (2 personas)\", \"quantity\": 1, \"unit_price\": 14, \"is_gluten_free\": true, \"is_lactose_free\": false }] } }\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 260,
-        "y": 1520,
-        "wires": [
-            [
-                "240c733325a2ed41"
-            ]
-        ]
-    },
-    {
-        "id": "4399d3450559d2b1",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 1520,
-        "wires": [
-            [
-                "957926780ec4a3fe"
-            ]
-        ]
-    },
-    {
-        "id": "240c733325a2ed41",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "msg with order",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 420,
-        "y": 1520,
-        "wires": []
     },
     {
         "id": "72aadbf5345518d7",
@@ -2540,7 +2324,7 @@
         "finalize": "",
         "libs": [],
         "x": 230,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "6428fc240f43793f"
@@ -2565,7 +2349,7 @@
         "senderr": false,
         "headers": [],
         "x": 390,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "046ae0a7b3bccb92"
@@ -2577,7 +2361,7 @@
         "type": "debug",
         "z": "b73d17450c17803c",
         "name": "email",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2586,7 +2370,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 510,
-        "y": 560,
+        "y": 380,
         "wires": []
     },
     {
@@ -2604,7 +2388,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 600,
-        "y": 660,
+        "y": 480,
         "wires": []
     },
     {
@@ -2626,7 +2410,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 495,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "6c423dc8bb2c6824",
@@ -2653,7 +2437,7 @@
         "senderr": false,
         "headers": [],
         "x": 790,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "e789b5ba9e5c284a",
@@ -2675,7 +2459,7 @@
         "finalize": "",
         "libs": [],
         "x": 620,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "6e6d0c2db7a880ac"
@@ -2697,7 +2481,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 990,
-        "y": 660,
+        "y": 480,
         "wires": []
     },
     {
@@ -2719,7 +2503,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 885,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "3b8322f6546aac2c"
@@ -2741,7 +2525,7 @@
         "finalize": "",
         "libs": [],
         "x": 990,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "131be86f15cd2ced"
@@ -2766,7 +2550,7 @@
         "senderr": false,
         "headers": [],
         "x": 1150,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "b182aa6f457d3c64",
@@ -2789,7 +2573,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1350,
-        "y": 660,
+        "y": 480,
         "wires": []
     },
     {
@@ -2811,7 +2595,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 1255,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "b8228759b6e0935f"
@@ -2833,7 +2617,7 @@
         "finalize": "",
         "libs": [],
         "x": 1370,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "c1e087a4c92536cd"
@@ -2858,7 +2642,7 @@
         "senderr": false,
         "headers": [],
         "x": 1530,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "f7bcf7eea5eefe9f",
@@ -2880,7 +2664,7 @@
         "finalize": "",
         "libs": [],
         "x": 1700,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "1a59d02809c498dc"
@@ -2902,7 +2686,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1750,
-        "y": 660,
+        "y": 480,
         "wires": []
     },
     {
@@ -2917,7 +2701,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1860,
-        "y": 700,
+        "y": 520,
         "wires": [
             [
                 "820922ad795716dc",
@@ -2939,51 +2723,35 @@
         "finalize": "",
         "libs": [],
         "x": 2000,
-        "y": 700,
+        "y": 520,
         "wires": []
     },
     {
         "id": "fc9c7c0c763a4a44",
         "type": "http in",
         "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
         "name": "",
         "url": "/webhook/tpv",
         "method": "post",
         "upload": false,
         "skipBodyParsing": false,
         "swaggerDoc": "",
-        "x": 130,
-        "y": 180,
+        "x": 150,
+        "y": 140,
         "wires": [
             [
-                "af6101dcb8ab5b5c",
                 "04ad285da543e2ab"
             ]
         ]
     },
     {
-        "id": "af6101dcb8ab5b5c",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "webhook",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 120,
-        "y": 140,
-        "wires": []
-    },
-    {
         "id": "04ad285da543e2ab",
         "type": "function",
         "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
         "name": "check webhook",
-        "func": "const CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION_TEST');\n\nif (!CLAVE_ENCRIPTACION) {\n    throw new Error(\"Missed CLAVE_ENCRIPTACION\");\n}\nconst data = msg.req?.body || msg?.payload || {};\n\nconst {\n    MerchantID = '', AcquirerBIN = '', TerminalID = '', Num_operacion = '', Importe = '', \n    TipoMoneda = '', Exponente = '', Referencia = '', Idioma = '', Firma = '', Num_aut = ''\n} = data;\n\nmsg.toDB = {\n    orderId: Num_operacion,\n    referencia: Referencia,\n    numAut: Num_aut,\n    status: \"unpaid\"\n};\n\nif (!Num_operacion || !Firma || !Referencia) {\n    node.error('Missing required fields in TPV webhook', msg);\n    msg.payload = \"ERROR\";\n    msg.statusCode = 400;\n\n    return msg;\n};\n\n// Formula for comunicación online:\n// SHA256(Clave + MerchantID + AcquirerBIN + TerminalID + Num_operacion + Importe + TipoMoneda + Exponente + Referencia)\nconst cadenaFirma = \n    CLAVE_ENCRIPTACION +\n    MerchantID +\n    AcquirerBIN +\n    TerminalID +\n    Num_operacion +\n    Importe +\n    TipoMoneda +\n    Exponente +\n    Referencia;\n\nconst firmaCalculada = crypto\n    .createHash('sha256')\n    .update(cadenaFirma)\n    .digest('hex');\n\nif (firmaCalculada.toLowerCase() !== Firma.toLowerCase()) {\n    node.error(`Invalid signature! Expected: ${firmaCalculada}, Got: ${Firma}`, msg);\n    msg.payload = \"ERROR\";\n    msg.statusCode = 400;\n    return msg;\n};\n\nconst idiomaMap = { \"1\": \"es\", \"6\": \"en\", \"4\": \"gl\" };\nmsg.lang = idiomaMap?.[Idioma] || \"es\";\n\nmsg.payload = \"$*$OKY$*$\";\nmsg.statusCode = 200;\nmsg.headers =  { \"Content-Type\": \"text/html; charset=utf-8\" };\nmsg.toDB.status = \"paid\";\n\nreturn msg;\n\n",
+        "func": "const CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION');\n\nif (!CLAVE_ENCRIPTACION) {\n    throw new Error(\"Missed CLAVE_ENCRIPTACION\");\n}\nconst data = msg.req?.body || msg?.payload || {};\n\nconst {\n    MerchantID = '', AcquirerBIN = '', TerminalID = '', Num_operacion = '', Importe = '', \n    TipoMoneda = '', Exponente = '', Referencia = '', Idioma = '', Firma = '', Num_aut = ''\n} = data;\n\nmsg.toDB = {\n    orderId: Num_operacion,\n    referencia: Referencia,\n    numAut: Num_aut,\n    status: \"unpaid\"\n};\n\nif (!Num_operacion || !Firma || !Referencia) {\n    node.error('Missing required fields in TPV webhook', msg);\n    msg.payload = \"ERROR\";\n    msg.statusCode = 400;\n\n    return msg;\n};\n\n// Formula for comunicación online:\n// SHA256(Clave + MerchantID + AcquirerBIN + TerminalID + Num_operacion + Importe + TipoMoneda + Exponente + Referencia)\nconst cadenaFirma = \n    CLAVE_ENCRIPTACION +\n    MerchantID +\n    AcquirerBIN +\n    TerminalID +\n    Num_operacion +\n    Importe +\n    TipoMoneda +\n    Exponente +\n    Referencia;\n\nconst firmaCalculada = crypto\n    .createHash('sha256')\n    .update(cadenaFirma)\n    .digest('hex');\n\nif (firmaCalculada.toLowerCase() !== Firma.toLowerCase()) {\n    node.error(`Invalid signature! Expected: ${firmaCalculada}, Got: ${Firma}`, msg);\n    msg.payload = \"ERROR\";\n    msg.statusCode = 400;\n    return msg;\n};\n\nconst idiomaMap = { \"1\": \"es\", \"6\": \"en\", \"4\": \"gl\" };\nmsg.lang = idiomaMap?.[Idioma] || \"es\";\n\nmsg.payload = \"$*$OKY$*$\";\nmsg.statusCode = 200;\nmsg.headers =  { \"Content-Type\": \"text/html; charset=utf-8\" };\nmsg.toDB.status = \"paid\";\n\nreturn msg;\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2995,8 +2763,8 @@
                 "module": "crypto"
             }
         ],
-        "x": 320,
-        "y": 180,
+        "x": 340,
+        "y": 140,
         "wires": [
             [
                 "936f78f7fc7d2a39",
@@ -3009,19 +2777,21 @@
         "id": "936f78f7fc7d2a39",
         "type": "http response",
         "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 470,
-        "y": 220,
+        "x": 490,
+        "y": 180,
         "wires": []
     },
     {
         "id": "a99b84e003d86d8b",
         "type": "debug",
         "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
         "name": "check",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3030,13 +2800,14 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 490,
-        "y": 140,
+        "y": 100,
         "wires": []
     },
     {
         "id": "1d8f3931d06ed088",
         "type": "function",
         "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
         "name": "paid",
         "func": "const { orderId = null, referencia = null, numAut = null, status = 'paid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nmsg.queryParameters = [orderId, status, referencia, numAut, new Date(), msg.lang];\nmsg.payload = `\nWITH updated AS (\n    UPDATE orders \n    SET status = $2,\n        tpv_referencia = $3,\n        tpv_num_aut = $4,\n        paid_at = $5 \n    WHERE order_id = $1 \n    RETURNING *\n)\nSELECT \n    u.order_id,\n    u.customer_name,\n    u.customer_email,\n    u.customer_phone,\n    TO_CHAR(u.pickup_date, 'YYYY-MM-DD') AS pickup_date,\n    u.pickup_time,\n    u.total_price,\n    u.notes,\n    u.paid_at,\n    COALESCE(\n        ARRAY(\n            SELECT json_build_object(\n                'product_name', pt.name,\n                'variant_name', pvt.name,\n                'quantity', oi.quantity,\n                'unit_price', oi.unit_price,\n                'is_gluten_free', oi.is_gluten_free,\n                'is_lactose_free', oi.is_lactose_free,\n                'dolibarr_id', pv.dolibarr_id,\n                'dolibarr_gluten_id', pv.dolibarr_gluten_id,\n                'dolibarr_lactose_id', pv.dolibarr_lactose_id,\n                'price_tax_free', pv.price_tax_free,\n                'price_tax_free_gluten', pv.price_tax_free_gluten,\n                'price_tax_free_lactose', pv.price_tax_free_lactose\n            )\n            FROM order_items oi\n            LEFT JOIN product_variants pv ON oi.product_variant_id = pv.id\n            LEFT JOIN product_translations pt ON oi.product_id = pt.product_id AND pt.language_code = $6\n            LEFT JOIN product_variant_translations pvt ON oi.product_variant_id = pvt.variant_id AND pvt.language_code = $6\n            WHERE oi.order_id = u.id\n            ORDER BY oi.id\n        ),\n        '{}'\n    ) AS items\nFROM updated u;\n`;\n\nreturn msg;",
         "outputs": 1,
@@ -3045,8 +2816,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 160,
+        "x": 610,
+        "y": 120,
         "wires": [
             [
                 "06ad6d7562dbfdf9"
@@ -3057,14 +2828,15 @@
         "id": "06ad6d7562dbfdf9",
         "type": "link call",
         "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
         "name": "orders",
         "links": [
             "7d0d97bd91fee1c8"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 710,
-        "y": 160,
+        "x": 730,
+        "y": 120,
         "wires": [
             [
                 "85a00b809ee076b7",
@@ -3076,6 +2848,7 @@
         "id": "5c70e8e31b3adc9a",
         "type": "switch",
         "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
         "name": "",
         "property": "toDB.status",
         "propertyType": "msg",
@@ -3092,8 +2865,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 470,
-        "y": 180,
+        "x": 490,
+        "y": 140,
         "wires": [
             [
                 "1d8f3931d06ed088"
@@ -3107,6 +2880,7 @@
         "id": "195880216a99284d",
         "type": "function",
         "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
         "name": "unpaid",
         "func": "const { orderId = null, referencia = null, numAut = null, status = 'unpaid' } = msg.toDB || {};\n\nif (!orderId) {\n    return null;\n};\n\nmsg.queryParameters = [orderId, status, referencia, numAut];\nmsg.payload = `\n    UPDATE orders\n        SET status = $2,\n            tpv_referencia = $3,\n            tpv_num_aut = $4\n    WHERE order_id = $1\n`;\n\nreturn msg;",
         "outputs": 1,
@@ -3115,8 +2889,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 200,
+        "x": 610,
+        "y": 160,
         "wires": [
             [
                 "28a8fe9bc38e35f9"
@@ -3127,14 +2901,15 @@
         "id": "28a8fe9bc38e35f9",
         "type": "link call",
         "z": "b73d17450c17803c",
+        "g": "8ff7a8afe02f6f9b",
         "name": "orders",
         "links": [
             "7d0d97bd91fee1c8"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 710,
-        "y": 200,
+        "x": 730,
+        "y": 160,
         "wires": [
             [
                 "e317f2753e175cb3"
@@ -3145,8 +2920,9 @@
         "id": "85a00b809ee076b7",
         "type": "debug",
         "z": "b73d17450c17803c",
-        "name": "check",
-        "active": true,
+        "g": "8ff7a8afe02f6f9b",
+        "name": "orders",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3154,16 +2930,17 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 830,
-        "y": 160,
+        "x": 730,
+        "y": 80,
         "wires": []
     },
     {
         "id": "e317f2753e175cb3",
         "type": "debug",
         "z": "b73d17450c17803c",
-        "name": "check",
-        "active": true,
+        "g": "8ff7a8afe02f6f9b",
+        "name": "orders",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3171,94 +2948,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 830,
+        "x": 730,
         "y": 200,
-        "wires": []
-    },
-    {
-        "id": "b9fc3826770d1ccb",
-        "type": "comment",
-        "z": "b73d17450c17803c",
-        "name": "CLAVE !!!!",
-        "info": "",
-        "x": 340,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "0e7e833527c1bb1a",
-        "type": "comment",
-        "z": "b73d17450c17803c",
-        "name": "!!!!!!!",
-        "info": "",
-        "x": 230,
-        "y": 1800,
-        "wires": []
-    },
-    {
-        "id": "064bee43bd5dd715",
-        "type": "inject",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 460,
-        "y": 40,
-        "wires": [
-            [
-                "4eb920821f400cf9"
-            ]
-        ]
-    },
-    {
-        "id": "4eb920821f400cf9",
-        "type": "function",
-        "z": "b73d17450c17803c",
-        "name": "set msg",
-        "func": "msg = { \"_msgid\": \"9a2f9d50c6d12567\", \"payload\": { \"MerchantID\": \"250407277\", \"AcquirerBIN\": \"0000554026\", \"TerminalID\": \"00000003\", \"Num_operacion\": \"LCG-20260202-232237\", \"Importe\": \"000000000550\", \"TipoMoneda\": \"978\", \"Exponente\": \"2\", \"Firma\": \"52843efa3a2681700d694ae6a7b800925364c596543eec3cdb87ae56b29d3cd9\", \"Referencia\": \"12006025182602021738566007000\", \"Num_aut\": \"101000\", \"BIN\": \"554050\", \"BIN8\": \"55405000\", \"FinalPAN\": \"0004\", \"Tipo_operacion\": \"C\", \"Cambio_moneda\": \"1\", \"Idioma\": \"1\", \"Descripcion\": \"Pedido LCG-20260202-232237\", \"Pais\": \"724\", \"Tipo_tarjeta\": \"C\", \"Caducidad\": \"202612\", \"Idusuario\": \"\" }, \"req\": { \"_events\": {}, \"_readableState\": { \"highWaterMark\": 65536, \"buffer\": [], \"bufferIndex\": 0, \"length\": 0, \"pipes\": [], \"awaitDrainWriters\": null }, \"socket\": \"[internal]\", \"httpVersionMajor\": 1, \"httpVersionMinor\": 1, \"httpVersion\": \"1.1\", \"complete\": true, \"rawHeaders\": [\"Host\", \"ascremosas.com\", \"X-Real-IP\", \"80.68.128.247\", \"Connection\", \"close\", \"Content-Length\", \"443\", \"Content-Type\", \"application/x-www-form-urlencoded\", \"User-Agent\", \"Apache-HttpClient/4.5.10 (Java/1.8.0_462)\", \"Accept-Encoding\", \"gzip,deflate\"], \"rawTrailers\": [], \"joinDuplicateHeaders\": null, \"aborted\": false, \"upgrade\": false, \"url\": \"/webhook/tpv\", \"method\": \"POST\", \"statusCode\": null, \"statusMessage\": null, \"client\": \"[internal]\", \"_consuming\": true, \"_dumped\": false, \"baseUrl\": \"\", \"originalUrl\": \"/webhook/tpv\", \"_parsedUrl\": { \"protocol\": null, \"slashes\": null, \"auth\": null, \"host\": null, \"port\": null, \"hostname\": null, \"hash\": null, \"search\": null, \"query\": null, \"pathname\": \"/webhook/tpv\", \"path\": \"/webhook/tpv\", \"href\": \"/webhook/tpv\", \"_raw\": \"/webhook/tpv\" }, \"params\": {}, \"query\": {}, \"res\": \"[internal]\", \"body\": { \"MerchantID\": \"250407277\", \"AcquirerBIN\": \"0000554026\", \"TerminalID\": \"00000003\", \"Num_operacion\": \"LCG-20260202-232237\", \"Importe\": \"000000000550\", \"TipoMoneda\": \"978\", \"Exponente\": \"2\", \"Firma\": \"52843efa3a2681700d694ae6a7b800925364c596543eec3cdb87ae56b29d3cd9\", \"Referencia\": \"12006025182602021738566007000\", \"Num_aut\": \"101000\", \"BIN\": \"554050\", \"BIN8\": \"55405000\", \"FinalPAN\": \"0004\", \"Tipo_operacion\": \"C\", \"Cambio_moneda\": \"1\", \"Idioma\": \"1\", \"Descripcion\": \"Pedido LCG-20260202-232237\", \"Pais\": \"724\", \"Tipo_tarjeta\": \"C\", \"Caducidad\": \"202612\", \"Idusuario\": \"\" }, \"_body\": true, \"_eventsCount\": 0, \"_sessionManager\": { \"_key\": \"passport\" }, \"_passport\": { \"instance\": { \"_key\": \"passport\", \"_strategies\": { \"session\": { \"name\": \"session\", \"_key\": \"passport\" }, \"bearer\": { \"name\": \"bearer\", \"_realm\": \"Users\" }, \"oauth2-client-password\": { \"name\": \"oauth2-client-password\" }, \"anon\": { \"name\": \"anon\" }, \"tokens\": { \"name\": \"tokens\" } }, \"_serializers\": [], \"_deserializers\": [], \"_infoTransformers\": [], \"_framework\": {}, \"_sm\": { \"_key\": \"passport\" }, \"strategies\": {}, \"_userProperty\": \"user\" } }, \"route\": { \"path\": \"/webhook/tpv\", \"stack\": [{ \"name\": \"cookieParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"httpMiddleware\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"corsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"metricsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"jsonParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"urlencodedParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"multipartParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"rawBodyParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }], \"methods\": { \"post\": true } }, \"cookies\": {}, \"signedCookies\": {}, \"headers\": { \"host\": \"ascremosas.com\", \"x-real-ip\": \"80.68.128.247\", \"connection\": \"close\", \"content-length\": \"443\", \"content-type\": \"application/x-www-form-urlencoded\", \"user-agent\": \"Apache-HttpClient/4.5.10 (Java/1.8.0_462)\", \"accept-encoding\": \"gzip,deflate\" } }, \"res\": {} }\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 600,
-        "y": 40,
-        "wires": [
-            [
-                "df82a4b45a03a28d"
-            ]
-        ]
-    },
-    {
-        "id": "df82a4b45a03a28d",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "name": "webhook",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 80,
         "wires": []
     },
     {
@@ -3290,11 +2981,11 @@
         "name": "09:00 (madrid) except sunday",
         "props": [],
         "repeat": "",
-        "crontab": "",
+        "crontab": "00 08 * * 1,2,3,4,5,6",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 200,
+        "x": 210,
         "y": 80,
         "wires": [
             [
@@ -3453,14 +3144,14 @@
         "type": "inject",
         "z": "d6966d87889a164a",
         "g": "2ffdb4c723e8e6a0",
-        "name": "00:05 (madrid) except sunday",
+        "name": "01:10 (madrid) except sunday",
         "props": [],
         "repeat": "",
-        "crontab": "",
+        "crontab": "10 00 * * 1,2,3,4,5,6",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 200,
+        "x": 210,
         "y": 180,
         "wires": [
             [
@@ -5071,7 +4762,7 @@
         "z": "f3eb2de3da3352db",
         "g": "8ca3eb9a68741ec8",
         "name": "TPV data",
-        "func": "const ACQUIRER_BIN = env.get('ACQUIRER_BIN') || null;\nconst MERCHANT_ID = env.get('MERCHANT_ID') || null;\nconst TERMINAL_ID = env.get('TERMINAL_ID') || null;\n// const CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION') || null;\nconst CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION_TEST') || null;\nconst FRONTEND_URL = env.get('FRONTEND_URL') || null;\n\nif (!ACQUIRER_BIN || !MERCHANT_ID || !TERMINAL_ID || !CLAVE_ENCRIPTACION) {\n    throw new Error(\"Missed data for tpv virtual\");\n};\n\nconst TPV_CONFIG = {\n    merchantID: MERCHANT_ID,     \n    acquirerBIN: ACQUIRER_BIN,   \n    terminalID: TERMINAL_ID,  \n    claveEncriptacion: CLAVE_ENCRIPTACION,\n    \n    baseURL: FRONTEND_URL || \"https://ascremosas.com\",\n\n    isProduction: false\n};\n\nconst tpvURL = TPV_CONFIG.isProduction\n    ? \"https://pgw.ceca.es/tpvweb/tpv/compra.action\"\n    : \"https://tpv.ceca.es/tpvweb/tpv/compra.action\";\n\nconst { customerEmail, totalPrice, lang } = msg?.orderData || {};\nconst orderId = msg?.orderId;\n\n// to cents\nconst importe = Math.round(totalPrice * 100).toString();\n\nconst tipoMoneda = \"978\"; // EUR\nconst exponente = \"2\";\nconst cifrado = \"SHA2\";\nconst pagoSoportado = \"SSL\";\n\nconst idiomaMap = { es: \"1\", en: \"6\", gl: \"4\" };\nconst idioma = idiomaMap?.[lang] || \"1\";\n\nconst testUrl = 'http://localhost:5173';\n\nconst urlOK = `${testUrl}/checkout/success?order_id=${orderId}&lang=${lang}`;\nconst urlNOK = `${testUrl}/checkout/cancel?order_id=${orderId}&lang=${lang}`;\n\n// const urlOK = `${TPV_CONFIG?.baseURL}/checkout/success?order_id=${orderId}&lang=${lang}`;\n// const urlNOK = `${TPV_CONFIG?.baseURL}/checkout/cancel?order_id=${orderId}&lang=${lang}`;\n\nconst descripcion = `Pedido ${orderId}`;\n\nconst cadenaFirma =\n    TPV_CONFIG.claveEncriptacion +\n    TPV_CONFIG.merchantID +\n    TPV_CONFIG.acquirerBIN +\n    TPV_CONFIG.terminalID +\n    orderId +\n    importe +\n    tipoMoneda +\n    exponente +\n    cifrado +\n    urlOK +\n    urlNOK;\n\nconst firma = crypto\n    .createHash('sha256')\n    .update(cadenaFirma)\n    .digest('hex');\n\nmsg.tpv = {\n    actionURL: tpvURL,\n    fields: {\n        MerchantID: TPV_CONFIG.merchantID,\n        AcquirerBIN: TPV_CONFIG.acquirerBIN,\n        TerminalID: TPV_CONFIG.terminalID,\n        Num_operacion: orderId,\n        Importe: importe,\n        TipoMoneda: tipoMoneda,\n        Exponente: exponente,\n        Cifrado: cifrado,\n        Pago_soportado: pagoSoportado,\n        Idioma: idioma,\n        URL_OK: urlOK,\n        URL_NOK: urlNOK,\n        Firma: firma,\n        Descripcion: descripcion\n    }\n};\n\nreturn msg;",
+        "func": "const ACQUIRER_BIN = env.get('ACQUIRER_BIN') || null;\nconst MERCHANT_ID = env.get('MERCHANT_ID') || null;\nconst TERMINAL_ID = env.get('TERMINAL_ID') || null;\nconst CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION') || null;\n// const CLAVE_ENCRIPTACION = env.get('CLAVE_ENCRIPTACION_TEST') || null;\nconst FRONTEND_URL = env.get('FRONTEND_URL') || null;\n\nif (!ACQUIRER_BIN || !MERCHANT_ID || !TERMINAL_ID || !CLAVE_ENCRIPTACION) {\n    throw new Error(\"Missed data for tpv virtual\");\n};\n\nconst TPV_CONFIG = {\n    merchantID: MERCHANT_ID,     \n    acquirerBIN: ACQUIRER_BIN,   \n    terminalID: TERMINAL_ID,  \n    claveEncriptacion: CLAVE_ENCRIPTACION,\n    \n    baseURL: FRONTEND_URL || \"https://ascremosas.com\",\n\n    isProduction: true\n};\n\nconst tpvURL = TPV_CONFIG.isProduction\n    ? \"https://pgw.ceca.es/tpvweb/tpv/compra.action\"\n    : \"https://tpv.ceca.es/tpvweb/tpv/compra.action\";\n\nconst { customerEmail, totalPrice, lang } = msg?.orderData || {};\nconst orderId = msg?.orderId;\n\n// to cents\nconst importe = Math.round(totalPrice * 100).toString();\n\nconst tipoMoneda = \"978\"; // EUR\nconst exponente = \"2\";\nconst cifrado = \"SHA2\";\nconst pagoSoportado = \"SSL\";\n\nconst idiomaMap = { es: \"1\", en: \"6\", gl: \"4\" };\nconst idioma = idiomaMap?.[lang] || \"1\";\n\n// const testUrl = 'http://localhost:5173';\n// const urlOK = `${testUrl}/checkout/success?order_id=${orderId}&lang=${lang}`;\n// const urlNOK = `${testUrl}/checkout/cancel?order_id=${orderId}&lang=${lang}`;\n\nconst urlOK = `${TPV_CONFIG?.baseURL}/checkout/success?order_id=${orderId}&lang=${lang}`;\nconst urlNOK = `${TPV_CONFIG?.baseURL}/checkout/cancel?order_id=${orderId}&lang=${lang}`;\n\nconst descripcion = `Pedido ${orderId}`;\n\nconst cadenaFirma =\n    TPV_CONFIG.claveEncriptacion +\n    TPV_CONFIG.merchantID +\n    TPV_CONFIG.acquirerBIN +\n    TPV_CONFIG.terminalID +\n    orderId +\n    importe +\n    tipoMoneda +\n    exponente +\n    cifrado +\n    urlOK +\n    urlNOK;\n\nconst firma = crypto\n    .createHash('sha256')\n    .update(cadenaFirma)\n    .digest('hex');\n\nmsg.tpv = {\n    actionURL: tpvURL,\n    fields: {\n        MerchantID: TPV_CONFIG.merchantID,\n        AcquirerBIN: TPV_CONFIG.acquirerBIN,\n        TerminalID: TPV_CONFIG.terminalID,\n        Num_operacion: orderId,\n        Importe: importe,\n        TipoMoneda: tipoMoneda,\n        Exponente: exponente,\n        Cifrado: cifrado,\n        Pago_soportado: pagoSoportado,\n        Idioma: idioma,\n        URL_OK: urlOK,\n        URL_NOK: urlNOK,\n        Firma: firma,\n        Descripcion: descripcion\n    }\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5097,8 +4788,8 @@
         "type": "debug",
         "z": "f3eb2de3da3352db",
         "g": "8ca3eb9a68741ec8",
-        "name": "debug 3",
-        "active": true,
+        "name": "tpv data",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5115,8 +4806,8 @@
         "type": "debug",
         "z": "f3eb2de3da3352db",
         "g": "8ca3eb9a68741ec8",
-        "name": "debug 4",
-        "active": true,
+        "name": "postgresql",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5124,7 +4815,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1180,
+        "x": 1190,
         "y": 200,
         "wires": []
     },
@@ -5133,8 +4824,8 @@
         "type": "debug",
         "z": "f3eb2de3da3352db",
         "g": "8ca3eb9a68741ec8",
-        "name": "debug 5",
-        "active": true,
+        "name": "res",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5142,19 +4833,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1340,
+        "x": 1330,
         "y": 200,
-        "wires": []
-    },
-    {
-        "id": "1282666c22049094",
-        "type": "comment",
-        "z": "f3eb2de3da3352db",
-        "g": "8ca3eb9a68741ec8",
-        "name": "!!!!!!!!!!!",
-        "info": "",
-        "x": 670,
-        "y": 120,
         "wires": []
     },
     {
@@ -16015,6 +15695,144 @@
         "statusType": "auto",
         "x": 560,
         "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "064bee43bd5dd715",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "ac13f52fe34b4c9e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1520,
+        "wires": [
+            [
+                "4eb920821f400cf9"
+            ]
+        ]
+    },
+    {
+        "id": "4eb920821f400cf9",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "ac13f52fe34b4c9e",
+        "name": "set msg",
+        "func": "msg = { \"_msgid\": \"9a2f9d50c6d12567\", \"payload\": { \"MerchantID\": \"250407277\", \"AcquirerBIN\": \"0000554026\", \"TerminalID\": \"00000003\", \"Num_operacion\": \"LCG-20260202-232237\", \"Importe\": \"000000000550\", \"TipoMoneda\": \"978\", \"Exponente\": \"2\", \"Firma\": \"52843efa3a2681700d694ae6a7b800925364c596543eec3cdb87ae56b29d3cd9\", \"Referencia\": \"12006025182602021738566007000\", \"Num_aut\": \"101000\", \"BIN\": \"554050\", \"BIN8\": \"55405000\", \"FinalPAN\": \"0004\", \"Tipo_operacion\": \"C\", \"Cambio_moneda\": \"1\", \"Idioma\": \"1\", \"Descripcion\": \"Pedido LCG-20260202-232237\", \"Pais\": \"724\", \"Tipo_tarjeta\": \"C\", \"Caducidad\": \"202612\", \"Idusuario\": \"\" }, \"req\": { \"_events\": {}, \"_readableState\": { \"highWaterMark\": 65536, \"buffer\": [], \"bufferIndex\": 0, \"length\": 0, \"pipes\": [], \"awaitDrainWriters\": null }, \"socket\": \"[internal]\", \"httpVersionMajor\": 1, \"httpVersionMinor\": 1, \"httpVersion\": \"1.1\", \"complete\": true, \"rawHeaders\": [\"Host\", \"ascremosas.com\", \"X-Real-IP\", \"80.68.128.247\", \"Connection\", \"close\", \"Content-Length\", \"443\", \"Content-Type\", \"application/x-www-form-urlencoded\", \"User-Agent\", \"Apache-HttpClient/4.5.10 (Java/1.8.0_462)\", \"Accept-Encoding\", \"gzip,deflate\"], \"rawTrailers\": [], \"joinDuplicateHeaders\": null, \"aborted\": false, \"upgrade\": false, \"url\": \"/webhook/tpv\", \"method\": \"POST\", \"statusCode\": null, \"statusMessage\": null, \"client\": \"[internal]\", \"_consuming\": true, \"_dumped\": false, \"baseUrl\": \"\", \"originalUrl\": \"/webhook/tpv\", \"_parsedUrl\": { \"protocol\": null, \"slashes\": null, \"auth\": null, \"host\": null, \"port\": null, \"hostname\": null, \"hash\": null, \"search\": null, \"query\": null, \"pathname\": \"/webhook/tpv\", \"path\": \"/webhook/tpv\", \"href\": \"/webhook/tpv\", \"_raw\": \"/webhook/tpv\" }, \"params\": {}, \"query\": {}, \"res\": \"[internal]\", \"body\": { \"MerchantID\": \"250407277\", \"AcquirerBIN\": \"0000554026\", \"TerminalID\": \"00000003\", \"Num_operacion\": \"LCG-20260202-232237\", \"Importe\": \"000000000550\", \"TipoMoneda\": \"978\", \"Exponente\": \"2\", \"Firma\": \"52843efa3a2681700d694ae6a7b800925364c596543eec3cdb87ae56b29d3cd9\", \"Referencia\": \"12006025182602021738566007000\", \"Num_aut\": \"101000\", \"BIN\": \"554050\", \"BIN8\": \"55405000\", \"FinalPAN\": \"0004\", \"Tipo_operacion\": \"C\", \"Cambio_moneda\": \"1\", \"Idioma\": \"1\", \"Descripcion\": \"Pedido LCG-20260202-232237\", \"Pais\": \"724\", \"Tipo_tarjeta\": \"C\", \"Caducidad\": \"202612\", \"Idusuario\": \"\" }, \"_body\": true, \"_eventsCount\": 0, \"_sessionManager\": { \"_key\": \"passport\" }, \"_passport\": { \"instance\": { \"_key\": \"passport\", \"_strategies\": { \"session\": { \"name\": \"session\", \"_key\": \"passport\" }, \"bearer\": { \"name\": \"bearer\", \"_realm\": \"Users\" }, \"oauth2-client-password\": { \"name\": \"oauth2-client-password\" }, \"anon\": { \"name\": \"anon\" }, \"tokens\": { \"name\": \"tokens\" } }, \"_serializers\": [], \"_deserializers\": [], \"_infoTransformers\": [], \"_framework\": {}, \"_sm\": { \"_key\": \"passport\" }, \"strategies\": {}, \"_userProperty\": \"user\" } }, \"route\": { \"path\": \"/webhook/tpv\", \"stack\": [{ \"name\": \"cookieParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"httpMiddleware\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"corsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"metricsHandler\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"jsonParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"urlencodedParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"multipartParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"rawBodyParser\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }, { \"name\": \"<anonymous>\", \"keys\": [], \"regexp\": { \"__enc__\": true, \"type\": \"regexp\", \"data\": \"/^\\\\/?$/i\" }, \"method\": \"post\" }], \"methods\": { \"post\": true } }, \"cookies\": {}, \"signedCookies\": {}, \"headers\": { \"host\": \"ascremosas.com\", \"x-real-ip\": \"80.68.128.247\", \"connection\": \"close\", \"content-length\": \"443\", \"content-type\": \"application/x-www-form-urlencoded\", \"user-agent\": \"Apache-HttpClient/4.5.10 (Java/1.8.0_462)\", \"accept-encoding\": \"gzip,deflate\" } }, \"res\": {} }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 1520,
+        "wires": [
+            [
+                "df82a4b45a03a28d"
+            ]
+        ]
+    },
+    {
+        "id": "df82a4b45a03a28d",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "ac13f52fe34b4c9e",
+        "name": "webhook",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "957926780ec4a3fe",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "dad97708f46aaad8",
+        "name": "set msg",
+        "func": "msg = { \"_msgid\": \"63b3889e6d63af48\", \"payload\": {}, \"lang\": \"es\", \"_event\": \"node:5cc1c97b5393ef47\", \"order\": { \"order_id\": \"LCG-20260128-768589\", \"customer_name\": \"Anya\", \"customer_email\": \"a.miklukha05@gmail.com\", \"customer_phone\": \"+34622362304\", \"pickup_date\": \"2026-01-30\", \"pickup_time\": \"morning\", \"total_price\": \"32.50\", \"notes\": null, \"paid_at\": \"2026-01-28T10:23:11.405Z\", \"items\": [{ \"product_name\": \"Cremosa tradicional\", \"variant_name\": \"Mediana (2 personas)\", \"quantity\": 1, \"unit_price\": 13, \"is_gluten_free\": false, \"is_lactose_free\": true }, { \"product_name\": \"Cremosa de pistacho\", \"variant_name\": \"Pequeña (1 persona)\", \"quantity\": 1, \"unit_price\": 5.5, \"is_gluten_free\": false, \"is_lactose_free\": false }, { \"product_name\": \"Cremosa de oreo\", \"variant_name\": \"Mediana (2 personas)\", \"quantity\": 1, \"unit_price\": 14, \"is_gluten_free\": true, \"is_lactose_free\": false }] } }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 1640,
+        "wires": [
+            [
+                "240c733325a2ed41"
+            ]
+        ]
+    },
+    {
+        "id": "4399d3450559d2b1",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "dad97708f46aaad8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1640,
+        "wires": [
+            [
+                "957926780ec4a3fe"
+            ]
+        ]
+    },
+    {
+        "id": "240c733325a2ed41",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "dad97708f46aaad8",
+        "name": "msg with order",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 1640,
         "wires": []
     }
 ]
