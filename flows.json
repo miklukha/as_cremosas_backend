@@ -209,24 +209,24 @@
             "http_get_products_by_category",
             "function_validate_category_query",
             "link_call_db_products_category",
-            "http_get_product_by_id",
-            "function_validate_product_id",
-            "link_call_db_product",
             "9ed49f808376c0d1",
             "c24da01dbb5bb6dd",
             "4368c7f14cfdbce3",
             "a8e99c07f5d12075",
             "b953c8bfdb9f40f5",
             "23f3016baa5256d4",
-            "75f1785c99dd8ee9",
-            "a799c959e1398a15",
             "d8ef0639fb5dddc2",
             "79ac7d2c6759d325",
             "function_validate_delete_product",
             "http_delete_product",
             "9d21090659e67713",
             "link_call_db_delete_product",
-            "function_format_delete_product_response"
+            "function_format_delete_product_response",
+            "function_validate_product_id",
+            "http_get_product_by_id",
+            "75f1785c99dd8ee9",
+            "link_call_db_product",
+            "a799c959e1398a15"
         ],
         "x": 28,
         "y": 39,
@@ -592,12 +592,16 @@
             "d909c4eea934bd56",
             "d002c4fbf80aa5d0",
             "92dc020174f80be0",
-            "ab4e4ffb567b7068"
+            "ab4e4ffb567b7068",
+            "66e254f9859392f3",
+            "63d88a6818a69f64",
+            "04e7acca1bbe8f9b",
+            "8be6e560f01ff1ac"
         ],
         "x": 34,
         "y": 1539,
         "w": 1532,
-        "h": 682
+        "h": 822
     },
     {
         "id": "8ff7a8afe02f6f9b",
@@ -1059,12 +1063,16 @@
             "5c5939bb8da67ea4",
             "e85837c6ba75a455",
             "35df9d119d91bf7b",
-            "4b8fa44909135ebc"
+            "4b8fa44909135ebc",
+            "94db6e57f359c696",
+            "78f67bb99a8cc526",
+            "7270e1d1c124e2bf",
+            "35ece4446ad1dba9"
         ],
         "x": 34,
         "y": 1359,
-        "w": 632,
-        "h": 82
+        "w": 672,
+        "h": 142
     },
     {
         "id": "01b2dfa9ef5c3fc3",
@@ -1100,8 +1108,44 @@
             "4a8ab29dbc4e1f21"
         ],
         "x": 34,
-        "y": 2319,
+        "y": 2659,
         "w": 652,
+        "h": 82
+    },
+    {
+        "id": "ac13f52fe34b4c9e",
+        "type": "group",
+        "z": "15bda437fadfc244",
+        "name": "tpv virtual",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "064bee43bd5dd715",
+            "4eb920821f400cf9",
+            "df82a4b45a03a28d"
+        ],
+        "x": 34,
+        "y": 1539,
+        "w": 492,
+        "h": 82
+    },
+    {
+        "id": "dad97708f46aaad8",
+        "type": "group",
+        "z": "15bda437fadfc244",
+        "name": "for test webhook tpv",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "957926780ec4a3fe",
+            "4399d3450559d2b1",
+            "240c733325a2ed41"
+        ],
+        "x": 34,
+        "y": 1639,
+        "w": 532,
         "h": 82
     },
     {
@@ -1193,42 +1237,6 @@
         "y": 419,
         "w": 872,
         "h": 182
-    },
-    {
-        "id": "ac13f52fe34b4c9e",
-        "type": "group",
-        "z": "15bda437fadfc244",
-        "name": "tpv virtual",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "064bee43bd5dd715",
-            "4eb920821f400cf9",
-            "df82a4b45a03a28d"
-        ],
-        "x": 34,
-        "y": 1479,
-        "w": 492,
-        "h": 82
-    },
-    {
-        "id": "dad97708f46aaad8",
-        "type": "group",
-        "z": "15bda437fadfc244",
-        "name": "for test webhook tpv",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "957926780ec4a3fe",
-            "4399d3450559d2b1",
-            "240c733325a2ed41"
-        ],
-        "x": 34,
-        "y": 1599,
-        "w": 532,
-        "h": 82
     },
     {
         "id": "f0e0241e5242290c",
@@ -3378,7 +3386,7 @@
         "z": "deae6838e7a58a75",
         "g": "07ec0a4c55b9e373",
         "name": "request",
-        "func": "const { lang = 'es' } = msg.req?.query || {};\nconst GOOGLE_MAPS_API_KEY = env.get(\"GOOGLE_MAPS_API_KEY\") || null;\nconst PLACE_ID = env.get(\"PLACE_ID\") || null;\n\nconst sendError = (status, message) => {\n  msg.statusCode = status;\n  msg.payload = {\n    status: 'error',\n    message: message,\n    data: null\n  };\n\n  return [msg, null];\n}\n\nif (!['es', 'en', 'gl'].includes(lang)) {\n  return sendError(400, \"Validation error: Inlavid lang parameter\");\n};\n\nif (!GOOGLE_MAPS_API_KEY || !PLACE_ID) {\n  return sendError(500, \"Server error: Missed the credentials from env\");\n};\n\nmsg.method = 'GET';\n\nconst params = new URLSearchParams({\n  place_id: PLACE_ID,\n  language: lang,\n  key: GOOGLE_MAPS_API_KEY\n}).toString();\n\nmsg.url = `https://maps.googleapis.com/maps/api/place/details/json?fields=name,rating,reviews&${params}`;\n\nreturn [null, msg];",
+        "func": "const { lang = 'es' } = msg.req?.query || {};\nconst GOOGLE_MAPS_API_KEY = env.get(\"GOOGLE_MAPS_API_KEY\") || null;\nconst PLACE_ID = env.get(\"PLACE_ID\") || null;\n\nconst sendError = (status, message) => {\n  msg.statusCode = status;\n  msg.payload = {\n    status: 'error',\n    message: message,\n    data: null\n  };\n\n  return [msg, null];\n}\n\nif (!['es', 'en', 'gl'].includes(lang)) {\n  return sendError(400, \"Validation error: Inlavid lang parameter\");\n};\n\nif (!GOOGLE_MAPS_API_KEY || !PLACE_ID) {\n  return sendError(500, \"Server error: Missed the credentials from env\");\n};\n\nmsg.method = 'GET';\n\nconst params = new URLSearchParams({\n  place_id: PLACE_ID,\n  language: lang,\n  key: GOOGLE_MAPS_API_KEY\n}).toString();\n\nmsg.url = `https://maps.googleapis.com/maps/api/place/details/json?fields=name,rating,reviews,user_ratings_total&${params}`;\n\nreturn [null, msg];",
         "outputs": 2,
         "timeout": "",
         "noerr": 0,
@@ -3402,7 +3410,7 @@
         "z": "deae6838e7a58a75",
         "g": "07ec0a4c55b9e373",
         "name": "google",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4964,68 +4972,6 @@
         ]
     },
     {
-        "id": "http_get_product_by_id",
-        "type": "http in",
-        "z": "554b53c71ea14722",
-        "g": "4e79e7e4e982c657",
-        "name": "",
-        "url": "/api/v1/products/:id",
-        "method": "get",
-        "upload": false,
-        "skipBodyParsing": false,
-        "swaggerDoc": "",
-        "x": 170,
-        "y": 240,
-        "wires": [
-            [
-                "function_validate_product_id"
-            ]
-        ]
-    },
-    {
-        "id": "function_validate_product_id",
-        "type": "function",
-        "z": "554b53c71ea14722",
-        "g": "4e79e7e4e982c657",
-        "name": "validate id",
-        "func": "const id = Number(msg.req?.params?.id);\nconst { lang = 'es' } = msg.req?.query || {};\n\nconst errors = [];\nif (!['es', 'en', 'gl'].includes(lang)) {\n    errors.push({ path: 'lang', message: \"Inlavid lang parameter\" });\n};\n\nif (isNaN(id)) {\n    errors.push({ path: 'id', message: \"Inlavid product id\" });\n};\n\nif (errors.length > 0) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: 'error',\n        message: `Validation error: ${errors.map(err => `${err.message}`).join(', ')}`,\n        data: null\n    };\n\n    return [msg, null];\n};\n\nmsg.productId = id;\nmsg.queryParameters = [id, lang];\nmsg.payload = `\n    SELECT \n        p.id, \n        pt.name, \n        p.slug, \n        pt.description, \n        p.images, \n        pt.allergens, \n        p.available,\n        p.category_id AS \"categoryId\",\n        p.is_posible_gluten_free AS \"isPosibleGlutenFree\",\n        p.is_posible_lactose_free AS \"isPosibleLactoseFree\",\n        p.is_posible_sugar_free AS \"isPosibleSugarFree\",\n        p.is_cake_of_the_month AS \"isCakeOfTheMonth\",\n        p.created_at AS \"createdAt\",\n        COALESCE(\n            json_agg(\n                json_build_object(\n                    'id', pv.id,\n                    'name', pvt.name,\n                    'measures', pv.measures,\n                    'weightGrams', pv.weight_grams,\n                    'price', pv.price,\n                    'sortOrder', pv.sort_order\n                ) ORDER BY pv.sort_order ASC\n            ) FILTER (WHERE pv.id IS NOT NULL),\n            '[]'\n        ) AS variants\n    FROM products p\n    LEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $2\n    LEFT JOIN product_variants pv ON p.id = pv.product_id\n    LEFT JOIN product_variant_translations pvt ON pv.id = pvt.variant_id AND pvt.language_code = $2\n    WHERE p.id = $1 AND p.deleted = FALSE\n    GROUP BY p.id, pt.name, pt.description, pt.allergens\n`;\n\nreturn [null, msg];\n\nmsg.payload = `\nSELECT \n  p.id,\n  p.slug,\n  pt.name,\n  pt.description,\n  pt.allergens,\n  p.images,\n  p.available,\n  p.category_id AS \"categoryId\",\n  p.is_posible_gluten_free AS \"isPosibleGlutenFree\",\n  p.is_posible_lactose_free AS \"isPosibleLactoseFree\",\n  p.is_posible_sugar_free AS \"isPosibleSugarFree\",\n  p.is_cake_of_the_month AS \"isCakeOfTheMonth\",\n  p.created_at AS \"createdAt\",\n  COALESCE(\n      json_agg(\n          json_build_object(\n              'id', pv.id,\n              'name', pvt.name,\n              'measures', pv.measures,\n              'weightGrams', pv.weight_grams,\n              'price', pv.price,\n              'sortOrder', pv.sort_order\n          ) ORDER BY pv.sort_order ASC\n      ) FILTER (WHERE pv.id IS NOT NULL),\n      '[]'\n  ) AS variants\nFROM products p\nLEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $1\nLEFT JOIN product_variants pv ON p.id = pv.product_id\nLEFT JOIN product_variant_translations pvt ON pv.id = pvt.variant_id AND pvt.language_code = $1\nWHERE p.id = $1 AND p.deleted = FALSE\nGROUP BY p.id, pt.name, pt.description, pt.allergens`;",
-        "outputs": 2,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 380,
-        "y": 240,
-        "wires": [
-            [
-                "75f1785c99dd8ee9"
-            ],
-            [
-                "link_call_db_product"
-            ]
-        ]
-    },
-    {
-        "id": "link_call_db_product",
-        "type": "link call",
-        "z": "554b53c71ea14722",
-        "g": "4e79e7e4e982c657",
-        "name": "",
-        "links": [
-            "7d0d97bd91fee1c8"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 540,
-        "y": 260,
-        "wires": [
-            [
-                "a799c959e1398a15"
-            ]
-        ]
-    },
-    {
         "id": "http_post_product",
         "type": "http in",
         "z": "554b53c71ea14722",
@@ -5213,39 +5159,6 @@
         "x": 1070,
         "y": 160,
         "wires": []
-    },
-    {
-        "id": "75f1785c99dd8ee9",
-        "type": "http response",
-        "z": "554b53c71ea14722",
-        "g": "4e79e7e4e982c657",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 850,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "a799c959e1398a15",
-        "type": "function",
-        "z": "554b53c71ea14722",
-        "g": "4e79e7e4e982c657",
-        "name": "format response",
-        "func": "if (!!msg?.error) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: msg.error?.message || 'Database error occurred',\n        data: null\n    };\n\n    return msg;\n}\n\nif (!msg.payload || msg.payload?.length === 0) {\n    msg.statusCode = 404;\n    msg.payload = {\n        status: 'error',\n        message: 'Product not found',\n        data: null\n    };\n\n    return msg;\n}\n\nconst product = msg?.payload?.[0] || {};\n\nmsg.statusCode = 200;\nmsg.payload = {\n    status: 'success',\n    message: null,\n    data: product\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 700,
-        "y": 260,
-        "wires": [
-            [
-                "75f1785c99dd8ee9"
-            ]
-        ]
     },
     {
         "id": "2b159c66dfaecd0d",
@@ -5801,6 +5714,101 @@
         "y": 980,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "function_validate_product_id",
+        "type": "function",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "name": "validate id",
+        "func": "const id = Number(msg.req?.params?.id);\nconst { lang = 'es' } = msg.req?.query || {};\n\nconst errors = [];\nif (!['es', 'en', 'gl'].includes(lang)) {\n    errors.push({ path: 'lang', message: \"Inlavid lang parameter\" });\n};\n\nif (isNaN(id)) {\n    errors.push({ path: 'id', message: \"Inlavid product id\" });\n};\n\nif (errors.length > 0) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: 'error',\n        message: `Validation error: ${errors.map(err => `${err.message}`).join(', ')}`,\n        data: null\n    };\n\n    return [msg, null];\n};\n\nmsg.productId = id;\nmsg.queryParameters = [id, lang];\nmsg.payload = `\n    SELECT \n        p.id, \n        pt.name, \n        p.slug, \n        pt.description, \n        p.images, \n        pt.allergens, \n        p.available,\n        p.category_id AS \"categoryId\",\n        p.is_posible_gluten_free AS \"isPosibleGlutenFree\",\n        p.is_posible_lactose_free AS \"isPosibleLactoseFree\",\n        p.is_posible_sugar_free AS \"isPosibleSugarFree\",\n        p.is_cake_of_the_month AS \"isCakeOfTheMonth\",\n        p.created_at AS \"createdAt\",\n        COALESCE(\n            json_agg(\n                json_build_object(\n                    'id', pv.id,\n                    'name', pvt.name,\n                    'measures', pv.measures,\n                    'weightGrams', pv.weight_grams,\n                    'price', pv.price,\n                    'sortOrder', pv.sort_order\n                ) ORDER BY pv.sort_order ASC\n            ) FILTER (WHERE pv.id IS NOT NULL),\n            '[]'\n        ) AS variants\n    FROM products p\n    LEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $2\n    LEFT JOIN product_variants pv ON p.id = pv.product_id\n    LEFT JOIN product_variant_translations pvt ON pv.id = pvt.variant_id AND pvt.language_code = $2\n    WHERE p.id = $1 AND p.deleted = FALSE\n    GROUP BY p.id, pt.name, pt.description, pt.allergens\n`;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 240,
+        "wires": [
+            [
+                "75f1785c99dd8ee9"
+            ],
+            [
+                "link_call_db_product"
+            ]
+        ]
+    },
+    {
+        "id": "http_get_product_by_id",
+        "type": "http in",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "name": "",
+        "url": "/api/v1/products/:id",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "function_validate_product_id"
+            ]
+        ]
+    },
+    {
+        "id": "75f1785c99dd8ee9",
+        "type": "http response",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 850,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "link_call_db_product",
+        "type": "link call",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 540,
+        "y": 260,
+        "wires": [
+            [
+                "a799c959e1398a15"
+            ]
+        ]
+    },
+    {
+        "id": "a799c959e1398a15",
+        "type": "function",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "name": "format response",
+        "func": "if (!!msg?.error) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: msg.error?.message || 'Database error occurred',\n        data: null\n    };\n\n    return msg;\n}\n\nif (!msg.payload || msg.payload?.length === 0) {\n    msg.statusCode = 404;\n    msg.payload = {\n        status: 'error',\n        message: 'Product not found',\n        data: null\n    };\n\n    return msg;\n}\n\nconst product = msg?.payload?.[0] || {};\n\nmsg.statusCode = 200;\nmsg.payload = {\n    status: 'success',\n    message: null,\n    data: product\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 260,
+        "wires": [
+            [
+                "75f1785c99dd8ee9"
+            ]
         ]
     },
     {
@@ -7929,7 +7937,7 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 1940,
+        "y": 2080,
         "wires": [
             [
                 "41d3fc9ef758ce49"
@@ -7959,7 +7967,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 1940,
+        "y": 2080,
         "wires": [
             [
                 "a5f22e659ab03a0b"
@@ -7978,7 +7986,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 480,
-        "y": 1940,
+        "y": 2080,
         "wires": [
             [
                 "5925df3d3b611f42"
@@ -8000,7 +8008,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 660,
-        "y": 1940,
+        "y": 2080,
         "wires": []
     },
     {
@@ -8017,7 +8025,7 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 1980,
+        "y": 2120,
         "wires": [
             [
                 "59f59f68110e850f"
@@ -8047,7 +8055,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 1980,
+        "y": 2120,
         "wires": [
             [
                 "042d083a3dfe936c"
@@ -8066,7 +8074,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 480,
-        "y": 1980,
+        "y": 2120,
         "wires": [
             [
                 "0716e37d8d15eae3"
@@ -8088,7 +8096,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 660,
-        "y": 1980,
+        "y": 2120,
         "wires": []
     },
     {
@@ -8105,7 +8113,7 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 2020,
+        "y": 2160,
         "wires": [
             [
                 "8b5226ae7d904dd2"
@@ -8135,7 +8143,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 2020,
+        "y": 2160,
         "wires": [
             [
                 "d783ade26a8814e2"
@@ -8154,7 +8162,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 480,
-        "y": 2020,
+        "y": 2160,
         "wires": [
             [
                 "08b123216098118d"
@@ -8176,7 +8184,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 660,
-        "y": 2020,
+        "y": 2160,
         "wires": []
     },
     {
@@ -8193,7 +8201,7 @@
         "finalize": "",
         "libs": [],
         "x": 290,
-        "y": 2080,
+        "y": 2220,
         "wires": [
             [
                 "ce7cee0f6cead3c2"
@@ -8223,7 +8231,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 2080,
+        "y": 2220,
         "wires": [
             [
                 "d866efdd056ecd50"
@@ -8242,7 +8250,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 480,
-        "y": 2080,
+        "y": 2220,
         "wires": [
             [
                 "cfeb9ec8a7783d87"
@@ -8264,7 +8272,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 620,
-        "y": 2080,
+        "y": 2220,
         "wires": []
     },
     {
@@ -8281,7 +8289,7 @@
         "finalize": "",
         "libs": [],
         "x": 290,
-        "y": 2120,
+        "y": 2260,
         "wires": [
             [
                 "28a2375eec9446e2"
@@ -8311,7 +8319,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 2120,
+        "y": 2260,
         "wires": [
             [
                 "4c6c821d6f1afd0c"
@@ -8330,7 +8338,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 480,
-        "y": 2120,
+        "y": 2260,
         "wires": [
             [
                 "e0e0df167bd7685f"
@@ -8352,7 +8360,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 620,
-        "y": 2120,
+        "y": 2260,
         "wires": []
     },
     {
@@ -9165,7 +9173,7 @@
         "finalize": "",
         "libs": [],
         "x": 1080,
-        "y": 1880,
+        "y": 2080,
         "wires": [
             [
                 "050ec7a1567038db"
@@ -9194,7 +9202,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 910,
-        "y": 1880,
+        "y": 2080,
         "wires": [
             [
                 "77b444ea494ee108"
@@ -9212,7 +9220,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1260,
-        "y": 1880,
+        "y": 2080,
         "wires": [
             [
                 "0127bd868586b293"
@@ -9233,7 +9241,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1440,
-        "y": 1880,
+        "y": 2080,
         "wires": []
     },
     {
@@ -9249,7 +9257,7 @@
         "finalize": "",
         "libs": [],
         "x": 1080,
-        "y": 1920,
+        "y": 2120,
         "wires": [
             [
                 "e6362313208d4cdb"
@@ -9278,7 +9286,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 910,
-        "y": 1920,
+        "y": 2120,
         "wires": [
             [
                 "f2e068474d6f555e"
@@ -9296,7 +9304,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1260,
-        "y": 1920,
+        "y": 2120,
         "wires": [
             [
                 "b25ca01ecd4bcd20"
@@ -9317,7 +9325,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1440,
-        "y": 1920,
+        "y": 2120,
         "wires": []
     },
     {
@@ -9333,7 +9341,7 @@
         "finalize": "",
         "libs": [],
         "x": 1080,
-        "y": 1960,
+        "y": 2160,
         "wires": [
             [
                 "3ab022ecc042bbb3"
@@ -9362,7 +9370,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 910,
-        "y": 1960,
+        "y": 2160,
         "wires": [
             [
                 "98439986cc356d13"
@@ -9380,7 +9388,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1260,
-        "y": 1960,
+        "y": 2160,
         "wires": [
             [
                 "68d66023f5e78236"
@@ -9401,7 +9409,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1440,
-        "y": 1960,
+        "y": 2160,
         "wires": []
     },
     {
@@ -9417,7 +9425,7 @@
         "finalize": "",
         "libs": [],
         "x": 1840,
-        "y": 1880,
+        "y": 2080,
         "wires": [
             [
                 "28f8a24c8a09864a"
@@ -9446,7 +9454,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 1670,
-        "y": 1880,
+        "y": 2080,
         "wires": [
             [
                 "dc4c7139e1db1315"
@@ -9464,7 +9472,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 2020,
-        "y": 1880,
+        "y": 2080,
         "wires": [
             [
                 "ed84de9f5d2268d1"
@@ -9485,7 +9493,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2200,
-        "y": 1880,
+        "y": 2080,
         "wires": []
     },
     {
@@ -9501,7 +9509,7 @@
         "finalize": "",
         "libs": [],
         "x": 1840,
-        "y": 1920,
+        "y": 2120,
         "wires": [
             [
                 "61998687f93b7482"
@@ -9530,7 +9538,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 1670,
-        "y": 1920,
+        "y": 2120,
         "wires": [
             [
                 "37b4b9deb078cce1"
@@ -9548,7 +9556,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 2020,
-        "y": 1920,
+        "y": 2120,
         "wires": [
             [
                 "96902cd84749eb2f"
@@ -9569,7 +9577,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2200,
-        "y": 1920,
+        "y": 2120,
         "wires": []
     },
     {
@@ -9585,7 +9593,7 @@
         "finalize": "",
         "libs": [],
         "x": 1840,
-        "y": 1960,
+        "y": 2160,
         "wires": [
             [
                 "c063bced87382ece"
@@ -9614,7 +9622,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 1670,
-        "y": 1960,
+        "y": 2160,
         "wires": [
             [
                 "90f7ce64d8818a1c"
@@ -9632,7 +9640,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 2020,
-        "y": 1960,
+        "y": 2160,
         "wires": [
             [
                 "edbf5ee381a2ca8a"
@@ -9653,7 +9661,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2200,
-        "y": 1960,
+        "y": 2160,
         "wires": []
     },
     {
@@ -9669,7 +9677,7 @@
         "finalize": "",
         "libs": [],
         "x": 1070,
-        "y": 2020,
+        "y": 2220,
         "wires": [
             [
                 "782b944c729e3414"
@@ -9698,7 +9706,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 910,
-        "y": 2020,
+        "y": 2220,
         "wires": [
             [
                 "ef79f2cbeed274ea"
@@ -9716,7 +9724,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1260,
-        "y": 2020,
+        "y": 2220,
         "wires": [
             [
                 "f2d7cddbedacf5d8"
@@ -9737,7 +9745,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1400,
-        "y": 2020,
+        "y": 2220,
         "wires": []
     },
     {
@@ -9753,7 +9761,7 @@
         "finalize": "",
         "libs": [],
         "x": 1070,
-        "y": 2060,
+        "y": 2260,
         "wires": [
             [
                 "9ada52dc4c7955d2"
@@ -9782,7 +9790,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 910,
-        "y": 2060,
+        "y": 2260,
         "wires": [
             [
                 "98466dcb6942c885"
@@ -9800,7 +9808,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1260,
-        "y": 2060,
+        "y": 2260,
         "wires": [
             [
                 "47084ed3cfa94bc0"
@@ -9821,7 +9829,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1400,
-        "y": 2060,
+        "y": 2260,
         "wires": []
     },
     {
@@ -9837,7 +9845,7 @@
         "finalize": "",
         "libs": [],
         "x": 1830,
-        "y": 2020,
+        "y": 2220,
         "wires": [
             [
                 "81cb0433b033f693"
@@ -9866,7 +9874,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 1670,
-        "y": 2020,
+        "y": 2220,
         "wires": [
             [
                 "5bb0bdc2264487e7"
@@ -9884,7 +9892,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 2020,
-        "y": 2020,
+        "y": 2220,
         "wires": [
             [
                 "879f2dbfc9a5eb6b"
@@ -9905,7 +9913,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2160,
-        "y": 2020,
+        "y": 2220,
         "wires": []
     },
     {
@@ -9921,7 +9929,7 @@
         "finalize": "",
         "libs": [],
         "x": 1830,
-        "y": 2060,
+        "y": 2260,
         "wires": [
             [
                 "7db9c172f3dcb86b"
@@ -9950,7 +9958,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 1670,
-        "y": 2060,
+        "y": 2260,
         "wires": [
             [
                 "c40502ec6c7ba3f9"
@@ -9968,7 +9976,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 2020,
-        "y": 2060,
+        "y": 2260,
         "wires": [
             [
                 "62a655b51b1f446b"
@@ -9989,7 +9997,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2160,
-        "y": 2060,
+        "y": 2260,
         "wires": []
     },
     {
@@ -10015,7 +10023,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 140,
-        "y": 2180,
+        "y": 2320,
         "wires": [
             [
                 "3a48b16e73468e17"
@@ -10036,7 +10044,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 2180,
+        "y": 2320,
         "wires": [
             [
                 "b843fbfd3cdc9e64"
@@ -10055,7 +10063,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 540,
-        "y": 2180,
+        "y": 2320,
         "wires": [
             [
                 "ee34e3a042148923"
@@ -10077,7 +10085,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 680,
-        "y": 2180,
+        "y": 2320,
         "wires": []
     },
     {
@@ -10269,7 +10277,7 @@
         "finalize": "",
         "libs": [],
         "x": 2600,
-        "y": 1880,
+        "y": 2080,
         "wires": [
             [
                 "331656264e20de7f"
@@ -10298,7 +10306,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 2430,
-        "y": 1880,
+        "y": 2080,
         "wires": [
             [
                 "d1853e01de5f8d5c"
@@ -10316,7 +10324,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 2780,
-        "y": 1880,
+        "y": 2080,
         "wires": [
             [
                 "7b5a1f54a87c441c"
@@ -10337,7 +10345,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2960,
-        "y": 1880,
+        "y": 2080,
         "wires": []
     },
     {
@@ -10353,7 +10361,7 @@
         "finalize": "",
         "libs": [],
         "x": 2600,
-        "y": 1920,
+        "y": 2120,
         "wires": [
             [
                 "0bf6688305abf70c"
@@ -10382,7 +10390,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 2430,
-        "y": 1920,
+        "y": 2120,
         "wires": [
             [
                 "9d01375b59cef24f"
@@ -10400,7 +10408,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 2780,
-        "y": 1920,
+        "y": 2120,
         "wires": [
             [
                 "3610a0d42f2a14aa"
@@ -10421,7 +10429,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2960,
-        "y": 1920,
+        "y": 2120,
         "wires": []
     },
     {
@@ -10437,7 +10445,7 @@
         "finalize": "",
         "libs": [],
         "x": 2600,
-        "y": 1960,
+        "y": 2160,
         "wires": [
             [
                 "3b26f1ecac9e6316"
@@ -10466,7 +10474,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 2430,
-        "y": 1960,
+        "y": 2160,
         "wires": [
             [
                 "3fbbd8d478e2d8d1"
@@ -10484,7 +10492,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 2780,
-        "y": 1960,
+        "y": 2160,
         "wires": [
             [
                 "6be9c632c87a68e1"
@@ -10505,7 +10513,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2960,
-        "y": 1960,
+        "y": 2160,
         "wires": []
     },
     {
@@ -10521,7 +10529,7 @@
         "finalize": "",
         "libs": [],
         "x": 3380,
-        "y": 1880,
+        "y": 2080,
         "wires": [
             [
                 "55ea2f52a0fd5d2e"
@@ -10550,7 +10558,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 3210,
-        "y": 1880,
+        "y": 2080,
         "wires": [
             [
                 "b9d274d2e6517ade"
@@ -10568,7 +10576,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 3560,
-        "y": 1880,
+        "y": 2080,
         "wires": [
             [
                 "d66f2e6f13abaa05"
@@ -10589,7 +10597,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 3740,
-        "y": 1880,
+        "y": 2080,
         "wires": []
     },
     {
@@ -10605,7 +10613,7 @@
         "finalize": "",
         "libs": [],
         "x": 3380,
-        "y": 1920,
+        "y": 2120,
         "wires": [
             [
                 "6f2845d629f5c12c"
@@ -10634,7 +10642,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 3210,
-        "y": 1920,
+        "y": 2120,
         "wires": [
             [
                 "6ab35d04111d9c06"
@@ -10652,7 +10660,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 3560,
-        "y": 1920,
+        "y": 2120,
         "wires": [
             [
                 "5b9ca73bdbd31610"
@@ -10673,7 +10681,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 3740,
-        "y": 1920,
+        "y": 2120,
         "wires": []
     },
     {
@@ -10689,7 +10697,7 @@
         "finalize": "",
         "libs": [],
         "x": 3380,
-        "y": 1960,
+        "y": 2160,
         "wires": [
             [
                 "ae00abb0246a6666"
@@ -10718,7 +10726,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 3210,
-        "y": 1960,
+        "y": 2160,
         "wires": [
             [
                 "5b38dbef332b74fe"
@@ -10736,7 +10744,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 3560,
-        "y": 1960,
+        "y": 2160,
         "wires": [
             [
                 "506588779d36052f"
@@ -10757,7 +10765,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 3740,
-        "y": 1960,
+        "y": 2160,
         "wires": []
     },
     {
@@ -10773,7 +10781,7 @@
         "finalize": "",
         "libs": [],
         "x": 2590,
-        "y": 2020,
+        "y": 2220,
         "wires": [
             [
                 "67bd70ded0030d96"
@@ -10802,7 +10810,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 2430,
-        "y": 2020,
+        "y": 2220,
         "wires": [
             [
                 "6d0ebfb802cc6a78"
@@ -10820,7 +10828,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 2780,
-        "y": 2020,
+        "y": 2220,
         "wires": [
             [
                 "e4d9e0728d3ce3f4"
@@ -10841,7 +10849,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2920,
-        "y": 2020,
+        "y": 2220,
         "wires": []
     },
     {
@@ -10857,7 +10865,7 @@
         "finalize": "",
         "libs": [],
         "x": 2590,
-        "y": 2060,
+        "y": 2260,
         "wires": [
             [
                 "7bb6850ccbcdd3f1"
@@ -10886,7 +10894,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 2430,
-        "y": 2060,
+        "y": 2260,
         "wires": [
             [
                 "66f8f87ed3dc63e0"
@@ -10904,7 +10912,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 2780,
-        "y": 2060,
+        "y": 2260,
         "wires": [
             [
                 "3c06883d5134b339"
@@ -10925,7 +10933,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2920,
-        "y": 2060,
+        "y": 2260,
         "wires": []
     },
     {
@@ -10941,7 +10949,7 @@
         "finalize": "",
         "libs": [],
         "x": 3370,
-        "y": 2020,
+        "y": 2220,
         "wires": [
             [
                 "25b3fc0e20f1de0f"
@@ -10970,7 +10978,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 3210,
-        "y": 2020,
+        "y": 2220,
         "wires": [
             [
                 "6443c71898964c2c"
@@ -10988,7 +10996,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 3560,
-        "y": 2020,
+        "y": 2220,
         "wires": [
             [
                 "a53165a1f00a71b4"
@@ -11009,7 +11017,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 3700,
-        "y": 2020,
+        "y": 2220,
         "wires": []
     },
     {
@@ -11025,7 +11033,7 @@
         "finalize": "",
         "libs": [],
         "x": 3370,
-        "y": 2060,
+        "y": 2260,
         "wires": [
             [
                 "86b0f9ec9fce9cf3"
@@ -11054,7 +11062,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 3210,
-        "y": 2060,
+        "y": 2260,
         "wires": [
             [
                 "fe3c11f647376fc3"
@@ -11072,7 +11080,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 3560,
-        "y": 2060,
+        "y": 2260,
         "wires": [
             [
                 "d72c9c540999f23f"
@@ -11093,7 +11101,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 3700,
-        "y": 2060,
+        "y": 2260,
         "wires": []
     },
     {
@@ -11119,7 +11127,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 920,
-        "y": 2180,
+        "y": 2320,
         "wires": [
             [
                 "d002c4fbf80aa5d0"
@@ -11140,7 +11148,7 @@
         "finalize": "",
         "libs": [],
         "x": 1120,
-        "y": 2180,
+        "y": 2320,
         "wires": [
             [
                 "92dc020174f80be0"
@@ -11159,7 +11167,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1320,
-        "y": 2180,
+        "y": 2320,
         "wires": [
             [
                 "ab4e4ffb567b7068"
@@ -11181,7 +11189,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1460,
-        "y": 2180,
+        "y": 2320,
         "wires": []
     },
     {
@@ -11295,7 +11303,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 150,
-        "y": 2360,
+        "y": 2700,
         "wires": [
             [
                 "ba073bbdee229eb1"
@@ -11316,7 +11324,7 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 2360,
+        "y": 2700,
         "wires": [
             [
                 "f2c637f51f6f8ce2"
@@ -11335,7 +11343,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 440,
-        "y": 2360,
+        "y": 2700,
         "wires": [
             [
                 "4a8ab29dbc4e1f21"
@@ -11357,7 +11365,599 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 580,
-        "y": 2360,
+        "y": 2700,
+        "wires": []
+    },
+    {
+        "id": "66e254f9859392f3",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "func": "const category_id = 1;\nconst images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1770379777/tarta_rafaello_l6pqjz.png\"]\nconst slug = 'raffaello';\n\nmsg.queryParameters = [slug, images, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, images, category_id, is_posible_sugar_free, deleted, is_cake_of_the_month)\n    VALUES ($1, $2, $3, false, true, true)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1880,
+        "wires": [
+            [
+                "04e7acca1bbe8f9b"
+            ]
+        ]
+    },
+    {
+        "id": "63d88a6818a69f64",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 810,
+        "y": 1880,
+        "wires": [
+            [
+                "66e254f9859392f3"
+            ]
+        ]
+    },
+    {
+        "id": "04e7acca1bbe8f9b",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1160,
+        "y": 1880,
+        "wires": [
+            [
+                "8be6e560f01ff1ac"
+            ]
+        ]
+    },
+    {
+        "id": "8be6e560f01ff1ac",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "264bc2359aa7e56a",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 6;\nconst language_code = 'en';\nconst name = 'Creamy raffaello cheesecake';\nconst description = 'Our creamy Raffaello cheesecake offers a perfect balance of softness and delicacy. Made with coconut and white chocolate, it combines a silky texture with a smooth, sweet flavor that melts in your mouth.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4140,
+        "y": 2080,
+        "wires": [
+            [
+                "4099b12d68a316af"
+            ]
+        ]
+    },
+    {
+        "id": "3c49c8daec6c1157",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3970,
+        "y": 2080,
+        "wires": [
+            [
+                "264bc2359aa7e56a"
+            ]
+        ]
+    },
+    {
+        "id": "4099b12d68a316af",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 4320,
+        "y": 2080,
+        "wires": [
+            [
+                "5d70166a35ad27c9"
+            ]
+        ]
+    },
+    {
+        "id": "5d70166a35ad27c9",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 4500,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "595d8b8e7b155e81",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 6;\nconst language_code = 'es';\nconst name = 'Cremosa de raffaello';\nconst description = 'Nuestra cremosa tarta de Raffaello ofrece un equilibrio perfecto entre suavidad y delicadeza. Elaborada con coco y chocolate blanco, combina una textura sedosa con un sabor dulce y envolvente que se funde en el paladar.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4140,
+        "y": 2120,
+        "wires": [
+            [
+                "72b95656a74ed27e"
+            ]
+        ]
+    },
+    {
+        "id": "3fcbfa59bda077bb",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3970,
+        "y": 2120,
+        "wires": [
+            [
+                "595d8b8e7b155e81"
+            ]
+        ]
+    },
+    {
+        "id": "72b95656a74ed27e",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 4320,
+        "y": 2120,
+        "wires": [
+            [
+                "435f7298d3d42e3a"
+            ]
+        ]
+    },
+    {
+        "id": "435f7298d3d42e3a",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 4500,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "dcdedec53e57567d",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 6;\nconst language_code = 'gl';\nconst name = 'Cremosa de raffaello';\nconst description = 'A nosa cremosa tarta de Raffaello ofrece un equilibrio perfecto entre suavidade e delicadeza. Elaborada con coco e chocolate branco, combina unha textura sedosa cun sabor doce e envolvente que se desfán na boca.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4140,
+        "y": 2160,
+        "wires": [
+            [
+                "b1d243860b1a2158"
+            ]
+        ]
+    },
+    {
+        "id": "5d98c5146e3669d6",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3970,
+        "y": 2160,
+        "wires": [
+            [
+                "dcdedec53e57567d"
+            ]
+        ]
+    },
+    {
+        "id": "b1d243860b1a2158",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 4320,
+        "y": 2160,
+        "wires": [
+            [
+                "13de2bd133806038"
+            ]
+        ]
+    },
+    {
+        "id": "13de2bd133806038",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 4500,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "b660394efc2f906d",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 6;\nconst sort_order = 1;\nconst price = 5.50;\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4130,
+        "y": 2220,
+        "wires": [
+            [
+                "2a634a3ee280caa8"
+            ]
+        ]
+    },
+    {
+        "id": "481d9fd28b53dec8",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3970,
+        "y": 2220,
+        "wires": [
+            [
+                "b660394efc2f906d"
+            ]
+        ]
+    },
+    {
+        "id": "2a634a3ee280caa8",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 4320,
+        "y": 2220,
+        "wires": [
+            [
+                "c93b11009b3b9a5d"
+            ]
+        ]
+    },
+    {
+        "id": "c93b11009b3b9a5d",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 4460,
+        "y": 2220,
+        "wires": []
+    },
+    {
+        "id": "36f0219dde9450bd",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 6;\nconst sort_order = 2;\nconst price = 13; \n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4130,
+        "y": 2260,
+        "wires": [
+            [
+                "175ffbe68bf3e8f1"
+            ]
+        ]
+    },
+    {
+        "id": "385603bfe2ac7917",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3970,
+        "y": 2260,
+        "wires": [
+            [
+                "36f0219dde9450bd"
+            ]
+        ]
+    },
+    {
+        "id": "175ffbe68bf3e8f1",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 4320,
+        "y": 2260,
+        "wires": [
+            [
+                "da8f5c4a4d0606b4"
+            ]
+        ]
+    },
+    {
+        "id": "da8f5c4a4d0606b4",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 4460,
+        "y": 2260,
+        "wires": []
+    },
+    {
+        "id": "c24e66c31943bbd4",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variant_translations",
+        "func": "msg.payload = `\nINSERT INTO product_variant_translations (variant_id, language_code, name) VALUES\n(11, 'es', 'Pequeña (1 persona)'),\n(12, 'es', 'Mediana (2 personas)'),\n\n(11, 'gl', 'Pequena (1 persoa)'),\n(12, 'gl', 'Mediana (2 persoas)'),\n\n(11, 'en', 'Small (1 person)'),\n(12, 'en', 'Medium (2 people)')\n;`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1880,
+        "y": 2320,
+        "wires": [
+            [
+                "02d54caf94fc3ca0"
+            ]
+        ]
+    },
+    {
+        "id": "55ed30c8caa85b67",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1680,
+        "y": 2320,
+        "wires": [
+            [
+                "c24e66c31943bbd4"
+            ]
+        ]
+    },
+    {
+        "id": "02d54caf94fc3ca0",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2080,
+        "y": 2320,
+        "wires": [
+            [
+                "d3bac7d7e1881886"
+            ]
+        ]
+    },
+    {
+        "id": "d3bac7d7e1881886",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2220,
+        "y": 2320,
         "wires": []
     },
     {
@@ -15685,7 +16285,7 @@
         "z": "15bda437fadfc244",
         "g": "a7fcb7e5f44830b9",
         "name": "products",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -15720,7 +16320,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 140,
-        "y": 1520,
+        "y": 1580,
         "wires": [
             [
                 "4eb920821f400cf9"
@@ -15741,7 +16341,7 @@
         "finalize": "",
         "libs": [],
         "x": 280,
-        "y": 1520,
+        "y": 1580,
         "wires": [
             [
                 "df82a4b45a03a28d"
@@ -15763,7 +16363,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 420,
-        "y": 1520,
+        "y": 1580,
         "wires": []
     },
     {
@@ -15780,7 +16380,7 @@
         "finalize": "",
         "libs": [],
         "x": 280,
-        "y": 1640,
+        "y": 1680,
         "wires": [
             [
                 "240c733325a2ed41"
@@ -15810,7 +16410,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 140,
-        "y": 1640,
+        "y": 1680,
         "wires": [
             [
                 "957926780ec4a3fe"
@@ -15832,7 +16432,95 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 440,
-        "y": 1640,
+        "y": 1680,
         "wires": []
+    },
+    {
+        "id": "94db6e57f359c696",
+        "type": "function",
+        "z": "15bda437fadfc244",
+        "g": "a7fcb7e5f44830b9",
+        "name": "product",
+        "func": "const id = 6;\nconst lang = 'en';\n\nmsg.queryParameters = [id, lang];\nmsg.payload = `\n    SELECT \n        p.id, \n        pt.name, \n        p.slug, \n        pt.description, \n        p.images, \n        pt.allergens, \n        p.available,\n        p.category_id AS \"categoryId\",\n        p.is_posible_gluten_free AS \"isPosibleGlutenFree\",\n        p.is_posible_lactose_free AS \"isPosibleLactoseFree\",\n        p.is_posible_sugar_free AS \"isPosibleSugarFree\",\n        p.is_cake_of_the_month AS \"isCakeOfTheMonth\",\n        p.created_at AS \"createdAt\",\n        COALESCE(\n            json_agg(\n                json_build_object(\n                    'id', pv.id,\n                    'name', pvt.name,\n                    'measures', pv.measures,\n                    'weightGrams', pv.weight_grams,\n                    'price', pv.price,\n                    'sortOrder', pv.sort_order\n                ) ORDER BY pv.sort_order ASC\n            ) FILTER (WHERE pv.id IS NOT NULL),\n            '[]'\n        ) AS variants\n    FROM products p\n    LEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $2\n    LEFT JOIN product_variants pv ON p.id = pv.product_id\n    LEFT JOIN product_variant_translations pvt ON pv.id = pvt.variant_id AND pvt.language_code = $2\n    WHERE p.id = $1\n    GROUP BY p.id, pt.name, pt.description, pt.allergens\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 1460,
+        "wires": [
+            [
+                "7270e1d1c124e2bf"
+            ]
+        ]
+    },
+    {
+        "id": "78f67bb99a8cc526",
+        "type": "inject",
+        "z": "15bda437fadfc244",
+        "g": "a7fcb7e5f44830b9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1460,
+        "wires": [
+            [
+                "94db6e57f359c696"
+            ]
+        ]
+    },
+    {
+        "id": "7270e1d1c124e2bf",
+        "type": "debug",
+        "z": "15bda437fadfc244",
+        "g": "a7fcb7e5f44830b9",
+        "name": "product",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "35ece4446ad1dba9",
+        "type": "link call",
+        "z": "15bda437fadfc244",
+        "g": "a7fcb7e5f44830b9",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 450,
+        "y": 1460,
+        "wires": [
+            [
+                "7270e1d1c124e2bf"
+            ]
+        ]
     }
 ]
