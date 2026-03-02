@@ -596,7 +596,11 @@
             "66e254f9859392f3",
             "63d88a6818a69f64",
             "04e7acca1bbe8f9b",
-            "8be6e560f01ff1ac"
+            "8be6e560f01ff1ac",
+            "8af80b6608e309f7",
+            "3071df9cbe8d5380",
+            "0f8510046625a38f",
+            "c85bec3b89eba1ac"
         ],
         "x": 34,
         "y": 1539,
@@ -3410,7 +3414,7 @@
         "z": "deae6838e7a58a75",
         "g": "07ec0a4c55b9e373",
         "name": "google",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11957,6 +11961,598 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2220,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "8af80b6608e309f7",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "func": "const category_id = 1;\nconst images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1772490135/tarta-platano_c6lbf3.png\"]\nconst slug = 'platano';\n\nmsg.queryParameters = [slug, images, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, images, category_id, is_posible_sugar_free, is_cake_of_the_month, deleted)\n    VALUES ($1, $2, $3, false, true, true)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 1940,
+        "wires": [
+            [
+                "0f8510046625a38f"
+            ]
+        ]
+    },
+    {
+        "id": "3071df9cbe8d5380",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1940,
+        "wires": [
+            [
+                "8af80b6608e309f7"
+            ]
+        ]
+    },
+    {
+        "id": "0f8510046625a38f",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 1940,
+        "wires": [
+            [
+                "c85bec3b89eba1ac"
+            ]
+        ]
+    },
+    {
+        "id": "c85bec3b89eba1ac",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 1940,
+        "wires": []
+    },
+    {
+        "id": "bf0eca610bb0f87d",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 7;\nconst language_code = 'en';\nconst name = 'Creamy Banana from the Canary Islands';\nconst description = 'Our creamy banana cheesecake from the Canary Islands combines the natural sweetness of ripe banana with a smooth, silky texture that melts in your mouth. An authentic and enveloping flavor for lovers of fruity desserts.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4920,
+        "y": 2080,
+        "wires": [
+            [
+                "4bc450d80ae3d1a7"
+            ]
+        ]
+    },
+    {
+        "id": "8ee73ebb9fe86eda",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 4750,
+        "y": 2080,
+        "wires": [
+            [
+                "bf0eca610bb0f87d"
+            ]
+        ]
+    },
+    {
+        "id": "4bc450d80ae3d1a7",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 5100,
+        "y": 2080,
+        "wires": [
+            [
+                "30631c01f1c2ce2b"
+            ]
+        ]
+    },
+    {
+        "id": "30631c01f1c2ce2b",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 5280,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "a78e7a078d9b4978",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 7;\nconst language_code = 'es';\nconst name = 'Cremosa de platano de Canarias';\nconst description = 'Nuestra cremosa tarta de plátano de Canarias combina la dulzura natural del plátano maduro con una textura suave y sedosa que se funde en el paladar. Un sabor auténtico y envolvente para los amantes de los postres afrutados.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4920,
+        "y": 2120,
+        "wires": [
+            [
+                "7f1f84101388ba42"
+            ]
+        ]
+    },
+    {
+        "id": "05a05d85ec98ee99",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 4750,
+        "y": 2120,
+        "wires": [
+            [
+                "a78e7a078d9b4978"
+            ]
+        ]
+    },
+    {
+        "id": "7f1f84101388ba42",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 5100,
+        "y": 2120,
+        "wires": [
+            [
+                "f078680c7fca81b7"
+            ]
+        ]
+    },
+    {
+        "id": "f078680c7fca81b7",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 5280,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "5fe658e2f03db435",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 7;\nconst language_code = 'gl';\nconst name = 'Cremosa de plátano de Canarias';\nconst description = 'A nosa cremosa tarta de plátano de Canarias combina a dozura natural do plátano maduro cunha textura suave e sedosa que se funde no padal. Un sabor auténtico e envolvente para os amantes das sobremesas afroitadas.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4920,
+        "y": 2160,
+        "wires": [
+            [
+                "7ac060f59ac5f24d"
+            ]
+        ]
+    },
+    {
+        "id": "03537908d39114b7",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 4750,
+        "y": 2160,
+        "wires": [
+            [
+                "5fe658e2f03db435"
+            ]
+        ]
+    },
+    {
+        "id": "7ac060f59ac5f24d",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 5100,
+        "y": 2160,
+        "wires": [
+            [
+                "34f622654cd63076"
+            ]
+        ]
+    },
+    {
+        "id": "34f622654cd63076",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 5280,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "9f64da9f44c8332e",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 7;\nconst sort_order = 1;\nconst price = 5.50;\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4910,
+        "y": 2220,
+        "wires": [
+            [
+                "331886d94c3e2c3a"
+            ]
+        ]
+    },
+    {
+        "id": "8ad3ad260e6c9ced",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 4750,
+        "y": 2220,
+        "wires": [
+            [
+                "9f64da9f44c8332e"
+            ]
+        ]
+    },
+    {
+        "id": "331886d94c3e2c3a",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 5100,
+        "y": 2220,
+        "wires": [
+            [
+                "0acdfb230527e649"
+            ]
+        ]
+    },
+    {
+        "id": "0acdfb230527e649",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 5240,
+        "y": 2220,
+        "wires": []
+    },
+    {
+        "id": "e97bd95a7284d2bc",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 7;\nconst sort_order = 2;\nconst price = 13; \n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4910,
+        "y": 2260,
+        "wires": [
+            [
+                "1038ad6f99d058f3"
+            ]
+        ]
+    },
+    {
+        "id": "7547ea877bc96102",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 4750,
+        "y": 2260,
+        "wires": [
+            [
+                "e97bd95a7284d2bc"
+            ]
+        ]
+    },
+    {
+        "id": "1038ad6f99d058f3",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 5100,
+        "y": 2260,
+        "wires": [
+            [
+                "82ac9e68a09f4db9"
+            ]
+        ]
+    },
+    {
+        "id": "82ac9e68a09f4db9",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 5240,
+        "y": 2260,
+        "wires": []
+    },
+    {
+        "id": "35fe7faf2c48f355",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variant_translations",
+        "func": "msg.payload = `\nINSERT INTO product_variant_translations (variant_id, language_code, name) VALUES\n(13, 'es', 'Pequeña (1 persona)'),\n(14, 'es', 'Mediana (2 personas)'),\n\n(13, 'gl', 'Pequena (1 persoa)'),\n(14, 'gl', 'Mediana (2 persoas)'),\n\n(13, 'en', 'Small (1 person)'),\n(14, 'en', 'Medium (2 people)')\n;`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2640,
+        "y": 2320,
+        "wires": [
+            [
+                "2580d9d4d654e750"
+            ]
+        ]
+    },
+    {
+        "id": "2f592bf7738a3cef",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2440,
+        "y": 2320,
+        "wires": [
+            [
+                "35fe7faf2c48f355"
+            ]
+        ]
+    },
+    {
+        "id": "2580d9d4d654e750",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2840,
+        "y": 2320,
+        "wires": [
+            [
+                "134e3d4e6a6ca5b6"
+            ]
+        ]
+    },
+    {
+        "id": "134e3d4e6a6ca5b6",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2980,
         "y": 2320,
         "wires": []
     },
