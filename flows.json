@@ -600,7 +600,11 @@
             "8af80b6608e309f7",
             "3071df9cbe8d5380",
             "0f8510046625a38f",
-            "c85bec3b89eba1ac"
+            "c85bec3b89eba1ac",
+            "41a8a454b5da08c2",
+            "e52d93e1de01c01c",
+            "40b9806819466d67",
+            "a0d70af00dd12d6a"
         ],
         "x": 34,
         "y": 1539,
@@ -12553,6 +12557,598 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2980,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "41a8a454b5da08c2",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "func": "const category_id = 1;\n// const images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1772490135/tarta-platano_c6lbf3.png\"]\nconst slug = 'dinosaurus';\n\nmsg.queryParameters = [slug, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, category_id, is_posible_sugar_free, is_cake_of_the_month, deleted, is_posible_gluten_free)\n    VALUES ($1, $2, false, true, true, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1940,
+        "wires": [
+            [
+                "40b9806819466d67"
+            ]
+        ]
+    },
+    {
+        "id": "e52d93e1de01c01c",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 810,
+        "y": 1940,
+        "wires": [
+            [
+                "41a8a454b5da08c2"
+            ]
+        ]
+    },
+    {
+        "id": "40b9806819466d67",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1160,
+        "y": 1940,
+        "wires": [
+            [
+                "a0d70af00dd12d6a"
+            ]
+        ]
+    },
+    {
+        "id": "a0d70af00dd12d6a",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 1940,
+        "wires": []
+    },
+    {
+        "id": "f8d8854a12d3b5e8",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 8;\nconst language_code = 'en';\nconst name = 'Creamy dinosaurus cookie cheesecake';\nconst description = 'Our creamy dinosaurus cookie cheesecake takes you back to childhood snack times, when those iconic dinosaur cookies were the best part of the day. With a smooth, silky texture that melts in your mouth, every bite is a nostalgic and playful experience full of sweetness and joy.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 5680,
+        "y": 2080,
+        "wires": [
+            [
+                "be51f564a1f35809"
+            ]
+        ]
+    },
+    {
+        "id": "9ab905f65cdbb696",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 5510,
+        "y": 2080,
+        "wires": [
+            [
+                "f8d8854a12d3b5e8"
+            ]
+        ]
+    },
+    {
+        "id": "be51f564a1f35809",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 5860,
+        "y": 2080,
+        "wires": [
+            [
+                "11362fca0a9a51da"
+            ]
+        ]
+    },
+    {
+        "id": "11362fca0a9a51da",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 6040,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "03e09450792b8377",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 8;\nconst language_code = 'es';\nconst name = 'Cremosa de galleta dinosaurus';\nconst description = 'Nuestra cremosa de galleta dinosaurus te transporta a los momentos de meriendas de la infancia, donde esas icónicas galletas de dinosaurio eran lo mejor del día. Con una textura suave y sedosa que se deshace en la boca, cada bocado es una experiencia nostálgica y divertida llena de dulzura y alegría.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 5680,
+        "y": 2120,
+        "wires": [
+            [
+                "36ba1b286a7d130e"
+            ]
+        ]
+    },
+    {
+        "id": "54cf0442a52cf13a",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 5510,
+        "y": 2120,
+        "wires": [
+            [
+                "03e09450792b8377"
+            ]
+        ]
+    },
+    {
+        "id": "36ba1b286a7d130e",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 5860,
+        "y": 2120,
+        "wires": [
+            [
+                "f91a0a8ea1d8bfd0"
+            ]
+        ]
+    },
+    {
+        "id": "f91a0a8ea1d8bfd0",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 6040,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "9e769c4bdef5220f",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 8;\nconst language_code = 'gl';\nconst name = 'Cremosa de galleta dinosaurus';\nconst description = 'A nosa cremosa de galleta dinosaurus lévate aos momentos das merendas da infancia, cando esas icónicas galletas de dinosauro eran o mellor do día. Cunha textura suave e sedosa que se desfai na boca, cada bocado é unha experiencia nostálxica e divertida chea de dozura e alegría.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 5680,
+        "y": 2160,
+        "wires": [
+            [
+                "a34b4b0a4287d676"
+            ]
+        ]
+    },
+    {
+        "id": "c02558139403a385",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 5510,
+        "y": 2160,
+        "wires": [
+            [
+                "9e769c4bdef5220f"
+            ]
+        ]
+    },
+    {
+        "id": "a34b4b0a4287d676",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 5860,
+        "y": 2160,
+        "wires": [
+            [
+                "32338d2cab5d2d95"
+            ]
+        ]
+    },
+    {
+        "id": "32338d2cab5d2d95",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 6040,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "eade361bb7180a1b",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 8;\nconst sort_order = 1;\nconst price = 5.50;\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 5670,
+        "y": 2220,
+        "wires": [
+            [
+                "5d55a6db772a4880"
+            ]
+        ]
+    },
+    {
+        "id": "12dc7ea366c7bfab",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 5510,
+        "y": 2220,
+        "wires": [
+            [
+                "eade361bb7180a1b"
+            ]
+        ]
+    },
+    {
+        "id": "5d55a6db772a4880",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 5860,
+        "y": 2220,
+        "wires": [
+            [
+                "2e5fa13924b726ab"
+            ]
+        ]
+    },
+    {
+        "id": "2e5fa13924b726ab",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 6000,
+        "y": 2220,
+        "wires": []
+    },
+    {
+        "id": "9b339e9cbaf3ff11",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 8;\nconst sort_order = 2;\nconst price = 13; \n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 5670,
+        "y": 2260,
+        "wires": [
+            [
+                "44e14f2a08a1d22a"
+            ]
+        ]
+    },
+    {
+        "id": "376358f156c06161",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 5510,
+        "y": 2260,
+        "wires": [
+            [
+                "9b339e9cbaf3ff11"
+            ]
+        ]
+    },
+    {
+        "id": "44e14f2a08a1d22a",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 5860,
+        "y": 2260,
+        "wires": [
+            [
+                "262ddc97a2c2a6b2"
+            ]
+        ]
+    },
+    {
+        "id": "262ddc97a2c2a6b2",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 6000,
+        "y": 2260,
+        "wires": []
+    },
+    {
+        "id": "9f1332213e47a7a5",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variant_translations",
+        "func": "msg.payload = `\nINSERT INTO product_variant_translations (variant_id, language_code, name) VALUES\n(15, 'es', 'Pequeña (1 persona)'),\n(16, 'es', 'Mediana (2 personas)'),\n\n(15, 'gl', 'Pequena (1 persoa)'),\n(16, 'gl', 'Mediana (2 persoas)'),\n\n(15, 'en', 'Small (1 person)'),\n(16, 'en', 'Medium (2 people)')\n;`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3420,
+        "y": 2320,
+        "wires": [
+            [
+                "11a4d23b4bdc3489"
+            ]
+        ]
+    },
+    {
+        "id": "5b590b1baec44761",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3220,
+        "y": 2320,
+        "wires": [
+            [
+                "9f1332213e47a7a5"
+            ]
+        ]
+    },
+    {
+        "id": "11a4d23b4bdc3489",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 3620,
+        "y": 2320,
+        "wires": [
+            [
+                "9e59a67977e22edd"
+            ]
+        ]
+    },
+    {
+        "id": "9e59a67977e22edd",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3760,
         "y": 2320,
         "wires": []
     },
