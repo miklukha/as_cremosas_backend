@@ -2997,7 +2997,7 @@
         "name": "09:00 (madrid) except sunday",
         "props": [],
         "repeat": "",
-        "crontab": "00 08 * * 1,2,3,4,5,6",
+        "crontab": "00 09 * * 1,2,3,4,5,6",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
@@ -3160,10 +3160,10 @@
         "type": "inject",
         "z": "d6966d87889a164a",
         "g": "2ffdb4c723e8e6a0",
-        "name": "01:10 (madrid) except sunday",
+        "name": "00:10 (madrid) except saturday",
         "props": [],
         "repeat": "",
-        "crontab": "10 00 * * 1,2,3,4,5,6",
+        "crontab": "10 00 * * 1,2,3,4,5,0",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
@@ -3418,7 +3418,7 @@
         "z": "deae6838e7a58a75",
         "g": "07ec0a4c55b9e373",
         "name": "google",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3494,7 +3494,8 @@
         "y": 100,
         "wires": [
             [
-                "0ac4224343c14b17"
+                "0ac4224343c14b17",
+                "752da01ccd3ea624"
             ]
         ]
     },
@@ -3615,6 +3616,23 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "752da01ccd3ea624",
+        "type": "debug",
+        "z": "deae6838e7a58a75",
+        "name": "google",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "58297001323457f1",
@@ -13150,6 +13168,90 @@
         "statusType": "auto",
         "x": 3760,
         "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "b1baad3255a02365",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 2820,
+        "wires": [
+            [
+                "b06d42c44dcdb49d"
+            ]
+        ]
+    },
+    {
+        "id": "b06d42c44dcdb49d",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "orders",
+        "func": "msg.payload = `\nselect * from orders\nwhere pickup_date BETWEEN '2026-04-08' AND '2026-04-17';\n`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 2820,
+        "wires": [
+            [
+                "8bed46d84f245f5b"
+            ]
+        ]
+    },
+    {
+        "id": "8bed46d84f245f5b",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 460,
+        "y": 2820,
+        "wires": [
+            [
+                "36e91038e646881a"
+            ]
+        ]
+    },
+    {
+        "id": "36e91038e646881a",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "orders",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 2820,
         "wires": []
     },
     {
