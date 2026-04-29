@@ -604,11 +604,19 @@
             "41a8a454b5da08c2",
             "e52d93e1de01c01c",
             "40b9806819466d67",
-            "a0d70af00dd12d6a"
+            "a0d70af00dd12d6a",
+            "2254d1f776a93040",
+            "bb3c86f9935b4263",
+            "0c42df7a8295a8da",
+            "0be179673e35588d",
+            "3f2560ac2d298bc7",
+            "3eb2eecb5f1d6848",
+            "6ee7a10b3f450dc0",
+            "eed137344fdf4ee6"
         ],
         "x": 34,
         "y": 1539,
-        "w": 1532,
+        "w": 2052,
         "h": 822
     },
     {
@@ -1529,7 +1537,7 @@
         "z": "511654ac3eb34f3c",
         "g": "49bf3ff7a63e80f4",
         "name": "pool",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3418,7 +3426,7 @@
         "z": "deae6838e7a58a75",
         "g": "07ec0a4c55b9e373",
         "name": "google",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3622,7 +3630,7 @@
         "type": "debug",
         "z": "deae6838e7a58a75",
         "name": "google",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -13252,6 +13260,1106 @@
         "statusType": "auto",
         "x": 590,
         "y": 2820,
+        "wires": []
+    },
+    {
+        "id": "2254d1f776a93040",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "func": "const category_id = 1;\n// const images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1772490135/tarta-platano_c6lbf3.png\"]\nconst slug = 'queso-ahumado';\n\nmsg.queryParameters = [slug, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, category_id, is_posible_sugar_free, is_cake_of_the_month, deleted, is_posible_gluten_free, is_posible_lactose_free)\n    VALUES ($1, $2, false, true, true, true, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1620,
+        "y": 1800,
+        "wires": [
+            [
+                "0c42df7a8295a8da"
+            ]
+        ]
+    },
+    {
+        "id": "bb3c86f9935b4263",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1490,
+        "y": 1800,
+        "wires": [
+            [
+                "2254d1f776a93040"
+            ]
+        ]
+    },
+    {
+        "id": "0c42df7a8295a8da",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1840,
+        "y": 1800,
+        "wires": [
+            [
+                "0be179673e35588d"
+            ]
+        ]
+    },
+    {
+        "id": "0be179673e35588d",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1980,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "3f2560ac2d298bc7",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "func": "const category_id = 1;\n// const images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1772490135/tarta-platano_c6lbf3.png\"]\nconst slug = 'happy-hippo';\n\nmsg.queryParameters = [slug, category_id];\nmsg.payload = `\n    INSERT INTO products (slug, category_id, is_posible_sugar_free, is_cake_of_the_month, deleted, is_posible_gluten_free, is_posible_lactose_free)\n    VALUES ($1, $2, false, true, true, true, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1620,
+        "y": 1860,
+        "wires": [
+            [
+                "6ee7a10b3f450dc0"
+            ]
+        ]
+    },
+    {
+        "id": "3eb2eecb5f1d6848",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1490,
+        "y": 1860,
+        "wires": [
+            [
+                "3f2560ac2d298bc7"
+            ]
+        ]
+    },
+    {
+        "id": "6ee7a10b3f450dc0",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1840,
+        "y": 1860,
+        "wires": [
+            [
+                "eed137344fdf4ee6"
+            ]
+        ]
+    },
+    {
+        "id": "eed137344fdf4ee6",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1980,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "63f3f009d67df0e0",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 9;\nconst language_code = 'en';\nconst name = 'Creamy smoked cheese cheesecake';\nconst description = 'Our creamy smoked cheese cheesecake stands out for its rich flavor and unique character. Its smooth, silky texture melts in your mouth, creating a perfect balance that cheese lovers will enjoy.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 6440,
+        "y": 2080,
+        "wires": [
+            [
+                "1a5284debee18baf"
+            ]
+        ]
+    },
+    {
+        "id": "f5a7841691a97157",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 6270,
+        "y": 2080,
+        "wires": [
+            [
+                "63f3f009d67df0e0"
+            ]
+        ]
+    },
+    {
+        "id": "1a5284debee18baf",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 6620,
+        "y": 2080,
+        "wires": [
+            [
+                "b45f3c11ab0a5d24"
+            ]
+        ]
+    },
+    {
+        "id": "b45f3c11ab0a5d24",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 6800,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "3ec5aa0639e9b50a",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 9;\nconst language_code = 'es';\nconst name = 'Cremosa de queso ahumado';\nconst description = 'Nuestra cremosa de queso ahumado destaca por su sabor intenso y carácter único. Su textura suave y sedosa se funde en la boca, logrando un equilibrio perfecto que enamorará a los amantes del queso.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 6440,
+        "y": 2120,
+        "wires": [
+            [
+                "3f9e2ff6b14bda0b"
+            ]
+        ]
+    },
+    {
+        "id": "8abec7656e23824c",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 6270,
+        "y": 2120,
+        "wires": [
+            [
+                "3ec5aa0639e9b50a"
+            ]
+        ]
+    },
+    {
+        "id": "3f9e2ff6b14bda0b",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 6620,
+        "y": 2120,
+        "wires": [
+            [
+                "c19fdf54648c8753"
+            ]
+        ]
+    },
+    {
+        "id": "c19fdf54648c8753",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 6800,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "c1ec00b88f56a412",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 9;\nconst language_code = 'gl';\nconst name = 'Cremosa de queixo afumado';\nconst description = 'A nosa cremosa de queixo afumado destaca polo seu sabor intenso e carácter único. A súa textura suave e sedosa desfáise na boca, logrando un equilibrio perfecto que encantará aos amantes do queixo.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 6440,
+        "y": 2160,
+        "wires": [
+            [
+                "f05074e2cdff1a22"
+            ]
+        ]
+    },
+    {
+        "id": "562567048680b518",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 6270,
+        "y": 2160,
+        "wires": [
+            [
+                "c1ec00b88f56a412"
+            ]
+        ]
+    },
+    {
+        "id": "f05074e2cdff1a22",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 6620,
+        "y": 2160,
+        "wires": [
+            [
+                "a71c01c2166d2b0b"
+            ]
+        ]
+    },
+    {
+        "id": "a71c01c2166d2b0b",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 6800,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "c8769f4b6b418cb4",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 10;\nconst language_code = 'en';\nconst name = 'Creamy Happy Hippo cheesecake';\nconst description = 'Our Happy Hippo hazelnut cheesecake is inspired by its iconic creamy filling, with a delicate milky flavor and a soft hint of hazelnut. Its silky texture melts in your mouth, creating a light and sweet balance that brings back that irresistible filling.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 7220,
+        "y": 2080,
+        "wires": [
+            [
+                "7812fd0e186cb952"
+            ]
+        ]
+    },
+    {
+        "id": "f426c25f12d508b4",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 7050,
+        "y": 2080,
+        "wires": [
+            [
+                "c8769f4b6b418cb4"
+            ]
+        ]
+    },
+    {
+        "id": "7812fd0e186cb952",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 7400,
+        "y": 2080,
+        "wires": [
+            [
+                "8e92b919506bdace"
+            ]
+        ]
+    },
+    {
+        "id": "8e92b919506bdace",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 7580,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "7397055914563e56",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 10;\nconst language_code = 'es';\nconst name = 'Cremosa de Happy Hippo';\nconst description = 'Nuestra cremosa Happy Hippo de avellana está inspirada en su icónica crema interior, con un delicado sabor lácteo y suave toque de avellana. Su textura sedosa se deshace en la boca, ofreciendo un equilibrio dulce y ligero que recuerda a ese relleno irresistible.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 7220,
+        "y": 2120,
+        "wires": [
+            [
+                "3df0869bd127549d"
+            ]
+        ]
+    },
+    {
+        "id": "82bbeb6dec9ef194",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 7050,
+        "y": 2120,
+        "wires": [
+            [
+                "7397055914563e56"
+            ]
+        ]
+    },
+    {
+        "id": "3df0869bd127549d",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 7400,
+        "y": 2120,
+        "wires": [
+            [
+                "6c73d9e2fd3b5649"
+            ]
+        ]
+    },
+    {
+        "id": "6c73d9e2fd3b5649",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 7580,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "6ff1aa15321910a8",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 10;\nconst language_code = 'gl';\nconst name = 'Cremosa de Happy Hippo';\nconst description = 'A nosa cremosa Happy Hippo de abelá está inspirada na súa icónica crema interior, cun delicado sabor lácteo e un suave toque de abelá. A súa textura sedosa desfáise na boca, ofrecendo un equilibrio doce e lixeiro que lembra a ese recheo irresistible.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 7220,
+        "y": 2160,
+        "wires": [
+            [
+                "824ad41610ed6ff0"
+            ]
+        ]
+    },
+    {
+        "id": "256862af35968229",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 7050,
+        "y": 2160,
+        "wires": [
+            [
+                "6ff1aa15321910a8"
+            ]
+        ]
+    },
+    {
+        "id": "824ad41610ed6ff0",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 7400,
+        "y": 2160,
+        "wires": [
+            [
+                "6589ba7a754cd13f"
+            ]
+        ]
+    },
+    {
+        "id": "6589ba7a754cd13f",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 7580,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "ddf53b749c3f3995",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 9;\nconst sort_order = 1;\nconst price = 5.50;\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 6390,
+        "y": 2220,
+        "wires": [
+            [
+                "99c47da6c3972c31"
+            ]
+        ]
+    },
+    {
+        "id": "bdb55645a1ed6c8b",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 6230,
+        "y": 2220,
+        "wires": [
+            [
+                "ddf53b749c3f3995"
+            ]
+        ]
+    },
+    {
+        "id": "99c47da6c3972c31",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 6580,
+        "y": 2220,
+        "wires": [
+            [
+                "328e056de8b1df3e"
+            ]
+        ]
+    },
+    {
+        "id": "328e056de8b1df3e",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 6720,
+        "y": 2220,
+        "wires": []
+    },
+    {
+        "id": "cad76c12043b767a",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 9;\nconst sort_order = 2;\nconst price = 13; \n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 6390,
+        "y": 2260,
+        "wires": [
+            [
+                "f0a50ce971efd431"
+            ]
+        ]
+    },
+    {
+        "id": "88a43a1ce10958ad",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 6230,
+        "y": 2260,
+        "wires": [
+            [
+                "cad76c12043b767a"
+            ]
+        ]
+    },
+    {
+        "id": "f0a50ce971efd431",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 6580,
+        "y": 2260,
+        "wires": [
+            [
+                "db676d3ee7537878"
+            ]
+        ]
+    },
+    {
+        "id": "db676d3ee7537878",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 6720,
+        "y": 2260,
+        "wires": []
+    },
+    {
+        "id": "38d3c0fdd6942733",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 10;\nconst sort_order = 1;\nconst price = 5.50;\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 7090,
+        "y": 2220,
+        "wires": [
+            [
+                "8b932837bb2afadb"
+            ]
+        ]
+    },
+    {
+        "id": "221ccd1ee87ea2ad",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 6930,
+        "y": 2220,
+        "wires": [
+            [
+                "38d3c0fdd6942733"
+            ]
+        ]
+    },
+    {
+        "id": "8b932837bb2afadb",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 7280,
+        "y": 2220,
+        "wires": [
+            [
+                "f85c0dea5bb75e24"
+            ]
+        ]
+    },
+    {
+        "id": "f85c0dea5bb75e24",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 7420,
+        "y": 2220,
+        "wires": []
+    },
+    {
+        "id": "6a5489f8cffd344e",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 10;\nconst sort_order = 2;\nconst price = 13; \n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 7090,
+        "y": 2260,
+        "wires": [
+            [
+                "4719155b9cbd7ebd"
+            ]
+        ]
+    },
+    {
+        "id": "4b38f0cdde542526",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 6930,
+        "y": 2260,
+        "wires": [
+            [
+                "6a5489f8cffd344e"
+            ]
+        ]
+    },
+    {
+        "id": "4719155b9cbd7ebd",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 7280,
+        "y": 2260,
+        "wires": [
+            [
+                "a12f4e525b0c4f68"
+            ]
+        ]
+    },
+    {
+        "id": "a12f4e525b0c4f68",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 7420,
+        "y": 2260,
+        "wires": []
+    },
+    {
+        "id": "9c01d28fa19686fa",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variant_translations",
+        "func": "msg.payload = `\nINSERT INTO product_variant_translations (variant_id, language_code, name) VALUES\n(17, 'es', 'Pequeña (1 persona)'),\n(18, 'es', 'Mediana (2 personas)'),\n\n(17, 'gl', 'Pequena (1 persoa)'),\n(18, 'gl', 'Mediana (2 persoas)'),\n\n(17, 'en', 'Small (1 person)'),\n(18, 'en', 'Medium (2 people)'),\n\n(19, 'es', 'Pequeña (1 persona)'),\n(20, 'es', 'Mediana (2 personas)'),\n\n(19, 'gl', 'Pequena (1 persoa)'),\n(20, 'gl', 'Mediana (2 persoas)'),\n\n(19, 'en', 'Small (1 person)'),\n(20, 'en', 'Medium (2 people)')\n;`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4180,
+        "y": 2320,
+        "wires": [
+            [
+                "79ce50958236aed8"
+            ]
+        ]
+    },
+    {
+        "id": "d8cf0872ba2fdbaa",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3980,
+        "y": 2320,
+        "wires": [
+            [
+                "9c01d28fa19686fa"
+            ]
+        ]
+    },
+    {
+        "id": "79ce50958236aed8",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 4380,
+        "y": 2320,
+        "wires": [
+            [
+                "102d6690aedef9d6"
+            ]
+        ]
+    },
+    {
+        "id": "102d6690aedef9d6",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 4520,
+        "y": 2320,
         "wires": []
     },
     {
