@@ -16,6 +16,22 @@
         "env": []
     },
     {
+        "id": "d6c3d9ba500f9342",
+        "type": "tab",
+        "label": "TELEGRAM",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6c01dd28e010047e",
+        "type": "tab",
+        "label": "TELEGRAM BOT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "d6966d87889a164a",
         "type": "tab",
         "label": "WORKERS",
@@ -612,7 +628,11 @@
             "3f2560ac2d298bc7",
             "3eb2eecb5f1d6848",
             "6ee7a10b3f450dc0",
-            "eed137344fdf4ee6"
+            "eed137344fdf4ee6",
+            "c25d3b8611205958",
+            "39b0a0a40d284da8",
+            "54dd1a438e08b15b",
+            "2ab706b75ebedd1a"
         ],
         "x": 34,
         "y": 1539,
@@ -1091,25 +1111,6 @@
         "h": 142
     },
     {
-        "id": "01b2dfa9ef5c3fc3",
-        "type": "group",
-        "z": "b73d17450c17803c",
-        "name": "",
-        "style": {
-            "stroke": "#ff0000",
-            "label": true
-        },
-        "nodes": [
-            "e457ffc15e6ded46",
-            "178ef043d024ce87",
-            "f4e336f1fc89df65"
-        ],
-        "x": 34,
-        "y": 739,
-        "w": 472,
-        "h": 122
-    },
-    {
         "id": "20538e9bf49cd27b",
         "type": "group",
         "z": "68702ca580581086",
@@ -1124,7 +1125,7 @@
             "4a8ab29dbc4e1f21"
         ],
         "x": 34,
-        "y": 2659,
+        "y": 2859,
         "w": 652,
         "h": 82
     },
@@ -1162,6 +1163,43 @@
         "x": 34,
         "y": 1639,
         "w": 532,
+        "h": 82
+    },
+    {
+        "id": "01b2dfa9ef5c3fc3",
+        "type": "group",
+        "z": "d6c3d9ba500f9342",
+        "name": "",
+        "style": {
+            "stroke": "#ff0000",
+            "label": true
+        },
+        "nodes": [
+            "e457ffc15e6ded46",
+            "178ef043d024ce87",
+            "f4e336f1fc89df65"
+        ],
+        "x": 34,
+        "y": 119,
+        "w": 472,
+        "h": 122
+    },
+    {
+        "id": "af78feb18e4ed499",
+        "type": "group",
+        "z": "6c01dd28e010047e",
+        "name": "save/update user",
+        "style": {
+            "label": true,
+            "stroke": "#0070c0"
+        },
+        "nodes": [
+            "844e4b3a5f41cc5c",
+            "c33072b97e662125"
+        ],
+        "x": 894,
+        "y": 179,
+        "w": 572,
         "h": 82
     },
     {
@@ -1868,7 +1906,7 @@
         "z": "511654ac3eb34f3c",
         "g": "4c38c06caa282caf",
         "name": "send msg",
-        "func": "const insertErrorLog = flow.get(\"insertErrorLog\");\n\nconst TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nconst TOPICS = {\n    pedidos: 14,      \n    vender: 6,       \n    fabricar: 5,  \n    b2b: 7,\n    errors: 32  \n};\nconst CHAT_ID = -1003204791846;\n\nconst { message = '', topic = ''  } = msg.payload || {};\n\nif (!TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL || !message || !['pedidos', 'fabricar', 'b2b', 'vender', 'errors']?.includes(topic)) {\n  msg.error = {\n    message: \"Missed ENV or necessary data\"\n  };\n\n  await insertErrorLog({\n    code: 'ERR_MISSED_DATA',\n    message: msg.error?.message,\n    context: {\n      TELEGRAM_BOT_TOKEN,\n      TELEGRAM_BASE_URL,\n      ...msg.payload\n    }\n  });\n\n  node.error(msg.error, msg);\n  return [msg, null];\n};\n\nconst body = JSON.stringify({\n  chat_id: CHAT_ID,\n  text: message,\n  parse_mode: 'HTML',\n  message_thread_id: TOPICS?.[topic] || null\n});\n\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;\nmsg.method = 'POST';\nmsg.headers = {\n  'Content-Type': 'application/json',\n  'Content-Length': Buffer.byteLength(body)\n};\n\nmsg.payload = body;\nmsg.body = body;\n\nreturn [null, msg];",
+        "func": "const insertErrorLog = flow.get(\"insertErrorLog\");\n\nconst TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nconst TOPICS = {\n    pedidos: 14,      \n    vender: 6,       \n    fabricar: 5,  \n    b2b: 7,\n    errors: 32,\n    // stock: 473,\n    // statistics: 475,\n    // production:   \n};\nconst CHAT_ID = -1003204791846;\n\nconst { message = '', topic = ''  } = msg.payload || {};\n\n/// !!!! ADD IN THE ARRAY AVAILABLE DATA\nif (!TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL || !message || !['pedidos', 'fabricar', 'b2b', 'vender', 'errors']?.includes(topic)) {\n  msg.error = {\n    message: \"Missed ENV or necessary data\"\n  };\n\n  await insertErrorLog({\n    code: 'ERR_MISSED_DATA',\n    message: msg.error?.message,\n    context: {\n      TELEGRAM_BOT_TOKEN,\n      TELEGRAM_BASE_URL,\n      ...msg.payload\n    }\n  });\n\n  node.error(msg.error, msg);\n  return [msg, null];\n};\n\nconst body = JSON.stringify({\n  chat_id: CHAT_ID,\n  text: message,\n  parse_mode: 'HTML',\n  message_thread_id: TOPICS?.[topic] || null\n});\n\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;\nmsg.method = 'POST';\nmsg.headers = {\n  'Content-Type': 'application/json',\n  'Content-Length': Buffer.byteLength(body)\n};\n\nmsg.payload = body;\nmsg.body = body;\n\nreturn [null, msg];",
         "outputs": 2,
         "timeout": "",
         "noerr": 0,
@@ -2050,56 +2088,6 @@
         ]
     },
     {
-        "id": "e457ffc15e6ded46",
-        "type": "http in",
-        "z": "b73d17450c17803c",
-        "g": "01b2dfa9ef5c3fc3",
-        "name": "",
-        "url": "/api/v1/webhook/telegram",
-        "method": "post",
-        "upload": false,
-        "skipBodyParsing": false,
-        "swaggerDoc": "",
-        "x": 190,
-        "y": 800,
-        "wires": [
-            [
-                "178ef043d024ce87",
-                "f4e336f1fc89df65"
-            ]
-        ]
-    },
-    {
-        "id": "178ef043d024ce87",
-        "type": "http response",
-        "z": "b73d17450c17803c",
-        "g": "01b2dfa9ef5c3fc3",
-        "name": "",
-        "statusCode": "200",
-        "headers": {},
-        "x": 400,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "f4e336f1fc89df65",
-        "type": "debug",
-        "z": "b73d17450c17803c",
-        "g": "01b2dfa9ef5c3fc3",
-        "name": "telegram",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 400,
-        "y": 820,
-        "wires": []
-    },
-    {
         "id": "6e1a6abd115867f5",
         "type": "debug",
         "z": "b73d17450c17803c",
@@ -2226,7 +2214,7 @@
         "scope": null,
         "uncaught": false,
         "x": 100,
-        "y": 920,
+        "y": 780,
         "wires": [
             [
                 "948dde2391c8db61",
@@ -2248,7 +2236,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 240,
-        "y": 960,
+        "y": 820,
         "wires": []
     },
     {
@@ -2264,7 +2252,7 @@
         "finalize": "",
         "libs": [],
         "x": 240,
-        "y": 920,
+        "y": 780,
         "wires": [
             [
                 "bd5f284266d703ff"
@@ -2282,7 +2270,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 400,
-        "y": 920,
+        "y": 780,
         "wires": [
             []
         ]
@@ -2975,6 +2963,2214 @@
         "x": 730,
         "y": 200,
         "wires": []
+    },
+    {
+        "id": "e457ffc15e6ded46",
+        "type": "http in",
+        "z": "d6c3d9ba500f9342",
+        "g": "01b2dfa9ef5c3fc3",
+        "name": "",
+        "url": "/api/v1/webhook/telegram",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "178ef043d024ce87",
+                "f4e336f1fc89df65"
+            ]
+        ]
+    },
+    {
+        "id": "178ef043d024ce87",
+        "type": "http response",
+        "z": "d6c3d9ba500f9342",
+        "g": "01b2dfa9ef5c3fc3",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 400,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "f4e336f1fc89df65",
+        "type": "debug",
+        "z": "d6c3d9ba500f9342",
+        "g": "01b2dfa9ef5c3fc3",
+        "name": "telegram",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ffccc1b59339f23d",
+        "type": "function",
+        "z": "d6c3d9ba500f9342",
+        "name": "set variables",
+        "func": "// const MENU_BUTTONS = [\n//     [{ text: \"➕ Додати контакт\" }, { text: \"📋 Мої контакти\" }],\n//     [{ text: \"🎉 Сьогодні святкують\" }, { text: \"🔍 Знайти контакт\" }],\n//     [{ text: \"⚙️ Налаштування\" }]\n// ];\n\nconst SMTH_WRONG_MSG = `⚠️ Algo salió mal...\nPor favor, inténtalo de nuevo un poco más tarde 🙏`;\n\nconst UNABLE_ACTION_MSG = `ℹ️ Por ahora no puedo realizar esta acción.\nPor favor, utiliza las funciones disponibles 🙏`;\n\n// flow.set('MENU_BUTTONS', MENU_BUTTONS);\nflow.set('SMTH_WRONG_MSG', SMTH_WRONG_MSG);\nflow.set('UNABLE_ACTION_MSG', UNABLE_ACTION_MSG);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 60,
+        "wires": [
+            [
+                "083f86fa344700a3"
+            ]
+        ]
+    },
+    {
+        "id": "d6b00789dec42171",
+        "type": "inject",
+        "z": "d6c3d9ba500f9342",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.2",
+        "topic": "",
+        "x": 90,
+        "y": 60,
+        "wires": [
+            [
+                "ffccc1b59339f23d"
+            ]
+        ]
+    },
+    {
+        "id": "083f86fa344700a3",
+        "type": "debug",
+        "z": "d6c3d9ba500f9342",
+        "name": "set variables",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "22db78c2df0f2f2a",
+        "type": "function",
+        "z": "d6c3d9ba500f9342",
+        "name": "set msg.telegram",
+        "func": "const UNABLE_ACTION_MSG = flow.get('UNABLE_ACTION_MSG');\nconst { message, callback_query } = msg.payload || {};\n\nconst source = message?.from ? message : callback_query;\nconst fromData = source?.from;\n\nif (message && !('text' in message)) {\n    msg.chatId = fromData.id;\n    msg.payload = {\n        message: UNABLE_ACTION_MSG,\n        markupType: 'keyboard',\n    };\n\n    return [msg, null];\n};\n\nmsg.telegram = {\n    id: fromData.id,\n    text: (message?.text || callback_query?.data || '').trim(),\n    type: message ? 'message' : 'callback',\n    message_id: callback_query?.message?.message_id || message?.message_id\n};\n\nmsg.chatId = msg.telegram.id;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 340,
+        "wires": [
+            [
+                "01f8d0e58e99c973"
+            ],
+            [
+                "37d81e070e1b2a04"
+            ]
+        ]
+    },
+    {
+        "id": "01f8d0e58e99c973",
+        "type": "debug",
+        "z": "d6c3d9ba500f9342",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "37d81e070e1b2a04",
+        "type": "debug",
+        "z": "d6c3d9ba500f9342",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "aa2997ba54b6f86e",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "set msg.telegram",
+        "func": "const UNABLE_ACTION_MSG = global.get(\"UNABLE_ACTION_MSG\");\nconst MENU_BUTTONS = flow.get('MENU_BUTTONS') || [];\n\nconst { message, callback_query } = msg.payload || {};\n\nconst source = message?.from ? message : callback_query;\nconst fromData = source?.from;\n\nconst createErrorData = (errorMsg) => ({\n    chat_id: fromData?.id || null,\n    error_code: 'ERR_INVALID_TELEGRAM_DATA',\n    error_msg: errorMsg,\n    context: msg.payload \n});\n\nconst handleError = async (errorMsg) => {\n    msg.errorData = createErrorData(errorMsg);\n    node.error(errorMsg, msg);\n\n    return null;\n};\n\nif (!message && !callback_query) {\n    return await handleError('Invalid telegram data');\n};\n\nif (!fromData?.id || typeof fromData.id !== 'number') {\n    return await handleError('Missing user data or invalid user id');\n};\n\nif (message && !('text' in message)) {\n    msg.chatId = fromData.id;\n    msg.payload = {\n        message: UNABLE_ACTION_MSG,\n        markupType: 'keyboard',\n        buttons: MENU_BUTTONS\n    };\n\n    return [msg, null];\n};\n\nmsg.telegram = {\n    id: fromData.id,\n    first_name: fromData.first_name,\n    username: fromData.username,\n    language_code: fromData.language_code,\n    text: (message?.text || callback_query?.data || '').trim(),\n    type: message ? 'message' : 'callback',\n    message_id: callback_query?.message?.message_id || message?.message_id\n};\n\nmsg.chatId = msg.telegram.id;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 280,
+        "wires": [
+            [
+                "398f5b81bfeba396"
+            ],
+            [
+                "844e4b3a5f41cc5c"
+            ]
+        ]
+    },
+    {
+        "id": "844e4b3a5f41cc5c",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "g": "af78feb18e4ed499",
+        "name": "update/insert user data",
+        "func": "const { first_name = null, username = null } = msg.telegram || {};\n\nmsg.queryParameters = [msg.chatId, username, first_name, false, false];\nmsg.payload = `\nWITH user_insert AS (\n    INSERT INTO users (chat_id, username, first_name, created_at, last_activity, is_bot_blocked)\n    VALUES ($1, $2, $3, NOW(), NOW(), $4)\n    ON CONFLICT (chat_id) \n    DO UPDATE SET \n        last_activity = NOW(),\n        is_bot_blocked = $5\n    RETURNING id\n)\nINSERT INTO user_preferences (user_id)\nSELECT id FROM user_insert\nON CONFLICT (user_id) DO UPDATE SET user_id = EXCLUDED.user_id\nRETURNING user_id;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c33072b97e662125",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "g": "af78feb18e4ed499",
+        "name": "check error",
+        "func": "const insertLog = global.get(\"insertLog\");\n\nif (!!msg?.error) {\n    return [msg, null]\n};\n\nif (msg.payload?.lenght === 0) {\n    const data = {\n        log_type: 'system_error',\n        status: 'failed',\n        action: msg.queryText?.toUpperCase()?.split(' ')[0],\n        user_id: null,\n        chat_id: msg?.chatId || msg.telegram?.id || null,\n        log_level: 'error',\n        table_name: 'users',\n        context: {\n            query: msg.queryText,\n            result: []\n        },\n        error_code: 'ERR_INSERT_UPDATE_DATA',\n        error_msg: 'Problem with insert/update data collection users'\n    };\n\n    await insertLog(data);\n    return [msg, null];\n};\n\nmsg.userId = msg.payload?.[0]?.user_id;\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 220,
+        "wires": [
+            [
+                "7e77ce8ea49bfad6"
+            ],
+            [
+                "cee617c132463850"
+            ]
+        ]
+    },
+    {
+        "id": "22f3af93d9507805",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "send msg",
+        "func": "const insertLog = global.get(\"insertLog\");\n\nconst TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nif (!TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL) {\n  msg.error = 'Missed ENV';\n\n  const data = {\n    log_type: 'system_error',\n    status: 'failed',\n    action: 'send telegram message',\n    user_id: msg?.userId || null,\n    chat_id: msg?.chatId,\n    log_level: 'critical',\n    table_name: null,\n    context: null,\n    error_code: 'ERR_MISSED_ENV',\n    error_msg: 'Missed data in ENV'\n  };\n\n  await insertLog(data);\n  node.error(\"Missed data in ENV\", msg);\n  return [msg, null];\n};\n\nconst { message = '', markupType = null, buttons = null, messageId = null, method = null } = msg.payload || {};\n\nconst baseReplyMarkup = {\n  resize_keyboard: true,\n  one_time_keyboard: false\n};\n\nconst replyMarkup =\n  markupType === 'inline' ? { inline_keyboard: buttons, ...baseReplyMarkup } :\n    markupType === 'keyboard' ? { keyboard: buttons, ...baseReplyMarkup } :\n      null;\n\nconst body = JSON.stringify({\n  chat_id: msg?.chatId,\n  text: message,\n  parse_mode: 'Markdown',\n  ...(replyMarkup && { reply_markup: replyMarkup }),\n  ...(messageId && { message_id: messageId }),\n  ...(method && { method: method })\n});\n\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;\nmsg.method = 'POST';\nmsg.headers = {\n  'Content-Type': 'application/json',\n  'Content-Length': Buffer.byteLength(body)\n};\n\nmsg.payload = body;\nmsg.body = body;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 2140,
+        "wires": [
+            [
+                "1319ad8b26c8b0d5"
+            ],
+            [
+                "a828cb757878860d"
+            ]
+        ]
+    },
+    {
+        "id": "b8c8787ca1348d41",
+        "type": "link in",
+        "z": "6c01dd28e010047e",
+        "name": "send message",
+        "links": [],
+        "x": 120,
+        "y": 2140,
+        "wires": [
+            [
+                "22f3af93d9507805"
+            ]
+        ],
+        "icon": "font-awesome/fa-send",
+        "l": true,
+        "info": "msg.payload = {\n    message: '', // message to send\n    markupType: '', // inline || keyboard (optional)\n    buttons: [] // [[{ text: 'Button 1', callback_data: 'btn1' }]]; || [['Button 1'], ['Button 2']]; (optional),\n    method: '' (optinal)\n    message_id: '' (optinal)\n}"
+    },
+    {
+        "id": "a828cb757878860d",
+        "type": "http request",
+        "z": "6c01dd28e010047e",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 2160,
+        "wires": [
+            [
+                "ddb6202b0b5ad9fe",
+                "e1091f87f0a83bb0"
+            ]
+        ]
+    },
+    {
+        "id": "1319ad8b26c8b0d5",
+        "type": "link out",
+        "z": "6c01dd28e010047e",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 965,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "ddb6202b0b5ad9fe",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "send telegram",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 2200,
+        "wires": []
+    },
+    {
+        "id": "e1091f87f0a83bb0",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "const insertLog = global.get(\"insertLog\");\n\nconst generalData = {\n    action: 'send telegram message',\n    user_id: msg.userId || null,\n    chat_id: msg?.chatId || null,\n    table_name: null,\n    context: {\n        body: JSON.parse(msg.body)\n    },\n    error_code: null, \n    error_msg: null\n};\n\nif (msg?.statusCode !== 200 || !msg.payload?.ok) {\n    const { error_code = null, description = null } = msg.payload || {};\n\n    msg.error = 'Problem with send message to telegram';\n    const data = {\n        ...generalData,\n        log_type: 'system_error',\n        status: 'failed',\n        log_level: 'error',\n        error_code,\n        error_msg: description\n    };\n\n    await insertLog(data);\n    node.send(msg);\n};\n\nconst data = {\n    ...generalData,\n    log_type: 'user_action',\n    status: 'success',\n    log_level: 'info'\n};\n\nawait insertLog(data);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 2160,
+        "wires": [
+            [
+                "1319ad8b26c8b0d5"
+            ]
+        ]
+    },
+    {
+        "id": "7e77ce8ea49bfad6",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "smth wrong msg",
+        "func": "const SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\nconst message = SMTH_WRONG_MSG;\n\nmsg.payload = {\n    message\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1670,
+        "y": 300,
+        "wires": [
+            [
+                "6d7b886ea9b1d03e"
+            ]
+        ]
+    },
+    {
+        "id": "cee617c132463850",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "user_sessions",
+        "func": "msg.queryParameters = [msg.userId];\n\nmsg.payload = `\nSELECT\n    us.command,\n    us.step,\n    us.data,\n    u.chat_id\nFROM user_sessions us\nJOIN users u ON u.id = us.user_id\nWHERE us.user_id = $1;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "387ae9af2f37c31b",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "sessions",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "9c14e8475591f802",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "if (!!msg?.error) {\n    return [msg, null]\n};\n\nmsg.sessions = msg.payload;\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1490,
+        "y": 320,
+        "wires": [
+            [
+                "7e77ce8ea49bfad6"
+            ],
+            [
+                "0acd92bb84f30f4c"
+            ]
+        ]
+    },
+    {
+        "id": "0acd92bb84f30f4c",
+        "type": "switch",
+        "z": "6c01dd28e010047e",
+        "name": "check message type",
+        "property": "telegram.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "message",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "callback",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 160,
+        "y": 520,
+        "wires": [
+            [
+                "808f82ed6eb3a61a"
+            ],
+            [
+                "b8e263b6151e6aac"
+            ],
+            [
+                "496a064b9188217d",
+                "6fcfb1bd2e25309c"
+            ]
+        ]
+    },
+    {
+        "id": "6d8cd137b88f66e4",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "welcome msg",
+        "func": "const MENU_BUTTONS = flow.get('MENU_BUTTONS') || [];\n\nconst { first_name = null } = msg.telegram || {};\n\nconst message = `👋 Привіт, ${first_name || ''}!\n\n🎂 Я допоможу вам запам'ятати дні народження ваших друзів та близьких.\n\n✨ Що я вмію:\n- Зберігати контакти з датами народження\n- Нагадувати про дні народження\n- Надсилати автоматичні нагадування\n\n📱 Оберіть дію нижче:`;\n\nmsg.payload = {\n    message,\n    markupType: 'keyboard', \n    buttons: MENU_BUTTONS\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 500,
+        "wires": [
+            [
+                "8a6ed8a2df46d023"
+            ]
+        ]
+    },
+    {
+        "id": "808f82ed6eb3a61a",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check action",
+        "func": "const MENU_BUTTONS = flow.get('MENU_BUTTONS') || [];\nconst userMessage = msg?.telegram?.text;\n\nif (msg.sessions?.length !== 0) {\n    return [msg, null, null, null];\n};\n\nif (userMessage === '/start') {\n    return [null, msg, null, null];\n};\n\nconst buttonTexts = MENU_BUTTONS?.flat().map(e => e?.text);\nif (buttonTexts?.includes(msg?.telegram?.text)) {\n    return [null, null, msg, null];\n};\n\nconst message = `ℹ️ Поки що я не можу виконати цю дію.\nБудь ласка, скористайтеся доступними функціями.`;\n\nmsg.payload = {\n    message,\n    markupType: 'keyboard', \n    buttons: MENU_BUTTONS\n};\n\nreturn [null, null, null, msg];",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 520,
+        "wires": [
+            [
+                "3c7c8f3ec8ed604c"
+            ],
+            [
+                "6d8cd137b88f66e4"
+            ],
+            [
+                "b97f0d047b5201ec"
+            ],
+            [
+                "496a064b9188217d"
+            ]
+        ]
+    },
+    {
+        "id": "b8e263b6151e6aac",
+        "type": "link out",
+        "z": "6c01dd28e010047e",
+        "name": "callback",
+        "mode": "link",
+        "links": [
+            "0edc94a6112c85e1"
+        ],
+        "x": 305,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "0edc94a6112c85e1",
+        "type": "link in",
+        "z": "6c01dd28e010047e",
+        "name": "callback",
+        "links": [
+            "b8e263b6151e6aac"
+        ],
+        "x": 100,
+        "y": 1280,
+        "wires": [
+            [
+                "638f4f47346816a3",
+                "48c44a8d5ebd83a8"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "638f4f47346816a3",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "callback",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 100,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "496a064b9188217d",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "unable message",
+        "func": "const UNABLE_ACTION_MSG = global.get(\"UNABLE_ACTION_MSG\");\nconst MENU_BUTTONS = flow.get('MENU_BUTTONS') || [];\n\nmsg.payload = {\n    message: UNABLE_ACTION_MSG,\n    markupType: 'keyboard',\n    buttons: MENU_BUTTONS\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 580,
+        "wires": [
+            [
+                "8a6ed8a2df46d023"
+            ]
+        ]
+    },
+    {
+        "id": "3c7c8f3ec8ed604c",
+        "type": "link out",
+        "z": "6c01dd28e010047e",
+        "name": "sessions",
+        "mode": "link",
+        "links": [
+            "2685345ed85a0de9"
+        ],
+        "x": 645,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "2685345ed85a0de9",
+        "type": "link in",
+        "z": "6c01dd28e010047e",
+        "name": "sessions",
+        "links": [
+            "3c7c8f3ec8ed604c"
+        ],
+        "x": 100,
+        "y": 1680,
+        "wires": [
+            [
+                "25087cdef6e75969",
+                "fe8d77ac0f3c71dc"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "25087cdef6e75969",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "send",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 130,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "b97f0d047b5201ec",
+        "type": "link out",
+        "z": "6c01dd28e010047e",
+        "name": "commands",
+        "mode": "link",
+        "links": [
+            "5d9e15407224cc5c"
+        ],
+        "x": 645,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "5d9e15407224cc5c",
+        "type": "link in",
+        "z": "6c01dd28e010047e",
+        "name": "commands",
+        "links": [
+            "b97f0d047b5201ec"
+        ],
+        "x": 100,
+        "y": 980,
+        "wires": [
+            [
+                "2f3055bebb585302",
+                "37a365e3a5995737"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "2f3055bebb585302",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "text",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 230,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "6fcfb1bd2e25309c",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "text",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "147a5704fa27ee8b",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "text",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "37a365e3a5995737",
+        "type": "switch",
+        "z": "6c01dd28e010047e",
+        "name": "check command",
+        "property": "telegram.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "➕ Додати контакт",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "🎉 Сьогодні святкують",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "🔍 Знайти контакт",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "⚙️ Налаштування",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "📋 Мої контакти",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 5,
+        "x": 270,
+        "y": 980,
+        "wires": [
+            [
+                "a1e7483932613f44"
+            ],
+            [
+                "94dc86c1bdfd2956"
+            ],
+            [
+                "24feb566bd860691"
+            ],
+            [
+                "6b80944afa94677c"
+            ],
+            [
+                "5a5976baa84ddba8"
+            ]
+        ]
+    },
+    {
+        "id": "227a20cd441f5d55",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "postgres",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "a1e7483932613f44",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "update user sessions",
+        "func": "msg.queryParameters = [msg.userId, 'add_contact', 'waiting_name'];\nmsg.payload = `\nINSERT INTO user_sessions (user_id, command, step)\nVALUES ($1, $2, $3)\nRETURNING user_id;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c169a67787e39ecd",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\n\nmsg.msgToUser = SMTH_WRONG_MSG;\n\nif (!!msg?.error) {\n    return msg;\n};\n\nif (msg.payload?.lenght === 0) {\n    const data = {\n        log_type: 'system_error',\n        status: 'failed',\n        action: msg.queryText?.toUpperCase()?.split(' ')[0],\n        user_id: msg.userId || null,\n        chat_id: msg?.chatId || msg.telegram?.id || null,\n        log_level: 'error',\n        table_name: 'user_sessions',\n        context: {\n            query: msg.queryText,\n            result: []\n        },\n        error_code: 'ERR_INSERT_DATA',\n        error_msg: 'Problem with insert data collection user_sessions'\n    };\n\n    await insertLog(data);\n    return msg;\n};\n\nmsg.inline = [[{ text: 'Скасувати', callback_data: 'cancel' }]];\nmsg.msgToUser = `Введіть унікальне ім'я контакту:\n\nім'я має містити від 2-ох до 50-ти символів`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 860,
+        "wires": [
+            [
+                "354a0bbc7ea06660"
+            ]
+        ]
+    },
+    {
+        "id": "fe8d77ac0f3c71dc",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check queue",
+        "func": "const MENU_BUTTONS = flow.get('MENU_BUTTONS') || [];\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\n\nconst { command, step } = msg.sessions?.[0] || {};\nconst userMessage = msg.telegram?.text;\n\nconst buttonTexts = MENU_BUTTONS?.flat().map(e => e?.text);\nif (buttonTexts?.includes(userMessage) || userMessage === '/start') {\n    msg.payload = {\n        message: \"Щоб перейти до іншої команди, будь ласка, завершіть поточну дію або скасуйте її\",\n        markupType: 'inline',\n        buttons: [[{ text: 'Скасувати', callback_data: 'cancel' }]]\n    };\n\n    return [null, null, msg];\n};\n\nmsg.step = step;\nmsg.command = command;\n\nif (command === 'add_contact') {\n    return [msg, null, null];\n};\n\nif (command === 'find_contact') {\n    return [null, msg, null];\n};\n\nmsg.payload = {\n    message: SMTH_WRONG_MSG\n};\n\nreturn [null, null, msg];\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 1680,
+        "wires": [
+            [
+                "2f0f1391b2379ea9"
+            ],
+            [
+                "886b503815259354",
+                "3d167ab3d847884a"
+            ],
+            [
+                "4ee92851ac8a3a8d"
+            ]
+        ]
+    },
+    {
+        "id": "2f0f1391b2379ea9",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "data validation",
+        "func": "const insertLog = global.get(\"insertLog\");\n\nconst { text: message } = msg.telegram || {};\nconst { data: contactData } = msg.sessions?.[0] || {};\n\nconst data = {\n    log_type: 'validation_error',\n    status: 'failed',\n    action: msg.command,\n    user_id: msg.userId || null,\n    chat_id: msg?.chatId || msg.telegram?.id || null,\n    log_level: 'error',\n    table_name: null,\n    context: {\n        message,\n        step: msg.step\n    },\n    error_code: 'ERR_INVALID_DATA',\n    error_msg: 'Invalid user data'\n};\n\nconst validateName = (name) => {\n    const trimmed = name.trim();\n\n    if (trimmed.length < 2) {\n        return { isValid: false, error: \"Ім'я контакту має містити мінімум 2 символи\" };\n    };\n\n    if (trimmed.length > 50) {\n        return { isValid: false, error: \"Ім'я контакту занадто довге (максимум 50 символів)\" };\n    };\n\n    const nameRegex = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ0-9\\s'-]+$/u;\n    if (!nameRegex.test(trimmed)) {\n        return { \n            isValid: false, \n            error: \"Ім'я може містити лише букви (латиниця або кирилиця), цифри, пробіли, апостроф або дефіс\" \n        };\n    };\n\n    return { isValid: true, error: null, value: trimmed };\n};\n\nconst validateDate = (dateString) => {\n    const dateRegex = /^\\d{4}-\\d{2}-\\d{2}$/;\n\n    if (!dateRegex.test(dateString)) {\n        return {\n            isValid: false,\n            error: \"Неправильний формат дати. Використовуйте РІК-МІСЯЦЬ-ДЕНЬ (наприклад: 2024-12-25)\"\n        };\n    };\n\n    const [year, month, day] = dateString.split('-').map(Number);\n    const inputDate = new Date(year, month - 1, day);\n\n    if (\n        inputDate.getFullYear() !== year ||\n        inputDate.getMonth() !== month - 1 ||\n        inputDate.getDate() !== day\n    ) {\n        return { isValid: false, error: \"Некоректна дата (така дата не існує)\" };\n    };\n\n    const today = new Date();\n    today.setHours(0, 0, 0, 0);\n\n    if (inputDate > today) {\n        return { isValid: false, error: \"Дата не може бути в майбутньому\" };\n    };\n\n    return {\n        isValid: true,\n        error: null,\n        value: dateString,\n        dateObject: inputDate\n    };\n};\n\nif (msg.step === 'waiting_name') {\n    const nameValidation = validateName(message);\n\n    if (!nameValidation.isValid) {\n        await insertLog(data);\n        msg.msgToUser = nameValidation?.error + '\\n\\n' + 'Спробуйте ще раз ввести імʼя 😉';\n        msg.toDB = {\n            showCancel: true\n        };\n\n        return [msg, null];\n\n    };\n\n    msg.toDB = {\n        deleteSession: false,\n        contactAction: 'insert',\n        showCancel: true,\n        step: 'waiting_birthday',\n        value: {\n            name: nameValidation?.value,\n            birthday: null\n        }\n    };\n\n    return [null, msg];\n};\n\nif (msg.step === 'waiting_birthday') {\n    const dateValidation = validateDate(message);\n\n    if (!dateValidation.isValid) {\n        await insertLog(data);\n        msg.msgToUser = dateValidation?.error + '\\n\\n' + 'Спробуйте ще раз ввести дату народження 😉';\n        msg.toDB = {\n            showCancel: true\n        };\n\n        return [msg, null];\n\n    };\n\n    msg.toDB = {\n        deleteSession: true,\n        contactAction: 'update',\n        showCancel: false,\n        value: {\n            name: contactData.name,\n            date: dateValidation?.dateObject\n        }\n    };\n\n    return [null, msg];\n};\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1600,
+        "wires": [
+            [
+                "a8029be2814294be"
+            ],
+            [
+                "d371cbcf092fe6cd",
+                "094a6742d20405c2"
+            ]
+        ]
+    },
+    {
+        "id": "a8029be2814294be",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "message",
+        "func": "const { showCancel } = msg.toDB || {};\nconst inlineBtns = [[{ text: 'Скасувати', callback_data: 'cancel' }]];\nconst message = msg.msgToUser;\n\nmsg.payload = {\n    message,\n    markupType: showCancel ? 'inline' : null,\n    buttons: showCancel ? inlineBtns : null\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1620,
+        "y": 1600,
+        "wires": [
+            [
+                "4cb69d9ae3ea170d"
+            ]
+        ]
+    },
+    {
+        "id": "4cb69d9ae3ea170d",
+        "type": "link call",
+        "z": "6c01dd28e010047e",
+        "name": "",
+        "links": [
+            "b8c8787ca1348d41"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1780,
+        "y": 1600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d371cbcf092fe6cd",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "vali",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "af4098974717e1a7",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "sessions",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "094a6742d20405c2",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "insert/update contact",
+        "func": "const { contactAction, value } = msg.toDB || {};\nconst { name, date = null } = value || {};\n\nif (contactAction === 'insert') {\n    msg.queryParameters = [msg.userId, name.trim()];\n    msg.payload = `\n        INSERT INTO contacts (user_id, name)\n        SELECT $1::INTEGER, $2::TEXT\n        WHERE NOT EXISTS (\n            SELECT 1 FROM contacts \n            WHERE user_id = $1::INTEGER\n            AND name = $2::TEXT\n            AND deleted = FALSE\n        )\n        RETURNING id, name, true as was_inserted;\n    `;\n\n    return [null, msg];\n};\n\nif (contactAction === 'update') {\n    msg.queryParameters = [msg.userId, name.trim(), date];\n    msg.payload = `\n        WITH updated_contact AS (\n            UPDATE contacts\n                SET birthday = $3,\n                    updated_at = NOW()\n            WHERE user_id = $1 \n                AND name = $2\n                AND deleted = FALSE\n            RETURNING id, name, birthday\n        ),\n        birthday_this_year AS (\n            SELECT \n                uc.id as contact_id,\n                MAKE_DATE(\n                    EXTRACT(YEAR FROM CURRENT_DATE)::INT,\n                    EXTRACT(MONTH FROM $3::DATE)::INT,\n                    EXTRACT(DAY FROM $3::DATE)::INT\n                ) as birthday_date\n            FROM updated_contact uc\n        ),\n        remind_date AS (\n            SELECT \n                contact_id,\n                CASE \n                    WHEN birthday_date >= CURRENT_DATE THEN birthday_date\n                    ELSE birthday_date + INTERVAL '1 year'\n                END as remind_date\n            FROM birthday_this_year\n        ),\n        created_reminder AS (\n            INSERT INTO reminders (contact_id, user_id, remind_date)\n            SELECT \n                rd.contact_id,\n                $1,\n                rd.remind_date\n            FROM remind_date rd\n            ON CONFLICT (contact_id, remind_date) DO NOTHING\n            RETURNING id, remind_date\n        )\n        SELECT \n            uc.id,\n            uc.name,\n            uc.birthday,\n            FALSE AS was_inserted\n        FROM updated_contact uc;\n    `;\n\n    return [null, msg];\n};\n\nmsg.msgToUser = `⚠️ Щось пішло не так...\\nБудь ласка, спробуйте ще раз трохи пізніше 🙏`;\nnode.error(`Unknown contactAction: ${contactAction}`, msg);\n\nreturn [msg, null];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 1640,
+        "wires": [
+            [
+                "a8029be2814294be"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6aa498ab04c55108",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "postgres",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "7cb587591dfc7fd6",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst result = msg.payload?.[0];\n\nconst months = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня',\n    'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];\n\nconst errorData = {\n    log_type: 'database_error',\n    status: 'failed',\n    action: 'contact_save',\n    user_id: msg.userId,\n    chat_id: msg.chatId,\n    log_level: 'error',\n    table_name: 'contacts',\n    context: { toDB: msg.toDB },\n    error_code: 'ERR_DB_SAVE',\n    error_msg: msg.error\n};\n\nif (msg?.error) {\n    msg.msgToUser = \"⚠️ Сталася помилка при збереженні контакту. Спробуйте, будь ласка, пізніше...\";\n    msg.toDB = { deleteSession:  true};\n    return [null, msg];\n};\n\nif (!result) {\n    msg.msgToUser = \"⚠️ Контакт з таким ім'ям вже існує!\\n\\n\" +\n        \"Виберіть інше ім'я або видаліть існуючий контакт.\";\n\n    await insertLog({\n        ...errorData,\n        log_type: 'user_action',\n        error_code: 'ERR_DUPLICATE_NAME',\n        error_msg: 'Contact with this name is already existed.'\n    });  \n    return [msg, null];\n};\n\nconst { was_inserted, name, reminders_created, birthday = null  } = result || {};\n\nif (was_inserted) {\n    msg.msgToUser = `✅ Контакт створено!\\n\\n` +\n        `👤 Ім'я: ${name}\\n\\n` +\n        `Тепер введіть дату народження у форматі РІК-МІСЯЦЬ-ДЕНЬ (наприклад: 2002-12-25)`;\n    return [null, msg];\n};\n\nconst birthdayData = new Date(birthday);\nconst formattedDate = `${birthdayData.getDate()} ${months[birthdayData.getMonth()]} ${birthdayData.getFullYear()}`;\n\nmsg.msgToUser = `✅ *Контакт успішно оновлено!*\n\n👤 Ім'я: ${result.name}\n🎂 День народження: ${formattedDate}\n🔔 Нагадування створено в день народження`;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 1680,
+        "wires": [
+            [
+                "a8029be2814294be"
+            ],
+            [
+                "39fe1985a63f7459"
+            ]
+        ]
+    },
+    {
+        "id": "39fe1985a63f7459",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "update/delete user_sessions",
+        "func": "const { deleteSession, step = null, value = {} } = msg.toDB || {};\n\nif (!deleteSession) {\n    const data = {\n        name: value?.name,\n        birthday: null\n    };\n\n    msg.queryParameters = [msg.userId, step, JSON.stringify(data)];\n    msg.payload = `\n    UPDATE user_sessions\n    SET step = $2,\n        data = $3,\n        updated_at = NOW()\n    WHERE user_id = $1\n    RETURNING user_id;\n    `;\n\n    return msg;\n};\n\nmsg.queryParameters = [msg.userId];\nmsg.payload = `\n    DELETE FROM user_sessions\n    WHERE user_id = $1\n    RETURNING user_id;\n    `;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 1700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9e676b7840f69481",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\n\nif (!!msg?.error) {\n    msg.msgToUser = SMTH_WRONG_MSG;\n    return msg;\n};\n\nif (msg.payload?.lenght === 0) {\n    const data = {\n        log_type: 'system_error',\n        status: 'failed',\n        action: msg.queryText?.toUpperCase()?.split(' ')[0],\n        user_id: msg.userId || null,\n        chat_id: msg?.chatId || msg.telegram?.id || null,\n        log_level: 'error',\n        table_name: 'user_sessions',\n        context: {\n            query: msg.queryText,\n            result: []\n        },\n        error_code: 'ERR_INSERT_DATA',\n        error_msg: 'Problem with insert data collection user_sessions'\n    };\n\n    await insertLog(data);\n    msg.msgToUser = SMTH_WRONG_MSG;\n    return msg;\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1510,
+        "y": 1700,
+        "wires": [
+            [
+                "a8029be2814294be"
+            ]
+        ]
+    },
+    {
+        "id": "48c44a8d5ebd83a8",
+        "type": "switch",
+        "z": "6c01dd28e010047e",
+        "name": "check command",
+        "property": "telegram.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "regex",
+                "v": "^list",
+                "vt": "str",
+                "case": false
+            },
+            {
+                "t": "eq",
+                "v": "cancel",
+                "vt": "str"
+            },
+            {
+                "t": "regex",
+                "v": "^delete",
+                "vt": "str",
+                "case": false
+            },
+            {
+                "t": "regex",
+                "v": "^confirm_delete",
+                "vt": "str",
+                "case": false
+            },
+            {
+                "t": "eq",
+                "v": "toggle_notifications",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "change_time",
+                "vt": "str"
+            },
+            {
+                "t": "regex",
+                "v": "^settime",
+                "vt": "str",
+                "case": false
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 7,
+        "x": 270,
+        "y": 1280,
+        "wires": [
+            [
+                "4bb98e83d8b79892"
+            ],
+            [
+                "b4226acee3d3efbf"
+            ],
+            [
+                "ed0286e788ae1f26"
+            ],
+            [
+                "7dca29c10db3a9ae"
+            ],
+            [
+                "827c4a74483c2593"
+            ],
+            [
+                "ba7705781775991d"
+            ],
+            [
+                "a16a3f20f13fd287"
+            ]
+        ]
+    },
+    {
+        "id": "b4226acee3d3efbf",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "update user sessions",
+        "func": "msg.queryParameters = [msg.userId];\n\nmsg.payload = `\nDELETE FROM user_sessions \nWHERE user_id = $1\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0f6785e719a8c604",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\n\nif (!!msg?.error) {\n    msg.msgToUser = SMTH_WRONG_MSG;\n    return msg;\n};\n\nmsg.msgToUser = \"Готово! Дію скасовано 😊\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 1220,
+        "wires": [
+            [
+                "a754e3aa5f652503"
+            ]
+        ]
+    },
+    {
+        "id": "a754e3aa5f652503",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "message",
+        "func": "const MENU_BUTTONS = flow.get('MENU_BUTTONS') || [];\nconst message = msg.msgToUser;\n\nmsg.payload = {\n    message,\n    markupType: msg?.inline ? 'inline' : 'keyboard',\n    buttons: msg?.inline || MENU_BUTTONS\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 1240,
+        "wires": [
+            [
+                "e2f5ec92d1966b16"
+            ]
+        ]
+    },
+    {
+        "id": "e2f5ec92d1966b16",
+        "type": "link call",
+        "z": "6c01dd28e010047e",
+        "name": "",
+        "links": [
+            "b8c8787ca1348d41"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1120,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5a5976baa84ddba8",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "contacts",
+        "func": "const page = msg.page || 1; \nconst perPage = 5; \n\nconst offset = (page - 1) * perPage;\n\nmsg.queryParameters = [msg.userId, perPage, offset];\nmsg.payload = `\n    SELECT \n        c.id,\n        c.name,\n        c.birthday,\n        EXTRACT(YEAR FROM AGE(CURRENT_DATE, c.birthday)) as current_age,\n        COUNT(*) OVER() as total_count\n    FROM contacts c\n    WHERE c.user_id = $1\n      AND c.deleted = FALSE\n    ORDER BY\n        EXTRACT(MONTH FROM c.birthday),\n        EXTRACT(DAY FROM c.birthday),\n        c.name\n    LIMIT $2 OFFSET $3\n`;\n\nmsg.listParams = {\n    page: page,\n    perPage: perPage,\n    chatId: msg.chatId\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3cc112f0f7807a23",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "postgres",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "27d3a09a85fe5551",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "forms a list",
+        "func": "const insertLog = global.get('insertLog');\n\nconst { page = 1, perPage = 5 } = msg.listParams || {};\nconst contacts = msg.payload || [];\n\nconst getYearsWord = (years) => {\n    if (years % 10 === 1 && years % 100 !== 11) return 'рік';\n    if ([2, 3, 4].includes(years % 10) && ![12, 13, 14].includes(years % 100)) return 'роки';\n    return 'років';\n};\n\nconst emptyContactMsg = `📋 *Список контактів порожній*\n\nВи ще не додали жодного контакту.\nНатисніть \"➕ Додати контакт\" щоб почати!`;\n\nif (contacts.length === 0) {\n    msg.msgToUser = emptyContactMsg;\n    return msg;\n};\n\nconst totalCount = parseInt(contacts?.[0]?.total_count) || contacts?.length;\nconst totalPages = Math.ceil(totalCount / perPage);\n\nconst keyboard = [];\nlet text = `📋 *Мої контакти* (Сторінка ${page}/${totalPages})\\n\\n`;\n\ncontacts.forEach((contact) => {\n    const { id = null, current_age = 0, name = \"ім'я\", birthday = null } = contact || {};\n\n    const birthDate = new Date(birthday).toLocaleDateString('uk-UA', {\n        timeZone: 'Europe/Kyiv',\n        day: '2-digit',\n        month: 'long'\n    });\n\n    text += `👤 *${name}*\\n`;\n    text += `🎂 ${birthDate || 'не знайдено'} • ${current_age || 'не знайдено'} ${current_age ? getYearsWord(current_age) : ''}\\n`;\n    text += `\\n`;\n\n\n    keyboard.push([\n        { text: `🗑️ Видалити ${name}`, callback_data: `delete_${id}` }\n    ]);\n});\n\ntext += `━━━━━━━━━━━━━━━━━━\\n`;\ntext += `📊 Всього контактів: ${totalCount}`;\n\nconst paginationRow = [];\nif (page > 1) {\n    paginationRow.push({\n        text: '◀️ Назад',\n        callback_data: `list_${page - 1}`\n    });\n};\n\nif (page < totalPages) {\n    paginationRow.push({\n        text: 'Вперед ▶️',\n        callback_data: `list_${page + 1}`\n    });\n};\n\nif (paginationRow.length > 0) {\n    keyboard.push(paginationRow);\n};\n\n\nif (totalPages > 1 && totalPages <= 5) {\n    const pageNumbers = Array.from({ length: totalPages }, (_, i) => {\n        const pageNum = i + 1;\n\n        return {\n            text: pageNum === page ? `• ${pageNum} •` : `${pageNum}`,\n            callback_data: `list_${pageNum}`\n        };\n    });\n\n    keyboard.push(pageNumbers);\n};\n\n// await insertLog({\n//     chat_id: msg.chatId,\n//     log_type: 'user_action',\n//     status: 'success',\n//     log_level: 'info',\n//     action: 'list_contacts_viewed',\n//     source: 'list_command',\n//     context: {\n//         page: page,\n//         contacts_shown: contacts.length,\n//         total_contacts: totalCount\n//     }\n// });\n\nmsg.msgToUser = text;\nmsg.keyboard = keyboard;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 1080,
+        "wires": [
+            [
+                "c13d2fd3b1b9344e"
+            ]
+        ]
+    },
+    {
+        "id": "c13d2fd3b1b9344e",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "is edit",
+        "func": "const message = msg.msgToUser;\n\nmsg.payload = {\n    message,\n    markupType: msg.keyboard ? 'inline' : null,\n    buttons: msg.keyboard || null,\n    ...(msg.isEdit && { messageId: msg?.telegram?.message_id })\n};\n\nif (msg.isEdit) {\n    return [msg, null];\n};\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 1060,
+        "wires": [
+            [
+                "a7f69249a342b9b7"
+            ],
+            [
+                "3fba3751db5d0d57"
+            ]
+        ]
+    },
+    {
+        "id": "3fba3751db5d0d57",
+        "type": "link call",
+        "z": "6c01dd28e010047e",
+        "name": "",
+        "links": [
+            "b8c8787ca1348d41"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1180,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0defb8f7827f916b",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "const SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\n// const insertLog = global.get(\"insertLog\");\n\nmsg.msgToUser = SMTH_WRONG_MSG;\n\nif (!!msg?.error) {\n    return [msg, null]\n};\n\nif (msg.payload?.lenght === 0) {\n    // const data = {\n    //     log_type: 'system_error',\n    //     status: 'failed',\n    //     action: 'SELECT',\n    //     user_id: msg.userId || null,\n    //     chat_id: msg?.chatId || msg.telegram?.id || null,\n    //     log_level: 'error',\n    //     table_name: 'contacts',\n    //     context: {\n    //         query: msg.queryText,\n    //         result: []\n    //     },\n    //     error_code: 'ERR_SELECT_DATA',\n    //     error_msg: 'Problem with get data collection contacts'\n    // };\n\n    // await insertLog(data);\n    return [msg, null];\n};\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1060,
+        "wires": [
+            [
+                "c13d2fd3b1b9344e"
+            ],
+            [
+                "27d3a09a85fe5551"
+            ]
+        ]
+    },
+    {
+        "id": "4bb98e83d8b79892",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "parse page",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\nconst page = parseInt(msg.telegram.text.split('_')[1]);\n\nif (isNaN(page) || page < 1) {\n    node.error('Invalid page number', msg);\n    const data = {\n        log_type: 'system_error',\n        status: 'failed',\n        action: 'parse_page_pagination',\n        user_id: msg.userId || null,\n        chat_id: msg?.chatId || msg.telegram?.id || null,\n        log_level: 'error',\n        table_name: null,\n        context: {\n            text: msg.telegram.text\n        },\n        error_code: 'ERR_PARSE_PAGE',\n        error_msg: 'Problem with parse page number for pagination'\n    };\n\n    await insertLog(data);\n    msg.msgToUser = SMTH_WRONG_MSG;\n\n    return [msg, null];\n};\n\nmsg.page = page;\nmsg.isEdit = true;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 1180,
+        "wires": [
+            [
+                "a754e3aa5f652503"
+            ],
+            [
+                "5a5976baa84ddba8"
+            ]
+        ]
+    },
+    {
+        "id": "c35470d9e562f8c2",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "edit msg",
+        "func": "const insertLog = global.get(\"insertLog\");\n\nconst TELEGRAM_BOT_TOKEN = env.get('TELEGRAM_BOT_TOKEN') || null;\nconst TELEGRAM_BASE_URL = env.get('TELEGRAM_BASE_URL') || null;\n\nif (!TELEGRAM_BOT_TOKEN || !TELEGRAM_BASE_URL) {\n  msg.error = 'Missed ENV';\n\n  const data = {\n    log_type: 'system_error',\n    status: 'failed',\n    action: 'edit telegram message',\n    user_id: msg?.userId || null,\n    chat_id: msg?.chatId,\n    log_level: 'critical',\n    table_name: null,\n    context: null,\n    error_code: 'ERR_MISSED_ENV',\n    error_msg: 'Missed data in ENV'\n  };\n\n  await insertLog(data);\n  node.error(\"Missed data in ENV\", msg);\n  return [msg, null];\n};\n\nconst { message = '', markupType = null, buttons = null, messageId = null, method = null } = msg.payload || {};\n\nconst baseReplyMarkup = {\n  resize_keyboard: true,\n  one_time_keyboard: false\n};\n\nconst replyMarkup =\n  markupType === 'inline' ? { inline_keyboard: buttons, ...baseReplyMarkup } :\n    markupType === 'keyboard' ? { keyboard: buttons, ...baseReplyMarkup } :\n      null;\n\nconst body = JSON.stringify({\n  chat_id: msg?.chatId,\n  text: message,\n  parse_mode: 'Markdown',\n  ...(replyMarkup && { reply_markup: replyMarkup }),\n  ...(messageId && { message_id: messageId })\n});\n\nmsg.url = `${TELEGRAM_BASE_URL}/bot${TELEGRAM_BOT_TOKEN}/editMessageText`;\nmsg.method = 'POST';\nmsg.headers = {\n  'Content-Type': 'application/json',\n  'Content-Length': Buffer.byteLength(body)\n};\n\nmsg.payload = body;\nmsg.body = body;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 2260,
+        "wires": [
+            [
+                "a43dec5102ef2a4c"
+            ],
+            [
+                "587b258502e6c9a3"
+            ]
+        ]
+    },
+    {
+        "id": "0ef3ea1029c96303",
+        "type": "link in",
+        "z": "6c01dd28e010047e",
+        "name": "edit message",
+        "links": [],
+        "x": 110,
+        "y": 2260,
+        "wires": [
+            [
+                "c35470d9e562f8c2"
+            ]
+        ],
+        "icon": "font-awesome/fa-send",
+        "l": true,
+        "info": "msg.payload = {\n    message: '', // message to send\n    markupType: '', // inline || keyboard (optional)\n    buttons: [] // [[{ text: 'Button 1', callback_data: 'btn1' }]]; || [['Button 1'], ['Button 2']]; (optional),\n    method: '' (optinal)\n    message_id: '' (optinal)\n}"
+    },
+    {
+        "id": "587b258502e6c9a3",
+        "type": "http request",
+        "z": "6c01dd28e010047e",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 2280,
+        "wires": [
+            [
+                "1c71275ba543eb7e",
+                "e989da345d9d3be7"
+            ]
+        ]
+    },
+    {
+        "id": "a43dec5102ef2a4c",
+        "type": "link out",
+        "z": "6c01dd28e010047e",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 705,
+        "y": 2260,
+        "wires": []
+    },
+    {
+        "id": "1c71275ba543eb7e",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "send telegram",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "e989da345d9d3be7",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "const insertLog = global.get(\"insertLog\");\n\nconst generalData = {\n    action: 'send telegram message',\n    user_id: msg.userId || null,\n    chat_id: msg?.chatId || null,\n    table_name: null,\n    context: {\n        body: JSON.parse(msg.body)\n    },\n    error_code: null, \n    error_msg: null\n};\n\nif (msg?.statusCode !== 200 || !msg.payload?.ok) {\n    const { error_code = null, description = null } = msg.payload || {};\n\n    msg.error = 'Problem with send message to telegram';\n    const data = {\n        ...generalData,\n        log_type: 'system_error',\n        status: 'failed',\n        log_level: 'error',\n        error_code,\n        error_msg: description\n    };\n\n    await insertLog(data);\n    node.send(msg);\n};\n\nconst data = {\n    ...generalData,\n    log_type: 'user_action',\n    status: 'success',\n    log_level: 'info'\n};\n\nawait insertLog(data);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 2280,
+        "wires": [
+            [
+                "a43dec5102ef2a4c"
+            ]
+        ]
+    },
+    {
+        "id": "a7f69249a342b9b7",
+        "type": "link call",
+        "z": "6c01dd28e010047e",
+        "name": "",
+        "links": [
+            "0ef3ea1029c96303"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1180,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ed0286e788ae1f26",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "contacts",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\nconst contactId = parseInt(msg.telegram.text.split('_')[1]);\n\nif (isNaN(contactId)) {\n  node.error('Invalid id number', msg);\n  const data = {\n    log_type: 'system_error',\n    status: 'failed',\n    action: 'parse_contact_id',\n    user_id: msg.userId || null,\n    chat_id: msg?.chatId || msg.telegram?.id || null,\n    log_level: 'error',\n    table_name: null,\n    context: {\n      text: msg.telegram.text\n    },\n    error_code: 'ERR_PARSE_ID',\n    error_msg: 'Problem with parse contact if for deleting'\n  };\n\n  await insertLog(data);\n  msg.msgToUser = SMTH_WRONG_MSG;\n\n  return [msg, null];\n};\n\nmsg.queryParameters = [contactId];\nmsg.payload = `\n    SELECT id, name \n    FROM contacts \n    WHERE id = $1 \n      AND deleted = FALSE\n`;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1260,
+        "wires": [
+            [
+                "a754e3aa5f652503"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e90c24b8af40af51",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "postgres",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "590191d8727543f6",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "forms msg",
+        "func": "const SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\nconst { id, name } = msg.payload?.[0] || {};\n\nif (!!msg?.error || !id) {\n    msg.msgToUser = SMTH_WRONG_MSG;\n    return msg;\n};\n\nmsg.inline = [\n    [\n        { text: '✅ Так, видалити', callback_data: `confirm_delete_${id}` },\n        { text: '❌ Ні, залишити', callback_data: `cancel` }\n    ],\n    [{ text: '📋 До списку', callback_data: 'list_1' }]\n];\n\nmsg.msgToUser = `⚠️ Ви впевнені, що хочете видалити контакт *${name}?*\n\nТакож будуть видалені:\n• Всі нагадування про цей день народження\n\n❗ Цю дію не можна буде скасувати.\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1280,
+        "wires": [
+            [
+                "a754e3aa5f652503"
+            ]
+        ]
+    },
+    {
+        "id": "7dca29c10db3a9ae",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "contacts",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\nconst contactId = parseInt(msg.telegram.text.split('_')[2]);\n\nif (isNaN(contactId)) {\n  node.error('Invalid id number', msg);\n  const data = {\n    log_type: 'system_error',\n    status: 'failed',\n    action: 'parse_contact_id',\n    user_id: msg.userId || null,\n    chat_id: msg?.chatId || msg.telegram?.id || null,\n    log_level: 'error',\n    table_name: null,\n    context: {\n      text: msg.telegram.text\n    },\n    error_code: 'ERR_PARSE_ID',\n    error_msg: 'Problem with parse contact if for deleting'\n  };\n\n  await insertLog(data);\n  msg.msgToUser = SMTH_WRONG_MSG;\n\n  return [msg, null];\n};\n\nmsg.queryParameters = [contactId, contactId];\nmsg.payload = `\n    WITH deleted_contact AS (\n        UPDATE contacts \n        SET deleted = TRUE, deleted_at = NOW()\n        WHERE id = $1 \n          AND deleted = FALSE\n        RETURNING id, name\n    ),\n    cancelled_reminders AS (\n        UPDATE reminders\n        SET cancelled = TRUE\n        WHERE contact_id = $2 AND sent = FALSE\n        RETURNING id\n    )\n    SELECT \n        dc.id,\n        dc.name,\n        (SELECT COUNT(*) FROM cancelled_reminders) as reminders_cancelled\n    FROM deleted_contact dc\n`;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1300,
+        "wires": [
+            [
+                "a754e3aa5f652503"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "dac73e94d2dcd052",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "forms msg",
+        "func": "const SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\nconst { id, name, reminders_cancelled } = msg.payload?.[0] || {};\n\nif (!!msg?.error || !id) {\n    msg.msgToUser = SMTH_WRONG_MSG;\n    return msg;\n};\n\nmsg.msgToUser = `✅ Контакт *${name}* був успішно видалений\n\n🔕 Скасовано ${reminders_cancelled} нагадувань.\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1320,
+        "wires": [
+            [
+                "a754e3aa5f652503"
+            ]
+        ]
+    },
+    {
+        "id": "94dc86c1bdfd2956",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "contacts",
+        "func": "msg.queryParameters = [msg.userId];\nmsg.payload = `\n    SELECT \n        c.id,\n        c.name,\n        c.birthday,\n        EXTRACT(YEAR FROM AGE(CURRENT_DATE, c.birthday)) + 1 as turning_age\n    FROM contacts c\n    WHERE c.user_id = $1\n      AND c.deleted = FALSE\n      AND EXTRACT(MONTH FROM c.birthday) = EXTRACT(MONTH FROM CURRENT_DATE)\n      AND EXTRACT(DAY FROM c.birthday) = EXTRACT(DAY FROM CURRENT_DATE)\n    ORDER BY c.name ASC;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "838c269f8357708b",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "forms msg",
+        "func": "const SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\n\nconst getYearsWord = (years) => {\n    if (years % 10 === 1 && years % 100 !== 11) return 'рік';\n    if ([2, 3, 4].includes(years % 10) && ![12, 13, 14].includes(years % 100)) return 'роки';\n    return 'років';\n};\n\nif (!!msg?.error) {\n    msg.msgToUser = SMTH_WRONG_MSG;\n    return msg;\n};\n\nif (msg.payload?.length === 0) {\n    msg.msgToUser = `📅 Сьогодні немає жодного контакту, який святкує день народження.`;\n    return msg;\n};\n\nlet text = `🎉 *Сьогодні святкують!*\\n\\n`;\n\nmsg.payload.forEach((contact) => {\n    const { name, turning_age } = contact || {};\n\n    const age = parseInt(turning_age);\n\n    text += `👤 *${name}*\\n`;\n    text += `🎂 Виповнюється ${age} ${getYearsWord(age)}\\n`;\n    text += `\\n`;\n});\n\nmsg.msgToUser = text;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 900,
+        "wires": [
+            [
+                "354a0bbc7ea06660"
+            ]
+        ]
+    },
+    {
+        "id": "24feb566bd860691",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "update user sessions",
+        "func": "msg.queryParameters = [msg.userId, 'find_contact', 'waiting_name'];\nmsg.payload = `\nINSERT INTO user_sessions (user_id, command, step)\nVALUES ($1, $2, $3)\nRETURNING user_id;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f317ba13464df138",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "postgres",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "354a0bbc7ea06660",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "message",
+        "func": "const MENU_BUTTONS = flow.get('MENU_BUTTONS') || [];\nconst message = msg.msgToUser;\n\nmsg.payload = {\n    message,\n    markupType: msg?.inline ? 'inline' : 'keyboard',\n    buttons: msg?.inline || MENU_BUTTONS\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 900,
+        "wires": [
+            [
+                "b8e9b12d15c9476f"
+            ]
+        ]
+    },
+    {
+        "id": "7f86f2f4197ea8dc",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\n\nmsg.msgToUser = SMTH_WRONG_MSG;\n\nif (!!msg?.error) {\n    return msg;\n};\n\nif (msg.payload?.lenght === 0) {\n    const data = {\n        log_type: 'system_error',\n        status: 'failed',\n        action: msg.queryText?.toUpperCase()?.split(' ')[0],\n        user_id: msg.userId || null,\n        chat_id: msg?.chatId || msg.telegram?.id || null,\n        log_level: 'error',\n        table_name: 'user_sessions',\n        context: {\n            query: msg.queryText,\n            result: []\n        },\n        error_code: 'ERR_INSERT_DATA',\n        error_msg: 'Problem with insert data collection user_sessions'\n    };\n\n    await insertLog(data);\n    return msg;\n};\n\nmsg.inline = [[{ text: 'Скасувати', callback_data: 'cancel' }]];\nmsg.msgToUser = `Введіть ім'я контакту:`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 940,
+        "wires": [
+            [
+                "354a0bbc7ea06660"
+            ]
+        ]
+    },
+    {
+        "id": "4ee92851ac8a3a8d",
+        "type": "link call",
+        "z": "6c01dd28e010047e",
+        "name": "",
+        "links": [
+            "b8c8787ca1348d41"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 360,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "886b503815259354",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "send",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "3d167ab3d847884a",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "contacts",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\nconst contactName = msg.telegram.text?.trim();\n\nif (!contactName) {\n  node.error('Missed data', msg);\n  const data = {\n    log_type: 'system_error',\n    status: 'failed',\n    action: 'find_contact',\n    user_id: msg.userId || null,\n    chat_id: msg?.chatId || msg.telegram?.id || null,\n    log_level: 'error',\n    table_name: null,\n    context: {\n      text: contactName\n    },\n    error_code: 'ERR_MISSED_DATA',\n    error_msg: 'Missed contact name'\n  };\n\n  await insertLog(data);\n  msg.msgToUser = SMTH_WRONG_MSG;\n\n  return [msg, null];\n};\n\nmsg.queryParameters = [contactName, msg.userId];\nmsg.payload = `\n    SELECT id, name, birthday\n    FROM contacts \n    WHERE LOWER(name) = LOWER($1)\n      AND user_id = $2\n      AND deleted = FALSE\n`;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1720,
+        "wires": [
+            [
+                "a8029be2814294be"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ed0f391607203d20",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "postgres",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "ac23ca63ed6a894e",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "const SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\n\nconst result = msg.payload?.[0] || {};\n\nconst months = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня',\n    'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];\n\nif (msg?.error) {\n    msg.msgToUser = SMTH_WRONG_MSG;\n    return [msg, null];\n};\n\nif (msg.payload?.length === 0) {\n    msg.msgToUser = `На жаль, за цим іменем нікого не знайдено 😢 \n    \nБудь ласка, перевірте правильність написання і спробуйте ще раз.`;\n    msg.toDB = {\n        showCancel: true\n    };\n\n    return [msg, null];\n};\n\nconst birthday = new Date(result.birthday);\nconst formattedDate = `${birthday.getDate()} ${months[birthday.getMonth()]} ${birthday.getFullYear()}`;\n\nmsg.msgToUser = `✅ *Знайдено контакт!*\\n\\n` +\n    `👤 Ім'я: ${result.name}\\n` +\n    `🎂 День народження: ${formattedDate}\\n`;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1740,
+        "wires": [
+            [
+                "a8029be2814294be"
+            ],
+            [
+                "dcf918985cd00f82"
+            ]
+        ]
+    },
+    {
+        "id": "dcf918985cd00f82",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "delete user_sessions",
+        "func": "msg.queryParameters = [msg.userId];\nmsg.payload = `\n    DELETE FROM user_sessions\n    WHERE user_id = $1\n    RETURNING user_id;\n    `;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 1780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6b80944afa94677c",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "user_preferences",
+        "func": "msg.queryParameters = [msg.userId];\nmsg.payload = `\n    SELECT \n        reminder_time,\n        notification_enabled\n    FROM user_preferences\n    WHERE user_id = $1;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f2c5f6893622999d",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "postgres",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "fe273a3a4d20504a",
+        "type": "catch",
+        "z": "6c01dd28e010047e",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 120,
+        "y": 1960,
+        "wires": [
+            [
+                "681f622e9fbf7537",
+                "1edf8b3cb0d5fecc"
+            ]
+        ]
+    },
+    {
+        "id": "681f622e9fbf7537",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "ERROR",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 140,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "1edf8b3cb0d5fecc",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "insert log",
+        "func": "const insertLog = global.get(\"insertLog\");\n\nconst data = {\n    chat_id: msg.chatId || null, \n    ...msg.errorData\n};\n\nawait insertLog(data);\n\nnode.send(msg);",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 1960,
+        "wires": [
+            [
+                "465452607e4f079a",
+                "109fc6edc1488fea"
+            ]
+        ]
+    },
+    {
+        "id": "9fda87a6f622eb26",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\n\nmsg.msgToUser = SMTH_WRONG_MSG;\n\nif (!!msg?.error) {\n    return msg;\n};\n\nif (msg.payload?.lenght === 0) {\n    const data = {\n        log_type: 'system_error',\n        status: 'failed',\n        action: 'SELECT',\n        user_id: msg.userId || null,\n        chat_id: msg?.chatId || msg.telegram?.id || null,\n        log_level: 'error',\n        table_name: 'user_preferences',\n        context: {\n            query: msg.queryText,\n            result: []\n        },\n        error_code: 'ERR_GET_DATA',\n        error_msg: 'Problem with select data collection from user_preferences'\n    };\n\n    await insertLog(data);\n    return msg;\n};\n\nconst { reminder_time, notification_enabled } = msg.payload?.[0] || {};\n\nconst formattedTime = reminder_time?.split(':').slice(0, 2).join(':') || reminder_time; \n\nmsg.msgToUser = `🔔 *Налаштування сповіщень*\n\n${notification_enabled ? '✅ Статус: увімкнені' : '🚫 Статус: вимкнені'}\n${notification_enabled ? `⏰ Час надсилання: ${formattedTime} (за київським часовим поясом)` : ''}\n\nВи можете змінити налаштування за допомогою кнопок нижче:`;\n\nmsg.inline = [\n    [\n        { text: `${!notification_enabled ? '🔔 Увімкнути сповіщення' : '🔕 Вимкнути сповіщення'}`, callback_data: 'toggle_notifications' }\n    ],\n    ...(notification_enabled\n        ? [[{ text: '⏰ Змінити час сповіщень', callback_data: 'change_time' }]]\n        : [])\n    \n];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 1000,
+        "wires": [
+            [
+                "354a0bbc7ea06660",
+                "3934d74e8b1e4c53"
+            ]
+        ]
+    },
+    {
+        "id": "827c4a74483c2593",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "user_preferences",
+        "func": "msg.queryParameters = [msg.userId];\n\nmsg.payload = `\nUPDATE user_preferences\nSET notification_enabled = NOT notification_enabled,\n    updated_at = NOW()\nWHERE user_id = $1\nRETURNING notification_enabled;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "223277e761f2e8bf",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\n\nmsg.msgToUser = SMTH_WRONG_MSG;\n\nif (!!msg?.error) {\n    return msg;\n};\n\nif (msg.payload?.lenght === 0) {\n    const data = {\n        log_type: 'system_error',\n        status: 'failed',\n        action: 'UPDATE',\n        user_id: msg.userId || null,\n        chat_id: msg?.chatId || msg.telegram?.id || null,\n        log_level: 'error',\n        table_name: 'user_preferences',\n        context: {\n            query: msg.queryText,\n            result: []\n        },\n        error_code: 'ERR_UPDATE_DATA',\n        error_msg: 'Problem with update data collection from user_preferences'\n    };\n\n    await insertLog(data);\n    return msg;\n};\n\nconst { notification_enabled } = msg.payload?.[0] || {};\n\nmsg.msgToUser = `${notification_enabled ? 'Сповіщення успішно увімкнені ✅' : '🚫 Сповіщення успішно вимкнені'}\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 1360,
+        "wires": [
+            [
+                "a754e3aa5f652503"
+            ]
+        ]
+    },
+    {
+        "id": "3934d74e8b1e4c53",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "postgres",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "ba7705781775991d",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "forms msg",
+        "func": "msg.msgToUser = `⏰ *Оберіть час нагадування*\n\nНагадування будуть надсилатися о цій годині (за київським часовим поясом)`;\n\nmsg.inline = [\n    [\n        { text: '07:00', callback_data: 'settime_07:00' },\n        { text: '08:00', callback_data: 'settime_08:00' },\n        { text: '09:00', callback_data: 'settime_09:00' },\n        { text: '10:00', callback_data: 'settime_10:00' }\n    ],\n    [\n        { text: '11:00', callback_data: 'settime_11:00' },\n        { text: '12:00', callback_data: 'settime_12:00' },\n        { text: '13:00', callback_data: 'settime_12:00' },\n        { text: '14:00', callback_data: 'settime_12:00' }\n    ],\n    [\n        { text: '15:00', callback_data: 'settime_15:00' },\n        { text: '16:00', callback_data: 'settime_15:00' },\n        { text: '17:00', callback_data: 'settime_15:00' },\n        { text: '18:00', callback_data: 'settime_18:00' }\n    ],\n    [\n        { text: '19:00', callback_data: 'settime_19:00' },\n        { text: '20:00', callback_data: 'settime_20:00' },\n        { text: '21:00', callback_data: 'settime_21:00' },\n        { text: '22:00', callback_data: 'settime_22:00' }\n    ]\n];\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 1400,
+        "wires": [
+            [
+                "a754e3aa5f652503"
+            ]
+        ]
+    },
+    {
+        "id": "a16a3f20f13fd287",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "parse time",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\nconst time = msg.telegram?.text?.split('_')?.[1];\n\nif (!time) {\n    node.error('Missed time', msg);\n    const data = {\n        log_type: 'system_error',\n        status: 'failed',\n        action: 'set_notification_time',\n        user_id: msg.userId || null,\n        chat_id: msg?.chatId || msg.telegram?.id || null,\n        log_level: 'error',\n        table_name: null,\n        context: {\n            text: msg.telegram.text\n        },\n        error_code: 'ERR_PARSE_TIME',\n        error_msg: 'Problem with parse notification time'\n    };\n\n    await insertLog(data);\n    msg.msgToUser = SMTH_WRONG_MSG;\n\n    return [msg, null];\n};\n\nmsg.queryParameters = [msg.userId, time];\nmsg.payload = `\n    UPDATE user_preferences\n    SET\n        reminder_time = $2::TIME,\n        updated_at = NOW()\n    WHERE user_id = $1\n    RETURNING reminder_time;\n`;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 1440,
+        "wires": [
+            [
+                "a754e3aa5f652503"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9e8c2f503eb94212",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "postgres",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "8f2d26d5e9a13960",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "check error",
+        "func": "const insertLog = global.get(\"insertLog\");\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\n\nmsg.msgToUser = SMTH_WRONG_MSG;\n\nif (!!msg?.error) {\n    return msg;\n};\n\nif (msg.payload?.lenght === 0) {\n    const data = {\n        log_type: 'system_error',\n        status: 'failed',\n        action: 'UPDATE',\n        user_id: msg.userId || null,\n        chat_id: msg?.chatId || msg.telegram?.id || null,\n        log_level: 'error',\n        table_name: 'user_preferences',\n        context: {\n            query: msg.queryText,\n            result: []\n        },\n        error_code: 'ERR_UPDATE_DATA',\n        error_msg: 'Problem with update data collection from user_preferences'\n    };\n\n    await insertLog(data);\n    return msg;\n};\n\nconst { reminder_time } = msg.payload?.[0] || {};\n\nmsg.msgToUser = `✅ Час нагадування успішно змінено на ${reminder_time.slice(0, 5)}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 1460,
+        "wires": [
+            [
+                "a754e3aa5f652503"
+            ]
+        ]
+    },
+    {
+        "id": "3c75e470a52a25d1",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "contacts",
+        "func": "const page = msg.page || 1; \nconst perPage = 5; \n\nconst offset = (page - 1) * perPage;\n\nmsg.queryParameters = [msg.userId, perPage, offset];\nmsg.payload = `\n    SELECT \n        c.id,\n        c.name,\n        c.birthday,\n        EXTRACT(YEAR FROM AGE(CURRENT_DATE, c.birthday)) as current_age,\n        EXTRACT(DAY FROM c.birthday) || ' ' || \n        CASE EXTRACT(MONTH FROM c.birthday)\n            WHEN 1 THEN 'січня'\n            WHEN 2 THEN 'лютого'\n            WHEN 3 THEN 'березня'\n            WHEN 4 THEN 'квітня'\n            WHEN 5 THEN 'травня'\n            WHEN 6 THEN 'червня'\n            WHEN 7 THEN 'липня'\n            WHEN 8 THEN 'серпня'\n            WHEN 9 THEN 'вересня'\n            WHEN 10 THEN 'жовтня'\n            WHEN 11 THEN 'листопада'\n            WHEN 12 THEN 'грудня'\n        END as birthday_short,\n        COUNT(*) OVER() as total_count\n    FROM contacts c\n    WHERE c.user_id = $1\n      AND c.deleted = FALSE\n    ORDER BY\n        EXTRACT(MONTH FROM c.birthday),\n        EXTRACT(DAY FROM c.birthday),\n        c.name\n    LIMIT $2 OFFSET $3\n`;\n\nmsg.listParams = {\n    page: page,\n    perPage: perPage,\n    chatId: msg.chatId\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "465452607e4f079a",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "ERROR",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "109fc6edc1488fea",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "forms msg if is possible",
+        "func": "if (!msg.chatId) {\n    return null;\n};\n\nconst SMTH_WRONG_MSG = flow.get('SMTH_WRONG_MSG') || '';\nconst message = SMTH_WRONG_MSG;\n\nmsg.payload = {\n    message\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 1960,
+        "wires": [
+            [
+                "f18067a6495ca577"
+            ]
+        ]
+    },
+    {
+        "id": "f18067a6495ca577",
+        "type": "link call",
+        "z": "6c01dd28e010047e",
+        "name": "",
+        "links": [
+            "b8c8787ca1348d41"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 680,
+        "y": 1960,
+        "wires": [
+            [
+                "f679ecbc60cda60c"
+            ]
+        ]
+    },
+    {
+        "id": "f679ecbc60cda60c",
+        "type": "debug",
+        "z": "6c01dd28e010047e",
+        "name": "ERROR",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "398f5b81bfeba396",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "SEND MSG",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6d7b886ea9b1d03e",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "SEND MSG",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1850,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8a6ed8a2df46d023",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "SEND MSG",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b8e9b12d15c9476f",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "SEND MSG",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "afacd9ccce169a5f",
+        "type": "function",
+        "z": "6c01dd28e010047e",
+        "name": "WEBHOOK",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 280,
+        "wires": [
+            [
+                "aa2997ba54b6f86e"
+            ]
+        ]
     },
     {
         "id": "3e18abe1e5573a92",
@@ -11337,7 +13533,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 150,
-        "y": 2700,
+        "y": 2900,
         "wires": [
             [
                 "ba073bbdee229eb1"
@@ -11358,7 +13554,7 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 2700,
+        "y": 2900,
         "wires": [
             [
                 "f2c637f51f6f8ce2"
@@ -11377,7 +13573,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 440,
-        "y": 2700,
+        "y": 2900,
         "wires": [
             [
                 "4a8ab29dbc4e1f21"
@@ -11399,7 +13595,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 580,
-        "y": 2700,
+        "y": 2900,
         "wires": []
     },
     {
@@ -13200,7 +15396,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 2820,
+        "y": 2980,
         "wires": [
             [
                 "b06d42c44dcdb49d"
@@ -13220,7 +15416,7 @@
         "finalize": "",
         "libs": [],
         "x": 250,
-        "y": 2820,
+        "y": 2980,
         "wires": [
             [
                 "8bed46d84f245f5b"
@@ -13238,7 +15434,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 460,
-        "y": 2820,
+        "y": 2980,
         "wires": [
             [
                 "36e91038e646881a"
@@ -13259,7 +15455,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 590,
-        "y": 2820,
+        "y": 2980,
         "wires": []
     },
     {
@@ -14122,7 +16318,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 7090,
+        "x": 7210,
         "y": 2220,
         "wires": [
             [
@@ -14151,7 +16347,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 6930,
+        "x": 7050,
         "y": 2220,
         "wires": [
             [
@@ -14169,7 +16365,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 7280,
+        "x": 7400,
         "y": 2220,
         "wires": [
             [
@@ -14190,7 +16386,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 7420,
+        "x": 7540,
         "y": 2220,
         "wires": []
     },
@@ -14206,7 +16402,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 7090,
+        "x": 7210,
         "y": 2260,
         "wires": [
             [
@@ -14235,7 +16431,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 6930,
+        "x": 7050,
         "y": 2260,
         "wires": [
             [
@@ -14253,7 +16449,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 7280,
+        "x": 7400,
         "y": 2260,
         "wires": [
             [
@@ -14274,7 +16470,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 7420,
+        "x": 7540,
         "y": 2260,
         "wires": []
     },
@@ -14360,6 +16556,598 @@
         "statusType": "auto",
         "x": 4520,
         "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "c25d3b8611205958",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "func": "const category_id = 1;\nconst images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1780224162/tarta-pantera_fyq2fz.webp\"]\nconst slug = 'pantera-rosa';\n\nmsg.queryParameters = [slug, category_id, images];\nmsg.payload = `\n    INSERT INTO products (slug, category_id, images, is_posible_sugar_free, is_cake_of_the_month, deleted, is_posible_gluten_free, is_posible_lactose_free)\n    VALUES ($1, $2, $3, false, true, true, false, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1620,
+        "y": 1920,
+        "wires": [
+            [
+                "54dd1a438e08b15b"
+            ]
+        ]
+    },
+    {
+        "id": "39b0a0a40d284da8",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1490,
+        "y": 1920,
+        "wires": [
+            [
+                "c25d3b8611205958"
+            ]
+        ]
+    },
+    {
+        "id": "54dd1a438e08b15b",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1840,
+        "y": 1920,
+        "wires": [
+            [
+                "2ab706b75ebedd1a"
+            ]
+        ]
+    },
+    {
+        "id": "2ab706b75ebedd1a",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1980,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "bf3fb01c0de7729a",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 11;\nconst language_code = 'en';\nconst name = 'Pink Panther Creamy';\nconst description = 'Our Pink Panther Creamy is inspired by the iconic pink treat that has delighted generations. It combines a delicate strawberry flavor with subtle notes of vanilla and a smooth, velvety texture. Sweet, light, and irresistibly nostalgic, every bite brings back the charm of this beloved classic.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 2420,
+        "wires": [
+            [
+                "07fc7e9f51b9f88d"
+            ]
+        ]
+    },
+    {
+        "id": "63081e0d9a2b2947",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 2420,
+        "wires": [
+            [
+                "bf3fb01c0de7729a"
+            ]
+        ]
+    },
+    {
+        "id": "07fc7e9f51b9f88d",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 460,
+        "y": 2420,
+        "wires": [
+            [
+                "ad53af5f150fbae1"
+            ]
+        ]
+    },
+    {
+        "id": "ad53af5f150fbae1",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 2420,
+        "wires": []
+    },
+    {
+        "id": "ed70aa8e3b26ea27",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 11;\nconst language_code = 'es';\n\nconst name = 'Cremosa de Pantera Rosa';\nconst description = 'Nuestra cremosa de pantera rosa está inspirada en el icónico dulce rosa que ha conquistado generaciones. Combina un delicado sabor a fresa con suaves notas de vainilla y una textura cremosa y aterciopelada. Dulce, ligera e irresistiblemente nostálgica, cada bocado recuerda el encanto de este clásico tan querido.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 2460,
+        "wires": [
+            [
+                "8dd95e1c474c98c3"
+            ]
+        ]
+    },
+    {
+        "id": "64b831b75225b016",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 2460,
+        "wires": [
+            [
+                "ed70aa8e3b26ea27"
+            ]
+        ]
+    },
+    {
+        "id": "8dd95e1c474c98c3",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 460,
+        "y": 2460,
+        "wires": [
+            [
+                "b94e3764edac13d2"
+            ]
+        ]
+    },
+    {
+        "id": "b94e3764edac13d2",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 2460,
+        "wires": []
+    },
+    {
+        "id": "7000b0a654861153",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 11;\nconst language_code = 'gl';\nconst name = 'Cremosa de Pantera Rosa';\nconst description = 'A nosa cremosa de Pantera Rosa está inspirada no icónico doce rosa que conquistou xeracións. Combina un delicado sabor a amorodo con suaves notas de vainilla e unha textura cremosa e aveludada. Doce, lixeira e irresistiblemente nostálxica, cada bocado lembra o encanto deste clásico tan querido.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 2500,
+        "wires": [
+            [
+                "cc51d67eec8eefad"
+            ]
+        ]
+    },
+    {
+        "id": "c768403e4481e354",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 2500,
+        "wires": [
+            [
+                "7000b0a654861153"
+            ]
+        ]
+    },
+    {
+        "id": "cc51d67eec8eefad",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 460,
+        "y": 2500,
+        "wires": [
+            [
+                "9db4b86fa04f4f51"
+            ]
+        ]
+    },
+    {
+        "id": "9db4b86fa04f4f51",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 2500,
+        "wires": []
+    },
+    {
+        "id": "322778f24e02a748",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 11;\nconst sort_order = 1;\nconst price = 5.50;\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 2560,
+        "wires": [
+            [
+                "9af8943c2a5b42a0"
+            ]
+        ]
+    },
+    {
+        "id": "6defed424d04d6ea",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 2560,
+        "wires": [
+            [
+                "322778f24e02a748"
+            ]
+        ]
+    },
+    {
+        "id": "9af8943c2a5b42a0",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 460,
+        "y": 2560,
+        "wires": [
+            [
+                "cc580f3c28ed7cf5"
+            ]
+        ]
+    },
+    {
+        "id": "cc580f3c28ed7cf5",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "c522f92a5f679b85",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 11;\nconst sort_order = 2;\nconst price = 13; \n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 2600,
+        "wires": [
+            [
+                "85c6bf01759bfe09"
+            ]
+        ]
+    },
+    {
+        "id": "bfd095160be83b54",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 2600,
+        "wires": [
+            [
+                "c522f92a5f679b85"
+            ]
+        ]
+    },
+    {
+        "id": "85c6bf01759bfe09",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 460,
+        "y": 2600,
+        "wires": [
+            [
+                "a3db29b50fc27105"
+            ]
+        ]
+    },
+    {
+        "id": "a3db29b50fc27105",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 2600,
+        "wires": []
+    },
+    {
+        "id": "b87e881ba01b5040",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variant_translations",
+        "func": "msg.payload = `\nINSERT INTO product_variant_translations (variant_id, language_code, name) VALUES\n(21, 'es', 'Pequeña (1 persona)'),\n(22, 'es', 'Mediana (2 personas)'),\n\n(21, 'gl', 'Pequena (1 persoa)'),\n(22, 'gl', 'Mediana (2 persoas)'),\n\n(21, 'en', 'Small (1 person)'),\n(22, 'en', 'Medium (2 people)')\n;`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 2660,
+        "wires": [
+            [
+                "7e46a428a4596485"
+            ]
+        ]
+    },
+    {
+        "id": "9d8be82eec4bd724",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 2660,
+        "wires": [
+            [
+                "b87e881ba01b5040"
+            ]
+        ]
+    },
+    {
+        "id": "7e46a428a4596485",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 520,
+        "y": 2660,
+        "wires": [
+            [
+                "057a6183ccf0b07a"
+            ]
+        ]
+    },
+    {
+        "id": "057a6183ccf0b07a",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 2660,
         "wires": []
     },
     {
@@ -16917,7 +19705,7 @@
         "z": "15bda437fadfc244",
         "g": "b380f68b15913b37",
         "name": "get info telegram webhook",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
