@@ -242,12 +242,17 @@
             "http_get_product_by_id",
             "75f1785c99dd8ee9",
             "link_call_db_product",
-            "a799c959e1398a15"
+            "a799c959e1398a15",
+            "f0689efea8522b5b",
+            "42358d1e583e75da",
+            "88496d20468a0be1",
+            "ea822b83ea4fcc64",
+            "ce4d0d3ce2b221c1"
         ],
         "x": 28,
         "y": 39,
         "w": 1118,
-        "h": 888
+        "h": 988
     },
     {
         "id": "61f89699cc21cd28",
@@ -632,7 +637,11 @@
             "c25d3b8611205958",
             "39b0a0a40d284da8",
             "54dd1a438e08b15b",
-            "2ab706b75ebedd1a"
+            "2ab706b75ebedd1a",
+            "78e49b2ff8bc09a9",
+            "e9c0376d707ceb99",
+            "e6bafa86fcc1dce1",
+            "86629bfd1b3cc1b4"
         ],
         "x": 34,
         "y": 1539,
@@ -1125,7 +1134,7 @@
             "4a8ab29dbc4e1f21"
         ],
         "x": 34,
-        "y": 2859,
+        "y": 2959,
         "w": 652,
         "h": 82
     },
@@ -1234,7 +1243,7 @@
             "4848fd5bbff00ef3"
         ],
         "x": 54,
-        "y": 639,
+        "y": 739,
         "w": 932,
         "h": 262
     },
@@ -1288,7 +1297,7 @@
             "fbd4d677a6e08f26"
         ],
         "x": 54,
-        "y": 419,
+        "y": 519,
         "w": 872,
         "h": 182
     },
@@ -7213,7 +7222,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 180,
-        "y": 460,
+        "y": 560,
         "wires": [
             [
                 "function_validate_product_data"
@@ -7234,7 +7243,7 @@
         "finalize": "",
         "libs": [],
         "x": 370,
-        "y": 460,
+        "y": 560,
         "wires": [
             [
                 "2b159c66dfaecd0d"
@@ -7256,7 +7265,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 520,
-        "y": 480,
+        "y": 580,
         "wires": [
             [
                 "function_format_create_product_response"
@@ -7277,7 +7286,7 @@
         "finalize": "",
         "libs": [],
         "x": 680,
-        "y": 480,
+        "y": 580,
         "wires": [
             [
                 "2b159c66dfaecd0d"
@@ -7321,7 +7330,7 @@
         "z": "554b53c71ea14722",
         "g": "4e79e7e4e982c657",
         "name": "to db",
-        "func": "const { page, limit, sort, glutenFree, lactoseFree, sugarFree, lang } = msg.parameters;\nconst offset = (page - 1) * limit;\n\nconst orderByMap = {\n    price_asc: 'min_price ASC',\n    price_desc: 'max_price DESC',\n    created_asc: 'created_at ASC',\n    created_desc: 'created_at DESC'\n};\nconst orderBy = orderByMap[sort] || 'created_at DESC';\nconst availableOrder = `available DESC, ${orderBy}`;\n\nconst conditions = ['p.deleted = FALSE'];\nconst values = [lang]; \nlet idx = 2;\n\nif (glutenFree) {\n    conditions.push(`p.is_posible_gluten_free = $${idx++}`);\n    values.push(glutenFree);\n}\nif (lactoseFree) {\n    conditions.push(`p.is_posible_lactose_free = $${idx++}`);\n    values.push(lactoseFree);\n}\nif (sugarFree) {\n    conditions.push(`p.is_posible_sugar_free = $${idx++}`);\n    values.push(sugarFree);\n}\n\nconst where = conditions.length ? 'WHERE ' + conditions.join(' AND ') : '';\n\nvalues.push(limit, offset);\n\nmsg.queryParameters = values;\nmsg.payload = `\n    WITH filtered_products AS (\n        SELECT \n            p.id,\n            p.slug,\n            p.images,\n            p.available,\n            p.category_id,\n            p.is_cake_of_the_month,\n            p.created_at,\n            pt.name,\n            COALESCE(\n                array_agg(DISTINCT pv.price ORDER BY pv.price ASC) FILTER (WHERE pv.price IS NOT NULL),\n                ARRAY[]::NUMERIC[]\n            ) AS prices,\n            MIN(pv.price) AS min_price,\n            MAX(pv.price) AS max_price\n        FROM products p\n        LEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $1\n        LEFT JOIN product_variants pv ON p.id = pv.product_id\n        ${where}\n        GROUP BY p.id, p.slug, p.images, p.available, p.category_id, \n                 p.is_cake_of_the_month, p.created_at, pt.name\n    )\n    SELECT \n        id,\n        name,\n        slug,\n        prices,\n        images,\n        available,\n        category_id AS \"categoryId\",\n        is_cake_of_the_month AS \"isCakeOfTheMonth\",\n        COUNT(*) OVER() as total_count\n    FROM filtered_products\n    ORDER BY ${availableOrder}\n    LIMIT $${idx++} OFFSET $${idx++}\n`;\n\nmsg.pagination = { page, limit };\nreturn msg;",
+        "func": "const { page, limit, sort, glutenFree, lactoseFree, sugarFree, lang } = msg.parameters;\nconst offset = (page - 1) * limit;\n\nconst orderByMap = {\n    price_asc: 'min_price ASC',\n    price_desc: 'max_price DESC',\n    created_asc: 'created_at ASC',\n    created_desc: 'created_at DESC'\n};\nconst orderBy = orderByMap[sort] || 'created_at DESC';\nconst availableOrder = `available DESC, ${orderBy}`;\n\nconst conditions = ['p.deleted = FALSE'];\nconst values = [lang]; \nlet idx = 2;\n\nif (glutenFree) {\n    conditions.push(`p.is_posible_gluten_free = $${idx++}`);\n    values.push(glutenFree);\n}\nif (lactoseFree) {\n    conditions.push(`p.is_posible_lactose_free = $${idx++}`);\n    values.push(lactoseFree);\n}\nif (sugarFree) {\n    conditions.push(`p.is_posible_sugar_free = $${idx++}`);\n    values.push(sugarFree);\n}\n\nconst where = conditions.length ? 'WHERE ' + conditions.join(' AND ') : '';\n\nvalues.push(limit, offset);\n\nmsg.queryParameters = values;\n// msg.payload = `\n//     WITH filtered_products AS (\n//         SELECT \n//             p.id,\n//             p.slug,\n//             p.images,\n//             p.available,\n//             p.category_id,\n//             p.is_cake_of_the_month,\n//             p.created_at,\n//             pt.name,\n//             COALESCE(\n//                 array_agg(DISTINCT pv.price ORDER BY pv.price ASC) FILTER (WHERE pv.price IS NOT NULL),\n//                 ARRAY[]::NUMERIC[]\n//             ) AS prices,\n//             MIN(pv.price) AS min_price,\n//             MAX(pv.price) AS max_price\n//         FROM products p\n//         LEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $1\n//         LEFT JOIN product_variants pv ON p.id = pv.product_id\n//         ${where}\n//         GROUP BY p.id, p.slug, p.images, p.available, p.category_id, \n//                  p.is_cake_of_the_month, p.created_at, pt.name\n//     )\n//     SELECT \n//         id,\n//         name,\n//         slug,\n//         prices,\n//         images,\n//         available,\n//         category_id AS \"categoryId\",\n//         is_cake_of_the_month AS \"isCakeOfTheMonth\",\n//         COUNT(*) OVER() as total_count\n//     FROM filtered_products\n//     ORDER BY ${availableOrder}\n//     LIMIT $${idx++} OFFSET $${idx++}\n// `;\n\nmsg.payload = `\n    WITH filtered_products AS (\n        SELECT \n            p.id,\n            p.slug,\n            p.images,\n            p.available,\n            p.category_id,\n            p.is_cake_of_the_month,\n            p.created_at,\n            pt.name,\n            LEAST(\n                MIN(pv.price), \n                MIN(pv.price_gluten), \n                MIN(pv.price_lactose)\n            ) AS min_price,\n            GREATEST(\n                MAX(pv.price), \n                MAX(pv.price_gluten), \n                MAX(pv.price_lactose)\n            ) AS max_price\n        FROM products p\n        LEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $1\n        LEFT JOIN product_variants pv ON p.id = pv.product_id\n        ${where}\n        GROUP BY p.id, p.slug, p.images, p.available, p.category_id, \n                 p.is_cake_of_the_month, p.created_at, pt.name\n    )\n    SELECT \n        id,\n        name,\n        slug,\n        min_price AS \"minPrice\",\n        max_price AS \"maxPrice\",\n        images,\n        available,\n        category_id AS \"categoryId\",\n        is_cake_of_the_month AS \"isCakeOfTheMonth\",\n        COUNT(*) OVER() as total_count\n    FROM filtered_products\n    ORDER BY ${availableOrder}\n    LIMIT $${idx++} OFFSET $${idx++}\n`;\n\nmsg.pagination = { page, limit };\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -7363,7 +7372,7 @@
         "z": "554b53c71ea14722",
         "g": "4e79e7e4e982c657",
         "name": "to db",
-        "func": "const { categoryId, page, limit, sort, glutenFree, lactoseFree, sugarFree, lang } = msg.parameters;\nconst offset = (page - 1) * limit;\n\nconst orderByMap = {\n    price_asc: 'min_price ASC',\n    price_desc: 'max_price DESC',\n    created_asc: 'created_at ASC',\n    created_desc: 'created_at DESC'\n};\nconst orderBy = orderByMap[sort] || 'created_at DESC';\nconst availableOrder = `available DESC, ${orderBy}`;\n\nconst conditions = ['p.deleted = FALSE'];\nconst values = [lang]; \nlet idx = 2;\n\nif (categoryId) {\n    conditions.push(`p.category_id = $${idx++}`);\n    values.push(categoryId);\n}\n\nif (glutenFree) {\n    conditions.push(`p.is_posible_gluten_free = $${idx++}`);\n    values.push(glutenFree);\n}\nif (lactoseFree) {\n    conditions.push(`p.is_posible_lactose_free = $${idx++}`);\n    values.push(lactoseFree);\n}\nif (sugarFree) {\n    conditions.push(`p.is_posible_sugar_free = $${idx++}`);\n    values.push(sugarFree);\n}\n\nconst where = conditions.length ? 'WHERE ' + conditions.join(' AND ') : '';\n\nvalues.push(limit, offset);\n\nmsg.queryParameters = values;\nmsg.payload = `\n    WITH filtered_products AS (\n        SELECT \n            p.id,\n            p.slug,\n            p.images,\n            p.available,\n            p.category_id,\n            p.is_cake_of_the_month,\n            p.created_at,\n            pt.name,\n            COALESCE(\n                array_agg(DISTINCT pv.price ORDER BY pv.price ASC) FILTER (WHERE pv.price IS NOT NULL),\n                ARRAY[]::NUMERIC[]\n            ) AS prices,\n            MIN(pv.price) AS min_price,\n            MAX(pv.price) AS max_price\n        FROM products p\n        LEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $1\n        LEFT JOIN product_variants pv ON p.id = pv.product_id\n        ${where}\n        GROUP BY p.id, p.slug, p.images, p.available, p.category_id, \n                 p.is_cake_of_the_month, p.created_at, pt.name\n    )\n    SELECT \n        id,\n        name,\n        slug,\n        prices,\n        images,\n        available,\n        category_id AS \"categoryId\",\n        is_cake_of_the_month AS \"isCakeOfTheMonth\",\n        COUNT(*) OVER() as total_count\n    FROM filtered_products\n    ORDER BY ${availableOrder}\n    LIMIT $${idx++} OFFSET $${idx++}\n`;\n\nmsg.pagination = { page, limit };\nreturn msg;",
+        "func": "const { categoryId, page, limit, sort, glutenFree, lactoseFree, sugarFree, lang } = msg.parameters;\nconst offset = (page - 1) * limit;\n\nconst orderByMap = {\n    price_asc: 'min_price ASC',\n    price_desc: 'max_price DESC',\n    created_asc: 'created_at ASC',\n    created_desc: 'created_at DESC'\n};\nconst orderBy = orderByMap[sort] || 'created_at DESC';\nconst availableOrder = `available DESC, ${orderBy}`;\n\nconst conditions = ['p.deleted = FALSE'];\nconst values = [lang]; \nlet idx = 2;\n\nif (categoryId) {\n    conditions.push(`p.category_id = $${idx++}`);\n    values.push(categoryId);\n}\n\nif (glutenFree) {\n    conditions.push(`p.is_posible_gluten_free = $${idx++}`);\n    values.push(glutenFree);\n}\nif (lactoseFree) {\n    conditions.push(`p.is_posible_lactose_free = $${idx++}`);\n    values.push(lactoseFree);\n}\nif (sugarFree) {\n    conditions.push(`p.is_posible_sugar_free = $${idx++}`);\n    values.push(sugarFree);\n}\n\nconst where = conditions.length ? 'WHERE ' + conditions.join(' AND ') : '';\n\nvalues.push(limit, offset);\n\nmsg.queryParameters = values;\nmsg.payload = `\n    WITH filtered_products AS (\n        SELECT \n            p.id,\n            p.slug,\n            p.images,\n            p.available,\n            p.category_id,\n            p.is_cake_of_the_month,\n            p.created_at,\n            pt.name,\n            LEAST(\n                MIN(pv.price), \n                MIN(pv.price_gluten), \n                MIN(pv.price_lactose)\n            ) AS min_price,\n            GREATEST(\n                MAX(pv.price), \n                MAX(pv.price_gluten), \n                MAX(pv.price_lactose)\n            ) AS max_price\n        FROM products p\n        LEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $1\n        LEFT JOIN product_variants pv ON p.id = pv.product_id\n        ${where}\n        GROUP BY p.id, p.slug, p.images, p.available, p.category_id, \n                 p.is_cake_of_the_month, p.created_at, pt.name\n    )\n    SELECT \n        id,\n        name,\n        slug,\n        min_price AS \"minPrice\",\n        max_price AS \"maxPrice\",\n        images,\n        available,\n        category_id AS \"categoryId\",\n        is_cake_of_the_month AS \"isCakeOfTheMonth\",\n        COUNT(*) OVER() as total_count\n    FROM filtered_products\n    ORDER BY ${availableOrder}\n    LIMIT $${idx++} OFFSET $${idx++}\n`;\n\nmsg.pagination = { page, limit };\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -7399,7 +7408,7 @@
         "statusCode": "",
         "headers": {},
         "x": 830,
-        "y": 460,
+        "y": 560,
         "wires": []
     },
     {
@@ -7414,7 +7423,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 190,
-        "y": 540,
+        "y": 640,
         "wires": [
             [
                 "function_validate_update_product"
@@ -7435,7 +7444,7 @@
         "finalize": "",
         "libs": [],
         "x": 390,
-        "y": 540,
+        "y": 640,
         "wires": [
             [
                 "fbd4d677a6e08f26"
@@ -7457,7 +7466,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 540,
-        "y": 560,
+        "y": 660,
         "wires": [
             [
                 "function_format_update_product_response"
@@ -7478,7 +7487,7 @@
         "finalize": "",
         "libs": [],
         "x": 700,
-        "y": 560,
+        "y": 660,
         "wires": [
             [
                 "fbd4d677a6e08f26"
@@ -7577,7 +7586,7 @@
         "statusCode": "",
         "headers": {},
         "x": 850,
-        "y": 540,
+        "y": 640,
         "wires": []
     },
     {
@@ -7601,7 +7610,7 @@
         "statusCode": "",
         "headers": {},
         "x": 890,
-        "y": 680,
+        "y": 780,
         "wires": []
     },
     {
@@ -7616,7 +7625,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 210,
-        "y": 680,
+        "y": 780,
         "wires": [
             [
                 "function_validate_variant_data"
@@ -7637,7 +7646,7 @@
         "finalize": "",
         "libs": [],
         "x": 430,
-        "y": 680,
+        "y": 780,
         "wires": [
             [
                 "http_response_products"
@@ -7659,7 +7668,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 580,
-        "y": 700,
+        "y": 800,
         "wires": [
             [
                 "function_format_create_variant_response"
@@ -7680,7 +7689,7 @@
         "finalize": "",
         "libs": [],
         "x": 740,
-        "y": 700,
+        "y": 800,
         "wires": [
             [
                 "http_response_products"
@@ -7699,7 +7708,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 210,
-        "y": 760,
+        "y": 860,
         "wires": [
             [
                 "function_validate_update_variant"
@@ -7720,7 +7729,7 @@
         "finalize": "",
         "libs": [],
         "x": 430,
-        "y": 760,
+        "y": 860,
         "wires": [
             [
                 "e823edd40e8fa5fb"
@@ -7742,7 +7751,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 580,
-        "y": 780,
+        "y": 880,
         "wires": [
             [
                 "function_format_update_variant_response"
@@ -7763,7 +7772,7 @@
         "finalize": "",
         "libs": [],
         "x": 740,
-        "y": 780,
+        "y": 880,
         "wires": [
             [
                 "e823edd40e8fa5fb"
@@ -7782,7 +7791,7 @@
         "skipBodyParsing": false,
         "swaggerDoc": "",
         "x": 220,
-        "y": 840,
+        "y": 940,
         "wires": [
             [
                 "function_validate_delete_variant"
@@ -7803,7 +7812,7 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 840,
+        "y": 940,
         "wires": [
             [
                 "4848fd5bbff00ef3"
@@ -7825,7 +7834,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 600,
-        "y": 860,
+        "y": 960,
         "wires": [
             [
                 "function_format_delete_variant_response"
@@ -7846,7 +7855,7 @@
         "finalize": "",
         "libs": [],
         "x": 760,
-        "y": 860,
+        "y": 960,
         "wires": [
             [
                 "4848fd5bbff00ef3"
@@ -7862,7 +7871,7 @@
         "statusCode": "",
         "headers": {},
         "x": 890,
-        "y": 760,
+        "y": 860,
         "wires": []
     },
     {
@@ -7874,7 +7883,7 @@
         "statusCode": "",
         "headers": {},
         "x": 910,
-        "y": 840,
+        "y": 940,
         "wires": []
     },
     {
@@ -7885,7 +7894,7 @@
         "scope": null,
         "uncaught": false,
         "x": 80,
-        "y": 980,
+        "y": 1100,
         "wires": [
             [
                 "0388a64a9b6f90e1",
@@ -7907,7 +7916,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 220,
-        "y": 1020,
+        "y": 1140,
         "wires": []
     },
     {
@@ -7923,7 +7932,7 @@
         "finalize": "",
         "libs": [],
         "x": 220,
-        "y": 980,
+        "y": 1100,
         "wires": [
             [
                 "c2a059e02763a784"
@@ -7941,7 +7950,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 380,
-        "y": 980,
+        "y": 1100,
         "wires": [
             []
         ]
@@ -7952,7 +7961,7 @@
         "z": "554b53c71ea14722",
         "g": "4e79e7e4e982c657",
         "name": "validate id",
-        "func": "const id = Number(msg.req?.params?.id);\nconst { lang = 'es' } = msg.req?.query || {};\n\nconst errors = [];\nif (!['es', 'en', 'gl'].includes(lang)) {\n    errors.push({ path: 'lang', message: \"Inlavid lang parameter\" });\n};\n\nif (isNaN(id)) {\n    errors.push({ path: 'id', message: \"Inlavid product id\" });\n};\n\nif (errors.length > 0) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: 'error',\n        message: `Validation error: ${errors.map(err => `${err.message}`).join(', ')}`,\n        data: null\n    };\n\n    return [msg, null];\n};\n\nmsg.productId = id;\nmsg.queryParameters = [id, lang];\nmsg.payload = `\n    SELECT \n        p.id, \n        pt.name, \n        p.slug, \n        pt.description, \n        p.images, \n        pt.allergens, \n        p.available,\n        p.category_id AS \"categoryId\",\n        p.is_posible_gluten_free AS \"isPosibleGlutenFree\",\n        p.is_posible_lactose_free AS \"isPosibleLactoseFree\",\n        p.is_posible_sugar_free AS \"isPosibleSugarFree\",\n        p.is_cake_of_the_month AS \"isCakeOfTheMonth\",\n        p.created_at AS \"createdAt\",\n        COALESCE(\n            json_agg(\n                json_build_object(\n                    'id', pv.id,\n                    'name', pvt.name,\n                    'measures', pv.measures,\n                    'weightGrams', pv.weight_grams,\n                    'price', pv.price,\n                    'sortOrder', pv.sort_order\n                ) ORDER BY pv.sort_order ASC\n            ) FILTER (WHERE pv.id IS NOT NULL),\n            '[]'\n        ) AS variants\n    FROM products p\n    LEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $2\n    LEFT JOIN product_variants pv ON p.id = pv.product_id\n    LEFT JOIN product_variant_translations pvt ON pv.id = pvt.variant_id AND pvt.language_code = $2\n    WHERE p.id = $1 AND p.deleted = FALSE\n    GROUP BY p.id, pt.name, pt.description, pt.allergens\n`;\n\nreturn [null, msg];",
+        "func": "const id = Number(msg.req?.params?.id);\nconst { lang = 'es' } = msg.req?.query || {};\n\nconst errors = [];\nif (!['es', 'en', 'gl'].includes(lang)) {\n    errors.push({ path: 'lang', message: \"Inlavid lang parameter\" });\n};\n\nif (isNaN(id)) {\n    errors.push({ path: 'id', message: \"Inlavid product id\" });\n};\n\nif (errors.length > 0) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: 'error',\n        message: `Validation error: ${errors.map(err => `${err.message}`).join(', ')}`,\n        data: null\n    };\n\n    return [msg, null];\n};\n\nmsg.productId = id;\nmsg.queryParameters = [id, lang];\nmsg.payload = `\n    SELECT \n        p.id, \n        pt.name, \n        p.slug, \n        pt.description, \n        p.images, \n        pt.allergens, \n        p.available,\n        p.category_id AS \"categoryId\",\n        p.is_posible_gluten_free AS \"isPosibleGlutenFree\",\n        p.is_posible_lactose_free AS \"isPosibleLactoseFree\",\n        p.is_posible_sugar_free AS \"isPosibleSugarFree\",\n        p.is_cake_of_the_month AS \"isCakeOfTheMonth\",\n        p.created_at AS \"createdAt\",\n        COALESCE(\n            json_agg(\n                json_build_object(\n                    'id', pv.id,\n                    'name', pvt.name,\n                    'measures', pv.measures,\n                    'weightGrams', pv.weight_grams,\n                    'price', pv.price,\n                    'sortOrder', pv.sort_order,\n                    'priceGluten', pv.price_gluten,\n                    'priceLactose', pv.price_lactose\n                ) ORDER BY pv.sort_order ASC\n            ) FILTER (WHERE pv.id IS NOT NULL),\n            '[]'\n        ) AS variants\n    FROM products p\n    LEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $2\n    LEFT JOIN product_variants pv ON p.id = pv.product_id\n    LEFT JOIN product_variant_translations pvt ON pv.id = pvt.variant_id AND pvt.language_code = $2\n    WHERE p.id = $1 AND p.deleted = FALSE\n    GROUP BY p.id, pt.name, pt.description, pt.allergens\n`;\n\nreturn [null, msg];",
         "outputs": 2,
         "timeout": "",
         "noerr": 0,
@@ -8038,6 +8047,101 @@
         "wires": [
             [
                 "75f1785c99dd8ee9"
+            ]
+        ]
+    },
+    {
+        "id": "f0689efea8522b5b",
+        "type": "http in",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "name": "",
+        "url": "/api/v1/products/slug/:slug",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 420,
+        "wires": [
+            [
+                "42358d1e583e75da"
+            ]
+        ]
+    },
+    {
+        "id": "42358d1e583e75da",
+        "type": "function",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "name": "validate slug",
+        "func": "const slug = msg.req?.params?.slug;\nconst { lang = 'es' } = msg.req?.query || {};\n\nconst errors = [];\nif (!['es', 'en', 'gl'].includes(lang)) {\n    errors.push({ path: 'lang', message: \"Inlavid lang parameter\" });\n};\n\nif (!slug || typeof slug !== 'string' || slug.trim() === '') {\n    errors.push({ path: 'slug', message: \"Invalid product slug\" });\n};\n\nif (errors.length > 0) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: 'error',\n        message: `Validation error: ${errors.map(err => `${err.message}`).join(', ')}`,\n        data: null\n    };\n\n    return [msg, null];\n};\n\nmsg.productSlug = slug;\nmsg.queryParameters = [slug, lang];\nmsg.payload = `\n    SELECT \n        p.id, \n        pt.name, \n        p.slug, \n        pt.description, \n        p.images, \n        pt.allergens, \n        p.available,\n        p.category_id AS \"categoryId\",\n        p.is_posible_gluten_free AS \"isPosibleGlutenFree\",\n        p.is_posible_lactose_free AS \"isPosibleLactoseFree\",\n        p.is_posible_sugar_free AS \"isPosibleSugarFree\",\n        p.is_cake_of_the_month AS \"isCakeOfTheMonth\",\n        p.created_at AS \"createdAt\",\n        COALESCE(\n            json_agg(\n                json_build_object(\n                    'id', pv.id,\n                    'name', pvt.name,\n                    'measures', pv.measures,\n                    'weightGrams', pv.weight_grams,\n                    'price', pv.price,\n                    'sortOrder', pv.sort_order,\n                    'priceGluten', pv.price_gluten,\n                    'priceLactose', pv.price_lactose\n                ) ORDER BY pv.sort_order ASC\n            ) FILTER (WHERE pv.id IS NOT NULL),\n            '[]'\n        ) AS variants\n    FROM products p\n    LEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $2\n    LEFT JOIN product_variants pv ON p.id = pv.product_id\n    LEFT JOIN product_variant_translations pvt ON pv.id = pvt.variant_id AND pvt.language_code = $2\n    WHERE p.slug = $1 AND p.deleted = FALSE\n    GROUP BY p.id, pt.name, pt.description, pt.allergens\n`;\n\nreturn [null, msg];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 420,
+        "wires": [
+            [
+                "88496d20468a0be1"
+            ],
+            [
+                "ea822b83ea4fcc64"
+            ]
+        ]
+    },
+    {
+        "id": "88496d20468a0be1",
+        "type": "http response",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 870,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "ea822b83ea4fcc64",
+        "type": "link call",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 560,
+        "y": 440,
+        "wires": [
+            [
+                "ce4d0d3ce2b221c1"
+            ]
+        ]
+    },
+    {
+        "id": "ce4d0d3ce2b221c1",
+        "type": "function",
+        "z": "554b53c71ea14722",
+        "g": "4e79e7e4e982c657",
+        "name": "format response",
+        "func": "if (!!msg?.error) {\n    msg.statusCode = 500;\n    msg.payload = {\n        status: 'error',\n        message: msg.error?.message || 'Database error occurred',\n        data: null\n    };\n\n    return msg;\n}\n\nif (!msg.payload || msg.payload?.length === 0) {\n    msg.statusCode = 404;\n    msg.payload = {\n        status: 'error',\n        message: 'Product not found',\n        data: null\n    };\n\n    return msg;\n}\n\nconst product = msg?.payload?.[0] || {};\n\nmsg.statusCode = 200;\nmsg.payload = {\n    status: 'success',\n    message: null,\n    data: product\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 440,
+        "wires": [
+            [
+                "88496d20468a0be1"
             ]
         ]
     },
@@ -8517,7 +8621,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "products",
-        "func": "msg.queryParameters = ['en'];\n\nmsg.payload = `\nSELECT \n  p.id,\n  p.category_id,\n  p.slug,\n  pt.name,\n  pt.description,\n  pt.allergens,\n  p.images,\n  p.available,\n  p.is_cake_of_the_month,\n  p.is_posible_gluten_free,\n  p.is_posible_lactose_free,\n  p.created_at,\n  p.deleted,\n  p.deleted_at\nFROM products p\nLEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $1`\n\nreturn msg;",
+        "func": "msg.queryParameters = ['es'];\n\nmsg.payload = `\nSELECT \n  p.id,\n  p.category_id,\n  p.slug,\n  pt.name,\n  pt.description,\n  pt.allergens,\n  p.images,\n  p.available,\n  p.is_cake_of_the_month,\n  p.is_posible_gluten_free,\n  p.is_posible_lactose_free,\n  p.created_at,\n  p.deleted,\n  p.deleted_at\nFROM products p\nLEFT JOIN product_translations pt ON p.id = pt.product_id AND pt.language_code = $1\nORDER BY p.id ASC`\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -8557,7 +8661,7 @@
         "z": "68702ca580581086",
         "g": "1de86cfb436a40e5",
         "name": "products",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -13533,7 +13637,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 150,
-        "y": 2900,
+        "y": 3000,
         "wires": [
             [
                 "ba073bbdee229eb1"
@@ -13554,7 +13658,7 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 2900,
+        "y": 3000,
         "wires": [
             [
                 "f2c637f51f6f8ce2"
@@ -13573,7 +13677,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 440,
-        "y": 2900,
+        "y": 3000,
         "wires": [
             [
                 "4a8ab29dbc4e1f21"
@@ -13595,7 +13699,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 580,
-        "y": 2900,
+        "y": 3000,
         "wires": []
     },
     {
@@ -15396,7 +15500,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 2980,
+        "y": 3080,
         "wires": [
             [
                 "b06d42c44dcdb49d"
@@ -15416,7 +15520,7 @@
         "finalize": "",
         "libs": [],
         "x": 250,
-        "y": 2980,
+        "y": 3080,
         "wires": [
             [
                 "8bed46d84f245f5b"
@@ -15434,7 +15538,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 460,
-        "y": 2980,
+        "y": 3080,
         "wires": [
             [
                 "36e91038e646881a"
@@ -15455,7 +15559,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 590,
-        "y": 2980,
+        "y": 3080,
         "wires": []
     },
     {
@@ -16659,7 +16763,7 @@
         "finalize": "",
         "libs": [],
         "x": 280,
-        "y": 2420,
+        "y": 2680,
         "wires": [
             [
                 "07fc7e9f51b9f88d"
@@ -16688,7 +16792,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 110,
-        "y": 2420,
+        "y": 2680,
         "wires": [
             [
                 "bf3fb01c0de7729a"
@@ -16706,7 +16810,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 460,
-        "y": 2420,
+        "y": 2680,
         "wires": [
             [
                 "ad53af5f150fbae1"
@@ -16727,7 +16831,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 640,
-        "y": 2420,
+        "y": 2680,
         "wires": []
     },
     {
@@ -16743,7 +16847,7 @@
         "finalize": "",
         "libs": [],
         "x": 280,
-        "y": 2460,
+        "y": 2720,
         "wires": [
             [
                 "8dd95e1c474c98c3"
@@ -16772,7 +16876,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 110,
-        "y": 2460,
+        "y": 2720,
         "wires": [
             [
                 "ed70aa8e3b26ea27"
@@ -16790,7 +16894,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 460,
-        "y": 2460,
+        "y": 2720,
         "wires": [
             [
                 "b94e3764edac13d2"
@@ -16811,7 +16915,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 640,
-        "y": 2460,
+        "y": 2720,
         "wires": []
     },
     {
@@ -16827,7 +16931,7 @@
         "finalize": "",
         "libs": [],
         "x": 280,
-        "y": 2500,
+        "y": 2760,
         "wires": [
             [
                 "cc51d67eec8eefad"
@@ -16856,7 +16960,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 110,
-        "y": 2500,
+        "y": 2760,
         "wires": [
             [
                 "7000b0a654861153"
@@ -16874,7 +16978,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 460,
-        "y": 2500,
+        "y": 2760,
         "wires": [
             [
                 "9db4b86fa04f4f51"
@@ -16895,7 +16999,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 640,
-        "y": 2500,
+        "y": 2760,
         "wires": []
     },
     {
@@ -16911,7 +17015,7 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 2560,
+        "y": 2820,
         "wires": [
             [
                 "9af8943c2a5b42a0"
@@ -16940,7 +17044,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 110,
-        "y": 2560,
+        "y": 2820,
         "wires": [
             [
                 "322778f24e02a748"
@@ -16958,7 +17062,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 460,
-        "y": 2560,
+        "y": 2820,
         "wires": [
             [
                 "cc580f3c28ed7cf5"
@@ -16979,7 +17083,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 600,
-        "y": 2560,
+        "y": 2820,
         "wires": []
     },
     {
@@ -16995,7 +17099,7 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 2600,
+        "y": 2860,
         "wires": [
             [
                 "85c6bf01759bfe09"
@@ -17024,7 +17128,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 110,
-        "y": 2600,
+        "y": 2860,
         "wires": [
             [
                 "c522f92a5f679b85"
@@ -17042,7 +17146,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 460,
-        "y": 2600,
+        "y": 2860,
         "wires": [
             [
                 "a3db29b50fc27105"
@@ -17063,7 +17167,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 600,
-        "y": 2600,
+        "y": 2860,
         "wires": []
     },
     {
@@ -17079,7 +17183,7 @@
         "finalize": "",
         "libs": [],
         "x": 320,
-        "y": 2660,
+        "y": 2920,
         "wires": [
             [
                 "7e46a428a4596485"
@@ -17108,7 +17212,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 2660,
+        "y": 2920,
         "wires": [
             [
                 "b87e881ba01b5040"
@@ -17126,7 +17230,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 520,
-        "y": 2660,
+        "y": 2920,
         "wires": [
             [
                 "057a6183ccf0b07a"
@@ -17147,7 +17251,851 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 660,
-        "y": 2660,
+        "y": 2920,
+        "wires": []
+    },
+    {
+        "id": "78e49b2ff8bc09a9",
+        "type": "function",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "func": "const category_id = 1;\nconst images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1769278490/tarta_tradicional_j07eik.png\"]\nconst slug = 'limon';\n\nmsg.queryParameters = [slug, category_id, images];\nmsg.payload = `\n    INSERT INTO products (slug, category_id, images, is_posible_sugar_free, is_cake_of_the_month, deleted, is_posible_gluten_free, is_posible_lactose_free)\n    VALUES ($1, $2, $3, false, true, true, true, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1620,
+        "y": 1960,
+        "wires": [
+            [
+                "e6bafa86fcc1dce1"
+            ]
+        ]
+    },
+    {
+        "id": "e9c0376d707ceb99",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1490,
+        "y": 1960,
+        "wires": [
+            [
+                "78e49b2ff8bc09a9"
+            ]
+        ]
+    },
+    {
+        "id": "e6bafa86fcc1dce1",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1840,
+        "y": 1960,
+        "wires": [
+            [
+                "86629bfd1b3cc1b4"
+            ]
+        ]
+    },
+    {
+        "id": "86629bfd1b3cc1b4",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "g": "d539432d5f363e74",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1980,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "9188dbec7e63d04f",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 12;\nconst language_code = 'en';\nconst name = 'Creamy lemon cheesecake';\nconst description = 'Our creamy lemon cheesecake stands out for its freshness and delicate citrus touch. Its silky texture melts in your mouth, combining smooth creaminess with the perfect balance of sweetness and acidity. Light, refreshing, and irresistible, it is the perfect choice for those looking for a dessert full of flavor and freshness.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 7220,
+        "y": 2320,
+        "wires": [
+            [
+                "6ddbf557c5b286e9"
+            ]
+        ]
+    },
+    {
+        "id": "33c1782aa3c00f76",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 7050,
+        "y": 2320,
+        "wires": [
+            [
+                "9188dbec7e63d04f"
+            ]
+        ]
+    },
+    {
+        "id": "6ddbf557c5b286e9",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 7400,
+        "y": 2320,
+        "wires": [
+            [
+                "7afd9c792710d8c4"
+            ]
+        ]
+    },
+    {
+        "id": "7afd9c792710d8c4",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 7580,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "c4f338c75b327eca",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 12;\nconst language_code = 'es';\nconst name = 'Cremosa de Limón';\nconst description = 'Nuestra cremosa de limón destaca por su frescura y su delicado toque cítrico. Su textura sedosa se deshace en la boca, combinando la suavidad de la crema con un equilibrio perfecto entre dulzor y acidez. Ligera, refrescante e irresistible, es la opción ideal para quienes buscan un postre lleno de sabor y frescura.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 7220,
+        "y": 2360,
+        "wires": [
+            [
+                "59704ff30f7ab39c"
+            ]
+        ]
+    },
+    {
+        "id": "6dbc491ae50c1003",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 7050,
+        "y": 2360,
+        "wires": [
+            [
+                "c4f338c75b327eca"
+            ]
+        ]
+    },
+    {
+        "id": "59704ff30f7ab39c",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 7400,
+        "y": 2360,
+        "wires": [
+            [
+                "8508dce9a1eee9ed"
+            ]
+        ]
+    },
+    {
+        "id": "8508dce9a1eee9ed",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 7580,
+        "y": 2360,
+        "wires": []
+    },
+    {
+        "id": "c136ac903e7da1a2",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 12;\nconst language_code = 'gl';\nconst name = 'Cremosa de Limón';\nconst description = 'A nosa cremosa de limón destaca pola súa frescura e o seu delicado toque cítrico. A súa textura sedosa desfáise na boca, combinando a suavidade da crema cun equilibrio perfecto entre dozura e acidez. Lixeira, refrescante e irresistible, é a opción ideal para quen busca unha sobremesa chea de sabor e frescura.';\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 7220,
+        "y": 2400,
+        "wires": [
+            [
+                "4c38e1559fe2a053"
+            ]
+        ]
+    },
+    {
+        "id": "0c6a983b59941bd4",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 7050,
+        "y": 2400,
+        "wires": [
+            [
+                "c136ac903e7da1a2"
+            ]
+        ]
+    },
+    {
+        "id": "4c38e1559fe2a053",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 7400,
+        "y": 2400,
+        "wires": [
+            [
+                "1947220edc5d6f34"
+            ]
+        ]
+    },
+    {
+        "id": "1947220edc5d6f34",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 7580,
+        "y": 2400,
+        "wires": []
+    },
+    {
+        "id": "33882c3820f71a5b",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 12;\nconst sort_order = 1;\nconst price = 5.50;\n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 7210,
+        "y": 2460,
+        "wires": [
+            [
+                "5004a1fd6b9707d4"
+            ]
+        ]
+    },
+    {
+        "id": "a8eadf3287288997",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 7050,
+        "y": 2460,
+        "wires": [
+            [
+                "33882c3820f71a5b"
+            ]
+        ]
+    },
+    {
+        "id": "5004a1fd6b9707d4",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 7400,
+        "y": 2460,
+        "wires": [
+            [
+                "6e7ba4caf06b109b"
+            ]
+        ]
+    },
+    {
+        "id": "6e7ba4caf06b109b",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 7540,
+        "y": 2460,
+        "wires": []
+    },
+    {
+        "id": "9d7b5b050ddeeb87",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 12;\nconst sort_order = 2;\nconst price = 13; \n\nmsg.queryParameters = [product_id, sort_order, price];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price)\n    VALUES ($1, $2, $3)\n    RETURNING *\n`;\n\nreturn msg;\n\nmsg.payload = `\nCREATE TABLE IF NOT EXISTS product_variants (\n  id SERIAL PRIMARY KEY,\n  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,\n  sort_order INTEGER DEFAULT 0,\n  measures TEXT NOT NULL,\n  weight_grams INTEGER,\n  price NUMERIC(10,2) NOT NULL\n);\n\nCREATE TABLE IF NOT EXISTS product_variant_translations (\n  id SERIAL PRIMARY KEY,\n  variant_id INTEGER REFERENCES product_variants(id) ON DELETE CASCADE,\n  language_code TEXT NOT NULL,\n  name TEXT NOT NULL,\n  UNIQUE(variant_id, language_code)\n);\n`",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 7210,
+        "y": 2500,
+        "wires": [
+            [
+                "0ef29b87b8a6af3a"
+            ]
+        ]
+    },
+    {
+        "id": "cd9736515aa1c820",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 7050,
+        "y": 2500,
+        "wires": [
+            [
+                "9d7b5b050ddeeb87"
+            ]
+        ]
+    },
+    {
+        "id": "0ef29b87b8a6af3a",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 7400,
+        "y": 2500,
+        "wires": [
+            [
+                "b706351a908d1d05"
+            ]
+        ]
+    },
+    {
+        "id": "b706351a908d1d05",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 7540,
+        "y": 2500,
+        "wires": []
+    },
+    {
+        "id": "0254767731f68f95",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variant_translations",
+        "func": "msg.payload = `\nINSERT INTO product_variant_translations (variant_id, language_code, name) VALUES\n(23, 'es', 'Pequeña (1 persona)'),\n(24, 'es', 'Mediana (2 personas)'),\n\n(23, 'gl', 'Pequena (1 persoa)'),\n(24, 'gl', 'Mediana (2 persoas)'),\n\n(23, 'en', 'Small (1 person)'),\n(24, 'en', 'Medium (2 people)')\n;`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4940,
+        "y": 2320,
+        "wires": [
+            [
+                "a36a3eba37a5c76c"
+            ]
+        ]
+    },
+    {
+        "id": "79bbbeca2cad3533",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 4740,
+        "y": 2320,
+        "wires": [
+            [
+                "0254767731f68f95"
+            ]
+        ]
+    },
+    {
+        "id": "a36a3eba37a5c76c",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 5140,
+        "y": 2320,
+        "wires": [
+            [
+                "62e4c8c11000b8f0"
+            ]
+        ]
+    },
+    {
+        "id": "62e4c8c11000b8f0",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 5280,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "aecda999ae64fe41",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 11;\nconst sort_order = 3;\n\nconst price = 28;\nconst dolibarr_id = 46;\nconst dolibarr_gluten_id = null;\nconst dolibarr_lactose_id = null;\nconst price_tax_free = 25.45455;\nconst price_tax_free_gluten = null;\nconst price_tax_free_lactose = null;\nconst price_gluten = null;\nconst price_lactose = null;\n\n// 28 - 25.45455\n// 30 - 27.27273\n\nmsg.queryParameters = [product_id, sort_order, price, dolibarr_id, dolibarr_gluten_id, dolibarr_lactose_id, price_tax_free, price_tax_free_gluten, price_tax_free_lactose, price_gluten, price_lactose];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price, dolibarr_id, dolibarr_gluten_id, dolibarr_lactose_id, price_tax_free, price_tax_free_gluten, price_tax_free_lactose, price_gluten, price_lactose)\n    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)\n    RETURNING *\n`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 2440,
+        "wires": [
+            [
+                "dbbc3c90d88750e1"
+            ]
+        ]
+    },
+    {
+        "id": "8c94efa4d92a0afa",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 2440,
+        "wires": [
+            [
+                "aecda999ae64fe41"
+            ]
+        ]
+    },
+    {
+        "id": "dbbc3c90d88750e1",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 2440,
+        "wires": [
+            [
+                "35d83a489e216d29"
+            ]
+        ]
+    },
+    {
+        "id": "35d83a489e216d29",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 2440,
+        "wires": []
+    },
+    {
+        "id": "77ac4feee6bcd92f",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variant_translations",
+        "func": "msg.payload = `\nINSERT INTO product_variant_translations (variant_id, language_code, name) VALUES\n(26, 'es', 'Grande (para 8-10)'),\n(27, 'es', 'Grande (para 8-10)'),\n(28, 'es', 'Grande (para 8-10)'),\n(29, 'es', 'Grande (para 8-10)'),\n(30, 'es', 'Grande (para 8-10)'),\n(33, 'es', 'Grande (para 8-10)'),\n(34, 'es', 'Grande (para 8-10)'),\n(35, 'es', 'Grande (para 8-10)'),\n(36, 'es', 'Grande (para 8-10)'),\n(37, 'es', 'Grande (para 8-10)'),\n(38, 'es', 'Grande (para 8-10)'),\n(39, 'es', 'Grande (para 8-10)'),\n\n(26, 'gl', 'Grande (para 8-10)'),\n(27, 'gl', 'Grande (para 8-10)'),\n(28, 'gl', 'Grande (para 8-10)'),\n(29, 'gl', 'Grande (para 8-10)'),\n(30, 'gl', 'Grande (para 8-10)'),\n(33, 'gl', 'Grande (para 8-10)'),\n(34, 'gl', 'Grande (para 8-10)'),\n(35, 'gl', 'Grande (para 8-10)'),\n(36, 'gl', 'Grande (para 8-10)'),\n(37, 'gl', 'Grande (para 8-10)'),\n(38, 'gl', 'Grande (para 8-10)'),\n(39, 'gl', 'Grande (para 8-10)'),\n\n(26, 'en', 'Large (serves 8–10)'),\n(27, 'en', 'Large (serves 8–10)'),\n(28, 'en', 'Large (serves 8–10)'),\n(29, 'en', 'Large (serves 8–10)'),\n(30, 'en', 'Large (serves 8–10)'),\n(33, 'en', 'Large (serves 8–10)'),\n(34, 'en', 'Large (serves 8–10)'),\n(35, 'en', 'Large (serves 8–10)'),\n(36, 'en', 'Large (serves 8–10)'),\n(37, 'en', 'Large (serves 8–10)'),\n(38, 'en', 'Large (serves 8–10)'),\n(39, 'en', 'Large (serves 8–10)')\n;`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 2480,
+        "wires": [
+            [
+                "3383ecf5b3e90a9a"
+            ]
+        ]
+    },
+    {
+        "id": "27585b13ea1fd420",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 2480,
+        "wires": [
+            [
+                "77ac4feee6bcd92f"
+            ]
+        ]
+    },
+    {
+        "id": "3383ecf5b3e90a9a",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 540,
+        "y": 2480,
+        "wires": [
+            [
+                "b570f1bb318d9131"
+            ]
+        ]
+    },
+    {
+        "id": "b570f1bb318d9131",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 2480,
+        "wires": []
+    },
+    {
+        "id": "b28d7cb350cfa216",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variant_translations",
+        "func": "msg.payload = `\nUPDATE product_variant_translations\nSET name = 'Small (serves 1)'\nWHERE name = 'Small (1 person)'\n;`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 2560,
+        "wires": [
+            [
+                "7233bdde86cdb25c"
+            ]
+        ]
+    },
+    {
+        "id": "08f5990b90b1eadb",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 2560,
+        "wires": [
+            [
+                "b28d7cb350cfa216"
+            ]
+        ]
+    },
+    {
+        "id": "7233bdde86cdb25c",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 540,
+        "y": 2560,
+        "wires": [
+            [
+                "30c3d22b542fe51b"
+            ]
+        ]
+    },
+    {
+        "id": "30c3d22b542fe51b",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 2560,
         "wires": []
     },
     {
