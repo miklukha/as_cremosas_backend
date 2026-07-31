@@ -1133,8 +1133,8 @@
             "f2c637f51f6f8ce2",
             "4a8ab29dbc4e1f21"
         ],
-        "x": 34,
-        "y": 2959,
+        "x": 54,
+        "y": 3499,
         "w": 652,
         "h": 82
     },
@@ -13636,8 +13636,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 150,
-        "y": 3000,
+        "x": 170,
+        "y": 3540,
         "wires": [
             [
                 "ba073bbdee229eb1"
@@ -13657,8 +13657,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 3000,
+        "x": 320,
+        "y": 3540,
         "wires": [
             [
                 "f2c637f51f6f8ce2"
@@ -13676,8 +13676,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 440,
-        "y": 3000,
+        "x": 460,
+        "y": 3540,
         "wires": [
             [
                 "4a8ab29dbc4e1f21"
@@ -13698,8 +13698,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 580,
-        "y": 3000,
+        "x": 600,
+        "y": 3540,
         "wires": []
     },
     {
@@ -15499,8 +15499,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
-        "y": 3080,
+        "x": 140,
+        "y": 3620,
         "wires": [
             [
                 "b06d42c44dcdb49d"
@@ -15519,8 +15519,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 250,
-        "y": 3080,
+        "x": 270,
+        "y": 3620,
         "wires": [
             [
                 "8bed46d84f245f5b"
@@ -15537,8 +15537,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 460,
-        "y": 3080,
+        "x": 480,
+        "y": 3620,
         "wires": [
             [
                 "36e91038e646881a"
@@ -15558,8 +15558,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 590,
-        "y": 3080,
+        "x": 610,
+        "y": 3620,
         "wires": []
     },
     {
@@ -16762,8 +16762,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 2680,
+        "x": 300,
+        "y": 3220,
         "wires": [
             [
                 "07fc7e9f51b9f88d"
@@ -16791,8 +16791,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 2680,
+        "x": 130,
+        "y": 3220,
         "wires": [
             [
                 "bf3fb01c0de7729a"
@@ -16809,8 +16809,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 460,
-        "y": 2680,
+        "x": 480,
+        "y": 3220,
         "wires": [
             [
                 "ad53af5f150fbae1"
@@ -16830,8 +16830,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 2680,
+        "x": 660,
+        "y": 3220,
         "wires": []
     },
     {
@@ -16846,8 +16846,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 2720,
+        "x": 300,
+        "y": 3260,
         "wires": [
             [
                 "8dd95e1c474c98c3"
@@ -16875,8 +16875,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 2720,
+        "x": 130,
+        "y": 3260,
         "wires": [
             [
                 "ed70aa8e3b26ea27"
@@ -16893,8 +16893,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 460,
-        "y": 2720,
+        "x": 480,
+        "y": 3260,
         "wires": [
             [
                 "b94e3764edac13d2"
@@ -16914,8 +16914,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 2720,
+        "x": 660,
+        "y": 3260,
         "wires": []
     },
     {
@@ -16930,8 +16930,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 2760,
+        "x": 300,
+        "y": 3300,
         "wires": [
             [
                 "cc51d67eec8eefad"
@@ -16959,8 +16959,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 2760,
+        "x": 130,
+        "y": 3300,
         "wires": [
             [
                 "7000b0a654861153"
@@ -16977,8 +16977,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 460,
-        "y": 2760,
+        "x": 480,
+        "y": 3300,
         "wires": [
             [
                 "9db4b86fa04f4f51"
@@ -16998,8 +16998,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 2760,
+        "x": 660,
+        "y": 3300,
         "wires": []
     },
     {
@@ -17014,8 +17014,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 2820,
+        "x": 290,
+        "y": 3360,
         "wires": [
             [
                 "9af8943c2a5b42a0"
@@ -17043,8 +17043,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 2820,
+        "x": 130,
+        "y": 3360,
         "wires": [
             [
                 "322778f24e02a748"
@@ -17061,8 +17061,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 460,
-        "y": 2820,
+        "x": 480,
+        "y": 3360,
         "wires": [
             [
                 "cc580f3c28ed7cf5"
@@ -17082,8 +17082,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 2820,
+        "x": 620,
+        "y": 3360,
         "wires": []
     },
     {
@@ -17098,8 +17098,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 2860,
+        "x": 290,
+        "y": 3400,
         "wires": [
             [
                 "85c6bf01759bfe09"
@@ -17127,8 +17127,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 2860,
+        "x": 130,
+        "y": 3400,
         "wires": [
             [
                 "c522f92a5f679b85"
@@ -17145,8 +17145,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 460,
-        "y": 2860,
+        "x": 480,
+        "y": 3400,
         "wires": [
             [
                 "a3db29b50fc27105"
@@ -17166,8 +17166,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 2860,
+        "x": 620,
+        "y": 3400,
         "wires": []
     },
     {
@@ -17182,8 +17182,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 2920,
+        "x": 340,
+        "y": 3460,
         "wires": [
             [
                 "7e46a428a4596485"
@@ -17211,8 +17211,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
-        "y": 2920,
+        "x": 140,
+        "y": 3460,
         "wires": [
             [
                 "b87e881ba01b5040"
@@ -17229,8 +17229,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 520,
-        "y": 2920,
+        "x": 540,
+        "y": 3460,
         "wires": [
             [
                 "057a6183ccf0b07a"
@@ -17250,8 +17250,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 2920,
+        "x": 680,
+        "y": 3460,
         "wires": []
     },
     {
@@ -18097,6 +18097,752 @@
         "x": 680,
         "y": 2560,
         "wires": []
+    },
+    {
+        "id": "2502b7a65283b5ee",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "products",
+        "func": "const category_id = 1;\nconst images = [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1785536018/tarta-natillas_pm0lc2.webp\"]\nconst slug = 'natillas';\n\nmsg.queryParameters = [slug, category_id, images];\nmsg.payload = `\n    INSERT INTO products (slug, category_id, images, is_posible_sugar_free, is_cake_of_the_month, deleted, is_posible_gluten_free, is_posible_lactose_free)\n    VALUES ($1, $2, $3, false, true, true, true, false)\n    RETURNING *\n`;\n\nreturn msg;\n\n// CREATE TABLE IF NOT EXISTS products (\n//   id SERIAL PRIMARY KEY,\n//   slug TEXT NOT NULL UNIQUE,\n//   price NUMERIC(10,2),\n//   images TEXT[],\n//   available BOOLEAN DEFAULT TRUE,\n//   category_id INTEGER REFERENCES categories(id),\n//   is_posible_gluten_free BOOLEAN DEFAULT TRUE,\n//   is_posible_lactose_free BOOLEAN DEFAULT TRUE,\n//   is_posible_sugar_free BOOLEAN DEFAULT TRUE,\n//   is_cake_of_the_month BOOLEAN DEFAULT FALSE,\n//   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),\n//   deleted BOOLEAN DEFAULT FALSE,  \n//   deleted_at TIMESTAMP WITH TIME ZONE\n// );",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 2660,
+        "wires": [
+            [
+                "fb43b10aa4bdc865"
+            ]
+        ]
+    },
+    {
+        "id": "32ac9e43e529acf5",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 2660,
+        "wires": [
+            [
+                "2502b7a65283b5ee"
+            ]
+        ]
+    },
+    {
+        "id": "fb43b10aa4bdc865",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 400,
+        "y": 2660,
+        "wires": [
+            [
+                "2a5fde79f8cccea8"
+            ]
+        ]
+    },
+    {
+        "id": "2a5fde79f8cccea8",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 2660,
+        "wires": []
+    },
+    {
+        "id": "98863ebdbe73b173",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 13;\nconst language_code = 'en';\nconst name = 'Creamy custard cheesecake';\nconst description = 'Our creamy custard cheesecake wraps you in smooth vanilla flavor and that homemade touch reminiscent of classic custards. A silky, creamy texture with a sweet, comforting aroma in every bite.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 2720,
+        "wires": [
+            [
+                "baa01e2726670bce"
+            ]
+        ]
+    },
+    {
+        "id": "762ea44596ded3cc",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 2720,
+        "wires": [
+            [
+                "98863ebdbe73b173"
+            ]
+        ]
+    },
+    {
+        "id": "baa01e2726670bce",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 2720,
+        "wires": [
+            [
+                "ac20348e4a3343ba"
+            ]
+        ]
+    },
+    {
+        "id": "ac20348e4a3343ba",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 2720,
+        "wires": []
+    },
+    {
+        "id": "13c9fa3ad34f61b5",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 13;\nconst language_code = 'es';\nconst name = 'Cremosa de natillas';\nconst description = 'Nuestra cremosa de natillas envuelve con su sabor suave a vainilla y ese toque casero que recuerda a las natillas de siempre. Textura sedosa y cremosa, con un aroma dulce y reconfortante en cada bocado.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 2760,
+        "wires": [
+            [
+                "05e20b4284e9a773"
+            ]
+        ]
+    },
+    {
+        "id": "d757ae2f55cfd479",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 2760,
+        "wires": [
+            [
+                "13c9fa3ad34f61b5"
+            ]
+        ]
+    },
+    {
+        "id": "05e20b4284e9a773",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 2760,
+        "wires": [
+            [
+                "13f48ccf2be300b3"
+            ]
+        ]
+    },
+    {
+        "id": "13f48ccf2be300b3",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 2760,
+        "wires": []
+    },
+    {
+        "id": "9b6ef155f2f6bc63",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "func": "const product_id = 13;\nconst language_code = 'gl';\nconst name = 'Cremosa de natillas';\nconst description = 'A nosa cremosa de natillas envolve co seu sabor suave a vainilla e ese toque caseiro que lembra ás natillas de sempre. Textura sedosa e cremosa, cun aroma doce e reconfortante en cada bocado.'\nconst allergens = null;\n\nmsg.queryParameters = [product_id, language_code, name, description, allergens];\nmsg.payload = `\n    INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n    VALUES ($1, $2, $3, $4, $5)\n    RETURNING *\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 2800,
+        "wires": [
+            [
+                "25a2f8f6a3cd9b4a"
+            ]
+        ]
+    },
+    {
+        "id": "9adb67a4042e60a2",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 2800,
+        "wires": [
+            [
+                "9b6ef155f2f6bc63"
+            ]
+        ]
+    },
+    {
+        "id": "25a2f8f6a3cd9b4a",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 2800,
+        "wires": [
+            [
+                "0755abd3e9991ee5"
+            ]
+        ]
+    },
+    {
+        "id": "0755abd3e9991ee5",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "product_translations",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 2800,
+        "wires": []
+    },
+    {
+        "id": "45bde04c6be4e467",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 13;\nconst sort_order = 1;\n\nconst price = 5.50;\nconst dolibarr_id = 59;\nconst dolibarr_gluten_id = null;\nconst dolibarr_lactose_id = null;\nconst price_tax_free = 5.00;\nconst price_tax_free_gluten = null;\nconst price_tax_free_lactose = null;\nconst price_gluten = null;\nconst price_lactose = null;\n\n\nmsg.queryParameters = [product_id, sort_order, price, dolibarr_id, dolibarr_gluten_id, dolibarr_lactose_id, price_tax_free, price_tax_free_gluten, price_tax_free_lactose, price_gluten, price_lactose];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price, dolibarr_id, dolibarr_gluten_id, dolibarr_lactose_id, price_tax_free, price_tax_free_gluten, price_tax_free_lactose, price_gluten, price_lactose)\n    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)\n    RETURNING *\n`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 2840,
+        "wires": [
+            [
+                "0b9d62c1a7f63966"
+            ]
+        ]
+    },
+    {
+        "id": "878953e55c3264fa",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 2840,
+        "wires": [
+            [
+                "45bde04c6be4e467"
+            ]
+        ]
+    },
+    {
+        "id": "0b9d62c1a7f63966",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 2840,
+        "wires": [
+            [
+                "41461921ca908753"
+            ]
+        ]
+    },
+    {
+        "id": "41461921ca908753",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 2840,
+        "wires": []
+    },
+    {
+        "id": "297bcc2a84f95b2b",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 13;\nconst sort_order = 2;\n\nconst price = 13;\nconst dolibarr_id = 60;\nconst dolibarr_gluten_id = 61;\nconst dolibarr_lactose_id = null;\nconst price_tax_free = 11.81818;\nconst price_tax_free_gluten = 12.72727;\nconst price_tax_free_lactose = null;\nconst price_gluten = 14;\nconst price_lactose = null;\n\n// 28 - 25.45455\n// 30 - 27.27273\n\nmsg.queryParameters = [product_id, sort_order, price, dolibarr_id, dolibarr_gluten_id, dolibarr_lactose_id, price_tax_free, price_tax_free_gluten, price_tax_free_lactose, price_gluten, price_lactose];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price, dolibarr_id, dolibarr_gluten_id, dolibarr_lactose_id, price_tax_free, price_tax_free_gluten, price_tax_free_lactose, price_gluten, price_lactose)\n    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)\n    RETURNING *\n`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 2880,
+        "wires": [
+            [
+                "20e05b229322c3cd"
+            ]
+        ]
+    },
+    {
+        "id": "3a38bfd8dfb67433",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 2880,
+        "wires": [
+            [
+                "297bcc2a84f95b2b"
+            ]
+        ]
+    },
+    {
+        "id": "20e05b229322c3cd",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 2880,
+        "wires": [
+            [
+                "7fa0b4d47c4204b9"
+            ]
+        ]
+    },
+    {
+        "id": "7fa0b4d47c4204b9",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 2880,
+        "wires": []
+    },
+    {
+        "id": "54b749b4cd4caae9",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variants",
+        "func": "const product_id = 13;\nconst sort_order = 3;\n\nconst price = 28;\nconst dolibarr_id = 62;\nconst dolibarr_gluten_id = 63;\nconst dolibarr_lactose_id = null;\nconst price_tax_free = 25.45455;\nconst price_tax_free_gluten = 27.27273;\nconst price_tax_free_lactose = null;\nconst price_gluten = 30;\nconst price_lactose = null;\n\n// 28 - 25.45455\n// 30 - 27.27273\n\nmsg.queryParameters = [product_id, sort_order, price, dolibarr_id, dolibarr_gluten_id, dolibarr_lactose_id, price_tax_free, price_tax_free_gluten, price_tax_free_lactose, price_gluten, price_lactose];\nmsg.payload = `\n    INSERT INTO product_variants (product_id, sort_order, price, dolibarr_id, dolibarr_gluten_id, dolibarr_lactose_id, price_tax_free, price_tax_free_gluten, price_tax_free_lactose, price_gluten, price_lactose)\n    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)\n    RETURNING *\n`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 2920,
+        "wires": [
+            [
+                "8c9d585bf18cbe0f"
+            ]
+        ]
+    },
+    {
+        "id": "de415385ae2b12fd",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 2920,
+        "wires": [
+            [
+                "54b749b4cd4caae9"
+            ]
+        ]
+    },
+    {
+        "id": "8c9d585bf18cbe0f",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 480,
+        "y": 2920,
+        "wires": [
+            [
+                "78b4216f6dfa7a44"
+            ]
+        ]
+    },
+    {
+        "id": "78b4216f6dfa7a44",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 2920,
+        "wires": []
+    },
+    {
+        "id": "927d093a37984c96",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "product_variant_translations",
+        "func": "msg.payload = `\nINSERT INTO product_variant_translations (variant_id, language_code, name) VALUES\n(40, 'es', 'Pequeña (para 1)'),\n(41, 'es', 'Mediana (para 2-3)'),\n(42, 'es', 'Grande (para 8-10)'),\n\n(40, 'gl', 'Pequena (para 1)'),\n(41, 'gl', 'Mediana (para 2-3)'),\n(42, 'gl', 'Grande (para 8-10)'),\n\n(40, 'en', 'Small (serves 1)'),\n(41, 'en', 'Medium (serves 2–3)'),\n(42, 'en', 'Large (serves 8–10)')\n;`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 2960,
+        "wires": [
+            [
+                "14b2592d4198e7b4"
+            ]
+        ]
+    },
+    {
+        "id": "2ddfa1efdba47026",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 2960,
+        "wires": [
+            [
+                "927d093a37984c96"
+            ]
+        ]
+    },
+    {
+        "id": "14b2592d4198e7b4",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 540,
+        "y": 2960,
+        "wires": [
+            [
+                "8251cec519adaf46"
+            ]
+        ]
+    },
+    {
+        "id": "8251cec519adaf46",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 2960,
+        "wires": []
+    },
+    {
+        "id": "a1a7d93df3446203",
+        "type": "inject",
+        "z": "68702ca580581086",
+        "name": "insert product",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 3060,
+        "wires": [
+            [
+                "2b091ef6d03526b4"
+            ]
+        ]
+    },
+    {
+        "id": "2b091ef6d03526b4",
+        "type": "function",
+        "z": "68702ca580581086",
+        "name": "add all info",
+        "func": "// ==================== КОНФІГ ДЛЯ НОВОГО ПРОДУКТУ ====================\n// Тут редагуєш дані нового продукту. Решта коду не чіпаєш.\n\nconst config = {\n  product: {\n    slug: 'natillas',\n    category_id: 1,\n    images: [\"https://res.cloudinary.com/ddz81wl4h/image/upload/v1785536018/tarta-natillas_pm0lc2.webp\"],\n    is_posible_sugar_free: false,\n    is_cake_of_the_month: true,\n    deleted: true,\n    is_posible_gluten_free: true,\n    is_posible_lactose_free: false\n  },\n\n  translations: [\n    { language_code: 'en', name: 'Creamy custard cheesecake', description: 'Our creamy custard cheesecake wraps you in smooth vanilla flavor and that homemade touch reminiscent of classic custards. A silky, creamy texture with a sweet, comforting aroma in every bite.', allergens: null },\n    { language_code: 'es', name: 'Cremosa de natillas', description: 'Nuestra cremosa de natillas envuelve con su sabor suave a vainilla y ese toque casero que recuerda a las natillas de siempre. Textura sedosa y cremosa, con un aroma dulce y reconfortante en cada bocado.', allergens: null },\n    { language_code: 'gl', name: 'Cremosa de natillas', description: 'A nosa cremosa de natillas envolve co seu sabor suave a vainilla e ese toque caseiro que lembra ás natillas de sempre. Textura sedosa e cremosa, cun aroma doce e reconfortante en cada bocado.', allergens: null }\n  ],\n\n  \n  variants: [\n    {\n      sort_order: 1, price: 5.50, dolibarr_id: 59, dolibarr_gluten_id: null, dolibarr_lactose_id: null,\n      price_tax_free: 5.00, price_tax_free_gluten: null, price_tax_free_lactose: null, \n      price_gluten: null, price_lactose: null,\n      translations: [\n        { language_code: 'es', name: 'Pequeña (para 1)' },\n        { language_code: 'gl', name: 'Pequena (para 1)' },\n        { language_code: 'en', name: 'Small (serves 1)' }\n      ]\n    },\n    {\n      sort_order: 2, price: 13, dolibarr_id: 60, dolibarr_gluten_id: 61, dolibarr_lactose_id: null,\n      price_tax_free: 11.81818, price_tax_free_gluten: 12.72727, price_tax_free_lactose: null, \n      price_gluten: 14, price_lactose: null,\n      translations: [\n        { language_code: 'es', name: 'Mediana (para 2-3)' },\n        { language_code: 'gl', name: 'Mediana (para 2-3)' },\n        { language_code: 'en', name: 'Medium (serves 2–3)' }\n      ]\n    },\n    {\n      sort_order: 3, price: 28, dolibarr_id: 62, dolibarr_gluten_id: 63, dolibarr_lactose_id: null,\n      price_tax_free: 25.45455, price_tax_free_gluten: 27.27273, price_tax_free_lactose: null, \n      price_gluten: 30, price_lactose: null,\n      translations: [\n        { language_code: 'es', name: 'Grande (para 8-10)' },\n        { language_code: 'gl', name: 'Grande (para 8-10)' },\n        { language_code: 'en', name: 'Large (serves 8–10)' }\n      ]\n    }\n  ]\n};\n\n// ==================== ГЕНЕРАТОР ЗАПИТУ ====================\n\nconst params = [];\nlet idx = 0;\n\nfunction nextParam(value, castType) {\n  idx++;\n  params.push(value);\n  return `$${idx}::${castType}`;\n}\n\nfunction buildValuesBlock(rows, cols) {\n  return rows.map(row =>\n    `(${cols.map(c => nextParam(row[c.name], c.type)).join(', ')})`\n  ).join(',\\n    ');\n}\n\n// --- products (1 рядок) ---\nconst productCols = [\n  { name: 'slug', type: 'text' },\n  { name: 'category_id', type: 'int' },\n  { name: 'images', type: 'text[]' },\n  { name: 'is_posible_sugar_free', type: 'boolean' },\n  { name: 'is_cake_of_the_month', type: 'boolean' },\n  { name: 'deleted', type: 'boolean' },\n  { name: 'is_posible_gluten_free', type: 'boolean' },\n  { name: 'is_posible_lactose_free', type: 'boolean' }\n];\nconst productValues = buildValuesBlock([config.product], productCols);\n\n// --- product_translations ---\nconst translationCols = [\n  { name: 'language_code', type: 'text' },\n  { name: 'name', type: 'text' },\n  { name: 'description', type: 'text' },\n  { name: 'allergens', type: 'text' }\n];\nconst translationValues = buildValuesBlock(config.translations, translationCols);\n\n// --- product_variants ---\nconst variantCols = [\n  { name: 'sort_order', type: 'int' },\n  { name: 'price', type: 'numeric' },\n  { name: 'dolibarr_id', type: 'int' },\n  { name: 'dolibarr_gluten_id', type: 'int' },\n  { name: 'dolibarr_lactose_id', type: 'int' },\n  { name: 'price_tax_free', type: 'numeric' },\n  { name: 'price_tax_free_gluten', type: 'numeric' },\n  { name: 'price_tax_free_lactose', type: 'numeric' },\n  { name: 'price_gluten', type: 'numeric' },\n  { name: 'price_lactose', type: 'numeric' }\n];\nconst variantValues = buildValuesBlock(config.variants, variantCols);\n\n// --- product_variant_translations (розгортаємо variants[].translations, зберігаючи sort_order для join) ---\nconst flatVariantTranslations = config.variants.flatMap(v =>\n  v.translations.map(t => ({ sort_order: v.sort_order, language_code: t.language_code, name: t.name }))\n);\nconst variantTranslationCols = [\n  { name: 'sort_order', type: 'int' },\n  { name: 'language_code', type: 'text' },\n  { name: 'name', type: 'text' }\n];\nconst variantTranslationValues = buildValuesBlock(flatVariantTranslations, variantTranslationCols);\n\n// ==================== ЗБІРКА SQL ====================\n\nmsg.payload = `\nWITH new_product AS (\n  INSERT INTO products (slug, category_id, images, is_posible_sugar_free, is_cake_of_the_month, deleted, is_posible_gluten_free, is_posible_lactose_free)\n  VALUES\n    ${productValues}\n  RETURNING id\n),\nins_translations AS (\n  INSERT INTO product_translations (product_id, language_code, name, description, allergens)\n  SELECT new_product.id, v.language_code, v.name, v.description, v.allergens\n  FROM new_product,\n  (VALUES\n    ${translationValues}\n  ) AS v(language_code, name, description, allergens)\n  RETURNING id\n),\nins_variants AS (\n  INSERT INTO product_variants (product_id, sort_order, price, dolibarr_id, dolibarr_gluten_id, dolibarr_lactose_id, price_tax_free, price_tax_free_gluten, price_tax_free_lactose, price_gluten, price_lactose)\n  SELECT new_product.id, v.sort_order, v.price, v.dolibarr_id, v.dolibarr_gluten_id, v.dolibarr_lactose_id, v.price_tax_free, v.price_tax_free_gluten, v.price_tax_free_lactose, v.price_gluten, v.price_lactose\n  FROM new_product,\n  (VALUES\n    ${variantValues}\n  ) AS v(sort_order, price, dolibarr_id, dolibarr_gluten_id, dolibarr_lactose_id, price_tax_free, price_tax_free_gluten, price_tax_free_lactose, price_gluten, price_lactose)\n  RETURNING id, sort_order\n),\nins_variant_translations AS (\n  INSERT INTO product_variant_translations (variant_id, language_code, name)\n  SELECT ins_variants.id, vt.language_code, vt.name\n  FROM ins_variants\n  JOIN (VALUES\n    ${variantTranslationValues}\n  ) AS vt(sort_order, language_code, name)\n    ON ins_variants.sort_order = vt.sort_order\n  RETURNING id\n)\nSELECT\n  (SELECT id FROM new_product)                        AS product_id,\n  (SELECT count(*) FROM ins_translations)               AS translations_inserted,\n  (SELECT count(*) FROM ins_variants)                   AS variants_inserted,\n  (SELECT count(*) FROM ins_variant_translations)       AS variant_translations_inserted;\n`;\n\nmsg.queryParameters = params;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 3060,
+        "wires": [
+            [
+                "31aa93e3706ae219"
+            ]
+        ]
+    },
+    {
+        "id": "aab8245e6d14e915",
+        "type": "debug",
+        "z": "68702ca580581086",
+        "name": "products",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 3060,
+        "wires": []
+    },
+    {
+        "id": "31aa93e3706ae219",
+        "type": "link call",
+        "z": "68702ca580581086",
+        "name": "",
+        "links": [
+            "7d0d97bd91fee1c8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 460,
+        "y": 3060,
+        "wires": [
+            [
+                "aab8245e6d14e915"
+            ]
+        ]
     },
     {
         "id": "http_get_categories",
